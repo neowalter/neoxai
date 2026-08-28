@@ -99,5 +99,4 @@ Issues and PRs are welcome. This is a curated list, not a mirror of the entire i
 ## See also
 
 - Site: [neox-ai.com](https://neox-ai.com)
-- Code: [neowalter/NEOXLINK](https://github.com/neowalter/NEOXLINK) (private application monorepo)
 - Open hub page on the site: `/open/` (links here)
