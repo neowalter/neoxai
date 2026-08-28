@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: neoxai
+message: If you use this curated hub, please cite it as below, and cite each upstream dataset or model separately.
+type: software
+authors:
+  - family-names: Walter
+    given-names: Neo
+    alias: neowalter
+repository-code: https://github.com/neowalter/neoxai
+url: https://github.com/neowalter/neoxai
+abstract: >-
+  Curated links and metadata for open BCI/EEG datasets, models, and processing
+  methods, plus compact archives of industry news and research papers. Dataset
+  files and model weights are not hosted here.
+license: CC-BY-4.0
+keywords:
+  - EEG
+  - BCI
+  - brain-computer interface
+  - MEG
+  - open data
+  - foundation models

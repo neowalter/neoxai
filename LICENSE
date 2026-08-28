@@ -1,0 +1,30 @@
+Creative Commons Attribution 4.0 International
+
+SPDX-License-Identifier: CC-BY-4.0
+
+Copyright (c) 2026 neowalter and neoxai contributors
+
+The curated documentation in this repository — README files, link lists, and
+compact news/paper archive metadata produced by the NEOXLINK site cron — is
+licensed under the Creative Commons Attribution 4.0 International License.
+
+You are free to share and adapt that material, including commercially, as long
+as you give appropriate credit, provide a link to the license, and indicate
+if changes were made.
+
+License deed: https://creativecommons.org/licenses/by/4.0/
+Legal code:   https://creativecommons.org/licenses/by/4.0/legalcode
+
+THIS LICENSE DOES NOT COVER:
+
+- Dataset files (EDF, FIF, HDF5, BIDS trees, etc.)
+- Model weights and checkpoints
+- Papers, abstracts, or publisher PDFs
+- Third-party source code
+
+Those works remain under their original licenses and terms of use. This
+repository does not host them, does not redistribute them, and does not
+relicense them. Always follow the upstream license and citation requirements
+before downloading or using a linked resource.
+
+There is no medical-device warranty. Nothing here is clinical advice.
