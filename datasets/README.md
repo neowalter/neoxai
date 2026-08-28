@@ -1,6 +1,6 @@
 # Datasets
 
-Selected **open or research-accessible** EEG / BCI / MEG corpora. This folder is a **link list**. We do **not** host recordings, BIDS trees, or Git-LFS objects.
+Selected **open or research-accessible** EEG / BCI / MEG corpora. This folder is a **link list**. We do **not** host recordings, BIDS trees, or Git-LFS objects. The same catalog is mirrored on the [root README](../README.md) landing page.
 
 Always re-read the upstream license before download or publication. Several corpora require a signed DUA, an application form, or PhysioNet login. “Listed here” ≠ “redistributable.”
 
