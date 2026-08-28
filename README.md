@@ -2,7 +2,7 @@
 
 **Curated open resources for brain–computer interfaces (BCI), EEG analysis, and large-scale EEG models.**
 
-This public hub is the long-lived archive next to [neox-ai.com](https://neox-ai.com) (code: [NEOXLINK](https://github.com/neowalter/NEOXLINK)). The website database stays small: it only keeps a short rolling window of headlines. **Full news and paper metadata live here as compact Git files**, not in Cloudflare KV/R2 and not as unbounded Supabase rows.
+This public hub is the long-lived archive next to [neox-ai.com](https://neox-ai.com). The website database stays small: it only keeps a short rolling window of headlines. **Full news and paper metadata live here as compact Git files**, not in Cloudflare KV/R2 and not as unbounded Supabase rows.
 
 中文：本仓是脑机接口 / EEG 分析 / 大规模脑电模型的**精选链接与资讯归档**。不托管 GB 级数据文件；站点数据库只留最近条目，完整归档由定时任务写入本仓。
 
