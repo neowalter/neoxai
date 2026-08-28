@@ -44,7 +44,6 @@ No Git LFS. No binary datasets. If a PR adds a large blob, it will be rejected.
 
 ## How the cron archive works
 
-[NEOXLINK](https://github.com/neowalter/NEOXLINK) runs **one** Cloudflare Cron Trigger on Worker `neoxlink-cron`:
 
 | | |
 | --- | --- |
