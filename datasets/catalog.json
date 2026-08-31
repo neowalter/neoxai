@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T12:02:19.868Z",
+  "generatedAt": "2026-08-31T11:08:42.439Z",
   "sources": [
     {
       "id": "huggingface",
@@ -18,13 +18,14 @@
     },
     {
       "id": "zenodo",
-      "ok": true,
-      "count": 23
+      "ok": false,
+      "count": 0,
+      "error": "The operation was aborted due to timeout"
     },
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 5
     }
   ],
   "items": [
@@ -186,7 +187,7 @@
       "owner": "OpenNeuro",
       "url": "https://openneuro.org/datasets/ds008496",
       "source": "openneuro",
-      "description": "Brain Connectivity Based on EEG of Student Learning Processes Using Gen-AI",
+      "description": "EEG RKI",
       "tags": [
         "BIDS",
         "eeg"
@@ -310,7 +311,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2632,
+      "downloads": 2596,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -484,7 +485,7 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 393,
+      "downloads": 398,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
@@ -508,7 +509,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 196,
+      "downloads": 195,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -614,7 +615,7 @@
         "deep-learning"
       ],
       "license": "unknown",
-      "downloads": 603,
+      "downloads": 602,
       "likes": 0,
       "updatedAt": "2026-03-14T20:20:10.000Z",
       "modality": [
@@ -660,7 +661,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 207,
+      "downloads": 206,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -685,7 +686,7 @@
         "neuroscience"
       ],
       "license": "cc-by-4.0",
-      "downloads": 148,
+      "downloads": 143,
       "likes": 0,
       "updatedAt": "2026-05-20T09:16:25.000Z",
       "modality": [
@@ -693,25 +694,233 @@
       ]
     },
     {
-      "id": "zenodo:21905748",
-      "name": "GuttmannFlury2025 — Eye-BCI multimodal dataset: Steady-State Visual Evoked Potentials (re-hosted from Synapse, EEG converted to BDF)",
-      "owner": "Guttmann-Flury, Eva",
-      "url": "https://doi.org/10.5281/zenodo.21905748",
-      "source": "zenodo",
-      "description": "Re-hosted EEG multimodal data (Steady-State Visual Evoked Potentials) from Guttmann-Flury, Sheng &amp; Zhu (2025), originally deposited on Synapse (DOI: 10.7303/syn64005218) under a CC0 public domain dedication. EEG data converted from Neuroscan CSV to BDF format for ~3x space r…",
+      "id": "hf:smithjacki/eeg-emotion-depression",
+      "name": "eeg-emotion-depression",
+      "owner": "smithjacki",
+      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
+      "source": "huggingface",
+      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
+      "tags": [],
+      "license": null,
+      "downloads": 8,
+      "likes": 0,
+      "updatedAt": "2026-06-13T13:48:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:MigoXV/eeg-bme-emotion-parquet",
+      "name": "eeg-bme-emotion-parquet",
+      "owner": "MigoXV",
+      "url": "https://huggingface.co/datasets/MigoXV/eeg-bme-emotion-parquet",
+      "source": "huggingface",
+      "description": "BME EEG Emotion Parquet 赛题四脑电情绪识别数据的 Parquet 转换版本。数据按 HuggingFace Datasets 原生 split 组织： train: 384 条样本 validation: 96 条样本 test: 80 条样本 每条样本对应一段视频的 EEG 数据。eeg 字段为扁平数组，可通过 eeg_shape 和 eeg_dtype 还原为二维数组。 from datasets import load_dataset import numpy as np ds = load_dataset(\"MigoXV…",
       "tags": [
-        "EEG",
-        "BCI",
-        "brain-computer interface",
-        "eye-tracking",
-        "BDF",
-        "MOABB",
-        "SSVEP"
+        "tabular",
+        "pandas",
+        "eeg",
+        "emotion-recognition",
+        "biomedical"
       ],
-      "license": "cc-zero",
-      "downloads": 1769,
-      "likes": null,
-      "updatedAt": "2026-08-12T00:00:00.000Z",
+      "license": null,
+      "downloads": 44,
+      "likes": 0,
+      "updatedAt": "2026-05-14T03:17:03.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Jiaheng-Wang/ZJU-MI-EEG",
+      "name": "ZJU-MI-EEG",
+      "owner": "Jiaheng-Wang",
+      "url": "https://huggingface.co/datasets/Jiaheng-Wang/ZJU-MI-EEG",
+      "source": "huggingface",
+      "description": "Motor Imagery Dataset Zoo This repository involves several structed motor imagery (MI) EEG datasets aiming for the research of EEG-based MI decoding. Common Features In general, raw EEG data are initially band-pass filtered between 0.5 and 48 Hz along with a 50/60 Hz notch filte…",
+      "tags": [
+        "odc-by"
+      ],
+      "license": "odc-by",
+      "downloads": 36,
+      "likes": 1,
+      "updatedAt": "2026-05-08T12:48:49.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:divyanshmaurya1/projectcerebro-eeg",
+      "name": "projectcerebro-eeg",
+      "owner": "divyanshmaurya1",
+      "url": "https://huggingface.co/datasets/divyanshmaurya1/projectcerebro-eeg",
+      "source": "huggingface",
+      "description": "ProjectCerebro — EEG Motor Imagery Dataset Preprocessed EEG epochs for motor imagery classification (left hand, right hand, rest). Sources PhysioNet EEGMMIDB — 104 subjects x 6 runs (downloaded via MNE) BCI Competition IV Dataset 2a — 9 subjects (via MOABB) Preprocessing Pipelin…",
+      "tags": [
+        "tabular",
+        "pandas",
+        "eeg",
+        "motor-imagery",
+        "bci",
+        "neuroscience"
+      ],
+      "license": "other",
+      "downloads": 17,
+      "likes": 0,
+      "updatedAt": "2026-05-10T00:31:09.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:xiaozgg/EEG-EditBench",
+      "name": "EEG-EditBench",
+      "owner": "xiaozgg",
+      "url": "https://huggingface.co/datasets/xiaozgg/EEG-EditBench",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "mit",
+        "imagefolder",
+        "image"
+      ],
+      "license": "mit",
+      "downloads": 859,
+      "likes": 0,
+      "updatedAt": "2026-07-19T12:39:27.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:juanmoisesdelas/neuromodulation-and-emerging-neurotechnologies-tms-tdcs-dbs-and-brain-computer-i",
+      "name": "neuromodulation-and-emerging-neurotechnologies-tms-tdcs-dbs-and-brain-computer-i",
+      "owner": "juanmoisesdelas",
+      "url": "https://huggingface.co/datasets/juanmoisesdelas/neuromodulation-and-emerging-neurotechnologies-tms-tdcs-dbs-and-brain-computer-i",
+      "source": "huggingface",
+      "description": "neuromodulation-and-emerging-neurotechnologies-tms-tdcs-dbs-and-brain-computer-i Mirror: github.com/juanmoisesd/neuromodulation-and-emerging-neurotechnologies-tms-tdcs-dbs-and-brain-computer-i Author: Juan Moisés de la Serna Tuya · ORCID: 0000-0002-8401-8018 Neuromodulation and…",
+      "tags": [
+        "cc0-1.0",
+        "open-data",
+        "research",
+        "latin-america",
+        "juan-moises-de-la-serna"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 14,
+      "likes": 0,
+      "updatedAt": "2026-03-23T07:09:20.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:webxos/BCI-FPS",
+      "name": "BCI-FPS",
+      "owner": "webxos",
+      "url": "https://huggingface.co/datasets/webxos/BCI-FPS",
+      "source": "huggingface",
+      "description": "Dataset Card for BCI-FPS MOTOR_IMAGERY Dataset UNDER DEVELOPMENT for TESTING This dataset was made using the app in the /generator/ folder which is under development testing. Simulated data for Intent testing, does not use real Neuralink/BCI hardware signals. BCI Intent Data Stu…",
+      "tags": [
+        "reinforcement-learning",
+        "time-series-forecasting",
+        "tabular-classification",
+        "json",
+        "tabular",
+        "pandas",
+        "neural-decoding",
+        "motor-imagery"
+      ],
+      "license": null,
+      "downloads": 91,
+      "likes": 2,
+      "updatedAt": "2026-03-01T14:52:46.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:braindecode/bcic2020-3",
+      "name": "bcic2020-3",
+      "owner": "braindecode",
+      "url": "https://huggingface.co/datasets/braindecode/bcic2020-3",
+      "source": "huggingface",
+      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 45 Type Windowed (from Epochs object) Channels 64 Sampling frequency 200 Hz Total duration 4:59:30 Windows/samples 6,000 Size 2…",
+      "tags": [
+        "unknown",
+        "braindecode",
+        "eeg",
+        "neuroscience",
+        "brain-computer-interface",
+        "deep-learning"
+      ],
+      "license": "unknown",
+      "downloads": 56,
+      "likes": 0,
+      "updatedAt": "2026-03-14T20:23:34.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
+      ]
+    },
+    {
+      "id": "hf:smam/tuh-eeg",
+      "name": "tuh-eeg",
+      "owner": "smam",
+      "url": "https://huggingface.co/datasets/smam/tuh-eeg",
+      "source": "huggingface",
+      "description": "",
+      "tags": [],
+      "license": null,
+      "downloads": 485,
+      "likes": 0,
+      "updatedAt": "2026-08-13T18:53:24.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:webxos/BCI-grid-movement-v1",
+      "name": "BCI-grid-movement-v1",
+      "owner": "webxos",
+      "url": "https://huggingface.co/datasets/webxos/BCI-grid-movement-v1",
+      "source": "huggingface",
+      "description": "BCI Grid Movement Intent Dataset UNDER DEVELOPMENT for TESTING purposes This dataset was generated with the gym located in /gym/ folder of this repo.The dataset contains synchronized movement intent data collected from a grid training environment designed for simulated BCI resea…",
+      "tags": [
+        "reinforcement-learning",
+        "time-series-forecasting",
+        "tabular-classification",
+        "json",
+        "tabular",
+        "pandas",
+        "neural-decoding",
+        "motor-imagery"
+      ],
+      "license": null,
+      "downloads": 75,
+      "likes": 2,
+      "updatedAt": "2026-03-01T14:50:38.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:lumicero/EEG-BandMamba-Image",
+      "name": "EEG-BandMamba-Image",
+      "owner": "lumicero",
+      "url": "https://huggingface.co/datasets/lumicero/EEG-BandMamba-Image",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "mit",
+        "imagefolder",
+        "image"
+      ],
+      "license": "mit",
+      "downloads": 524,
+      "likes": 0,
+      "updatedAt": "2026-06-24T04:10:30.000Z",
       "modality": [
         "EEG"
       ]
@@ -736,168 +945,11 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 181,
-      "updatedAt": "2026-08-30T10:56:57.000Z",
+      "updatedAt": "2026-08-31T07:24:51.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG"
-      ]
-    },
-    {
-      "id": "zenodo:22042624",
-      "name": "EEG lead-field matrices for the comparison of hybrid volume-surface-wire and anisotropic FEM head models",
-      "owner": "Ricci, Paolo",
-      "url": "https://doi.org/10.5281/zenodo.22042624",
-      "source": "zenodo",
-      "description": "This dataset contains the lead-field matrices and geometrical data used for the numerical assessment presented in the paper \"Volume-Surface-Wire Integral Equations for EEG Source Imaging\". The dataset includes three EEG lead-field matrices: leadfield_hybrid.h5 , computed using t…",
-      "tags": [
-        "EEG source imaging",
-        "lead-field matrix"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 56,
-      "likes": null,
-      "updatedAt": "2026-08-21T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22172517",
-      "name": "Bidirectional links between food intake and sleep: a naturalistic mobile EEG study",
-      "owner": "Ujma, Péter Przemyslaw",
-      "url": "https://doi.org/10.5281/zenodo.22172517",
-      "source": "zenodo",
-      "description": "This is data and code accompanying our scientific paper with the same title.",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-08-30T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22171104",
-      "name": "CLINICAL AND ELECTROENCEPHALOGRAPHIC FEATURES OF COMORBID MIGRAINE AND EPILEPSY IN CHILDREN",
-      "owner": "Safarov Saydullo Ubaydullo Oʻgʻli",
-      "url": "https://doi.org/10.5281/zenodo.22171104",
-      "source": "zenodo",
-      "description": "&nbsp; Migraine and epilepsy are among the most common chronic paroxysmal neurological disorders in childhood, characterized by episodic disturbances of brain function. In pediatric practice, comorbidity between these conditions is significantly more common than epidemiological…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-08-30T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22168675",
-      "name": "INFANTIL SPAZM SINDROMI BO'LGAN BOLALARDA MIYADAGI STRUKTURAVIY O'ZGARISHLARNI KUZATISH",
-      "owner": "Safarov Saydullo Ubaydullo oʻgʻli",
-      "url": "https://doi.org/10.5281/zenodo.22168675",
-      "source": "zenodo",
-      "description": "Infantil spazmlar sindromi (ISS), shuningdek, Vest sindromi sifatida ham tanilgan, hayotning birinchi yilida namoyon bo'ladigan va klinik xususiyatlarning uchligi: ketma-ket spazmlar, psixomotor regressiya va elektroensefalogrammada (EEG) gipsaritmiya bilan tavsiflanadigan og'ir…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-08-30T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22124590",
-      "name": "A large-scale EEG Dataset of upper-limb Movements",
-      "owner": "Sterk, Kathrin",
-      "url": "https://doi.org/10.5281/zenodo.22124590",
-      "source": "zenodo",
-      "description": "This dataset contains uniformly processed EEG recordings from nine movement execution experiments involving 188 able-bodied participants. It comprises 84,608 hand and arm movement execution trials and 11,176 rest trials. To provide a consistent data structure across all experime…",
-      "tags": [
-        "Motor decoding",
-        "grasp",
-        "Reaching",
-        "Arm Movement",
-        "Hand Movement"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-08-27T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22093536",
-      "name": "EEG and Motion Signals Pilot Dataset",
-      "owner": "Iwendi, Celestine",
-      "url": "https://doi.org/10.5281/zenodo.22093536",
-      "source": "zenodo",
-      "description": "This dataset contains a pilot multimodal physiological recording collected using a four-channel wearable EEG device (Muse S). The dataset comprises 17,155 timestamped observations recorded over approximately 67 seconds, with an effective sampling rate of approximately 256 Hz. Th…",
-      "tags": [
-        "EEG",
-        "Motion Signals"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 6,
-      "likes": null,
-      "updatedAt": "2026-08-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22118130",
-      "name": "Improving motor imagery detection through embodied multisensory neurofeedback in virtual reality",
-      "owner": "Galdieri, Fortuna",
-      "url": "https://doi.org/10.5281/zenodo.22118130",
-      "source": "zenodo",
-      "description": "Motor imagery (MI) detection in BCIs may be improved by helping users generate more measurable neural correlates. This database contains the results of a study that used a virtual reality (VR) interface integrating multisensory feedback to enhance embodiment to improve MI detect…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-08-26T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22102052",
-      "name": "Infant_EEG_Reveals_Divergent_Developmental_Trajectories_eLife/Dataset",
-      "owner": "Godel, Michel",
-      "url": "https://doi.org/10.5281/zenodo.22102052",
-      "source": "zenodo",
-      "description": "This repository contains original data generated to support the results of our manuscript \" Infant EEG Reveals Divergent Developmental Trajectories in Speech Tracking and Statistical Learning Based on Autism Likelihood \". For details on how the data were input for each analysis,…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-08-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:21957789",
-      "name": "Multimodal Neuorphysiological Response to Advertising Stimuli",
-      "owner": "ANONYMOUS FOR PEER REVIEW",
-      "url": "https://doi.org/10.5281/zenodo.21957789",
-      "source": "zenodo",
-      "description": "This project hosts multimodal neurophysiological (ECG, EEG, EDA) and behavioral data collected while participants viewed a mixture of still ads across three different ad types - functional, emotional and metaphorical. The data were collected using an IRB-approved protocol.&nbsp;…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 49,
-      "likes": null,
-      "updatedAt": "2026-08-15T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
       ]
     },
     {
@@ -920,7 +972,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 83,
-      "updatedAt": "2026-08-27T11:16:24.000Z",
+      "updatedAt": "2026-08-30T20:57:42.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -955,6 +1007,28 @@
       ]
     },
     {
+      "id": "github:neowalter/neoxai",
+      "name": "neoxai",
+      "owner": "neowalter",
+      "url": "https://github.com/neowalter/neoxai",
+      "source": "github",
+      "description": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
+      "tags": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "neuroscience",
+        "open-data"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-08-31T06:24:09.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:Mohammad-Norizadeh-Cherloo/Motor-Imagery-BCI",
       "name": "Motor-Imagery-BCI",
       "owner": "Mohammad-Norizadeh-Cherloo",
@@ -974,50 +1048,7 @@
       "license": null,
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-08-29T11:27:43.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:neowalter/neoxai",
-      "name": "neoxai",
-      "owner": "neowalter",
-      "url": "https://github.com/neowalter/neoxai",
-      "source": "github",
-      "description": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "neuroscience",
-        "open-data"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-08-29T06:23:45.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:gifale95/EMD",
-      "name": "EMD",
-      "owner": "gifale95",
-      "url": "https://github.com/gifale95/EMD",
-      "source": "github",
-      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
-      "tags": [
-        "eeg",
-        "human-vision",
-        "open-dataset",
-        "videos"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-08-28T17:33:18.000Z",
+      "updatedAt": "2026-08-30T15:11:32.000Z",
       "modality": [
         "EEG"
       ]
