@@ -1,15 +1,16 @@
 {
-  "generatedAt": "2026-08-31T11:08:42.439Z",
+  "generatedAt": "2026-09-01T09:35:37.609Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 56
+      "count": 57
     },
     {
       "id": "openneuro",
-      "ok": true,
-      "count": 9
+      "ok": false,
+      "count": 0,
+      "error": "The operation was aborted due to timeout"
     },
     {
       "id": "physionet",
@@ -25,7 +26,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 5
+      "count": 6
     }
   ],
   "items": [
@@ -101,178 +102,6 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008730",
-      "name": "Flavors of Reward Positivity: Testing the Psychometric Properties of Tasks used to Elicit the Reward Positivity in Healthy Individuals",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008730",
-      "source": "openneuro",
-      "description": "Flavors of Reward Positivity: Testing the Psychometric Properties of Tasks used to Elicit the Reward Positivity in Healthy Individuals",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-26T15:08:50.392Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008725",
-      "name": "Memtrain MEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008725",
-      "source": "openneuro",
-      "description": "Memtrain MEG",
-      "tags": [
-        "BIDS",
-        "meg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-25T16:18:36.899Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008711",
-      "name": "RSVP with flankers - sentences with semantic and syntactic violations",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008711",
-      "source": "openneuro",
-      "description": "RSVP with flankers - sentences with semantic and syntactic violations",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-20T01:30:45.580Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008610",
-      "name": "FUS and Tactile Neuromodulation in NHP VPL - Electrophysiology",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008610",
-      "source": "openneuro",
-      "description": "FUS and Tactile Neuromodulation in NHP VPL - Electrophysiology",
-      "tags": [
-        "BIDS",
-        "ieeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-05T22:51:55.499Z",
-      "modality": [
-        "iEEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008496",
-      "name": "EEG RKI",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008496",
-      "source": "openneuro",
-      "description": "EEG RKI",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-28T00:56:57.318Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008465",
-      "name": "NeuralEcho MACS high-density communication-related EEG dataset",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008465",
-      "source": "openneuro",
-      "description": "NeuralEcho MACS high-density communication-related EEG dataset",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-24T03:44:23.604Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008462",
-      "name": "Drug-Resistant Epilepsy Resting-State MEG-MRI Dataset",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008462",
-      "source": "openneuro",
-      "description": "Elena Resting-State MEG Pilot Dataset",
-      "tags": [
-        "BIDS",
-        "meg",
-        "mri"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-23T17:42:46.963Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008446",
-      "name": "Random and Sequential Order Finger Motor Imagery",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008446",
-      "source": "openneuro",
-      "description": "Random and Sequential Order Finger Motor Imagery",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-21T16:52:24.199Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008257",
-      "name": "EEG Moments Dataset (EMD)",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008257",
-      "source": "openneuro",
-      "description": "EEG Moments Dataset (EMD)",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-14T15:56:33.234Z",
       "modality": [
         "EEG"
       ]
@@ -414,6 +243,31 @@
       "downloads": 108,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:shahpalash10/BCI-Neurofeedback-Desktop",
+      "name": "BCI-Neurofeedback-Desktop",
+      "owner": "shahpalash10",
+      "url": "https://huggingface.co/datasets/shahpalash10/BCI-Neurofeedback-Desktop",
+      "source": "huggingface",
+      "description": "🧠 BCI Neurofeedback Desktop Application Suite Standalone, zero-dependency desktop application suite for real-time EEG neurofeedback training, cognitive psychometrics, and BCI-driven gaming. 📥 Direct Public Downloads Platform Architecture Installer Direct Download Link macOS (A…",
+      "tags": [
+        "robotics",
+        "mit",
+        "bci",
+        "eeg",
+        "neurofeedback",
+        "neuroscience",
+        "brain-computer-interface",
+        "desktop-application"
+      ],
+      "license": "mit",
+      "downloads": 0,
+      "likes": 0,
+      "updatedAt": "2026-08-31T19:08:45.000Z",
       "modality": [
         "EEG"
       ]
@@ -926,6 +780,43 @@
       ]
     },
     {
+      "id": "hf:introvoyz041/eeg-self-supervision",
+      "name": "eeg-self-supervision",
+      "owner": "introvoyz041",
+      "url": "https://huggingface.co/datasets/introvoyz041/eeg-self-supervision",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "mit"
+      ],
+      "license": "mit",
+      "downloads": 57,
+      "likes": 0,
+      "updatedAt": "2026-08-16T22:28:11.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Rodr16020/eeg-words-dataset",
+      "name": "eeg-words-dataset",
+      "owner": "Rodr16020",
+      "url": "https://huggingface.co/datasets/Rodr16020/eeg-words-dataset",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "optimized-parquet",
+        "pandas"
+      ],
+      "license": null,
+      "downloads": 35,
+      "likes": 0,
+      "updatedAt": "2026-08-13T19:43:58.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:mne-tools/mne-bids",
       "name": "mne-bids",
       "owner": "mne-tools",
@@ -945,11 +836,105 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 181,
-      "updatedAt": "2026-08-31T07:24:51.000Z",
+      "updatedAt": "2026-08-31T21:15:45.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG"
+      ]
+    },
+    {
+      "id": "hf:anonymous-588/MCD-EEG",
+      "name": "MCD-EEG",
+      "owner": "anonymous-588",
+      "url": "https://huggingface.co/datasets/anonymous-588/MCD-EEG",
+      "source": "huggingface",
+      "description": "",
+      "tags": [],
+      "license": null,
+      "downloads": 7,
+      "likes": 1,
+      "updatedAt": "2026-07-25T11:42:23.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:TKQXX/THINGS-EEG-MEG_CVPR2026",
+      "name": "THINGS-EEG-MEG_CVPR2026",
+      "owner": "TKQXX",
+      "url": "https://huggingface.co/datasets/TKQXX/THINGS-EEG-MEG_CVPR2026",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "imagefolder",
+        "image"
+      ],
+      "license": null,
+      "downloads": 256,
+      "likes": 0,
+      "updatedAt": "2026-06-09T13:07:12.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:ctorre/self-calibrating-bci",
+      "name": "self-calibrating-bci",
+      "owner": "ctorre",
+      "url": "https://huggingface.co/datasets/ctorre/self-calibrating-bci",
+      "source": "huggingface",
+      "description": "Self-Calibrating BCI Dataset (NeurIPS 2025) Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels This dataset contains brain-computer interface (BCI) data from self-calibrating experiments where participants paid attention to faces while EEG signals were…",
+      "tags": [
+        "mit",
+        "timeseries",
+        "neuroscience",
+        "brain-computer-interfacing",
+        "eeg",
+        "electroencephalography",
+        "gan",
+        "self-calibrating"
+      ],
+      "license": "mit",
+      "downloads": 61,
+      "likes": 0,
+      "updatedAt": "2025-11-23T20:30:46.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:zl3030/reliant-bci-nlb-public-raw",
+      "name": "reliant-bci-nlb-public-raw",
+      "owner": "zl3030",
+      "url": "https://huggingface.co/datasets/zl3030/reliant-bci-nlb-public-raw",
+      "source": "huggingface",
+      "description": "",
+      "tags": [
+        "webdataset"
+      ],
+      "license": null,
+      "downloads": 41,
+      "likes": 0,
+      "updatedAt": "2026-06-14T17:51:06.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:dancinlab/anima-eeg-consciousness",
+      "name": "anima-eeg-consciousness",
+      "owner": "dancinlab",
+      "url": "https://huggingface.co/datasets/dancinlab/anima-eeg-consciousness",
+      "source": "huggingface",
+      "description": "",
+      "tags": [],
+      "license": null,
+      "downloads": 38,
+      "likes": 0,
+      "updatedAt": "2026-06-15T03:33:01.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -972,13 +957,29 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 83,
-      "updatedAt": "2026-08-30T20:57:42.000Z",
+      "updatedAt": "2026-08-31T13:58:50.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
+      ]
+    },
+    {
+      "id": "github:yjmantilla/sovabids",
+      "name": "sovabids",
+      "owner": "yjmantilla",
+      "url": "https://github.com/yjmantilla/sovabids",
+      "source": "github",
+      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
+      "tags": [],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 13,
+      "updatedAt": "2026-08-31T20:58:52.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -1023,7 +1024,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-08-31T06:24:09.000Z",
+      "updatedAt": "2026-09-01T06:25:13.000Z",
       "modality": [
         "EEG"
       ]
