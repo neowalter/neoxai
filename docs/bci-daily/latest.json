@@ -228,13 +228,5 @@
       "source": "github",
       "brief": "开源EEG开放词表脑文解码项目,结合Transformer与BART实现非侵入脑机接口语言输出。"
     }
-  ],
-  "stats": {
-    "fetched": 74,
-    "prefiltered": 31,
-    "llm_rows": 14,
-    "kept": 11,
-    "intel": 3,
-    "conflicts_dropped": 0
-  }
+  ]
 }

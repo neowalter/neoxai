@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-03",
+  "generated_at": "2026-09-03T12:27:47.720265+00:00",
+  "item_count": 3,
+  "types": {
+    "Regulatory": 1,
+    "Clinical": 2
+  },
+  "highlights": [
+    "开源BCI法律法规追踪工具,帮助团队及时掌握脑机接口监管动态。",
+    "EEG脑机接口recoveriX PRO结合运动想象、FES与VR，用于帕金森病康复的临床试验。",
+    "非侵入式闭环脑刺激临床试验，研究改善老年人认知控制与认知衰退的效果。"
+  ],
+  "github_path": "docs/bci-intel/2026-09-03.json",
+  "items": [
+    {
+      "type": "Regulatory",
+      "level": "General",
+      "title_zh": "BCI监管情报:法律法规追踪采集器与界面",
+      "title_en": "BCI Regulatory Intelligence: Legal Act Tracking Collector & UI",
+      "bullets_zh": [
+        "开源工具,采集并追踪与脑机接口相关的法律法规文件。",
+        "提供用户界面,跨辖区监控BCI监管动态。",
+        "为合规团队与企业在BCI监管路径上提供决策情报。"
+      ],
+      "bullets_en": [
+        "Open-source tool that collects and tracks legal acts and regulations relevant to brain-computer interfaces.",
+        "Provides a user interface for monitoring BCI regulatory developments across jurisdictions.",
+        "Useful intelligence for compliance teams and companies navigating BCI regulatory pathways."
+      ],
+      "url": "https://github.com/tmai-tech/regintel",
+      "published": "2026-09-03T11:30:30Z",
+      "source": "github",
+      "brief": "开源BCI法律法规追踪工具,帮助团队及时掌握脑机接口监管动态。"
+    },
+    {
+      "type": "Clinical",
+      "level": "General",
+      "title_zh": "基于神经反馈的FES与VR康复治疗帕金森病（NCT06690931）",
+      "title_en": "Neurofeedback Rehabilitation With FES and VR for Parkinson's Disease (NCT06690931)",
+      "bullets_zh": [
+        "ClinicalTrials.gov注册试验NCT06690931，测试recoveriX PRO基于EEG的脑机接口康复系统。",
+        "将运动想象与功能性电刺激（FES）及虚拟现实反馈结合，用于帕金森病患者康复。",
+        "非侵入式EEG帽在心理练习期间记录神经活动，展示非侵入式脑机接口的临床转化。"
+      ],
+      "bullets_en": [
+        "ClinicalTrials.gov study NCT06690931 testing the recoveriX PRO EEG-based BCI rehabilitation system.",
+        "Combines motor imagery with functional electrical stimulation (FES) and virtual reality feedback for Parkinson's disease patients.",
+        "Non-invasive EEG cap records neural activity during mental practice, demonstrating clinical translation of non-invasive BCI."
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT06690931",
+      "published": "2026-09-03",
+      "source": "clinicaltrials",
+      "brief": "EEG脑机接口recoveriX PRO结合运动想象、FES与VR，用于帕金森病康复的临床试验。"
+    },
+    {
+      "type": "Clinical",
+      "level": "General",
+      "title_zh": "闭环脑刺激作为认知衰退的潜在干预手段（NCT05907343）",
+      "title_en": "Closed-Loop Brain Stimulation as a Potential Intervention for Cognitive Decline (NCT05907343)",
+      "bullets_zh": [
+        "ClinicalTrials.gov注册试验NCT05907343，研究非侵入式刺激以增强老年人认知控制。",
+        "检验刺激能否恢复伴或不伴认知障碍成年人的多项认知功能。",
+        "2026-09-02更新；对非侵入式闭环神经技术的临床研究具有参考价值。"
+      ],
+      "bullets_en": [
+        "ClinicalTrials.gov study NCT05907343 investigating non-invasive stimulation to enhance cognitive control in older adults.",
+        "Tests whether stimulation can restore cognitive functions in adults with and without cognitive impairment.",
+        "Updated 2026-09-02; relevant to non-invasive closed-loop neurotechnology in clinical research."
+      ],
+      "url": "https://clinicaltrials.gov/study/NCT05907343",
+      "published": "2026-09-02",
+      "source": "clinicaltrials",
+      "brief": "非侵入式闭环脑刺激临床试验，研究改善老年人认知控制与认知衰退的效果。"
+    }
+  ],
+  "stats": {
+    "fetched": 74,
+    "prefiltered": 31,
+    "llm_rows": 14,
+    "kept": 11,
+    "intel": 3,
+    "conflicts_dropped": 0
+  }
+}
