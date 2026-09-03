@@ -1,11 +1,12 @@
 {
   "date": "2026-09-03",
-  "generated_at": "2026-09-03T00:21:53.291740+00:00",
+  "generated_at": "2026-09-03T00:55:03.751265+00:00",
   "stats": {
-    "fetched": 19,
-    "prefiltered": 16,
-    "llm_rows": 7,
-    "kept": 7
+    "fetched": 62,
+    "prefiltered": 18,
+    "llm_rows": 8,
+    "kept": 8,
+    "conflicts_dropped": 0
   },
   "items": [
     {
@@ -14,120 +15,155 @@
       "title_zh": "AxonOS 社区雷达",
       "title_en": "AxonOS Community Radar",
       "bullets_zh": [
-        "开放脑机接口领域的实时自动更新地图。",
-        "作为跟踪脑机接口发展的 AxonOS 社区项目。"
+        "开放脑机接口领域的动态地图",
+        "自动更新的社区资源追踪",
+        "AxonOS 生态系统倡议的一部分"
       ],
       "bullets_en": [
-        "Living, auto-updated map of the open brain-computer-interface field.",
-        "Serves as an AxonOS community project for tracking BCI developments."
+        "Living map of the open brain-computer-interface field",
+        "Auto-updated community resource tracking",
+        "Part of the AxonOS ecosystem initiative"
       ],
       "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
       "published": "2026-09-02T23:22:57Z",
-      "source": ""
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "AxonOS 认知操作系统层",
-      "title_en": "AxonOS Cognitive Operating System Layer",
-      "bullets_zh": [
-        "为脑机接口软件基础设施提供认知操作系统层。",
-        "专注于非侵入式脑机接口软件基础。"
-      ],
-      "bullets_en": [
-        "Provides a cognitive operating-system layer for BCI software infrastructure.",
-        "Focuses on non-invasive brain-computer-interface software foundations."
-      ],
-      "url": "https://github.com/AxonOS-org/.github",
-      "published": "2026-09-02T23:33:14Z",
-      "source": ""
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "EEG-Deformer 卷积 Transformer 实现",
-      "title_en": "EEG-Deformer Convolutional Transformer Implementation",
-      "bullets_zh": [
-        "EEG-Deformer 卷积 Transformer 的 PyTorch 实现。",
-        "用于从脑电图信号中解码精神状态以进行脑机接口。"
-      ],
-      "bullets_en": [
-        "PyTorch implementation of the EEG-Deformer convolutional transformer.",
-        "Used to decode mental states from EEG signals for BCI."
-      ],
-      "url": "https://github.com/requisite-study641/EEG_Deformer",
-      "published": "2026-09-02T20:49:41Z",
-      "source": ""
+      "source": "",
+      "brief": "开源脑机接口领域动态地图，追踪非侵入式 BCI 最新进展与资源。"
     },
     {
       "type": "Project",
       "level": "Advanced",
       "title_zh": "AURA 神经代理脑机接口",
-      "title_en": "AURA Neuro-Agentic Brain-Computer Interface",
+      "title_en": "AURA Neuro-Agentic BCI",
       "bullets_zh": [
-        "将脑电图与 YOLOv8、Gemini 和 React 集成以实现神经代理。",
-        "展示了通过非侵入式信号进行的高级 AI 代理交互。"
+        "整合 EEG、YOLOv8 与大模型 Gemini",
+        "神经代理式的脑机交互方法",
+        "使用 React 构建前端界面"
       ],
       "bullets_en": [
-        "Integrates EEG with YOLOv8, Gemini, and React for neuro-agency.",
-        "Demonstrates advanced AI agent interaction via non-invasive signals."
+        "Integrates EEG with YOLOv8 and Gemini AI",
+        "Neuro-Agentic approach to brain-computer interaction",
+        "Uses React for frontend interface"
       ],
       "url": "https://github.com/suha-og/AURA",
       "published": "2026-09-02T09:29:03Z",
-      "source": ""
+      "source": "",
+      "brief": "结合 EEG、YOLOv8 与大模型的多模态神经代理系统，探索智能交互。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "实时 P300 脑电驱动机器人控制脑机接口",
-      "title_en": "Real-time P300 EEG-driven Robot Control BCI",
+      "title_zh": "基于运动想象 EEG 的无人机控制",
+      "title_en": "EEG Motor Imagery Drone Control",
       "bullets_zh": [
-        "用于机器人控制的实时脑机接口。",
-        "利用来自脑电图的 P300 信号作为命令输入。"
+        "通过机器学习处理运动想象信号",
+        "将预测转化为无人机实时指令",
+        "纯软件模拟环境"
       ],
       "bullets_en": [
-        "Real-time brain-computer interface for robot control.",
-        "Utilizes P300 signals from EEG for command input."
-      ],
-      "url": "https://github.com/1Tamez1/p300-robot-bci",
-      "published": "2026-09-02T15:38:45Z",
-      "source": ""
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "基于脑电图的运动想象无人机控制脑机接口",
-      "title_en": "EEG-based Motor Imagery Drone Control BCI",
-      "bullets_zh": [
-        "使用机器学习处理运动想象信号。",
-        "将心理命令转换为实时模拟无人机控制。"
-      ],
-      "bullets_en": [
-        "Processes motor imagery signals using machine learning.",
-        "Translates mental commands into real-time simulated drone control."
+        "Processes motor imagery signals via machine learning",
+        "Translates predictions into real-time drone commands",
+        "Software-only simulated environment"
       ],
       "url": "https://github.com/Samarth041/eeg-motor-imagery-drone-bci",
       "published": "2026-09-02T13:29:05Z",
-      "source": ""
+      "source": "",
+      "brief": "利用机器学习分类脑电信号，实现模拟无人机的实时意念操控。"
+    },
+    {
+      "type": "Project",
+      "level": "Beginner",
+      "title_zh": "实时 P300 机器人脑机接口",
+      "title_en": "Real-time P300 Robot BCI",
+      "bullets_zh": [
+        "实时 P300 脑机接口系统",
+        "基于 EEG 的机器人控制方案",
+        "标准事件相关电位范式"
+      ],
+      "bullets_en": [
+        "Real-time P300 brain-computer interface",
+        "EEG-driven robot control system",
+        "Standard event-related potential paradigm"
+      ],
+      "url": "https://github.com/1Tamez1/p300-robot-bci",
+      "published": "2026-09-02T15:38:45Z",
+      "source": "",
+      "brief": "基于 EEG 的 P300 范式，实现驱动机器人的实时脑控交互。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "P300 拼写器数据分析（GitHub）",
-      "title_en": "P300 Speller Data Analysis (GitHub)",
+      "title_zh": "EEG-Deformer PyTorch 实现",
+      "title_en": "EEG-Deformer PyTorch Implementation",
       "bullets_zh": [
-        "使用 xDAWN+LDA 基线和 PyTorch 中的 EEGNet 实现 P300 拼写器的 EEG 分类。",
-        "利用留一受试者交叉验证（LOSO）揭示跨主体转移差距。",
-        "提出微调校准策略以提高跨主体的性能。"
+        "EEG-Deformer 模型的 PyTorch 实现",
+        "用于精神状态解码的卷积 Transformer",
+        "专注于非侵入式脑电信号处理"
       ],
       "bullets_en": [
-        "Implements EEG classification for P300 speller using xDAWN+LDA baseline and EEGNet in PyTorch.",
-        "Utilizes Leave-One-Subject-Out (LOSO) cross-validation to reveal cross-subject transfer gaps.",
-        "Proposes a fine-tuning calibration strategy to improve performance across subjects."
+        "PyTorch implementation of EEG-Deformer model",
+        "Convolutional transformer for mental state decoding",
+        "Focuses on non-invasive EEG signal processing"
+      ],
+      "url": "https://github.com/requisite-study641/EEG_Deformer",
+      "published": "2026-09-02T20:49:41Z",
+      "source": "",
+      "brief": "基于卷积 Transformer 的脑电解码模型，用于精神状态识别。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Denoise - 脑电图/脑磁图伪影去除工具",
+      "title_en": "MNE-Denoise - Artifact Removal for EEG/MEG",
+      "bullets_zh": [
+        "提供专门针对脑电图和脑磁图的高级伪影去除及信号去噪功能。",
+        "属于广泛使用的非侵入式脑机接口预处理工具MNE-Python生态系统的一部分。"
+      ],
+      "bullets_en": [
+        "Provides advanced artifact removal and signal denoising specifically for EEG and MEG.",
+        "Part of the trusted MNE-Python ecosystem widely used in non-invasive BCI preprocessing."
+      ],
+      "url": "https://github.com/mne-tools/mne-denoise",
+      "published": "2026-09-03T00:18:59Z",
+      "source": "",
+      "brief": "基于MNE-Python的EEG/MEG信号去噪工具，提升非侵入式数据质量。"
+    },
+    {
+      "type": "Project",
+      "level": "General",
+      "title_zh": "neoxai - 精选脑机接口/脑电图开源资源",
+      "title_en": "neoxai - Curated BCI/EEG Open Resources",
+      "bullets_zh": [
+        "整理用于脑电图/脑机接口研究的开放数据集、模型和处理方法。",
+        "归档新闻和论文，简化对非侵入式脑机接口进展的访问。"
+      ],
+      "bullets_en": [
+        "Curates open datasets, models, and processing methods for EEG/BCI research.",
+        "Archives news and papers to streamline access to non-invasive BCI advancements."
+      ],
+      "url": "https://github.com/neowalter/neoxai",
+      "published": "2026-09-03T00:23:58Z",
+      "source": "",
+      "brief": "精选脑机接口开源资源库，整合数据集与工具，助力研究效率。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "P300 拼写器数据分析：基于 xDAWN+LDA 与 EEGNet 的 LOSO 验证对比",
+      "title_en": "P300 Speller Data Analysis: xDAWN+LDA vs EEGNet with LOSO Validation",
+      "bullets_zh": [
+        "使用 PyTorch 实现基于 xDAWN+LDA 和 EEGNet 基线的 P300 拼写器 EEG 分类。",
+        "利用留一受试者交叉验证（LOSO）揭示跨主体迁移差距。",
+        "提出微调校准策略以提高模型在不同用户间的泛化能力。"
+      ],
+      "bullets_en": [
+        "Implements EEG classification for P300 speller using xDAWN+LDA and EEGNet baselines in PyTorch.",
+        "Utilizes Leave-One-Subject-Out (LOSO) cross-validation to highlight cross-subject transfer gaps.",
+        "Proposes a fine-tuning calibration strategy to improve model generalization across users."
       ],
       "url": "https://github.com/senaayy/P300-Speller-Data-Analysis",
       "published": "2026-09-02T21:55:28Z",
-      "source": ""
+      "source": "",
+      "brief": "GitHub 项目，提供 P300 拼写器 EEG 分类代码及跨主体迁移校准策略研究。"
     }
   ]
 }
