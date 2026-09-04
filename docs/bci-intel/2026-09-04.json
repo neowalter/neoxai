@@ -52,5 +52,13 @@
       "source": "clinicaltrials",
       "brief": "临床试验评估 recoveriX PRO 系统结合 EEG、FES 与 VR 用于帕金森病康复的效果。"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 58,
+    "prefiltered": 27,
+    "llm_rows": 12,
+    "kept": 10,
+    "intel": 2,
+    "conflicts_dropped": 0
+  }
 }

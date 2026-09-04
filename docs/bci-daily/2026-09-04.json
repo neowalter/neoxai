@@ -214,5 +214,13 @@
       "source": "rss",
       "brief": "神经科技行业简报，涵盖无线 EEG 融资及多家公司专利与临床动态。"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 58,
+    "prefiltered": 27,
+    "llm_rows": 12,
+    "kept": 10,
+    "intel": 2,
+    "conflicts_dropped": 0
+  }
 }
