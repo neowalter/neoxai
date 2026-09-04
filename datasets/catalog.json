@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-03T09:10:46.224Z",
+  "generatedAt": "2026-09-04T09:03:13.175Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 57
+      "count": 58
     },
     {
       "id": "openneuro",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 3
     }
   ],
   "items": [
@@ -329,7 +329,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2565,
+      "downloads": 2496,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -417,6 +417,52 @@
       "downloads": 15,
       "likes": 0,
       "updatedAt": "2026-09-02T11:37:58.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:THULab/bci_grid_movement_v1",
+      "name": "bci_grid_movement_v1",
+      "owner": "THULab",
+      "url": "https://huggingface.co/datasets/THULab/bci_grid_movement_v1",
+      "source": "huggingface",
+      "description": "bci_grid_movement_v1 (TsFile) Apache TsFile version of webxos/BCI-grid-movement-v1. Records: 5,000 Schema (TsFile structure) split (TAG) — device dimension(s). split (FIELD). session_time (FIELD). fire_intent (FIELD). enemy_active (FIELD). current_streak (FIELD). level (FIELD).…",
+      "tags": [
+        "time-series-forecasting",
+        "timeseries",
+        "tsfile",
+        "time-series"
+      ],
+      "license": null,
+      "downloads": 0,
+      "likes": 0,
+      "updatedAt": "2026-09-04T06:07:40.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:raei/Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
+      "name": "Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
+      "owner": "raei",
+      "url": "https://huggingface.co/datasets/raei/Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
+      "source": "huggingface",
+      "description": "EEG Motor Movement/Imagery Dataset This is an unofficial mirror of the PhysioNet EEG Motor Movement/Imagery Dataset, version 1.0.0. It is not affiliated with or endorsed by the dataset contributors, their institutions, or PhysioNet. Source and documentation Original dataset: Phy…",
+      "tags": [
+        "odc-by",
+        "imagefolder",
+        "document",
+        "image",
+        "neuroscience",
+        "electroencephalography",
+        "brain-computer-interface",
+        "motor-imagery"
+      ],
+      "license": "odc-by",
+      "downloads": 0,
+      "likes": 0,
+      "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -712,31 +758,6 @@
       ]
     },
     {
-      "id": "hf:tankalapavankalyan/eeg-corpus-manifest",
-      "name": "eeg-corpus-manifest",
-      "owner": "tankalapavankalyan",
-      "url": "https://huggingface.co/datasets/tankalapavankalyan/eeg-corpus-manifest",
-      "source": "huggingface",
-      "description": "EEG Canonical Corpus Index A queryable index over 79,313 hours of lossless EEG in a single unified .eegz (Zarr v3) format. The index ships as metadata only; the actual signal bytes live as canonical Zarr stores on S3 and are read on demand. Recordings (canonical, ready to load)…",
-      "tags": [
-        "time-series-forecasting",
-        "cc-by-4.0",
-        "10M<n<100M",
-        "tabular",
-        "pandas",
-        "eeg",
-        "electroencephalography",
-        "neuroscience"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 139,
-      "likes": 0,
-      "updatedAt": "2026-05-20T09:16:25.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "zenodo:21905748",
       "name": "GuttmannFlury2025 — Eye-BCI multimodal dataset: Steady-State Visual Evoked Potentials (re-hosted from Synapse, EEG converted to BDF)",
       "owner": "Guttmann-Flury, Eva",
@@ -753,38 +774,11 @@
         "SSVEP"
       ],
       "license": "cc-zero",
-      "downloads": 1847,
+      "downloads": 1886,
       "likes": null,
       "updatedAt": "2026-08-12T00:00:00.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
-      "tags": [
-        "bids",
-        "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 181,
-      "updatedAt": "2026-09-01T20:46:57.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
       ]
     },
     {
@@ -815,11 +809,28 @@
         "lead-field matrix"
       ],
       "license": "cc-by-4.0",
-      "downloads": 62,
+      "downloads": 76,
       "likes": null,
       "updatedAt": "2026-08-21T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22291953",
+      "name": "Data and Code for \"Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS–EEG Study",
+      "owner": "Hirata, Tatsuo",
+      "url": "https://doi.org/10.5281/zenodo.22291953",
+      "source": "zenodo",
+      "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-04T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
       ]
     },
     {
@@ -929,51 +940,6 @@
       ]
     },
     {
-      "id": "zenodo:22102052",
-      "name": "Infant_EEG_Reveals_Divergent_Developmental_Trajectories_eLife/Dataset",
-      "owner": "Godel, Michel",
-      "url": "https://doi.org/10.5281/zenodo.22102052",
-      "source": "zenodo",
-      "description": "This repository contains original data generated to support the results of our manuscript \" Infant EEG Reveals Divergent Developmental Trajectories in Speech Tracking and Statistical Learning Based on Autism Likelihood \". For details on how the data were input for each analysis,…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-08-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:eegdash/EEGDash",
-      "name": "EEGDash",
-      "owner": "eegdash",
-      "url": "https://github.com/eegdash/EEGDash",
-      "source": "github",
-      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
-      "tags": [
-        "aws",
-        "aws-s3",
-        "data-sharing",
-        "deep-learning",
-        "eeg",
-        "eeg-signals",
-        "electroencephalography",
-        "fair-principles"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 83,
-      "updatedAt": "2026-09-03T02:27:42.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG",
-        "fNIRS",
-        "EMG"
-      ]
-    },
-    {
       "id": "github:yjmantilla/sovabids",
       "name": "sovabids",
       "owner": "yjmantilla",
@@ -1006,7 +972,31 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-03T06:24:03.000Z",
+      "updatedAt": "2026-09-04T06:23:58.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:viranovskaya/neurodata-release-security-audit",
+      "name": "neurodata-release-security-audit",
+      "owner": "viranovskaya",
+      "url": "https://github.com/viranovskaya/neurodata-release-security-audit",
+      "source": "github",
+      "description": "Read-only pre-release security checks for EEG and BIDS datasets",
+      "tags": [
+        "bids",
+        "data-privacy",
+        "eeg",
+        "metadata",
+        "neurodata",
+        "python",
+        "reproducible-research"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-09-03T14:50:19.000Z",
       "modality": [
         "EEG"
       ]
