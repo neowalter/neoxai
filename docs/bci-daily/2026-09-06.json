@@ -397,5 +397,15 @@
       "raw_excerpt": "Code Samples — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand gForceDual ArmBand FreeEE",
       "fetched_at": "2026-09-06T06:16:35.135581+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 78,
+    "prefiltered": 49,
+    "llm_rows": 35,
+    "kept": 12,
+    "intel": 1,
+    "tutorials": 10,
+    "benchmarks": 17,
+    "conflicts_dropped": 0
+  }
 }
