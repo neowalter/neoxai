@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T08:35:18.101Z",
+  "generatedAt": "2026-09-06T08:54:21.961Z",
   "sources": [
     {
       "id": "huggingface",
@@ -294,7 +294,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2624,
+      "downloads": 2495,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -338,7 +338,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 439,
+      "downloads": 438,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -379,7 +379,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 57,
+      "downloads": 61,
       "likes": 0,
       "updatedAt": "2026-09-02T11:37:58.000Z",
       "modality": [
@@ -404,9 +404,30 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 17,
+      "downloads": 27,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:THULab/bci_grid_movement_v1",
+      "name": "bci_grid_movement_v1",
+      "owner": "THULab",
+      "url": "https://huggingface.co/datasets/THULab/bci_grid_movement_v1",
+      "source": "huggingface",
+      "description": "bci_grid_movement_v1 (TsFile) Apache TsFile version of webxos/BCI-grid-movement-v1. Records: 5,000 Schema (TsFile structure) split (TAG) — device dimension(s). split (FIELD). session_time (FIELD). fire_intent (FIELD). enemy_active (FIELD). current_streak (FIELD). level (FIELD).…",
+      "tags": [
+        "time-series-forecasting",
+        "timeseries",
+        "tsfile",
+        "time-series"
+      ],
+      "license": null,
+      "downloads": 17,
+      "likes": 0,
+      "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
         "EEG"
       ]
@@ -428,30 +449,9 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 47,
+      "downloads": 51,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:THULab/bci_grid_movement_v1",
-      "name": "bci_grid_movement_v1",
-      "owner": "THULab",
-      "url": "https://huggingface.co/datasets/THULab/bci_grid_movement_v1",
-      "source": "huggingface",
-      "description": "bci_grid_movement_v1 (TsFile) Apache TsFile version of webxos/BCI-grid-movement-v1. Records: 5,000 Schema (TsFile structure) split (TAG) — device dimension(s). split (FIELD). session_time (FIELD). fire_intent (FIELD). enemy_active (FIELD). current_streak (FIELD). level (FIELD).…",
-      "tags": [
-        "time-series-forecasting",
-        "timeseries",
-        "tsfile",
-        "time-series"
-      ],
-      "license": null,
-      "downloads": 0,
-      "likes": 0,
-      "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
         "EEG"
       ]
@@ -538,7 +538,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 218,
+      "downloads": 219,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -563,7 +563,7 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 328,
+      "downloads": 329,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
@@ -588,7 +588,7 @@
         "classification"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 11,
+      "downloads": 9,
       "likes": 4,
       "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
@@ -629,31 +629,6 @@
       ]
     },
     {
-      "id": "hf:braindecode/bcic2a",
-      "name": "bcic2a",
-      "owner": "braindecode",
-      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
-      "source": "huggingface",
-      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
-      "tags": [
-        "unknown",
-        "braindecode",
-        "eeg",
-        "neuroscience",
-        "brain-computer-interface",
-        "deep-learning"
-      ],
-      "license": "unknown",
-      "downloads": 616,
-      "likes": 0,
-      "updatedAt": "2026-03-14T20:20:10.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "ECoG"
-      ]
-    },
-    {
       "id": "hf:divyanshmaurya1/BCI_Data_new",
       "name": "BCI_Data_new",
       "owner": "divyanshmaurya1",
@@ -671,7 +646,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 259,
+      "downloads": 266,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -695,6 +670,31 @@
       "updatedAt": "2026-06-17T04:37:17.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "hf:braindecode/bcic2a",
+      "name": "bcic2a",
+      "owner": "braindecode",
+      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
+      "source": "huggingface",
+      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
+      "tags": [
+        "unknown",
+        "braindecode",
+        "eeg",
+        "neuroscience",
+        "brain-computer-interface",
+        "deep-learning"
+      ],
+      "license": "unknown",
+      "downloads": 500,
+      "likes": 0,
+      "updatedAt": "2026-03-14T20:20:10.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
       ]
     },
     {
@@ -731,7 +731,7 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 209,
+      "downloads": 215,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
@@ -787,7 +787,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 2,
+      "downloads": 4,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -953,7 +953,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-05T06:23:55.000Z",
+      "updatedAt": "2026-09-06T06:23:53.000Z",
       "modality": [
         "EEG"
       ]
