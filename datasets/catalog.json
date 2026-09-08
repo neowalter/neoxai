@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T09:43:02.340Z",
+  "generatedAt": "2026-09-08T09:05:23.812Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 23
+      "count": 22
     },
     {
       "id": "github",
@@ -319,7 +319,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 1166,
+      "downloads": 1168,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -404,7 +404,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 61,
+      "downloads": 62,
       "likes": 0,
       "updatedAt": "2026-09-02T11:37:58.000Z",
       "modality": [
@@ -425,7 +425,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 23,
+      "downloads": 28,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -490,7 +490,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 57,
+      "downloads": 58,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -514,7 +514,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 58,
+      "downloads": 60,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -763,6 +763,49 @@
       ]
     },
     {
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "tags": [
+        "bids",
+        "eeg",
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 182,
+      "updatedAt": "2026-09-08T07:20:01.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
+      ]
+    },
+    {
+      "id": "zenodo:22215537",
+      "name": "Bidirectional links between food intake and sleep: a naturalistic mobile EEG study",
+      "owner": "Ujma, Péter Przemyslaw",
+      "url": "https://doi.org/10.5281/zenodo.22215537",
+      "source": "zenodo",
+      "description": "This is data and code accompanying our scientific paper with the same title.",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 62,
+      "likes": null,
+      "updatedAt": "2026-08-31T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:22583908",
       "name": "Investigating Cognitive Demands in Software Testing Activities: An EEG-Based Experimental Study",
       "owner": "Silva Farias, Roselane",
@@ -782,17 +825,35 @@
       ]
     },
     {
-      "id": "zenodo:22215537",
-      "name": "Bidirectional links between food intake and sleep: a naturalistic mobile EEG study",
-      "owner": "Ujma, Péter Przemyslaw",
-      "url": "https://doi.org/10.5281/zenodo.22215537",
+      "id": "zenodo:22642960",
+      "name": "Dataset on the Effects of Cognitive and Muscular Fatigue on Brain Function and Dynamic Postural Balance in Older Adults",
+      "owner": "Dodangeh, Zahra",
+      "url": "https://doi.org/10.5281/zenodo.22642960",
       "source": "zenodo",
-      "description": "This is data and code accompanying our scientific paper with the same title.",
+      "description": "This dataset contains EEG and postural balance data collected from older adults to investigate the effects of cognitive and muscular fatigue on brain function and postural control. EEG data were acquired during postural balance assessment, and overall balance index scores were o…",
+      "tags": [
+        "Older adults"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-07T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22642125",
+      "name": "EEG recordings to study visual spatial attention in simulated visual impairment",
+      "owner": "Reichert, Christoph",
+      "url": "https://doi.org/10.5281/zenodo.22642125",
+      "source": "zenodo",
+      "description": "The dataset contains EEG data recorded from 18 participants who perfomed a visual spatial attention task while different stages of visual impairment was simulated. Each participant performed two experiments on different days. The intended target was decoded by a BCI algorithm an…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 40,
+      "downloads": 0,
       "likes": null,
-      "updatedAt": "2026-08-31T00:00:00.000Z",
+      "updatedAt": "2026-09-07T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -806,7 +867,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 4,
+      "downloads": 5,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -883,47 +944,6 @@
       ]
     },
     {
-      "id": "zenodo:22124590",
-      "name": "A large-scale EEG Dataset of upper-limb Movements",
-      "owner": "Sterk, Kathrin",
-      "url": "https://doi.org/10.5281/zenodo.22124590",
-      "source": "zenodo",
-      "description": "This dataset contains uniformly processed EEG recordings from nine movement execution experiments involving 188 able-bodied participants. It comprises 84,608 hand and arm movement execution trials and 11,176 rest trials. To provide a consistent data structure across all experime…",
-      "tags": [
-        "Motor decoding",
-        "grasp",
-        "Reaching",
-        "Arm Movement",
-        "Hand Movement"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-08-27T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22093536",
-      "name": "EEG and Motion Signals Pilot Dataset",
-      "owner": "Iwendi, Celestine",
-      "url": "https://doi.org/10.5281/zenodo.22093536",
-      "source": "zenodo",
-      "description": "This dataset contains a pilot multimodal physiological recording collected using a four-channel wearable EEG device (Muse S). The dataset comprises 17,155 timestamped observations recorded over approximately 67 seconds, with an effective sampling rate of approximately 256 Hz. Th…",
-      "tags": [
-        "EEG",
-        "Motion Signals"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 7,
-      "likes": null,
-      "updatedAt": "2026-08-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -940,7 +960,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-07T06:24:00.000Z",
+      "updatedAt": "2026-09-07T12:24:17.000Z",
       "modality": [
         "EEG"
       ]
@@ -964,7 +984,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-09-07T08:37:00.000Z",
+      "updatedAt": "2026-09-07T13:03:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -990,31 +1010,6 @@
       "downloads": null,
       "likes": 0,
       "updatedAt": "2026-09-07T01:25:08.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:mobinamirsharif/eeg-iclabel-preprocessing",
-      "name": "eeg-iclabel-preprocessing",
-      "owner": "mobinamirsharif",
-      "url": "https://github.com/mobinamirsharif/eeg-iclabel-preprocessing",
-      "source": "github",
-      "description": "Evidence-aware EEG/ICLabel preprocessing and troubleshooting case study using DEAP and BCI Competition IV Dataset 2a.",
-      "tags": [
-        "bci-competition",
-        "brain-computer-interface",
-        "deap",
-        "eeg",
-        "iclabel",
-        "mne-python",
-        "reproducible-research",
-        "signal-processing"
-      ],
-      "license": null,
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-09-04T23:11:34.000Z",
       "modality": [
         "EEG"
       ]
