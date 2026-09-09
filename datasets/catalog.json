@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T09:05:23.812Z",
+  "generatedAt": "2026-09-09T09:10:55.245Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "id": "physionet",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 5
     }
   ],
   "items": [
@@ -181,6 +181,25 @@
       ]
     },
     {
+      "id": "openneuro:ds008701",
+      "name": "Music_EEG",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008701",
+      "source": "openneuro",
+      "description": "MET - Music-Induced Emotion EEG Dataset",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-08-17T08:21:04.491Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "openneuro:ds008610",
       "name": "FUS and Tactile Neuromodulation in NHP VPL - Electrophysiology",
       "owner": "OpenNeuro",
@@ -294,7 +313,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2556,
+      "downloads": 2590,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -319,7 +338,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 1168,
+      "downloads": 1171,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -341,7 +360,7 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 574,
+      "downloads": 575,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
@@ -363,7 +382,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 442,
+      "downloads": 444,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -379,7 +398,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 311,
+      "downloads": 303,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -406,7 +425,7 @@
       "license": "mit",
       "downloads": 62,
       "likes": 0,
-      "updatedAt": "2026-09-02T11:37:58.000Z",
+      "updatedAt": "2026-09-08T20:37:45.000Z",
       "modality": [
         "EEG"
       ]
@@ -449,7 +468,7 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 51,
+      "downloads": 53,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
@@ -490,7 +509,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 58,
+      "downloads": 64,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -538,7 +557,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 178,
+      "downloads": 187,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -580,7 +599,7 @@
       "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 65,
+      "downloads": 64,
       "likes": 0,
       "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
@@ -596,7 +615,7 @@
       "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
       "tags": [],
       "license": null,
-      "downloads": 17,
+      "downloads": 16,
       "likes": 0,
       "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
@@ -621,7 +640,7 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 189,
+      "downloads": 191,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
@@ -646,7 +665,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 266,
+      "downloads": 280,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -681,83 +700,9 @@
       "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
       "tags": [],
       "license": null,
-      "downloads": 9,
+      "downloads": 8,
       "likes": 0,
       "updatedAt": "2026-06-13T13:48:10.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sulagnasaharasha/bci-temporal",
-      "name": "bci-temporal",
-      "owner": "sulagnasaharasha",
-      "url": "https://huggingface.co/datasets/sulagnasaharasha/bci-temporal",
-      "source": "huggingface",
-      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
-      "tags": [
-        "image-classification",
-        "image-to-image",
-        "cc-by-4.0",
-        "optimized-parquet",
-        "image",
-        "geospatial",
-        "arxiv:2604.23019",
-        "doi:10.57967/hf/8132"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 224,
-      "likes": 0,
-      "updatedAt": "2026-04-28T14:57:22.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:braindecode/bcic2a",
-      "name": "bcic2a",
-      "owner": "braindecode",
-      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
-      "source": "huggingface",
-      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
-      "tags": [
-        "unknown",
-        "braindecode",
-        "eeg",
-        "neuroscience",
-        "brain-computer-interface",
-        "deep-learning"
-      ],
-      "license": "unknown",
-      "downloads": 464,
-      "likes": 0,
-      "updatedAt": "2026-03-14T20:20:10.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "ECoG"
-      ]
-    },
-    {
-      "id": "zenodo:21905748",
-      "name": "GuttmannFlury2025 — Eye-BCI multimodal dataset: Steady-State Visual Evoked Potentials (re-hosted from Synapse, EEG converted to BDF)",
-      "owner": "Guttmann-Flury, Eva",
-      "url": "https://doi.org/10.5281/zenodo.21905748",
-      "source": "zenodo",
-      "description": "Re-hosted EEG multimodal data (Steady-State Visual Evoked Potentials) from Guttmann-Flury, Sheng &amp; Zhu (2025), originally deposited on Synapse (DOI: 10.7303/syn64005218) under a CC0 public domain dedication. EEG data converted from Neuroscan CSV to BDF format for ~3x space r…",
-      "tags": [
-        "EEG",
-        "BCI",
-        "brain-computer interface",
-        "eye-tracking",
-        "BDF",
-        "MOABB",
-        "SSVEP"
-      ],
-      "license": "cc-zero",
-      "downloads": 1922,
-      "likes": null,
-      "updatedAt": "2026-08-12T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -817,9 +762,25 @@
         "Software Testing"
       ],
       "license": "cc-by-4.0",
-      "downloads": 8,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-09-07T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22666114",
+      "name": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
+      "owner": "villena, mario",
+      "url": "https://doi.org/10.5281/zenodo.22666114",
+      "source": "zenodo",
+      "description": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-08T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -835,7 +796,7 @@
         "Older adults"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
       "updatedAt": "2026-09-07T00:00:00.000Z",
       "modality": [
@@ -867,7 +828,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 5,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -944,6 +905,47 @@
       ]
     },
     {
+      "id": "github:yjmantilla/sovabids",
+      "name": "sovabids",
+      "owner": "yjmantilla",
+      "url": "https://github.com/yjmantilla/sovabids",
+      "source": "github",
+      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
+      "tags": [],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 13,
+      "updatedAt": "2026-09-09T07:10:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
+      "name": "NMT-4k-EEG-Dataset",
+      "owner": "dll-ncai",
+      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
+      "source": "github",
+      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
+      "tags": [
+        "abnormality-detection",
+        "biomedical-signals",
+        "clinical-eeg",
+        "clinical-reports",
+        "eeg",
+        "eeg-dataset",
+        "electroencephalography",
+        "event-annotations"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-09-09T07:36:15.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -960,56 +962,28 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-07T12:24:17.000Z",
+      "updatedAt": "2026-09-09T06:24:06.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:viranovskaya/neurodata-release-security-audit",
-      "name": "neurodata-release-security-audit",
-      "owner": "viranovskaya",
-      "url": "https://github.com/viranovskaya/neurodata-release-security-audit",
+      "id": "github:gifale95/EMD",
+      "name": "EMD",
+      "owner": "gifale95",
+      "url": "https://github.com/gifale95/EMD",
       "source": "github",
-      "description": "Read-only pre-release security checks for EEG and BIDS datasets",
+      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
       "tags": [
-        "bids",
-        "data-privacy",
         "eeg",
-        "metadata",
-        "neurodata",
-        "python",
-        "reproducible-research"
+        "human-vision",
+        "open-dataset",
+        "videos"
       ],
-      "license": "MIT",
+      "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-09-07T13:03:25.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:akaneriya1/no-eeg-sleep-staging",
-      "name": "no-eeg-sleep-staging",
-      "owner": "akaneriya1",
-      "url": "https://github.com/akaneriya1/no-eeg-sleep-staging",
-      "source": "github",
-      "description": "Sleep staging (Wake/Light/Deep/REM) from wrist heart rate + accelerometry only, no EEG, with honest leave-one-subject-out evaluation on the Walch et al. PhysioNet dataset.",
-      "tags": [
-        "accelerometry",
-        "heart-rate",
-        "hmm",
-        "leave-one-subject-out",
-        "lightgbm",
-        "machine-learning",
-        "python",
-        "sleep-science"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-09-07T01:25:08.000Z",
+      "updatedAt": "2026-09-08T09:14:37.000Z",
       "modality": [
         "EEG"
       ]
