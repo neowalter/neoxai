@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T09:10:55.245Z",
+  "generatedAt": "2026-09-10T09:10:51.039Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 22
+      "count": 21
     },
     {
       "id": "github",
       "ok": true,
-      "count": 5
+      "count": 4
     }
   ],
   "items": [
@@ -411,7 +411,7 @@
       "owner": "shahpalash10",
       "url": "https://huggingface.co/datasets/shahpalash10/BCI-Neurofeedback-Desktop",
       "source": "huggingface",
-      "description": "🧠 BCI Neurofeedback Desktop Application Suite Standalone, zero-dependency desktop application suite for real-time EEG neurofeedback training, cognitive psychometrics, and BCI-driven gaming. 📥 Direct Public Downloads Platform Architecture Installer Direct Download Link macOS (A…",
+      "description": "🧠 BCI Neurofeedback Desktop Application Suite Standalone, zero-dependency desktop application suite for real-time EEG neurofeedback training, cognitive psychometrics, and BCI-driven gaming. 📥 Direct Public Downloads (Latest Release v1.1.2) Platform Architecture Installer Direc…",
       "tags": [
         "robotics",
         "mit",
@@ -425,7 +425,25 @@
       "license": "mit",
       "downloads": 62,
       "likes": 0,
-      "updatedAt": "2026-09-08T20:37:45.000Z",
+      "updatedAt": "2026-09-09T17:57:01.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for the paper \"\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheticdataforeeg] Dataset Details This repo contains three synthetic EEG d…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 0,
+      "likes": 1,
+      "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
         "EEG"
       ]
@@ -708,33 +726,6 @@
       ]
     },
     {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
-      "tags": [
-        "bids",
-        "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 182,
-      "updatedAt": "2026-09-08T07:20:01.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
-      ]
-    },
-    {
       "id": "zenodo:22215537",
       "name": "Bidirectional links between food intake and sleep: a naturalistic mobile EEG study",
       "owner": "Ujma, Péter Przemyslaw",
@@ -940,7 +931,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-09-09T07:36:15.000Z",
+      "updatedAt": "2026-09-10T04:17:34.000Z",
       "modality": [
         "EEG"
       ]
@@ -962,7 +953,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-09T06:24:06.000Z",
+      "updatedAt": "2026-09-10T06:24:10.000Z",
       "modality": [
         "EEG"
       ]
