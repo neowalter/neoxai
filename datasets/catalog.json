@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T09:10:51.039Z",
+  "generatedAt": "2026-09-11T09:08:17.724Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 21
+      "count": 20
     },
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 5
     }
   ],
   "items": [
@@ -313,7 +313,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2590,
+      "downloads": 2705,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -338,7 +338,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 1171,
+      "downloads": 1350,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -360,7 +360,7 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 575,
+      "downloads": 576,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
@@ -382,7 +382,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 444,
+      "downloads": 445,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -398,7 +398,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 303,
+      "downloads": 327,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -423,7 +423,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 62,
+      "downloads": 153,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -441,7 +441,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 0,
+      "downloads": 13,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
@@ -462,7 +462,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 28,
+      "downloads": 29,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -486,25 +486,9 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 53,
+      "downloads": 62,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:corquaerit/things-eeg-spikes-LC",
-      "name": "things-eeg-spikes-LC",
-      "owner": "corquaerit",
-      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
-      "source": "huggingface",
-      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
-      "tags": [],
-      "license": null,
-      "downloads": 116,
-      "likes": 0,
-      "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
         "EEG"
       ]
@@ -527,7 +511,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 64,
+      "downloads": 70,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -551,9 +535,25 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 60,
+      "downloads": 61,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:corquaerit/things-eeg-spikes-LC",
+      "name": "things-eeg-spikes-LC",
+      "owner": "corquaerit",
+      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
+      "source": "huggingface",
+      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
+      "tags": [],
+      "license": null,
+      "downloads": 77,
+      "likes": 0,
+      "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
         "EEG"
       ]
@@ -575,7 +575,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 187,
+      "downloads": 232,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -600,7 +600,7 @@
         "classification"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 8,
+      "downloads": 7,
       "likes": 4,
       "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
@@ -617,25 +617,9 @@
       "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 64,
+      "downloads": 63,
       "likes": 0,
       "updatedAt": "2026-07-07T00:30:10.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "name": "kahlus-raw-eeg-waveforms-efa0d90",
-      "owner": "kgarg47",
-      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "source": "huggingface",
-      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
-      "tags": [],
-      "license": null,
-      "downloads": 16,
-      "likes": 0,
-      "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -658,9 +642,25 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 191,
+      "downloads": 237,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "name": "kahlus-raw-eeg-waveforms-efa0d90",
+      "owner": "kgarg47",
+      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "source": "huggingface",
+      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
+      "tags": [],
+      "license": null,
+      "downloads": 16,
+      "likes": 0,
+      "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -683,7 +683,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 280,
+      "downloads": 272,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -702,25 +702,9 @@
         "benchmark-data"
       ],
       "license": "other",
-      "downloads": 20,
+      "downloads": 18,
       "likes": 0,
       "updatedAt": "2026-06-17T04:37:17.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:smithjacki/eeg-emotion-depression",
-      "name": "eeg-emotion-depression",
-      "owner": "smithjacki",
-      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
-      "source": "huggingface",
-      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
-      "tags": [],
-      "license": null,
-      "downloads": 8,
-      "likes": 0,
-      "updatedAt": "2026-06-13T13:48:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -737,6 +721,22 @@
       "downloads": 62,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22696862",
+      "name": "EEG data and analysis code for handwriting across handedness groups",
+      "owner": "Ramos, Yago Emanoel",
+      "url": "https://doi.org/10.5281/zenodo.22696862",
+      "source": "zenodo",
+      "description": "Repository Description This repository contains the data and code for our paper (currently available as a preprint: 10.48550/arXiv.2609.10870 ). Instructions for Use To ensure the provided scripts run automatically, all files must be placed in the same directory as the extracted…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-10T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -839,7 +839,7 @@
         "lead-field matrix"
       ],
       "license": "cc-by-4.0",
-      "downloads": 76,
+      "downloads": 79,
       "likes": null,
       "updatedAt": "2026-08-21T00:00:00.000Z",
       "modality": [
@@ -879,19 +879,31 @@
       ]
     },
     {
-      "id": "zenodo:22131008",
-      "name": "Chewing during a visuospatial 2-back working-memory task - EEG dataset",
-      "owner": "Espinoza, Sebastian",
-      "url": "https://doi.org/10.5281/zenodo.22131008",
-      "source": "zenodo",
-      "description": "64-channel EEG with bipolar masseter EMG from 49 adults performing a visuospatial 2-back working-memory task in two blocks. In the case group (E3S) the second block was performed while chewing gum; in the control group (E3C) the same block was repeated without chewing, which mak…",
-      "tags": [],
-      "license": "cc-by-nc-4.0",
-      "downloads": 5,
-      "likes": null,
-      "updatedAt": "2026-08-27T00:00:00.000Z",
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
+      "tags": [
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 84,
+      "updatedAt": "2026-09-11T00:47:03.000Z",
       "modality": [
         "EEG",
+        "MEG",
+        "iEEG",
+        "fNIRS",
         "EMG"
       ]
     },
@@ -931,7 +943,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-09-10T04:17:34.000Z",
+      "updatedAt": "2026-09-11T04:17:52.000Z",
       "modality": [
         "EEG"
       ]
@@ -953,28 +965,29 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-10T06:24:10.000Z",
+      "updatedAt": "2026-09-10T09:11:51.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:gifale95/EMD",
-      "name": "EMD",
-      "owner": "gifale95",
-      "url": "https://github.com/gifale95/EMD",
+      "id": "github:protire0821/EEG_visualization",
+      "name": "EEG_visualization",
+      "owner": "protire0821",
+      "url": "https://github.com/protire0821/EEG_visualization",
       "source": "github",
-      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
+      "description": "Desktop EEG viewer: waveform, animated topomap, and seizure annotations for EDF/BDF datasets",
       "tags": [
+        "chb-mit",
         "eeg",
-        "human-vision",
-        "open-dataset",
-        "videos"
+        "mne-python",
+        "neuroscience",
+        "pyqt6"
       ],
-      "license": "NOASSERTION",
+      "license": "MIT",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-09-08T09:14:37.000Z",
+      "updatedAt": "2026-09-11T09:04:55.000Z",
       "modality": [
         "EEG"
       ]
