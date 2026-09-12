@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T09:08:17.724Z",
+  "generatedAt": "2026-09-12T08:49:42.722Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 10
+      "count": 9
     },
     {
       "id": "physionet",
@@ -277,25 +277,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008446",
-      "name": "Random and Sequential Order Finger Motor Imagery",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008446",
-      "source": "openneuro",
-      "description": "Random and Sequential Order Finger Motor Imagery",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-21T16:52:24.199Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:LidongYang/EEG_Image_decode",
       "name": "EEG_Image_decode",
       "owner": "LidongYang",
@@ -313,7 +294,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2705,
+      "downloads": 2772,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -338,7 +319,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 1350,
+      "downloads": 1382,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -398,7 +379,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 327,
+      "downloads": 311,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -423,7 +404,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 153,
+      "downloads": 160,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -441,7 +422,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 13,
+      "downloads": 25,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
@@ -462,7 +443,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 29,
+      "downloads": 32,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -486,7 +467,7 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 62,
+      "downloads": 68,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
@@ -511,7 +492,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 70,
+      "downloads": 75,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -551,7 +532,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 77,
+      "downloads": 44,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
@@ -575,7 +556,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 232,
+      "downloads": 264,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -600,7 +581,7 @@
         "classification"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 7,
+      "downloads": 8,
       "likes": 4,
       "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
@@ -617,7 +598,7 @@
       "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 63,
+      "downloads": 67,
       "likes": 0,
       "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
@@ -642,7 +623,7 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 237,
+      "downloads": 233,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
@@ -658,7 +639,7 @@
       "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
       "tags": [],
       "license": null,
-      "downloads": 16,
+      "downloads": 23,
       "likes": 0,
       "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
@@ -683,9 +664,34 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 272,
+      "downloads": 269,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sulagnasaharasha/bci-temporal",
+      "name": "bci-temporal",
+      "owner": "sulagnasaharasha",
+      "url": "https://huggingface.co/datasets/sulagnasaharasha/bci-temporal",
+      "source": "huggingface",
+      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
+      "tags": [
+        "image-classification",
+        "image-to-image",
+        "cc-by-4.0",
+        "optimized-parquet",
+        "image",
+        "geospatial",
+        "arxiv:2604.23019",
+        "doi:10.57967/hf/8132"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 312,
+      "likes": 0,
+      "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
         "EEG"
       ]
@@ -702,7 +708,7 @@
         "benchmark-data"
       ],
       "license": "other",
-      "downloads": 18,
+      "downloads": 16,
       "likes": 0,
       "updatedAt": "2026-06-17T04:37:17.000Z",
       "modality": [
@@ -718,7 +724,7 @@
       "description": "This is data and code accompanying our scientific paper with the same title.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 62,
+      "downloads": 73,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
       "modality": [
@@ -756,6 +762,27 @@
       "downloads": 9,
       "likes": null,
       "updatedAt": "2026-09-07T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22660211",
+      "name": "Separable Codes for Time and Decision in Human Temporal Perception - Data",
+      "owner": "Silvestrin, Mateus",
+      "url": "https://doi.org/10.5281/zenodo.22660211",
+      "source": "zenodo",
+      "description": "This dataset contains raw and preprocessed EEG data from the study \"Separable Codes for Time and Decision in Human Temporal Perception\" (Silvestrin et al., https://doi.org/10.64898/2026.04.28.721130).",
+      "tags": [
+        "EEG",
+        "timing",
+        "time perception",
+        "MVPA"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-08T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -863,22 +890,6 @@
       ]
     },
     {
-      "id": "zenodo:22168675",
-      "name": "INFANTIL SPAZM SINDROMI BO'LGAN BOLALARDA MIYADAGI STRUKTURAVIY O'ZGARISHLARNI KUZATISH",
-      "owner": "Safarov Saydullo Ubaydullo oʻgʻli",
-      "url": "https://doi.org/10.5281/zenodo.22168675",
-      "source": "zenodo",
-      "description": "Infantil spazmlar sindromi (ISS), shuningdek, Vest sindromi sifatida ham tanilgan, hayotning birinchi yilida namoyon bo'ladigan va klinik xususiyatlarning uchligi: ketma-ket spazmlar, psixomotor regressiya va elektroensefalogrammada (EEG) gipsaritmiya bilan tavsiflanadigan og'ir…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-08-30T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -898,7 +909,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 84,
-      "updatedAt": "2026-09-11T00:47:03.000Z",
+      "updatedAt": "2026-09-11T17:42:05.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -965,7 +976,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-10T09:11:51.000Z",
+      "updatedAt": "2026-09-12T00:23:41.000Z",
       "modality": [
         "EEG"
       ]
@@ -987,7 +998,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-09-11T09:04:55.000Z",
+      "updatedAt": "2026-09-11T12:27:37.000Z",
       "modality": [
         "EEG"
       ]
