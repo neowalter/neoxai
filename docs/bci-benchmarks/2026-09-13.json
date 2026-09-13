@@ -1,11 +1,17 @@
 {
   "date": "2026-09-13",
   "generated_at": "2026-09-13T04:22:39.042500+00:00",
-  "item_count": 22,
+  "item_count": 18,
   "types": {
-    "Benchmark": 22
+    "Benchmark": 18
   },
   "highlights": [
+    {
+      "title_zh": "华中科技大学BCIML EEG解码基准与论文代码库",
+      "title_en": "HUST BCIML EEG Decoding Benchmark and Paper-to-Code Gallery",
+      "url": "https://github.com/sylyoung/HUST-BCIML",
+      "brief": "华科BCIML发布统一EEG解码基准和论文代码检索库，便于复现比较。"
+    },
     {
       "title_zh": "心算任务期间脑电数据集 v1.0.0",
       "title_en": "EEG During Mental Arithmetic Tasks v1.0.0",
@@ -17,16 +23,41 @@
       "title_en": "Tsinghua University BCI Research Group Dataset Downloads",
       "url": "http://bci.med.tsinghua.edu.cn/download.html",
       "brief": "清华BCI组基准数据集下载页，支撑无创EEG评测。"
-    },
-    {
-      "title_zh": "华中科技大学BCIML EEG解码基准与论文代码库",
-      "title_en": "HUST BCIML EEG Decoding Benchmark and Paper-to-Code Gallery",
-      "url": "https://github.com/sylyoung/HUST-BCIML",
-      "brief": "华科BCIML发布统一EEG解码基准和论文代码检索库，便于复现比较。"
     }
   ],
-  "github_path": "docs/bci-benchmarks/latest.json",
+  "github_path": "docs/bci-benchmarks/2026-09-13.md",
   "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "华中科技大学BCIML EEG解码基准与论文代码库",
+      "title_en": "HUST BCIML EEG Decoding Benchmark and Paper-to-Code Gallery",
+      "bullets_zh": [
+        "华中科技大学BCIML于2026年9月12日在GitHub发布统一EEG解码基准与可检索论文代码库。",
+        "它汇总非侵入式BCI解码方法并提供可复现代码链接。",
+        "适合研究者比较EEG模型并查找实现。"
+      ],
+      "bullets_en": [
+        "HUST BCIML released a unified EEG-decoding benchmark and searchable paper-to-code gallery on GitHub (Sep 12, 2026).",
+        "It aggregates non-invasive BCI decoding methods with reproducible code links.",
+        "Useful for researchers comparing EEG models and finding implementations."
+      ],
+      "url": "https://github.com/sylyoung/HUST-BCIML",
+      "published": "2026-09-12T13:39:57Z",
+      "source": "github",
+      "brief": "华科BCIML发布统一EEG解码基准和论文代码检索库，便于复现比较。",
+      "language": "en",
+      "tags": [
+        "benchmark",
+        "eeg",
+        "bciml",
+        "hust",
+        "paper-to-code"
+      ],
+      "brief_en": "HUST BCIML releases a unified EEG decoding benchmark and paper-to-code gallery for reproducible non-invasive BCI research.",
+      "raw_excerpt": "Unified EEG-decoding benchmark and a searchable paper-to-code gallery for the Brain-Computer Interface and Machine Learning Lab (BCIML), HUST.",
+      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
+    },
     {
       "type": "Benchmark",
       "level": "Intermediate",
@@ -88,33 +119,118 @@
     },
     {
       "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "华中科技大学BCIML EEG解码基准与论文代码库",
-      "title_en": "HUST BCIML EEG Decoding Benchmark and Paper-to-Code Gallery",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.7.1 发布",
+      "title_en": "[NeuroTechX/moabb] v1.7.1",
       "bullets_zh": [
-        "华中科技大学BCIML于2026年9月12日在GitHub发布统一EEG解码基准与可检索论文代码库。",
-        "它汇总非侵入式BCI解码方法并提供可复现代码链接。",
-        "适合研究者比较EEG模型并查找实现。"
+        "MOABB 1.7.1在NEMAR下载边界捕获泄漏的httpx.TransportError异常。",
+        "当通过代理或HTTP传输失败无法访问NEMAR时，它保持本地缓存的上游数据集数据可用。"
       ],
       "bullets_en": [
-        "HUST BCIML released a unified EEG-decoding benchmark and searchable paper-to-code gallery on GitHub (Sep 12, 2026).",
-        "It aggregates non-invasive BCI decoding methods with reproducible code links.",
-        "Useful for researchers comparing EEG models and finding implementations."
+        "MOABB 1.7.1 catches leaked httpx.TransportError exceptions at NEMAR download boundaries.",
+        "It keeps locally cached upstream dataset data usable when NEMAR is unreachable through a proxy or HTTP transport failure."
       ],
-      "url": "https://github.com/sylyoung/HUST-BCIML",
-      "published": "2026-09-12T13:39:57Z",
-      "source": "github",
-      "brief": "华科BCIML发布统一EEG解码基准和论文代码检索库，便于复现比较。",
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.1",
+      "published": "2026-08-31T21:34:54Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.7.1修复NEMAR网络错误下缓存数据可用性。",
       "language": "en",
       "tags": [
+        "moabb",
         "benchmark",
         "eeg",
-        "bciml",
-        "hust",
-        "paper-to-code"
+        "bci",
+        "release"
       ],
-      "brief_en": "HUST BCIML releases a unified EEG decoding benchmark and paper-to-code gallery for reproducible non-invasive BCI research.",
-      "raw_excerpt": "Unified EEG-decoding benchmark and a searchable paper-to-code gallery for the Brain-Computer Interface and Machine Learning Lab (BCIML), HUST.",
+      "brief_en": "MOABB v1.7.1 fixes NEMAR transport errors to keep cached EEG benchmark data usable.",
+      "raw_excerpt": "MOABB 1.7.1 keeps locally cached upstream dataset data usable when NEMAR is unreachable through a proxy or another HTTP transport failure. - Catch leaked `httpx.TransportError` exceptions at all NEMAR download boundaries. - Preserve the default `auto` provider fallback to the dataset's own downloader. See [PR #1171](https://github.com/NeuroTechX/moabb/pull/1171).",
+      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.7.0 发布",
+      "title_en": "[NeuroTechX/moabb] v1.7.0",
+      "bullets_zh": [
+        "MOABB 1.7.0让BaseDataset.get_data在NEMAR预取前使用完整处理缓存，在网络或NEMAR不可用时保持离线访问。",
+        "它还为dataset_bubble_plot提供可复现布局，使基准可视化更稳定。"
+      ],
+      "bullets_en": [
+        "MOABB 1.7.0 makes BaseDataset.get_data use a complete processing cache before NEMAR prefetch, preserving offline access when network or NEMAR is unavailable.",
+        "It also gives dataset_bubble_plot reproducible layouts for more stable benchmark visualizations."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.0",
+      "published": "2026-08-31T16:47:03Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.7.0改善离线缓存与气泡图可复现性。",
+      "language": "en",
+      "tags": [
+        "moabb",
+        "benchmark",
+        "eeg",
+        "bci",
+        "release"
+      ],
+      "brief_en": "MOABB v1.7.0 improves offline cached-data access and reproducible dataset bubble plots.",
+      "raw_excerpt": "MOABB 1.7.0 fixes offline cached-data access and makes dataset bubble plots reproducible. - `BaseDataset.get_data` now uses a complete processing cache before NEMAR prefetch, so cached datasets remain usable when NEMAR or the network is unavailable. - `dataset_bubble_plot` now has reproducible layouts by default and accepts `random_state` for controlled alternatives. Full changelog: https://moabb.",
+      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.6.1 发布",
+      "title_en": "[NeuroTechX/moabb] v1.6.1",
+      "bullets_zh": [
+        "MOABB 1.6.1是自v1.6.0以来包含八条更新日志的缺陷修复版本。",
+        "它修复BNCI2025_001数据加载中的标签泄漏问题，提升基准评测完整性。"
+      ],
+      "bullets_en": [
+        "MOABB 1.6.1 is a bug-fix release with eight changelog entries since v1.6.0.",
+        "It fixes BNCI2025_001 label leakage in data loading, improving benchmark evaluation integrity."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.6.1",
+      "published": "2026-08-27T07:13:20Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.6.1修复BNCI2025_001标签泄漏。",
+      "language": "en",
+      "tags": [
+        "moabb",
+        "benchmark",
+        "eeg",
+        "bci",
+        "release"
+      ],
+      "brief_en": "MOABB v1.6.1 fixes BNCI2025_001 label leakage and other benchmark bugs.",
+      "raw_excerpt": "MOABB 1.6.1 — a bug-fix release: 8 changelog entries since [v1.6.0](https://github.com/NeuroTechX/moabb/releases/tag/v1.6.0). 📖 **[Full changelog](https://moabb.neurotechx.com/docs/whats_new.html)** — this is a summary. ### The one that matters **`BNCI2025_001` was leaking its labels.** `read_raw_eeglab` types any channel it does not recognise as `eeg`, and this dataset ships seven that it does no",
+      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.6.0 发布",
+      "title_en": "[NeuroTechX/moabb] v1.6.0",
+      "bullets_zh": [
+        "MOABB 1.6.0自v1.5以来包含68次提交、81条更新日志，并有21位署名贡献者。",
+        "它重点扩展了用于EEG BCI评测的已收录基准数据集目录。"
+      ],
+      "bullets_en": [
+        "MOABB 1.6.0 includes 68 commits, 81 changelog entries, and contributions from 21 credited contributors since v1.5.",
+        "It highlights a large expansion of the cataloged benchmark datasets for EEG BCI evaluation."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.6.0",
+      "published": "2026-08-26T13:13:39Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.6.0大幅扩展EEG BCI基准数据集目录。",
+      "language": "en",
+      "tags": [
+        "moabb",
+        "benchmark",
+        "eeg",
+        "bci",
+        "release"
+      ],
+      "brief_en": "MOABB v1.6.0 expands the catalog of EEG BCI benchmark datasets and adds many changes.",
+      "raw_excerpt": "MOABB 1.6.0 — 68 commits and 81 changelog entries since [v1.5](https://github.com/NeuroTechX/moabb/releases/tag/v1.5), from 21 credited contributors. 📖 **[Full changelog](https://moabb.neurotechx.com/docs/whats_new.html)** — this is a summary. ### Highlights **Datasets.** A large expansion of the catalogue: imagined speech arrives as its own category of imagery datasets, with a dedicated documenta",
       "fetched_at": "2026-09-13T04:22:39.030159+00:00"
     },
     {
@@ -148,96 +264,6 @@
       "brief_en": "MOABB docs update uses TLCenter in an RPA example to clarify EEG BCI evaluation pipelines.",
       "raw_excerpt": "DOC use TLCenter for example on RPA (#1174)",
       "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "BCI 竞赛",
-      "title_en": "BCI Competitions",
-      "bullets_zh": [
-        "主要脑机接口竞赛和数据集的历史档案。",
-        "作为该领域标准化评估方法的参考。"
-      ],
-      "bullets_en": [
-        "Historical archive of major Brain-Computer Interface competitions and datasets.",
-        "Serves as a reference for standardizing evaluation methods in the field."
-      ],
-      "url": "https://www.bbci.de/competition/",
-      "published": "",
-      "source": "benchmark",
-      "brief": "列出历史 BCI 竞赛及相关基准数据集的综合目录，用于方法验证。",
-      "language": "en",
-      "tags": [
-        "benchmark",
-        "competition",
-        "bci",
-        "data",
-        "bbci"
-      ],
-      "brief_en": "Comprehensive directory listing historical BCI competitions and associated benchmark datasets for method validation.",
-      "raw_excerpt": "BCI Competitions BCI Competitions BCI Competition I BCI Competition II (also called BCI Competition 2003) BCI Competition III BCI Competition IV References Please help us to make the list of references complete and keep it up to date by reporting unlisted papers to ‹benjamin.blankertz@tu-berlin.de› , preferably PubMed ID (PMID) or in BibTex format. B. Blankertz, K.R. M�ller, D.J. Krusienski, G. Sc",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "BCI 竞赛 IV",
-      "title_en": "BCI Competition IV",
-      "bullets_zh": [
-        "BCI 竞赛第四版的具体页面，提供数据集下载。",
-        "侧重于验证信号处理和分类方法。"
-      ],
-      "bullets_en": [
-        "Specific page for the fourth iteration of the BCI competition with dataset downloads.",
-        "Focuses on validating signal processing and classification methods."
-      ],
-      "url": "https://www.bbci.de/competition/iv/",
-      "published": "",
-      "source": "benchmark",
-      "brief": "用于验证信号处理算法的 BCI 竞赛 IV 数据集专用资源页面。",
-      "language": "en",
-      "tags": [
-        "benchmark",
-        "competition",
-        "bci",
-        "data",
-        "iv",
-        "bbci"
-      ],
-      "brief_en": "Dedicated resource page for BCI Competition IV datasets used to validate signal processing algorithms.",
-      "raw_excerpt": "BCI Competition IV BCI Competition IV [ goals | news | data sets | schedule | submission | download | organizers | references ] Goals of the organizers The goal of the \"BCI Competition IV\" is to validate signal processing and classification methods for Brain-Computer Interfaces (BCIs). Compared to the past BCI Competitions, new challanging problems are addressed that are highly relevant for practi",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "脑电运动/想象数据集 v1.0.0",
-      "title_en": "EEG Motor Movement/Imagery Dataset v1.0.0",
-      "bullets_zh": [
-        "托管于 PhysioNet 的标准化脑电数据集，用于运动想象分类任务。",
-        "v1.0.0 版本确保数据完整性和可访问性，供 BCI 算法开发使用。",
-        "广泛用于非侵入式解码模型的研究基准测试。"
-      ],
-      "bullets_en": [
-        "Standardized EEG dataset for motor imagery classification tasks hosted on PhysioNet.",
-        "Version 1.0.0 ensures data integrity and accessibility for BCI algorithm development.",
-        "Widely used in research for benchmarking non-invasive decoding models."
-      ],
-      "url": "https://physionet.org/content/eegmmidb/1.0.0/",
-      "published": "",
-      "source": "benchmark",
-      "brief": "托管于 PhysioNet 的标准化脑电运动想象数据集，是 BCI 算法基准测试的关键资源。",
-      "language": "en",
-      "tags": [
-        "benchmark",
-        "eeg",
-        "motor-imagery",
-        "physionet",
-        "dataset"
-      ],
-      "brief_en": "Standardized EEG dataset for motor imagery classification hosted on PhysioNet, essential for BCI algorithm benchmarking.",
-      "raw_excerpt": "EEG Motor Movement/Imagery Dataset v1.0.0 Version: 1.0.0 --> Menu Share About FAQs Explore Data View datasets Software View software Challenges View challenges Tutorials View tutorials Cancel Search Search PhysioNet Log in Share About FAQs Data View datasets Software View software Challenges View challenges Tutorials View tutorials Database Open Access EEG Motor Movement/Imagery Dataset Gerwin Sch",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
     },
     {
       "type": "Benchmark",
@@ -337,35 +363,6 @@
     },
     {
       "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB v1.7.1 发布",
-      "title_en": "[NeuroTechX/moabb] v1.7.1",
-      "bullets_zh": [
-        "MOABB 1.7.1在NEMAR下载边界捕获泄漏的httpx.TransportError异常。",
-        "当通过代理或HTTP传输失败无法访问NEMAR时，它保持本地缓存的上游数据集数据可用。"
-      ],
-      "bullets_en": [
-        "MOABB 1.7.1 catches leaked httpx.TransportError exceptions at NEMAR download boundaries.",
-        "It keeps locally cached upstream dataset data usable when NEMAR is unreachable through a proxy or HTTP transport failure."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.1",
-      "published": "2026-08-31T21:34:54Z",
-      "source": "benchmark",
-      "brief": "MOABB v1.7.1修复NEMAR网络错误下缓存数据可用性。",
-      "language": "en",
-      "tags": [
-        "moabb",
-        "benchmark",
-        "eeg",
-        "bci",
-        "release"
-      ],
-      "brief_en": "MOABB v1.7.1 fixes NEMAR transport errors to keep cached EEG benchmark data usable.",
-      "raw_excerpt": "MOABB 1.7.1 keeps locally cached upstream dataset data usable when NEMAR is unreachable through a proxy or another HTTP transport failure. - Catch leaked `httpx.TransportError` exceptions at all NEMAR download boundaries. - Preserve the default `auto` provider fallback to the dataset's own downloader. See [PR #1171](https://github.com/NeuroTechX/moabb/pull/1171).",
-      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Benchmark",
       "level": "Advanced",
       "title_zh": "MOABB预发布1.7.1",
       "title_en": "MOABB Pre-release 1.7.1",
@@ -394,35 +391,6 @@
       ],
       "brief_en": "MOABB prepares pre-release 1.7.1, bundling recent benchmark fixes and docs updates for EEG BCI users.",
       "raw_excerpt": "Pre-release 1.7.1 (#1171)",
-      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB v1.7.0 发布",
-      "title_en": "[NeuroTechX/moabb] v1.7.0",
-      "bullets_zh": [
-        "MOABB 1.7.0让BaseDataset.get_data在NEMAR预取前使用完整处理缓存，在网络或NEMAR不可用时保持离线访问。",
-        "它还为dataset_bubble_plot提供可复现布局，使基准可视化更稳定。"
-      ],
-      "bullets_en": [
-        "MOABB 1.7.0 makes BaseDataset.get_data use a complete processing cache before NEMAR prefetch, preserving offline access when network or NEMAR is unavailable.",
-        "It also gives dataset_bubble_plot reproducible layouts for more stable benchmark visualizations."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.0",
-      "published": "2026-08-31T16:47:03Z",
-      "source": "benchmark",
-      "brief": "MOABB v1.7.0改善离线缓存与气泡图可复现性。",
-      "language": "en",
-      "tags": [
-        "moabb",
-        "benchmark",
-        "eeg",
-        "bci",
-        "release"
-      ],
-      "brief_en": "MOABB v1.7.0 improves offline cached-data access and reproducible dataset bubble plots.",
-      "raw_excerpt": "MOABB 1.7.0 fixes offline cached-data access and makes dataset bubble plots reproducible. - `BaseDataset.get_data` now uses a complete processing cache before NEMAR prefetch, so cached datasets remain usable when NEMAR or the network is unavailable. - `dataset_bubble_plot` now has reproducible layouts by default and accepts `random_state` for controlled alternatives. Full changelog: https://moabb.",
       "fetched_at": "2026-09-13T04:22:39.030159+00:00"
     },
     {
@@ -550,35 +518,6 @@
     },
     {
       "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB v1.6.1 发布",
-      "title_en": "[NeuroTechX/moabb] v1.6.1",
-      "bullets_zh": [
-        "MOABB 1.6.1是自v1.6.0以来包含八条更新日志的缺陷修复版本。",
-        "它修复BNCI2025_001数据加载中的标签泄漏问题，提升基准评测完整性。"
-      ],
-      "bullets_en": [
-        "MOABB 1.6.1 is a bug-fix release with eight changelog entries since v1.6.0.",
-        "It fixes BNCI2025_001 label leakage in data loading, improving benchmark evaluation integrity."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.6.1",
-      "published": "2026-08-27T07:13:20Z",
-      "source": "benchmark",
-      "brief": "MOABB v1.6.1修复BNCI2025_001标签泄漏。",
-      "language": "en",
-      "tags": [
-        "moabb",
-        "benchmark",
-        "eeg",
-        "bci",
-        "release"
-      ],
-      "brief_en": "MOABB v1.6.1 fixes BNCI2025_001 label leakage and other benchmark bugs.",
-      "raw_excerpt": "MOABB 1.6.1 — a bug-fix release: 8 changelog entries since [v1.6.0](https://github.com/NeuroTechX/moabb/releases/tag/v1.6.0). 📖 **[Full changelog](https://moabb.neurotechx.com/docs/whats_new.html)** — this is a summary. ### The one that matters **`BNCI2025_001` was leaking its labels.** `read_raw_eeglab` types any channel it does not recognise as `eeg`, and this dataset ships seven that it does no",
-      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Benchmark",
       "level": "General",
       "title_zh": "MOABB 预发布版 1.6.1（#1167）",
       "title_en": "MOABB Pre-release 1.6.1 (#1167)",
@@ -637,67 +576,18 @@
       "brief_en": "MOABB derives n_channels from channel_types, fixing inconsistent EEG dataset metadata in the catalog.",
       "raw_excerpt": "Derive AcquisitionMetadata.n_channels from channel_types instead of storing it (#1166) AcquisitionMetadata stored n_channels next to channel_types, which describes the same fact. The two could disagree, and for 34 of the 147 catalogued datasets they did -- because the field carried two meanings: Dreyer2023A stored 27, its EEG electrodes, while its own channel_types and its 32-entry sensors list bo",
       "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "[NeuroTechX/moabb] 修复 BNCI2025_001 标签泄露及 NEMAR 预取防护",
-      "title_en": "[NeuroTechX/moabb] Fix label leakage in BNCI2025_001 and NEMAR prefetch guard",
-      "bullets_zh": [
-        "修复 BNCI2025_001 数据集中的关键标签泄露问题，运动学通道被错误分类为 EEG 特征。",
-        "更新 gh-700 的导联处理并实施 NEMAR 预取防护以防止数据错误。",
-        "确保使用 MOABB 框架进行非侵入式 EEG 分类任务的基准完整性。"
-      ],
-      "bullets_en": [
-        "Fixes critical label leakage in BNCI2025_001 dataset where kinematic channels were misclassified as EEG features.",
-        "Updates montage handling for gh-700 and implements NEMAR prefetch guard to prevent data errors.",
-        "Ensures benchmark integrity for non-invasive EEG classification tasks using MOABB framework."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/commit/eb8e59d824e7e0e2ea0924cbe989d0abf72f2fd3",
-      "published": "2026-08-26T23:15:58Z",
-      "source": "benchmark",
-      "brief": "MOABB 基准修复 BNCI2025_001 标签泄露，确保非侵入式 EEG 分类数据完整性。",
-      "language": "en",
-      "tags": [
-        "moabb",
-        "benchmark",
-        "eeg",
-        "dataset",
-        "leakage-fix",
-        "bnci"
-      ],
-      "brief_en": "MOABB benchmark update fixes label leakage in BNCI2025_001, ensuring data integrity for non-invasive EEG classification.",
-      "raw_excerpt": "Fix label leakage in BNCI2025_001, the montages gh-700 never shipped, and the NEMAR prefetch guard (#1161) - BNCI2025_001: type the 7 kinematic channels (target position, hand velocity) as misc. read_raw_eeglab typed them eeg, so every paradigm fed the labels to the classifier as features. EOG named explicitly so the declared channel_types is true by construction. - Rodrigues2017, Cattan2019_PHMD",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB v1.6.0 发布",
-      "title_en": "[NeuroTechX/moabb] v1.6.0",
-      "bullets_zh": [
-        "MOABB 1.6.0自v1.5以来包含68次提交、81条更新日志，并有21位署名贡献者。",
-        "它重点扩展了用于EEG BCI评测的已收录基准数据集目录。"
-      ],
-      "bullets_en": [
-        "MOABB 1.6.0 includes 68 commits, 81 changelog entries, and contributions from 21 credited contributors since v1.5.",
-        "It highlights a large expansion of the cataloged benchmark datasets for EEG BCI evaluation."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.6.0",
-      "published": "2026-08-26T13:13:39Z",
-      "source": "benchmark",
-      "brief": "MOABB v1.6.0大幅扩展EEG BCI基准数据集目录。",
-      "language": "en",
-      "tags": [
-        "moabb",
-        "benchmark",
-        "eeg",
-        "bci",
-        "release"
-      ],
-      "brief_en": "MOABB v1.6.0 expands the catalog of EEG BCI benchmark datasets and adds many changes.",
-      "raw_excerpt": "MOABB 1.6.0 — 68 commits and 81 changelog entries since [v1.5](https://github.com/NeuroTechX/moabb/releases/tag/v1.5), from 21 credited contributors. 📖 **[Full changelog](https://moabb.neurotechx.com/docs/whats_new.html)** — this is a summary. ### Highlights **Datasets.** A large expansion of the catalogue: imagined speech arrives as its own category of imagery datasets, with a dedicated documenta",
-      "fetched_at": "2026-09-13T04:22:39.030159+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 87,
+    "llm_rows": 31,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 54,
+    "intel": 0,
+    "tutorials": 7,
+    "benchmarks": 18,
+    "conflicts_dropped": 0
+  }
 }

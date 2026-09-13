@@ -1,9 +1,9 @@
 {
   "date": "2026-09-13",
   "generated_at": "2026-09-13T04:22:39.042500+00:00",
-  "item_count": 10,
+  "item_count": 7,
   "types": {
-    "Tutorial": 10
+    "Tutorial": 7
   },
   "highlights": [
     {
@@ -25,7 +25,7 @@
       "brief": "提供 BrainFlow 非侵入式 EEG 代码示例，便于开发验证。"
     }
   ],
-  "github_path": "docs/bci-tutorials/latest.json",
+  "github_path": "docs/bci-tutorials/2026-09-13.md",
   "items": [
     {
       "type": "Tutorial",
@@ -239,94 +239,18 @@
       "brief_en": "Mind Monitor docs for consumer EEG streaming, CSV recording, OSC output, and real-time analysis workflows.",
       "raw_excerpt": "Mind Monitor Toggle navigation Menu Mind Monitor Download Features Graphing Online Graphing with Excel FAQ Compatibility Connection Issues Streaming Data (OSC) Spec Recorded Data (CSV) Spec MATLAB Mellow and Concentration Privacy Policy Technical Manual Horseshoe Graphs Absolute Raw Discrete Spectrogram Accelerometer / Gyroscope Streaming Recording Contact Forums Mind Monitor - See what's really g",
       "fetched_at": "2026-09-13T04:22:39.030159+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "欢迎加入 OpenBCI 社区 | OpenBCI 文档",
-      "title_en": "Welcome to the OpenBCI Community | OpenBCI Documentation",
-      "bullets_zh": [
-        "OpenBCI 硬件和软件的官方文档中心。",
-        "涵盖 Cyton、Ganglion 板卡及社区资源。",
-        "非侵入式脑电设置必备。"
-      ],
-      "bullets_en": [
-        "Official documentation hub for OpenBCI hardware and software.",
-        "Covers Cyton, Ganglion boards and community resources.",
-        "Essential for non-invasive EEG setup."
-      ],
-      "url": "https://docs.openbci.com/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "OpenBCI 硬件文档和社区资源的官方中心，是非侵入式脑电设置的必备指南。",
-      "language": "en",
-      "tags": [
-        "openbci",
-        "tutorial",
-        "eeg",
-        "documentation"
-      ],
-      "brief_en": "Official hub for OpenBCI hardware docs and community resources, essential for non-invasive EEG setup.",
-      "raw_excerpt": "Welcome to the OpenBCI Community | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Welcome to the OpenBCI Community Getting Started Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Policies Welcome to O",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "Unicorn Hybrid Black：实时 EEG 的 EEG 头戴设备与脑机接口平台 | g.tec 医疗工程",
-      "title_en": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG | g.tec medical engineering",
-      "bullets_zh": [
-        "专为 BCI 研发设计的干电极专业级 EEG 头戴设备。",
-        "平台支持实时数据采集及与外部软件的集成。"
-      ],
-      "bullets_en": [
-        "Professional-grade dry-electrode EEG headset designed for BCI research and development.",
-        "Platform supports real-time data acquisition and integration with external software."
-      ],
-      "url": "https://www.gtec.at/product/unicorn-hybrid-black/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "提供硬件和软件工具用于实时 BCI 开发的专业非侵入式 EEG 头戴设备平台。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "hardware",
-        "gtec",
-        "eeg",
-        "bci"
-      ],
-      "brief_en": "Professional non-invasive EEG headset platform offering hardware and software tools for real-time BCI development.",
-      "raw_excerpt": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG | g.tec medical engineering Menu Home About INSIGHTS Products Biosignal Amplifiers g.HIAMP g.USBAMP RESEARCH g.HIAMP NIRX g.HIAMP TOBII PRO FUSION Wearable EEG Headsets g.NAUTILUS PRO FLEXIBLE g.NAUTILUS MULTI-PURPOSE g.NAUTILUS RESEARCH g.NAUTILUS FNIRS g.NAUTILUS NIRX g.NAUTILUS TOBII PRO GLASSES 3 Electrode",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Advanced",
-      "title_zh": "清华大学脑机接口研究组",
-      "title_en": "Tsinghua University BCI Research Group",
-      "bullets_zh": [
-        "提供可用于 EEG 研究的基准数据集下载的研究小组页面。",
-        "包括关于 SSVEP 和其他非侵入式 BCI 信号处理方法的资源。"
-      ],
-      "bullets_en": [
-        "Research group page featuring downloadable benchmark datasets for EEG studies.",
-        "Includes resources on SSVEP and other non-invasive BCI signal processing methods."
-      ],
-      "url": "http://bci.med.tsinghua.edu.cn/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "提供非侵入式 BCI 研究基准数据集和资源的学术研究小组页面。",
-      "language": "zh",
-      "tags": [
-        "tutorial",
-        "dataset",
-        "tsinghua",
-        "research",
-        "chinese"
-      ],
-      "brief_en": "Academic research group page providing access to benchmark datasets and resources for non-invasive BCI studies.",
-      "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
-      "fetched_at": "2026-09-06T06:16:35.135581+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 87,
+    "llm_rows": 31,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 54,
+    "intel": 0,
+    "tutorials": 7,
+    "benchmarks": 18,
+    "conflicts_dropped": 0
+  }
 }
