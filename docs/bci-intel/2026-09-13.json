@@ -183,5 +183,19 @@
     }
   ],
   "research_projects": [],
-  "demands": []
+  "demands": [],
+  "stats": {
+    "fetched": 122,
+    "llm_rows": 33,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 2,
+    "prefiltered": 84,
+    "intel": 2,
+    "tutorials": 7,
+    "benchmarks": 7,
+    "suppliers": 5,
+    "signals": 6,
+    "conflicts_dropped": 0
+  }
 }
