@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T08:49:42.722Z",
+  "generatedAt": "2026-09-13T09:43:47.663Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 5
+      "count": 6
     }
   ],
   "items": [
@@ -277,31 +277,6 @@
       ]
     },
     {
-      "id": "hf:LidongYang/EEG_Image_decode",
-      "name": "EEG_Image_decode",
-      "owner": "LidongYang",
-      "url": "https://huggingface.co/datasets/LidongYang/EEG_Image_decode",
-      "source": "huggingface",
-      "description": "EEG Image Decode — Dataset and Checkpoints This dataset accompanies the NeurIPS 2024 paper: Visual Decoding and Reconstruction via EEG Embeddings with Guided Diffusion Dongyang Li · Chen Wei · Shiying Li · Jiachen Zou · Quanying Liu It packages the preprocessed EEG recordings, s…",
-      "tags": [
-        "image-to-image",
-        "image-classification",
-        "cc-by-4.0",
-        "10B<n<100B",
-        "arxiv:2403.07721",
-        "EEG",
-        "brain-computer-interface",
-        "visual-decoding"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 2772,
-      "likes": 16,
-      "updatedAt": "2026-05-10T11:32:37.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
       "name": "Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
       "owner": "raei",
@@ -319,9 +294,34 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 1382,
+      "downloads": 7752,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:LidongYang/EEG_Image_decode",
+      "name": "EEG_Image_decode",
+      "owner": "LidongYang",
+      "url": "https://huggingface.co/datasets/LidongYang/EEG_Image_decode",
+      "source": "huggingface",
+      "description": "EEG Image Decode — Dataset and Checkpoints This dataset accompanies the NeurIPS 2024 paper: Visual Decoding and Reconstruction via EEG Embeddings with Guided Diffusion Dongyang Li · Chen Wei · Shiying Li · Jiachen Zou · Quanying Liu It packages the preprocessed EEG recordings, s…",
+      "tags": [
+        "image-to-image",
+        "image-classification",
+        "cc-by-4.0",
+        "10B<n<100B",
+        "arxiv:2403.07721",
+        "EEG",
+        "brain-computer-interface",
+        "visual-decoding"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 2701,
+      "likes": 16,
+      "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
         "EEG"
       ]
@@ -363,25 +363,9 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 445,
+      "downloads": 341,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:corquaerit/things-eeg-spikes-RC",
-      "name": "things-eeg-spikes-RC",
-      "owner": "corquaerit",
-      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-RC",
-      "source": "huggingface",
-      "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
-      "tags": [],
-      "license": null,
-      "downloads": 311,
-      "likes": 0,
-      "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
         "EEG"
       ]
@@ -404,9 +388,25 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 160,
+      "downloads": 165,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:corquaerit/things-eeg-spikes-RC",
+      "name": "things-eeg-spikes-RC",
+      "owner": "corquaerit",
+      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-RC",
+      "source": "huggingface",
+      "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
+      "tags": [],
+      "license": null,
+      "downloads": 242,
+      "likes": 0,
+      "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
         "EEG"
       ]
@@ -422,7 +422,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 25,
+      "downloads": 34,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
@@ -443,33 +443,9 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 32,
+      "downloads": 33,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sajjad5221/emmt-eeg-raw-phases",
-      "name": "emmt-eeg-raw-phases",
-      "owner": "sajjad5221",
-      "url": "https://huggingface.co/datasets/sajjad5221/emmt-eeg-raw-phases",
-      "source": "huggingface",
-      "description": "EMMT Raw EEG by Phase Raw, per-timestep EEG recordings from the EMMT corpus (Bhattacharya et al., 2022), organized by phase (Read / Translate / See / Update) for phase-classification and artifact-testing work — a different task from sajjad5221/eeg2text-emmt-dataset (Read-phase-o…",
-      "tags": [
-        "cc-by-4.0",
-        "tabular",
-        "eeg",
-        "brain-signals",
-        "neuroscience",
-        "emmt",
-        "phase-classification"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 68,
-      "likes": 0,
-      "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
         "EEG"
       ]
@@ -492,9 +468,33 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 75,
+      "downloads": 111,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sajjad5221/emmt-eeg-raw-phases",
+      "name": "emmt-eeg-raw-phases",
+      "owner": "sajjad5221",
+      "url": "https://huggingface.co/datasets/sajjad5221/emmt-eeg-raw-phases",
+      "source": "huggingface",
+      "description": "EMMT Raw EEG by Phase Raw, per-timestep EEG recordings from the EMMT corpus (Bhattacharya et al., 2022), organized by phase (Read / Translate / See / Update) for phase-classification and artifact-testing work — a different task from sajjad5221/eeg2text-emmt-dataset (Read-phase-o…",
+      "tags": [
+        "cc-by-4.0",
+        "tabular",
+        "eeg",
+        "brain-signals",
+        "neuroscience",
+        "emmt",
+        "phase-classification"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 70,
+      "likes": 0,
+      "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
         "EEG"
       ]
@@ -524,22 +524,6 @@
       ]
     },
     {
-      "id": "hf:corquaerit/things-eeg-spikes-LC",
-      "name": "things-eeg-spikes-LC",
-      "owner": "corquaerit",
-      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
-      "source": "huggingface",
-      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
-      "tags": [],
-      "license": null,
-      "downloads": 44,
-      "likes": 0,
-      "updatedAt": "2026-08-12T23:44:46.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:Fudan-fMRI/EEG-Graspbot",
       "name": "EEG-Graspbot",
       "owner": "Fudan-fMRI",
@@ -556,9 +540,25 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 264,
+      "downloads": 278,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:corquaerit/things-eeg-spikes-LC",
+      "name": "things-eeg-spikes-LC",
+      "owner": "corquaerit",
+      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
+      "source": "huggingface",
+      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
+      "tags": [],
+      "license": null,
+      "downloads": 31,
+      "likes": 0,
+      "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
         "EEG"
       ]
@@ -581,7 +581,7 @@
         "classification"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 8,
+      "downloads": 6,
       "likes": 4,
       "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
@@ -598,9 +598,25 @@
       "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 67,
+      "downloads": 74,
       "likes": 0,
       "updatedAt": "2026-07-07T00:30:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "name": "kahlus-raw-eeg-waveforms-efa0d90",
+      "owner": "kgarg47",
+      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "source": "huggingface",
+      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
+      "tags": [],
+      "license": null,
+      "downloads": 33,
+      "likes": 0,
+      "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -623,50 +639,9 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 233,
+      "downloads": 237,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "name": "kahlus-raw-eeg-waveforms-efa0d90",
-      "owner": "kgarg47",
-      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "source": "huggingface",
-      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
-      "tags": [],
-      "license": null,
-      "downloads": 23,
-      "likes": 0,
-      "updatedAt": "2026-07-12T00:19:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:divyanshmaurya1/BCI_Data_new",
-      "name": "BCI_Data_new",
-      "owner": "divyanshmaurya1",
-      "url": "https://huggingface.co/datasets/divyanshmaurya1/BCI_Data_new",
-      "source": "huggingface",
-      "description": "ProjectCerebro — Cho 2017 EEG Motor Imagery Dataset (BCI_Data_new) Dataset Description Preprocessed EEG motor imagery epochs from the Cho 2017 dataset (GigaDB 100295), processed through the ProjectCerebro pipeline. Original paper: Cho, H., et al. (2017). EEG datasets for motor i…",
-      "tags": [
-        "cc-by-4.0",
-        "tabular",
-        "timeseries",
-        "eeg",
-        "bci",
-        "motor-imagery",
-        "neuroscience",
-        "brain-computer-interface"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 269,
-      "likes": 0,
-      "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
         "EEG"
       ]
@@ -689,7 +664,7 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 312,
+      "downloads": 354,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
@@ -697,22 +672,55 @@
       ]
     },
     {
-      "id": "hf:xiaochen233/schizophrenia-eeg-microstate-data",
-      "name": "schizophrenia-eeg-microstate-data",
-      "owner": "xiaochen233",
-      "url": "https://huggingface.co/datasets/xiaochen233/schizophrenia-eeg-microstate-data",
+      "id": "hf:divyanshmaurya1/BCI_Data_new",
+      "name": "BCI_Data_new",
+      "owner": "divyanshmaurya1",
+      "url": "https://huggingface.co/datasets/divyanshmaurya1/BCI_Data_new",
       "source": "huggingface",
-      "description": "schizophrenia-eeg-microstate-data Small task-specific mirror of public input files used by Terminal Bench Science task schizophrenia-eeg-microstate. The files are redistributed here to make benchmark Docker builds faster and more reproducible. See task instructions and original…",
+      "description": "ProjectCerebro — Cho 2017 EEG Motor Imagery Dataset (BCI_Data_new) Dataset Description Preprocessed EEG motor imagery epochs from the Cho 2017 dataset (GigaDB 100295), processed through the ProjectCerebro pipeline. Original paper: Cho, H., et al. (2017). EEG datasets for motor i…",
       "tags": [
-        "terminal-bench-science",
-        "benchmark-data"
+        "cc-by-4.0",
+        "tabular",
+        "timeseries",
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "neuroscience",
+        "brain-computer-interface"
       ],
-      "license": "other",
-      "downloads": 16,
+      "license": "cc-by-4.0",
+      "downloads": 274,
       "likes": 0,
-      "updatedAt": "2026-06-17T04:37:17.000Z",
+      "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "tags": [
+        "bids",
+        "eeg",
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 182,
+      "updatedAt": "2026-09-12T15:20:45.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
       ]
     },
     {
@@ -727,6 +735,22 @@
       "downloads": 73,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22727240",
+      "name": "Joint Frontal-ear-EEG for Auditory Attention Decoding",
+      "owner": "Yan, Yujie",
+      "url": "https://doi.org/10.5281/zenodo.22727240",
+      "source": "zenodo",
+      "description": "This record contains an anonymized EEG dataset comprising ear-EEG and frontal-EEG recordings from 15 participants, together with stimulus-order files and MATLAB preprocessing code.&nbsp; This dataset is associated with a manuscript being prepared for submission to ICASSP 2027. T…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-12T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -748,6 +772,27 @@
       ]
     },
     {
+      "id": "zenodo:22660211",
+      "name": "Separable Codes for Time and Decision in Human Temporal Perception - Data",
+      "owner": "Silvestrin, Mateus",
+      "url": "https://doi.org/10.5281/zenodo.22660211",
+      "source": "zenodo",
+      "description": "This dataset contains raw and preprocessed EEG data from the study \"Separable Codes for Time and Decision in Human Temporal Perception\" (Silvestrin et al., https://doi.org/10.64898/2026.04.28.721130).",
+      "tags": [
+        "EEG",
+        "timing",
+        "time perception",
+        "MVPA"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 5,
+      "likes": null,
+      "updatedAt": "2026-09-08T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:22583908",
       "name": "Investigating Cognitive Demands in Software Testing Activities: An EEG-Based Experimental Study",
       "owner": "Silva Farias, Roselane",
@@ -762,27 +807,6 @@
       "downloads": 9,
       "likes": null,
       "updatedAt": "2026-09-07T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22660211",
-      "name": "Separable Codes for Time and Decision in Human Temporal Perception - Data",
-      "owner": "Silvestrin, Mateus",
-      "url": "https://doi.org/10.5281/zenodo.22660211",
-      "source": "zenodo",
-      "description": "This dataset contains raw and preprocessed EEG data from the study \"Separable Codes for Time and Decision in Human Temporal Perception\" (Silvestrin et al., https://doi.org/10.64898/2026.04.28.721130).",
-      "tags": [
-        "EEG",
-        "timing",
-        "time perception",
-        "MVPA"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-09-08T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -874,22 +898,6 @@
       ]
     },
     {
-      "id": "zenodo:22171104",
-      "name": "CLINICAL AND ELECTROENCEPHALOGRAPHIC FEATURES OF COMORBID MIGRAINE AND EPILEPSY IN CHILDREN",
-      "owner": "Safarov Saydullo Ubaydullo Oʻgʻli",
-      "url": "https://doi.org/10.5281/zenodo.22171104",
-      "source": "zenodo",
-      "description": "&nbsp; Migraine and epilepsy are among the most common chronic paroxysmal neurological disorders in childhood, characterized by episodic disturbances of brain function. In pediatric practice, comorbidity between these conditions is significantly more common than epidemiological…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 2,
-      "likes": null,
-      "updatedAt": "2026-08-30T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -909,7 +917,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 84,
-      "updatedAt": "2026-09-11T17:42:05.000Z",
+      "updatedAt": "2026-09-12T23:23:04.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -976,7 +984,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-12T00:23:41.000Z",
+      "updatedAt": "2026-09-13T04:22:48.000Z",
       "modality": [
         "EEG"
       ]
