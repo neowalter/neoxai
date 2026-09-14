@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T09:43:47.663Z",
+  "generatedAt": "2026-09-14T10:07:06.626Z",
   "sources": [
     {
       "id": "huggingface",
@@ -294,7 +294,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 7752,
+      "downloads": 7788,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -319,7 +319,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2701,
+      "downloads": 2355,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -341,7 +341,7 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 576,
+      "downloads": 526,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
@@ -363,7 +363,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 341,
+      "downloads": 338,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -388,7 +388,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 165,
+      "downloads": 169,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -404,7 +404,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 242,
+      "downloads": 232,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -422,9 +422,34 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 34,
+      "downloads": 45,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Twu31/cap32-mi-eeg",
+      "name": "cap32-mi-eeg",
+      "owner": "Twu31",
+      "url": "https://huggingface.co/datasets/Twu31/cap32-mi-eeg",
+      "source": "huggingface",
+      "description": "cap32 — 32-channel dry-electrode motor imagery EEG One subject, one low-cost 32-channel dry-electrode cap (TI ADS1299, 250 Hz, WiFi/UDP). Motor imagery and cognitive-task sessions, plus a set of calibrator recordings used to characterise the amplifier. Code, analysis and reports…",
+      "tags": [
+        "time-series-forecasting",
+        "cc-by-4.0",
+        "document",
+        "eeg",
+        "motor-imagery",
+        "brain-computer-interface",
+        "bci",
+        "dry-electrode"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 118,
+      "likes": 0,
+      "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
         "EEG"
       ]
@@ -451,31 +476,6 @@
       ]
     },
     {
-      "id": "hf:Twu31/cap32-mi-eeg",
-      "name": "cap32-mi-eeg",
-      "owner": "Twu31",
-      "url": "https://huggingface.co/datasets/Twu31/cap32-mi-eeg",
-      "source": "huggingface",
-      "description": "cap32 — 32-channel dry-electrode motor imagery EEG One subject, one low-cost 32-channel dry-electrode cap (TI ADS1299, 250 Hz, WiFi/UDP). Motor imagery and cognitive-task sessions, plus a set of calibrator recordings used to characterise the amplifier. Code, analysis and reports…",
-      "tags": [
-        "time-series-forecasting",
-        "cc-by-4.0",
-        "document",
-        "eeg",
-        "motor-imagery",
-        "brain-computer-interface",
-        "bci",
-        "dry-electrode"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 111,
-      "likes": 0,
-      "updatedAt": "2026-08-20T05:45:54.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:sajjad5221/emmt-eeg-raw-phases",
       "name": "emmt-eeg-raw-phases",
       "owner": "sajjad5221",
@@ -492,7 +492,7 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 70,
+      "downloads": 74,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
@@ -540,7 +540,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 278,
+      "downloads": 309,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -556,7 +556,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 31,
+      "downloads": 23,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
@@ -587,22 +587,6 @@
       "modality": [
         "EEG",
         "fNIRS"
-      ]
-    },
-    {
-      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
-      "name": "ear-eeg-fm-benchmark-data",
-      "owner": "Zachary1150",
-      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
-      "source": "huggingface",
-      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
-      "tags": [],
-      "license": null,
-      "downloads": 74,
-      "likes": 0,
-      "updatedAt": "2026-07-07T00:30:10.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -647,6 +631,22 @@
       ]
     },
     {
+      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
+      "name": "ear-eeg-fm-benchmark-data",
+      "owner": "Zachary1150",
+      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
+      "source": "huggingface",
+      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
+      "tags": [],
+      "license": null,
+      "downloads": 35,
+      "likes": 0,
+      "updatedAt": "2026-07-07T00:30:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:sulagnasaharasha/bci-temporal",
       "name": "bci-temporal",
       "owner": "sulagnasaharasha",
@@ -664,7 +664,7 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 354,
+      "downloads": 386,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
@@ -689,7 +689,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 274,
+      "downloads": 279,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -716,7 +716,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 182,
-      "updatedAt": "2026-09-12T15:20:45.000Z",
+      "updatedAt": "2026-09-14T01:42:06.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -732,7 +732,7 @@
       "description": "This is data and code accompanying our scientific paper with the same title.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 73,
+      "downloads": 74,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
       "modality": [
@@ -748,7 +748,7 @@
       "description": "This record contains an anonymized EEG dataset comprising ear-EEG and frontal-EEG recordings from 15 participants, together with stimulus-order files and MATLAB preprocessing code.&nbsp; This dataset is associated with a manuscript being prepared for submission to ICASSP 2027. T…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 6,
       "likes": null,
       "updatedAt": "2026-09-12T00:00:00.000Z",
       "modality": [
@@ -870,7 +870,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 9,
+      "downloads": 10,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -917,29 +917,13 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 84,
-      "updatedAt": "2026-09-12T23:23:04.000Z",
+      "updatedAt": "2026-09-13T23:24:34.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:yjmantilla/sovabids",
-      "name": "sovabids",
-      "owner": "yjmantilla",
-      "url": "https://github.com/yjmantilla/sovabids",
-      "source": "github",
-      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
-      "tags": [],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 13,
-      "updatedAt": "2026-09-09T07:10:43.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -984,7 +968,32 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-13T04:22:48.000Z",
+      "updatedAt": "2026-09-14T06:24:13.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:mtichavsky/eeg",
+      "name": "eeg",
+      "owner": "mtichavsky",
+      "url": "https://github.com/mtichavsky/eeg",
+      "source": "github",
+      "description": "EEG-based depression & anxiety detection combining 3 datasets at once. Supports both 8-channel and single-channel in-ear classification. Spectogram CNN-Transformer architecture rocks!",
+      "tags": [
+        "anxiety",
+        "classification",
+        "cnn",
+        "depression",
+        "eeg",
+        "in-ear",
+        "neural-networks",
+        "spectogram"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-09-14T07:52:49.000Z",
       "modality": [
         "EEG"
       ]
