@@ -386,5 +386,17 @@
       "raw_excerpt": "",
       "fetched_at": "2026-09-14T02:18:51.538208+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 104,
+    "llm_rows": 24,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 3,
+    "prefiltered": 56,
+    "intel": 0,
+    "tutorials": 4,
+    "benchmarks": 8,
+    "conflicts_dropped": 0
+  }
 }
