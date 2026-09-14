@@ -1,29 +1,30 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T02:18:51.547527+00:00",
+  "generated_at": "2026-09-14T14:03:58.942942+00:00",
   "item_count": 12,
   "types": {
-    "Project": 11,
-    "News": 1
+    "Project": 5,
+    "News": 1,
+    "Benchmark": 6
   },
   "highlights": [
     {
-      "title_zh": "SyNexus项目：GitHub上的非侵入式自适应脑机接口",
-      "title_en": "SyNexus-Project: Non-invasive Adaptive BCI on GitHub",
-      "url": "https://github.com/GiulianoAgostini04/SyNexus-Project",
-      "brief": "GitHub上的非侵入式自适应BCI项目，展示运动皮层信号采集与医疗应用潜力。"
+      "title_zh": "MindAid辅助型SSVEP脑机接口",
+      "title_en": "MindAid Assistive SSVEP BCI",
+      "url": "https://github.com/CarmenEngBio/mindaid-ssvep-bci",
+      "brief": "基于SSVEP的辅助型脑机接口项目，用于通过EEG实时选择基本需求。"
     },
     {
-      "title_zh": "NIA项目：GitHub上的非侵入式脑机接口集成数字环境",
-      "title_en": "NIA-Project: Integrated Digital Environment for Non-invasive BCIs on GitHub",
-      "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "brief": "GitHub上的非侵入式BCI数字交互环境项目，关注自适应人机接口生态。"
+      "title_zh": "用于智能家居控制的脑机接口",
+      "title_en": "Brain-Computer Interface for Smart Home Control",
+      "url": "https://github.com/Moustafa29/Brain-Computer-Interface-for-Smart-Home-Control",
+      "brief": "基于实时EEG的智能家居控制项目，用CNN-BiLSTM和模糊逻辑驱动ESP32。"
     },
     {
-      "title_zh": "AxonOS 开放脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI Field",
-      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "brief": "自动更新的开放脑机接口领域地图，便于追踪生态。"
+      "title_zh": "ADS1299核心SDK开放EEG/BCI生态",
+      "title_en": "ADS1299 Core SDK Open EEG/BCI Ecosystem",
+      "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
+      "brief": "面向ADS1299的开源EEG/BCI软硬件生态，覆盖硬件、驱动、分析与教学。"
     }
   ],
   "github_path": "docs/bci-daily/2026-09-14.md",
@@ -31,372 +32,387 @@
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "SyNexus项目：GitHub上的非侵入式自适应脑机接口",
-      "title_en": "SyNexus-Project: Non-invasive Adaptive BCI on GitHub",
-      "bullets_zh": [
-        "GitHub仓库SyNexus，一种采集初级运动皮层信号的非侵入式自适应脑机接口。",
-        "在2026年创新医疗器械竞赛与展示会上展出。",
-        "记录面向神经病变和神经创伤应用的软硬件架构及实验流程。"
-      ],
-      "bullets_en": [
-        "GitHub repository for SyNexus, a non-invasive adaptive BCI acquiring primary motor cortex signals.",
-        "Presented at the Innovating Biomedical Devices Competition and Showcase 2026.",
-        "Documents hardware/software architecture and experimental pipeline for neuropathology and neurotrauma applications."
-      ],
-      "url": "https://github.com/GiulianoAgostini04/SyNexus-Project",
-      "published": "2026-09-13T12:53:43Z",
-      "source": "github",
-      "brief": "GitHub上的非侵入式自适应BCI项目，展示运动皮层信号采集与医疗应用潜力。",
-      "language": "en",
-      "tags": [
-        "github",
-        "non-invasive-bci",
-        "motor-cortex",
-        "adaptive",
-        "competition",
-        "biomedical-devices"
-      ],
-      "brief_en": "GitHub repo for a non-invasive adaptive BCI using motor-cortex signals, shown at a biomedical-device competition.",
-      "raw_excerpt": "Presented at the Innovating Biomedical Devices Competition and Showcase 2026. A Non-invasive and Adaptive Brain-Computer Interface acquiring signals from the primary motor cortex to address neuropathologies and neurotrauma. Covers hardware/software architecture, the experimental pipeline, and future developments in componentry and connectivity.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "NIA项目：GitHub上的非侵入式脑机接口集成数字环境",
-      "title_en": "NIA-Project: Integrated Digital Environment for Non-invasive BCIs on GitHub",
-      "bullets_zh": [
-        "GitHub仓库NIA，面向自适应非侵入式脑机接口人机数字交互的集成数字环境。",
-        "该项目侧重脑机接口软件基础设施，而非单一头带或数据集。",
-        "它有助于构建实用的非侵入式脑机接口生态系统。"
-      ],
-      "bullets_en": [
-        "GitHub repository for NIA, an integrated digital environment for human-digital interaction in adaptive non-invasive BCIs.",
-        "The project focuses on BCI software infrastructure rather than a single headset or dataset.",
-        "It is relevant to building practical ecosystems for non-invasive brain-computer interfaces."
-      ],
-      "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "published": "2026-09-13T12:16:24Z",
-      "source": "github",
-      "brief": "GitHub上的非侵入式BCI数字交互环境项目，关注自适应人机接口生态。",
-      "language": "en",
-      "tags": [
-        "github",
-        "non-invasive-bci",
-        "digital-environment",
-        "human-digital-interaction",
-        "software",
-        "ecosystem"
-      ],
-      "brief_en": "GitHub project for an integrated digital environment enabling human-digital interaction in adaptive non-invasive BCIs.",
-      "raw_excerpt": "Realization of an Integrated Digital Environment for Human-Digital Interaction in Adaptive and Non-invasive Brain-Computer Interfaces",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "General",
-      "title_zh": "AxonOS 开放脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI Field",
-      "bullets_zh": [
-        "社区项目维护一个自动更新的开放脑机接口领域活地图。",
-        "帮助用户发现非侵入式BCI生态中的工具、数据集和项目。"
-      ],
-      "bullets_en": [
-        "Community project maintaining a living, auto-updated map of the open brain-computer-interface field.",
-        "Helps users discover tools, datasets, and projects across non-invasive BCI ecosystems."
-      ],
-      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "published": "2026-09-13T23:14:35Z",
-      "source": "github",
-      "brief": "自动更新的开放脑机接口领域地图，便于追踪生态。",
-      "language": "en",
-      "tags": [
-        "bci",
-        "eeg",
-        "community",
-        "radar",
-        "open-source"
-      ],
-      "brief_en": "Auto-updated map of the open brain-computer-interface field for tracking ecosystem resources.",
-      "raw_excerpt": "AxonOS Radar — a living, auto-updated map of the open brain-computer-interface field. An AxonOS community project.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Beginner",
-      "title_zh": "BCI/EEG开放资源与新闻论文归档",
-      "title_en": "Curated BCI/EEG Resources and News Archive",
-      "bullets_zh": [
-        "整理开放的BCI/EEG数据集、模型和处理方法。",
-        "归档相关新闻和论文，便于快速查阅。"
-      ],
-      "bullets_en": [
-        "Curates open BCI/EEG datasets, models, and processing methods.",
-        "Archives related news and papers for quick reference."
-      ],
-      "url": "https://github.com/neowalter/neoxai",
-      "published": "2026-09-14T00:24:09Z",
-      "source": "github",
-      "brief": "整理BCI/EEG数据集、模型、方法与新闻论文的仓库。",
-      "language": "en",
-      "tags": [
-        "bci",
-        "eeg",
-        "datasets",
-        "resources",
-        "news"
-      ],
-      "brief_en": "Curated open datasets, models, methods, and archived news/papers for BCI/EEG.",
-      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MindAid 辅助型SSVEP脑机接口",
+      "title_zh": "MindAid辅助型SSVEP脑机接口",
       "title_en": "MindAid Assistive SSVEP BCI",
       "bullets_zh": [
-        "利用SSVEP和EEG信号实时选择基本需求。",
-        "面向辅助沟通或控制应用场景。"
+        "GitHub项目MindAid实现了基于SSVEP的辅助型脑机接口，使用EEG信号。",
+        "它面向基本需求的实时选择，具有实用无障碍应用价值。",
+        "发布于2026-09-13；与无创EEG沟通和辅助技术相关。"
       ],
       "bullets_en": [
-        "Uses SSVEP and EEG signals to select basic needs in real time.",
-        "Targets assistive communication or control applications."
+        "GitHub project MindAid implements an assistive SSVEP-based BCI using EEG signals.",
+        "It targets real-time selection of basic needs, suggesting practical accessibility use.",
+        "Published 2026-09-13; relevant to non-invasive EEG communication and assistive technology."
       ],
       "url": "https://github.com/CarmenEngBio/mindaid-ssvep-bci",
       "published": "2026-09-13T18:01:49Z",
       "source": "github",
-      "brief": "基于SSVEP的实时基本需求选择辅助BCI。",
+      "brief": "基于SSVEP的辅助型脑机接口项目，用于通过EEG实时选择基本需求。",
       "language": "en",
       "tags": [
         "ssvep",
         "eeg",
-        "assistive",
-        "bci"
-      ],
-      "brief_en": "Assistive SSVEP-based EEG BCI for real-time basic-need selection.",
-      "raw_excerpt": "MindAid Assistive SSVEP BCI. Assistive SSVEP-based Brain-Computer Interface (BCI) for real-time selection of basic needs through EEG signals.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "P300与SSVEP脑机接口拼写器",
-      "title_en": "P300 and SSVEP BCI Speller",
-      "bullets_zh": [
-        "结合P300和SSVEP进行离线分类器训练。",
-        "提供浏览器校准，并通过LSL实时输出操作系统按键。"
-      ],
-      "bullets_en": [
-        "Combines P300 and SSVEP for offline classifier training.",
-        "Provides browser-based calibration and real-time OS keypress output via LSL."
-      ],
-      "url": "https://github.com/BurhanxGodhra/bci-speller",
-      "published": "2026-09-13T13:45:57Z",
-      "source": "github",
-      "brief": "离线训练、浏览器校准并实时输出按键的BCI拼写器。",
-      "language": "en",
-      "tags": [
-        "p300",
-        "ssvep",
         "bci",
-        "speller",
-        "lsl"
+        "assistive",
+        "github"
       ],
-      "brief_en": "Offline-trained P300/SSVEP speller with browser calibration and LSL keypress output.",
-      "raw_excerpt": "P300 + SSVEP brain-computer interface speller — offline classifier training, browser-based calibration, real-time OS keypress output via LSL.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "brief_en": "An assistive SSVEP BCI project for real-time basic-need selection via EEG.",
+      "raw_excerpt": "MindAid Assistive SSVEP BCI. Assistive SSVEP-based Brain-Computer Interface (BCI) for real-time selection of basic needs through EEG signals.",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     },
     {
       "type": "Project",
-      "level": "Intermediate",
+      "level": "Advanced",
       "title_zh": "用于智能家居控制的脑机接口",
-      "title_en": "EEG BCI for Smart Home Control",
+      "title_en": "Brain-Computer Interface for Smart Home Control",
       "bullets_zh": [
-        "使用CNN-BiLSTM从实时EEG中分类眨眼和注意状态。",
-        "通过模糊逻辑决策层驱动ESP32执行器，实现免手动控制。"
+        "GitHub项目使用实时EEG实现免提智能家居控制。",
+        "它结合CNN-BiLSTM眨眼与注意力分类以及模糊逻辑决策层。",
+        "系统驱动ESP32执行器，将无创脑机接口连接到消费级物联网设备。"
       ],
       "bullets_en": [
-        "Classifies blink and attention from real-time EEG with CNN-BiLSTM.",
-        "Uses a fuzzy-logic decision layer to drive ESP32 actuators for hands-free control."
+        "GitHub project uses real-time EEG to enable hands-free smart-home control.",
+        "It combines CNN-BiLSTM blink and attention classification with a fuzzy-logic decision layer.",
+        "The system drives ESP32 actuators, linking non-invasive BCI to consumer IoT devices."
       ],
       "url": "https://github.com/Moustafa29/Brain-Computer-Interface-for-Smart-Home-Control",
       "published": "2026-09-13T15:18:25Z",
       "source": "github",
-      "brief": "实时EEG控制智能家居，结合CNN-BiLSTM与模糊逻辑。",
+      "brief": "基于实时EEG的智能家居控制项目，用CNN-BiLSTM和模糊逻辑驱动ESP32。",
       "language": "en",
       "tags": [
         "eeg",
         "bci",
         "smart-home",
         "cnn-bilstm",
-        "esp32"
+        "esp32",
+        "fuzzy-logic"
       ],
-      "brief_en": "Real-time EEG smart-home control using CNN-BiLSTM and fuzzy logic.",
+      "brief_en": "Real-time EEG smart-home control project using CNN-BiLSTM, fuzzy logic, and ESP32.",
       "raw_excerpt": "Real-time EEG brain-computer interface for hands-free smart-home control — CNN-BiLSTM blink and attention classification with a fuzzy-logic decision layer, driving ESP32 actuators",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "用于BCI的EEG Deformer解码模型",
-      "title_en": "EEG Deformer Transformer Decoder",
+      "title_zh": "ADS1299核心SDK开放EEG/BCI生态",
+      "title_en": "ADS1299 Core SDK Open EEG/BCI Ecosystem",
       "bullets_zh": [
-        "在PyTorch中实现密集卷积Transformer。",
-        "面向脑机接口应用中的EEG信号解码。"
+        "GitHub SDK旨在构建全面的开放ADS1299 EEG/BCI生态。",
+        "它覆盖8–64通道硬件、MCU/SoC/DSP/FPGA包、Verilog RTL以及PC/移动/Linux集成。",
+        "包含Python/MATLAB/R分析、BCI工作流、验证、教学和研究资源。"
       ],
       "bullets_en": [
-        "Implements a dense convolutional transformer in PyTorch.",
-        "Targets EEG signal decoding for brain-computer interface applications."
-      ],
-      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
-      "published": "2026-09-13T06:02:26Z",
-      "source": "github",
-      "brief": "PyTorch实现密集卷积Transformer，用于EEG信号解码。",
-      "language": "en",
-      "tags": [
-        "eeg",
-        "bci",
-        "pytorch",
-        "transformer",
-        "decoder"
-      ],
-      "brief_en": "PyTorch dense convolutional transformer for decoding EEG in BCI applications.",
-      "raw_excerpt": "Decode EEG signals using this PyTorch implementation of a dense convolutional transformer for brain-computer interface applications.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "ADS1299-Core-SDK 开源EEG/BCI生态",
-      "title_en": "ADS1299-Core-SDK Open EEG/BCI Ecosystem",
-      "bullets_zh": [
-        "GitHub项目构建面向8–64通道硬件的ADS1299开源EEG/BCI生态。",
-        "包含MCU/FPGA参考包、PC/移动/Linux集成以及Python/MATLAB/R分析流程。",
-        "适用于非侵入式脑电采集、验证、教学和研究。"
-      ],
-      "bullets_en": [
-        "GitHub project builds an open ADS1299 EEG/BCI ecosystem for 8–64 channel hardware.",
-        "Includes MCU/FPGA reference packages, PC/mobile/Linux integration, and Python/MATLAB/R analysis workflows.",
-        "Useful for non-invasive EEG acquisition, validation, education, and research."
+        "GitHub SDK aims to build a comprehensive open ADS1299 EEG/BCI ecosystem.",
+        "It spans 8–64 channel hardware, MCU/SoC/DSP/FPGA packages, Verilog RTL, and PC/mobile/Linux integration.",
+        "Includes Python/MATLAB/R analysis, BCI workflows, validation, education and research resources."
       ],
       "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "published": "2026-09-14T00:01:09Z",
+      "published": "2026-09-14T12:07:35Z",
       "source": "github",
-      "brief": "面向ADS1299的开源EEG/BCI硬件与软件生态，适合非侵入式脑电研究。",
+      "brief": "面向ADS1299的开源EEG/BCI软硬件生态，覆盖硬件、驱动、分析与教学。",
       "language": "en",
       "tags": [
-        "eeg",
         "ads1299",
+        "eeg",
         "bci",
         "sdk",
         "hardware",
         "open-source"
       ],
-      "brief_en": "Open ADS1299 EEG/BCI ecosystem for non-invasive brain-computer interface research and development.",
+      "brief_en": "Open ADS1299 EEG/BCI ecosystem covering hardware, drivers, analysis, education and research.",
       "raw_excerpt": "Building the world’s largest and most comprehensive open ADS1299 EEG/BCI ecosystem — 8–64CH hardware, 200 MCU/SoC/DSP & FPGA target/reference packages, Verilog RTL, PC/mobile/Linux integration, Python/MATLAB/R EEG analysis, BCI workflows, validation, education and research.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     },
     {
       "type": "Project",
-      "level": "Advanced",
-      "title_zh": "Nimbus BCI SDK文档",
-      "title_en": "Nimbus BCI SDK Documentation",
+      "level": "General",
+      "title_zh": "机器学习、神经科学、EEG/MEG与脑机接口学术会议日历",
+      "title_en": "Scientific Conference Calendar for ML, Neuroscience, EEG/MEG and BCI",
       "bullets_zh": [
-        "GitHub文档介绍Nimbus SDK与API，支持Julia和Python。",
-        "覆盖概率推断、BCI工作流、预处理、批量/流式推理及集成。",
-        "可作为非侵入式脑机接口数据处理与部署的软件工具包。"
+        "GitHub仓库提供可共享的科学会议截止日期与日期日历。",
+        "覆盖机器学习、神经科学、EEG/MEG、脑机接口、医疗AI、时间序列分析与生物医学信号处理。",
+        "有助于追踪非侵入式脑机接口相关会议和投稿截止日期。"
       ],
       "bullets_en": [
-        "GitHub documentation for Nimbus SDKs and APIs in Julia and Python.",
-        "Covers probabilistic inference, BCI workflows, preprocessing, batch/streaming inference, and integrations.",
-        "Relevant as a software toolkit for non-invasive BCI data processing and deployment."
+        "GitHub repository providing a shareable calendar of scientific conference deadlines and dates.",
+        "Covers machine learning, neuroscience, EEG/MEG, BCI, medical AI, time-series analysis, and biomedical signal processing.",
+        "Useful for tracking non-invasive BCI-related conferences and submission deadlines."
       ],
-      "url": "https://github.com/nimbusbci/nimbusSDKdocs",
-      "published": "2026-09-13T23:23:00Z",
+      "url": "https://github.com/gon-uri/scientific-conference-calendar",
+      "published": "2026-09-14T12:02:22Z",
       "source": "github",
-      "brief": "Nimbus BCI的Julia/Python SDK文档，覆盖推理、预处理与流式工作流。",
+      "brief": "公开科学会议日历，覆盖EEG/MEG与脑机接口等方向，便于追踪相关会议。",
       "language": "en",
       "tags": [
         "bci",
-        "sdk",
-        "python",
-        "julia",
-        "streaming",
-        "preprocessing"
+        "eeg",
+        "meg",
+        "conferences",
+        "deadlines",
+        "calendar"
       ],
-      "brief_en": "Documentation for Nimbus BCI SDKs in Julia and Python, covering inference, preprocessing, and streaming workflows.",
-      "raw_excerpt": "Documentation for Nimbus SDKs and APIs across Julia and Python, covering probabilistic inference, BCI workflows, preprocessing, batch and streaming inference, and integrations.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "brief_en": "Public scientific conference calendar covering EEG/MEG and BCI topics for tracking relevant meetings.",
+      "raw_excerpt": "A public, shareable calendar of scientific conference deadlines and conference dates, focused on machine learning, data science, AI, neuroscience, EEG/MEG, BCI, medical AI, time-series analysis, and biomedical signal processing.",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "基于BrainLink Pro的Unity脑机交互游戏应用",
-      "title_en": "Unity Mobile App for BrainLink Pro BCI Interaction in Games",
+      "title_zh": "neoxai：BCI/EEG开放数据集、模型与处理方法整理项目",
+      "title_en": "neoxai: Curated BCI/EEG datasets, models, methods, and news archive",
       "bullets_zh": [
-        "GitHub项目提供兼容非侵入式BrainLink Pro头显的Unity移动应用。",
-        "它展示在视频游戏中通过BCI进行交互，可作为消费级EEG集成示例。"
+        "该 GitHub 仓库整理开放的 BCI/EEG 数据集、模型与处理方法。",
+        "它还归档相关新闻和论文，便于跟踪领域进展。",
+        "该资源有助于研究人员构建非侵入式 EEG 脑机接口。"
       ],
       "bullets_en": [
-        "A GitHub project provides a Unity mobile application compatible with the non-invasive BrainLink Pro headset.",
-        "It demonstrates BCI-based interaction inside video games, useful as a consumer EEG integration example."
+        "GitHub repository curating open BCI/EEG datasets, models, and processing methods.",
+        "It also archives related news and papers to track developments in the field.",
+        "The resource is useful for researchers building non-invasive EEG-based BCIs."
       ],
-      "url": "https://github.com/galamgarcia/tfm-bci-2026",
-      "published": "2026-09-13T22:19:51Z",
+      "url": "https://github.com/neowalter/neoxai",
+      "published": "2026-09-14T10:07:10Z",
       "source": "github",
-      "brief": "展示用BrainLink Pro在Unity游戏中实现非侵入式BCI交互。",
-      "language": "mixed",
+      "brief": "整理BCI/EEG开放数据集、模型与处理方法的项目，便于非侵入式脑机接口研究。",
+      "language": "en",
       "tags": [
         "bci",
         "eeg",
-        "unity",
-        "brainlink",
-        "game"
+        "dataset",
+        "github",
+        "resources"
       ],
-      "brief_en": "Shows a Unity mobile app using BrainLink Pro for non-invasive BCI interaction in games.",
-      "raw_excerpt": "Aplicación móvil desarrollada en Unity compatible con BrainLink Pro para la interacción mediante Interfaces Cerebro-Computadora (BCI) en videojuegos.",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "brief_en": "Curated GitHub project collecting open BCI/EEG datasets, models, and processing methods for non-invasive research.",
+      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     },
     {
       "type": "News",
       "level": "General",
-      "title_zh": "对AI驱动脑机接口的攻击触及神经要害",
-      "title_en": "Hitting a NERVE with attacks on AI-powered brain-computer interfaces",
+      "title_zh": "攻击AI驱动脑机接口的安全分析文章",
+      "title_en": "Security note on attacks against AI-powered brain-computer interfaces",
       "bullets_zh": [
-        "一篇2026年9月的HN文章讨论对AI驱动脑机接口的攻击。",
-        "其意义在于对抗性操纵基于机器学习的BCI解码器可能影响安全性和可靠性。"
+        "该文章分析AI驱动脑机接口在传感、推理和控制环节形成的攻击面。",
+        "它强调消费级与非侵入式BCI部署中的安全与信任问题。",
+        "它认为随着BCI更广泛应用，需要稳健的威胁建模。"
       ],
       "bullets_en": [
-        "A September 2026 HN note discusses attacks on AI-powered brain-computer interfaces.",
-        "It matters because adversarial manipulation of ML-based BCI decoders could affect safety and reliability."
+        "The note examines how AI-powered BCI pipelines create attack surfaces across sensing, inference, and control.",
+        "It highlights safety and trust concerns for consumer and non-invasive BCI deployments.",
+        "It argues that robust threat modeling is needed as BCIs move toward broader use."
       ],
       "url": "https://anil.recoil.org/notes/nerve-attacks",
       "published": "2026-09-13T19:59:52Z",
       "source": "hn",
-      "brief": "讨论AI脑机接口安全攻击，提醒解码器易受对抗扰动影响。",
+      "brief": "分析AI驱动脑机接口攻击面的安全文章，提醒相关部署风险。",
       "language": "en",
       "tags": [
-        "security",
-        "ai",
         "bci",
-        "adversarial"
+        "security",
+        "ai"
       ],
-      "brief_en": "Discusses security attacks on AI-powered BCIs and why adversarial risks matter for neural decoders.",
+      "brief_en": "Security analysis of attack surfaces in AI-powered BCIs, highlighting deployment risks and threat-modeling needs.",
       "raw_excerpt": "",
-      "fetched_at": "2026-09-14T02:18:51.538208+00:00"
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "脑机接口竞赛IV",
+      "title_en": "BCI Competition IV",
+      "bullets_zh": [
+        "BBCI举办脑机接口竞赛IV，用于验证EEG信号处理和分类方法。",
+        "它提供基准数据集、日程、提交、下载和组织者参考信息。",
+        "该竞赛支持非侵入式脑机接口研究的可复现评估。"
+      ],
+      "bullets_en": [
+        "BBCI hosts BCI Competition IV to validate EEG signal processing and classification methods.",
+        "It provides benchmark datasets, schedules, submissions, downloads, and organizer references.",
+        "The competition supports reproducible evaluation for non-invasive BCI research."
+      ],
+      "url": "https://www.bbci.de/competition/iv/",
+      "published": "",
+      "source": "benchmark",
+      "brief": "BBCI的BCI竞赛IV提供EEG基准数据与评测，推动可复现BCI方法验证。",
+      "language": "en",
+      "tags": [
+        "bci-competition",
+        "benchmark",
+        "eeg",
+        "classification",
+        "bbci"
+      ],
+      "brief_en": "BBCI's BCI Competition IV provides EEG benchmark data and evaluation for reproducible BCI method validation.",
+      "raw_excerpt": "BCI Competition IV BCI Competition IV [ goals | news | data sets | schedule | submission | download | organizers | references ] Goals of the organizers The goal of the \"BCI Competition IV\" is to validate signal processing and classification methods for Brain-Computer Interfaces (BCIs). Compared to the past BCI Competitions, new challanging problems are addressed that are highly relevant for practi",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "清华大学脑机接口研究组资料下载",
+      "title_en": "Tsinghua University BCI Research Group Dataset Downloads",
+      "bullets_zh": [
+        "清华大学脑机接口研究组提供可下载的基准数据集。",
+        "页面列出64通道数据和频率相位信息等文件。",
+        "它支持非侵入式EEG脑机接口方法评估，包括SSVEP/BETA类任务。"
+      ],
+      "bullets_en": [
+        "Tsinghua University BCI Research Group provides downloadable benchmark datasets.",
+        "The page lists files such as 64-channel data and frequency-phase information.",
+        "It supports evaluation of non-invasive EEG-based BCI methods, including SSVEP/BETA-style tasks."
+      ],
+      "url": "http://bci.med.tsinghua.edu.cn/download.html",
+      "published": "",
+      "source": "benchmark",
+      "brief": "清华BCI研究组下载页提供64通道等EEG基准数据，服务非侵入式评测。",
+      "language": "zh",
+      "tags": [
+        "tsinghua",
+        "ssvep",
+        "beta",
+        "eeg",
+        "benchmark"
+      ],
+      "brief_en": "Tsinghua BCI group download page provides 64-channel EEG benchmark data for non-invasive evaluation.",
+      "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "脑电运动执行与想象数据集v1.0.0",
+      "title_en": "EEG Motor Movement/Imagery Dataset v1.0.0",
+      "bullets_zh": [
+        "PhysioNet提供EEG运动执行与想象数据集v1.0.0。",
+        "它包含用于BCI评估的运动执行和运动想象任务。",
+        "该数据集支持非侵入式EEG分类流程的基准评测。"
+      ],
+      "bullets_en": [
+        "PhysioNet provides the EEG Motor Movement/Imagery Dataset v1.0.0.",
+        "It contains motor execution and motor imagery tasks for BCI evaluation.",
+        "The dataset supports benchmarking of non-invasive EEG classification pipelines."
+      ],
+      "url": "https://physionet.org/content/eegmmidb/1.0.0/",
+      "published": "",
+      "source": "benchmark",
+      "brief": "PhysioNet的EEG运动执行与想象数据集v1.0.0用于非侵入式BCI基准评测。",
+      "language": "en",
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "physionet",
+        "benchmark",
+        "bci"
+      ],
+      "brief_en": "PhysioNet's EEG Motor Movement/Imagery Dataset v1.0.0 supports non-invasive BCI benchmarking.",
+      "raw_excerpt": "EEG Motor Movement/Imagery Dataset v1.0.0 Version: 1.0.0 --> Menu Share About FAQs Explore Data View datasets Software View software Challenges View challenges Tutorials View tutorials Cancel Search Search PhysioNet Log in Share About FAQs Data View datasets Software View software Challenges View challenges Tutorials View tutorials Database Open Access EEG Motor Movement/Imagery Dataset Gerwin Sch",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "脑电心理算术任务数据集v1.0.0",
+      "title_en": "EEG During Mental Arithmetic Tasks v1.0.0",
+      "bullets_zh": [
+        "PhysioNet提供EEG心理算术任务数据集v1.0.0。",
+        "它记录心理算术任务期间的EEG，用于认知状态分析。",
+        "该数据集支持非侵入式BCI分类方法的基准评测。"
+      ],
+      "bullets_en": [
+        "PhysioNet provides the EEG During Mental Arithmetic Tasks Dataset v1.0.0.",
+        "It records EEG during mental arithmetic tasks for cognitive-state analysis.",
+        "The dataset supports benchmarking non-invasive BCI classification methods."
+      ],
+      "url": "https://physionet.org/content/eegmat/1.0.0/",
+      "published": "",
+      "source": "benchmark",
+      "brief": "PhysioNet的EEG心理算术任务数据集v1.0.0支持认知状态BCI评测。",
+      "language": "en",
+      "tags": [
+        "eeg",
+        "mental-arithmetic",
+        "physionet",
+        "benchmark",
+        "cognitive-state"
+      ],
+      "brief_en": "PhysioNet's EEG During Mental Arithmetic Tasks Dataset v1.0.0 supports cognitive-state BCI benchmarking.",
+      "raw_excerpt": "EEG During Mental Arithmetic Tasks v1.0.0 Version: 1.0.0 --> Menu Share About FAQs Explore Data View datasets Software View software Challenges View challenges Tutorials View tutorials Cancel Search Search PhysioNet Log in Share About FAQs Data View datasets Software View software Challenges View challenges Tutorials View tutorials Database Open Access EEG During Mental Arithmetic Tasks Igor Zyma",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.7.1 发布",
+      "title_en": "[NeuroTechX/moabb] v1.7.1",
+      "bullets_zh": [
+        "MOABB v1.7.1在NEMAR不可达时仍可使用本地缓存的上游数据集数据。",
+        "它在所有NEMAR下载边界捕获泄漏的httpx.TransportError异常。",
+        "该版本保留默认auto provider回退到各数据集自身下载器。"
+      ],
+      "bullets_en": [
+        "MOABB v1.7.1 keeps locally cached upstream dataset data usable when NEMAR is unreachable.",
+        "It catches leaked httpx.TransportError exceptions at all NEMAR download boundaries.",
+        "The release preserves the default auto provider fallback to each dataset's own downloader."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.1",
+      "published": "2026-08-31T21:34:54Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.7.1修复NEMAR网络错误，提升离线缓存可用性。",
+      "language": "en",
+      "tags": [
+        "moabb",
+        "benchmark",
+        "nemar",
+        "eeg",
+        "release"
+      ],
+      "brief_en": "MOABB v1.7.1 fixes NEMAR network errors and improves offline cached dataset usability.",
+      "raw_excerpt": "MOABB 1.7.1 keeps locally cached upstream dataset data usable when NEMAR is unreachable through a proxy or another HTTP transport failure. - Catch leaked `httpx.TransportError` exceptions at all NEMAR download boundaries. - Preserve the default `auto` provider fallback to the dataset's own downloader. See [PR #1171](https://github.com/NeuroTechX/moabb/pull/1171).",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB v1.7.0 发布",
+      "title_en": "[NeuroTechX/moabb] v1.7.0",
+      "bullets_zh": [
+        "MOABB v1.7.0修复NEMAR预取前的离线缓存数据访问。",
+        "它使数据集气泡图布局可复现且稳定。",
+        "该版本提升网络不可用时基准工作流的可靠性。"
+      ],
+      "bullets_en": [
+        "MOABB v1.7.0 fixes offline cached-data access before NEMAR prefetch.",
+        "It makes dataset bubble plots reproducible with stable layout behavior.",
+        "The release improves reliability of benchmark workflows when networks are unavailable."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/releases/tag/v1.7.0",
+      "published": "2026-08-31T16:47:03Z",
+      "source": "benchmark",
+      "brief": "MOABB v1.7.0改善离线缓存与可复现气泡图，增强BCI评测稳定性。",
+      "language": "en",
+      "tags": [
+        "moabb",
+        "benchmark",
+        "offline-cache",
+        "bubble-plot",
+        "release"
+      ],
+      "brief_en": "MOABB v1.7.0 improves offline caching and reproducible bubble plots for stable BCI benchmarking.",
+      "raw_excerpt": "MOABB 1.7.0 fixes offline cached-data access and makes dataset bubble plots reproducible. - `BaseDataset.get_data` now uses a complete processing cache before NEMAR prefetch, so cached datasets remain usable when NEMAR or the network is unavailable. - `dataset_bubble_plot` now has reproducible layouts by default and accepts `random_state` for controlled alternatives. Full changelog: https://moabb.",
+      "fetched_at": "2026-09-14T14:03:58.932265+00:00"
     }
   ],
   "stats": {
-    "fetched": 104,
-    "llm_rows": 24,
+    "fetched": 88,
+    "llm_rows": 21,
     "kept": 12,
     "llm_failed": false,
-    "llm_skipped_batches": 3,
+    "llm_skipped_batches": 4,
     "prefiltered": 56,
-    "intel": 0,
-    "tutorials": 4,
-    "benchmarks": 8,
+    "intel": 1,
+    "tutorials": 0,
+    "benchmarks": 14,
     "conflicts_dropped": 0
   }
 }
