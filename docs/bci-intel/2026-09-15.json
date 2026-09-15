@@ -47,5 +47,17 @@
       "raw_excerpt": "BCI Regulatory Intelligence — legal act tracking collector & UI",
       "fetched_at": "2026-09-15T01:46:45.719763+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 73,
+    "llm_rows": 23,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 3,
+    "prefiltered": 52,
+    "intel": 1,
+    "tutorials": 5,
+    "benchmarks": 15,
+    "conflicts_dropped": 0
+  }
 }

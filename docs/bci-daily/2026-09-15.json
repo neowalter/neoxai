@@ -400,5 +400,17 @@
       "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
       "fetched_at": "2026-09-15T01:46:45.719763+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 73,
+    "llm_rows": 23,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 3,
+    "prefiltered": 52,
+    "intel": 1,
+    "tutorials": 5,
+    "benchmarks": 15,
+    "conflicts_dropped": 0
+  }
 }
