@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T10:07:06.626Z",
+  "generatedAt": "2026-09-15T09:35:59.859Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 3
     }
   ],
   "items": [
@@ -697,6 +697,66 @@
       ]
     },
     {
+      "id": "hf:xiaochen233/schizophrenia-eeg-microstate-data",
+      "name": "schizophrenia-eeg-microstate-data",
+      "owner": "xiaochen233",
+      "url": "https://huggingface.co/datasets/xiaochen233/schizophrenia-eeg-microstate-data",
+      "source": "huggingface",
+      "description": "schizophrenia-eeg-microstate-data Small task-specific mirror of public input files used by Terminal Bench Science task schizophrenia-eeg-microstate. The files are redistributed here to make benchmark Docker builds faster and more reproducible. See task instructions and original…",
+      "tags": [
+        "terminal-bench-science",
+        "benchmark-data"
+      ],
+      "license": "other",
+      "downloads": 16,
+      "likes": 0,
+      "updatedAt": "2026-06-17T04:37:17.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:smithjacki/eeg-emotion-depression",
+      "name": "eeg-emotion-depression",
+      "owner": "smithjacki",
+      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
+      "source": "huggingface",
+      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
+      "tags": [],
+      "license": null,
+      "downloads": 6,
+      "likes": 0,
+      "updatedAt": "2026-06-13T13:48:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:braindecode/bcic2a",
+      "name": "bcic2a",
+      "owner": "braindecode",
+      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
+      "source": "huggingface",
+      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
+      "tags": [
+        "unknown",
+        "braindecode",
+        "eeg",
+        "neuroscience",
+        "brain-computer-interface",
+        "deep-learning"
+      ],
+      "license": "unknown",
+      "downloads": 441,
+      "likes": 0,
+      "updatedAt": "2026-03-14T20:20:10.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
+      ]
+    },
+    {
       "id": "github:mne-tools/mne-bids",
       "name": "mne-bids",
       "owner": "mne-tools",
@@ -716,7 +776,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 182,
-      "updatedAt": "2026-09-14T01:42:06.000Z",
+      "updatedAt": "2026-09-14T21:43:49.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -854,7 +914,7 @@
       "description": "The dataset contains EEG data recorded from 18 participants who perfomed a visual spatial attention task while different stages of visual impairment was simulated. Each participant performed two experiments on different days. The intended target was decoded by a BCI algorithm an…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
       "updatedAt": "2026-09-07T00:00:00.000Z",
       "modality": [
@@ -870,7 +930,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 10,
+      "downloads": 11,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -898,55 +958,17 @@
       ]
     },
     {
-      "id": "github:eegdash/EEGDash",
-      "name": "EEGDash",
-      "owner": "eegdash",
-      "url": "https://github.com/eegdash/EEGDash",
+      "id": "github:YYingDL/PCL-TDGCN",
+      "name": "PCL-TDGCN",
+      "owner": "YYingDL",
+      "url": "https://github.com/YYingDL/PCL-TDGCN",
       "source": "github",
-      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
-      "tags": [
-        "aws",
-        "aws-s3",
-        "data-sharing",
-        "deep-learning",
-        "eeg",
-        "eeg-signals",
-        "electroencephalography",
-        "fair-principles"
-      ],
-      "license": "BSD-3-Clause",
+      "description": "This repo provides a demo for the \"Prototypical Contrastive Learning with Temporal Dynamic Graph Convolutional Network for EEG-based Emotion Recognition\" on the SEED and HIED datasets.",
+      "tags": [],
+      "license": null,
       "downloads": null,
-      "likes": 84,
-      "updatedAt": "2026-09-13T23:24:34.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG",
-        "fNIRS",
-        "EMG"
-      ]
-    },
-    {
-      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
-      "name": "NMT-4k-EEG-Dataset",
-      "owner": "dll-ncai",
-      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
-      "source": "github",
-      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
-      "tags": [
-        "abnormality-detection",
-        "biomedical-signals",
-        "clinical-eeg",
-        "clinical-reports",
-        "eeg",
-        "eeg-dataset",
-        "electroencephalography",
-        "event-annotations"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-09-11T04:17:52.000Z",
+      "likes": 10,
+      "updatedAt": "2026-09-15T07:55:56.000Z",
       "modality": [
         "EEG"
       ]
@@ -968,54 +990,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-14T06:24:13.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:mtichavsky/eeg",
-      "name": "eeg",
-      "owner": "mtichavsky",
-      "url": "https://github.com/mtichavsky/eeg",
-      "source": "github",
-      "description": "EEG-based depression & anxiety detection combining 3 datasets at once. Supports both 8-channel and single-channel in-ear classification. Spectogram CNN-Transformer architecture rocks!",
-      "tags": [
-        "anxiety",
-        "classification",
-        "cnn",
-        "depression",
-        "eeg",
-        "in-ear",
-        "neural-networks",
-        "spectogram"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-09-14T07:52:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:protire0821/EEG_visualization",
-      "name": "EEG_visualization",
-      "owner": "protire0821",
-      "url": "https://github.com/protire0821/EEG_visualization",
-      "source": "github",
-      "description": "Desktop EEG viewer: waveform, animated topomap, and seizure annotations for EDF/BDF datasets",
-      "tags": [
-        "chb-mit",
-        "eeg",
-        "mne-python",
-        "neuroscience",
-        "pyqt6"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-09-11T12:27:37.000Z",
+      "updatedAt": "2026-09-15T06:24:12.000Z",
       "modality": [
         "EEG"
       ]
