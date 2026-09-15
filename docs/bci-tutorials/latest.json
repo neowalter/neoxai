@@ -1,28 +1,28 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T01:46:45.738016+00:00",
+  "generated_at": "2026-09-15T13:40:41.612622+00:00",
   "item_count": 10,
   "types": {
     "Tutorial": 10
   },
   "highlights": [
     {
-      "title_zh": "入门指南｜OpenBCI文档",
-      "title_en": "Getting Started | OpenBCI Documentation",
+      "title_zh": "OpenBCI 文档：入门指南",
+      "title_en": "OpenBCI Documentation: Getting Started",
       "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
-      "brief": "OpenBCI入门指南，指导搭建非侵入式脑电采集与实验。"
+      "brief": "OpenBCI入门文档，帮助新手配置Cyton/Ganglion进行EEG实验。"
     },
     {
-      "title_zh": "BrainFlow文档首页｜BrainFlow文档",
-      "title_en": "Welcome to BrainFlow’s documentation! — BrainFlow documentation",
-      "url": "https://brainflow.readthedocs.io/en/stable/",
-      "brief": "BrainFlow官方文档，支持多种非侵入式脑电设备的数据流与开发。"
-    },
-    {
-      "title_zh": "代码示例｜BrainFlow文档",
-      "title_en": "Code Samples — BrainFlow documentation",
+      "title_zh": "BrainFlow 文档：代码示例",
+      "title_en": "BrainFlow Documentation: Code Samples",
       "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
-      "brief": "BrainFlow代码示例，演示非侵入式脑电设备数据流与处理。"
+      "brief": "BrainFlow代码示例，指导开发者读取多设备EEG并搭建BCI流程。"
+    },
+    {
+      "title_zh": "Neurosity SDK 文档",
+      "title_en": "Neurosity SDK Documentation",
+      "url": "https://docs.neurosity.co/",
+      "brief": "Neurosity SDK文档，指导开发者接入非侵入式EEG头环数据。"
     }
   ],
   "github_path": "docs/bci-tutorials/latest.json",
@@ -30,22 +30,22 @@
     {
       "type": "Tutorial",
       "level": "Beginner",
-      "title_zh": "入门指南｜OpenBCI文档",
-      "title_en": "Getting Started | OpenBCI Documentation",
+      "title_zh": "OpenBCI 文档：入门指南",
+      "title_en": "OpenBCI Documentation: Getting Started",
       "bullets_zh": [
-        "OpenBCI分步入门指南，覆盖开发板与生物传感设置。",
-        "说明Cyton、Ganglion、头带、电极及社区文档路径。",
-        "帮助初学者快速启动非侵入式脑电实验。"
+        "OpenBCI 官方文档指导用户使用 Cyton 和 Ganglion 板。",
+        "涵盖生物传感设置、头带/电极及第三方硬件。",
+        "适合初学者开始消费级非侵入式 EEG 实验。"
       ],
       "bullets_en": [
-        "Step-by-step OpenBCI getting-started guide for boards and biosensing setups.",
-        "Explains Cyton, Ganglion, headwear, electrodes, and community documentation paths.",
-        "Helps beginners launch non-invasive EEG experiments quickly."
+        "Official OpenBCI docs guide users through Cyton and Ganglion boards.",
+        "Covers biosensing setups, headwear/electrodes, and third-party hardware.",
+        "Useful for beginners starting consumer non-invasive EEG experiments."
       ],
       "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
       "published": "",
       "source": "tutorial",
-      "brief": "OpenBCI入门指南，指导搭建非侵入式脑电采集与实验。",
+      "brief": "OpenBCI入门文档，帮助新手配置Cyton/Ganglion进行EEG实验。",
       "language": "en",
       "tags": [
         "tutorial",
@@ -53,9 +53,224 @@
         "eeg",
         "getting-started"
       ],
-      "brief_en": "Step-by-step guide for setting up OpenBCI non-invasive EEG boards and biosensing workflows.",
+      "brief_en": "OpenBCI getting-started docs help beginners configure Cyton/Ganglion for EEG experiments.",
       "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
-      "fetched_at": "2026-09-15T01:46:45.719763+00:00"
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "BrainFlow 文档：代码示例",
+      "title_en": "BrainFlow Documentation: Code Samples",
+      "bullets_zh": [
+        "BrainFlow 官方示例展示如何读取支持板卡的 EEG。",
+        "包含 OpenBCI Cyton、Ganglion、Muse、Galea 及合成/回放板卡。",
+        "帮助开发者跨语言构建非侵入式 BCI 流程。"
+      ],
+      "bullets_en": [
+        "Official BrainFlow examples show how to read EEG from supported boards.",
+        "Includes OpenBCI Cyton, Ganglion, Muse, Galea, and synthetic/playback boards.",
+        "Helps developers build non-invasive BCI pipelines across languages."
+      ],
+      "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow代码示例，指导开发者读取多设备EEG并搭建BCI流程。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "brainflow",
+        "eeg",
+        "code-samples"
+      ],
+      "brief_en": "BrainFlow code samples guide developers to read multi-device EEG and build BCI pipelines.",
+      "raw_excerpt": "Code Samples — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand gForceDual ArmBand FreeEE",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Neurosity SDK 文档",
+      "title_en": "Neurosity SDK Documentation",
+      "bullets_zh": [
+        "Neurosity 非侵入式 EEG 头环的官方开发者文档。",
+        "说明如何通过 Neurosity SDK 访问脑数据。",
+        "适合使用可穿戴 EEG 构建消费级 BCI 应用。"
+      ],
+      "bullets_en": [
+        "Official developer documentation for the Neurosity non-invasive EEG headset.",
+        "Describes how to access brain data through the Neurosity SDK.",
+        "Relevant for building consumer BCI apps with wearable EEG."
+      ],
+      "url": "https://docs.neurosity.co/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Neurosity SDK文档，指导开发者接入非侵入式EEG头环数据。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "neurosity",
+        "eeg",
+        "sdk"
+      ],
+      "brief_en": "Neurosity SDK docs guide developers to access non-invasive EEG headband data.",
+      "raw_excerpt": "Neurosity SDK",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Emotiv Cortex API：入门指南",
+      "title_en": "Emotiv Cortex API: Getting Started",
+      "bullets_zh": [
+        "连接 Emotiv Cortex API 的官方指南。",
+        "涵盖认证、会话、数据订阅、标记和受试者。",
+        "适合开发者基于 Emotiv 消费级 EEG 头环构建应用。"
+      ],
+      "bullets_en": [
+        "Official guide for connecting to Emotiv's Cortex API.",
+        "Covers authentication, sessions, data subscriptions, markers, and subjects.",
+        "Useful for developers building apps with Emotiv consumer EEG headsets."
+      ],
+      "url": "https://emotiv.gitbook.io/cortex-api/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Emotiv Cortex API入门文档，帮助开发者接入消费级EEG数据。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "emotiv",
+        "cortex-api",
+        "eeg"
+      ],
+      "brief_en": "Emotiv Cortex API getting-started docs help developers connect to consumer EEG data.",
+      "raw_excerpt": "Getting Started | Cortex API Cortex API ⌘ Ctrl k Cortex API Getting Started Connecting to the Cortex API Overview of API flow Authentication Headsets Sessions Data Subscription Records Markers Subjects BCI Advanced BCI Warning Objects Error Codes Troubleshooting Guide Release Notes cortexaccess tool Powered by GitBook On this page For the complete documentation index, see llms.txt . This page is a",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Muse 开发者文档",
+      "title_en": "Muse Developer Documentation",
+      "bullets_zh": [
+        "使用 Muse EEG 头环构建应用的官方开发者页面。",
+        "指向 Muse SDK 生态系统和集成资源。",
+        "适合使用 Muse 设备进行消费级非侵入式 BCI 开发。"
+      ],
+      "bullets_en": [
+        "Official Muse developer page for building apps with Muse EEG headbands.",
+        "Points to the Muse SDK ecosystem and integration resources.",
+        "Relevant for consumer non-invasive BCI development using Muse devices."
+      ],
+      "url": "https://choosemuse.com/pages/developers",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Muse开发者页面，指导用Muse SDK开发非侵入式EEG应用。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "muse",
+        "eeg",
+        "sdk"
+      ],
+      "brief_en": "Muse developer page guides building non-invasive EEG apps with the Muse SDK.",
+      "raw_excerpt": "Developers - Muse SDK | Muse® EEG Mental Fitness & Sleep Headband Subtotal: $0.00 Proceed to Checkout Continue Shopping Shop How It Works Benefits Science App App Premium Subscription Press + Reviews US Store Shop MUSE SDK Looking to develop your own app that integrates with Muse? We have an ecosystem of Muse partners who have developed apps that work with Muse devices, integrated Muse into their",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "Mind Monitor 软件使用文档",
+      "title_en": "Mind Monitor Software Documentation",
+      "bullets_zh": [
+        "提供 Mind Monitor EEG 软件的使用文档。",
+        "涵盖绘图、Excel/OSC 流式传输、CSV/MATLAB 数据规范与故障排查。",
+        "帮助用户操作非侵入式 EEG 头带，无需植入硬件。"
+      ],
+      "bullets_en": [
+        "Provides user documentation for Mind Monitor EEG software.",
+        "Covers graphing, Excel/OSC streaming, CSV/MATLAB data specs, and troubleshooting.",
+        "Helps users operate non-invasive EEG headsets without invasive hardware."
+      ],
+      "url": "https://mind-monitor.com/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Mind Monitor 使用文档，指导非侵入式 EEG 软件操作。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "eeg",
+        "openbci",
+        "gui",
+        "consumer",
+        "muse"
+      ],
+      "brief_en": "Documentation for Mind Monitor, guiding non-invasive EEG software use.",
+      "raw_excerpt": "Mind Monitor Toggle navigation Menu Mind Monitor Download Features Graphing Online Graphing with Excel FAQ Compatibility Connection Issues Streaming Data (OSC) Spec Recorded Data (CSV) Spec MATLAB Mellow and Concentration Privacy Policy Technical Manual Horseshoe Graphs Absolute Raw Discrete Spectrogram Accelerometer / Gyroscope Streaming Recording Contact Forums Mind Monitor - See what's really g",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Unicorn Hybrid Black EEG 头带平台",
+      "title_en": "Unicorn Hybrid Black EEG Headset Platform",
+      "bullets_zh": [
+        "g.tec 的 Unicorn Hybrid Black 实时 EEG 头带产品页。",
+        "介绍可穿戴 EEG 硬件与脑机接口平台功能。",
+        "可作为非侵入式 EEG 实验的入门参考。"
+      ],
+      "bullets_en": [
+        "Product page for g.tec's Unicorn Hybrid Black real-time EEG headset.",
+        "Describes wearable EEG hardware and BCI platform features.",
+        "Useful as getting-started reference for non-invasive EEG experiments."
+      ],
+      "url": "https://www.gtec.at/product/unicorn-hybrid-black/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Unicorn Hybrid Black 产品页，提供非侵入式 EEG/BCI 入门参考。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "eeg",
+        "bci",
+        "headset",
+        "gtec",
+        "real-time"
+      ],
+      "brief_en": "Product page for Unicorn Hybrid Black, a non-invasive real-time EEG headset and BCI platform.",
+      "raw_excerpt": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG | g.tec medical engineering Menu Home About INSIGHTS Products Biosignal Amplifiers g.HIAMP g.USBAMP RESEARCH g.HIAMP NIRX g.HIAMP TOBII PRO FUSION Wearable EEG Headsets g.NAUTILUS PRO FLEXIBLE g.NAUTILUS MULTI-PURPOSE g.NAUTILUS RESEARCH g.NAUTILUS FNIRS g.NAUTILUS NIRX g.NAUTILUS TOBII PRO GLASSES 3 Electrode",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Advanced",
+      "title_zh": "清华大学脑机接口研究组资料下载页",
+      "title_en": "Tsinghua University BCI Research Group Downloads",
+      "bullets_zh": [
+        "清华大学脑机接口研究组页面，提供资料下载与基准数据集文件。",
+        "列出 64 通道 EEG 数据、频率/相位信息及被试数据集。",
+        "便于非侵入式 BCI 研究者获取清华评测数据。"
+      ],
+      "bullets_en": [
+        "Tsinghua BCI research group page with downloads and benchmark dataset files.",
+        "Lists 64-channel EEG data, frequency/phase info, and subject datasets.",
+        "Useful for non-invasive BCI researchers accessing Tsinghua evaluation data."
+      ],
+      "url": "http://bci.med.tsinghua.edu.cn/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "清华脑机接口组资料页，提供非侵入式 EEG 基准数据下载。",
+      "language": "mixed",
+      "tags": [
+        "tutorial",
+        "tsinghua",
+        "eeg",
+        "benchmark",
+        "dataset"
+      ],
+      "brief_en": "Tsinghua BCI group page providing downloads for non-invasive EEG benchmark datasets.",
+      "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
+      "fetched_at": "2026-09-15T13:40:41.599286+00:00"
     },
     {
       "type": "Tutorial",
@@ -90,68 +305,6 @@
     },
     {
       "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "代码示例｜BrainFlow文档",
-      "title_en": "Code Samples — BrainFlow documentation",
-      "bullets_zh": [
-        "BrainFlow代码示例展示如何连接支持的非侵入式BCI开发板。",
-        "包含OpenBCI Cyton/Ganglion/Daisy、Galea、NeuroMD等设备示例。",
-        "演示脑电应用中的数据流、滤波与数据处理。"
-      ],
-      "bullets_en": [
-        "BrainFlow code samples show how to connect to supported non-invasive BCI boards.",
-        "Includes examples for OpenBCI Cyton/Ganglion/Daisy, Galea, NeuroMD, and related devices.",
-        "Demonstrates streaming, filtering, and data handling for EEG applications."
-      ],
-      "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
-      "published": "",
-      "source": "tutorial",
-      "brief": "BrainFlow代码示例，演示非侵入式脑电设备数据流与处理。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "brainflow",
-        "code-samples",
-        "eeg",
-        "developer"
-      ],
-      "brief_en": "Runnable BrainFlow examples for streaming and processing data from non-invasive BCI devices such as OpenBCI boards.",
-      "raw_excerpt": "Code Samples — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand gForceDual ArmBand FreeEE",
-      "fetched_at": "2026-09-15T01:46:45.719763+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "Neurosity SDK文档",
-      "title_en": "Neurosity SDK",
-      "bullets_zh": [
-        "Neurosity Crown非侵入式脑电头环的官方SDK文档。",
-        "介绍实时脑数据访问与应用开发相关API。",
-        "适合消费者BCI软件集成的教程资源。"
-      ],
-      "bullets_en": [
-        "Official SDK documentation for the Neurosity Crown non-invasive EEG headset.",
-        "Describes APIs for real-time brain data access and application development.",
-        "Relevant tutorial resource for consumer BCI software integration."
-      ],
-      "url": "https://docs.neurosity.co/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "Neurosity SDK文档，面向Crown非侵入式脑电头环的应用开发。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "neurosity",
-        "crown",
-        "sdk",
-        "consumer-bci"
-      ],
-      "brief_en": "Official Neurosity SDK docs for building applications with the Crown non-invasive EEG headset.",
-      "raw_excerpt": "Neurosity SDK",
-      "fetched_at": "2026-09-15T01:46:45.719763+00:00"
-    },
-    {
-      "type": "Tutorial",
       "level": "Beginner",
       "title_zh": "OpenBCI社区欢迎页｜OpenBCI文档",
       "title_en": "Welcome to the OpenBCI Community | OpenBCI Documentation",
@@ -179,162 +332,6 @@
       "brief_en": "Official OpenBCI documentation hub for non-invasive EEG hardware, software, and community getting-started resources.",
       "raw_excerpt": "Welcome to the OpenBCI Community | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Welcome to the OpenBCI Community Getting Started Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Policies Welcome to O",
       "fetched_at": "2026-09-15T01:46:45.719763+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "入门指南 | Cortex API",
-      "title_en": "Getting Started | Cortex API",
-      "bullets_zh": [
-        "Emotiv Cortex API 入门指南。",
-        "说明认证、会话、数据订阅、记录、标记和受试者。",
-        "适合基于 Emotiv 头带构建应用。"
-      ],
-      "bullets_en": [
-        "Emotiv Cortex API getting-started guide.",
-        "Describes authentication, sessions, data subscription, records, markers, and subjects.",
-        "Useful for building applications on Emotiv headsets."
-      ],
-      "url": "https://emotiv.gitbook.io/cortex-api/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "Emotiv Cortex API入门文档说明连接、会话与数据订阅流程。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "emotiv",
-        "cortex-api",
-        "api"
-      ],
-      "brief_en": "Emotiv Cortex API getting-started docs explain connection, sessions, and data subscription.",
-      "raw_excerpt": "Getting Started | Cortex API Cortex API ⌘ Ctrl k Cortex API Getting Started Connecting to the Cortex API Overview of API flow Authentication Headsets Sessions Data Subscription Records Markers Subjects BCI Advanced BCI Warning Objects Error Codes Troubleshooting Guide Release Notes cortexaccess tool Powered by GitBook On this page For the complete documentation index, see llms.txt . This page is a",
-      "fetched_at": "2026-09-13T17:20:31.928693+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "开发者 - Muse SDK | Muse® EEG 心理健康与睡眠头带",
-      "title_en": "Developers - Muse SDK | Muse® EEG Mental Fitness & Sleep Headband",
-      "bullets_zh": [
-        "Muse 开发者页面介绍 SDK 生态。",
-        "说明如何开发与 Muse EEG 头带集成的应用。",
-        "适合消费级心理健康/睡眠 BCI 开发。"
-      ],
-      "bullets_en": [
-        "Muse developer page for SDK ecosystem.",
-        "Explains how to develop apps integrating with Muse EEG headbands.",
-        "Relevant for consumer mental fitness/sleep BCI development."
-      ],
-      "url": "https://choosemuse.com/pages/developers",
-      "published": "",
-      "source": "tutorial",
-      "brief": "Muse开发者页面介绍SDK生态，用于开发接入Muse头带的应用。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "muse",
-        "sdk",
-        "consumer-bci"
-      ],
-      "brief_en": "Muse developer page introduces the SDK ecosystem for building apps with Muse headbands.",
-      "raw_excerpt": "Developers - Muse SDK | Muse® EEG Mental Fitness & Sleep Headband Subtotal: $0.00 Proceed to Checkout Continue Shopping Shop How It Works Benefits Science App App Premium Subscription Press + Reviews US Store Shop MUSE SDK Looking to develop your own app that integrates with Muse? We have an ecosystem of Muse partners who have developed apps that work with Muse devices, integrated Muse into their",
-      "fetched_at": "2026-09-13T17:20:31.928693+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "Mind Monitor",
-      "title_en": "Mind Monitor",
-      "bullets_zh": [
-        "Mind Monitor是用于流式传输和分析消费级EEG数据的桌面工具。",
-        "提供OSC/CSV格式、MATLAB使用和兼容性文档。",
-        "帮助用户在专有应用之外处理非侵入式EEG信号。"
-      ],
-      "bullets_en": [
-        "Mind Monitor is a desktop tool for streaming and analyzing consumer EEG data.",
-        "Provides documentation on OSC/CSV formats, MATLAB use, and compatibility.",
-        "Helps users work with non-invasive EEG signals outside proprietary apps."
-      ],
-      "url": "https://mind-monitor.com/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "Mind Monitor文档介绍EEG数据流、格式与MATLAB分析，适合非侵入式脑电应用。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "eeg",
-        "mind-monitor",
-        "matlab",
-        "bci",
-        "muse"
-      ],
-      "brief_en": "Mind Monitor docs cover EEG streaming, data formats, and MATLAB analysis for non-invasive BCI use.",
-      "raw_excerpt": "Mind Monitor Toggle navigation Menu Mind Monitor Download Features Graphing Online Graphing with Excel FAQ Compatibility Connection Issues Streaming Data (OSC) Spec Recorded Data (CSV) Spec MATLAB Mellow and Concentration Privacy Policy Technical Manual Horseshoe Graphs Absolute Raw Discrete Spectrogram Accelerometer / Gyroscope Streaming Recording Contact Forums Mind Monitor - See what's really g",
-      "fetched_at": "2026-09-13T13:59:11.702428+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "General",
-      "title_zh": "Unicorn Hybrid Black：用于实时EEG的脑电头带与脑机接口平台",
-      "title_en": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG",
-      "bullets_zh": [
-        "g.tec Unicorn Hybrid Black无线EEG头带的官方产品页。",
-        "介绍用于非侵入式BCI研究和应用的实时EEG平台。",
-        "为开发者选择研究级EEG设备提供硬件背景。"
-      ],
-      "bullets_en": [
-        "Official product page for g.tec's Unicorn Hybrid Black wireless EEG headset.",
-        "Describes a real-time EEG platform used in non-invasive BCI research and applications.",
-        "Provides hardware context for developers selecting research-grade EEG devices."
-      ],
-      "url": "https://www.gtec.at/product/unicorn-hybrid-black/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "g.tec Unicorn Hybrid Black产品页，介绍实时EEG头带与非侵入式BCI平台。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "unicorn",
-        "eeg",
-        "headset",
-        "bci",
-        "gtec"
-      ],
-      "brief_en": "Product page for g.tec's Unicorn Hybrid Black real-time EEG headset and non-invasive BCI platform.",
-      "raw_excerpt": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG | g.tec medical engineering Menu Home About INSIGHTS Products Biosignal Amplifiers g.HIAMP g.USBAMP RESEARCH g.HIAMP NIRX g.HIAMP TOBII PRO FUSION Wearable EEG Headsets g.NAUTILUS PRO FLEXIBLE g.NAUTILUS MULTI-PURPOSE g.NAUTILUS RESEARCH g.NAUTILUS FNIRS g.NAUTILUS NIRX g.NAUTILUS TOBII PRO GLASSES 3 Electrode",
-      "fetched_at": "2026-09-13T13:59:11.702428+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Advanced",
-      "title_zh": "清华大学脑机接口研究组",
-      "title_en": "Tsinghua University Brain-Computer Interface Research Group",
-      "bullets_zh": [
-        "清华大学脑机接口研究组中文网站。",
-        "提供可下载基准数据集，包括64通道EEG文件。",
-        "适合评估非侵入式BCI算法并比较方法。"
-      ],
-      "bullets_en": [
-        "Tsinghua University BCI research group site in Chinese.",
-        "Hosts downloadable benchmark datasets, including 64-channel EEG files.",
-        "Useful for evaluating non-invasive BCI algorithms and comparing methods."
-      ],
-      "url": "http://bci.med.tsinghua.edu.cn/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "清华大学脑机接口研究组页面，提供EEG基准数据集下载与算法评估资源。",
-      "language": "zh",
-      "tags": [
-        "tutorial",
-        "tsinghua",
-        "eeg",
-        "bci",
-        "benchmark",
-        "dataset"
-      ],
-      "brief_en": "Tsinghua BCI group page provides downloadable EEG benchmark datasets for evaluating non-invasive BCI algorithms.",
-      "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
-      "fetched_at": "2026-09-13T13:59:11.702428+00:00"
     }
   ]
 }
