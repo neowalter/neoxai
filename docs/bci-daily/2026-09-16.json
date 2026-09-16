@@ -1,392 +1,302 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T01:34:29.163045+00:00",
+  "generated_at": "2026-09-16T13:38:22.377925+00:00",
   "item_count": 12,
   "types": {
-    "Project": 9,
-    "Tutorial": 2,
-    "Course": 1
+    "Project": 7,
+    "Course": 1,
+    "Tutorial": 4
   },
   "highlights": [
     {
-      "title_zh": "P300与SSVEP脑机接口拼写器",
-      "title_en": "P300 + SSVEP BCI Speller",
-      "url": "https://github.com/BurhanxGodhra/bci-speller",
-      "brief": "P300与SSVEP拼写器项目，支持浏览器校准和LSL实时输出。"
+      "title_zh": "SyNexus非侵入式自适应脑机接口项目",
+      "title_en": "SyNexus Non-invasive Adaptive BCI Project",
+      "url": "https://github.com/GiulianoAgostini04/SyNexus-Project",
+      "brief": "GitHub项目展示用于神经病理与神经创伤的非侵入式运动皮层BCI。"
     },
     {
-      "title_zh": "NIA自适应非侵入式脑机接口数字环境项目",
-      "title_en": "NIA Project for Adaptive Non-invasive BCI Digital Environment",
+      "title_zh": "NIA非侵入式脑机接口数字环境项目",
+      "title_en": "NIA Non-invasive BCI Digital Environment Project",
       "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "brief": "GitHub项目，构建自适应非侵入式脑机接口的人机交互数字环境。"
+      "brief": "GitHub项目构建自适应非侵入式BCI的人机数字交互集成环境。"
     },
     {
-      "title_zh": "AxonOS开源脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI Field",
+      "title_zh": "AxonOS开放脑机接口社区雷达",
+      "title_en": "AxonOS Community Radar for Open BCI",
       "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "brief": "社区维护的开源脑机接口生态地图，帮助发现非侵入式BCI项目。"
+      "brief": "自动更新的开源BCI领域地图，便于追踪非侵入式BCI生态。"
     }
   ],
   "github_path": "docs/bci-daily/2026-09-16.md",
   "items": [
     {
       "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "P300与SSVEP脑机接口拼写器",
-      "title_en": "P300 + SSVEP BCI Speller",
+      "level": "Advanced",
+      "title_zh": "SyNexus非侵入式自适应脑机接口项目",
+      "title_en": "SyNexus Non-invasive Adaptive BCI Project",
       "bullets_zh": [
-        "实现用于非侵入式EEG的P300与SSVEP脑机接口拼写器。",
-        "提供离线分类器训练、浏览器校准和通过LSL实时输出系统按键。",
-        "作为实用开源工具，有助于构建BCI通信应用。"
+        "在2026年创新医疗器械竞赛与展示会上展示。",
+        "介绍硬件/软件架构、实验流程和未来工作。",
+        "利用非侵入式初级运动皮层信号应对神经病理和神经创伤。"
       ],
       "bullets_en": [
-        "Implements a P300 and SSVEP brain-computer interface speller for non-invasive EEG use.",
-        "Provides offline classifier training, browser-based calibration, and real-time OS keypress output via LSL.",
-        "Matters as a practical open-source tool for building BCI communication applications."
+        "Presented at the Innovating Biomedical Devices Competition and Showcase 2026.",
+        "Describes hardware/software architecture, experimental pipeline, and future work.",
+        "Targets neuropathologies and neurotrauma using non-invasive primary motor cortex signals."
       ],
-      "url": "https://github.com/BurhanxGodhra/bci-speller",
-      "published": "2026-09-15T12:01:23Z",
+      "url": "https://github.com/GiulianoAgostini04/SyNexus-Project",
+      "published": "2026-09-16T09:14:05Z",
       "source": "github",
-      "brief": "P300与SSVEP拼写器项目，支持浏览器校准和LSL实时输出。",
+      "brief": "GitHub项目展示用于神经病理与神经创伤的非侵入式运动皮层BCI。",
       "language": "en",
       "tags": [
-        "project",
-        "p300",
-        "ssvep",
-        "speller",
-        "lsl"
+        "noninvasive",
+        "bci",
+        "motor-cortex",
+        "neurotrauma",
+        "hardware",
+        "software",
+        "competition"
       ],
-      "brief_en": "P300 and SSVEP speller project with browser calibration and real-time OS keypress output via LSL.",
-      "raw_excerpt": "P300 + SSVEP brain-computer interface speller — offline classifier training, browser-based calibration, real-time OS keypress output via LSL.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "brief_en": "GitHub project for a non-invasive motor-cortex BCI addressing neuropathologies and neurotrauma.",
+      "raw_excerpt": "Presented at the Innovating Biomedical Devices Competition and Showcase 2026. A Non-invasive and Adaptive Brain-Computer Interface acquiring signals from the primary motor cortex to address neuropathologies and neurotrauma. Covers hardware/software architecture, the experimental pipeline, and future developments in componentry and connectivity.",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Project",
-      "level": "General",
-      "title_zh": "NIA自适应非侵入式脑机接口数字环境项目",
-      "title_en": "NIA Project for Adaptive Non-invasive BCI Digital Environment",
+      "level": "Advanced",
+      "title_zh": "NIA非侵入式脑机接口数字环境项目",
+      "title_en": "NIA Non-invasive BCI Digital Environment Project",
       "bullets_zh": [
-        "GitHub项目实现了面向人机交互的集成数字环境。",
-        "聚焦自适应、非侵入式脑机接口流程，而非植入式设备。",
-        "可作为基于EEG的交互式BCI系统的软件支撑。"
+        "GitHub仓库构建集成数字环境。",
+        "聚焦自适应非侵入式BCI系统中的人机数字交互。",
+        "为开发自适应非侵入式BCI流程提供项目基础。"
       ],
       "bullets_en": [
-        "GitHub project realized an integrated digital environment for human-digital interaction.",
-        "Targets adaptive and non-invasive brain-computer interface workflows rather than implants.",
-        "Matters as a software scaffold for EEG-based interactive BCI systems."
+        "GitHub repository for an integrated digital environment.",
+        "Focuses on human-digital interaction in adaptive non-invasive BCI systems.",
+        "Provides a project base for developing adaptive non-invasive BCI workflows."
       ],
       "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "published": "2026-09-15T13:22:36Z",
+      "published": "2026-09-16T10:27:26Z",
       "source": "github",
-      "brief": "GitHub项目，构建自适应非侵入式脑机接口的人机交互数字环境。",
+      "brief": "GitHub项目构建自适应非侵入式BCI的人机数字交互集成环境。",
       "language": "en",
       "tags": [
-        "project",
-        "eeg",
+        "noninvasive",
         "bci",
-        "human-computer-interaction"
+        "digital-environment",
+        "adaptive"
       ],
-      "brief_en": "GitHub project building an integrated digital environment for adaptive non-invasive BCI human-digital interaction.",
+      "brief_en": "GitHub project building an integrated digital environment for human-digital interaction in adaptive non-invasive BCIs.",
       "raw_excerpt": "Realization of an Integrated Digital Environment for Human-Digital Interaction in Adaptive and Non-invasive Brain-Computer Interfaces",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Project",
       "level": "General",
-      "title_zh": "AxonOS开源脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI Field",
+      "title_zh": "AxonOS开放脑机接口社区雷达",
+      "title_en": "AxonOS Community Radar for Open BCI",
       "bullets_zh": [
-        "GitHub社区项目维护自动更新的开源脑机接口领域地图。",
-        "帮助用户发现非侵入式BCI软件相关的项目、工具和生态。",
-        "作为动态目录，有助于跟踪开源BCI进展。"
+        "社区项目维护开放脑机接口领域的动态地图。",
+        "自动更新，帮助用户发现工具与项目。",
+        "有助于追踪非侵入式BCI软件基础设施。"
       ],
       "bullets_en": [
-        "GitHub community project maintains an auto-updated map of the open brain-computer-interface field.",
-        "Helps users discover projects, tools, and ecosystem around non-invasive BCI software.",
-        "Matters as a living directory for tracking open-source BCI developments."
+        "Community project maintaining a living map of the open brain-computer-interface field.",
+        "Automatically updated, helping users discover tools and projects.",
+        "Useful for tracking non-invasive BCI software infrastructure."
       ],
       "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "published": "2026-09-15T21:25:46Z",
+      "published": "2026-09-16T12:08:54Z",
       "source": "github",
-      "brief": "社区维护的开源脑机接口生态地图，帮助发现非侵入式BCI项目。",
+      "brief": "自动更新的开源BCI领域地图，便于追踪非侵入式BCI生态。",
       "language": "en",
       "tags": [
-        "project",
+        "bci",
         "community",
+        "radar",
         "open-source",
-        "ecosystem"
+        "infrastructure"
       ],
-      "brief_en": "Community-maintained auto-updated map of open brain-computer-interface ecosystem and non-invasive BCI tools.",
+      "brief_en": "Auto-updated map of the open BCI field to track non-invasive BCI ecosystem resources.",
       "raw_excerpt": "AxonOS Radar — a living, auto-updated map of the open brain-computer-interface field. An AxonOS community project.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "EEG-Deformer的PyTorch实现",
-      "title_en": "EEG-Deformer PyTorch Implementation",
-      "bullets_zh": [
-        "GitHub项目提供用于EEG解码的密集卷积Transformer的PyTorch实现。",
-        "面向使用非侵入式EEG信号的脑机接口应用。",
-        "可作为深度学习EEG分类实验的参考代码库。"
-      ],
-      "bullets_en": [
-        "GitHub project provides a PyTorch implementation of a dense convolutional transformer for EEG decoding.",
-        "Aims at brain-computer interface applications using non-invasive EEG signals.",
-        "Matters as a reference codebase for deep-learning EEG classification experiments."
-      ],
-      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
-      "published": "2026-09-15T23:11:22Z",
-      "source": "github",
-      "brief": "PyTorch实现EEG-Deformer卷积Transformer，用于非侵入式脑电解码。",
-      "language": "en",
-      "tags": [
-        "project",
-        "pytorch",
-        "deep-learning",
-        "eeg",
-        "transformer"
-      ],
-      "brief_en": "PyTorch implementation of a dense convolutional transformer for decoding non-invasive EEG in BCI applications.",
-      "raw_excerpt": "Decode EEG signals using this PyTorch implementation of a dense convolutional transformer for brain-computer interface applications.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Advanced",
-      "title_zh": "ADS1299 EEG/BCI开发核心SDK",
-      "title_en": "ADS1299 Core SDK for EEG/BCI Development",
-      "bullets_zh": [
-        "开源SDK面向ADS1299 EEG采集，覆盖8–64通道硬件及MCU/SoC/DSP/FPGA参考包。",
-        "包含Verilog RTL以及PC、移动端和Linux集成，支持Python/MATLAB/R分析与BCI工作流。",
-        "2026年9月发布于GitHub，构成较完整的非侵入式EEG/BCI开发生态。"
-      ],
-      "bullets_en": [
-        "Open-source SDK targets ADS1299 EEG acquisition with 8–64 channel hardware and MCU/SoC/DSP/FPGA reference packages.",
-        "Includes Verilog RTL plus PC, mobile and Linux integration for Python/MATLAB/R analysis and BCI workflows.",
-        "Published on GitHub in September 2026 as a broad non-invasive EEG/BCI development ecosystem."
-      ],
-      "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "published": "2026-09-15T23:58:07Z",
-      "source": "github",
-      "brief": "ADS1299 EEG采集SDK，提供多通道硬件、软件集成与BCI工作流参考。",
-      "language": "en",
-      "tags": [
-        "ads1299",
-        "eeg",
-        "bci",
-        "sdk",
-        "hardware"
-      ],
-      "brief_en": "Open ADS1299 EEG/BCI SDK with multi-channel hardware, software integration and workflow references.",
-      "raw_excerpt": "Building the world’s largest and most comprehensive open ADS1299 EEG/BCI ecosystem — 8–64CH hardware, 200 MCU/SoC/DSP & FPGA target/reference packages, Verilog RTL, PC/mobile/Linux integration, Python/MATLAB/R EEG analysis, BCI workflows, validation, education and research.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "General",
-      "title_zh": "NeoxAI BCI/EEG资源汇总库",
-      "title_en": "NeoxAI Curated BCI/EEG Resource Hub",
-      "bullets_zh": [
-        "GitHub资源库汇总BCI/EEG开放数据集、模型与处理方法。",
-        "同时归档相关新闻和论文，便于发现非侵入式EEG研究资料。",
-        "2026年9月发布，可作为分散BCI资源的统一入口。"
-      ],
-      "bullets_en": [
-        "Curated GitHub resource collecting BCI/EEG open datasets, models and processing methods.",
-        "Also archives related news and papers for non-invasive EEG research discovery.",
-        "Published in September 2026 as a single entry point to scattered BCI resources."
-      ],
-      "url": "https://github.com/neowalter/neoxai",
-      "published": "2026-09-16T00:24:05Z",
-      "source": "github",
-      "brief": "汇总BCI/EEG开放数据集、模型与处理方法，便于快速查找资源。",
-      "language": "en",
-      "tags": [
-        "datasets",
-        "eeg",
-        "bci",
-        "resources"
-      ],
-      "brief_en": "Curates BCI/EEG open datasets, models and processing methods for quick resource discovery.",
-      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "运动想象EEG解码的自监督预训练项目",
-      "title_en": "Self-Supervised Pretraining for Motor Imagery EEG Decoding",
-      "bullets_zh": [
-        "GitHub项目实现面向被试无关运动想象EEG解码的自监督对比预训练。",
-        "结合黎曼几何进行少样本校准，并与经典基线进行基准比较。",
-        "提供两个Streamlit应用，用于演示非侵入式BCI流程。"
-      ],
-      "bullets_en": [
-        "GitHub project implements self-supervised contrastive pretraining for subject-independent motor imagery EEG decoding.",
-        "Fuses Riemannian geometry with few-shot calibration and benchmarks against a classical baseline.",
-        "Provides two Streamlit apps to demonstrate the non-invasive BCI pipeline."
-      ],
-      "url": "https://github.com/BurhanxGodhra/bci-ssl-pretrain",
-      "published": "2026-09-15T23:42:17Z",
-      "source": "github",
-      "brief": "自监督预训练结合黎曼几何，用于少样本运动想象EEG解码。",
-      "language": "en",
-      "tags": [
-        "motor-imagery",
-        "eeg",
-        "self-supervised",
-        "riemannian",
-        "streamlit"
-      ],
-      "brief_en": "Self-supervised pretraining plus Riemannian geometry for few-shot motor imagery EEG decoding.",
-      "raw_excerpt": "Self-supervised contrastive pretraining for subject-independent motor imagery EEG decoding — fused with Riemannian geometry for few-shot calibration, benchmarked against a classical baseline, with two working Streamlit apps.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "NeuroHome P300智能家居BCI原型",
-      "title_en": "NeuroHome P300 Smart Home BCI Prototype",
+      "title_zh": "脑电漂移分析研讨项目",
+      "title_en": "EEG Drift Analyser Seminar Project",
       "bullets_zh": [
-        "GitHub原型使用EEG和P300信号构建面向智能家居的脑机接口应用。",
-        "展示非侵入式P300控制的消费级应用场景。",
-        "2026年9月发布，可作为低成本BCI集成的示例项目。"
+        "GitHub上的脑电漂移分析研讨/项目。",
+        "连接机器学习、神经信息学与脑机接口。",
+        "可作为非侵入式EEG信号处理的实践示例。"
       ],
       "bullets_en": [
-        "GitHub prototype uses EEG and P300 signals for a brain-computer interface smart-home application.",
-        "Demonstrates a consumer-oriented use case for non-invasive P300-based control.",
-        "Published in September 2026 as an example of low-cost BCI integration."
+        "GitHub seminar/project on EEG drift analysis.",
+        "Connects machine learning, neuroinformatics, and brain-computer interfacing.",
+        "Useful as a practical example for non-invasive EEG signal processing."
       ],
-      "url": "https://github.com/poojitha-maryada/NeuroHome-Prototype",
-      "published": "2026-09-15T03:36:30Z",
+      "url": "https://github.com/taui11/eeg-drift-analyser",
+      "published": "2026-09-16T08:39:22Z",
       "source": "github",
-      "brief": "基于EEG/P300的智能家居BCI原型，展示非侵入式控制应用。",
+      "brief": "面向机器学习与神经信息学的EEG漂移分析课程/项目代码。",
       "language": "en",
       "tags": [
-        "p300",
         "eeg",
-        "smart-home",
-        "prototype"
+        "drift",
+        "machine-learning",
+        "neuroinformatics",
+        "bci"
       ],
-      "brief_en": "EEG/P300-based smart-home BCI prototype demonstrating non-invasive control applications.",
-      "raw_excerpt": "EEG and P300 based Brain-Computer Interface for smart home",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "brief_en": "Seminar/project code for EEG drift analysis in machine learning and neuroinformatics.",
+      "raw_excerpt": "Seminar/Project Machine Learning & Neuroinformatics / Brain-Computer Interfacing",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "面向数据高效脑机接口的EEG基础模型",
-      "title_en": "EEG Foundation Models for Data-Efficient BCI",
+      "title_zh": "EEG_Deformer：PyTorch密集卷积Transformer实现",
+      "title_en": "EEG_Deformer PyTorch Dense Convolutional Transformer",
       "bullets_zh": [
-        "GitHub仓库blueshark123/eeg_foundation研究EEGPT、LaBraM、BIOT、CBraMod和BENDR等EEG基础模型。",
-        "它测试预训练EEG模型能否减少下游BCI分类器所需标注数据。",
-        "该资源于2026-09-15发布在GitHub上，与非侵入式EEG脑机接口模型效率相关。"
+        "实现用于脑电解码的密集卷积Transformer。",
+        "基于PyTorch构建，面向脑机接口应用。",
+        "与高级非侵入式EEG信号建模相关。"
       ],
       "bullets_en": [
-        "GitHub repo blueshark123/eeg_foundation studies EEG foundation models such as EEGPT, LaBraM, BIOT, CBraMod, and BENDR.",
-        "It tests whether pretrained EEG models reduce labeled data needed for downstream BCI classifiers.",
-        "Published on GitHub on 2026-09-15; relevant to non-invasive EEG-based BCI model efficiency."
+        "Implements a dense convolutional transformer for EEG decoding.",
+        "Built with PyTorch for brain-computer interface applications.",
+        "Relevant to advanced non-invasive EEG signal modeling."
       ],
-      "url": "https://github.com/blueshark123/eeg_foundation",
-      "published": "2026-09-15T21:42:45Z",
+      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
+      "published": "2026-09-16T07:10:25Z",
       "source": "github",
-      "brief": "研究EEG基础模型能否减少BCI分类器标注数据。",
+      "brief": "用密集卷积Transformer解码脑电信号的非侵入式BCI代码。",
       "language": "en",
       "tags": [
         "eeg",
-        "foundation-models",
-        "self-supervised",
+        "pytorch",
+        "transformer",
+        "deep-learning",
+        "bci"
+      ],
+      "brief_en": "PyTorch implementation of a dense convolutional transformer for decoding EEG signals in non-invasive BCI.",
+      "raw_excerpt": "Decode EEG signals using this PyTorch implementation of a dense convolutional transformer for brain-computer interface applications.",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "whiteram/fly-man-bci：果蝇连接组EEG生成模型",
+      "title_en": "whiteram/fly-man-bci: Fruit-Fly Connectome EEG Generation Model",
+      "bullets_zh": [
+        "GitHub项目whiteram/fly-man-bci提出一种EEG生成模型，在人类球形头部中模拟果蝇连接组（MaleCNS v1.0）。",
+        "它面向非侵入式BCI相关合成脑电建模，而非植入式设备。",
+        "发布于2026-09-16；可作为EEG仿真或数据增强的开源探索资源。"
+      ],
+      "bullets_en": [
+        "GitHub project whiteram/fly-man-bci presents an EEG generation model that simulates the fruit-fly connectome (MaleCNS v1.0) inside a human spherical head.",
+        "It is relevant to non-invasive BCI because it targets synthetic EEG modeling rather than invasive implants.",
+        "Published 2026-09-16; useful as an exploratory open-source resource for EEG simulation or data augmentation."
+      ],
+      "url": "https://github.com/whiteram/fly-man-bci",
+      "published": "2026-09-16T12:23:07Z",
+      "source": "github",
+      "brief": "模拟果蝇连接组生成人脑EEG的开源项目，可用于非侵入式BCI合成数据探索。",
+      "language": "en",
+      "tags": [
+        "eeg",
+        "simulation",
+        "connectome",
         "bci",
-        "research"
+        "open-source"
       ],
-      "brief_en": "Project testing whether EEG foundation models reduce labeled data needed for BCI classifiers.",
-      "raw_excerpt": "This project investigates whether self-supervised “foundation models” for EEG — a rapidly emerging class of models (EEGPT, LaBraM, BIOT, CBraMod, BENDR) pretrained on large unlabeled EEG corpora — meaningfully reduce the amount of labeled data required to train an accurate downstream BCI classifier",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "brief_en": "GitHub project simulating fruit-fly connectome EEG inside a human head for non-invasive BCI synthetic data exploration.",
+      "raw_excerpt": "The fly-man's EEG generation model: the real fruit-fly connectome (MaleCNS v1.0) simulated inside a human sphere head.",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Project",
-      "level": "Advanced",
-      "title_zh": "纯Rust神经量化推理工具",
-      "title_en": "Pure-Rust NeuroRVQ Inference for Biosignals",
+      "level": "General",
+      "title_zh": "tmai-tech/regintel：脑机接口法规情报追踪器",
+      "title_en": "tmai-tech/regintel: BCI Regulatory Intelligence Tracker",
       "bullets_zh": [
-        "GitHub仓库Fazalr714/neurorvq-rs使用Burn 0.20实现纯Rust的NeuroRVQ推理。",
-        "它可在零Python依赖下对EEG、ECG和EMG信号进行tokenize。",
-        "该资源于2026-09-15发布在GitHub上，可用于轻量级非侵入式生物信号预处理。"
+        "GitHub项目tmai-tech/regintel被描述为“脑机接口法规情报”，用于采集并可视化法律追踪数据。",
+        "它可能通过监测监管/法律要求支持非侵入式BCI开发者，而非宣传设备功效。",
+        "发布于2026-09-16；对基于EEG/MEG/fNIRS的BCI产品或研究的合规情报具有相关性。"
       ],
       "bullets_en": [
-        "GitHub repo Fazalr714/neurorvq-rs implements pure-Rust NeuroRVQ inference using Burn 0.20.",
-        "It tokenizes EEG, ECG, and EMG signals with zero Python dependencies.",
-        "Published on GitHub on 2026-09-15; useful for lightweight non-invasive biosignal preprocessing."
+        "GitHub project tmai-tech/regintel is described as 'BCI Regulatory Intelligence', collecting and visualizing legal act tracking data.",
+        "It may support non-invasive BCI developers by monitoring regulatory/legal requirements rather than promoting device claims.",
+        "Published 2026-09-16; relevant to compliance intelligence for EEG/MEG/fNIRS-based BCI products or research."
       ],
-      "url": "https://github.com/Fazalr714/neurorvq-rs",
-      "published": "2026-09-15T23:08:12Z",
+      "url": "https://github.com/tmai-tech/regintel",
+      "published": "2026-09-16T11:54:30Z",
       "source": "github",
-      "brief": "纯Rust的NeuroRVQ推理工具，用于EEG/ECG/EMG信号。",
+      "brief": "面向脑机接口法规追踪的开源采集与界面工具，有助于非侵入式BCI合规情报。",
       "language": "en",
       "tags": [
-        "rust",
-        "eeg",
-        "emg",
-        "ecg",
-        "inference",
-        "neurorvq"
+        "regulatory",
+        "bci",
+        "legal-tracking",
+        "compliance",
+        "open-source"
       ],
-      "brief_en": "Pure-Rust NeuroRVQ inference tool for tokenizing EEG, ECG, and EMG signals.",
-      "raw_excerpt": "Build pure-Rust NeuroRVQ inference to tokenize EEG, ECG, and EMG signals with Burn 0.20 and zero Python dependencies",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "brief_en": "Open-source BCI legal-act tracking collector and UI for non-invasive BCI compliance intelligence.",
+      "raw_excerpt": "BCI Regulatory Intelligence — legal act tracking collector & UI",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Course",
       "level": "Advanced",
-      "title_zh": "EEG微状态教程：研究神经发育中大规模脑网络的瞬时动态",
-      "title_en": "Tutorial on using EEG microstates to study moment-to-moment large-scale functional brain network dynamics in neurodevelopment",
+      "title_zh": "EEG微状态教程：用于研究神经发育中大规模功能脑网络的瞬时动态",
+      "title_en": "Tutorial on Using EEG Microstates to Study Moment-to-Moment Large-Scale Functional Brain Network Dynamics in Neurodevelopment",
       "bullets_zh": [
-        "《神经科学前沿》发表一篇EEG微状态教程，用于研究快速的大规模功能网络动态。",
-        "该资源讲解如何利用地形图式EEG模式捕捉全脑组织的瞬时变化。",
-        "它可作为非侵入式EEG信号分析（包括BCI相关研究）的开放教学参考。"
+        "将EEG微状态解释为捕捉快速全脑功能网络构型的地形模式。",
+        "说明如何在神经发育研究中分析网络状态之间的瞬时转换。",
+        "提供基于非侵入式EEG的框架，用于研究大规模脑动态而无需植入。"
       ],
       "bullets_en": [
-        "Frontiers in Neuroscience publishes a tutorial on EEG microstates for studying fast large-scale functional network dynamics.",
-        "The resource explains how to use topographic EEG patterns to capture moment-to-moment whole-brain organization.",
-        "It is useful as an open educational reference for non-invasive EEG signal analysis, including BCI-related research."
+        "Explains EEG microstates as topographic patterns capturing rapid whole-brain functional network configurations.",
+        "Describes how to analyze moment-to-moment transitions between network states in neurodevelopmental research.",
+        "Provides a non-invasive EEG-based framework for studying large-scale brain dynamics without implants."
       ],
       "url": "https://www.frontiersin.org/articles/10.3389/fnins.2026.1891985",
       "published": "",
       "source": "journal",
-      "brief": "EEG微状态教程，讲解分析神经发育中的大规模脑网络动态。",
+      "brief": "非侵入式EEG微状态教程，指导研究神经发育脑网络动态。",
       "language": "en",
       "tags": [
         "eeg",
         "microstates",
+        "course",
         "neurodevelopment",
-        "network-dynamics",
-        "tutorial",
-        "open-course"
+        "brain-networks"
       ],
-      "brief_en": "A tutorial on EEG microstates for analyzing large-scale brain network dynamics in neurodevelopment.",
+      "brief_en": "Non-invasive EEG microstate tutorial for studying fast large-scale brain network dynamics in neurodevelopment.",
       "raw_excerpt": "EEG microstates are topographical patterns of EEG activity that offer a lens into the fast temporal dynamics of large-scale functional network activity and whole-brain functional organization. Microstates can capture temporal patterns of network configurations and transitions between these configurations at the millisecond scale. Although extensively studied in adults, microstates remain underutil",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     },
     {
       "type": "Tutorial",
       "level": "Beginner",
-      "title_zh": "OpenBCI 文档欢迎页",
-      "title_en": "OpenBCI Documentation Welcome",
+      "title_zh": "OpenBCI 文档：入门指南",
+      "title_en": "OpenBCI Documentation: Getting Started",
       "bullets_zh": [
-        "OpenBCI非侵入式EEG硬件与软件文档的官方入口。",
-        "涵盖Cyton、Ganglion、头带/电极及第三方硬件设置。",
-        "适合初学者开展消费级BCI实验。"
+        "提供Cyton、Ganglion、电极和头带等官方设置指南。",
+        "涵盖生物传感工作流和社区文档，支持消费级BCI使用。",
+        "帮助初学者用OpenBCI硬件开始非侵入式EEG实验。"
       ],
       "bullets_en": [
-        "Official entry point for OpenBCI non-invasive EEG hardware and software documentation.",
-        "Covers Cyton, Ganglion, headwear/electrodes, and third-party hardware setup.",
-        "Useful for beginners starting consumer BCI experiments."
+        "Provides official setup guidance for Cyton, Ganglion, electrodes, and headwear.",
+        "Covers biosensing workflows and community documentation for consumer BCI use.",
+        "Helps beginners start non-invasive EEG experiments with OpenBCI hardware."
       ],
-      "url": "https://docs.openbci.com/",
+      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
       "published": "",
       "source": "tutorial",
-      "brief": "OpenBCI官方文档入口，指导非侵入式EEG硬件与软件入门。",
+      "brief": "OpenBCI官方入门文档，指导非侵入式EEG硬件与软件使用。",
       "language": "en",
       "tags": [
         "tutorial",
@@ -394,21 +304,111 @@
         "eeg",
         "getting-started"
       ],
-      "brief_en": "Official OpenBCI docs entry guiding non-invasive EEG hardware and software setup.",
-      "raw_excerpt": "Welcome to the OpenBCI Community | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Welcome to the OpenBCI Community Getting Started Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Policies Welcome to O",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
+      "brief_en": "Official OpenBCI getting-started guide for non-invasive EEG hardware and software.",
+      "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "BrainFlow 文档",
+      "title_en": "BrainFlow Documentation",
+      "bullets_zh": [
+        "记录支持板卡，包括OpenBCI Cyton、Ganglion、Galea和合成板。",
+        "说明流式传输、回放、滤波和信号处理工具。",
+        "可作为非侵入式BCI数据流水线的开发者参考。"
+      ],
+      "bullets_en": [
+        "Documents supported boards including OpenBCI Cyton, Ganglion, Galea, and synthetic boards.",
+        "Explains streaming, playback, filtering, and signal processing utilities.",
+        "Serves as a developer reference for non-invasive BCI data pipelines."
+      ],
+      "url": "https://brainflow.readthedocs.io/en/stable/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow官方文档，支持多种非侵入式脑电/生理信号板卡与流处理。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "brainflow",
+        "eeg",
+        "api"
+      ],
+      "brief_en": "Official BrainFlow documentation for non-invasive EEG and biosensing board APIs.",
+      "raw_excerpt": "Welcome to BrainFlow’s documentation! — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "BrainFlow 代码示例",
+      "title_en": "BrainFlow Code Samples",
+      "bullets_zh": [
+        "展示从支持的BCI板卡读取数据的代码片段。",
+        "包含流式传输、回放、滤波和特征提取工作流。",
+        "帮助开发者原型化消费级非侵入式BCI应用。"
+      ],
+      "bullets_en": [
+        "Shows code snippets for reading data from supported BCI boards.",
+        "Includes streaming, playback, filtering, and feature extraction workflows.",
+        "Helps developers prototype consumer-grade non-invasive BCI applications."
+      ],
+      "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow官方代码示例，演示非侵入式脑电采集与处理流程。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "brainflow",
+        "examples",
+        "eeg"
+      ],
+      "brief_en": "Official BrainFlow examples demonstrating non-invasive EEG acquisition and processing.",
+      "raw_excerpt": "Code Samples — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand gForceDual ArmBand FreeEE",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Neurosity SDK 文档",
+      "title_en": "Neurosity SDK Documentation",
+      "bullets_zh": [
+        "描述连接Neurosity非侵入式EEG设备的API。",
+        "支持实时脑数据访问和应用开发工作流。",
+        "面向使用头环硬件创建消费级BCI体验的开发者。"
+      ],
+      "bullets_en": [
+        "Describes APIs for connecting to Neurosity non-invasive EEG devices.",
+        "Supports real-time brain data access and application development workflows.",
+        "Targets developers creating consumer BCI experiences with headband hardware."
+      ],
+      "url": "https://docs.neurosity.co/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Neurosity官方SDK文档，面向消费级EEG头环应用开发。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "neurosity",
+        "eeg",
+        "sdk"
+      ],
+      "brief_en": "Official Neurosity SDK docs for building apps with consumer EEG headbands.",
+      "raw_excerpt": "Neurosity SDK",
+      "fetched_at": "2026-09-16T13:38:22.357712+00:00"
     }
   ],
   "stats": {
-    "fetched": 78,
-    "llm_rows": 38,
+    "fetched": 75,
+    "llm_rows": 39,
     "kept": 12,
     "llm_failed": false,
-    "llm_skipped_batches": 1,
-    "prefiltered": 57,
-    "intel": 1,
-    "tutorials": 7,
-    "benchmarks": 20,
+    "llm_skipped_batches": 0,
+    "prefiltered": 52,
+    "intel": 0,
+    "tutorials": 9,
+    "benchmarks": 22,
     "conflicts_dropped": 0
   }
 }
