@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T09:35:59.859Z",
+  "generatedAt": "2026-09-16T09:30:41.373Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 4
     }
   ],
   "items": [
@@ -294,7 +294,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 7788,
+      "downloads": 9572,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -319,7 +319,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2355,
+      "downloads": 2088,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -341,7 +341,7 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 526,
+      "downloads": 525,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
@@ -363,7 +363,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 338,
+      "downloads": 335,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -388,7 +388,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 169,
+      "downloads": 170,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -404,7 +404,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 232,
+      "downloads": 227,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -422,7 +422,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 45,
+      "downloads": 53,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
@@ -447,7 +447,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 118,
+      "downloads": 129,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -468,7 +468,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 33,
+      "downloads": 35,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -500,6 +500,30 @@
       ]
     },
     {
+      "id": "hf:Fudan-fMRI/EEG-Graspbot",
+      "name": "EEG-Graspbot",
+      "owner": "Fudan-fMRI",
+      "url": "https://huggingface.co/datasets/Fudan-fMRI/EEG-Graspbot",
+      "source": "huggingface",
+      "description": "EEG-Graspbot Dataset This dataset contains the offline EEG data for EEG-Graspbot. The dataset includes five anonymized participants, labeled from sub00 to sub04. Each participant has two task types: VI: visual imagery MI: motor imagery Data Organization raw-data/: anonymized raw…",
+      "tags": [
+        "arxiv:2603.03181",
+        "eeg",
+        "brain-computer-interface",
+        "motor-imagery",
+        "visual-imagery",
+        "robotics",
+        "grasping"
+      ],
+      "license": null,
+      "downloads": 320,
+      "likes": 0,
+      "updatedAt": "2026-07-02T19:11:11.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:whhhy123/EEGAgentBenchmark",
       "name": "EEGAgentBenchmark",
       "owner": "whhhy123",
@@ -524,30 +548,6 @@
       ]
     },
     {
-      "id": "hf:Fudan-fMRI/EEG-Graspbot",
-      "name": "EEG-Graspbot",
-      "owner": "Fudan-fMRI",
-      "url": "https://huggingface.co/datasets/Fudan-fMRI/EEG-Graspbot",
-      "source": "huggingface",
-      "description": "EEG-Graspbot Dataset This dataset contains the offline EEG data for EEG-Graspbot. The dataset includes five anonymized participants, labeled from sub00 to sub04. Each participant has two task types: VI: visual imagery MI: motor imagery Data Organization raw-data/: anonymized raw…",
-      "tags": [
-        "arxiv:2603.03181",
-        "eeg",
-        "brain-computer-interface",
-        "motor-imagery",
-        "visual-imagery",
-        "robotics",
-        "grasping"
-      ],
-      "license": null,
-      "downloads": 309,
-      "likes": 0,
-      "updatedAt": "2026-07-02T19:11:11.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:corquaerit/things-eeg-spikes-LC",
       "name": "things-eeg-spikes-LC",
       "owner": "corquaerit",
@@ -556,92 +556,9 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 23,
+      "downloads": 22,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "name": "EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "owner": "lasfk",
-      "url": "https://huggingface.co/datasets/lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "source": "huggingface",
-      "description": "Overview This dataset contains the raw multimodal signals and metadata. The goal of the competition is to predict the imagined handwriting class for each test trial using synchronized: EEG signals fNIRS signals The dataset is organized to support an end-to-end competition workfl…",
-      "tags": [
-        "cc-by-nc-sa-4.0",
-        "csv",
-        "tabular",
-        "pandas",
-        "eeg",
-        "fnirs",
-        "brain-computer-interface",
-        "classification"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 6,
-      "likes": 4,
-      "updatedAt": "2026-07-10T03:25:37.000Z",
-      "modality": [
-        "EEG",
-        "fNIRS"
-      ]
-    },
-    {
-      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "name": "kahlus-raw-eeg-waveforms-efa0d90",
-      "owner": "kgarg47",
-      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "source": "huggingface",
-      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
-      "tags": [],
-      "license": null,
-      "downloads": 33,
-      "likes": 0,
-      "updatedAt": "2026-07-12T00:19:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:antitashi/bci-temporal",
-      "name": "bci-temporal",
-      "owner": "antitashi",
-      "url": "https://huggingface.co/datasets/antitashi/bci-temporal",
-      "source": "huggingface",
-      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
-      "tags": [
-        "image-classification",
-        "image-to-image",
-        "cc-by-4.0",
-        "optimized-parquet",
-        "image",
-        "geospatial",
-        "arxiv:2604.23019",
-        "biodiversity"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 237,
-      "likes": 0,
-      "updatedAt": "2026-06-03T22:15:54.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
-      "name": "ear-eeg-fm-benchmark-data",
-      "owner": "Zachary1150",
-      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
-      "source": "huggingface",
-      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
-      "tags": [],
-      "license": null,
-      "downloads": 35,
-      "likes": 0,
-      "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -664,9 +581,92 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 386,
+      "downloads": 493,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
+      "name": "EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
+      "owner": "lasfk",
+      "url": "https://huggingface.co/datasets/lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
+      "source": "huggingface",
+      "description": "Overview This dataset contains the raw multimodal signals and metadata. The goal of the competition is to predict the imagined handwriting class for each test trial using synchronized: EEG signals fNIRS signals The dataset is organized to support an end-to-end competition workfl…",
+      "tags": [
+        "cc-by-nc-sa-4.0",
+        "csv",
+        "tabular",
+        "pandas",
+        "eeg",
+        "fnirs",
+        "brain-computer-interface",
+        "classification"
+      ],
+      "license": "cc-by-nc-sa-4.0",
+      "downloads": 5,
+      "likes": 4,
+      "updatedAt": "2026-07-10T03:25:37.000Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
+      ]
+    },
+    {
+      "id": "hf:antitashi/bci-temporal",
+      "name": "bci-temporal",
+      "owner": "antitashi",
+      "url": "https://huggingface.co/datasets/antitashi/bci-temporal",
+      "source": "huggingface",
+      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
+      "tags": [
+        "image-classification",
+        "image-to-image",
+        "cc-by-4.0",
+        "optimized-parquet",
+        "image",
+        "geospatial",
+        "arxiv:2604.23019",
+        "biodiversity"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 238,
+      "likes": 0,
+      "updatedAt": "2026-06-03T22:15:54.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "name": "kahlus-raw-eeg-waveforms-efa0d90",
+      "owner": "kgarg47",
+      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "source": "huggingface",
+      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
+      "tags": [],
+      "license": null,
+      "downloads": 32,
+      "likes": 0,
+      "updatedAt": "2026-07-12T00:19:49.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
+      "name": "ear-eeg-fm-benchmark-data",
+      "owner": "Zachary1150",
+      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
+      "source": "huggingface",
+      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
+      "tags": [],
+      "license": null,
+      "downloads": 49,
+      "likes": 0,
+      "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -689,7 +689,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 279,
+      "downloads": 276,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -724,36 +724,11 @@
       "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
       "tags": [],
       "license": null,
-      "downloads": 6,
+      "downloads": 4,
       "likes": 0,
       "updatedAt": "2026-06-13T13:48:10.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "hf:braindecode/bcic2a",
-      "name": "bcic2a",
-      "owner": "braindecode",
-      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
-      "source": "huggingface",
-      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
-      "tags": [
-        "unknown",
-        "braindecode",
-        "eeg",
-        "neuroscience",
-        "brain-computer-interface",
-        "deep-learning"
-      ],
-      "license": "unknown",
-      "downloads": 441,
-      "likes": 0,
-      "updatedAt": "2026-03-14T20:20:10.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "ECoG"
       ]
     },
     {
@@ -776,7 +751,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 182,
-      "updatedAt": "2026-09-14T21:43:49.000Z",
+      "updatedAt": "2026-09-15T15:26:28.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -792,9 +767,25 @@
       "description": "This is data and code accompanying our scientific paper with the same title.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 74,
+      "downloads": 85,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22770099",
+      "name": "Material for paper \"Oscillatory and aperiodic EEG dynamics reflects behaviour during supra second timing\"",
+      "owner": "Guarnieri, Lorenzo",
+      "url": "https://doi.org/10.5281/zenodo.22770099",
+      "source": "zenodo",
+      "description": "Material for paper \"Oscillatory and aperiodic EEG dynamics reflects behaviour during supra second timing\"",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-15T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -939,25 +930,6 @@
       ]
     },
     {
-      "id": "zenodo:22042624",
-      "name": "EEG lead-field matrices for the comparison of hybrid volume-surface-wire and anisotropic FEM head models",
-      "owner": "Ricci, Paolo",
-      "url": "https://doi.org/10.5281/zenodo.22042624",
-      "source": "zenodo",
-      "description": "This dataset contains the lead-field matrices and geometrical data used for the numerical assessment presented in the paper \"Volume-Surface-Wire Integral Equations for EEG Source Imaging\". The dataset includes three EEG lead-field matrices: leadfield_hybrid.h5 , computed using t…",
-      "tags": [
-        "EEG source imaging",
-        "lead-field matrix"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 79,
-      "likes": null,
-      "updatedAt": "2026-08-21T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:YYingDL/PCL-TDGCN",
       "name": "PCL-TDGCN",
       "owner": "YYingDL",
@@ -990,7 +962,30 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-15T06:24:12.000Z",
+      "updatedAt": "2026-09-16T06:24:07.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:protire0821/EEG_visualization",
+      "name": "EEG_visualization",
+      "owner": "protire0821",
+      "url": "https://github.com/protire0821/EEG_visualization",
+      "source": "github",
+      "description": "Desktop EEG viewer: filtered waveforms, animated topomap, and seizure annotations for EDF/BDF datasets",
+      "tags": [
+        "chb-mit",
+        "eeg",
+        "mne-python",
+        "neuroscience",
+        "pyqt6",
+        "seizure-detection"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-09-15T18:10:07.000Z",
       "modality": [
         "EEG"
       ]
