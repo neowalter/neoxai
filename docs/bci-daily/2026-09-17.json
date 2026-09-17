@@ -408,5 +408,17 @@
       "raw_excerpt": "Mind Monitor Toggle navigation Menu Mind Monitor Download Features Graphing Online Graphing with Excel FAQ Compatibility Connection Issues Streaming Data (OSC) Spec Recorded Data (CSV) Spec MATLAB Mellow and Concentration Privacy Policy Technical Manual Horseshoe Graphs Absolute Raw Discrete Spectrogram Accelerometer / Gyroscope Streaming Recording Contact Forums Mind Monitor - See what's really g",
       "fetched_at": "2026-09-17T02:03:43.698723+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 75,
+    "llm_rows": 24,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 3,
+    "prefiltered": 54,
+    "intel": 1,
+    "tutorials": 9,
+    "benchmarks": 11,
+    "conflicts_dropped": 0
+  }
 }
