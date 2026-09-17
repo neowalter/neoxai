@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T09:30:41.373Z",
+  "generatedAt": "2026-09-17T09:39:05.938Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 5
     }
   ],
   "items": [
@@ -294,7 +294,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 9572,
+      "downloads": 10133,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -319,7 +319,7 @@
         "visual-decoding"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2088,
+      "downloads": 2421,
       "likes": 16,
       "updatedAt": "2026-05-10T11:32:37.000Z",
       "modality": [
@@ -341,31 +341,9 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 525,
+      "downloads": 424,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 335,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -388,7 +366,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 170,
+      "downloads": 210,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -404,7 +382,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 227,
+      "downloads": 246,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -422,9 +400,31 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 53,
+      "downloads": 66,
       "likes": 1,
       "updatedAt": "2026-09-09T13:10:59.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 151,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -447,7 +447,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 129,
+      "downloads": 137,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -468,7 +468,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 35,
+      "downloads": 40,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -492,7 +492,7 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 74,
+      "downloads": 75,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
@@ -516,7 +516,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 320,
+      "downloads": 330,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -540,7 +540,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 61,
+      "downloads": 63,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -556,7 +556,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 22,
+      "downloads": 34,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
@@ -581,7 +581,7 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 493,
+      "downloads": 591,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
@@ -632,7 +632,7 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 238,
+      "downloads": 263,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
@@ -664,7 +664,7 @@
       "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 49,
+      "downloads": 58,
       "likes": 0,
       "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
@@ -689,7 +689,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 276,
+      "downloads": 290,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -708,25 +708,9 @@
         "benchmark-data"
       ],
       "license": "other",
-      "downloads": 16,
+      "downloads": 18,
       "likes": 0,
       "updatedAt": "2026-06-17T04:37:17.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:smithjacki/eeg-emotion-depression",
-      "name": "eeg-emotion-depression",
-      "owner": "smithjacki",
-      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
-      "source": "huggingface",
-      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
-      "tags": [],
-      "license": null,
-      "downloads": 4,
-      "likes": 0,
-      "updatedAt": "2026-06-13T13:48:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -767,7 +751,7 @@
       "description": "This is data and code accompanying our scientific paper with the same title.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 85,
+      "downloads": 92,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
       "modality": [
@@ -783,7 +767,7 @@
       "description": "Material for paper \"Oscillatory and aperiodic EEG dynamics reflects behaviour during supra second timing\"",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 2,
       "likes": null,
       "updatedAt": "2026-09-15T00:00:00.000Z",
       "modality": [
@@ -802,6 +786,22 @@
       "downloads": 6,
       "likes": null,
       "updatedAt": "2026-09-12T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22666114",
+      "name": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
+      "owner": "villena, mario",
+      "url": "https://doi.org/10.5281/zenodo.22666114",
+      "source": "zenodo",
+      "description": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 17,
+      "likes": null,
+      "updatedAt": "2026-09-08T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -863,22 +863,6 @@
       ]
     },
     {
-      "id": "zenodo:22666114",
-      "name": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
-      "owner": "villena, mario",
-      "url": "https://doi.org/10.5281/zenodo.22666114",
-      "source": "zenodo",
-      "description": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-09-08T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "zenodo:22642960",
       "name": "Dataset on the Effects of Cognitive and Muscular Fatigue on Brain Function and Dynamic Postural Balance in Older Adults",
       "owner": "Dodangeh, Zahra",
@@ -913,20 +897,48 @@
       ]
     },
     {
-      "id": "zenodo:22291953",
-      "name": "Data and Code for \"Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS–EEG Study",
-      "owner": "Hirata, Tatsuo",
-      "url": "https://doi.org/10.5281/zenodo.22291953",
+      "id": "zenodo:22227356",
+      "name": "AVMoments-EEG: A Large-Scale EEG Datasets of Naturalistic Audiovisual Event Perception",
+      "owner": "Tang, Shuning",
+      "url": "https://doi.org/10.5281/zenodo.22227356",
       "source": "zenodo",
-      "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
+      "description": "AVMoments-EEG is a large-scale, high-temporal-resolution human electroencephalography (EEG) dataset designed to characterize neural responses to naturalistic audiovisual events. The dataset comprises data from 10 healthy adult participants who freely viewed three-second naturali…",
       "tags": [],
       "license": "cc-by-4.0",
       "downloads": 11,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
+      "tags": [
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 85,
+      "updatedAt": "2026-09-16T20:45:20.000Z",
+      "modality": [
         "EEG",
-        "fNIRS"
+        "MEG",
+        "iEEG",
+        "fNIRS",
+        "EMG"
       ]
     },
     {
@@ -962,7 +974,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-16T06:24:07.000Z",
+      "updatedAt": "2026-09-17T06:24:07.000Z",
       "modality": [
         "EEG"
       ]
