@@ -86,5 +86,17 @@
       "raw_excerpt": "The goal of this clinical trial is to determine whether a Brain-Computer Interface Neurofeedback Training (BCI-NFT) programme can improve cognitive outcomes, and whether electroencephalography (EEG)-based measures can serve as objective markers of cognitive impairment, in children and adolescents aged 7 to 21 years with acquired brain injury (ABI), including traumatic brain injury (TBI), stroke, e",
       "fetched_at": "2026-09-18T13:55:43.255138+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 77,
+    "llm_rows": 36,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 54,
+    "intel": 2,
+    "tutorials": 8,
+    "benchmarks": 18,
+    "conflicts_dropped": 0
+  }
 }
