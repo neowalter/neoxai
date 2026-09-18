@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T09:39:05.938Z",
+  "generatedAt": "2026-09-18T09:11:58.365Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 20
+      "count": 21
     },
     {
       "id": "github",
@@ -100,6 +100,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008834",
+      "name": "PKUEEG",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008834",
+      "source": "openneuro",
+      "description": "PKUEEG",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-17T08:20:25.932Z",
       "modality": [
         "EEG"
       ]
@@ -257,26 +276,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008462",
-      "name": "Drug-Resistant Epilepsy Resting-State MEG-MRI Dataset",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008462",
-      "source": "openneuro",
-      "description": "Elena Resting-State MEG Pilot Dataset",
-      "tags": [
-        "BIDS",
-        "meg",
-        "mri"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-07-23T17:42:46.963Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
       "name": "Schalk-2004-BCI2000GeneralPurposeBrainComputerInterfaceSystem",
       "owner": "raei",
@@ -294,56 +293,9 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 10133,
+      "downloads": 10472,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:LidongYang/EEG_Image_decode",
-      "name": "EEG_Image_decode",
-      "owner": "LidongYang",
-      "url": "https://huggingface.co/datasets/LidongYang/EEG_Image_decode",
-      "source": "huggingface",
-      "description": "EEG Image Decode — Dataset and Checkpoints This dataset accompanies the NeurIPS 2024 paper: Visual Decoding and Reconstruction via EEG Embeddings with Guided Diffusion Dongyang Li · Chen Wei · Shiying Li · Jiachen Zou · Quanying Liu It packages the preprocessed EEG recordings, s…",
-      "tags": [
-        "image-to-image",
-        "image-classification",
-        "cc-by-4.0",
-        "10B<n<100B",
-        "arxiv:2403.07721",
-        "EEG",
-        "brain-computer-interface",
-        "visual-decoding"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 2421,
-      "likes": 16,
-      "updatedAt": "2026-05-10T11:32:37.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-natview-derived",
-      "name": "eeg-fmri-natview-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-natview-derived",
-      "source": "huggingface",
-      "description": "NATVIEW EEG-fMRI derived run objects This public dataset repository is the persistent derivative store for the M8 external Spec2VolCAMU-Net/NeuroBOLT comparison. The source data are the NKI NATVIEW simultaneous EEG-fMRI release: Data paper: https://doi.org/10.1038/s41597-023-024…",
-      "tags": [
-        "cc-by-4.0",
-        "eeg",
-        "fmri",
-        "neuroscience",
-        "bids"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 424,
-      "likes": 0,
-      "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
         "EEG"
       ]
@@ -374,6 +326,24 @@
       ]
     },
     {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 68,
+      "likes": 1,
+      "updatedAt": "2026-09-18T07:58:35.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:corquaerit/things-eeg-spikes-RC",
       "name": "things-eeg-spikes-RC",
       "owner": "corquaerit",
@@ -382,27 +352,9 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 246,
+      "downloads": 248,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for the paper \"\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheticdataforeeg] Dataset Details This repo contains three synthetic EEG d…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 66,
-      "likes": 1,
-      "updatedAt": "2026-09-09T13:10:59.000Z",
       "modality": [
         "EEG"
       ]
@@ -422,7 +374,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 151,
+      "downloads": 148,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -447,7 +399,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 137,
+      "downloads": 142,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -500,6 +452,28 @@
       ]
     },
     {
+      "id": "hf:Yvhang009/eeg-fmri-natview-derived",
+      "name": "eeg-fmri-natview-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-natview-derived",
+      "source": "huggingface",
+      "description": "NATVIEW EEG-fMRI derived run objects This public dataset repository is the persistent derivative store for the M8 external Spec2VolCAMU-Net/NeuroBOLT comparison. The source data are the NKI NATVIEW simultaneous EEG-fMRI release: Data paper: https://doi.org/10.1038/s41597-023-024…",
+      "tags": [
+        "cc-by-4.0",
+        "eeg",
+        "fmri",
+        "neuroscience",
+        "bids"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 69,
+      "likes": 0,
+      "updatedAt": "2026-08-21T18:41:24.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:Fudan-fMRI/EEG-Graspbot",
       "name": "EEG-Graspbot",
       "owner": "Fudan-fMRI",
@@ -516,7 +490,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 330,
+      "downloads": 328,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -540,25 +514,9 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 63,
+      "downloads": 28,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:corquaerit/things-eeg-spikes-LC",
-      "name": "things-eeg-spikes-LC",
-      "owner": "corquaerit",
-      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
-      "source": "huggingface",
-      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
-      "tags": [],
-      "license": null,
-      "downloads": 34,
-      "likes": 0,
-      "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
         "EEG"
       ]
@@ -581,9 +539,50 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 591,
+      "downloads": 617,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:corquaerit/things-eeg-spikes-LC",
+      "name": "things-eeg-spikes-LC",
+      "owner": "corquaerit",
+      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
+      "source": "huggingface",
+      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
+      "tags": [],
+      "license": null,
+      "downloads": 41,
+      "likes": 0,
+      "updatedAt": "2026-08-12T23:44:46.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:antitashi/bci-temporal",
+      "name": "bci-temporal",
+      "owner": "antitashi",
+      "url": "https://huggingface.co/datasets/antitashi/bci-temporal",
+      "source": "huggingface",
+      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
+      "tags": [
+        "image-classification",
+        "image-to-image",
+        "cc-by-4.0",
+        "optimized-parquet",
+        "image",
+        "geospatial",
+        "arxiv:2604.23019",
+        "biodiversity"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 293,
+      "likes": 0,
+      "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
         "EEG"
       ]
@@ -606,7 +605,7 @@
         "classification"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 5,
+      "downloads": 4,
       "likes": 4,
       "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
@@ -615,26 +614,17 @@
       ]
     },
     {
-      "id": "hf:antitashi/bci-temporal",
-      "name": "bci-temporal",
-      "owner": "antitashi",
-      "url": "https://huggingface.co/datasets/antitashi/bci-temporal",
+      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
+      "name": "ear-eeg-fm-benchmark-data",
+      "owner": "Zachary1150",
+      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
       "source": "huggingface",
-      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
-      "tags": [
-        "image-classification",
-        "image-to-image",
-        "cc-by-4.0",
-        "optimized-parquet",
-        "image",
-        "geospatial",
-        "arxiv:2604.23019",
-        "biodiversity"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 263,
+      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
+      "tags": [],
+      "license": null,
+      "downloads": 60,
       "likes": 0,
-      "updatedAt": "2026-06-03T22:15:54.000Z",
+      "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -648,25 +638,9 @@
       "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
       "tags": [],
       "license": null,
-      "downloads": 32,
+      "downloads": 33,
       "likes": 0,
       "updatedAt": "2026-07-12T00:19:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
-      "name": "ear-eeg-fm-benchmark-data",
-      "owner": "Zachary1150",
-      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
-      "source": "huggingface",
-      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
-      "tags": [],
-      "license": null,
-      "downloads": 58,
-      "likes": 0,
-      "updatedAt": "2026-07-07T00:30:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -689,7 +663,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 290,
+      "downloads": 296,
       "likes": 0,
       "updatedAt": "2026-05-10T02:46:47.000Z",
       "modality": [
@@ -711,6 +685,22 @@
       "downloads": 18,
       "likes": 0,
       "updatedAt": "2026-06-17T04:37:17.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:smithjacki/eeg-emotion-depression",
+      "name": "eeg-emotion-depression",
+      "owner": "smithjacki",
+      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
+      "source": "huggingface",
+      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
+      "tags": [],
+      "license": null,
+      "downloads": 4,
+      "likes": 0,
+      "updatedAt": "2026-06-13T13:48:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -751,7 +741,7 @@
       "description": "This is data and code accompanying our scientific paper with the same title.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 92,
+      "downloads": 95,
       "likes": null,
       "updatedAt": "2026-08-31T00:00:00.000Z",
       "modality": [
@@ -799,7 +789,7 @@
       "description": "Load-Dependent Lengthening of a Fronto-Central EEG Microstate During Visual Working Memory Maintenance",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 17,
+      "downloads": 19,
       "likes": null,
       "updatedAt": "2026-09-08T00:00:00.000Z",
       "modality": [
@@ -942,22 +932,6 @@
       ]
     },
     {
-      "id": "github:YYingDL/PCL-TDGCN",
-      "name": "PCL-TDGCN",
-      "owner": "YYingDL",
-      "url": "https://github.com/YYingDL/PCL-TDGCN",
-      "source": "github",
-      "description": "This repo provides a demo for the \"Prototypical Contrastive Learning with Temporal Dynamic Graph Convolutional Network for EEG-based Emotion Recognition\" on the SEED and HIED datasets.",
-      "tags": [],
-      "license": null,
-      "downloads": null,
-      "likes": 10,
-      "updatedAt": "2026-09-15T07:55:56.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -974,7 +948,32 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-17T06:24:07.000Z",
+      "updatedAt": "2026-09-18T06:24:13.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:ankanbiswas022/p300-erp-detection",
+      "name": "p300-erp-detection",
+      "owner": "ankanbiswas022",
+      "url": "https://github.com/ankanbiswas022/p300-erp-detection",
+      "source": "github",
+      "description": "Single-trial P300 detection on a public speller dataset: xDAWN + Riemannian geometry vs EEGNet, within/cross-subject validation, decision-level aggregation",
+      "tags": [
+        "bci",
+        "eeg",
+        "erp",
+        "mne",
+        "p300",
+        "pytorch",
+        "riemannian-geometry",
+        "scikit-learn"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-09-18T08:43:12.000Z",
       "modality": [
         "EEG"
       ]
