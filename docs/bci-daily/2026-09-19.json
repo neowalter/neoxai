@@ -402,5 +402,17 @@
       "raw_excerpt": "EEG BCIs, Smart Glasses, and Motor Imagery decoding research published in major journals and conferences.",
       "fetched_at": "2026-09-19T01:59:46.676575+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 76,
+    "llm_rows": 44,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "prefiltered": 57,
+    "intel": 1,
+    "tutorials": 10,
+    "benchmarks": 21,
+    "conflicts_dropped": 0
+  }
 }
