@@ -1,6 +1,6 @@
 {
   "date": "2026-09-19",
-  "generated_at": "2026-09-19T01:59:46.697047+00:00",
+  "generated_at": "2026-09-19T13:43:52.162473+00:00",
   "item_count": 1,
   "types": {
     "Clinical": 1
@@ -10,7 +10,7 @@
       "title_zh": "使用脑机接口神经反馈进行认知康复",
       "title_en": "Cognitive Rehabilitation Using Neurofeedback With Brain-computer Interface",
       "url": "https://clinicaltrials.gov/study/NCT07828496",
-      "brief": "临床试验评估EEG神经反馈BCI用于儿童青少年认知康复，标志非侵入式BCI进展。"
+      "brief": "该临床试验评估EEG神经反馈BCI改善儿童青少年认知功能，提供非侵入式干预证据。"
     }
   ],
   "github_path": "docs/bci-intel/2026-09-19.json",
@@ -21,42 +21,42 @@
       "title_zh": "使用脑机接口神经反馈进行认知康复",
       "title_en": "Cognitive Rehabilitation Using Neurofeedback With Brain-computer Interface",
       "bullets_zh": [
-        "ClinicalTrials.gov研究NCT07828496评估基于EEG的神经反馈BCI用于认知康复。",
-        "该试验面向儿童和青少年，测试认知结果及损伤相关EEG标志物。",
-        "发布于2026-09-18；作为非侵入式临床BCI证据而非植入研究具有相关性。"
+        "ClinicalTrials.gov研究NCT07828496评估基于EEG的BCI神经反馈训练用于认知康复。",
+        "该试验面向存在认知障碍的儿童和青少年，使用非侵入式EEG作为客观指标。",
+        "发布于2026-09-18；为消费级非侵入式BCI干预提供临床证据。"
       ],
       "bullets_en": [
-        "ClinicalTrials.gov study NCT07828496 evaluates EEG-based neurofeedback BCI for cognitive rehabilitation.",
-        "It targets children and adolescents, testing cognitive outcomes and EEG markers of impairment.",
-        "Published 2026-09-18; relevant as non-invasive clinical BCI evidence rather than implant work."
+        "ClinicalTrials.gov study NCT07828496 evaluates EEG-based BCI neurofeedback training for cognitive rehabilitation.",
+        "The trial targets children and adolescents with cognitive impairment, using non-invasive EEG as an objective marker.",
+        "Published 2026-09-18; relevant to clinical evidence for consumer-style non-invasive BCI interventions."
       ],
       "url": "https://clinicaltrials.gov/study/NCT07828496",
       "published": "2026-09-18",
       "source": "clinicaltrials",
-      "brief": "临床试验评估EEG神经反馈BCI用于儿童青少年认知康复，标志非侵入式BCI进展。",
+      "brief": "该临床试验评估EEG神经反馈BCI改善儿童青少年认知功能，提供非侵入式干预证据。",
       "language": "en",
       "tags": [
         "clinical",
         "eeg",
         "neurofeedback",
         "bci",
-        "children"
+        "pediatric"
       ],
-      "brief_en": "Clinical trial of EEG neurofeedback BCI for cognitive rehab in children/adolescents, marking non-invasive BCI progress.",
+      "brief_en": "This clinical trial evaluates EEG-based BCI neurofeedback to improve cognitive outcomes in children and adolescents.",
       "raw_excerpt": "The goal of this clinical trial is to determine whether a Brain-Computer Interface Neurofeedback Training (BCI-NFT) programme can improve cognitive outcomes, and whether electroencephalography (EEG)-based measures can serve as objective markers of cognitive impairment, in children and adolescents aged 7 to 21 years with acquired brain injury (ABI), including traumatic brain injury (TBI), stroke, e",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     }
   ],
   "stats": {
-    "fetched": 76,
-    "llm_rows": 44,
+    "fetched": 105,
+    "llm_rows": 40,
     "kept": 12,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "prefiltered": 57,
+    "prefiltered": 55,
     "intel": 1,
-    "tutorials": 10,
-    "benchmarks": 21,
+    "tutorials": 9,
+    "benchmarks": 22,
     "conflicts_dropped": 0
   }
 }

@@ -1,418 +1,412 @@
 {
   "date": "2026-09-19",
-  "generated_at": "2026-09-19T01:59:46.697047+00:00",
+  "generated_at": "2026-09-19T13:43:52.162473+00:00",
   "item_count": 12,
   "types": {
-    "Project": 11,
-    "News": 1
+    "News": 1,
+    "Project": 7,
+    "Tutorial": 4
   },
   "highlights": [
     {
-      "title_zh": "AxonOS 开放脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI",
-      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "brief": "AxonOS 社区雷达自动更新开放脑机接口项目地图。"
+      "title_zh": "API Evangelist 发布的 BrainCo 公共 API 档案",
+      "title_en": "BrainCo Public API Profile by API Evangelist",
+      "url": "https://github.com/api-evangelist/brainco",
+      "brief": "第三方整理的 BrainCo 非侵入式脑机接口公开 API 档案，便于开发者了解硬件与 SDK。"
     },
     {
-      "title_zh": "NIA 项目：自适应非侵入式脑机接口数字环境",
-      "title_en": "NIA Project for Adaptive Non-Invasive BCI Digital Environment",
+      "title_zh": "NIA项目：自适应非侵入式脑机接口集成数字环境",
+      "title_en": "NIA-Project: Integrated Digital Environment for Adaptive Non-invasive BCI",
       "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "brief": "NIA 项目实现自适应非侵入式脑机接口人机交互数字环境。"
+      "brief": "开源项目，构建自适应非侵入式脑机接口的人机交互数字环境。"
     },
     {
-      "title_zh": "EEG Deformer：用于脑机接口的 PyTorch 变换器实现",
-      "title_en": "EEG Deformer PyTorch Transformer for BCI",
-      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
-      "brief": "EEG Deformer 提供脑机接口 EEG 解码的 PyTorch 变换器实现。"
+      "title_zh": "AxonOS社区雷达：开放脑机接口生态地图",
+      "title_en": "AxonOS Community Radar: Open BCI Ecosystem Map",
+      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
+      "brief": "开源社区雷达，自动更新开放脑机接口生态地图。"
     }
   ],
   "github_path": "docs/bci-daily/2026-09-19.md",
   "items": [
     {
-      "type": "Project",
-      "level": "General",
-      "title_zh": "AxonOS 开放脑机接口社区雷达",
-      "title_en": "AxonOS Community Radar for Open BCI",
-      "bullets_zh": [
-        "AxonOS 社区维护一个自动更新的开放脑机接口领域雷达地图。",
-        "它汇总开放脑机接口生态中的社区项目与工具。",
-        "帮助开发者跟踪社区活动、空白点和新兴开源 BCI 资源。"
-      ],
-      "bullets_en": [
-        "AxonOS community maintains an auto-updated radar map of the open brain-computer-interface field.",
-        "It aggregates community projects and tools across the open BCI ecosystem.",
-        "Helps developers track community activity, gaps, and emerging open-source BCI resources."
-      ],
-      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
-      "published": "2026-09-19T00:26:44Z",
-      "source": "github",
-      "brief": "AxonOS 社区雷达自动更新开放脑机接口项目地图。",
-      "language": "en",
-      "tags": [
-        "bci",
-        "community",
-        "radar",
-        "open-source",
-        "github"
-      ],
-      "brief_en": "Auto-updated AxonOS radar mapping the open brain-computer-interface ecosystem.",
-      "raw_excerpt": "AxonOS Radar — a living, auto-updated map of the open brain-computer-interface field. An AxonOS community project.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "NIA 项目：自适应非侵入式脑机接口数字环境",
-      "title_en": "NIA Project for Adaptive Non-Invasive BCI Digital Environment",
-      "bullets_zh": [
-        "NIA-Project GitHub 仓库实现了面向人机数字交互的集成数字环境。",
-        "它针对自适应、非侵入式脑机接口，而非植入式设备。",
-        "可作为构建交互式脑机接口系统的软件栈示例。"
-      ],
-      "bullets_en": [
-        "The NIA-Project GitHub repository implements an integrated digital environment for human-digital interaction.",
-        "It targets adaptive and non-invasive brain-computer interfaces rather than implants.",
-        "Useful as a software-stack example for building interactive BCI systems."
-      ],
-      "url": "https://github.com/GiulianoAgostini04/NIA-Project",
-      "published": "2026-09-18T12:42:17Z",
-      "source": "github",
-      "brief": "NIA 项目实现自适应非侵入式脑机接口人机交互数字环境。",
-      "language": "en",
-      "tags": [
-        "bci",
-        "non-invasive-bci",
-        "digital-environment",
-        "adaptive",
-        "github"
-      ],
-      "brief_en": "GitHub project implementing an integrated digital environment for adaptive non-invasive BCI interaction.",
-      "raw_excerpt": "Realization of an Integrated Digital Environment for Human-Digital Interaction in Adaptive and Non-invasive Brain-Computer Interfaces",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "EEG Deformer：用于脑机接口的 PyTorch 变换器实现",
-      "title_en": "EEG Deformer PyTorch Transformer for BCI",
-      "bullets_zh": [
-        "提供用于脑电解码的密集卷积变换器 PyTorch 实现。",
-        "面向使用非侵入式脑电信号的脑机接口应用。",
-        "可作为深度学习脑电解码实验的参考代码库。"
-      ],
-      "bullets_en": [
-        "Provides a PyTorch implementation of a dense convolutional transformer for EEG decoding.",
-        "Targets brain-computer interface applications using non-invasive EEG signals.",
-        "Useful as a reference codebase for deep-learning EEG classification experiments."
-      ],
-      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
-      "published": "2026-09-18T23:12:59Z",
-      "source": "github",
-      "brief": "EEG Deformer 提供脑机接口 EEG 解码的 PyTorch 变换器实现。",
-      "language": "en",
-      "tags": [
-        "eeg",
-        "pytorch",
-        "transformer",
-        "deep-learning",
-        "bci"
-      ],
-      "brief_en": "PyTorch dense convolutional transformer implementation for decoding non-invasive EEG in BCI applications.",
-      "raw_excerpt": "Decode EEG signals using this PyTorch implementation of a dense convolutional transformer for brain-computer interface applications.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "基于 EEG 的脑机接口 Unity 游戏控制项目",
-      "title_en": "EEG BCI Unity Game Control",
-      "bullets_zh": [
-        "实现基于脑电的脑机接口，用于 Unity 实时控制。",
-        "使用信号处理、CSP/LDA 分类和 LSL 通信。",
-        "展示面向交互应用的实用消费级/科研 EEG 流程。"
-      ],
-      "bullets_en": [
-        "Implements an EEG-based brain-computer interface for real-time control in Unity.",
-        "Uses signal processing, CSP/LDA classification, and LSL communication.",
-        "Demonstrates a practical consumer/research EEG pipeline for interactive applications."
-      ],
-      "url": "https://github.com/andrijamitrovicc/eeg-bci-unity-control",
-      "published": "2026-09-18T18:04:53Z",
-      "source": "github",
-      "brief": "基于 EEG 的脑机接口项目，用 CSP/LDA 与 LSL 控制 Unity 游戏。",
-      "language": "en",
-      "tags": [
-        "eeg",
-        "unity",
-        "lsl",
-        "csp",
-        "lda",
-        "bci"
-      ],
-      "brief_en": "EEG-based BCI project using CSP/LDA and LSL to control Unity games in real time.",
-      "raw_excerpt": "EEG-based brain-computer interface for real-time Unity game control using signal processing, CSP/LDA classification and LSL communication.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
       "type": "News",
       "level": "General",
-      "title_zh": "BrainCo 公开 API 接口档案",
-      "title_en": "BrainCo Public API Surface Profile",
+      "title_zh": "API Evangelist 发布的 BrainCo 公共 API 档案",
+      "title_en": "BrainCo Public API Profile by API Evangelist",
       "bullets_zh": [
-        "API Evangelist 维护了 BrainCo 公开 API 接口的第三方档案。",
-        "该档案覆盖由哈佛创新实验室孵化、开发非侵入式脑机接口硬件与开发者 SDK 的 BrainCo。",
-        "它有助于独立了解消费级和科研 BCI 设备周围的开发者生态。"
+        "API Evangelist 在 GitHub 发布了独立第三方档案，记录 BrainCo 的公开 API 接口。",
+        "该档案将 BrainCo 描述为由哈佛创新实验室创立、开发非侵入式脑机接口硬件与开发者 SDK 的公司。",
+        "档案涵盖消费级/科研头环 API，帮助开发者评估非侵入式脑机接口的集成选项。"
       ],
       "bullets_en": [
-        "API Evangelist maintains a third-party profile of BrainCo's public API surface.",
-        "The profile covers BrainCo, a Harvard-innovation-lab-founded company building non-invasive BCI hardware and developer SDKs.",
-        "It matters as an independent map of the developer-facing ecosystem around consumer and research BCI devices."
+        "API Evangelist published an independent third-party GitHub profile documenting BrainCo’s public API surface.",
+        "BrainCo is described as a Harvard-innovation-lab-founded company building non-invasive BCI hardware and developer SDKs.",
+        "The profile covers consumer/research headset APIs, helping developers assess integration options for non-invasive BCI."
       ],
       "url": "https://github.com/api-evangelist/brainco",
       "published": "2026-09-19T00:25:33Z",
       "source": "github",
-      "brief": "BrainCo 公开 API 第三方档案，梳理非侵入式 BCI 开发者生态。",
+      "brief": "第三方整理的 BrainCo 非侵入式脑机接口公开 API 档案，便于开发者了解硬件与 SDK。",
       "language": "en",
       "tags": [
         "brainco",
         "api",
         "sdk",
-        "non-invasive-bci",
-        "neurotech"
+        "bci",
+        "hardware",
+        "developer",
+        "industry"
       ],
-      "brief_en": "Third-party BrainCo public API profile mapping the non-invasive BCI developer ecosystem.",
+      "brief_en": "Third-party GitHub profile of BrainCo’s public API for non-invasive BCI hardware and SDKs, useful for developers.",
       "raw_excerpt": "BrainCo — independent third-party profile of a public API surface, by API Evangelist. BrainCo is a Harvard-innovation-lab-founded neurotechnology company building non-invasive brain-computer interface (BCI) hardware and the developer SDKs that surround it. Its consumer and research line centers on wearable EEG headbands - Focus, Focus1 and FocusCal",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "MindAid 辅助型 SSVEP 脑机接口（GitHub）",
-      "title_en": "MindAid Assistive SSVEP BCI (GitHub)",
-      "bullets_zh": [
-        "GitHub项目MindAid实现基于SSVEP的辅助型脑机接口，使用EEG信号。",
-        "它面向基本需求的实时选择，具有无障碍应用价值。",
-        "该项目于2026年9月发布在GitHub，属于非侵入式EEG接口而非植入系统。"
-      ],
-      "bullets_en": [
-        "GitHub project named MindAid implements an assistive SSVEP-based BCI using EEG signals.",
-        "It targets real-time selection of basic needs, suggesting practical accessibility use cases.",
-        "Published on GitHub in September 2026 as a non-invasive EEG interface rather than an implant system."
-      ],
-      "url": "https://github.com/CarmenEngBio/mindaid-ssvep-bci",
-      "published": "2026-09-18T11:02:38Z",
-      "source": "github",
-      "brief": "GitHub上的SSVEP辅助型非侵入式BCI项目，可实时选择基本需求。",
-      "language": "en",
-      "tags": [
-        "project",
-        "ssvep",
-        "eeg",
-        "assistive"
-      ],
-      "brief_en": "GitHub project for an assistive SSVEP non-invasive BCI that uses EEG to select basic needs in real time.",
-      "raw_excerpt": "MindAid Assistive SSVEP BCI. Assistive SSVEP-based Brain-Computer Interface (BCI) for real-time selection of basic needs through EEG signals.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "EmotivNeuroGame Unity EEG赛车游戏（GitHub）",
-      "title_en": "EmotivNeuroGame Unity EEG Racing Game (GitHub)",
+      "title_zh": "NIA项目：自适应非侵入式脑机接口集成数字环境",
+      "title_en": "NIA-Project: Integrated Digital Environment for Adaptive Non-invasive BCI",
       "bullets_zh": [
-        "GitHub项目EmotivNeuroGame是Unity 6赛车游戏，通过Emotiv EPOC X的EEG信号控制。",
-        "该项目作为LAB应用科学大学BEng论文完成，展示消费级非侵入式BCI应用。",
-        "仓库展示了将现成EEG头带与交互软件集成的实践方式。"
+        "GitHub项目NIA-Project提出面向自适应非侵入式脑机接口人机交互的集成数字环境。",
+        "发布于2026-09-18，与非侵入式脑机接口的开源软件栈相关。",
+        "它可作为自适应、非手术BCI交互平台的潜在参考实现。"
       ],
       "bullets_en": [
-        "GitHub project EmotivNeuroGame is a Unity 6 racing game controlled by Emotiv EPOC X EEG signals.",
-        "It was created as a BEng thesis at LAB University of Applied Sciences, showing consumer non-invasive BCI use.",
-        "The repo demonstrates practical integration of an off-the-shelf EEG headset with interactive software."
+        "GitHub project NIA-Project presents an integrated digital environment for human-digital interaction in adaptive non-invasive BCI.",
+        "Published on 2026-09-18, it is relevant to open-source software stacks for non-invasive brain-computer interfaces.",
+        "It matters as a potential reference implementation for adaptive, non-surgical BCI interaction platforms."
       ],
-      "url": "https://github.com/MariPant/EmotivNeuroGame",
-      "published": "2026-09-18T09:13:28Z",
+      "url": "https://github.com/GiulianoAgostini04/NIA-Project",
+      "published": "2026-09-18T12:42:17Z",
       "source": "github",
-      "brief": "基于Emotiv EPOC X的Unity EEG赛车游戏项目，展示消费级非侵入式BCI控制。",
+      "brief": "开源项目，构建自适应非侵入式脑机接口的人机交互数字环境。",
       "language": "en",
       "tags": [
+        "bci",
+        "noninvasive",
+        "github",
         "project",
-        "emotiv",
-        "eeg",
-        "unity",
-        "game"
+        "adaptive"
       ],
-      "brief_en": "GitHub Unity racing game controlled by Emotiv EPOC X EEG, demonstrating consumer non-invasive BCI control.",
-      "raw_excerpt": "Brain-Computer Interface racing game in Unity 6, controlled via Emotiv EPOC X EEG signals. BEng thesis, LAB University of Applied Sciences.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "brief_en": "Open-source project for an integrated digital environment in adaptive non-invasive BCI human-digital interaction.",
+      "raw_excerpt": "Realization of an Integrated Digital Environment for Human-Digital Interaction in Adaptive and Non-invasive Brain-Computer Interfaces",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     },
     {
       "type": "Project",
       "level": "General",
-      "title_zh": "neoxai：BCI/EEG开放数据集与资源精选",
-      "title_en": "neoxai: Curated BCI/EEG Open Datasets and Resources",
+      "title_zh": "AxonOS社区雷达：开放脑机接口生态地图",
+      "title_en": "AxonOS Community Radar: Open BCI Ecosystem Map",
       "bullets_zh": [
-        "GitHub项目neowalter/neoxai精选开放BCI/EEG数据集、模型、处理方法及归档新闻/论文。",
-        "该项目于2026-09-19在GitHub列出，作为非侵入式EEG资源中心。",
-        "它降低了研究人员构建或评估非侵入式BCI系统的发现成本。"
+        "AxonOS社区雷达是GitHub项目，维护自动更新的开放脑机接口领域地图。",
+        "发布于2026-09-19，可帮助研究者和开发者发现非侵入式BCI生态中的工具、数据集和项目。",
+        "它作为社区目录有价值，而非单一算法或设备。"
       ],
       "bullets_en": [
-        "GitHub project neowalter/neoxai curates open BCI/EEG datasets, models, processing methods, and archived news/papers.",
-        "It was listed on GitHub on 2026-09-19 as a non-invasive EEG resource hub.",
-        "It matters because it lowers discovery cost for researchers building or evaluating non-invasive BCI systems."
+        "AxonOS community radar is a GitHub project maintaining an auto-updated map of the open brain-computer-interface field.",
+        "Published on 2026-09-19, it can help researchers and developers discover tools, datasets, and projects in non-invasive BCI ecosystems.",
+        "It matters as a community directory rather than a single algorithm or device."
       ],
-      "url": "https://github.com/neowalter/neoxai",
-      "published": "2026-09-19T00:24:05Z",
+      "url": "https://github.com/AxonOS-BCI/axonos-community-radar",
+      "published": "2026-09-19T11:04:37Z",
       "source": "github",
-      "brief": "非侵入式BCI/EEG开放数据集与资源精选，便于研究入门。",
+      "brief": "开源社区雷达，自动更新开放脑机接口生态地图。",
       "language": "en",
       "tags": [
         "bci",
-        "eeg",
-        "dataset",
-        "awesome-list",
-        "open-source"
+        "open-source",
+        "directory",
+        "community",
+        "github"
       ],
-      "brief_en": "Curated non-invasive BCI/EEG datasets and resources for research onboarding.",
-      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "brief_en": "Community radar maintaining an auto-updated map of the open brain-computer-interface ecosystem.",
+      "raw_excerpt": "AxonOS Radar — a living, auto-updated map of the open brain-computer-interface field. An AxonOS community project.",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "eeg-bci-unity-control：基于EEG的Unity游戏实时控制",
+      "title_en": "eeg-bci-unity-control: Real-time Unity Game Control from EEG",
+      "bullets_zh": [
+        "eeg-bci-unity-control是GitHub项目，实现基于EEG信号的Unity游戏实时控制。",
+        "发布于2026-09-18，结合信号处理、CSP/LDA分类和LSL通信用于非侵入式BCI演示。",
+        "它作为消费者/研究者EEG到游戏管线的实用集成示例有价值。"
+      ],
+      "bullets_en": [
+        "eeg-bci-unity-control is a GitHub project implementing real-time Unity game control from EEG signals.",
+        "Published on 2026-09-18, it combines signal processing, CSP/LDA classification, and LSL communication for non-invasive BCI demos.",
+        "It matters as a practical integration example for consumer/researcher EEG-to-game pipelines."
+      ],
+      "url": "https://github.com/andrijamitrovicc/eeg-bci-unity-control",
+      "published": "2026-09-18T18:04:53Z",
+      "source": "github",
+      "brief": "开源示例，用EEG信号实时控制Unity游戏。",
+      "language": "en",
+      "tags": [
+        "eeg",
+        "bci",
+        "unity",
+        "lsl",
+        "csp",
+        "lda"
+      ],
+      "brief_en": "Open-source example using EEG signals to control Unity games in real time.",
+      "raw_excerpt": "EEG-based brain-computer interface for real-time Unity game control using signal processing, CSP/LDA classification and LSL communication.",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "ADS1299 Core SDK：EEG/BCI开源生态",
-      "title_en": "ADS1299 Core SDK for EEG/BCI Ecosystem",
+      "title_zh": "EEG_Deformer：用于EEG解码的PyTorch密集卷积Transformer",
+      "title_en": "EEG_Deformer: PyTorch Dense Convolutional Transformer for EEG Decoding",
       "bullets_zh": [
-        "GitHub项目yuguoyu123456/ADS1299-Core-SDK提供开放ADS1299 EEG/BCI生态，含硬件、MCU/FPGA包与分析流程。",
-        "该项目于2026-09-19在GitHub列出，面向非侵入式EEG采集开发。",
-        "它标准化低成本EEG硬件集成，利于BCI研究与教育。"
+        "EEG_Deformer是GitHub上的PyTorch实现，使用密集卷积Transformer解码BCI应用中的EEG信号。",
+        "发布于2026-09-19，面向非侵入式EEG分类，可用于模型基准测试或原型开发。",
+        "它作为基于EEG的BCI研究开源深度学习基线有价值。"
       ],
       "bullets_en": [
-        "GitHub project yuguoyu123456/ADS1299-Core-SDK provides an open ADS1299 EEG/BCI ecosystem with hardware, MCU/FPGA packages, and analysis workflows.",
-        "It was listed on GitHub on 2026-09-19 for non-invasive EEG acquisition development.",
-        "It matters because it standardizes low-cost EEG hardware integration for BCI research and education."
+        "EEG_Deformer is a GitHub PyTorch implementation of a dense convolutional transformer for decoding EEG signals in BCI applications.",
+        "Published on 2026-09-19, it targets non-invasive EEG classification and could be useful for model benchmarking or prototyping.",
+        "It matters as an open-source deep-learning baseline for EEG-based BCI research."
+      ],
+      "url": "https://github.com/Gwennispontaneous793/EEG_Deformer",
+      "published": "2026-09-19T07:32:06Z",
+      "source": "github",
+      "brief": "基于PyTorch的EEG解码项目，服务非侵入式脑机接口分类。",
+      "language": "en",
+      "tags": [
+        "eeg",
+        "bci",
+        "pytorch",
+        "transformer",
+        "deep-learning"
+      ],
+      "brief_en": "PyTorch EEG decoder project for non-invasive BCI signal classification.",
+      "raw_excerpt": "Decode EEG signals using this PyTorch implementation of a dense convolutional transformer for brain-computer interface applications.",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "基于MOABB及扩展范式的EEG基准测试",
+      "title_en": "EEG Benchmarks on MOABB and Additional Paradigms",
+      "bullets_zh": [
+        "GitHub仓库于2026-09-19更新，用于EEG/BCI基准测试。",
+        "它基于MOABB BCI任务进行基准测试，并加入额外范式用于评估。",
+        "它支持比较不同任务中的非侵入式EEG解码方法。"
+      ],
+      "bullets_en": [
+        "GitHub repository updated on 2026-09-19 for EEG/BCI benchmarking.",
+        "It uses MOABB BCI benchmarks and adds extra paradigms for evaluation.",
+        "It supports comparison of non-invasive EEG decoding methods across tasks."
+      ],
+      "url": "https://github.com/noshore5/EEG_Benchmarks",
+      "published": "2026-09-19T12:28:49Z",
+      "source": "github",
+      "brief": "汇总MOABB等EEG/BCI基准与扩展范式，便于评测非侵入式算法。",
+      "language": "en",
+      "tags": [
+        "benchmark",
+        "moabb",
+        "eeg",
+        "bci"
+      ],
+      "brief_en": "Aggregates MOABB and extra EEG/BCI benchmarks for evaluating non-invasive algorithms.",
+      "raw_excerpt": "Benchmarking on MOABB BCI benchmarks along with additional paradigms",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "ADS1299核心SDK：EEG/BCI开放生态",
+      "title_en": "ADS1299 Core SDK EEG/BCI Ecosystem",
+      "bullets_zh": [
+        "GitHub项目于2026-09-19更新，构建开放的ADS1299 EEG/BCI生态。",
+        "它覆盖8-64通道硬件、MCU/FPGA目标、RTL以及PC/移动/Linux集成。",
+        "它包含Python/MATLAB/R分析与面向非侵入式研究的BCI工作流。"
+      ],
+      "bullets_en": [
+        "GitHub project updated on 2026-09-19 builds an open ADS1299 EEG/BCI ecosystem.",
+        "It covers 8-64 channel hardware, MCU/FPGA targets, RTL, and PC/mobile/Linux integration.",
+        "It includes Python/MATLAB/R analysis and BCI workflows for non-invasive research."
       ],
       "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "published": "2026-09-19T00:01:16Z",
+      "published": "2026-09-19T11:59:15Z",
       "source": "github",
-      "brief": "ADS1299 EEG/BCI开源生态SDK，覆盖硬件与信号处理。",
+      "brief": "提供ADS1299 EEG/BCI硬件、SDK与分析工具，支持非侵入式开发。",
       "language": "en",
       "tags": [
         "ads1299",
         "eeg",
         "bci",
         "sdk",
-        "hardware",
-        "open-source"
+        "openhardware"
       ],
-      "brief_en": "Open ADS1299 EEG/BCI ecosystem SDK covering hardware, integration, and signal analysis.",
+      "brief_en": "Open ADS1299 EEG/BCI SDK covering 8-64-channel hardware, integration, and analysis.",
       "raw_excerpt": "Building the world’s largest and most comprehensive open ADS1299 EEG/BCI ecosystem — 8–64CH hardware, 200 MCU/SoC/DSP & FPGA target/reference packages, Verilog RTL, PC/mobile/Linux integration, Python/MATLAB/R EEG analysis, BCI workflows, validation, education and research.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     },
     {
       "type": "Project",
-      "level": "Advanced",
-      "title_zh": "NeuroRVQ-RS：Rust实现EEG/ECG/EMG信号tokenize推理",
-      "title_en": "NeuroRVQ-RS: Rust Inference for EEG/ECG/EMG Tokenization",
+      "level": "General",
+      "title_zh": "NeoxAI：BCI/EEG开放资源精选",
+      "title_en": "NeoxAI Curated BCI/EEG Resources",
       "bullets_zh": [
-        "GitHub项目Fazalr714/neurorvq-rs实现纯Rust的NeuroRVQ推理，用于EEG、ECG和EMG信号tokenize。",
-        "该项目于2026-09-18在GitHub列出，使用Burn 0.20且无Python依赖。",
-        "它为BCI流程中的非侵入式生物信号建模提供轻量Rust路径。"
+        "GitHub仓库于2026-09-19更新，精选开放BCI/EEG数据集、模型与处理方法。",
+        "它还归档了非侵入式脑机接口相关的新闻与论文。",
+        "它可作为研究人员和开发者的资源发现入口。"
       ],
       "bullets_en": [
-        "GitHub project Fazalr714/neurorvq-rs implements pure-Rust NeuroRVQ inference to tokenize EEG, ECG, and EMG signals.",
-        "It was listed on GitHub on 2026-09-18 using Burn 0.20 with zero Python dependencies.",
-        "It matters because it offers a lightweight Rust path for non-invasive biosignal modeling in BCI pipelines."
+        "GitHub repository updated on 2026-09-19 curates open BCI/EEG datasets, models, and processing methods.",
+        "It also archives related news and papers for non-invasive brain-computer interface work.",
+        "It serves as a discovery resource for researchers and developers."
       ],
-      "url": "https://github.com/Fazalr714/neurorvq-rs",
-      "published": "2026-09-18T23:09:34Z",
+      "url": "https://github.com/neowalter/neoxai",
+      "published": "2026-09-19T12:24:04Z",
       "source": "github",
-      "brief": "Rust实现的EEG/ECG/EMG神经RVQ推理，便于非侵入信号建模。",
-      "language": "en",
-      "tags": [
-        "rust",
-        "eeg",
-        "ecg",
-        "emg",
-        "rvq",
-        "bci"
-      ],
-      "brief_en": "Pure-Rust NeuroRVQ inference tokenizes EEG, ECG, and EMG signals for non-invasive BCI modeling.",
-      "raw_excerpt": "Build pure-Rust NeuroRVQ inference to tokenize EEG, ECG, and EMG signals with Burn 0.20 and zero Python dependencies",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "GitHub项目：bci-motor-imagery-sola-ca-ada",
-      "title_en": "GitHub project: bci-motor-imagery-sola-ca-ada",
-      "bullets_zh": [
-        "GitHub仓库Andreusolad/bci-motor-imagery-sola-ca-ada聚焦运动想象BCI。",
-        "名称显示可能使用SOLA、CA和ADA方法进行非侵入式EEG解码。",
-        "发布于2026-09-18；可作为EEG运动想象BCI的开放代码资源。"
-      ],
-      "bullets_en": [
-        "GitHub repository Andreusolad/bci-motor-imagery-sola-ca-ada focuses on motor-imagery BCI work.",
-        "The name suggests SOLA, CA, and ADA methods for non-invasive EEG decoding.",
-        "Published 2026-09-18; useful as an open code/resource for EEG motor-imagery BCI."
-      ],
-      "url": "https://github.com/Andreusolad/bci-motor-imagery-sola-ca-ada",
-      "published": "2026-09-18T22:46:00Z",
-      "source": "github",
-      "brief": "GitHub上的EEG运动想象BCI解码项目，适合非侵入式脑机接口算法参考。",
+      "brief": "精选BCI/EEG数据集、模型与处理方法，便于查找非侵入式资源。",
       "language": "en",
       "tags": [
         "bci",
         "eeg",
-        "motor-imagery",
-        "github",
-        "decoding"
+        "datasets",
+        "resources"
       ],
-      "brief_en": "GitHub project for EEG motor-imagery BCI decoding, useful for non-invasive BCI algorithm reference.",
-      "raw_excerpt": "",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "brief_en": "Curates open BCI/EEG datasets, models, processing methods, and archived news/papers.",
+      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     },
     {
-      "type": "Project",
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "入门指南 | OpenBCI文档",
+      "title_en": "Getting Started | OpenBCI Documentation",
+      "bullets_zh": [
+        "OpenBCI官方入门文档，介绍Cyton和Ganglion等非侵入式EEG开发板。",
+        "涵盖生物传感设置、头带/电极、第三方硬件以及软件工作流。",
+        "适合消费者BCI实验与数据采集的初学者教程。"
+      ],
+      "bullets_en": [
+        "Official OpenBCI getting-started documentation for non-invasive EEG boards such as Cyton and Ganglion.",
+        "Covers biosensing setups, headwear/electrodes, third-party hardware, and software workflows.",
+        "Useful beginner tutorial for consumer BCI experimentation and data acquisition."
+      ],
+      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "OpenBCI入门文档，指导非侵入式EEG设备与软件使用。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "openbci",
+        "eeg",
+        "getting-started",
+        "hardware"
+      ],
+      "brief_en": "OpenBCI getting-started docs for non-invasive EEG devices and software.",
+      "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "BrainFlow 文档",
+      "title_en": "BrainFlow Documentation",
+      "bullets_zh": [
+        "官方BrainFlow文档涵盖支持的板卡、数据流和数据处理API。",
+        "适合开发者连接OpenBCI、Galea、Cyton、Ganglion及其他非侵入式EEG设备。"
+      ],
+      "bullets_en": [
+        "Official BrainFlow documentation covers supported boards, streaming, and data processing APIs.",
+        "Useful for developers connecting OpenBCI, Galea, Cyton, Ganglion, and other non-invasive EEG devices."
+      ],
+      "url": "https://brainflow.readthedocs.io/en/stable/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow主文档介绍支持的EEG板卡与API，帮助开发非侵入式BCI应用。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "brainflow",
+        "eeg",
+        "openbci",
+        "sdk"
+      ],
+      "brief_en": "BrainFlow main docs explain supported EEG boards and APIs for building non-invasive BCI apps.",
+      "raw_excerpt": "Welcome to BrainFlow’s documentation! — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Tutorial",
       "level": "Intermediate",
-      "title_zh": "GitHub文献清单：mi-decoding-literature",
-      "title_en": "GitHub literature list: mi-decoding-literature",
+      "title_zh": "BrainFlow 代码示例",
+      "title_en": "BrainFlow Code Samples",
       "bullets_zh": [
-        "GitHub仓库ianmarroquin/mi-decoding-literature整理运动想象解码文献。",
-        "摘要提及EEG BCI、智能眼镜及主要期刊会议中的MI解码研究。",
-        "发布于2026-09-18；有助于跟踪非侵入式BCI研究趋势。"
+        "提供BrainFlow板卡、数据流、滤波和特征提取的可运行示例。",
+        "帮助用户从文档快速进入可用的非侵入式BCI原型开发。"
       ],
       "bullets_en": [
-        "GitHub repository ianmarroquin/mi-decoding-literature curates motor-imagery decoding literature.",
-        "Its summary mentions EEG BCIs, smart glasses, and MI decoding in major journals/conferences.",
-        "Published 2026-09-18; useful for tracking non-invasive BCI research trends."
+        "Provides runnable examples for BrainFlow boards, streaming, filtering, and feature extraction.",
+        "Helps users move from documentation to working non-invasive BCI prototypes quickly."
       ],
-      "url": "https://github.com/ianmarroquin/mi-decoding-literature",
-      "published": "2026-09-18T22:10:42Z",
-      "source": "github",
-      "brief": "GitHub上的EEG运动想象解码文献清单，帮助跟踪非侵入式BCI研究。",
+      "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow代码示例展示读取和处理非侵入式EEG数据的实用脚本。",
       "language": "en",
       "tags": [
-        "bci",
+        "tutorial",
+        "brainflow",
+        "examples",
         "eeg",
-        "motor-imagery",
-        "literature",
-        "github"
+        "code"
       ],
-      "brief_en": "GitHub literature list on EEG motor-imagery decoding, helping track non-invasive BCI research.",
-      "raw_excerpt": "EEG BCIs, Smart Glasses, and Motor Imagery decoding research published in major journals and conferences.",
-      "fetched_at": "2026-09-19T01:59:46.676575+00:00"
+      "brief_en": "BrainFlow code samples show practical scripts for reading and processing non-invasive EEG data.",
+      "raw_excerpt": "Code Samples — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand gForceDual ArmBand FreeEE",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Neurosity SDK 文档",
+      "title_en": "Neurosity SDK Documentation",
+      "bullets_zh": [
+        "Neurosity非侵入式EEG平台的官方开发者文档。",
+        "说明如何连接头带数据流并使用其SDK构建应用。"
+      ],
+      "bullets_en": [
+        "Official developer documentation for the Neurosity non-invasive EEG platform.",
+        "Explains how to connect to headband data streams and build applications using its SDK."
+      ],
+      "url": "https://docs.neurosity.co/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Neurosity SDK文档指导开发者从脑电头带获取数据并构建应用。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "neurosity",
+        "sdk",
+        "eeg",
+        "api"
+      ],
+      "brief_en": "Neurosity SDK docs guide developers to access EEG data and brain metrics from Neurosity headbands.",
+      "raw_excerpt": "Neurosity SDK",
+      "fetched_at": "2026-09-19T13:43:52.149920+00:00"
     }
   ],
   "stats": {
-    "fetched": 76,
-    "llm_rows": 44,
+    "fetched": 105,
+    "llm_rows": 40,
     "kept": 12,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "prefiltered": 57,
+    "prefiltered": 55,
     "intel": 1,
-    "tutorials": 10,
-    "benchmarks": 21,
+    "tutorials": 9,
+    "benchmarks": 22,
     "conflicts_dropped": 0
   }
 }
