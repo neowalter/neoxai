@@ -1,167 +1,32 @@
 {
   "date": "2026-09-20",
   "generated_at": "2026-09-20T02:37:39.958849+00:00",
-  "item_count": 12,
+  "item_count": 8,
   "types": {
-    "Project": 4,
     "Tutorial": 8
   },
   "highlights": [
     {
-      "title_zh": "实时EEG脑机接口后端项目",
-      "title_en": "Real-Time EEG Brain-Computer Interface Backend",
-      "url": "https://github.com/Ixzu-12/Real-Time-EEG-Brain-Computer-Interface-BCI-",
-      "brief": "开源实时EEG BCI后端，用于运动想象解码与硬件控制。"
+      "title_zh": "欢迎来到 OpenBCI 社区 | OpenBCI 文档",
+      "title_en": "Welcome to the OpenBCI Community | OpenBCI Documentation",
+      "url": "https://docs.openbci.com/",
+      "brief": "OpenBCI社区文档首页，汇总入门与硬件软件资源。"
     },
     {
-      "title_zh": "ADS1299-Core-SDK：开放ADS1299 EEG/BCI软硬件生态",
-      "title_en": "ADS1299-Core-SDK: Open ADS1299 EEG/BCI Hardware and Software Ecosystem",
-      "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "brief": "面向非侵入式EEG的ADS1299开源硬件与软件栈，覆盖采集到分析。"
+      "title_zh": "入门指南 | OpenBCI 文档",
+      "title_en": "Getting Started | OpenBCI Documentation",
+      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
+      "brief": "OpenBCI入门文档，指导非侵入式EEG硬件与软件使用。"
     },
     {
-      "title_zh": "neoxai：BCI/EEG开放数据集、模型、方法与新闻论文精选",
-      "title_en": "neoxai: Curated BCI/EEG Open Datasets, Models, Methods, and News/Papers Archive",
-      "url": "https://github.com/neowalter/neoxai",
-      "brief": "收录非侵入式BCI/EEG数据集与方法的GitHub资源，便于研究入门。"
+      "title_zh": "BrainFlow 文档",
+      "title_en": "BrainFlow Documentation",
+      "url": "https://brainflow.readthedocs.io/en/stable/",
+      "brief": "BrainFlow 官方文档，帮助快速上手非侵入式脑电采集。"
     }
   ],
-  "github_path": "docs/bci-daily/2026-09-20.md",
+  "github_path": "docs/bci-tutorials/2026-09-20.md",
   "items": [
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "实时EEG脑机接口后端项目",
-      "title_en": "Real-Time EEG Brain-Computer Interface Backend",
-      "bullets_zh": [
-        "GitHub项目Ixzu-12/Real-Time-EEG-Brain-Computer-Interface-BCI提供实时连续EEG处理后端。",
-        "它结合少样本迁移学习与DSP，解码物理运动想象以驱动真实硬件。",
-        "发布于2026-09-19，作为高级非侵入式EEG BCI软件项目具有相关性。"
-      ],
-      "bullets_en": [
-        "GitHub project Ixzu-12/Real-Time-EEG-Brain-Computer-Interface-BCI provides a backend for live continuous EEG processing.",
-        "It combines few-shot transfer learning and DSP to decode physical motor imagery for real-world hardware actuation.",
-        "Published 2026-09-19, it is relevant as an advanced non-invasive EEG BCI software project."
-      ],
-      "url": "https://github.com/Ixzu-12/Real-Time-EEG-Brain-Computer-Interface-BCI-",
-      "published": "2026-09-19T17:44:01Z",
-      "source": "github",
-      "brief": "开源实时EEG BCI后端，用于运动想象解码与硬件控制。",
-      "language": "en",
-      "tags": [
-        "eeg",
-        "bci",
-        "real-time",
-        "motor-imagery",
-        "transfer-learning",
-        "dsp"
-      ],
-      "brief_en": "Open-source real-time EEG BCI backend for motor-imagery decoding and hardware control.",
-      "raw_excerpt": "Backend neuro-engineering system for live continuous EEG processing. Uses Few-Shot Transfer Learning and DSP to decode physical motor imagery for real-world hardware actuation.",
-      "fetched_at": "2026-09-20T02:37:39.947624+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "ADS1299-Core-SDK：开放ADS1299 EEG/BCI软硬件生态",
-      "title_en": "ADS1299-Core-SDK: Open ADS1299 EEG/BCI Hardware and Software Ecosystem",
-      "bullets_zh": [
-        "GitHub项目yuguoyu123456/ADS1299-Core-SDK面向基于ADS1299的EEG/BCI系统，提供8-64通道硬件与参考包。",
-        "它包含MCU/SoC/DSP/FPGA支持、Verilog RTL、PC/移动/Linux集成以及Python/MATLAB/R分析流程。",
-        "该条目发布于2026-09-19，是面向非侵入式EEG采集、验证、教学与研究的开放生态。"
-      ],
-      "bullets_en": [
-        "GitHub project yuguoyu123456/ADS1299-Core-SDK targets ADS1299-based EEG/BCI systems with 8-64 channel hardware and reference packages.",
-        "It includes MCU/SoC/DSP/FPGA support, Verilog RTL, PC/mobile/Linux integration, and Python/MATLAB/R analysis workflows.",
-        "Published 2026-09-19 as an open ecosystem for non-invasive EEG acquisition, validation, education, and research."
-      ],
-      "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "published": "2026-09-19T23:58:22Z",
-      "source": "github",
-      "brief": "面向非侵入式EEG的ADS1299开源硬件与软件栈，覆盖采集到分析。",
-      "language": "en",
-      "tags": [
-        "ads1299",
-        "eeg",
-        "bci",
-        "sdk",
-        "open-hardware",
-        "fpga",
-        "python",
-        "matlab"
-      ],
-      "brief_en": "Open ADS1299 EEG/BCI ecosystem spanning hardware, firmware, integration, and analysis for non-invasive BCI development.",
-      "raw_excerpt": "Building the world’s largest and most comprehensive open ADS1299 EEG/BCI ecosystem — 8–64CH hardware, 200 MCU/SoC/DSP & FPGA target/reference packages, Verilog RTL, PC/mobile/Linux integration, Python/MATLAB/R EEG analysis, BCI workflows, validation, education and research.",
-      "fetched_at": "2026-09-20T02:37:39.947624+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "General",
-      "title_zh": "neoxai：BCI/EEG开放数据集、模型、方法与新闻论文精选",
-      "title_en": "neoxai: Curated BCI/EEG Open Datasets, Models, Methods, and News/Papers Archive",
-      "bullets_zh": [
-        "GitHub仓库neowalter/neoxai收录BCI/EEG开放数据集、模型、处理方法及归档新闻论文。",
-        "它通过集中可复用资源支持非侵入式EEG BCI研究。",
-        "该条目发布于2026-09-20，是社区维护索引而非单一数据集。"
-      ],
-      "bullets_en": [
-        "GitHub repository neowalter/neoxai curates BCI/EEG open datasets, models, processing methods, and archived news/papers.",
-        "It supports non-invasive EEG-based BCI research by centralizing reusable resources.",
-        "Published 2026-09-20 as a community-maintained index rather than a single dataset."
-      ],
-      "url": "https://github.com/neowalter/neoxai",
-      "published": "2026-09-20T00:24:02Z",
-      "source": "github",
-      "brief": "收录非侵入式BCI/EEG数据集与方法的GitHub资源，便于研究入门。",
-      "language": "en",
-      "tags": [
-        "bci",
-        "eeg",
-        "datasets",
-        "models",
-        "methods",
-        "papers",
-        "news",
-        "open-source"
-      ],
-      "brief_en": "GitHub curated resource for non-invasive BCI/EEG datasets, models, methods, and archived news/papers.",
-      "raw_excerpt": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "fetched_at": "2026-09-20T02:37:39.947624+00:00"
-    },
-    {
-      "type": "Project",
-      "level": "Beginner",
-      "title_zh": "基于PhysioNet eegmmidb的EEG运动想象ERD分析",
-      "title_en": "EEG Motor Imagery ERD Analysis from PhysioNet eegmmidb",
-      "bullets_zh": [
-        "GitHub仓库AadithyaSairam/eeg-motor-imagery分析想象手部运动时mu节律的事件相关去同步。",
-        "它使用PhysioNet的eegmmidb数据，这是标准非侵入式运动想象EEG数据集。",
-        "该条目发布于2026-09-19，是面向EEG BCI信号处理的教学示例。"
-      ],
-      "bullets_en": [
-        "GitHub repository AadithyaSairam/eeg-motor-imagery analyzes event-related desynchronization of the mu rhythm during imagined hand movement.",
-        "It uses PhysioNet EEG data from eegmmidb, a standard non-invasive motor-imagery dataset.",
-        "Published 2026-09-19 as an educational example for EEG-based BCI signal processing."
-      ],
-      "url": "https://github.com/AadithyaSairam/eeg-motor-imagery",
-      "published": "2026-09-19T23:55:50Z",
-      "source": "github",
-      "brief": "用PhysioNet EEG演示运动想象mu节律ERD，适合非侵入式BCI学习。",
-      "language": "en",
-      "tags": [
-        "motor-imagery",
-        "erd",
-        "mu-rhythm",
-        "physionet",
-        "eeg",
-        "bci",
-        "signal-processing",
-        "education"
-      ],
-      "brief_en": "GitHub analysis of motor-imagery mu-rhythm ERD from PhysioNet eegmmidb, useful for non-invasive BCI learning.",
-      "raw_excerpt": "Event-related desynchronization of the mu rhythm during imagined hand movement, from PhysioNet EEG (eegmmidb).",
-      "fetched_at": "2026-09-20T02:37:39.947624+00:00"
-    },
     {
       "type": "Tutorial",
       "level": "Beginner",
@@ -403,5 +268,17 @@
       "raw_excerpt": "Mind Monitor Toggle navigation Menu Mind Monitor Download Features Graphing Online Graphing with Excel FAQ Compatibility Connection Issues Streaming Data (OSC) Spec Recorded Data (CSV) Spec MATLAB Mellow and Concentration Privacy Policy Technical Manual Horseshoe Graphs Absolute Raw Discrete Spectrogram Accelerometer / Gyroscope Streaming Recording Contact Forums Mind Monitor - See what's really g",
       "fetched_at": "2026-09-20T02:37:39.947624+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 74,
+    "llm_rows": 30,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 55,
+    "intel": 0,
+    "tutorials": 8,
+    "benchmarks": 18,
+    "conflicts_dropped": 0
+  }
 }
