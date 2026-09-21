@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T09:27:15.581Z",
+  "generatedAt": "2026-09-21T10:12:24.963Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 8
+      "count": 9
     },
     {
       "id": "physionet",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 5
     }
   ],
   "items": [
@@ -100,6 +100,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008851",
+      "name": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008851",
+      "source": "openneuro",
+      "description": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-21T08:31:11.516Z",
       "modality": [
         "EEG"
       ]
@@ -274,7 +293,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 10749,
+      "downloads": 10782,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -297,7 +316,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 164,
+      "downloads": 202,
       "likes": 0,
       "updatedAt": "2026-09-18T16:07:10.000Z",
       "modality": [
@@ -322,7 +341,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 210,
+      "downloads": 212,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -340,7 +359,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 122,
+      "downloads": 124,
       "likes": 1,
       "updatedAt": "2026-09-18T07:58:35.000Z",
       "modality": [
@@ -356,7 +375,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 218,
+      "downloads": 226,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -378,7 +397,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 158,
+      "downloads": 156,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -391,7 +410,7 @@
       "owner": "Twu31",
       "url": "https://huggingface.co/datasets/Twu31/bci-report",
       "source": "huggingface",
-      "description": "BCI Report — aggregate EEG decoding results Cohort-level results for 8 public EEG decoding protocols, each reported with the protocol that produced it: cohort size, electrode count, evaluation mode, chance level, training budget and known limitations. Release research-preview-20…",
+      "description": "BCI Report Every EEG decoding score, reported with the protocol that produced it. Website · Code · Data use & privacy 121 reviewed measurements from public EEG datasets, each carrying the cohort, electrode count, evaluation mode, chance level and training budget that produced it…",
       "tags": [
         "cc-by-4.0",
         "csv",
@@ -405,7 +424,7 @@
       "license": "cc-by-4.0",
       "downloads": 0,
       "likes": 0,
-      "updatedAt": "2026-09-20T08:18:04.000Z",
+      "updatedAt": "2026-09-20T14:24:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -428,7 +447,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 135,
+      "downloads": 141,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -449,7 +468,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 40,
+      "downloads": 41,
       "likes": 0,
       "updatedAt": "2026-09-04T06:07:40.000Z",
       "modality": [
@@ -473,7 +492,7 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 75,
+      "downloads": 76,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
       "modality": [
@@ -497,31 +516,9 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 339,
+      "downloads": 354,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-natview-derived",
-      "name": "eeg-fmri-natview-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-natview-derived",
-      "source": "huggingface",
-      "description": "NATVIEW EEG-fMRI derived run objects This public dataset repository is the persistent derivative store for the M8 external Spec2VolCAMU-Net/NeuroBOLT comparison. The source data are the NKI NATVIEW simultaneous EEG-fMRI release: Data paper: https://doi.org/10.1038/s41597-023-024…",
-      "tags": [
-        "cc-by-4.0",
-        "eeg",
-        "fmri",
-        "neuroscience",
-        "bids"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 64,
-      "likes": 0,
-      "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
         "EEG"
       ]
@@ -544,9 +541,31 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 675,
+      "downloads": 673,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-natview-derived",
+      "name": "eeg-fmri-natview-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-natview-derived",
+      "source": "huggingface",
+      "description": "NATVIEW EEG-fMRI derived run objects This public dataset repository is the persistent derivative store for the M8 external Spec2VolCAMU-Net/NeuroBOLT comparison. The source data are the NKI NATVIEW simultaneous EEG-fMRI release: Data paper: https://doi.org/10.1038/s41597-023-024…",
+      "tags": [
+        "cc-by-4.0",
+        "eeg",
+        "fmri",
+        "neuroscience",
+        "bids"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 33,
+      "likes": 0,
+      "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
         "EEG"
       ]
@@ -584,7 +603,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 38,
+      "downloads": 39,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
@@ -609,67 +628,9 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 313,
+      "downloads": 355,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "name": "EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "owner": "lasfk",
-      "url": "https://huggingface.co/datasets/lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "source": "huggingface",
-      "description": "Overview This dataset contains the raw multimodal signals and metadata. The goal of the competition is to predict the imagined handwriting class for each test trial using synchronized: EEG signals fNIRS signals The dataset is organized to support an end-to-end competition workfl…",
-      "tags": [
-        "cc-by-nc-sa-4.0",
-        "csv",
-        "tabular",
-        "pandas",
-        "eeg",
-        "fnirs",
-        "brain-computer-interface",
-        "classification"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 6,
-      "likes": 4,
-      "updatedAt": "2026-07-10T03:25:37.000Z",
-      "modality": [
-        "EEG",
-        "fNIRS"
-      ]
-    },
-    {
-      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
-      "name": "ear-eeg-fm-benchmark-data",
-      "owner": "Zachary1150",
-      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
-      "source": "huggingface",
-      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
-      "tags": [],
-      "license": null,
-      "downloads": 62,
-      "likes": 0,
-      "updatedAt": "2026-07-07T00:30:10.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "name": "kahlus-raw-eeg-waveforms-efa0d90",
-      "owner": "kgarg47",
-      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
-      "source": "huggingface",
-      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
-      "tags": [],
-      "license": null,
-      "downloads": 32,
-      "likes": 0,
-      "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -690,7 +651,7 @@
         "deep-learning"
       ],
       "license": "unknown",
-      "downloads": 646,
+      "downloads": 790,
       "likes": 0,
       "updatedAt": "2026-03-14T20:20:10.000Z",
       "modality": [
@@ -700,61 +661,75 @@
       ]
     },
     {
-      "id": "hf:divyanshmaurya1/BCI_Data_new",
-      "name": "BCI_Data_new",
-      "owner": "divyanshmaurya1",
-      "url": "https://huggingface.co/datasets/divyanshmaurya1/BCI_Data_new",
+      "id": "hf:lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
+      "name": "EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
+      "owner": "lasfk",
+      "url": "https://huggingface.co/datasets/lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
       "source": "huggingface",
-      "description": "ProjectCerebro — Cho 2017 EEG Motor Imagery Dataset (BCI_Data_new) Dataset Description Preprocessed EEG motor imagery epochs from the Cho 2017 dataset (GigaDB 100295), processed through the ProjectCerebro pipeline. Original paper: Cho, H., et al. (2017). EEG datasets for motor i…",
+      "description": "Overview This dataset contains the raw multimodal signals and metadata. The goal of the competition is to predict the imagined handwriting class for each test trial using synchronized: EEG signals fNIRS signals The dataset is organized to support an end-to-end competition workfl…",
       "tags": [
-        "cc-by-4.0",
+        "cc-by-nc-sa-4.0",
+        "csv",
         "tabular",
-        "timeseries",
+        "pandas",
         "eeg",
-        "bci",
-        "motor-imagery",
-        "neuroscience",
-        "brain-computer-interface"
+        "fnirs",
+        "brain-computer-interface",
+        "classification"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 304,
-      "likes": 0,
-      "updatedAt": "2026-05-10T02:46:47.000Z",
+      "license": "cc-by-nc-sa-4.0",
+      "downloads": 26,
+      "likes": 4,
+      "updatedAt": "2026-07-10T03:25:37.000Z",
       "modality": [
-        "EEG"
+        "EEG",
+        "fNIRS"
       ]
     },
     {
-      "id": "hf:xiaochen233/schizophrenia-eeg-microstate-data",
-      "name": "schizophrenia-eeg-microstate-data",
-      "owner": "xiaochen233",
-      "url": "https://huggingface.co/datasets/xiaochen233/schizophrenia-eeg-microstate-data",
+      "id": "hf:Zachary1150/ear-eeg-fm-benchmark-data",
+      "name": "ear-eeg-fm-benchmark-data",
+      "owner": "Zachary1150",
+      "url": "https://huggingface.co/datasets/Zachary1150/ear-eeg-fm-benchmark-data",
       "source": "huggingface",
-      "description": "schizophrenia-eeg-microstate-data Small task-specific mirror of public input files used by Terminal Bench Science task schizophrenia-eeg-microstate. The files are redistributed here to make benchmark Docker builds faster and more reproducible. See task instructions and original…",
-      "tags": [
-        "terminal-bench-science",
-        "benchmark-data"
-      ],
-      "license": "other",
-      "downloads": 16,
-      "likes": 0,
-      "updatedAt": "2026-06-17T04:37:17.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:smithjacki/eeg-emotion-depression",
-      "name": "eeg-emotion-depression",
-      "owner": "smithjacki",
-      "url": "https://huggingface.co/datasets/smithjacki/eeg-emotion-depression",
-      "source": "huggingface",
-      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
+      "description": "Ear-EEG FM Benchmark — preprocessed datasets This repository hosts preprocessed HDF5 files for the Ear-EEG FM Benchmark (https://github.com/zhikaili1150/Ear-EEG-FM-Benchmark). Each .h5 file follows the schema: data (N, C, T) float32 µV labels (N,) int64 0..n_class-1 subject (N,)…",
       "tags": [],
       "license": null,
-      "downloads": 4,
+      "downloads": 66,
       "likes": 0,
-      "updatedAt": "2026-06-13T13:48:10.000Z",
+      "updatedAt": "2026-07-07T00:30:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "name": "kahlus-raw-eeg-waveforms-efa0d90",
+      "owner": "kgarg47",
+      "url": "https://huggingface.co/datasets/kgarg47/kahlus-raw-eeg-waveforms-efa0d90",
+      "source": "huggingface",
+      "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
+      "tags": [],
+      "license": null,
+      "downloads": 35,
+      "likes": 0,
+      "updatedAt": "2026-07-12T00:19:49.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22856873",
+      "name": "EEG Biofeedback and Multimodal Neuro-Physiological Monitoring in Elite Male Judokas: Neural Efficiency, Peak Power Preservation, and Strength Recovery under Hypoxia and Normoxia",
+      "owner": "Maszczyk, Adam",
+      "url": "https://doi.org/10.5281/zenodo.22856873",
+      "source": "zenodo",
+      "description": "This record documents a pilot randomized controlled trial investigating whether combining real-time EEG neurofeedback with normobaric hypoxia can improve post-exercise neuromuscular recovery in elite male judokas from the Polish National Judo Senior Team. &nbsp; Eight internatio…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 126,
+      "likes": null,
+      "updatedAt": "2026-09-20T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -776,25 +751,9 @@
         "reproducibility"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-09-19T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22215537",
-      "name": "Bidirectional links between food intake and sleep: a naturalistic mobile EEG study",
-      "owner": "Ujma, Péter Przemyslaw",
-      "url": "https://doi.org/10.5281/zenodo.22215537",
-      "source": "zenodo",
-      "description": "This is data and code accompanying our scientific paper with the same title.",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 96,
-      "likes": null,
-      "updatedAt": "2026-08-31T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -938,6 +897,31 @@
       ]
     },
     {
+      "id": "github:beukkung/Motor-imagery-EEG-Classification",
+      "name": "Motor-imagery-EEG-Classification",
+      "owner": "beukkung",
+      "url": "https://github.com/beukkung/Motor-imagery-EEG-Classification",
+      "source": "github",
+      "description": "Using one-dimension CNN architecture to MI-EEG classification. The project is used OpenBMI dataset and trained with 20 channel sensors.",
+      "tags": [
+        "brain-computer-interface",
+        "cnn",
+        "deep-learning",
+        "eeg",
+        "machine-learning",
+        "motor-imagery",
+        "signal-processing",
+        "tensorflow"
+      ],
+      "license": null,
+      "downloads": null,
+      "likes": 2,
+      "updatedAt": "2026-09-21T09:44:13.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -954,7 +938,28 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-09-20T02:37:48.000Z",
+      "updatedAt": "2026-09-21T06:24:14.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:BurhanxGodhra/eeg-motor-imagery-exploration",
+      "name": "eeg-motor-imagery-exploration",
+      "owner": "BurhanxGodhra",
+      "url": "https://github.com/BurhanxGodhra/eeg-motor-imagery-exploration",
+      "source": "github",
+      "description": "Early exploration of EEG motor-imagery data using MNE and the EEGBCI dataset.",
+      "tags": [
+        "bci",
+        "eeg",
+        "mne",
+        "motor-imagery"
+      ],
+      "license": null,
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-09-20T16:23:43.000Z",
       "modality": [
         "EEG"
       ]
