@@ -399,5 +399,17 @@
       "raw_excerpt": "Developers - Muse SDK | Muse® EEG Mental Fitness & Sleep Headband Subtotal: $0.00 Proceed to Checkout Continue Shopping Shop How It Works Benefits Science App App Premium Subscription Press + Reviews US Store Shop MUSE SDK Looking to develop your own app that integrates with Muse? We have an ecosystem of Muse partners who have developed apps that work with Muse devices, integrated Muse into their",
       "fetched_at": "2026-09-21T01:57:12.484704+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 75,
+    "llm_rows": 38,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "prefiltered": 53,
+    "intel": 0,
+    "tutorials": 10,
+    "benchmarks": 24,
+    "conflicts_dropped": 0
+  }
 }
