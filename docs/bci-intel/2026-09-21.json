@@ -46,5 +46,17 @@
       "raw_excerpt": "The goal of this clinical trial is to investigate if training sessions of motor imagery associated with brain-computer interface and motor observation through virtual reality (MI-VR-BCI) can help to improve arm and hand recovery after a stroke. The main questions to answer are: * Can adding MI-BCI-VR sessions improve upper limb movement? * Can it help stroke survivors perform daily activities more",
       "fetched_at": "2026-09-21T14:03:56.712071+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 78,
+    "llm_rows": 44,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "prefiltered": 59,
+    "intel": 1,
+    "tutorials": 9,
+    "benchmarks": 23,
+    "conflicts_dropped": 0
+  }
 }
