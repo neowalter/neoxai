@@ -398,5 +398,17 @@
       "raw_excerpt": "Getting Started | Cortex API Cortex API ⌘ Ctrl k Cortex API Getting Started Connecting to the Cortex API Overview of API flow Authentication Headsets Sessions Data Subscription Records Markers Subjects BCI Advanced BCI Warning Objects Error Codes Troubleshooting Guide Release Notes cortexaccess tool Powered by GitBook On this page For the complete documentation index, see llms.txt . This page is a",
       "fetched_at": "2026-09-22T01:45:57.006621+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 73,
+    "llm_rows": 32,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 53,
+    "intel": 1,
+    "tutorials": 7,
+    "benchmarks": 17,
+    "conflicts_dropped": 0
+  }
 }
