@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T10:12:24.963Z",
+  "generatedAt": "2026-09-22T09:28:35.925Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 20
+      "count": 19
     },
     {
       "id": "github",
@@ -293,7 +293,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 10782,
+      "downloads": 10857,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -316,7 +316,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 202,
+      "downloads": 256,
       "likes": 0,
       "updatedAt": "2026-09-18T16:07:10.000Z",
       "modality": [
@@ -359,9 +359,34 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 124,
+      "downloads": 125,
       "likes": 1,
       "updatedAt": "2026-09-18T07:58:35.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Twu31/bci-report",
+      "name": "bci-report",
+      "owner": "Twu31",
+      "url": "https://huggingface.co/datasets/Twu31/bci-report",
+      "source": "huggingface",
+      "description": "BCI Report Every EEG decoding score, reported with the protocol that produced it. Website · 中文 · Code · Data use & privacy 121 reviewed measurements from public EEG datasets, each carrying the cohort, electrode count, evaluation mode, chance level and training budget that produc…",
+      "tags": [
+        "cc-by-4.0",
+        "csv",
+        "tabular",
+        "pandas",
+        "eeg",
+        "brain-computer-interface",
+        "benchmark",
+        "neurotechnology"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 68,
+      "likes": 0,
+      "updatedAt": "2026-09-22T06:59:23.000Z",
       "modality": [
         "EEG"
       ]
@@ -375,56 +400,9 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 226,
+      "downloads": 262,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 156,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Twu31/bci-report",
-      "name": "bci-report",
-      "owner": "Twu31",
-      "url": "https://huggingface.co/datasets/Twu31/bci-report",
-      "source": "huggingface",
-      "description": "BCI Report Every EEG decoding score, reported with the protocol that produced it. Website · Code · Data use & privacy 121 reviewed measurements from public EEG datasets, each carrying the cohort, electrode count, evaluation mode, chance level and training budget that produced it…",
-      "tags": [
-        "cc-by-4.0",
-        "csv",
-        "tabular",
-        "pandas",
-        "eeg",
-        "brain-computer-interface",
-        "benchmark",
-        "neurotechnology"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": 0,
-      "updatedAt": "2026-09-20T14:24:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -447,7 +425,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 141,
+      "downloads": 137,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -500,6 +478,28 @@
       ]
     },
     {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 76,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:Fudan-fMRI/EEG-Graspbot",
       "name": "EEG-Graspbot",
       "owner": "Fudan-fMRI",
@@ -516,7 +516,7 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 354,
+      "downloads": 343,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
@@ -563,7 +563,7 @@
         "bids"
       ],
       "license": "cc-by-4.0",
-      "downloads": 33,
+      "downloads": 17,
       "likes": 0,
       "updatedAt": "2026-08-21T18:41:24.000Z",
       "modality": [
@@ -711,11 +711,38 @@
       "description": "Kahlus raw EEG waveform export This dataset is a raw waveform export assembled for the Kahlus public multi-dataset EEG forecasting/completion work. It contains the following source trees: chbmit eegmmi siena sleep-edfx The files are provided for research and figure-generation wo…",
       "tags": [],
       "license": null,
-      "downloads": 35,
+      "downloads": 36,
       "likes": 0,
       "updatedAt": "2026-07-12T00:19:49.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "tags": [
+        "bids",
+        "eeg",
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 183,
+      "updatedAt": "2026-09-21T21:13:56.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
       ]
     },
     {
@@ -730,6 +757,22 @@
       "downloads": 126,
       "likes": null,
       "updatedAt": "2026-09-20T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22875252",
+      "name": "Multimodal EEG and Eye-Gaze Attention Dataset",
+      "owner": "Mudenagudi, Uma",
+      "url": "https://doi.org/10.5281/zenodo.22875252",
+      "source": "zenodo",
+      "description": "MEEAD: A Multimodal EEG and Eye-Gaze Dataset for Four-State Attention Profiling Overview MEEAD (Multimodal EEG and Eye-Gaze Attention Dataset) is a multimodal dataset developed for the study and computational profiling of human attention using synchronized electroencephalography…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-09-21T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -751,7 +794,7 @@
         "reproducibility"
       ],
       "license": "cc-by-4.0",
-      "downloads": 9,
+      "downloads": 10,
       "likes": null,
       "updatedAt": "2026-09-19T00:00:00.000Z",
       "modality": [
@@ -879,19 +922,23 @@
       ]
     },
     {
-      "id": "zenodo:22642960",
-      "name": "Dataset on the Effects of Cognitive and Muscular Fatigue on Brain Function and Dynamic Postural Balance in Older Adults",
-      "owner": "Dodangeh, Zahra",
-      "url": "https://doi.org/10.5281/zenodo.22642960",
-      "source": "zenodo",
-      "description": "This dataset contains EEG and postural balance data collected from older adults to investigate the effects of cognitive and muscular fatigue on brain function and postural control. EEG data were acquired during postural balance assessment, and overall balance index scores were o…",
+      "id": "github:neowalter/neoxai",
+      "name": "neoxai",
+      "owner": "neowalter",
+      "url": "https://github.com/neowalter/neoxai",
+      "source": "github",
+      "description": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
       "tags": [
-        "Older adults"
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "neuroscience",
+        "open-data"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-09-07T00:00:00.000Z",
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 2,
+      "updatedAt": "2026-09-22T06:24:06.000Z",
       "modality": [
         "EEG"
       ]
@@ -917,28 +964,6 @@
       "downloads": null,
       "likes": 2,
       "updatedAt": "2026-09-21T09:44:13.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:neowalter/neoxai",
-      "name": "neoxai",
-      "owner": "neowalter",
-      "url": "https://github.com/neowalter/neoxai",
-      "source": "github",
-      "description": "Curated BCI/EEG open datasets, models, processing methods, and archived news/papers",
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "neuroscience",
-        "open-data"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-09-21T06:24:14.000Z",
       "modality": [
         "EEG"
       ]
@@ -985,31 +1010,6 @@
       "downloads": null,
       "likes": 0,
       "updatedAt": "2026-09-20T07:19:39.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:ankanbiswas022/p300-erp-detection",
-      "name": "p300-erp-detection",
-      "owner": "ankanbiswas022",
-      "url": "https://github.com/ankanbiswas022/p300-erp-detection",
-      "source": "github",
-      "description": "Single-trial P300 detection on a public speller dataset: xDAWN + Riemannian geometry vs EEGNet, within/cross-subject validation, decision-level aggregation",
-      "tags": [
-        "bci",
-        "eeg",
-        "erp",
-        "mne",
-        "p300",
-        "pytorch",
-        "riemannian-geometry",
-        "scikit-learn"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-09-18T12:54:07.000Z",
       "modality": [
         "EEG"
       ]
