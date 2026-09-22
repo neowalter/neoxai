@@ -1,16 +1,16 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T01:45:57.014611+00:00",
+  "generated_at": "2026-09-22T13:36:13.615551+00:00",
   "item_count": 1,
   "types": {
     "Clinical": 1
   },
   "highlights": [
     {
-      "title_zh": "用于卒中康复的虚拟现实脑机接口：一项交叉研究",
+      "title_zh": "脑机接口结合虚拟现实用于卒中康复：一项交叉研究",
       "title_en": "BCI With Virtual Reality for Stroke Rehabilitation: A Crossover Study",
       "url": "https://clinicaltrials.gov/study/NCT07374276",
-      "brief": "卒中后运动想象BCI结合VR的临床试验，评估上肢康复效果。"
+      "brief": "非侵入式运动想象BCI联合VR的卒中上肢康复临床试验。"
     }
   ],
   "github_path": "docs/bci-intel/2026-09-22.json",
@@ -18,34 +18,35 @@
     {
       "type": "Clinical",
       "level": "General",
-      "title_zh": "用于卒中康复的虚拟现实脑机接口：一项交叉研究",
+      "title_zh": "脑机接口结合虚拟现实用于卒中康复：一项交叉研究",
       "title_en": "BCI With Virtual Reality for Stroke Rehabilitation: A Crossover Study",
       "bullets_zh": [
-        "ClinicalTrials.gov研究NCT07374276评估运动想象BCI结合虚拟现实用于卒中后手臂和手功能恢复。",
-        "该交叉设计比较MI-VR-BCI训练与标准康复，检验加入BCI是否改善功能结局。",
-        "其意义在于对非侵入式运动想象BCI在卒中后神经康复中的临床评估。"
+        "ClinicalTrials.gov研究NCT07374276评估运动想象BCI结合虚拟现实用于卒中康复。",
+        "该交叉设计检验在运动观察中加入MI-BCI是否能改善卒中后手臂和手部恢复。",
+        "它体现了基于EEG的非侵入式BCI在神经康复中的临床应用价值。"
       ],
       "bullets_en": [
-        "ClinicalTrials.gov study NCT07374276 evaluates motor imagery BCI combined with virtual reality for arm and hand recovery after stroke.",
-        "The crossover design compares MI-VR-BCI training against standard rehabilitation to test whether adding BCI improves functional outcomes.",
-        "It matters as a non-invasive clinical evaluation of motor imagery BCI in post-stroke neurorehabilitation."
+        "ClinicalTrials.gov study NCT07374276 evaluates motor imagery BCI combined with virtual reality for stroke rehabilitation.",
+        "The crossover design tests whether adding MI-BCI to motor observation improves arm and hand recovery after stroke.",
+        "It is relevant as a non-invasive clinical application of EEG-based BCI in neurorehabilitation."
       ],
       "url": "https://clinicaltrials.gov/study/NCT07374276",
       "published": "2026-09-21",
       "source": "clinicaltrials",
-      "brief": "卒中后运动想象BCI结合VR的临床试验，评估上肢康复效果。",
+      "brief": "非侵入式运动想象BCI联合VR的卒中上肢康复临床试验。",
       "language": "en",
       "tags": [
         "clinical",
-        "stroke-rehabilitation",
+        "eeg",
         "bci",
-        "virtual-reality",
+        "vr",
+        "stroke",
         "motor-imagery",
-        "non-invasive"
+        "rehabilitation"
       ],
-      "brief_en": "Clinical trial evaluating motor imagery BCI with VR for upper-limb recovery after stroke.",
+      "brief_en": "Clinical trial testing non-invasive motor-imagery BCI with VR for arm-hand recovery after stroke.",
       "raw_excerpt": "The goal of this clinical trial is to investigate if training sessions of motor imagery associated with brain-computer interface and motor observation through virtual reality (MI-VR-BCI) can help to improve arm and hand recovery after a stroke. The main questions to answer are: * Can adding MI-BCI-VR sessions improve upper limb movement? * Can it help stroke survivors perform daily activities more",
-      "fetched_at": "2026-09-22T01:45:57.006621+00:00"
+      "fetched_at": "2026-09-22T13:36:13.603450+00:00"
     }
   ]
 }
