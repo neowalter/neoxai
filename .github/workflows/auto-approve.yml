@@ -1,19 +1,36 @@
-name: Auto-approve
+name: Auto-approve and merge
 
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
 permissions:
+  contents: write
   pull-requests: write
 
 jobs:
-  approve:
-    if: github.actor == 'neowalter' && github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.draft == false
+  approve-and-merge:
+    # Same-repo only; trusted authors only. Never auto-merge forks or unknown actors.
+    if: >
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (
+        github.actor == 'neowalter' ||
+        github.actor == 'dependabot[bot]' ||
+        github.actor == 'github-actions[bot]'
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Approve pull request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-        run: gh pr review --approve "${{ github.event.pull_request.number }}"
+        run: |
+          gh pr review --approve "${{ github.event.pull_request.number }}" || true
+
+      - name: Enable auto-merge (squash)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh pr merge "${{ github.event.pull_request.number }}" --squash --auto --delete-branch
