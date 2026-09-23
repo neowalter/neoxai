@@ -407,5 +407,17 @@
       "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
       "fetched_at": "2026-09-23T02:30:17.439428+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 74,
+    "llm_rows": 39,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "prefiltered": 53,
+    "intel": 0,
+    "tutorials": 10,
+    "benchmarks": 19,
+    "conflicts_dropped": 0
+  }
 }
