@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-23T09:32:09.099Z",
+  "generatedAt": "2026-09-24T09:31:38.384Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 57
+      "count": 58
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 9
+      "count": 11
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 19
+      "count": 18
     },
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 4
     }
   ],
   "items": [
@@ -100,6 +100,44 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008867",
+      "name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008867",
+      "source": "openneuro",
+      "description": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-24T01:57:53.284Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008862",
+      "name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008862",
+      "source": "openneuro",
+      "description": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-23T20:56:17.269Z",
       "modality": [
         "EEG"
       ]
@@ -293,7 +331,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 10887,
+      "downloads": 10901,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -306,7 +344,7 @@
       "owner": "bkowshik",
       "url": "https://huggingface.co/datasets/bkowshik/eeg-mi-datasets",
       "source": "huggingface",
-      "description": "EEG motor imagery datasets Unmodified copies of public EEG motor imagery datasets in the MOABB cache layout. Dataset Subjects Sessions Size Source License Stieger2021 62 598 377 GB figshare CC BY 4.0 Dreyer2023 87 87 5.5 GB OSF, MOABB's BIDS copy of Zenodo CC BY 4.0 BNCI2014_001…",
+      "description": "EEG motor imagery datasets Unmodified copies of public EEG motor imagery datasets in the MOABB cache layout. Files extracted from an upstream archive keep their bytes; Weibo2014's also take the names MOABB gives them. Datasets Loading: BNCI2014_001 · Cho2017 · Dreyer2023 · Guttm…",
       "tags": [
         "cc-by-4.0",
         "cc-by-nd-4.0",
@@ -316,9 +354,9 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 348,
+      "downloads": 423,
       "likes": 0,
-      "updatedAt": "2026-09-18T16:07:10.000Z",
+      "updatedAt": "2026-09-23T13:56:52.000Z",
       "modality": [
         "EEG"
       ]
@@ -341,7 +379,7 @@
         "neurotechnology"
       ],
       "license": "cc-by-4.0",
-      "downloads": 140,
+      "downloads": 171,
       "likes": 0,
       "updatedAt": "2026-09-23T03:11:39.000Z",
       "modality": [
@@ -400,7 +438,7 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is rate coded (Rate coding uses input features to determine spiking frequency). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. To reconstruct the images run the…",
       "tags": [],
       "license": null,
-      "downloads": 260,
+      "downloads": 263,
       "likes": 0,
       "updatedAt": "2026-08-12T23:42:53.000Z",
       "modality": [
@@ -425,9 +463,33 @@
         "engagement"
       ],
       "license": "other",
+      "downloads": 36,
+      "likes": 0,
+      "updatedAt": "2026-09-23T12:41:59.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:madteam/thinking-bciciv2a",
+      "name": "thinking-bciciv2a",
+      "owner": "madteam",
+      "url": "https://huggingface.co/datasets/madteam/thinking-bciciv2a",
+      "source": "huggingface",
+      "description": "BCICIV-2a EEG Motor Imagery Provenance This repository contains one consolidated CSV shard derived from the local research copy identified as the Kaggle dataset aymanmostafa11/eeg-motor-imagery-bciciv-2a, which describes the BCI Competition IV 2a motor-imagery recordings associa…",
+      "tags": [
+        "csv",
+        "tabular",
+        "pandas",
+        "eeg",
+        "motor-imagery",
+        "bci",
+        "bciciv-2a"
+      ],
+      "license": "other",
       "downloads": 0,
       "likes": 0,
-      "updatedAt": "2026-09-23T05:26:59.000Z",
+      "updatedAt": "2026-09-24T06:21:41.000Z",
       "modality": [
         "EEG"
       ]
@@ -450,7 +512,7 @@
         "dry-electrode"
       ],
       "license": "cc-by-4.0",
-      "downloads": 131,
+      "downloads": 133,
       "likes": 0,
       "updatedAt": "2026-08-20T05:45:54.000Z",
       "modality": [
@@ -495,31 +557,9 @@
         "phase-classification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 76,
+      "downloads": 77,
       "likes": 0,
       "updatedAt": "2026-08-27T14:48:02.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 76,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -542,9 +582,31 @@
         "doi:10.57967/hf/8132"
       ],
       "license": "cc-by-4.0",
-      "downloads": 697,
+      "downloads": 723,
       "likes": 0,
       "updatedAt": "2026-04-28T14:57:22.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 70,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -566,36 +628,11 @@
         "grasping"
       ],
       "license": null,
-      "downloads": 332,
+      "downloads": 330,
       "likes": 0,
       "updatedAt": "2026-07-02T19:11:11.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "hf:braindecode/bcic2a",
-      "name": "bcic2a",
-      "owner": "braindecode",
-      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
-      "source": "huggingface",
-      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
-      "tags": [
-        "unknown",
-        "braindecode",
-        "eeg",
-        "neuroscience",
-        "brain-computer-interface",
-        "deep-learning"
-      ],
-      "license": "unknown",
-      "downloads": 880,
-      "likes": 0,
-      "updatedAt": "2026-03-14T20:20:10.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "ECoG"
       ]
     },
     {
@@ -637,7 +674,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 16,
+      "downloads": 15,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -653,11 +690,36 @@
       "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
       "tags": [],
       "license": null,
-      "downloads": 39,
+      "downloads": 40,
       "likes": 0,
       "updatedAt": "2026-08-12T23:44:46.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "hf:braindecode/bcic2a",
+      "name": "bcic2a",
+      "owner": "braindecode",
+      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
+      "source": "huggingface",
+      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
+      "tags": [
+        "unknown",
+        "braindecode",
+        "eeg",
+        "neuroscience",
+        "brain-computer-interface",
+        "deep-learning"
+      ],
+      "license": "unknown",
+      "downloads": 820,
+      "likes": 0,
+      "updatedAt": "2026-03-14T20:20:10.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
       ]
     },
     {
@@ -678,37 +740,11 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 355,
+      "downloads": 357,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "hf:lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "name": "EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "owner": "lasfk",
-      "url": "https://huggingface.co/datasets/lasfk/EEG-fNIRS-based-Handwriting-Trajectory-Dataset",
-      "source": "huggingface",
-      "description": "Overview This dataset contains the raw multimodal signals and metadata. The goal of the competition is to predict the imagined handwriting class for each test trial using synchronized: EEG signals fNIRS signals The dataset is organized to support an end-to-end competition workfl…",
-      "tags": [
-        "cc-by-nc-sa-4.0",
-        "csv",
-        "tabular",
-        "pandas",
-        "eeg",
-        "fnirs",
-        "brain-computer-interface",
-        "classification"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 29,
-      "likes": 4,
-      "updatedAt": "2026-07-10T03:25:37.000Z",
-      "modality": [
-        "EEG",
-        "fNIRS"
       ]
     },
     {
@@ -747,7 +783,7 @@
       "description": "This record documents a pilot randomized controlled trial investigating whether combining real-time EEG neurofeedback with normobaric hypoxia can improve post-exercise neuromuscular recovery in elite male judokas from the Polish National Judo Senior Team. &nbsp; Eight internatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 132,
+      "downloads": 135,
       "likes": null,
       "updatedAt": "2026-09-20T00:00:00.000Z",
       "modality": [
@@ -933,8 +969,8 @@
       ],
       "license": "BSD-3-Clause",
       "downloads": null,
-      "likes": 86,
-      "updatedAt": "2026-09-23T00:38:17.000Z",
+      "likes": 87,
+      "updatedAt": "2026-09-23T14:13:18.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -960,53 +996,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 2,
-      "updatedAt": "2026-09-23T06:24:07.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:beukkung/Motor-imagery-EEG-Classification",
-      "name": "Motor-imagery-EEG-Classification",
-      "owner": "beukkung",
-      "url": "https://github.com/beukkung/Motor-imagery-EEG-Classification",
-      "source": "github",
-      "description": "Using one-dimension CNN architecture to MI-EEG classification. The project is used OpenBMI dataset and trained with 20 channel sensors.",
-      "tags": [
-        "brain-computer-interface",
-        "cnn",
-        "deep-learning",
-        "eeg",
-        "machine-learning",
-        "motor-imagery",
-        "signal-processing",
-        "tensorflow"
-      ],
-      "license": null,
-      "downloads": null,
-      "likes": 2,
-      "updatedAt": "2026-09-21T09:44:13.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:BurhanxGodhra/eeg-motor-imagery-exploration",
-      "name": "eeg-motor-imagery-exploration",
-      "owner": "BurhanxGodhra",
-      "url": "https://github.com/BurhanxGodhra/eeg-motor-imagery-exploration",
-      "source": "github",
-      "description": "Early exploration of EEG motor-imagery data using MNE and the EEGBCI dataset.",
-      "tags": [
-        "bci",
-        "eeg",
-        "mne",
-        "motor-imagery"
-      ],
-      "license": null,
-      "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-09-20T16:23:43.000Z",
+      "updatedAt": "2026-09-24T01:28:16.000Z",
       "modality": [
         "EEG"
       ]
