@@ -1,22 +1,22 @@
 {
   "date": "2026-09-24",
   "generated_at": "2026-09-24T03:10:15.183404+00:00",
-  "item_count": 12,
+  "item_count": 10,
   "types": {
-    "Tutorial": 12
+    "Tutorial": 10
   },
   "highlights": [
     {
-      "title_zh": "代码示例——BrainFlow文档",
-      "title_en": "Code Samples — BrainFlow documentation",
-      "url": "https://brainflow.readthedocs.io/en/stable/Examples.html",
-      "brief": "BrainFlow代码示例，用于非侵入式EEG/BCI开发。"
+      "title_zh": "OpenBCI编程与配置用于EEG分析",
+      "title_en": "OpenBCI Programming and Configuration for EEG Analysis",
+      "url": "https://github.com/ArathSaenz/OpenBCI",
+      "brief": "OpenBCI配置与EEG分析教程，适合入门非侵入式脑机接口。"
     },
     {
-      "title_zh": "入门指南｜Cortex API",
-      "title_en": "Getting Started | Cortex API",
-      "url": "https://emotiv.gitbook.io/cortex-api/",
-      "brief": "Emotiv Cortex API入门文档，支持EEG/BCI开发。"
+      "title_zh": "入门指南 | OpenBCI 文档",
+      "title_en": "Getting Started | OpenBCI Documentation",
+      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
+      "brief": "OpenBCI官方入门文档，指导配置与使用非侵入式EEG设备。"
     },
     {
       "title_zh": "欢迎使用 BrainFlow 文档！— BrainFlow 文档",
@@ -25,8 +25,100 @@
       "brief": "BrainFlow官方文档，提供非侵入式BCI数据获取与处理入门。"
     }
   ],
-  "github_path": "docs/bci-tutorials/latest.json",
+  "github_path": "docs/bci-tutorials/2026-09-24.md",
   "items": [
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "OpenBCI编程与配置用于EEG分析",
+      "title_en": "OpenBCI Programming and Configuration for EEG Analysis",
+      "bullets_zh": [
+        "GitHub仓库用于OpenBCI编程与配置，发布于2026-09-24。",
+        "面向消费级非侵入式硬件的EEG分析流程。",
+        "可作为OpenBCI用户入门教程。"
+      ],
+      "bullets_en": [
+        "GitHub repository for OpenBCI programming and configuration, published 2026-09-24.",
+        "Targets EEG analysis workflows using consumer-grade non-invasive hardware.",
+        "Useful as a getting-started tutorial for OpenBCI users."
+      ],
+      "url": "https://github.com/ArathSaenz/OpenBCI",
+      "published": "2026-09-24T01:56:27Z",
+      "source": "github",
+      "brief": "OpenBCI配置与EEG分析教程，适合入门非侵入式脑机接口。",
+      "language": "mixed",
+      "tags": [
+        "tutorial",
+        "openbci",
+        "eeg",
+        "non-invasive-bci"
+      ],
+      "brief_en": "OpenBCI configuration and EEG analysis tutorial for getting started with non-invasive BCI.",
+      "raw_excerpt": "Programacion y Configuracion de OpenBCI para hacer analisis EEG",
+      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "入门指南 | OpenBCI 文档",
+      "title_en": "Getting Started | OpenBCI Documentation",
+      "bullets_zh": [
+        "OpenBCI官方入门文档，面向非侵入式EEG硬件。",
+        "涵盖Cyton、Ganglion、头带、电极和生物传感设置基础。",
+        "适合初学者开始消费级或研究级BCI实验。"
+      ],
+      "bullets_en": [
+        "Official OpenBCI Getting Started documentation for non-invasive EEG hardware.",
+        "Covers Cyton, Ganglion, headwear, electrodes, and biosensing setup basics.",
+        "Useful for beginners starting consumer or research BCI experiments."
+      ],
+      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "OpenBCI官方入门文档，指导配置与使用非侵入式EEG设备。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "openbci",
+        "eeg",
+        "documentation",
+        "getting-started"
+      ],
+      "brief_en": "Official OpenBCI getting-started docs for configuring and using non-invasive EEG devices.",
+      "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
+      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "欢迎使用 BrainFlow 文档！— BrainFlow 文档",
+      "title_en": "Welcome to BrainFlow’s documentation! — BrainFlow documentation",
+      "bullets_zh": [
+        "BrainFlow文档介绍一个用于BCI数据获取与处理的开源库。",
+        "支持OpenBCI Cyton、Ganglion及合成/回放等非侵入式板卡。",
+        "帮助开发者用多种语言构建基于EEG的应用。"
+      ],
+      "bullets_en": [
+        "BrainFlow documentation introduces an open-source library for BCI data acquisition and processing.",
+        "Supports non-invasive boards such as OpenBCI Cyton, Ganglion, and synthetic/playback boards.",
+        "Helps developers build EEG-based applications across programming languages."
+      ],
+      "url": "https://brainflow.readthedocs.io/en/stable/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "BrainFlow官方文档，提供非侵入式BCI数据获取与处理入门。",
+      "language": "en",
+      "tags": [
+        "tutorial",
+        "brainflow",
+        "openbci",
+        "eeg",
+        "library"
+      ],
+      "brief_en": "Official BrainFlow docs for getting started with non-invasive BCI data acquisition and processing.",
+      "raw_excerpt": "Welcome to BrainFlow’s documentation! — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand",
+      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
+    },
     {
       "type": "Tutorial",
       "level": "Intermediate",
@@ -59,6 +151,37 @@
     },
     {
       "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "Neurosity SDK",
+      "title_en": "Neurosity SDK",
+      "bullets_zh": [
+        "Neurosity SDK文档支持使用消费级EEG头带构建应用。",
+        "它说明如何访问脑数据流并将其集成到软件项目中。",
+        "适合使用可穿戴头带进行非侵入式BCI原型开发。"
+      ],
+      "bullets_en": [
+        "Neurosity SDK documentation supports building apps with the consumer EEG headband.",
+        "It describes how to access brain data streams and integrate them into software projects.",
+        "Relevant for non-invasive BCI prototyping using a wearable headset."
+      ],
+      "url": "https://docs.neurosity.co/",
+      "published": "",
+      "source": "tutorial",
+      "brief": "Neurosity消费级EEG头带SDK开发文档。",
+      "language": "en",
+      "tags": [
+        "neurosity",
+        "eeg",
+        "sdk",
+        "bci",
+        "tutorial"
+      ],
+      "brief_en": "Developer docs for Neurosity consumer EEG headband SDK.",
+      "raw_excerpt": "Neurosity SDK",
+      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
+    },
+    {
+      "type": "Tutorial",
       "level": "Beginner",
       "title_zh": "入门指南｜Cortex API",
       "title_en": "Getting Started | Cortex API",
@@ -87,37 +210,6 @@
       ],
       "brief_en": "Getting-started docs for Emotiv Cortex API with EEG/BCI workflows.",
       "raw_excerpt": "Getting Started | Cortex API Cortex API ⌘ Ctrl k Cortex API Getting Started Connecting to the Cortex API Overview of API flow Authentication Headsets Sessions Data Subscription Records Markers Subjects BCI Advanced BCI Warning Objects Error Codes Troubleshooting Guide Release Notes cortexaccess tool Powered by GitBook On this page For the complete documentation index, see llms.txt . This page is a",
-      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "欢迎使用 BrainFlow 文档！— BrainFlow 文档",
-      "title_en": "Welcome to BrainFlow’s documentation! — BrainFlow documentation",
-      "bullets_zh": [
-        "BrainFlow文档介绍一个用于BCI数据获取与处理的开源库。",
-        "支持OpenBCI Cyton、Ganglion及合成/回放等非侵入式板卡。",
-        "帮助开发者用多种语言构建基于EEG的应用。"
-      ],
-      "bullets_en": [
-        "BrainFlow documentation introduces an open-source library for BCI data acquisition and processing.",
-        "Supports non-invasive boards such as OpenBCI Cyton, Ganglion, and synthetic/playback boards.",
-        "Helps developers build EEG-based applications across programming languages."
-      ],
-      "url": "https://brainflow.readthedocs.io/en/stable/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "BrainFlow官方文档，提供非侵入式BCI数据获取与处理入门。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "brainflow",
-        "openbci",
-        "eeg",
-        "library"
-      ],
-      "brief_en": "Official BrainFlow docs for getting started with non-invasive BCI data acquisition and processing.",
-      "raw_excerpt": "Welcome to BrainFlow’s documentation! — BrainFlow documentation BrainFlow Supported Boards BrainFlow Dummy Boards Playback File Board Streaming Board Synthetic Board OpenBCI Galea Cyton Ganglion Native Cyton Daisy Ganglion with WIFI Shield Cyton with WIFI Shield CytonDaisy with WIFI Shield NeuroMD BrainBit Callibri(Yellow) G.TEC Unicorn Neurosity Notion 1 Notion 2 Crown OYMotion gForcePro ArmBand",
       "fetched_at": "2026-09-24T03:10:15.172203+00:00"
     },
     {
@@ -185,68 +277,6 @@
     },
     {
       "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "Neurosity SDK",
-      "title_en": "Neurosity SDK",
-      "bullets_zh": [
-        "Neurosity SDK文档支持使用消费级EEG头带构建应用。",
-        "它说明如何访问脑数据流并将其集成到软件项目中。",
-        "适合使用可穿戴头带进行非侵入式BCI原型开发。"
-      ],
-      "bullets_en": [
-        "Neurosity SDK documentation supports building apps with the consumer EEG headband.",
-        "It describes how to access brain data streams and integrate them into software projects.",
-        "Relevant for non-invasive BCI prototyping using a wearable headset."
-      ],
-      "url": "https://docs.neurosity.co/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "Neurosity消费级EEG头带SDK开发文档。",
-      "language": "en",
-      "tags": [
-        "neurosity",
-        "eeg",
-        "sdk",
-        "bci",
-        "tutorial"
-      ],
-      "brief_en": "Developer docs for Neurosity consumer EEG headband SDK.",
-      "raw_excerpt": "Neurosity SDK",
-      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "入门指南 | OpenBCI 文档",
-      "title_en": "Getting Started | OpenBCI Documentation",
-      "bullets_zh": [
-        "OpenBCI官方入门文档，面向非侵入式EEG硬件。",
-        "涵盖Cyton、Ganglion、头带、电极和生物传感设置基础。",
-        "适合初学者开始消费级或研究级BCI实验。"
-      ],
-      "bullets_en": [
-        "Official OpenBCI Getting Started documentation for non-invasive EEG hardware.",
-        "Covers Cyton, Ganglion, headwear, electrodes, and biosensing setup basics.",
-        "Useful for beginners starting consumer or research BCI experiments."
-      ],
-      "url": "https://docs.openbci.com/GettingStarted/GettingStartedLanding/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "OpenBCI官方入门文档，指导配置与使用非侵入式EEG设备。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "openbci",
-        "eeg",
-        "documentation",
-        "getting-started"
-      ],
-      "brief_en": "Official OpenBCI getting-started docs for configuring and using non-invasive EEG devices.",
-      "raw_excerpt": "Getting Started | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Getting Started Getting Started Boards Biosensing Setups Community Documentation Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Polici",
-      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
-    },
-    {
-      "type": "Tutorial",
       "level": "General",
       "title_zh": "Unicorn Hybrid Black：实时EEG的脑电头带与脑机接口平台",
       "title_en": "Unicorn Hybrid Black: EEG Headset & Brain-Computer Interface Platform for Real-Time EEG",
@@ -307,98 +337,18 @@
       "brief_en": "Tsinghua BCI group site offering non-invasive EEG benchmark downloads and research resources.",
       "raw_excerpt": "清华大学脑机接口研究组 主站 Home 新闻动态 News 组内成员 Members 研究方向 Research 研究成果 Findings 前沿跟踪 Followings 资料下载 Download 联系我们 Contact 资料下载 Download Benchmark Dataset： 文件名（File）： 下载（Download）： read me Readme.txt sub info Sub_info.txt 64-channels 64-channels.loc freqency phase Freq_Phase.mat S1.mat S1.mat.7z S2.mat S2.mat.7z S3.mat S3.mat.7z S4.mat S4.mat.7z S5.mat S5.mat.7z S6.mat S6.mat.7z S7.mat S7.mat.7z S8.mat S8.",
       "fetched_at": "2026-09-24T03:10:15.172203+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "OpenBCI编程与配置用于EEG分析",
-      "title_en": "OpenBCI Programming and Configuration for EEG Analysis",
-      "bullets_zh": [
-        "GitHub仓库用于OpenBCI编程与配置，发布于2026-09-24。",
-        "面向消费级非侵入式硬件的EEG分析流程。",
-        "可作为OpenBCI用户入门教程。"
-      ],
-      "bullets_en": [
-        "GitHub repository for OpenBCI programming and configuration, published 2026-09-24.",
-        "Targets EEG analysis workflows using consumer-grade non-invasive hardware.",
-        "Useful as a getting-started tutorial for OpenBCI users."
-      ],
-      "url": "https://github.com/ArathSaenz/OpenBCI",
-      "published": "2026-09-24T01:56:27Z",
-      "source": "github",
-      "brief": "OpenBCI配置与EEG分析教程，适合入门非侵入式脑机接口。",
-      "language": "mixed",
-      "tags": [
-        "tutorial",
-        "openbci",
-        "eeg",
-        "non-invasive-bci"
-      ],
-      "brief_en": "OpenBCI configuration and EEG analysis tutorial for getting started with non-invasive BCI.",
-      "raw_excerpt": "Programacion y Configuracion de OpenBCI para hacer analisis EEG",
-      "fetched_at": "2026-09-24T03:10:15.172203+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "欢迎来到OpenBCI社区 | OpenBCI文档",
-      "title_en": "Welcome to the OpenBCI Community | OpenBCI Documentation",
-      "bullets_zh": [
-        "OpenBCI官方文档首页，面向社区与入门用户。",
-        "涵盖Cyton、Ganglion、头带电极及第三方硬件。",
-        "适合消费者非侵入式EEG BCI教程的入口。"
-      ],
-      "bullets_en": [
-        "Official OpenBCI documentation homepage for the community and getting started.",
-        "Covers Cyton, Ganglion, headwear/electrodes, and third-party hardware.",
-        "Useful entry point for consumer non-invasive EEG BCI tutorials."
-      ],
-      "url": "https://docs.openbci.com/",
-      "published": "",
-      "source": "tutorial",
-      "brief": "OpenBCI官方文档首页，提供入门与硬件设置指南。",
-      "language": "en",
-      "tags": [
-        "tutorial",
-        "openbci",
-        "eeg",
-        "getting-started",
-        "consumer-bci"
-      ],
-      "brief_en": "OpenBCI official docs homepage with getting started and hardware setup guidance.",
-      "raw_excerpt": "Welcome to the OpenBCI Community | OpenBCI Documentation Skip to main content OpenBCI Documentation Main Site Shop Forum Documentation Github Citations Search Welcome to OpenBCI Welcome to the OpenBCI Community Getting Started Cyton Board Ganglion Board Headwear & Electrodes Third-Party Hardware Software For Developers Deprecated Documents Troubleshooting Example Projects FAQ Policies Welcome to O",
-      "fetched_at": "2026-09-23T13:56:09.139912+00:00"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Advanced",
-      "title_zh": "ADS1299 EEG/BCI开发核心SDK",
-      "title_en": "ADS1299 Core SDK for EEG/BCI Development",
-      "bullets_zh": [
-        "开源SDK面向ADS1299 EEG采集，覆盖8–64通道硬件及MCU/SoC/DSP/FPGA参考包。",
-        "包含Verilog RTL以及PC、移动端和Linux集成，支持Python/MATLAB/R分析与BCI工作流。",
-        "2026年9月发布于GitHub，构成较完整的非侵入式EEG/BCI开发生态。"
-      ],
-      "bullets_en": [
-        "Open-source SDK targets ADS1299 EEG acquisition with 8–64 channel hardware and MCU/SoC/DSP/FPGA reference packages.",
-        "Includes Verilog RTL plus PC, mobile and Linux integration for Python/MATLAB/R analysis and BCI workflows.",
-        "Published on GitHub in September 2026 as a broad non-invasive EEG/BCI development ecosystem."
-      ],
-      "url": "https://github.com/yuguoyu123456/ADS1299-Core-SDK",
-      "published": "2026-09-15T23:58:07Z",
-      "source": "github",
-      "brief": "ADS1299 EEG采集SDK，提供多通道硬件、软件集成与BCI工作流参考。",
-      "language": "en",
-      "tags": [
-        "ads1299",
-        "eeg",
-        "bci",
-        "sdk",
-        "hardware"
-      ],
-      "brief_en": "Open ADS1299 EEG/BCI SDK with multi-channel hardware, software integration and workflow references.",
-      "raw_excerpt": "Building the world’s largest and most comprehensive open ADS1299 EEG/BCI ecosystem — 8–64CH hardware, 200 MCU/SoC/DSP & FPGA target/reference packages, Verilog RTL, PC/mobile/Linux integration, Python/MATLAB/R EEG analysis, BCI workflows, validation, education and research.",
-      "fetched_at": "2026-09-16T01:34:29.143157+00:00"
     }
-  ]
+  ],
+  "stats": {
+    "fetched": 75,
+    "llm_rows": 31,
+    "kept": 12,
+    "llm_failed": false,
+    "llm_skipped_batches": 1,
+    "prefiltered": 48,
+    "intel": 0,
+    "tutorials": 10,
+    "benchmarks": 16,
+    "conflicts_dropped": 0
+  }
 }
