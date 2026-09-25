@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-25",
+  "generated_at": "2026-09-25T02:23:18.360085+00:00",
+  "item_count": 0,
+  "types": {},
+  "highlights": [],
+  "github_path": "docs/bci-daily/2026-09-25.json",
+  "items": [],
+  "stats": {
+    "fetched": 106,
+    "llm_rows": 0,
+    "kept": 0,
+    "llm_failed": true,
+    "llm_skipped_batches": 10,
+    "prefiltered": 56,
+    "intel": 0,
+    "tutorials": 0,
+    "benchmarks": 0,
+    "conflicts_dropped": 0
+  }
+}
