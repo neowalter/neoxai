@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-25T09:47:26.618Z",
+  "generatedAt": "2026-09-26T09:31:26.366Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 59
+      "count": 60
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 14
+      "count": 15
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 18
+      "count": 19
     },
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 2
     }
   ],
   "items": [
@@ -100,6 +100,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008875",
+      "name": "Resting-state EEG in Parkinson's disease and controls",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008875",
+      "source": "openneuro",
+      "description": "Resting-state EEG in Parkinson's disease and controls",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-26T00:00:51.156Z",
       "modality": [
         "EEG"
       ]
@@ -406,7 +425,7 @@
       "description": "AVMoments-EEG is a large-scale, high-temporal-resolution human electroencephalography (EEG) dataset designed to characterize neural responses to naturalistic audiovisual events. The dataset comprises data from 10 healthy adult participants who freely viewed three-second naturali…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 3975,
+      "downloads": 3985,
       "likes": null,
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "modality": [
@@ -522,7 +541,7 @@
         "engagement"
       ],
       "license": "other",
-      "downloads": 69,
+      "downloads": 76,
       "likes": 0,
       "updatedAt": "2026-09-23T12:41:59.000Z",
       "modality": [
@@ -562,7 +581,7 @@
         "bciciv-2a"
       ],
       "license": "other",
-      "downloads": 8,
+      "downloads": 29,
       "likes": 0,
       "updatedAt": "2026-09-24T06:21:41.000Z",
       "modality": [
@@ -587,9 +606,33 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 0,
+      "downloads": 19,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:synapse-ear-eeg/synapse",
+      "name": "synapse",
+      "owner": "synapse-ear-eeg",
+      "url": "https://huggingface.co/datasets/synapse-ear-eeg/synapse",
+      "source": "huggingface",
+      "description": "Synapse: 16-channel cEEGrid ear-EEG for auditing EEG foundation-model transfer Released with the anonymous submission Does It Really Transfer? Auditing Frozen EEG Foundation Models on Small Ear-EEG Data (under double-blind review). 23 adults (16 with a sound-sensitivity disorder…",
+      "tags": [
+        "cc-by-4.0",
+        "eeg",
+        "ear-eeg",
+        "cEEGrid",
+        "wearable",
+        "foundation-models",
+        "benchmark"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": 0,
+      "updatedAt": "2026-09-26T08:47:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -758,22 +801,6 @@
       ]
     },
     {
-      "id": "hf:corquaerit/things-eeg-spikes-LC",
-      "name": "things-eeg-spikes-LC",
-      "owner": "corquaerit",
-      "url": "https://huggingface.co/datasets/corquaerit/things-eeg-spikes-LC",
-      "source": "huggingface",
-      "description": "This dataset is spike encoded data of the THINGS EEG. This data is latency coded (latency coding uses input features to determine spiking timing). The num of steps is 100. The image resolution was reduced from 224 to 128 and features standardized. threshold=0.01, Tau=5. To recon…",
-      "tags": [],
-      "license": null,
-      "downloads": 46,
-      "likes": 0,
-      "updatedAt": "2026-08-12T23:44:46.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "zenodo:22856873",
       "name": "EEG Biofeedback and Multimodal Neuro-Physiological Monitoring in Elite Male Judokas: Neural Efficiency, Peak Power Preservation, and Strength Recovery under Hypoxia and Normoxia",
       "owner": "Maszczyk, Adam",
@@ -790,6 +817,31 @@
       ]
     },
     {
+      "id": "zenodo:22967622",
+      "name": "Musicianship EEG Dataset (BIDS version)",
+      "owner": "Whiteford, Kelly L.",
+      "url": "https://doi.org/10.5281/zenodo.22967622",
+      "source": "zenodo",
+      "description": "BIDS-formatted version of the Musicianship EEG Dataset (296 participants, 6 sites): single-channel (Cz) frequency-following responses to a /da/ syllable (6000 trials per participant, two stimulus polarities), with participant, phenotype and per-recording metadata. Converted from…",
+      "tags": [
+        "EEG",
+        "BIDS",
+        "frequency-following response",
+        "FFR",
+        "auditory brainstem",
+        "musical training",
+        "musicianship",
+        "speech encoding"
+      ],
+      "license": "cc-by-nc-4.0",
+      "downloads": 6,
+      "likes": null,
+      "updatedAt": "2026-09-25T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:22949772",
       "name": "clinicalEEG_restingState",
       "owner": "Miyakoshi, Makoto",
@@ -800,9 +852,34 @@
         "EEG"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 4,
       "likes": null,
       "updatedAt": "2026-09-25T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:22923070",
+      "name": "AiCumene EEG-BCI Sleep–Wake Dataset",
+      "owner": "Bernadotte, Alexandra",
+      "url": "https://doi.org/10.5281/zenodo.22923070",
+      "source": "zenodo",
+      "description": "The AiCumene EEG-BCI Sleep–Wake Dataset has two components. (1) A public synthetic sleep-EEG benchmark of 45 synthetic whole-night polysomnography recordings (S0001–S0045), each paired with a 30-s sleep-stage hypnogram, produced by per-recording oscillator resynthesis of the Sle…",
+      "tags": [
+        "EEG",
+        "BCI",
+        "brain-computer interface",
+        "sleep",
+        "wakefulness",
+        "polysomnography",
+        "synthetic benchmark",
+        "Sleep-EDF surrogate"
+      ],
+      "license": "cc-by-nc-4.0",
+      "downloads": 4,
+      "likes": null,
+      "updatedAt": "2026-09-24T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -896,67 +973,6 @@
       ]
     },
     {
-      "id": "zenodo:22727240",
-      "name": "Joint Frontal-ear-EEG for Auditory Attention Decoding",
-      "owner": "Yan, Yujie",
-      "url": "https://doi.org/10.5281/zenodo.22727240",
-      "source": "zenodo",
-      "description": "This record contains an anonymized EEG dataset comprising ear-EEG and frontal-EEG recordings from 15 participants, together with stimulus-order files and MATLAB preprocessing code.&nbsp; This dataset is associated with a manuscript being prepared for submission to ICASSP 2027. T…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 7,
-      "likes": null,
-      "updatedAt": "2026-09-12T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22696862",
-      "name": "EEG data and analysis code for handwriting across handedness groups",
-      "owner": "Ramos, Yago Emanoel",
-      "url": "https://doi.org/10.5281/zenodo.22696862",
-      "source": "zenodo",
-      "description": "Repository Description This repository contains the data and code for our paper (currently available as a preprint: 10.48550/arXiv.2609.10870 ). Instructions for Use To ensure the provided scripts run automatically, all files must be placed in the same directory as the extracted…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-09-10T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:eegdash/EEGDash",
-      "name": "EEGDash",
-      "owner": "eegdash",
-      "url": "https://github.com/eegdash/EEGDash",
-      "source": "github",
-      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
-      "tags": [
-        "aws",
-        "aws-s3",
-        "data-sharing",
-        "deep-learning",
-        "eeg",
-        "eeg-signals",
-        "electroencephalography",
-        "fair-principles"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 87,
-      "updatedAt": "2026-09-23T14:13:18.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG",
-        "fNIRS",
-        "EMG"
-      ]
-    },
-    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -973,7 +989,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 4,
-      "updatedAt": "2026-09-25T07:10:29.000Z",
+      "updatedAt": "2026-09-26T02:42:03.000Z",
       "modality": [
         "EEG"
       ]
