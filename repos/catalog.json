@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-25T01:16:30Z",
+  "generatedAt": "2026-09-28T01:12:57Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 60,
+  "count": 72,
   "sources": [
     {
       "id": "github",
@@ -11,31 +11,6 @@
     }
   ],
   "items": [
-    {
-      "id": "github:abwoo/eeglab_MCP",
-      "name": "eeglab_MCP",
-      "owner": "abwoo",
-      "author": "abwoo",
-      "url": "https://github.com/abwoo/eeglab_MCP",
-      "homepage": null,
-      "source": "github",
-      "description": "Local-first EEGLAB MCP server and skill package for EEG research workflows",
-      "language": "Python",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-06-09T23:35:05Z",
-      "updatedAt": "2026-09-21T14:48:13Z",
-      "pushedAt": "2026-06-25T16:54:46Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch2",
-        "contactedAuthor": "abwoo"
-      }
-    },
     {
       "id": "github:AImplifier/eeg-mcp",
       "name": "eeg-mcp",
@@ -59,53 +34,6 @@
         "contactedAt": "2026-09-21",
         "batch": "batch1",
         "contactedAuthor": "SimKuanGOH"
-      }
-    },
-    {
-      "id": "github:akatsuky999/Waveform-EEG-AIStudio",
-      "name": "Waveform-EEG-AIStudio",
-      "owner": "akatsuky999",
-      "author": "akatsuky999",
-      "url": "https://github.com/akatsuky999/Waveform-EEG-AIStudio",
-      "homepage": "",
-      "source": "github",
-      "description": "An agentic workspace for exploring, analyzing, visualizing, and annotating EEG/iEEG signals. Includes a tool-using agent, local Python analysis, multi-scale rendering, and HDF5/EDF support.",
-      "language": "JavaScript",
-      "license": "Apache-2.0",
-      "stars": 12,
-      "forks": 0,
-      "topics": [
-        "agent",
-        "browser",
-        "eeg",
-        "ieeg",
-        "large-language-models",
-        "llm-agent",
-        "neuroscience",
-        "seizure",
-        "spatio-temporal-analysis",
-        "time-series"
-      ],
-      "tags": [
-        "agent",
-        "browser",
-        "eeg",
-        "ieeg",
-        "large-language-models",
-        "llm-agent",
-        "neuroscience",
-        "seizure",
-        "spatio-temporal-analysis",
-        "time-series"
-      ],
-      "createdAt": "2026-06-20T15:35:16Z",
-      "updatedAt": "2026-09-22T02:43:01Z",
-      "pushedAt": "2026-09-22T02:42:58Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch2",
-        "contactedAuthor": "akatsuky999"
       }
     },
     {
@@ -197,67 +125,6 @@
       }
     },
     {
-      "id": "github:enkhbold470/bci-mcp",
-      "name": "bci-mcp",
-      "owner": "enkhbold470",
-      "author": "enkhbold470",
-      "url": "https://github.com/enkhbold470/bci-mcp",
-      "homepage": "https://enkhbold470.github.io/bci-mcp/",
-      "source": "github",
-      "description": "Stream live EEG brain state (focus, calm, attention) from any EEG device into Claude and any MCP client \u2014 a real Model Context Protocol server + brain-computer interface toolkit.",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 19,
-      "forks": 0,
-      "topics": [
-        "ai",
-        "bci",
-        "brain-computer-interface",
-        "brainflow",
-        "brainwave",
-        "claude",
-        "eeg",
-        "lsl",
-        "mcp",
-        "model-context-protocol",
-        "muse",
-        "neurofeedback",
-        "neuroscience",
-        "neurotech",
-        "openbci",
-        "python",
-        "signal-processing"
-      ],
-      "tags": [
-        "ai",
-        "bci",
-        "brain-computer-interface",
-        "brainflow",
-        "brainwave",
-        "claude",
-        "eeg",
-        "lsl",
-        "mcp",
-        "model-context-protocol",
-        "muse",
-        "neurofeedback",
-        "neuroscience",
-        "neurotech",
-        "openbci",
-        "python",
-        "signal-processing"
-      ],
-      "createdAt": "2025-03-23T11:01:47Z",
-      "updatedAt": "2026-09-21T14:28:33Z",
-      "pushedAt": "2026-09-03T23:02:36Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch1",
-        "contactedAuthor": "enkhbold470"
-      }
-    },
-    {
       "id": "github:Exekiel179/MNE-MCP",
       "name": "MNE-MCP",
       "owner": "Exekiel179",
@@ -280,56 +147,6 @@
         "contactedAt": "2026-09-21",
         "batch": "batch1",
         "contactedAuthor": "Exekiel179"
-      }
-    },
-    {
-      "id": "github:finnjclancy/cnd-mne-converter",
-      "name": "cnd-mne-converter",
-      "owner": "finnjclancy",
-      "author": "finnjclancy",
-      "url": "https://github.com/finnjclancy/cnd-mne-converter",
-      "homepage": null,
-      "source": "github",
-      "description": "Bidirectional conversion between CND datasets and MNE-Python objects",
-      "language": "Python",
-      "license": "BSD-3-Clause",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-08-22T06:59:12Z",
-      "updatedAt": "2026-09-21T14:31:46Z",
-      "pushedAt": "2026-09-21T11:50:51Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch1",
-        "contactedAuthor": "finnjclancy"
-      }
-    },
-    {
-      "id": "github:gel1has3/NeuroBench_Studio",
-      "name": "NeuroBench_Studio",
-      "owner": "gel1has3",
-      "author": "gel1has3",
-      "url": "https://github.com/gel1has3/NeuroBench_Studio",
-      "homepage": "https://neurobenchstudio.github.io/#",
-      "source": "github",
-      "description": "NeuroBench Studio is a conversational AI assistant and visual MLOps pipeline builder that democratizes deep learning. i.e. the \"ChatGPT\" for EEG.  By combining intuitive chat-based analysis, EEGDash dataset streaming, and Braindecode foundation models, we make advanced neural time-series analysis seamlessly accessible for all.",
-      "language": "HTML",
-      "license": null,
-      "stars": 4,
-      "forks": 1,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-07-03T13:18:17Z",
-      "updatedAt": "2026-09-21T14:31:23Z",
-      "pushedAt": "2026-09-17T14:13:50Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch1",
-        "contactedAuthor": "gel1has3"
       }
     },
     {
@@ -400,6 +217,214 @@
         "contactedAt": "2026-09-21",
         "batch": "batch2",
         "contactedAuthor": "Leehhhhh1"
+      }
+    },
+    {
+      "id": "github:Sooin12/ai4s_eeg_agent",
+      "name": "ai4s_eeg_agent",
+      "owner": "Sooin12",
+      "author": "Sooin12",
+      "url": "https://github.com/Sooin12/ai4s_eeg_agent",
+      "homepage": null,
+      "source": "github",
+      "description": "a agent for auto BCI data preprocess and analysis",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-08-09T16:14:37Z",
+      "updatedAt": "2026-09-21T14:48:29Z",
+      "pushedAt": "2026-08-16T06:05:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch2",
+        "contactedAuthor": "Sooin12"
+      }
+    },
+    {
+      "id": "github:abwoo/eeglab_MCP",
+      "name": "eeglab_MCP",
+      "owner": "abwoo",
+      "author": "abwoo",
+      "url": "https://github.com/abwoo/eeglab_MCP",
+      "homepage": null,
+      "source": "github",
+      "description": "Local-first EEGLAB MCP server and skill package for EEG research workflows",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-06-09T23:35:05Z",
+      "updatedAt": "2026-09-21T14:48:13Z",
+      "pushedAt": "2026-06-25T16:54:46Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch2",
+        "contactedAuthor": "abwoo"
+      }
+    },
+    {
+      "id": "github:akatsuky999/Waveform-EEG-AIStudio",
+      "name": "Waveform-EEG-AIStudio",
+      "owner": "akatsuky999",
+      "author": "akatsuky999",
+      "url": "https://github.com/akatsuky999/Waveform-EEG-AIStudio",
+      "homepage": "",
+      "source": "github",
+      "description": "An agentic workspace for exploring, analyzing, visualizing, and annotating EEG/iEEG signals. Includes a tool-using agent, local Python analysis, multi-scale rendering, and HDF5/EDF support.",
+      "language": "JavaScript",
+      "license": "Apache-2.0",
+      "stars": 12,
+      "forks": 0,
+      "topics": [
+        "agent",
+        "browser",
+        "eeg",
+        "ieeg",
+        "large-language-models",
+        "llm-agent",
+        "neuroscience",
+        "seizure",
+        "spatio-temporal-analysis",
+        "time-series"
+      ],
+      "tags": [
+        "agent",
+        "browser",
+        "eeg",
+        "ieeg",
+        "large-language-models",
+        "llm-agent",
+        "neuroscience",
+        "seizure",
+        "spatio-temporal-analysis",
+        "time-series"
+      ],
+      "createdAt": "2026-06-20T15:35:16Z",
+      "updatedAt": "2026-09-22T02:43:01Z",
+      "pushedAt": "2026-09-22T02:42:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch2",
+        "contactedAuthor": "akatsuky999"
+      }
+    },
+    {
+      "id": "github:enkhbold470/bci-mcp",
+      "name": "bci-mcp",
+      "owner": "enkhbold470",
+      "author": "enkhbold470",
+      "url": "https://github.com/enkhbold470/bci-mcp",
+      "homepage": "https://enkhbold470.github.io/bci-mcp/",
+      "source": "github",
+      "description": "Stream live EEG brain state (focus, calm, attention) from any EEG device into Claude and any MCP client \u2014 a real Model Context Protocol server + brain-computer interface toolkit.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 19,
+      "forks": 0,
+      "topics": [
+        "ai",
+        "bci",
+        "brain-computer-interface",
+        "brainflow",
+        "brainwave",
+        "claude",
+        "eeg",
+        "lsl",
+        "mcp",
+        "model-context-protocol",
+        "muse",
+        "neurofeedback",
+        "neuroscience",
+        "neurotech",
+        "openbci",
+        "python",
+        "signal-processing"
+      ],
+      "tags": [
+        "ai",
+        "bci",
+        "brain-computer-interface",
+        "brainflow",
+        "brainwave",
+        "claude",
+        "eeg",
+        "lsl",
+        "mcp",
+        "model-context-protocol",
+        "muse",
+        "neurofeedback",
+        "neuroscience",
+        "neurotech",
+        "openbci",
+        "python",
+        "signal-processing"
+      ],
+      "createdAt": "2025-03-23T11:01:47Z",
+      "updatedAt": "2026-09-21T14:28:33Z",
+      "pushedAt": "2026-09-03T23:02:36Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch1",
+        "contactedAuthor": "enkhbold470"
+      }
+    },
+    {
+      "id": "github:finnjclancy/cnd-mne-converter",
+      "name": "cnd-mne-converter",
+      "owner": "finnjclancy",
+      "author": "finnjclancy",
+      "url": "https://github.com/finnjclancy/cnd-mne-converter",
+      "homepage": null,
+      "source": "github",
+      "description": "Bidirectional conversion between CND datasets and MNE-Python objects",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-08-22T06:59:12Z",
+      "updatedAt": "2026-09-21T14:31:46Z",
+      "pushedAt": "2026-09-21T11:50:51Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch1",
+        "contactedAuthor": "finnjclancy"
+      }
+    },
+    {
+      "id": "github:gel1has3/NeuroBench_Studio",
+      "name": "NeuroBench_Studio",
+      "owner": "gel1has3",
+      "author": "gel1has3",
+      "url": "https://github.com/gel1has3/NeuroBench_Studio",
+      "homepage": "https://neurobenchstudio.github.io/#",
+      "source": "github",
+      "description": "NeuroBench Studio is a conversational AI assistant and visual MLOps pipeline builder that democratizes deep learning. i.e. the \"ChatGPT\" for EEG.  By combining intuitive chat-based analysis, EEGDash dataset streaming, and Braindecode foundation models, we make advanced neural time-series analysis seamlessly accessible for all.",
+      "language": "HTML",
+      "license": null,
+      "stars": 4,
+      "forks": 1,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-07-03T13:18:17Z",
+      "updatedAt": "2026-09-21T14:31:23Z",
+      "pushedAt": "2026-09-17T14:13:50Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-21",
+        "batch": "batch1",
+        "contactedAuthor": "gel1has3"
       }
     },
     {
@@ -517,31 +542,6 @@
         "contactedAt": "2026-09-21",
         "batch": "batch2",
         "contactedAuthor": "ywatanabe1989"
-      }
-    },
-    {
-      "id": "github:Sooin12/ai4s_eeg_agent",
-      "name": "ai4s_eeg_agent",
-      "owner": "Sooin12",
-      "author": "Sooin12",
-      "url": "https://github.com/Sooin12/ai4s_eeg_agent",
-      "homepage": null,
-      "source": "github",
-      "description": "a agent for auto BCI data preprocess and analysis",
-      "language": "Python",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-08-09T16:14:37Z",
-      "updatedAt": "2026-09-21T14:48:29Z",
-      "pushedAt": "2026-08-16T06:05:30Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-21",
-        "batch": "batch2",
-        "contactedAuthor": "Sooin12"
       }
     },
     {
@@ -671,31 +671,6 @@
       }
     },
     {
-      "id": "github:dharmatarha/eeg_agent",
-      "name": "eeg_agent",
-      "owner": "dharmatarha",
-      "author": "dharmatarha",
-      "url": "https://github.com/dharmatarha/eeg_agent",
-      "homepage": null,
-      "source": "github",
-      "description": "Agentic app for EEG data analysis",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-05-14T04:21:28Z",
-      "updatedAt": "2026-09-22T01:27:33Z",
-      "pushedAt": "2026-07-15T21:15:41Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-22",
-        "batch": "batch3",
-        "contactedAuthor": "dharmatarha"
-      }
-    },
-    {
       "id": "github:S-KSM/resona",
       "name": "resona",
       "owner": "S-KSM",
@@ -718,6 +693,56 @@
         "contactedAt": "2026-09-22",
         "batch": "batch3",
         "contactedAuthor": "S-KSM"
+      }
+    },
+    {
+      "id": "github:TLXyloph/neuroMCP",
+      "name": "neuroMCP",
+      "owner": "TLXyloph",
+      "author": "TLXyloph",
+      "url": "https://github.com/TLXyloph/neuroMCP",
+      "homepage": null,
+      "source": "github",
+      "description": "MCP Server that exposes decoded EEGs as structured tool calls for agents",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-06-13T16:10:25Z",
+      "updatedAt": "2026-09-22T01:30:52Z",
+      "pushedAt": "2026-06-14T23:08:16Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-22",
+        "batch": "batch3",
+        "contactedAuthor": "TLXyloph"
+      }
+    },
+    {
+      "id": "github:dharmatarha/eeg_agent",
+      "name": "eeg_agent",
+      "owner": "dharmatarha",
+      "author": "dharmatarha",
+      "url": "https://github.com/dharmatarha/eeg_agent",
+      "homepage": null,
+      "source": "github",
+      "description": "Agentic app for EEG data analysis",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-05-14T04:21:28Z",
+      "updatedAt": "2026-09-22T01:27:33Z",
+      "pushedAt": "2026-07-15T21:15:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-22",
+        "batch": "batch3",
+        "contactedAuthor": "dharmatarha"
       }
     },
     {
@@ -796,31 +821,6 @@
       }
     },
     {
-      "id": "github:TLXyloph/neuroMCP",
-      "name": "neuroMCP",
-      "owner": "TLXyloph",
-      "author": "TLXyloph",
-      "url": "https://github.com/TLXyloph/neuroMCP",
-      "homepage": null,
-      "source": "github",
-      "description": "MCP Server that exposes decoded EEGs as structured tool calls for agents",
-      "language": "Jupyter Notebook",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-06-13T16:10:25Z",
-      "updatedAt": "2026-09-22T01:30:52Z",
-      "pushedAt": "2026-06-14T23:08:16Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-22",
-        "batch": "batch3",
-        "contactedAuthor": "TLXyloph"
-      }
-    },
-    {
       "id": "github:zhuyu-cs/EasyBCIdata-agent",
       "name": "EasyBCIdata-agent",
       "owner": "zhuyu-cs",
@@ -871,6 +871,99 @@
       }
     },
     {
+      "id": "github:Binghui-H/bci-agent-workflow",
+      "name": "bci-agent-workflow",
+      "owner": "Binghui-H",
+      "author": "Binghui-H",
+      "url": "https://github.com/Binghui-H/bci-agent-workflow",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "PowerShell",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-08-11T08:22:29Z",
+      "updatedAt": "2026-09-23T01:30:45Z",
+      "pushedAt": "2026-08-11T08:36:02Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-23",
+        "batch": "batch4",
+        "contactedAuthor": "Binghui-H"
+      }
+    },
+    {
+      "id": "github:Viandanze/Henosis",
+      "name": "Henosis",
+      "owner": "Viandanze",
+      "author": "Viandanze",
+      "url": "https://github.com/Viandanze/Henosis",
+      "homepage": null,
+      "source": "github",
+      "description": "Human-AI Shared Reasoning System \u2014 BCI + LLM fusion with shared reasoning chain",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "chain-of-thought",
+        "eeg",
+        "fastapi",
+        "llm",
+        "python",
+        "reasoning"
+      ],
+      "tags": [
+        "bci",
+        "brain-computer-interface",
+        "chain-of-thought",
+        "eeg",
+        "fastapi",
+        "llm",
+        "python",
+        "reasoning"
+      ],
+      "createdAt": "2026-06-30T13:55:54Z",
+      "updatedAt": "2026-09-23T01:32:08Z",
+      "pushedAt": "2026-08-23T04:41:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-23",
+        "batch": "batch4",
+        "contactedAuthor": "Viandanze"
+      }
+    },
+    {
+      "id": "github:ZacharyZcR/Synapse2Action",
+      "name": "Synapse2Action",
+      "owner": "ZacharyZcR",
+      "author": "ZacharyZcR",
+      "url": "https://github.com/ZacharyZcR/Synapse2Action",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG, LLM, VLA and robot control research framework",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [],
+      "createdAt": "2026-08-28T15:39:13Z",
+      "updatedAt": "2026-09-23T01:31:31Z",
+      "pushedAt": "2026-09-14T09:14:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-23",
+        "batch": "batch4",
+        "contactedAuthor": "ZacharyZcR"
+      }
+    },
+    {
       "id": "github:ava-agent/bci-research",
       "name": "bci-research",
       "owner": "ava-agent",
@@ -907,31 +1000,6 @@
         "contactedAt": "2026-09-23",
         "batch": "batch4",
         "contactedAuthor": "kevinten10"
-      }
-    },
-    {
-      "id": "github:Binghui-H/bci-agent-workflow",
-      "name": "bci-agent-workflow",
-      "owner": "Binghui-H",
-      "author": "Binghui-H",
-      "url": "https://github.com/Binghui-H/bci-agent-workflow",
-      "homepage": null,
-      "source": "github",
-      "description": "",
-      "language": "PowerShell",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-08-11T08:22:29Z",
-      "updatedAt": "2026-09-23T01:30:45Z",
-      "pushedAt": "2026-08-11T08:36:02Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-23",
-        "batch": "batch4",
-        "contactedAuthor": "Binghui-H"
       }
     },
     {
@@ -1130,74 +1198,6 @@
       }
     },
     {
-      "id": "github:Viandanze/Henosis",
-      "name": "Henosis",
-      "owner": "Viandanze",
-      "author": "Viandanze",
-      "url": "https://github.com/Viandanze/Henosis",
-      "homepage": null,
-      "source": "github",
-      "description": "Human-AI Shared Reasoning System \u2014 BCI + LLM fusion with shared reasoning chain",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 1,
-      "forks": 0,
-      "topics": [
-        "bci",
-        "brain-computer-interface",
-        "chain-of-thought",
-        "eeg",
-        "fastapi",
-        "llm",
-        "python",
-        "reasoning"
-      ],
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "chain-of-thought",
-        "eeg",
-        "fastapi",
-        "llm",
-        "python",
-        "reasoning"
-      ],
-      "createdAt": "2026-06-30T13:55:54Z",
-      "updatedAt": "2026-09-23T01:32:08Z",
-      "pushedAt": "2026-08-23T04:41:56Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-23",
-        "batch": "batch4",
-        "contactedAuthor": "Viandanze"
-      }
-    },
-    {
-      "id": "github:ZacharyZcR/Synapse2Action",
-      "name": "Synapse2Action",
-      "owner": "ZacharyZcR",
-      "author": "ZacharyZcR",
-      "url": "https://github.com/ZacharyZcR/Synapse2Action",
-      "homepage": null,
-      "source": "github",
-      "description": "EEG, LLM, VLA and robot control research framework",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [],
-      "createdAt": "2026-08-28T15:39:13Z",
-      "updatedAt": "2026-09-23T01:31:31Z",
-      "pushedAt": "2026-09-14T09:14:32Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-23",
-        "batch": "batch4",
-        "contactedAuthor": "ZacharyZcR"
-      }
-    },
-    {
       "id": "github:AshwaniKottapalli/brain-speeddial-eeg-jev",
       "name": "brain-speeddial-eeg-jev",
       "owner": "AshwaniKottapalli",
@@ -1223,6 +1223,128 @@
         "contactedAt": "2026-09-24",
         "batch": "batch5",
         "contactedAuthor": "AshwaniKottapalli"
+      }
+    },
+    {
+      "id": "github:HisaNana/neuro-agent",
+      "name": "neuro-agent",
+      "owner": "HisaNana",
+      "author": "HisaNana",
+      "url": "https://github.com/HisaNana/neuro-agent",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG research agent for literature retrieval and signal analysis assistance.",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "agent",
+        "eeg"
+      ],
+      "createdAt": "2026-06-23T08:49:38Z",
+      "updatedAt": "2026-09-24T01:24:47Z",
+      "pushedAt": "2026-06-23T09:44:59Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-24",
+        "batch": "batch5",
+        "contactedAuthor": "HisaNana"
+      }
+    },
+    {
+      "id": "github:Mcstabbin/epilepsy-agentry",
+      "name": "epilepsy-agentry",
+      "owner": "Mcstabbin",
+      "author": "Mcstabbin",
+      "url": "https://github.com/Mcstabbin/epilepsy-agentry",
+      "homepage": null,
+      "source": "github",
+      "description": "Reduction pyramid + aspect-agent pool for personal EEG monitoring data. Hypothesis generation, not diagnosis.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "agent",
+        "eeg"
+      ],
+      "createdAt": "2026-09-17T20:37:17Z",
+      "updatedAt": "2026-09-24T01:24:34Z",
+      "pushedAt": "2026-09-17T21:35:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-24",
+        "batch": "batch5",
+        "contactedAuthor": "Mcstabbin"
+      }
+    },
+    {
+      "id": "github:Neuradock/eeg-workstation-agent",
+      "name": "eeg-workstation-agent",
+      "owner": "Neuradock",
+      "author": "JunwenLuo",
+      "url": "https://github.com/Neuradock/eeg-workstation-agent",
+      "homepage": "https://neuradock.com",
+      "source": "github",
+      "description": "Open-source EEG analysis agent workflows and prompts for NeuraDock EEG Workstation.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 13,
+      "forks": 2,
+      "topics": [
+        "agent",
+        "ai",
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "neurotechnology",
+        "python",
+        "workflow"
+      ],
+      "tags": [
+        "agent",
+        "bci",
+        "eeg"
+      ],
+      "createdAt": "2026-05-12T08:20:04Z",
+      "updatedAt": "2026-09-24T01:24:20Z",
+      "pushedAt": "2026-09-22T05:30:21Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-24",
+        "batch": "batch5",
+        "contactedAuthor": "JunwenLuo"
+      }
+    },
+    {
+      "id": "github:ZeaLousGeek/AutoMI-code",
+      "name": "AutoMI-code",
+      "owner": "ZeaLousGeek",
+      "author": "ZeaLousGeek",
+      "url": "https://github.com/ZeaLousGeek/AutoMI-code",
+      "homepage": null,
+      "source": "github",
+      "description": "LLM multi-agent based hands-free motor imagery EEG classification framework. Achieves fully automated MI decoding without manual intervention. ",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "agent",
+        "eeg"
+      ],
+      "createdAt": "2026-08-10T10:30:08Z",
+      "updatedAt": "2026-09-24T01:24:41Z",
+      "pushedAt": "2026-08-10T12:57:52Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-24",
+        "batch": "batch5",
+        "contactedAuthor": "ZeaLousGeek"
       }
     },
     {
@@ -1320,34 +1442,6 @@
       }
     },
     {
-      "id": "github:HisaNana/neuro-agent",
-      "name": "neuro-agent",
-      "owner": "HisaNana",
-      "author": "HisaNana",
-      "url": "https://github.com/HisaNana/neuro-agent",
-      "homepage": null,
-      "source": "github",
-      "description": "EEG research agent for literature retrieval and signal analysis assistance.",
-      "language": "Python",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "agent",
-        "eeg"
-      ],
-      "createdAt": "2026-06-23T08:49:38Z",
-      "updatedAt": "2026-09-24T01:24:47Z",
-      "pushedAt": "2026-06-23T09:44:59Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-24",
-        "batch": "batch5",
-        "contactedAuthor": "HisaNana"
-      }
-    },
-    {
       "id": "github:kireetijosyula41/allen-neuro-mcp",
       "name": "allen-neuro-mcp",
       "owner": "kireetijosyula41",
@@ -1372,72 +1466,6 @@
         "contactedAt": "2026-09-24",
         "batch": "batch5",
         "contactedAuthor": "kireetijosyula41"
-      }
-    },
-    {
-      "id": "github:Mcstabbin/epilepsy-agentry",
-      "name": "epilepsy-agentry",
-      "owner": "Mcstabbin",
-      "author": "Mcstabbin",
-      "url": "https://github.com/Mcstabbin/epilepsy-agentry",
-      "homepage": null,
-      "source": "github",
-      "description": "Reduction pyramid + aspect-agent pool for personal EEG monitoring data. Hypothesis generation, not diagnosis.",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "agent",
-        "eeg"
-      ],
-      "createdAt": "2026-09-17T20:37:17Z",
-      "updatedAt": "2026-09-24T01:24:34Z",
-      "pushedAt": "2026-09-17T21:35:53Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-24",
-        "batch": "batch5",
-        "contactedAuthor": "Mcstabbin"
-      }
-    },
-    {
-      "id": "github:Neuradock/eeg-workstation-agent",
-      "name": "eeg-workstation-agent",
-      "owner": "Neuradock",
-      "author": "JunwenLuo",
-      "url": "https://github.com/Neuradock/eeg-workstation-agent",
-      "homepage": "https://neuradock.com",
-      "source": "github",
-      "description": "Open-source EEG analysis agent workflows and prompts for NeuraDock EEG Workstation.",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 13,
-      "forks": 2,
-      "topics": [
-        "agent",
-        "ai",
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "neurotechnology",
-        "python",
-        "workflow"
-      ],
-      "tags": [
-        "agent",
-        "bci",
-        "eeg"
-      ],
-      "createdAt": "2026-05-12T08:20:04Z",
-      "updatedAt": "2026-09-24T01:24:20Z",
-      "pushedAt": "2026-09-22T05:30:21Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-24",
-        "batch": "batch5",
-        "contactedAuthor": "JunwenLuo"
       }
     },
     {
@@ -1514,34 +1542,6 @@
         "contactedAt": "2026-09-24",
         "batch": "batch5",
         "contactedAuthor": "ymatts"
-      }
-    },
-    {
-      "id": "github:ZeaLousGeek/AutoMI-code",
-      "name": "AutoMI-code",
-      "owner": "ZeaLousGeek",
-      "author": "ZeaLousGeek",
-      "url": "https://github.com/ZeaLousGeek/AutoMI-code",
-      "homepage": null,
-      "source": "github",
-      "description": "LLM multi-agent based hands-free motor imagery EEG classification framework. Achieves fully automated MI decoding without manual intervention. ",
-      "language": "Python",
-      "license": "GPL-3.0",
-      "stars": 1,
-      "forks": 1,
-      "topics": [],
-      "tags": [
-        "agent",
-        "eeg"
-      ],
-      "createdAt": "2026-08-10T10:30:08Z",
-      "updatedAt": "2026-09-24T01:24:41Z",
-      "pushedAt": "2026-08-10T12:57:52Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-24",
-        "batch": "batch5",
-        "contactedAuthor": "ZeaLousGeek"
       }
     },
     {
@@ -1629,40 +1629,6 @@
       }
     },
     {
-      "id": "github:dav0dea/goofi-pipe",
-      "name": "goofi-pipe",
-      "owner": "dav0dea",
-      "author": "dav0dea",
-      "url": "https://github.com/dav0dea/goofi-pipe",
-      "homepage": null,
-      "source": "github",
-      "description": "real-time neuro-/biosignal processing and streaming pipeline",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 44,
-      "forks": 11,
-      "topics": [
-        "biofeedback",
-        "eeg",
-        "neurofeedback",
-        "real-time",
-        "signal-processing"
-      ],
-      "tags": [
-        "eeg",
-        "neurofeedback"
-      ],
-      "createdAt": "2023-05-24T22:04:56Z",
-      "updatedAt": "2026-09-25T01:12:53Z",
-      "pushedAt": "2026-09-24T13:12:28Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-09-25",
-        "batch": "batch6",
-        "contactedAuthor": "dav0dea"
-      }
-    },
-    {
       "id": "github:Deus191/TriTF-AP",
       "name": "TriTF-AP",
       "owner": "Deus191",
@@ -1716,6 +1682,72 @@
         "contactedAt": "2026-09-25",
         "batch": "batch6",
         "contactedAuthor": "Dnix0"
+      }
+    },
+    {
+      "id": "github:ZhipengXx/EEGagent",
+      "name": "EEGagent",
+      "owner": "ZhipengXx",
+      "author": "zXuff",
+      "url": "https://github.com/ZhipengXx/EEGagent",
+      "homepage": null,
+      "source": "github",
+      "description": "Multi-agent workflows for EEG-to-image retrieval and fMRI screening, built on a LangGraph ReAct template.",
+      "language": "Python",
+      "license": null,
+      "stars": 3,
+      "forks": 1,
+      "topics": [
+        "eeg",
+        "eeg-analysis",
+        "eeg-signals"
+      ],
+      "tags": [
+        "agent",
+        "eeg"
+      ],
+      "createdAt": "2026-09-24T13:04:58Z",
+      "updatedAt": "2026-09-25T01:12:49Z",
+      "pushedAt": "2026-09-24T13:58:10Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-25",
+        "batch": "batch6",
+        "contactedAuthor": "zXuff"
+      }
+    },
+    {
+      "id": "github:dav0dea/goofi-pipe",
+      "name": "goofi-pipe",
+      "owner": "dav0dea",
+      "author": "dav0dea",
+      "url": "https://github.com/dav0dea/goofi-pipe",
+      "homepage": null,
+      "source": "github",
+      "description": "real-time neuro-/biosignal processing and streaming pipeline",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 44,
+      "forks": 11,
+      "topics": [
+        "biofeedback",
+        "eeg",
+        "neurofeedback",
+        "real-time",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "neurofeedback"
+      ],
+      "createdAt": "2023-05-24T22:04:56Z",
+      "updatedAt": "2026-09-25T01:12:53Z",
+      "pushedAt": "2026-09-24T13:12:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-25",
+        "batch": "batch6",
+        "contactedAuthor": "dav0dea"
       }
     },
     {
@@ -1885,35 +1917,385 @@
       }
     },
     {
-      "id": "github:ZhipengXx/EEGagent",
-      "name": "EEGagent",
-      "owner": "ZhipengXx",
-      "author": "zXuff",
-      "url": "https://github.com/ZhipengXx/EEGagent",
+      "id": "github:1Tamez1/neurodash",
+      "name": "neurodash",
+      "owner": "1Tamez1",
+      "author": "1Tamez1",
+      "url": "https://github.com/1Tamez1/neurodash",
       "homepage": null,
       "source": "github",
-      "description": "Multi-agent workflows for EEG-to-image retrieval and fMRI screening, built on a LangGraph ReAct template.",
+      "description": "Real-time LSL EEG dashboard and interactive neurofeedback demo",
       "language": "Python",
       "license": null,
-      "stars": 3,
-      "forks": 1,
-      "topics": [
-        "eeg",
-        "eeg-analysis",
-        "eeg-signals"
-      ],
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
       "tags": [
-        "agent",
-        "eeg"
+        "eeg",
+        "lsl",
+        "neurofeedback"
       ],
-      "createdAt": "2026-09-24T13:04:58Z",
-      "updatedAt": "2026-09-25T01:12:49Z",
-      "pushedAt": "2026-09-24T13:58:10Z",
+      "createdAt": "2026-09-02T15:38:41Z",
+      "updatedAt": "2026-09-02T15:55:06Z",
+      "pushedAt": "2026-09-02T15:38:46Z",
       "archived": false,
       "outreach": {
-        "contactedAt": "2026-09-25",
-        "batch": "batch6",
-        "contactedAuthor": "zXuff"
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "1Tamez1"
+      }
+    },
+    {
+      "id": "github:Ksblla/bci-knowledge-device-assistant",
+      "name": "bci-knowledge-device-assistant",
+      "owner": "Ksblla",
+      "author": "Ksblla",
+      "url": "https://github.com/Ksblla/bci-knowledge-device-assistant",
+      "homepage": null,
+      "source": "github",
+      "description": "\u9762\u5411\u8111\u673a\u63a5\u53e3\u5b9e\u9a8c\u5ba4\u7684\u8bbe\u5907\u64cd\u4f5c\u4e0e\u5b9e\u9a8c\u6d41\u7a0b\u7ba1\u7406\u573a\u666f\uff0c\u6784\u5efa RAG + Agent \u667a\u80fd\u52a9\u624b\uff0c\u6574\u5408\u8111\u7535\u8bbe\u5907\u624b\u518c\u3001\u5b9e\u9a8c SOP\u3001\u91c7\u96c6\u89c4\u8303\u53ca\u5386\u53f2\u6545\u969c\u8bb0\u5f55\uff0c\u5b9e\u73b0\u5b9e\u9a8c\u6d41\u7a0b\u95ee\u7b54\u3001\u91c7\u96c6\u53c2\u6570\u67e5\u8be2\u3001\u8bbe\u5907\u5f02\u5e38\u6392\u67e5\u4e0e\u7ed3\u6784\u5316\u5b9e\u9a8c\u5f02\u5e38\u62a5\u544a\u751f\u6210\u3002",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "agent",
+        "bci",
+        "brain-computer-interface",
+        "langchain",
+        "llm",
+        "rag"
+      ],
+      "tags": [
+        "bci",
+        "agent",
+        "rag"
+      ],
+      "createdAt": "2026-09-07T11:47:14Z",
+      "updatedAt": "2026-09-15T13:52:00Z",
+      "pushedAt": "2026-09-15T13:51:48Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "Ksblla"
+      }
+    },
+    {
+      "id": "github:Philosopher0707/comp-neuroscientist",
+      "name": "comp-neuroscientist",
+      "owner": "Philosopher0707",
+      "author": "Philosopher0707",
+      "url": "https://github.com/Philosopher0707/comp-neuroscientist",
+      "homepage": null,
+      "source": "github",
+      "description": "Autonomous computational neuroscience agent \u2014 natural language to fMRI/EEG/electrophysiology analysis with reports. Python agent loop + Go TUI",
+      "language": "Go",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "agent",
+        "eeg",
+        "fmri"
+      ],
+      "createdAt": "2026-08-25T18:06:56Z",
+      "updatedAt": "2026-08-25T18:22:21Z",
+      "pushedAt": "2026-08-25T18:09:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "Philosopher0707"
+      }
+    },
+    {
+      "id": "github:SlowHurts/neuron-bci",
+      "name": "neuron-bci",
+      "owner": "SlowHurts",
+      "author": "SlowHurts",
+      "url": "https://github.com/SlowHurts/neuron-bci",
+      "homepage": null,
+      "source": "github",
+      "description": "Open-source brain-computer interface \u2014 EEG headband \u2192 Claude interprets your thoughts \u2192 generates code, art, and music",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 4,
+      "forks": 1,
+      "topics": [
+        "ai",
+        "bci",
+        "brain-computer-interface",
+        "brainwaves",
+        "claude",
+        "eeg",
+        "llm",
+        "muse-headband",
+        "neuroscience",
+        "open-source"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "agent",
+        "muse"
+      ],
+      "createdAt": "2026-03-15T19:49:17Z",
+      "updatedAt": "2026-07-10T14:55:47Z",
+      "pushedAt": "2026-03-15T19:51:57Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "SlowHurts"
+      }
+    },
+    {
+      "id": "github:byron-the-bulb/muse-osc-mcp",
+      "name": "muse-osc-mcp",
+      "owner": "byron-the-bulb",
+      "author": "byron-the-bulb",
+      "url": "https://github.com/byron-the-bulb/muse-osc-mcp",
+      "homepage": null,
+      "source": "github",
+      "description": "MCP server that ingests Muse EEG via Mind Monitor OSC into PostgreSQL for agent tooling.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "mcp",
+        "muse"
+      ],
+      "createdAt": "2025-06-14T19:09:28Z",
+      "updatedAt": "2025-06-21T01:15:59Z",
+      "pushedAt": "2025-06-21T01:15:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "byron-the-bulb"
+      }
+    },
+    {
+      "id": "github:catalystneuro/agents",
+      "name": "agents",
+      "owner": "catalystneuro",
+      "author": "luiztauffer",
+      "url": "https://github.com/catalystneuro/agents",
+      "homepage": null,
+      "source": "github",
+      "description": "Open Neuroscience Agents",
+      "language": "Python",
+      "license": null,
+      "stars": 2,
+      "forks": 2,
+      "topics": [],
+      "tags": [
+        "agent",
+        "nwb",
+        "neuroscience"
+      ],
+      "createdAt": "2025-02-11T13:27:15Z",
+      "updatedAt": "2025-05-20T14:29:23Z",
+      "pushedAt": "2026-05-08T16:34:19Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "luiztauffer"
+      }
+    },
+    {
+      "id": "github:guneteroglu/nfgym",
+      "name": "nfgym",
+      "owner": "guneteroglu",
+      "author": "guneteroglu",
+      "url": "https://github.com/guneteroglu/nfgym",
+      "homepage": null,
+      "source": "github",
+      "description": "NF-Gym: an offline reinforcement learning benchmark for EEG neurofeedback protocol selection",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "rl"
+      ],
+      "createdAt": "2026-08-24T17:44:18Z",
+      "updatedAt": "2026-08-24T18:59:28Z",
+      "pushedAt": "2026-08-24T18:55:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "guneteroglu"
+      }
+    },
+    {
+      "id": "github:mne-rt-org/mne-rt",
+      "name": "mne-rt",
+      "owner": "mne-rt-org",
+      "author": "payamsash",
+      "url": "https://github.com/mne-rt-org/mne-rt",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time M/EEG signal processing",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 25,
+      "forks": 4,
+      "topics": [
+        "eeg",
+        "meg",
+        "neurofeedback",
+        "neuroscience",
+        "real-time",
+        "bci",
+        "brain-computer-interface",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "neurofeedback",
+        "mne"
+      ],
+      "createdAt": "2024-05-10T14:10:10Z",
+      "updatedAt": "2026-09-23T08:18:05Z",
+      "pushedAt": "2026-09-23T08:35:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "payamsash"
+      }
+    },
+    {
+      "id": "github:neuromechanist/matlab-mcp-tools",
+      "name": "matlab-mcp-tools",
+      "owner": "neuromechanist",
+      "author": "neuromechanist",
+      "url": "https://github.com/neuromechanist/matlab-mcp-tools",
+      "homepage": null,
+      "source": "github",
+      "description": "An MCP to develop MATLAB pipelines section by section and read figures one dimension at a time",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 18,
+      "forks": 6,
+      "topics": [
+        "agentic-workflow",
+        "matlab",
+        "model-context-protocol",
+        "scientific-visualization"
+      ],
+      "tags": [
+        "mcp",
+        "matlab",
+        "agent"
+      ],
+      "createdAt": "2025-01-27T02:42:52Z",
+      "updatedAt": "2026-04-22T16:06:12Z",
+      "pushedAt": "2026-03-02T20:13:36Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "neuromechanist"
+      }
+    },
+    {
+      "id": "github:pacobaco/IoTBuddy",
+      "name": "IoTBuddy",
+      "owner": "pacobaco",
+      "author": "pacobaco",
+      "url": "https://github.com/pacobaco/IoTBuddy",
+      "homepage": null,
+      "source": "github",
+      "description": "**IoT Buddy** is a local-first stateful companion that reads your cognitive state in real time and gently shapes both neurofeedback and your smart home environment to stay in rhythm with you.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "iot"
+      ],
+      "createdAt": "2026-08-22T18:44:27Z",
+      "updatedAt": "2026-08-22T19:49:56Z",
+      "pushedAt": "2026-08-22T19:49:47Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "pacobaco"
+      }
+    },
+    {
+      "id": "github:qquais/eeg-mcp-project",
+      "name": "eeg-mcp-project",
+      "owner": "qquais",
+      "author": "qquais",
+      "url": "https://github.com/qquais/eeg-mcp-project",
+      "homepage": null,
+      "source": "github",
+      "description": "BrainFlow/MNE EEG MCP server plus local RAG and a tool-use EEG-BOT agent.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 2,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "mcp",
+        "agent"
+      ],
+      "createdAt": "2025-05-12T06:05:01Z",
+      "updatedAt": "2025-06-20T21:17:43Z",
+      "pushedAt": "2025-06-21T02:03:34Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "qquais"
+      }
+    },
+    {
+      "id": "github:ykshah1309/neuro-research-discovery-mcp",
+      "name": "neuro-research-discovery-mcp",
+      "owner": "ykshah1309",
+      "author": "ykshah1309",
+      "url": "https://github.com/ykshah1309/neuro-research-discovery-mcp",
+      "homepage": null,
+      "source": "github",
+      "description": "MCP server bridging OpenNeuro, NeuroVault, and PubMed for AI-agent-driven neuroimaging research discovery",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "mcp",
+        "neuroimaging",
+        "agent"
+      ],
+      "createdAt": "2026-05-23T21:50:46Z",
+      "updatedAt": "2026-06-23T13:56:32Z",
+      "pushedAt": "2026-06-02T04:31:19Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-28",
+        "batch": "batch7",
+        "contactedAuthor": "ykshah1309"
       }
     }
   ]
