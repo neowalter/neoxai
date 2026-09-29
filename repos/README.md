@@ -15,10 +15,12 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [axonos-community-radar](https://github.com/AxonOS-BCI/axonos-community-radar) | @AxonOS-BCI | AxonOS Radar — a living, auto-updated map of the open brain-compute... | 2026-09-23 | 4 |
 | [BCI-Agent-Bridge](https://github.com/danieleschmidt/BCI-Agent-Bridge) | @danieleschmidt | Real-time Brain-Computer Interface to LLM bridge, translating neura... | 2026-03-19 | 3 |
 | [bci-agent-workflow](https://github.com/Binghui-H/bci-agent-workflow) | @Binghui-H |  | 2026-08-11 | 1 |
+| [bci-engine](https://github.com/liferoad2017/bci-engine) | @liferoad2017 | Cross-platform BCI middleware that streams raw EEG data from BrainF... | 2026-09-26 | 3 |
 | [BCI-IV2a-TRRPAS-DualPath-TTA](https://github.com/Dnix0/BCI-IV2a-TRRPAS-DualPath-TTA) | @Dnix0 | Optimization-free dual-path test-time adaptation with TR-RPAS-v3 an... | 2026-09-19 | 1 |
 | [bci-knowledge-device-assistant](https://github.com/Ksblla/bci-knowledge-device-assistant) | @Ksblla | 面向脑机接口实验室的设备操作与实验流程管理场景，构建 RAG + Agent 智能助手，整合脑电设备手册、实验 SOP、采集规范及历史... | 2026-09-15 | 0 |
 | [bci-mcp](https://github.com/enkhbold470/bci-mcp) | @enkhbold470 | Stream live EEG brain state (focus, calm, attention) from any EEG d... | 2026-09-03 | 19 |
 | [bci-research](https://github.com/ava-agent/bci-research) | @kevinten10 | BCI Research - 脑机接口技术调研 + BCI Agent Demo | 2026-08-10 | 6 |
+| [Brain-API-Muse-2-](https://github.com/NickMeret2004/Brain-API-Muse-2-) | @NickMeret2004 | Streaming my own brainwaves into a live API. Muse 2 → EEG → ML → an... | 2026-09-28 | 1 |
 | [brain-speeddial-eeg-jev](https://github.com/AshwaniKottapalli/brain-speeddial-eeg-jev) | @AshwaniKottapalli | Can EEG drive an AI agent? Public-data experiments: mental-command ... | 2026-09-19 | 1 |
 | [brain_viz](https://github.com/ford442/brain_viz) | @ford442 | Real-time 3D brain data visualization powered by EEG/tensors and We... | 2026-09-24 | 4 |
 | [BrainAgent](https://github.com/cw-jlu/BrainAgent) | @cw-jlu | An Agent For EEG field | 2026-07-30 | 2 |
@@ -27,6 +29,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [comp-neuroscientist](https://github.com/Philosopher0707/comp-neuroscientist) | @Philosopher0707 | Autonomous computational neuroscience agent — natural language to f... | 2026-08-25 | 0 |
 | [cortica](https://github.com/samnemati/cortica) | @samnemati | A guided, reproducible workbench for EEG & fNIRS analysis. | 2026-09-22 | 1 |
 | [EasyBCIdata-agent](https://github.com/zhuyu-cs/EasyBCIdata-agent) | @zhuyu-cs | A multimodal neural-data preprocessing agent | 2026-09-07 | 11 |
+| [EEG-AffectiveComputing](https://github.com/neural-bit/EEG-AffectiveComputing) | @neural-bit | Real-Time Affective Computing with OpenBCI | 2026-06-25 | 10 |
 | [eeg-agent](https://github.com/feuler/eeg-agent) | @feuler | Application that reads real-time EEG signals from a NeuroSky MindWa... | 2026-05-07 | 1 |
 | [EEG-Agent](https://github.com/gjyradl/EEG-Agent) | @gjyradl |  | 2026-05-12 | 3 |
 | [eeg-ecg-music-review-agent](https://github.com/scottleimroth/eeg-ecg-music-review-agent) | @scottleimroth | Reading package and MCP tool server for a published EEG/ECG music-l... | 2026-09-18 | 1 |
@@ -49,29 +52,38 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [Henosis](https://github.com/Viandanze/Henosis) | @Viandanze | Human-AI Shared Reasoning System — BCI + LLM fusion with shared rea... | 2026-08-23 | 1 |
 | [IoTBuddy](https://github.com/pacobaco/IoTBuddy) | @pacobaco | **IoT Buddy** is a local-first stateful companion that reads your c... | 2026-08-22 | 0 |
 | [llm-ssvep-speller](https://github.com/eeglab619/llm-ssvep-speller) | @eeglab619 | This is the official code repository for the ICASSP 2027 submitted ... | 2026-09-08 | 1 |
+| [LSL_connect_model](https://github.com/cyy1156/LSL_connect_model) | @cyy1156 | 脑机接口（BCI）脑电（EEG）采集与分析平台 · Python：LSL 实时推流、在线预处理、插件式模型推理与 CSV 录制（Ope... | 2026-09-14 | 1 |
 | [matlab-mcp-tools](https://github.com/neuromechanist/matlab-mcp-tools) | @neuromechanist | An MCP to develop MATLAB pipelines section by section and read figu... | 2026-03-02 | 18 |
 | [mcp-server-biosignal](https://github.com/x-biosignal/mcp-server-biosignal) | @ymatts | MCP catalog for 28 x-biosignal R packages, functions, modalities, a... | 2026-08-03 | 1 |
 | [mindaid-ssvep-bci](https://github.com/CarmenEngBio/mindaid-ssvep-bci) | @CarmenEngBio | MindAid Assistive SSVEP BCI. Assistive SSVEP-based Brain-Computer I... | 2026-09-20 | 1 |
 | [MIRepNet](https://github.com/staraink/MIRepNet) | @Dingkun0817 | The first EEG foundation model explicitly tailored  for the motor i... | 2026-09-19 | 127 |
 | [MNE-MCP](https://github.com/Exekiel179/MNE-MCP) | @Exekiel179 | Conversational EEG/MEG/sEEG/ECoG/fNIRS analysis with MNE-Python via... | 2026-09-21 | 8 |
 | [mne-rt](https://github.com/mne-rt-org/mne-rt) | @payamsash | Real-time M/EEG signal processing | 2026-09-23 | 25 |
+| [muse-calm](https://github.com/GordoJr1/muse-calm) | @GordoJr1 | Calm meditation companion for the Muse 2 headband: live EEG, heart ... | 2026-09-27 | 1 |
 | [muse-osc-mcp](https://github.com/byron-the-bulb/muse-osc-mcp) | @byron-the-bulb | MCP server that ingests Muse EEG via Mind Monitor OSC into PostgreS... | 2025-06-21 | 0 |
+| [muse-sleep-dashboard](https://github.com/southsko/muse-sleep-dashboard) | @southsko | Muse S EEG overnight sleep staging pipeline and dashboard | 2026-09-26 | 1 |
+| [muse2](https://github.com/Winnie-0917/muse2) | @Winnie-0917 | MUSE 2 原始 EEG 擷取工具（muselsl + BLE，即時監控原始腦波） | 2026-09-28 | 2 |
 | [neural-consent](https://github.com/LE-VAI/neural-consent) | @LE-VAI | Purpose-granular consent records with a tamper-evident local event ... | 2026-09-22 | 1 |
 | [neuro-agent](https://github.com/HisaNana/neuro-agent) | @HisaNana | EEG research agent for literature retrieval and signal analysis ass... | 2026-06-23 | 1 |
 | [neuro-cube](https://github.com/smart-vick/neuro-cube) | @smart-vick | A 3D Rubik's Cube you solve with your attention — EEG-driven (Panda... | 2026-07-18 | 1 |
+| [Neuro-Pilot-Agent](https://github.com/caoyupei/Neuro-Pilot-Agent) | @caoyupei | BCI 领域全栈式开发与文献分析 Agent | 2026-08-15 | 2 |
 | [neuro-research-discovery-mcp](https://github.com/ykshah1309/neuro-research-discovery-mcp) | @ykshah1309 | MCP server bridging OpenNeuro, NeuroVault, and PubMed for AI-agent-... | 2026-06-02 | 2 |
 | [NeuroBench_Studio](https://github.com/gel1has3/NeuroBench_Studio) | @gel1has3 | NeuroBench Studio is a conversational AI assistant and visual MLOps... | 2026-09-17 | 4 |
 | [neurodash](https://github.com/1Tamez1/neurodash) | @1Tamez1 | Real-time LSL EEG dashboard and interactive neurofeedback demo | 2026-09-02 | 0 |
 | [neurodecodekit](https://github.com/CheickDiakite-yikes/neurodecodekit) | @CheickDiakite-yikes | Open-source, local-first EEG/MEG language-decoding research toolkit... | 2026-09-23 | 5 |
 | [neurofeed](https://github.com/windwerfer/neurofeed) | @windwerfer | A EEG monitor + feedback programm for Muse 2 / S / Athena (+experim... | 2026-09-24 | 2 |
+| [neurofeedback-muse](https://github.com/matpb/neurofeedback-muse) | @matpb | Live raw-EEG viewer + neurofeedback toolkit for the Muse 2 on Linux... | 2026-06-28 | 2 |
 | [neuroMCP](https://github.com/TLXyloph/neuroMCP) | @TLXyloph | MCP Server that exposes decoded EEGs as structured tool calls for a... | 2026-06-14 | 1 |
 | [neuron-bci](https://github.com/SlowHurts/neuron-bci) | @SlowHurts | Open-source brain-computer interface — EEG headband → Claude interp... | 2026-03-15 | 4 |
 | [neuropinn-stress-focus-detection](https://github.com/drdmitrymikhaylov/neuropinn-stress-focus-detection) | @drdmitrymikhaylov | An EEG validity gate before any stress or focus score | 2026-09-24 | 1 |
 | [neurosift-mcps](https://github.com/magland/neurosift-mcps) | @magland | MCP servers for neurosift | 2025-11-03 | 2 |
+| [NeuroTrainer](https://github.com/Oleksandr-Nyemtsev/NeuroTrainer) | @Oleksandr-Nyemtsev | Adaptive EEG-guided relaxation and sleep-state research platform fo... | 2026-09-27 | 1 |
+| [NeuroVerse](https://github.com/toniIepure25/NeuroVerse) | @toniIepure25 | Local-first, safety-gated BCI/neuroadaptive research platform with ... | 2026-06-01 | 2 |
 | [nfgym](https://github.com/guneteroglu/nfgym) | @guneteroglu | NF-Gym: an offline reinforcement learning benchmark for EEG neurofe... | 2026-08-24 | 0 |
 | [openbci-mcp](https://github.com/sandraschi/openbci-mcp) | @sandraschi | OpenBCI EEG MCP server (BrainFlow + SOTA webapp) | 2026-09-14 | 2 |
 | [PiEEG-agent](https://github.com/pieeg-club/PiEEG-agent) | @yelabb | Agentic middleware for Brain-Computer Interfaces. Use LLMs to proce... | 2026-06-21 | 9 |
 | [resona](https://github.com/S-KSM/resona) | @S-KSM | Resona — local Muse EEG → MCP brain-state pipeline + agents. | 2026-05-11 | 1 |
+| [resonance-neurofeedback](https://github.com/BJOC-ENGINEERING/resonance-neurofeedback) | @BJOC-ENGINEERING | Browser neurofeedback trainer with simulated EEG and optional Muse ... | 2026-09-23 | 1 |
 | [scitex-dataset](https://github.com/scitex-ai/scitex-dataset) | @ywatanabe1989 | Multi-domain scientific dataset fetcher (neuroscience, biology, med... | 2026-09-22 | 1 |
 | [strands-emotiv](https://github.com/cagataycali/strands-emotiv) | @cagataycali | Research: Embodying the brain. Strands Agents accessing EEG and mor... | 2026-09-02 | 3 |
 | [SYNAPSE-24](https://github.com/AlessioBrillo/SYNAPSE-24) | @AlessioBrillo | 24/7 multimodal bio-sensing wearable platform: tiered acquisition (... | 2026-09-23 | 1 |
