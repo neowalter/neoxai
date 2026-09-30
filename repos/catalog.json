@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-29T01:26:12Z",
+  "generatedAt": "2026-09-30T01:19:37Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 84,
+  "count": 96,
   "sources": [
     {
       "id": "github",
@@ -2690,6 +2690,376 @@
         "contactedAt": "2026-09-29",
         "batch": "batch8",
         "contactedAuthor": "toniIepure25"
+      }
+    },
+    {
+      "id": "github:Alex-zeya/bci_tetris",
+      "name": "bci_tetris",
+      "owner": "Alex-zeya",
+      "author": "Alex-zeya",
+      "url": "https://github.com/Alex-zeya/bci_tetris",
+      "homepage": null,
+      "source": "github",
+      "description": "Python Tetris prototype controlled by Muse EEG frontal alpha/theta power using MuseLSL/LSL, with keyboard, mock BCI, Muse, and BCI2000-compatible modes.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "bci"
+      ],
+      "createdAt": "2026-06-11T18:04:45Z",
+      "updatedAt": "2026-06-11T18:17:20Z",
+      "pushedAt": "2026-06-11T18:15:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "Alex-zeya"
+      }
+    },
+    {
+      "id": "github:GTamilSelvan07/NeuroArt-Muse-Bridge",
+      "name": "NeuroArt-Muse-Bridge",
+      "owner": "GTamilSelvan07",
+      "author": "GTamilSelvan07",
+      "url": "https://github.com/GTamilSelvan07/NeuroArt-Muse-Bridge",
+      "homepage": null,
+      "source": "github",
+      "description": "Stream Muse EEG to TouchDesigner over LSL and OSC with live band power, event markers, and per-session CSV recording. Empathic Computing Lab / Inclusive Reality Lab.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl"
+      ],
+      "createdAt": "2026-06-23T19:56:03Z",
+      "updatedAt": "2026-06-25T23:54:33Z",
+      "pushedAt": "2026-06-23T19:56:08Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "GTamilSelvan07"
+      }
+    },
+    {
+      "id": "github:IVeuromancer/EEGNet",
+      "name": "EEGNet",
+      "owner": "IVeuromancer",
+      "author": "IVeuromancer",
+      "url": "https://github.com/IVeuromancer/EEGNet",
+      "homepage": null,
+      "source": "github",
+      "description": "End-to-end BCI pipeline for decoding motor imagery from EEG using CNNs \u2014 includes real-time inference and closed-loop game control via OpenBCI Cyton.",
+      "language": "Python",
+      "license": null,
+      "stars": 4,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "openbci"
+      ],
+      "createdAt": "2026-05-23T23:23:10Z",
+      "updatedAt": "2026-06-08T17:04:07Z",
+      "pushedAt": "2026-06-05T13:50:35Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "IVeuromancer"
+      }
+    },
+    {
+      "id": "github:IngAmaury/EEG_UHB_LIBRARY",
+      "name": "EEG_UHB_LIBRARY",
+      "owner": "IngAmaury",
+      "author": "IngAmaury",
+      "url": "https://github.com/IngAmaury/EEG_UHB_LIBRARY",
+      "homepage": null,
+      "source": "github",
+      "description": "Modular Python library for the acquisition and processing of EEG signals from the Unicorn Hybrid Black device, integrating the Lab Streaming Layer (LSL) protocol for real-time data capture.",
+      "language": "Python",
+      "license": null,
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "eeg-signals",
+        "lab-streaming-layer",
+        "open-source",
+        "python"
+      ],
+      "tags": [
+        "eeg",
+        "lsl"
+      ],
+      "createdAt": "2025-06-04T23:47:11Z",
+      "updatedAt": "2026-04-03T04:44:41Z",
+      "pushedAt": "2025-06-27T18:24:50Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "IngAmaury"
+      }
+    },
+    {
+      "id": "github:LeonardoFerrisi/BrainflowFocusWidget-webapp",
+      "name": "BrainflowFocusWidget-webapp",
+      "owner": "LeonardoFerrisi",
+      "author": "LeonardoFerrisi",
+      "url": "https://github.com/LeonardoFerrisi/BrainflowFocusWidget-webapp",
+      "homepage": null,
+      "source": "github",
+      "description": "A basic react+ts webapp that extends brainflow and makes a similar focus widget to the OpenBCI GUI",
+      "language": "TypeScript",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "brainflow",
+        "openbci"
+      ],
+      "createdAt": "2026-08-06T18:38:49Z",
+      "updatedAt": "2026-09-02T07:33:58Z",
+      "pushedAt": "2026-09-02T07:32:37Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "LeonardoFerrisi"
+      }
+    },
+    {
+      "id": "github:beck-2/fah_eeg",
+      "name": "fah_eeg",
+      "owner": "beck-2",
+      "author": "beck-2",
+      "url": "https://github.com/beck-2/fah_eeg",
+      "homepage": null,
+      "source": "github",
+      "description": "Muse 2 EEG data collection and live visualization with BrainFlow",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "brainflow"
+      ],
+      "createdAt": "2026-08-03T11:04:58Z",
+      "updatedAt": "2026-08-19T22:41:28Z",
+      "pushedAt": "2026-08-19T22:41:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "beck-2"
+      }
+    },
+    {
+      "id": "github:blizzard-labs/thalis-rehab-game",
+      "name": "thalis-rehab-game",
+      "owner": "blizzard-labs",
+      "author": "blizzard-labs",
+      "url": "https://github.com/blizzard-labs/thalis-rehab-game",
+      "homepage": "https://neuroreach.notion.site/NeuroReach-EEG-Assisted-Motor-Rehabilitation-RESOURCES-3ac0b3bfcc1381189586e200abe4d8cd",
+      "source": "github",
+      "description": "A closed-loop EEG neurofeedback rehabilitation game for stroke patients.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "neurofeedback"
+      ],
+      "createdAt": "2026-06-20T18:04:56Z",
+      "updatedAt": "2026-08-11T01:25:30Z",
+      "pushedAt": "2026-08-11T01:25:26Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "blizzard-labs"
+      }
+    },
+    {
+      "id": "github:buckster123/hermes-eeg-plugin",
+      "name": "hermes-eeg-plugin",
+      "owner": "buckster123",
+      "author": "buckster123",
+      "url": "https://github.com/buckster123/hermes-eeg-plugin",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG/BCI neural interface plugin for Hermes Agent \u2014 OpenBCI hardware + real-time emotion detection + AI-readable felt experience format",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 5,
+      "forks": 1,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "brainflow",
+        "eeg",
+        "emotion-detection",
+        "hermes-agent",
+        "neural-interface",
+        "openbci",
+        "plugin"
+      ],
+      "tags": [
+        "eeg",
+        "openbci",
+        "agent",
+        "bci"
+      ],
+      "createdAt": "2026-04-14T12:11:26Z",
+      "updatedAt": "2026-09-23T13:07:55Z",
+      "pushedAt": "2026-04-14T12:18:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "buckster123"
+      }
+    },
+    {
+      "id": "github:cimenbaran/VR-EEG-GazeInteraction",
+      "name": "VR-EEG-GazeInteraction",
+      "owner": "cimenbaran",
+      "author": "cimenbaran",
+      "url": "https://github.com/cimenbaran/VR-EEG-GazeInteraction",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EEG-driven VR. Streams OpenBCI Cyton brain signals into Unity (PCVR / Meta Quest 3) through a BrainFlow Python bridge over UDP, so scenes react live to your brain state.",
+      "language": "C#",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "openbci",
+        "brainflow"
+      ],
+      "createdAt": "2026-06-29T17:52:25Z",
+      "updatedAt": "2026-09-01T07:25:28Z",
+      "pushedAt": "2026-09-01T07:14:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "cimenbaran"
+      }
+    },
+    {
+      "id": "github:roshkins/p300-speller",
+      "name": "p300-speller",
+      "owner": "roshkins",
+      "author": "roshkins",
+      "url": "https://github.com/roshkins/p300-speller",
+      "homepage": null,
+      "source": "github",
+      "description": "P300 speller for the 4-channel Muse MU-02 (Windows): transfer-EEGNet + codebook flashing + co-adaptive trainer",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "p300"
+      ],
+      "createdAt": "2026-06-30T20:18:05Z",
+      "updatedAt": "2026-07-29T17:37:00Z",
+      "pushedAt": "2026-07-10T00:51:49Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "roshkins"
+      }
+    },
+    {
+      "id": "github:sahillim33/brainbeats",
+      "name": "brainbeats",
+      "owner": "sahillim33",
+      "author": "sahillim33",
+      "url": "https://github.com/sahillim33/brainbeats",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EEG neurofeedback iOS app for the OpenBCI Ganglion",
+      "language": "Dart",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "openbci",
+        "neurofeedback"
+      ],
+      "createdAt": "2026-08-05T12:13:29Z",
+      "updatedAt": "2026-08-28T12:48:33Z",
+      "pushedAt": "2026-08-28T12:45:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "sahillim33"
+      }
+    },
+    {
+      "id": "github:saimgulay/TouchDesigner-EEG-BrainFlowCHOP",
+      "name": "TouchDesigner-EEG-BrainFlowCHOP",
+      "owner": "saimgulay",
+      "author": "saimgulay",
+      "url": "https://github.com/saimgulay/TouchDesigner-EEG-BrainFlowCHOP",
+      "homepage": null,
+      "source": "github",
+      "description": "A Multi-Brand TouchDesigner Script CHOP for real-time EEG signal processing using Python BrainFlow package. Compatible with 15 brands and more then 33 different models. Includes Kalman filter, FFT, resampling, and OSC output. Tested with BrainBit.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 10,
+      "forks": 1,
+      "topics": [
+        "brainbit",
+        "braincomputerinterface",
+        "brainflow",
+        "eeg",
+        "muse2",
+        "muse2touchdesginer",
+        "touchdesigner"
+      ],
+      "tags": [
+        "eeg",
+        "brainflow"
+      ],
+      "createdAt": "2025-06-25T12:31:58Z",
+      "updatedAt": "2026-06-22T19:33:43Z",
+      "pushedAt": "2025-12-12T20:39:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-09-30",
+        "batch": "batch9",
+        "contactedAuthor": "saimgulay"
       }
     }
   ]
