@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-30T01:19:37Z",
+  "generatedAt": "2026-10-01T01:12:35Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 96,
+  "count": 108,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 84
+      "count": 108
     }
   ],
   "items": [
@@ -3060,6 +3060,435 @@
         "contactedAt": "2026-09-30",
         "batch": "batch9",
         "contactedAuthor": "saimgulay"
+      }
+    },
+    {
+      "id": "github:Aik358/SSVEP-BCI_A-Steady-State-Visual-Evoked-Potential-Based-Brain-Agent-Interface-System",
+      "name": "SSVEP-BCI_A-Steady-State-Visual-Evoked-Potential-Based-Brain-Agent-Interface-System",
+      "owner": "Aik358",
+      "author": "Aik358",
+      "url": "https://github.com/Aik358/SSVEP-BCI_A-Steady-State-Visual-Evoked-Potential-Based-Brain-Agent-Interface-System",
+      "homepage": null,
+      "source": "github",
+      "description": "SSVEP-BCI\uff1a\u57fa\u4e8e\u7a33\u6001\u89c6\u89c9\u8bf1\u53d1\u7535\u4f4d\u7684\u8111\u7535-Agent \u63a5\u53e3\u7cfb\u7edf            SSVEP-BCI_A Steady-State Visual Evoked Potential-Based Brain-Agent Interface System",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "agent",
+        "bci"
+      ],
+      "createdAt": "2026-08-01T04:09:05Z",
+      "updatedAt": "2026-08-10T08:59:04Z",
+      "pushedAt": "2026-08-01T13:23:13Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "Aik358"
+      }
+    },
+    {
+      "id": "github:Carter-Lawrence/EEGDrone",
+      "name": "EEGDrone",
+      "owner": "Carter-Lawrence",
+      "author": "Carter-Lawrence",
+      "url": "https://github.com/Carter-Lawrence/EEGDrone",
+      "homepage": null,
+      "source": "github",
+      "description": "Motor imagery BCI. Two EEGNet classifiers (move/rest, left/right) run on live 6-channel EEG from an OpenBCI Cyton and drive hardware over serial.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery"
+      ],
+      "createdAt": "2025-08-21T15:29:06Z",
+      "updatedAt": "2026-08-13T05:00:15Z",
+      "pushedAt": "2026-08-13T04:59:22Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "Carter-Lawrence"
+      }
+    },
+    {
+      "id": "github:Giladsc/3rd-hand-motor-imagery",
+      "name": "3rd-hand-motor-imagery",
+      "owner": "Giladsc",
+      "author": "Giladsc",
+      "url": "https://github.com/Giladsc/3rd-hand-motor-imagery",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG motor imagery BCI for a supernumerary third hand, with a live LSL loop driving a Unity AR effector.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "augmented-reality",
+        "bci",
+        "brain-computer-interface-classification",
+        "eeg",
+        "lsl",
+        "mne-python",
+        "motor-control",
+        "motor-imagery",
+        "neuroprosthetics",
+        "riemannian-geometry"
+      ],
+      "tags": [
+        "eeg",
+        "lsl",
+        "bci",
+        "motor-imagery"
+      ],
+      "createdAt": "2026-08-20T12:09:10Z",
+      "updatedAt": "2026-09-01T17:23:26Z",
+      "pushedAt": "2026-09-01T17:17:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "Giladsc"
+      }
+    },
+    {
+      "id": "github:JeremyGracey-AI/nexus-neuromirror",
+      "name": "nexus-neuromirror",
+      "owner": "JeremyGracey-AI",
+      "author": "JeremyGracey-AI",
+      "url": "https://github.com/JeremyGracey-AI/nexus-neuromirror",
+      "homepage": "https://nexus-neuromirror.vercel.app",
+      "source": "github",
+      "description": "Offline-first EEG neurofeedback prototype for the Mind Media NeXus-10: EDF/EDF+ verifier, montage configs, experiment scaffold, and a web dashboard.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "biosignals",
+        "edf",
+        "eeg",
+        "neurofeedback",
+        "python"
+      ],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "edf"
+      ],
+      "createdAt": "2026-07-13T19:20:02Z",
+      "updatedAt": "2026-08-18T22:08:00Z",
+      "pushedAt": "2026-08-18T21:50:24Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "JeremyGracey-AI"
+      }
+    },
+    {
+      "id": "github:Meshkat22/MINDGAN_BCI_SUITE",
+      "name": "MINDGAN_BCI_SUITE",
+      "owner": "Meshkat22",
+      "author": "Meshkat22",
+      "url": "https://github.com/Meshkat22/MINDGAN_BCI_SUITE",
+      "homepage": null,
+      "source": "github",
+      "description": "An end-to-end Brain-Computer Interface application for Emotiv EPOC X headsets. Record motor imagery EEG, train deep learning classifiers (MINDGAN with cDCGAN augmentation), and control devices in real time \u2014 including a DJI Tello drone \u2014 all from a single dark-themed Python GUI. Supports both Emotiv Cortex API and LSL streaming.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "emotiv",
+        "bci",
+        "lsl"
+      ],
+      "createdAt": "2026-07-13T17:22:43Z",
+      "updatedAt": "2026-07-13T19:17:34Z",
+      "pushedAt": "2026-07-13T19:17:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "Meshkat22"
+      }
+    },
+    {
+      "id": "github:RestlessByte/lsl-eegnet-pipeline",
+      "name": "lsl-eegnet-pipeline",
+      "owner": "RestlessByte",
+      "author": "RestlessByte",
+      "url": "https://github.com/RestlessByte/lsl-eegnet-pipeline",
+      "homepage": null,
+      "source": "github",
+      "description": "High-performance real-time BCI & bio-signal processing pipeline powered by Python, LSL, and EEGNet for neural decoding and health monitoring.",
+      "language": null,
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "lsl",
+        "openbci",
+        "bci"
+      ],
+      "createdAt": "2026-08-04T13:08:34Z",
+      "updatedAt": "2026-08-04T13:23:16Z",
+      "pushedAt": "2026-08-04T13:22:31Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "RestlessByte"
+      }
+    },
+    {
+      "id": "github:SoroushZare/realtime-ssvep-bci",
+      "name": "realtime-ssvep-bci",
+      "owner": "SoroushZare",
+      "author": "SoroushZare",
+      "url": "https://github.com/SoroushZare/realtime-ssvep-bci",
+      "homepage": null,
+      "source": "github",
+      "description": null,
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "bci"
+      ],
+      "createdAt": "2026-08-01T16:52:09Z",
+      "updatedAt": "2026-08-03T15:50:09Z",
+      "pushedAt": "2026-08-03T15:50:01Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "SoroushZare"
+      }
+    },
+    {
+      "id": "github:aurascoper/NeuralCompose",
+      "name": "NeuralCompose",
+      "owner": "aurascoper",
+      "author": "aurascoper",
+      "url": "https://github.com/aurascoper/NeuralCompose",
+      "homepage": null,
+      "source": "github",
+      "description": "Privacy-first macOS BCI prototype: Muse EEG \u2192 BrainFlow \u2192 Core ML (ANE) \u2192 local MLX LLM \u2192 SwiftUI carousel. Fully on-device.",
+      "language": "Swift",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "core-ml",
+        "mlx",
+        "muse-eeg",
+        "on-device-llm",
+        "privacy-first",
+        "swiftui"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "brainflow",
+        "bci"
+      ],
+      "createdAt": "2026-05-22T03:13:53Z",
+      "updatedAt": "2026-09-23T05:17:00Z",
+      "pushedAt": "2026-08-22T19:02:45Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "aurascoper"
+      }
+    },
+    {
+      "id": "github:dopalici/neuroscope",
+      "name": "neuroscope",
+      "owner": "dopalici",
+      "author": "dopalici",
+      "url": "https://github.com/dopalici/neuroscope",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time Muse 2 EEG dashboard: LSL acquisition, Welch band-power analysis, cognitive-state heuristics, and React visualization. Educational / exploration tooling \u2014 not a medical device.",
+      "language": "TypeScript",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "fastapi",
+        "lsl",
+        "muse",
+        "neurofeedback",
+        "neuroscience",
+        "react",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl",
+        "neurofeedback"
+      ],
+      "createdAt": "2026-07-27T16:26:32Z",
+      "updatedAt": "2026-07-28T16:32:26Z",
+      "pushedAt": "2026-08-01T11:03:04Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "dopalici"
+      }
+    },
+    {
+      "id": "github:mind-vault-lab/muse-athena-protocol",
+      "name": "muse-athena-protocol",
+      "owner": "mind-vault-lab",
+      "author": "mind-vault-lab",
+      "url": "https://github.com/mind-vault-lab/muse-athena-protocol",
+      "homepage": "https://usemindvault.com?utm_source=github&utm_medium=repo&utm_campaign=muse-athena-protocol",
+      "source": "github",
+      "description": "Muse S Athena (MS-03) BLE protocol specification \u2014 256 Hz 14-bit EEG packet unpacking, GATT characteristics, calibration constants, and macOS workarounds.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "biosignals",
+        "ble",
+        "brainflow",
+        "eeg",
+        "fnirs",
+        "ms-03",
+        "muse-athena",
+        "muse-s",
+        "neuroscience",
+        "neurotech",
+        "openmuse",
+        "ppg",
+        "python"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "ble",
+        "brainflow"
+      ],
+      "createdAt": "2026-09-14T05:16:22Z",
+      "updatedAt": "2026-09-14T05:43:42Z",
+      "pushedAt": "2026-09-14T05:43:35Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "mind-vault-lab"
+      }
+    },
+    {
+      "id": "github:patr1ckzhu/ECTNet",
+      "name": "ECTNet",
+      "owner": "patr1ckzhu",
+      "author": "patr1ckzhu",
+      "url": "https://github.com/patr1ckzhu/ECTNet",
+      "homepage": null,
+      "source": "github",
+      "description": "End-to-end motor imagery BCI: custom ADS1299+STM32 acquisition board \u2192 PsychoPy+LSL recording \u2192 PyTorch training (transfer learning from BCI IV-2b) \u2192 real-time CPU inference (~40ms)",
+      "language": "Python",
+      "license": null,
+      "stars": 5,
+      "forks": 0,
+      "topics": [
+        "ads1299",
+        "bci",
+        "brain-computer-interface",
+        "cnn",
+        "deep-learning",
+        "eeg",
+        "embedded-systems",
+        "lab-streaming-layer",
+        "motor-imagery",
+        "psychopy",
+        "pytorch",
+        "real-time-inference",
+        "stm32",
+        "transfer-learning",
+        "transformer"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "lsl",
+        "motor-imagery"
+      ],
+      "createdAt": "2026-02-08T03:18:49Z",
+      "updatedAt": "2026-08-26T11:54:26Z",
+      "pushedAt": "2026-08-17T18:49:22Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "patr1ckzhu"
+      }
+    },
+    {
+      "id": "github:voidformfoundry/mmmcharts",
+      "name": "mmmcharts",
+      "owner": "voidformfoundry",
+      "author": "voidformfoundry",
+      "url": "https://github.com/voidformfoundry/mmmcharts",
+      "homepage": "https://voidformfoundry.github.io/mmmcharts/",
+      "source": "github",
+      "description": "Chart a Mind Monitor CSV export from a Muse EEG headband, entirely in your browser. No upload, no backend.",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "data-visualization",
+        "eeg",
+        "mind-monitor",
+        "muse",
+        "neurofeedback"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "neurofeedback"
+      ],
+      "createdAt": "2026-09-11T18:02:39Z",
+      "updatedAt": "2026-09-13T01:01:10Z",
+      "pushedAt": "2026-09-13T01:01:06Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-01",
+        "batch": "batch10",
+        "contactedAuthor": "voidformfoundry"
       }
     }
   ]
