@@ -1,0 +1,333 @@
+{
+  "date": "2026-10-05",
+  "generated_at": "2026-10-05T10:20:00+00:00",
+  "item_count": 7,
+  "types": {
+    "News": 2,
+    "Tutorial": 1,
+    "Course": 1,
+    "Project": 3
+  },
+  "highlights": [
+    {
+      "title_zh": "全球脑机开发者集结！g.tec携手IEEE SMC 2026开启BR41N.IO脑机接口黑客松",
+      "title_en": "g.tec Opens BR41N.IO BCI Hackathon Within IEEE SMC 2026",
+      "url": "https://www.bilibili.com/read/cv53297017",
+      "brief": "g.tec 在 IEEE SMC 2026 框架下启动 BR41N.IO 脑机接口设计黑客松（10 月 4—5 日），面向全球跨学科团队，明确不强制要求脑机专业背景。赛事开放运动想象、P300、SSVEP、ECoG 等范式配套数据集与实时 BCI API，设数据分析、编程与艺术两大赛道，单项最高奖金 1000 美元，并围绕神经解码与临床转化开展专题研讨、提供专家现场指导。对无创脑电方向而言，这是低门槛上手公开数据、同时对接国际开发者社区的窗口。"
+    },
+    {
+      "title_zh": "RECORDA：把 Android 手机变成 LSL→XDF 记录仪",
+      "title_en": "RECORDA: turn an Android phone into an LSL-to-XDF recorder",
+      "url": "https://github.com/NeuropsyOL/RECORDA",
+      "brief": "非侵入式 BCI 实验常需在移动端同步采集脑电与行为数据，但 LSL 生态长期缺少可靠的手机端记录器。RECORDA 用 C++ 实现 Android 侧订阅与 XDF 落盘，今日仍在更新（15 stars）。对做移动 EEG、疲劳或注意力监测、现场范式实验的团队，这是可直接替换自研采集脚本的候选组件。"
+    },
+    {
+      "title_zh": "斯图加特大学 EEG 课程仓库（可运行 Notebook）",
+      "title_en": "University of Stuttgart EEG Course Repository (runnable notebooks)",
+      "url": "https://github.com/s-ccs/course_EEG",
+      "brief": "欧洲高校成体系的 EEG 课程仓库，Notebook 形式把课件与可执行代码放在一起，覆盖从信号采集到分析的常规教学链路。对中文读者而言，这类有作业、有代码、有讲师维护的材料比零散教程更适合系统学习；今日仍有提交，说明课程处于活跃维护状态。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-05.md",
+  "items": [
+    {
+      "source": "bilibili",
+      "language": "zh",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "g.tec opened the BR41N.IO BCI design hackathon (4-5 October) under IEEE SMC 2026, open to interdisciplinary teams without a mandatory BCI background. It releases datasets for MI, P300, SSVEP and ECoG plus real-time BCI APIs, runs data-analysis and programming/art tracks with awards up to USD 1,000, and adds expert mentoring on neural decoding and clinical translation.",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": 0
+      },
+      "type": "News",
+      "level": "Intermediate",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53297017",
+      "author_handle": "惠科技",
+      "url": "https://www.bilibili.com/read/cv53297017",
+      "published": "2026-10-05T01:51:00Z",
+      "quality_score": 8,
+      "title_zh": "全球脑机开发者集结！g.tec携手IEEE SMC 2026开启BR41N.IO脑机接口黑客松",
+      "title_en": "g.tec Opens BR41N.IO BCI Hackathon Within IEEE SMC 2026",
+      "bullets_zh": [
+        "g.tec 于当地时间 10 月 4 日在 IEEE SMC 2026 大会框架下启动 BR41N.IO 脑机接口设计黑客松，赛事持续至 10 月 5 日。",
+        "配套技术分享覆盖全球 BCI 开发网络架构、实时脑机硬件部署与 API 调用，并开放运动想象（MI）、P300、SSVEP、ECoG 等主流范式的配套数据集。",
+        "设 BCI 数据分析与 BCI 编程与艺术两大赛道，单项最高奖金 1000 美元；活动隶属 IEEE SMC 2026 的 BMI 专题研讨会，收录成果可进入 IEEE Xplore。"
+      ],
+      "bullets_en": [
+        "g.tec launched the BR41N.IO BCI design hackathon on 4 October under IEEE SMC 2026, running through 5 October.",
+        "Sessions cover global BCI development architectures, real-time hardware deployment and API access, with datasets for MI, P300, SSVEP and ECoG paradigms.",
+        "Two tracks (data analysis; programming and art) with awards up to USD 1,000; the event sits in the IEEE SMC 2026 BMI workshop indexed in IEEE Xplore."
+      ],
+      "brief": "g.tec 在 IEEE SMC 2026 框架下启动 BR41N.IO 脑机接口设计黑客松（10 月 4—5 日），面向全球跨学科团队，明确不强制要求脑机专业背景。赛事开放运动想象、P300、SSVEP、ECoG 等范式配套数据集与实时 BCI API，设数据分析、编程与艺术两大赛道，单项最高奖金 1000 美元，并围绕神经解码与临床转化开展专题研讨、提供专家现场指导。对无创脑电方向而言，这是低门槛上手公开数据、同时对接国际开发者社区的窗口。",
+      "tags": [
+        "bci",
+        "hackathon",
+        "gtec",
+        "eeg",
+        "ssvep",
+        "p300"
+      ],
+      "raw_excerpt": "当地时间10月4日，国际知名脑机厂商g.tec在IEEE SMC 2026大会框架下，正式启动BR41N.IO脑机接口设计黑客松，赛事持续至10月5日……开放运动想象（MI）、P300、SSVEP、ECoG等主流脑电范式配套数据集",
+      "why_valuable": "限时事件（今日截止），直接提供无创 BCI 公开数据集与实时 API，可立即动手复现。"
+    },
+    {
+      "source": "bilibili",
+      "language": "zh",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "One of the few systematic beginner explainers on Bilibili within 48 hours: a 5.5-minute overview of BCI definitions, signal acquisition routes and technical evolution, useful as scaffolding before diving into datasets or courses. Published by a domestic EEG vendor account.",
+      "metrics": {
+        "play": 16,
+        "like": null,
+        "collect": null,
+        "comment": null
+      },
+      "type": "Tutorial",
+      "level": "Beginner",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1LEan6YEWR",
+      "author_handle": "茗创科技官方号",
+      "url": "https://www.bilibili.com/video/BV1LEan6YEWR/",
+      "published": "2026-10-04T00:00:00Z",
+      "quality_score": 7,
+      "title_zh": "脑机接口基础与技术发展",
+      "title_en": "Fundamentals and Technical Evolution of Brain-Computer Interfaces",
+      "bullets_zh": [
+        "5 分 35 秒的入门讲解，覆盖脑机接口基本概念与主要技术路线的发展脉络。",
+        "由脑电设备厂商官方号「茗创科技」发布，标签含 BCI/fMRI，fMRI-BCI 亦属无创路线。"
+      ],
+      "bullets_en": [
+        "A 5m35s beginner walkthrough of core BCI concepts and how the main technical routes evolved.",
+        "Published by EEG vendor account MingChuang Tech; tags include BCI and fMRI, and fMRI-BCI is also a non-invasive route."
+      ],
+      "brief": "B站近 48 小时内少数成体系的入门讲解：用 5 分半梳理脑机接口的定义、信号采集路线与技术演进，适合在做数据集或课程前建立整体框架。发布方为国内脑电设备厂商官方号，内容偏科普但术语准确；更深的材料可接 Kothe《现代脑机接口设计导论》中配全片与 EEG 数据处理基础类视频。",
+      "tags": [
+        "bci",
+        "eeg",
+        "tutorial",
+        "beginner",
+        "fmri"
+      ],
+      "raw_excerpt": "B站搜索页（按最新发布排序）实测：标题「脑机接口基础与技术发展」，UP主「茗创科技官方号」，时长 05:35，相对时间显示「昨天」（日精度），播放约 16。",
+      "why_valuable": "48 小时内唯一成体系的中文入门视频，可作为后续学习路径的起点。"
+    },
+    {
+      "source": "bilibili",
+      "language": "zh",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "A three-minute Chinese explainer of a quantified improvement from the Weizmann Brain-IT line: individual calibration for fMRI vision-decoding systems drops from about 40 hours to roughly one, which directly gates whether imaging-based decoding can scale beyond a handful of labs.",
+      "metrics": {
+        "play": 132,
+        "like": null,
+        "collect": null,
+        "comment": null
+      },
+      "type": "News",
+      "level": "Intermediate",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1PCHp6ZEww",
+      "author_handle": "Aldbot",
+      "url": "https://www.bilibili.com/video/BV1PCHp6ZEww/",
+      "published": "2026-10-05T03:36:00Z",
+      "quality_score": 7,
+      "title_zh": "脑扫描「读」所见：校准从 40 小时到 1 小时（魏茨曼 Brain-IT 解读）",
+      "title_en": "Reading Vision from fMRI: Weizmann Brain-IT Cuts Calibration From About 40h to 1h",
+      "bullets_zh": [
+        "解读魏茨曼科学研究所 Brain-IT 相关工作：将「从脑扫描重建所见图像」系统的受试者校准时间由约 40 小时压缩到约 1 小时。",
+        "属非侵入式脑成像解码路线（fMRI），关注可用性与成本瓶颈，而非植入式电极方案。"
+      ],
+      "bullets_en": [
+        "Summarises Weizmann Institute Brain-IT work that cuts subject calibration for fMRI image-reconstruction systems from roughly 40 hours to about one.",
+        "A non-invasive neuroimaging decoding route (fMRI); the contribution targets practicality and cost rather than implanted electrodes."
+      ],
+      "brief": "3 分钟中文解读视频，转述魏茨曼科学研究所 Brain-IT 方向的一项量化改进：把 fMRI「读视觉」系统所需的个体校准时长从约 40 小时降到约 1 小时。该改进直接决定脑影像解码能否走出少数实验室、进入更大样本研究，适合想跟进非侵入式解码进展但不便啃原文的读者作为索引；深入需回到原始论文与开源实现核对细节。",
+      "tags": [
+        "fmri",
+        "neuroimaging",
+        "decoding",
+        "bci",
+        "weizmann"
+      ],
+      "raw_excerpt": "B站搜索页实测：标题「脑扫描「读」所见：校准从40小时到1小时｜魏茨曼Brain-IT深度」，UP主 Aldbot，时长 03:11，相对时间「6小时前」（据此推算时刻）。",
+      "why_valuable": "把论文级进展压缩成可核验的量化结论（40h→1h），便于快速判断是否深入。"
+    },
+    {
+      "source": "github",
+      "language": "en",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "A structured European university EEG course shipped as runnable notebooks, covering the usual pipeline from acquisition to analysis. Pushed today, so it is actively maintained and better suited to systematic self-study than scattered tutorials.",
+      "metrics": {
+        "play": null,
+        "like": 4,
+        "collect": null,
+        "comment": null
+      },
+      "type": "Course",
+      "level": "Intermediate",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "s-ccs/course_EEG",
+      "author_handle": "s-ccs",
+      "url": "https://github.com/s-ccs/course_EEG",
+      "published": "2026-10-05T09:38:52Z",
+      "quality_score": 8,
+      "title_zh": "斯图加特大学 EEG 课程仓库（可运行 Notebook）",
+      "title_en": "University of Stuttgart EEG Course Repository (runnable notebooks)",
+      "bullets_zh": [
+        "斯图加特大学 EEG 课程的官方仓库，课件与代码以 Jupyter Notebook 形式组织。",
+        "2026-10-05T09:38:52Z 有新提交，可作为系统性自学脑电分析的免费教学材料直接克隆运行。"
+      ],
+      "bullets_en": [
+        "Official course repository for the EEG course at the University of Stuttgart, organised as Jupyter notebooks with runnable code.",
+        "Pushed on 2026-10-05T09:38:52Z; can be cloned and run directly as free material for systematic EEG self-study."
+      ],
+      "brief": "欧洲高校成体系的 EEG 课程仓库，Notebook 形式把课件与可执行代码放在一起，覆盖从信号采集到分析的常规教学链路。对中文读者而言，这类有作业、有代码、有讲师维护的材料比零散教程更适合系统学习；今日仍有提交，说明课程处于活跃维护状态。",
+      "tags": [
+        "eeg",
+        "course",
+        "jupyter",
+        "university",
+        "education"
+      ],
+      "raw_excerpt": "GitHub repository metadata via gh api: full_name=s-ccs/course_EEG, language=Jupyter Notebook, stargazers_count=4, pushed_at=2026-10-05T09:38:52Z",
+      "why_valuable": "高校成体系课程 + 可执行 Notebook，可直接用于教学或自学。"
+    },
+    {
+      "source": "github",
+      "language": "en",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "Mobile non-invasive BCI studies need LSL recording on phones, which the ecosystem has lacked. RECORDA implements Android subscription and XDF writing in C++, still updated today (15 stars), making it a drop-in candidate for mobile EEG and attention paradigms.",
+      "metrics": {
+        "play": null,
+        "like": 15,
+        "collect": null,
+        "comment": null
+      },
+      "type": "Project",
+      "level": "Intermediate",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuropsyOL/RECORDA",
+      "author_handle": "NeuropsyOL",
+      "url": "https://github.com/NeuropsyOL/RECORDA",
+      "published": "2026-10-05T07:20:29Z",
+      "quality_score": 8,
+      "title_zh": "RECORDA：把 Android 手机变成 LSL→XDF 记录仪",
+      "title_en": "RECORDA: turn an Android phone into an LSL-to-XDF recorder",
+      "bullets_zh": [
+        "在 Android 上订阅 Lab Streaming Layer（LSL）流并录制为 XDF 格式，等价于桌面 LabRecorder 的移动版本。",
+        "面向移动 EEG 与生物信号采集场景，便于用廉价设备搭建非侵入式 BCI 实验的数据留存链路。"
+      ],
+      "bullets_en": [
+        "Subscribes to Lab Streaming Layer (LSL) streams on Android and records them to XDF, effectively a mobile LabRecorder.",
+        "Aimed at mobile EEG and biosignal acquisition, enabling data retention for non-invasive BCI experiments on cheap hardware."
+      ],
+      "brief": "非侵入式 BCI 实验常需在移动端同步采集脑电与行为数据，但 LSL 生态长期缺少可靠的手机端记录器。RECORDA 用 C++ 实现 Android 侧订阅与 XDF 落盘，今日仍在更新（15 stars）。对做移动 EEG、疲劳或注意力监测、现场范式实验的团队，这是可直接替换自研采集脚本的候选组件。",
+      "tags": [
+        "lsl",
+        "xdf",
+        "android",
+        "eeg",
+        "data-acquisition"
+      ],
+      "raw_excerpt": "GitHub repository metadata via gh api: full_name=NeuropsyOL/RECORDA, language=C++, stargazers_count=15, pushed_at=2026-10-05T07:20:29Z",
+      "why_valuable": "填补移动端 LSL→XDF 记录工具空白，可直接用于在线 BCI 实验数据留存。"
+    },
+    {
+      "source": "github",
+      "language": "en",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "Cross-subject generalisation is a key bottleneck for productising EEG, and AMA-EEG offers a runnable adaptive multimodal alignment approach, useful as an ablation reference for transfer-learning work; being new (6 stars), verify its experimental setup and data licences.",
+      "metrics": {
+        "play": null,
+        "like": 6,
+        "collect": null,
+        "comment": null
+      },
+      "type": "Project",
+      "level": "Advanced",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "jianjiez100-sys/AMA-EEG",
+      "author_handle": "jianjiez100-sys",
+      "url": "https://github.com/jianjiez100-sys/AMA-EEG",
+      "published": "2026-10-05T08:40:09Z",
+      "quality_score": 7,
+      "title_zh": "AMA-EEG：面向跨被试 EEG 情绪识别的自适应多模态对齐",
+      "title_en": "AMA-EEG: Adaptive Multimodal Alignment for Cross-Subject EEG Emotion Recognition",
+      "bullets_zh": [
+        "提出 AMA-EEG 方法，用自适应多模态对齐缓解 EEG 跨被试分布漂移。",
+        "Python 实现开源，今日有提交，可作为跨被试泛化与多模态表征对齐的参考基线。"
+      ],
+      "bullets_en": [
+        "Proposes adaptive multimodal alignment to mitigate cross-subject distribution shift in EEG emotion recognition.",
+        "Open-source Python implementation, pushed today; usable as a reference baseline for cross-subject generalisation."
+      ],
+      "brief": "跨被试泛化是 EEG 从实验室走向产品的核心瓶颈：个体头电地形与生理差异导致模型换人即失效。AMA-EEG 以多模态表征自适应对齐为切入点给出可运行实现，适合做迁移学习、域适应方向的对齐基线与消融对照；仓库较新（6 stars），采用前需自行核对实验设置与数据许可。",
+      "tags": [
+        "eeg",
+        "cross-subject",
+        "emotion-recognition",
+        "domain-adaptation",
+        "pytorch"
+      ],
+      "raw_excerpt": "GitHub repository metadata via gh api: full_name=jianjiez100-sys/AMA-EEG, language=Python, stargazers_count=6, pushed_at=2026-10-05T08:40:09Z",
+      "why_valuable": "针对 EEG 跨被试泛化瓶颈提供可运行对齐基线，适合做迁移实验对照。"
+    },
+    {
+      "source": "github",
+      "language": "en",
+      "fetched_at": "2026-10-05T10:20:00+00:00",
+      "brief_en": "Sleep staging is a mature non-invasive EEG application, yet most public repos are single-modality. This pipeline adds EOG and EMG as AASM scoring requires and gives a reproducible notebook flow, a low-cost starting point for sleep or fatigue monitoring projects.",
+      "metrics": {
+        "play": null,
+        "like": 5,
+        "collect": null,
+        "comment": null
+      },
+      "type": "Project",
+      "level": "Intermediate",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "shamiquekhan/neuromorphic-sleep-staging-pipeline",
+      "author_handle": "shamiquekhan",
+      "url": "https://github.com/shamiquekhan/neuromorphic-sleep-staging-pipeline",
+      "published": "2026-10-05T09:18:14Z",
+      "quality_score": 7,
+      "title_zh": "EEG/EOG/EMG 三模态睡眠分期端到端流水线",
+      "title_en": "End-to-end sleep-stage classification from EEG, EOG and EMG",
+      "bullets_zh": [
+        "联合 EEG、EOG、EMG 三种信号的睡眠分期分类流水线，从预处理到分类评估完整可复现。",
+        "以 Jupyter Notebook 组织，今日有提交，适合作为睡眠或疲劳监测方向的基线实现。"
+      ],
+      "bullets_en": [
+        "An end-to-end sleep-stage classification pipeline combining EEG, EOG and EMG, reproducible from preprocessing through evaluation.",
+        "Organised as notebooks and pushed today; suitable as a baseline for sleep and fatigue monitoring work."
+      ],
+      "brief": "睡眠分期是非侵入式脑电最成熟的应用方向之一，但公开仓库多为单模态 EEG。该流水线同时纳入 EOG 与 EMG（对应 AASM 判读所需的多导信息），并以 Notebook 完整给出可复现流程，对做睡眠监测、疲劳预警或可穿戴数据质化的团队是低成本起点；今日更新说明仍在维护。",
+      "tags": [
+        "eeg",
+        "sleep-staging",
+        "eog",
+        "emg",
+        "notebook"
+      ],
+      "raw_excerpt": "GitHub repository metadata via gh api: full_name=shamiquekhan/neuromorphic-sleep-staging-pipeline, language=Jupyter Notebook, stargazers_count=5, pushed_at=2026-10-05T09:18:14Z",
+      "why_valuable": "多导生理信号联合建模的可复现范例，适合睡眠或疲劳监测方向基线。"
+    }
+  ],
+  "stats": {
+    "fetched": 130,
+    "prefiltered": 104,
+    "llm_rows": 26,
+    "kept": 7,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 2
+  }
+}
