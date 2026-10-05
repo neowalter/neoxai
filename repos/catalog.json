@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-02T01:17:56Z",
+  "generatedAt": "2026-10-05T01:21:25Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 120,
+  "count": 132,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 108
+      "count": 132
     }
   ],
   "items": [
@@ -3965,6 +3965,400 @@
         "contactedAt": "2026-10-02",
         "batch": "batch11",
         "contactedAuthor": "thisPointOn"
+      }
+    },
+    {
+      "id": "github:Abyss-c0re/exg-c",
+      "name": "exg-c",
+      "owner": "Abyss-c0re",
+      "author": "Abyss-c0re",
+      "url": "https://github.com/Abyss-c0re/exg-c",
+      "homepage": null,
+      "source": "github",
+      "description": "Host app for a Knight ADS1299 board (and compatible USB-serial EXG). Linux and Android.",
+      "language": "C",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "exg",
+        "android",
+        "hardware"
+      ],
+      "createdAt": "2026-08-31T14:14:22Z",
+      "updatedAt": "2026-10-05T01:19:00Z",
+      "pushedAt": "2026-10-03T23:24:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "Abyss-c0re"
+      }
+    },
+    {
+      "id": "github:BrianLeeper/connex-lsl",
+      "name": "connex-lsl",
+      "owner": "BrianLeeper",
+      "author": "BrianLeeper",
+      "url": "https://github.com/BrianLeeper/connex-lsl",
+      "homepage": null,
+      "source": "github",
+      "description": "An LSL bridge for the Xltek/Natus Connex / Brain Monitor EEG amplifier",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "lsl",
+        "interoperability",
+        "clinical-hardware"
+      ],
+      "createdAt": "2026-08-31T21:32:03Z",
+      "updatedAt": "2026-10-05T01:19:54Z",
+      "pushedAt": "2026-09-19T12:45:57Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "BrianLeeper"
+      }
+    },
+    {
+      "id": "github:IbrahimKoukash/sessantaquattro-eeg-lsl-toolkit",
+      "name": "sessantaquattro-eeg-lsl-toolkit",
+      "owner": "IbrahimKoukash",
+      "author": "IbrahimKoukash",
+      "url": "https://github.com/IbrahimKoukash/sessantaquattro-eeg-lsl-toolkit",
+      "homepage": null,
+      "source": "github",
+      "description": "Stream 64-channel EEG from an OT Bioelettronica Sessantaquattro to Lab Streaming Layer, with a live paged viewer and per-channel contact-quality scoring.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "lsl",
+        "acquisition",
+        "signal-quality"
+      ],
+      "createdAt": "2026-09-29T12:30:22Z",
+      "updatedAt": "2026-10-05T01:19:07Z",
+      "pushedAt": "2026-10-03T12:40:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "IbrahimKoukash"
+      }
+    },
+    {
+      "id": "github:Libritor/eyecam",
+      "name": "eyecam",
+      "owner": "Libritor",
+      "author": "Libritor",
+      "url": "https://github.com/Libritor/eyecam",
+      "homepage": null,
+      "source": "github",
+      "description": "The human eye as a camera: SSVEP image reconstruction from a Muse EEG headband, on a laptop or in VR (after Mann et al., IEEE HealthCom 2019)",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "ssvep",
+        "vr",
+        "bci"
+      ],
+      "createdAt": "2026-09-30T05:04:15Z",
+      "updatedAt": "2026-10-05T01:18:53Z",
+      "pushedAt": "2026-10-04T18:11:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "Libritor"
+      }
+    },
+    {
+      "id": "github:aifriend/flappy-brain-bci",
+      "name": "flappy-brain-bci",
+      "owner": "aifriend",
+      "author": "aifriend",
+      "url": "https://github.com/aifriend/flappy-brain-bci",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time motor-imagery EEG controller (CSP+LDA, LSL in, UDP out) for the Flappy Brain game \u2014 ISRC CN3 Hackathon 2026",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "csp",
+        "eeg",
+        "hackathon",
+        "labstreaminglayer",
+        "lda",
+        "lsl",
+        "motor-imagery",
+        "neurotech",
+        "python"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "lsl",
+        "bci",
+        "game"
+      ],
+      "createdAt": "2026-08-19T15:02:01Z",
+      "updatedAt": "2026-10-05T01:19:14Z",
+      "pushedAt": "2026-08-20T18:55:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "aifriend"
+      }
+    },
+    {
+      "id": "github:anoopsinha/affectionalyzer",
+      "name": "affectionalyzer",
+      "owner": "anoopsinha",
+      "author": "anoopsinha",
+      "url": "https://github.com/anoopsinha/affectionalyzer",
+      "homepage": null,
+      "source": "github",
+      "description": "Live EEG affect monitor \u2014 plots valence x arousal from a local NeuroSkill daemon and a Muse headset",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "affective-computing",
+        "hyperscanning",
+        "visualization"
+      ],
+      "createdAt": "2026-08-04T18:58:37Z",
+      "updatedAt": "2026-10-05T01:19:40Z",
+      "pushedAt": "2026-08-31T21:05:57Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "anoopsinha"
+      }
+    },
+    {
+      "id": "github:carlos-lorenzo/neurodaq",
+      "name": "neurodaq",
+      "owner": "carlos-lorenzo",
+      "author": "carlos-lorenzo",
+      "url": "https://github.com/carlos-lorenzo/neurodaq",
+      "homepage": null,
+      "source": "github",
+      "description": "8-16 channel EEG headset built from scratch. Completely open source.",
+      "language": null,
+      "license": "MIT",
+      "stars": 22,
+      "forks": 2,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "esp32",
+        "open-hardware",
+        "bci"
+      ],
+      "createdAt": "2026-04-26T08:36:23Z",
+      "updatedAt": "2026-10-05T01:19:20Z",
+      "pushedAt": "2026-09-26T13:17:24Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "carlos-lorenzo"
+      }
+    },
+    {
+      "id": "github:jaaninumberone/eeg-spec",
+      "name": "eeg-spec",
+      "owner": "jaaninumberone",
+      "author": "jaaninumberone",
+      "url": "https://github.com/jaaninumberone/eeg-spec",
+      "homepage": null,
+      "source": "github",
+      "description": "Device-agnostic ADS1299 EEG specification, reference implementation and conformance suite",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "specification",
+        "testing"
+      ],
+      "createdAt": "2026-09-27T12:48:02Z",
+      "updatedAt": "2026-10-05T01:20:07Z",
+      "pushedAt": "2026-09-27T13:21:23Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "jaaninumberone"
+      }
+    },
+    {
+      "id": "github:kennito2035/convey",
+      "name": "convey",
+      "owner": "kennito2035",
+      "author": "kennito2035",
+      "url": "https://github.com/kennito2035/convey",
+      "homepage": null,
+      "source": "github",
+      "description": "CONVEY: open 8-channel patient-isolated EEG/sEMG/ECG acquisition board (ADS1299, KiCad 10)",
+      "language": "Python",
+      "license": "CERN-OHL-S-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "emg",
+        "ads1299",
+        "open-hardware",
+        "kicad"
+      ],
+      "createdAt": "2026-08-23T08:23:54Z",
+      "updatedAt": "2026-10-05T01:19:27Z",
+      "pushedAt": "2026-08-23T11:01:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "kennito2035"
+      }
+    },
+    {
+      "id": "github:nimbusbci/nimbus-mcp",
+      "name": "nimbus-mcp",
+      "owner": "nimbusbci",
+      "author": "nimbusbci",
+      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "homepage": null,
+      "source": "github",
+      "description": "MCP server for Nimbus BCI \u2014 AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "fastmcp",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "mcp",
+        "agent"
+      ],
+      "createdAt": "2026-10-04T21:33:07Z",
+      "updatedAt": "2026-10-05T01:20:00Z",
+      "pushedAt": "2026-10-05T00:15:38Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "nimbusbci"
+      }
+    },
+    {
+      "id": "github:shanemhansen/muse",
+      "name": "muse",
+      "owner": "shanemhansen",
+      "author": "shanemhansen",
+      "url": "https://github.com/shanemhansen/muse",
+      "homepage": null,
+      "source": "github",
+      "description": "Raw EEG capture, storage, and time-travel replay for a Muse 2 headband",
+      "language": "HTML",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "web-bluetooth",
+        "local-first",
+        "visualization"
+      ],
+      "createdAt": "2026-09-02T18:30:59Z",
+      "updatedAt": "2026-10-05T01:19:47Z",
+      "pushedAt": "2026-09-02T18:31:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "shanemhansen"
+      }
+    },
+    {
+      "id": "github:vexpaer/BrainExporter",
+      "name": "BrainExporter",
+      "owner": "vexpaer",
+      "author": "vexpaer",
+      "url": "https://github.com/vexpaer/BrainExporter",
+      "homepage": null,
+      "source": "github",
+      "description": "Open-source Android EEG acquisition, monitoring and CSV export for RT-BCI/ADS1299 devices.",
+      "language": "Kotlin",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "android",
+        "bluetooth-low-energy",
+        "eeg",
+        "jetpack-compose",
+        "kotlin"
+      ],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "android",
+        "ble",
+        "local-first"
+      ],
+      "createdAt": "2026-08-12T15:00:20Z",
+      "updatedAt": "2026-10-05T01:19:34Z",
+      "pushedAt": "2026-08-26T09:46:29Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-05",
+        "batch": "batch12",
+        "contactedAuthor": "vexpaer"
       }
     }
   ]
