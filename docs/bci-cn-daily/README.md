@@ -6,4 +6,6 @@ B站 / CSDN / 小红书等中文高日活平台，加上近 24h 有新提交的�
 | 日期 Date | 类型速览 Types | 条目 Items |
 |-----------|----------------|-----------|
 | [2026-10-06](./2026-10-06.md) | Benchmark、Project、Tutorial | 7 |
+| [2026-10-06](./2026-10-06.md) | Benchmark、Project、Tutorial | 7 |
+| [2026-10-06](./2026-10-06.md) | Benchmark、Project、Tutorial | 7 |
 | [2026-10-05](./2026-10-05.md) | Course、News、Project、Tutorial | 7 |
