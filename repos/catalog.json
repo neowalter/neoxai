@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-05T01:21:25Z",
+  "generatedAt": "2026-10-06T01:25:27Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 132,
+  "count": 144,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 132
+      "count": 144
     }
   ],
   "items": [
@@ -4359,6 +4359,407 @@
         "contactedAt": "2026-10-05",
         "batch": "batch12",
         "contactedAuthor": "vexpaer"
+      }
+    },
+    {
+      "id": "github:FelixKuon/ERPulse",
+      "name": "ERPulse",
+      "owner": "FelixKuon",
+      "author": "FelixKuon",
+      "url": "https://github.com/FelixKuon/ERPulse",
+      "homepage": null,
+      "source": "github",
+      "description": "Live ERP & time-frequency viewer for the g.tec Unicorn Hybrid Black EEG \u2013 with Arduino triggers and offline analysis (macOS & Windows)",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "erp",
+        "neuroscience",
+        "pyqt6",
+        "python",
+        "unicorn-eeg"
+      ],
+      "tags": [
+        "eeg",
+        "erp",
+        "unicorn",
+        "visualization",
+        "pyqt"
+      ],
+      "createdAt": "2026-10-05T16:41:00Z",
+      "updatedAt": "2026-10-06T01:23:09Z",
+      "pushedAt": "2026-10-05T16:48:24Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "FelixKuon"
+      }
+    },
+    {
+      "id": "github:Howchie/EmotivLSL",
+      "name": "EmotivLSL",
+      "owner": "Howchie",
+      "author": "Howchie",
+      "url": "https://github.com/Howchie/EmotivLSL",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "emotiv",
+        "lsl",
+        "acquisition"
+      ],
+      "createdAt": "2026-06-11T00:40:34Z",
+      "updatedAt": "2026-10-06T01:23:00Z",
+      "pushedAt": "2026-09-24T03:05:01Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "Howchie"
+      }
+    },
+    {
+      "id": "github:NexusDynamic/liblsl.dart",
+      "name": "liblsl.dart",
+      "owner": "NexusDynamic",
+      "author": "NexusDynamic",
+      "url": "https://github.com/NexusDynamic/liblsl.dart",
+      "homepage": null,
+      "source": "github",
+      "description": "Dart interface for Lab Streaming Layer / liblsl",
+      "language": "Dart",
+      "license": "MIT",
+      "stars": 7,
+      "forks": 4,
+      "topics": [
+        "eeg",
+        "lab-streaming-layer",
+        "xdf"
+      ],
+      "tags": [
+        "eeg",
+        "lsl",
+        "xdf",
+        "flutter",
+        "visualization"
+      ],
+      "createdAt": "2025-03-04T18:00:02Z",
+      "updatedAt": "2026-10-06T01:22:50Z",
+      "pushedAt": "2026-09-27T19:53:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "NexusDynamic"
+      }
+    },
+    {
+      "id": "github:Polobase/muse.js",
+      "name": "muse.js",
+      "owner": "Polobase",
+      "author": "Polobase",
+      "url": "https://github.com/Polobase/muse.js",
+      "homepage": null,
+      "source": "github",
+      "description": "TypeScript library for Muse EEG headbands, with first-class Muse S Athena support. Decodes the DRL/REF pair no other library reads.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "web-bluetooth",
+        "lsl",
+        "typescript"
+      ],
+      "createdAt": "2026-08-27T14:02:47Z",
+      "updatedAt": "2026-10-06T01:22:22Z",
+      "pushedAt": "2026-09-21T19:51:33Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "Polobase"
+      }
+    },
+    {
+      "id": "github:Thempra/overmind-ng",
+      "name": "overmind-ng",
+      "owner": "Thempra",
+      "author": "Thempra",
+      "url": "https://github.com/Thempra/overmind-ng",
+      "homepage": null,
+      "source": "github",
+      "description": "Overmind NG - Brainwave/EEG analyzer & EVA battle game (Flutter + BLE + FLAME). Next-gen of overmind-android.",
+      "language": "Dart",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "ble",
+        "flutter",
+        "game"
+      ],
+      "createdAt": "2026-08-31T20:05:27Z",
+      "updatedAt": "2026-10-06T01:23:38Z",
+      "pushedAt": "2026-10-03T22:26:37Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "Thempra"
+      }
+    },
+    {
+      "id": "github:dongyangli-del/NeuroFlow-Agent",
+      "name": "NeuroFlow-Agent",
+      "owner": "dongyangli-del",
+      "author": "dongyangli-del",
+      "url": "https://github.com/dongyangli-del/NeuroFlow-Agent",
+      "homepage": null,
+      "source": "github",
+      "description": "A self-evolving NeuroAI agent framework for BCI research, integrating literature review, idea generation, experiment planning, and reusable research workflows.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 4,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "bci",
+        "agent",
+        "neuroscience",
+        "research-workflow"
+      ],
+      "createdAt": "2026-05-31T12:52:05Z",
+      "updatedAt": "2026-10-06T01:23:57Z",
+      "pushedAt": "2026-09-30T04:12:08Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "dongyangli-del"
+      }
+    },
+    {
+      "id": "github:itayinbarr/web-muse",
+      "name": "web-muse",
+      "owner": "itayinbarr",
+      "author": "itayinbarr",
+      "url": "https://github.com/itayinbarr/web-muse",
+      "homepage": null,
+      "source": "github",
+      "description": "A modern JavaScript library for connecting to Muse EEG devices using Web Bluetooth API. This project aims to provide a maintained alternative to muse-js which is no longer actively maintained.",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 21,
+      "forks": 12,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "web-bluetooth",
+        "javascript",
+        "react"
+      ],
+      "createdAt": "2025-02-06T14:36:10Z",
+      "updatedAt": "2026-10-06T01:23:29Z",
+      "pushedAt": "2026-10-03T15:03:52Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "itayinbarr"
+      }
+    },
+    {
+      "id": "github:jmduea/NeuroClient",
+      "name": "NeuroClient",
+      "owner": "jmduea",
+      "author": "jmduea",
+      "url": "https://github.com/jmduea/NeuroClient",
+      "homepage": null,
+      "source": "github",
+      "description": "An independent Rust client for the Emotiv Cortex v2 API.",
+      "language": "Rust",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "biosignals",
+        "eeg",
+        "emotiv-cortex",
+        "rust"
+      ],
+      "tags": [
+        "eeg",
+        "emotiv",
+        "rust",
+        "lsl",
+        "tui"
+      ],
+      "createdAt": "2026-02-12T13:00:32Z",
+      "updatedAt": "2026-10-06T01:22:32Z",
+      "pushedAt": "2026-09-10T00:53:40Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "jmduea"
+      }
+    },
+    {
+      "id": "github:lched/MaxMuse",
+      "name": "MaxMuse",
+      "owner": "lched",
+      "author": "lched",
+      "url": "https://github.com/lched/MaxMuse",
+      "homepage": null,
+      "source": "github",
+      "description": "Max/MSP externals to work with the Muse2 headband (or other devices that use LSL) in real-time",
+      "language": "C++",
+      "license": "MIT",
+      "stars": 10,
+      "forks": 0,
+      "topics": [
+        "eeg",
+        "lsl",
+        "maxmsp",
+        "muse",
+        "real-time"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl",
+        "maxmsp",
+        "audio"
+      ],
+      "createdAt": "2023-07-05T08:17:01Z",
+      "updatedAt": "2026-10-06T01:22:41Z",
+      "pushedAt": "2026-09-10T16:19:38Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "lched"
+      }
+    },
+    {
+      "id": "github:refrain-lang/refrain-protocols",
+      "name": "refrain-protocols",
+      "owner": "refrain-lang",
+      "author": "refrain-lang",
+      "url": "https://github.com/refrain-lang/refrain-protocols",
+      "homepage": null,
+      "source": "github",
+      "description": "Reference neurofeedback & HRV protocol library for Refrain \u2014 vendor-neutral, citation-backed, organized by metadata. Seed protocols are status=draft (untested).",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "hrv",
+        "dsl",
+        "protocols"
+      ],
+      "createdAt": "2026-06-08T17:52:15Z",
+      "updatedAt": "2026-10-06T01:24:07Z",
+      "pushedAt": "2026-09-29T20:38:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "refrain-lang"
+      }
+    },
+    {
+      "id": "github:shrut10/intentlab-bci",
+      "name": "intentlab-bci",
+      "owner": "shrut10",
+      "author": "shrut10",
+      "url": "https://github.com/shrut10/intentlab-bci",
+      "homepage": "https://intentlab-bci.vercel.app",
+      "source": "github",
+      "description": "Motor-imagery EEG decoding with subject-held-out evaluation, uncertainty, live ONNX inference and an interactive BCI replay.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "explainable-ai",
+        "fastapi",
+        "motor-imagery",
+        "onnx",
+        "pytorch"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "onnx",
+        "bci",
+        "explainable-ai"
+      ],
+      "createdAt": "2026-10-05T16:02:01Z",
+      "updatedAt": "2026-10-06T01:23:19Z",
+      "pushedAt": "2026-10-05T16:09:48Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "shrut10"
+      }
+    },
+    {
+      "id": "github:zbnw/eeg-bw16-cyd",
+      "name": "eeg-bw16-cyd",
+      "owner": "zbnw",
+      "author": "zbnw",
+      "url": "https://github.com/zbnw/eeg-bw16-cyd",
+      "homepage": null,
+      "source": "github",
+      "description": "\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8e BW16 \u4e0e ESP32-CYD \u7684 EEG \u539f\u578b\u9879\u76ee\uff0c\u5305\u542b BLE \u6570\u636e\u4f20\u8f93\u3001LCD \u6ce2\u5f62\u663e\u793a\u3001\u4e32\u53e3\u91c7\u96c6\u5de5\u5177\u548c\u7f51\u9875\u76d1\u89c6\u5668\u3002",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ble",
+        "esp32",
+        "embedded",
+        "open-hardware"
+      ],
+      "createdAt": "2026-09-26T02:14:07Z",
+      "updatedAt": "2026-10-06T01:23:48Z",
+      "pushedAt": "2026-09-26T14:00:48Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-06",
+        "batch": "batch13",
+        "contactedAuthor": "zbnw"
       }
     }
   ]
