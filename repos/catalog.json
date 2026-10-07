@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-06T01:25:27Z",
+  "generatedAt": "2026-10-07T01:24:17Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 144,
+  "count": 156,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 144
+      "count": 156
     }
   ],
   "items": [
@@ -4760,6 +4760,394 @@
         "contactedAt": "2026-10-06",
         "batch": "batch13",
         "contactedAuthor": "zbnw"
+      }
+    },
+    {
+      "id": "github:GeorgeFejer91/Remote-LSL-Recorder",
+      "name": "Remote-LSL-Recorder",
+      "owner": "GeorgeFejer91",
+      "author": "GeorgeFejer91",
+      "url": "https://github.com/GeorgeFejer91/Remote-LSL-Recorder",
+      "homepage": null,
+      "source": "github",
+      "description": "A Windows-first Tauri application for discovering, viewing, and recording LSL streams with an opt-in BRSP smartphone companion.",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "lsl",
+        "xdf",
+        "tauri",
+        "rust",
+        "recording"
+      ],
+      "createdAt": "2026-09-22T15:33:49Z",
+      "updatedAt": "2026-10-07T01:21:05Z",
+      "pushedAt": "2026-10-02T09:35:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "GeorgeFejer91"
+      }
+    },
+    {
+      "id": "github:IONOFIELD/REACT-EEG",
+      "name": "REACT-EEG",
+      "owner": "IONOFIELD",
+      "author": "IONOFIELD",
+      "url": "https://github.com/IONOFIELD/REACT-EEG",
+      "homepage": null,
+      "source": "github",
+      "description": "Desktop EEG review, de-identification, and live acquisition. Import EDF, annotate (ACNS/ILAE), run ICA/DSP analysis, and stream live from PiEEG hardware \u2014 a Tauri app with HIPAA Safe Harbor de-id and auto-updates.",
+      "language": "JavaScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "tauri",
+        "clinical-review",
+        "de-identification",
+        "acquisition"
+      ],
+      "createdAt": "2026-06-08T10:13:00Z",
+      "updatedAt": "2026-10-07T01:20:43Z",
+      "pushedAt": "2026-09-20T11:34:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "IONOFIELD"
+      }
+    },
+    {
+      "id": "github:RanXingchen/pyneurale",
+      "name": "pyneurale",
+      "owner": "RanXingchen",
+      "author": "RanXingchen",
+      "url": "https://github.com/RanXingchen/pyneurale",
+      "homepage": null,
+      "source": "github",
+      "description": "An extensible framework for real-time BCI experiments, from device acquisition and signal processing to decoding, presentation, and recording.",
+      "language": "C++",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "bci",
+        "closed-loop",
+        "lsl",
+        "cpp",
+        "python"
+      ],
+      "createdAt": "2026-09-26T04:18:32Z",
+      "updatedAt": "2026-10-07T01:21:38Z",
+      "pushedAt": "2026-10-01T01:37:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "RanXingchen"
+      }
+    },
+    {
+      "id": "github:XCZchaos/NeuroFlow",
+      "name": "NeuroFlow",
+      "owner": "XCZchaos",
+      "author": "XCZchaos",
+      "url": "https://github.com/XCZchaos/NeuroFlow",
+      "homepage": null,
+      "source": "github",
+      "description": "Intelligent Neural Signal Workbench for EEG, MEG, and fNIRS \u2014 Integrating Electron, MNE, RAG, and ReAct Agent to help researchers parse data structures, interpret file metadata, generate reproducible preprocessing pipelines, and automate data processing.",
+      "language": "Go",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "agent",
+        "mne",
+        "rag",
+        "electron"
+      ],
+      "createdAt": "2026-09-10T13:34:32Z",
+      "updatedAt": "2026-10-07T01:20:54Z",
+      "pushedAt": "2026-09-26T17:09:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "XCZchaos"
+      }
+    },
+    {
+      "id": "github:afiudsf/AFE-1.1a",
+      "name": "AFE-1.1a",
+      "owner": "afiudsf",
+      "author": "afiudsf",
+      "url": "https://github.com/afiudsf/AFE-1.1a",
+      "homepage": null,
+      "source": "github",
+      "description": "8-channel EEG/BCI analog front-end firmware based on ESP32-PICO-D4 and ADS1299. Dual-core FreeRTOS acquisition/DSP, 6 Mbps UART streaming, self-test, CRC16 protocol, and Python host tools.",
+      "language": "C++",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "esp32",
+        "firmware",
+        "open-hardware"
+      ],
+      "createdAt": "2026-09-18T01:27:57Z",
+      "updatedAt": "2026-10-07T01:20:32Z",
+      "pushedAt": "2026-09-18T01:39:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "afiudsf"
+      }
+    },
+    {
+      "id": "github:kelcamer/MuseScope",
+      "name": "MuseScope",
+      "owner": "kelcamer",
+      "author": "kelcamer",
+      "url": "https://github.com/kelcamer/MuseScope",
+      "homepage": null,
+      "source": "github",
+      "description": "Live four-channel EEG from a Muse S headband, in the browser over Web Bluetooth \u2014 traces plus a per-electrode contact check.",
+      "language": "JavaScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "web-bluetooth",
+        "signal-quality",
+        "javascript"
+      ],
+      "createdAt": "2026-09-08T20:56:16Z",
+      "updatedAt": "2026-10-07T01:21:16Z",
+      "pushedAt": "2026-09-11T18:43:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "kelcamer"
+      }
+    },
+    {
+      "id": "github:kirill-levenets/eeg-meditation-trainer",
+      "name": "eeg-meditation-trainer",
+      "owner": "kirill-levenets",
+      "author": "kirill-levenets",
+      "url": "https://github.com/kirill-levenets/eeg-meditation-trainer",
+      "homepage": null,
+      "source": "github",
+      "description": null,
+      "language": "Python",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "neurofeedback",
+        "kivy",
+        "android"
+      ],
+      "createdAt": "2026-03-18T20:19:34Z",
+      "updatedAt": "2026-10-07T01:22:23Z",
+      "pushedAt": "2026-10-06T19:26:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "kirill-levenets"
+      }
+    },
+    {
+      "id": "github:languel/espexp",
+      "name": "espexp",
+      "owner": "languel",
+      "author": "languel",
+      "url": "https://github.com/languel/espexp",
+      "homepage": null,
+      "source": "github",
+      "description": "Force Trainer II (NeuroSky TGAM) EEG -> ThinkGear parser -> p5.js, on modern macOS. Bluetooth Classic SPP over RFCOMM, no ThinkGear Connector.",
+      "language": "JavaScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "bluetooth",
+        "p5js",
+        "education"
+      ],
+      "createdAt": "2026-08-19T22:10:27Z",
+      "updatedAt": "2026-10-07T01:21:27Z",
+      "pushedAt": "2026-09-26T20:30:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "languel"
+      }
+    },
+    {
+      "id": "github:neurodevs/node-lsl",
+      "name": "node-lsl",
+      "owner": "neurodevs",
+      "author": "neurodevs",
+      "url": "https://github.com/neurodevs/node-lsl",
+      "homepage": null,
+      "source": "github",
+      "description": "Lab Streaming Layer (LSL) for synchronized streaming of multi-modal, time-series data over a network",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 9,
+      "forks": 2,
+      "topics": [],
+      "tags": [
+        "lsl",
+        "typescript",
+        "nodejs",
+        "muse",
+        "timestamps"
+      ],
+      "createdAt": "2023-11-02T21:08:51Z",
+      "updatedAt": "2026-10-07T01:22:01Z",
+      "pushedAt": "2026-10-06T04:40:44Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "neurodevs"
+      }
+    },
+    {
+      "id": "github:polarizetech/olimex-shield",
+      "name": "olimex-shield",
+      "owner": "polarizetech",
+      "author": "polarizetech",
+      "url": "https://github.com/polarizetech/olimex-shield",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG/ECG/EMG with an Arduino + Olimex SHIELD-EKG/EMG: firmware, bridge, recording workbench, playback, BIDS export",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "arduino",
+        "bids",
+        "open-hardware",
+        "biosignals"
+      ],
+      "createdAt": "2026-09-15T18:12:01Z",
+      "updatedAt": "2026-10-07T01:21:50Z",
+      "pushedAt": "2026-10-02T21:54:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "polarizetech"
+      }
+    },
+    {
+      "id": "github:rusty-saber/PyEEG-RT",
+      "name": "PyEEG-RT",
+      "owner": "rusty-saber",
+      "author": "rusty-saber",
+      "url": "https://github.com/rusty-saber/PyEEG-RT",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EEG acquisition & visualization in Python: streams from an Arduino + ADS1115 over a checksummed binary protocol, with live band-pass/notch filtering, multi-channel plotting, CSV/EDF recording, and a hardware-free simulator.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "ads1115",
+        "arduino",
+        "biosignals",
+        "brain-computer-interface",
+        "data-acquisition",
+        "dsp",
+        "edf",
+        "eeg",
+        "electroencephalography",
+        "neuroscience",
+        "neurotechnology",
+        "pyqtgraph",
+        "python",
+        "real-time",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "arduino",
+        "realtime",
+        "pyqtgraph",
+        "edf"
+      ],
+      "createdAt": "2026-07-15T01:01:33Z",
+      "updatedAt": "2026-10-07T01:22:12Z",
+      "pushedAt": "2026-09-14T11:00:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "rusty-saber"
+      }
+    },
+    {
+      "id": "github:writer-in-fancy-pants/meditations",
+      "name": "meditations",
+      "owner": "writer-in-fancy-pants",
+      "author": "writer-in-fancy-pants",
+      "url": "https://github.com/writer-in-fancy-pants/meditations",
+      "homepage": null,
+      "source": "github",
+      "description": "Generalized meditation tool integrated with various sensory devices, using EEG, heartrate, etc. Designed for Neurofeedback, Biofeedback, and other training. Instructions for various meditation methods included.",
+      "language": "JavaScript",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "neurofeedback",
+        "hrv",
+        "web"
+      ],
+      "createdAt": "2026-04-14T06:43:03Z",
+      "updatedAt": "2026-10-07T01:22:34Z",
+      "pushedAt": "2026-09-12T16:59:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-07",
+        "batch": "batch14",
+        "contactedAuthor": "writer-in-fancy-pants"
       }
     }
   ]
