@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-07T01:24:17Z",
+  "generatedAt": "2026-10-08T01:22:27Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 156,
+  "count": 168,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 156
+      "count": 168
     }
   ],
   "items": [
@@ -5148,6 +5148,393 @@
         "contactedAt": "2026-10-07",
         "batch": "batch14",
         "contactedAuthor": "writer-in-fancy-pants"
+      }
+    },
+    {
+      "id": "github:DrDraesel/neurosync",
+      "name": "neurosync",
+      "owner": "DrDraesel",
+      "author": "DrDraesel",
+      "url": "https://github.com/DrDraesel/neurosync",
+      "homepage": null,
+      "source": "github",
+      "description": "NeuroSync - live EEG study viewer for BrainBit/DragonEEG headsets (PyQt6 desktop, local-only)",
+      "language": "HTML",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "brainbit",
+        "local-first",
+        "llm",
+        "desktop"
+      ],
+      "createdAt": "2026-10-07T18:55:02Z",
+      "updatedAt": "2026-10-08T01:19:45Z",
+      "pushedAt": "2026-10-07T19:33:10Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "DrDraesel"
+      }
+    },
+    {
+      "id": "github:Kebabist/CortexTrace",
+      "name": "CortexTrace",
+      "owner": "Kebabist",
+      "author": "Kebabist",
+      "url": "https://github.com/Kebabist/CortexTrace",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time, clinical-grade EEG signal viewer and DSP analyzer for 32-channel recordings. Built with PySide6 + pyqtgraph \u2014 features a lock-free ring buffer, live Butterworth/IIR notch filtering, DSA spectrograms, and a GPU-accelerated dark UI that scales from 4K desktops down to Raspberry Pi.",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "viewer",
+        "pyside6",
+        "realtime",
+        "lsl"
+      ],
+      "createdAt": "2026-09-09T19:48:39Z",
+      "updatedAt": "2026-10-08T01:19:34Z",
+      "pushedAt": "2026-09-09T20:40:18Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "Kebabist"
+      }
+    },
+    {
+      "id": "github:LKreilinger/UNICORNConnect",
+      "name": "UNICORNConnect",
+      "owner": "LKreilinger",
+      "author": "LKreilinger",
+      "url": "https://github.com/LKreilinger/UNICORNConnect",
+      "homepage": null,
+      "source": "github",
+      "description": "UNICORNConnect  enables direct connection and data acquisition from the g.tec's UNICORN EEG System using MATLAB or Python without the need for any additional software",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "livestream",
+        "matlab",
+        "python",
+        "standalone",
+        "unicorn"
+      ],
+      "tags": [
+        "eeg",
+        "unicorn",
+        "bluetooth",
+        "python",
+        "matlab"
+      ],
+      "createdAt": "2024-07-03T08:22:29Z",
+      "updatedAt": "2026-10-08T01:19:23Z",
+      "pushedAt": "2026-10-07T13:08:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "LKreilinger"
+      }
+    },
+    {
+      "id": "github:MartinBloedorn/xavier-tools",
+      "name": "xavier-tools",
+      "owner": "MartinBloedorn",
+      "author": "MartinBloedorn",
+      "url": "https://github.com/MartinBloedorn/xavier-tools",
+      "homepage": null,
+      "source": "github",
+      "description": "Data acquisition, visualization and processing tools for the good old Emotiv EPOC EEG headset.",
+      "language": "C++",
+      "license": "NOASSERTION",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "emotiv",
+        "cpp",
+        "osc",
+        "hidapi"
+      ],
+      "createdAt": "2026-09-17T23:07:15Z",
+      "updatedAt": "2026-10-08T01:20:29Z",
+      "pushedAt": "2026-09-19T23:27:37Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "MartinBloedorn"
+      }
+    },
+    {
+      "id": "github:NeuPivot/NeuEEG",
+      "name": "NeuEEG",
+      "owner": "NeuPivot",
+      "author": "NeuPivot",
+      "url": "https://github.com/NeuPivot/NeuEEG",
+      "homepage": null,
+      "source": "github",
+      "description": "Open-source single-channel EEG: hardware, firmware & host software / \u5168\u6808\u5f00\u6e90\u5355\u901a\u9053\u8111\u7535\uff1a\u786c\u4ef6\u3001\u56fa\u4ef6\u4e0e\u4e0a\u4f4d\u673a",
+      "language": "C",
+      "license": "NOASSERTION",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "biosignal",
+        "brain-computer-interface",
+        "eeg",
+        "embedded",
+        "neuroscience",
+        "open-hardware",
+        "python",
+        "stm32"
+      ],
+      "tags": [
+        "eeg",
+        "open-hardware",
+        "stm32",
+        "firmware",
+        "python"
+      ],
+      "createdAt": "2026-09-16T07:28:02Z",
+      "updatedAt": "2026-10-08T01:18:50Z",
+      "pushedAt": "2026-09-16T08:07:36Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "NeuPivot"
+      }
+    },
+    {
+      "id": "github:RocketSpot/eeg-explorer",
+      "name": "eeg-explorer",
+      "owner": "RocketSpot",
+      "author": "RocketSpot",
+      "url": "https://github.com/RocketSpot/eeg-explorer",
+      "homepage": null,
+      "source": "github",
+      "description": "Standalone Zone EEG acquisition, labeling, replay, processing, and research workspace.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ble",
+        "earbuds",
+        "labeling",
+        "local-first"
+      ],
+      "createdAt": "2026-09-08T22:00:29Z",
+      "updatedAt": "2026-10-08T01:19:12Z",
+      "pushedAt": "2026-09-08T22:09:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "RocketSpot"
+      }
+    },
+    {
+      "id": "github:Taran-Douley/closed-loop-sleep",
+      "name": "closed-loop-sleep",
+      "owner": "Taran-Douley",
+      "author": "Taran-Douley",
+      "url": "https://github.com/Taran-Douley/closed-loop-sleep",
+      "homepage": null,
+      "source": "github",
+      "description": "Closed-loop acoustic stimulation (CLAS) for slow-wave sleep: open, validated pipeline from Sleep-EDF simulation to a home EEG headband",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "sleep",
+        "closed-loop",
+        "brainflow",
+        "stimulation"
+      ],
+      "createdAt": "2026-10-06T10:28:50Z",
+      "updatedAt": "2026-10-08T01:18:27Z",
+      "pushedAt": "2026-10-06T19:56:04Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "Taran-Douley"
+      }
+    },
+    {
+      "id": "github:aewoonge-creator/ads1299-nrf54-ble-eeg",
+      "name": "ads1299-nrf54-ble-eeg",
+      "owner": "aewoonge-creator",
+      "author": "aewoonge-creator",
+      "url": "https://github.com/aewoonge-creator/ads1299-nrf54-ble-eeg",
+      "homepage": null,
+      "source": "github",
+      "description": "ADS1299 EEG front-end firmware for nRF54L15/nRF54L19 with BLE streaming and GUI control",
+      "language": "C",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "nrf54",
+        "ble",
+        "firmware"
+      ],
+      "createdAt": "2026-08-25T08:34:34Z",
+      "updatedAt": "2026-10-08T01:20:07Z",
+      "pushedAt": "2026-09-11T08:29:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "aewoonge-creator"
+      }
+    },
+    {
+      "id": "github:neurocontrol-lab/ssvep-acquisition",
+      "name": "ssvep-acquisition",
+      "owner": "neurocontrol-lab",
+      "author": "neurocontrol-lab",
+      "url": "https://github.com/neurocontrol-lab/ssvep-acquisition",
+      "homepage": null,
+      "source": "github",
+      "description": "MG24 firmware and Python tools for SSVEP optical measurement and EEG acquisition diagnostics",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "ssvep",
+        "photodiode",
+        "firmware",
+        "timing",
+        "bci"
+      ],
+      "createdAt": "2026-09-28T11:49:25Z",
+      "updatedAt": "2026-10-08T01:20:18Z",
+      "pushedAt": "2026-09-28T12:10:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "neurocontrol-lab"
+      }
+    },
+    {
+      "id": "github:peachiia/edfviewer",
+      "name": "edfviewer",
+      "owner": "peachiia",
+      "author": "peachiia",
+      "url": "https://github.com/peachiia/edfviewer",
+      "homepage": "https://edfviewer.peachiia.com",
+      "source": "github",
+      "description": "Browser-only EDF/BDF viewer for EEG: filters, triggers and zone PSD comparison. 100% client-side.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "edf",
+        "bdf",
+        "web",
+        "typescript"
+      ],
+      "createdAt": "2026-09-29T17:27:00Z",
+      "updatedAt": "2026-10-08T01:19:01Z",
+      "pushedAt": "2026-09-29T19:27:38Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "peachiia"
+      }
+    },
+    {
+      "id": "github:pleonardmusic/eeg-experiments",
+      "name": "eeg-experiments",
+      "owner": "pleonardmusic",
+      "author": "pleonardmusic",
+      "url": "https://github.com/pleonardmusic/eeg-experiments",
+      "homepage": null,
+      "source": "github",
+      "description": "MindWave EEG recorder + 40/80 Hz ASSR analysis for testing gamma-entrainment audio",
+      "language": "HTML",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "assr",
+        "audio",
+        "web"
+      ],
+      "createdAt": "2026-06-16T01:58:00Z",
+      "updatedAt": "2026-10-08T01:18:38Z",
+      "pushedAt": "2026-10-07T20:19:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "pleonardmusic"
+      }
+    },
+    {
+      "id": "github:tyukei/pieeg_app",
+      "name": "pieeg_app",
+      "owner": "tyukei",
+      "author": "tyukei",
+      "url": "https://github.com/tyukei/pieeg_app",
+      "homepage": "https://tyukei.github.io/pieeg_app",
+      "source": "github",
+      "description": "",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "pieeg",
+        "fastapi",
+        "web",
+        "raspberry-pi"
+      ],
+      "createdAt": "2026-07-03T23:57:04Z",
+      "updatedAt": "2026-10-08T01:19:56Z",
+      "pushedAt": "2026-10-02T22:56:51Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-08",
+        "batch": "batch15",
+        "contactedAuthor": "tyukei"
       }
     }
   ]
