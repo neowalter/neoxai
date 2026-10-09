@@ -1,430 +1,298 @@
 {
-  "date": "2026-10-09",
-  "generated_at": "2026-10-08T21:34:09.748Z",
-  "item_count": 9,
+  "date": "2026-10-10",
+  "generated_at": "2026-10-09T21:33:00.495Z",
+  "item_count": 6,
   "types": {
-    "News": 1,
-    "Tutorial": 2,
-    "Project": 5,
-    "Benchmark": 1
+    "Project": 6
   },
   "highlights": [
     {
-      "title_zh": "braindecode 引入 NeuroRVQ 多模态模型并托管 7 个权重，同时打通 Gaudi 与低精度训练",
-      "title_en": "braindecode Adds NeuroRVQ with Hosted Checkpoints, Intel Gaudi and Low-Precision Support",
-      "url": "https://github.com/braindecode/braindecode/pull/1223",
-      "brief": "braindecode 在 10 月 8 日推进 8 次提交，主线是「权重与硬件不再卡人」：#1223 加入 NeuroRVQ 残差 tokenizer 与 EEG/ECG/EMG/PPG 预设，随后把 7 个已发布 checkpoint 重新托管到 braindecode 仓库，加载不再依赖原项目的转换脚本；#1245 让 BrainOmni 同样读取托管权重；#1246 支持 float64 与 bfloat16 并能修复 CodeBrain 训练；#1249 补齐 Intel Gaudi 上的可移植算子。对要在自有数据上跑多模态基础模型、或手上只有非 NVIDIA 加速器的团队，这一天的改动显著降低了落地成本；建议锁 commit 并核对权重哈希。"
+      "title_zh": "braindecode 一天合并 6 个 TorchScript PR：主流模型可脱离 Python 部署",
+      "title_en": "braindecode Lands Six TorchScript PRs in One Day, Making Models Deployable Beyond Python",
+      "url": "https://github.com/braindecode/braindecode/pull/1270",
+      "brief": "braindecode 在 10 月 9 日推进 21 次提交，其中六个是成体系的 TorchScript 脚本化：#1270 覆盖 BrainOmni、BrainTokenizer、DANCE、EEGPT、Labram，#1271 覆盖 REVE、SleepFM、SleepFMStager 等，#1272 MVPFormer，#1273 BIOT 与 TFMTokenizer，#1276 MAPA。意义在于这些 EEG 基础模型不再只能跑在 Python 里，可序列化为 TorchScript 供 C++/libtorch 或嵌入式推理使用——这正是实时闭环 BCI 与设备侧部署的门槛。建议固定 commit 并用官方示例复现导出流程，注意 montage 等构建期参数在脚本化后需显式传入。"
     },
     {
-      "title_zh": "博睿康携脑机接口「全球首证」冲刺科创板，主业收入仍来自非侵入式脑电",
-      "title_en": "Neuracle Chases the STAR Market with the First Approved BCI Device, Revenue Still Non-Invasive",
-      "url": "https://www.bilibili.com/read/cv53343114",
-      "brief": "雷达财经 10 月 8 日 21:13 发布的分析文章，梳理国内脑机接口龙头博睿康的科创板 IPO 进展：9 月 29 日更新招股书，2026 上半年营收 0.46 亿元、净亏损 0.65 亿元，2023–2025 累计亏损 3.29 亿元（约同期营收的 1.32 倍）。值得注意的是收入结构——上半年脑电采集系统贡献 2970.07 万元、占主业收入 64.56%，公司 2026 年 3 月获批的侵入式 NEO-ONE SCI 仍在商业化初期。2025 年亏损放大到 2.3 亿元主要来自一次性股份支付 1.92 亿元，三年研发投入 1.87 亿元。对关注中国非侵入式脑电产业的人，这是少见的、带审计口径数字的行业财务切片。"
+      "title_zh": "Awesome-Medical-JEPA：57 篇医学 JEPA 论文清单，EEG 单列一类",
+      "title_en": "Awesome-Medical-JEPA Curates 57 Medical JEPA Papers with a Dedicated EEG Section",
+      "url": "https://github.com/Big-Matrix-R-And-D-Lab/Awesome-Medical-JEPA",
+      "brief": "新建仓库 Awesome-Medical-JEPA（2026-10-09）把 JEPA（联合嵌入预测架构）在医学领域的论文与代码整理成表：57 篇论文、23 篇附官方实现，生理信号单列为一类，其中 EEG 7 篇、ECG 4 篇、多模态与 ICU 监测 7 篇。README 由 data/papers.csv 脚本生成，便于定期更新，也方便直接检索。对做 EEG 基础模型的团队有两点用处：一是快速定位「自监督目标函数该怎么设计」的代表工作；二是它的 EEG 条目正好收录了《What masking geometry works best for EEG foundation models?》（arXiv:2609.33487，代码 eeg-fm-masking）——即 10-08 那条 B站专栏解读的原始论文，可完成溯源闭环。"
     },
     {
-      "title_zh": "脑电基础模型的「挖空」该怎么挖：一篇把掩码策略单独拎出来的研究",
-      "title_en": "How to Mask EEG for Foundation Models: A Study That Isolates the Masking Strategy",
-      "url": "https://www.bilibili.com/read/cv53342472",
-      "brief": "科技行者 10 月 8 日 20:09 发布的论文解读，讲一个把「掩码策略」单独隔离出来的研究：固定 REVE-Small 骨干、数据与训练步数，只改挖空方式——长度 L 六个取值（1/2/4/8/16/33，从瞬时到覆盖整个 30 秒窗口）与半径 r 五个取值（one/6/9/12cm/all）共 29 种组合，再叠加 MAE 与 JEPA 两种框架，得到 58 个预训练模型做对比。文中给出关键测量：同通道信号约 2 秒后相关性 R² 降到 0.2 以下，而跨通道相关性随距离衰减缓慢——这正是「挖太小会是白送答案」的原因。做 EEG 基础模型或复现 LaBraM/REVE/BIOT 的团队可据此设计消融。"
+      "title_zh": "aeon-neuro 重构 CSP：运动想象经典基线进入时间序列分类工具链",
+      "title_en": "aeon-neuro Refactors CSP, Bringing the Classic MI Baseline into Its Toolkit",
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/180",
+      "brief": "aeon-neuro 在 10 月 9 日合并 #180，重构了 CSP（共同空间模式）实现，接替此前因冲突搁置的 #153。这个包把 EEG 分类当作时间序列分类问题处理，而 CSP 是运动想象解码里最常用的空间滤波基线——把它做成可复用、可组合的组件，比各实验室自维护一份实现更利于横向对比。同一批还合并了 UMAP 归类调整（#165）与移除 channel selector（#168），说明接口仍在快速变动。对想尝试「经典 CSP 基线 vs 深度模型」对比的团队，这是一个逐渐成熟的接入点；当前版本较新，建议锁定 commit 并把自研 pipeline 与官方示例对齐。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-09.md",
+  "github_path": "docs/bci-cn-daily/2026-10-10.md",
   "items": [
-    {
-      "type": "News",
-      "level": "Intermediate",
-      "title_zh": "博睿康携脑机接口「全球首证」冲刺科创板，主业收入仍来自非侵入式脑电",
-      "title_en": "Neuracle Chases the STAR Market with the First Approved BCI Device, Revenue Still Non-Invasive",
-      "bullets_zh": [
-        "9 月 29 日更新科创板招股书：2026 上半年营收 0.46 亿元、归母净亏损 0.65 亿元；2023–2025 三年累计亏损 3.29 亿元，约为同期营收总和的 1.32 倍。",
-        "收入结构仍是非侵入式为主：上半年脑电采集系统贡献 2970.07 万元，占主业收入 64.56%；2026 年 3 月获批的侵入式 NEO-ONE SCI 尚处商业化初期。",
-        "2025 年亏损骤增至 2.3 亿元主要来自向实控人实施的 1.92 亿元一次性股份支付；三年研发投入 1.87 亿元（占营收 84.94%/87.85%/60.02%）。"
-      ],
-      "bullets_en": [
-        "Updated STAR Market prospectus on Sep 29: H1 2026 revenue CNY 46M with a CNY 65M net loss; 2023-2025 cumulative loss CNY 329M, about 1.32x the period's total revenue.",
-        "Revenue is still mostly non-invasive: EEG acquisition systems contributed CNY 29.7M, 64.56% of core business revenue, while the invasive NEO-ONE SCI approved in March 2026 is only starting to commercialise.",
-        "The 2025 loss jump to CNY 230M came mainly from a one-off CNY 192M share-based payment to the founders; three-year R&D spend was CNY 187M (84.94%/87.85%/60.02% of revenue)."
-      ],
-      "url": "https://www.bilibili.com/read/cv53343114",
-      "published": "2026-10-08T13:13:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "雷达财经 10 月 8 日 21:13 发布的分析文章，梳理国内脑机接口龙头博睿康的科创板 IPO 进展：9 月 29 日更新招股书，2026 上半年营收 0.46 亿元、净亏损 0.65 亿元，2023–2025 累计亏损 3.29 亿元（约同期营收的 1.32 倍）。值得注意的是收入结构——上半年脑电采集系统贡献 2970.07 万元、占主业收入 64.56%，公司 2026 年 3 月获批的侵入式 NEO-ONE SCI 仍在商业化初期。2025 年亏损放大到 2.3 亿元主要来自一次性股份支付 1.92 亿元，三年研发投入 1.87 亿元。对关注中国非侵入式脑电产业的人，这是少见的、带审计口径数字的行业财务切片。",
-      "brief_en": "A Chinese financial outlet's Oct 8 analysis of Neuracle's STAR Market IPO filing: H1 2026 revenue CNY 46M against a CNY 65M net loss, with a 2023-2025 cumulative loss of CNY 329M (1.32x revenue). Non-invasive EEG acquisition systems still supply 64.56% of core revenue, while the invasive NEO-ONE SCI approved in March 2026 is early in commercialisation.",
-      "tags": [
-        "neuracle",
-        "ipo",
-        "industry",
-        "eeg",
-        "market"
-      ],
-      "raw_excerpt": "「招股书显示，截至2026年上半年，博睿康主业收入几乎全部来自于非侵入式产品。其中，脑电采集系统上半年贡献营收2970.07万元，占主业收入的比例高达64.56%」「三年间，博睿康累计亏达3.29亿元，约为同期公司营收总和的1.32倍」。",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "bilibili",
-      "content_type": "column",
-      "upstream_id": "cv53343114",
-      "author_handle": "雷达财经",
-      "metrics": {
-        "play": null,
-        "like": 1,
-        "collect": null,
-        "comment": 0
-      },
-      "quality_score": 8,
-      "why_valuable": "带审计口径的中国 BCI 龙头财务切片，显示非侵入式才是当前收入主体。"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Advanced",
-      "title_zh": "脑电基础模型的「挖空」该怎么挖：一篇把掩码策略单独拎出来的研究",
-      "title_en": "How to Mask EEG for Foundation Models: A Study That Isolates the Masking Strategy",
-      "bullets_zh": [
-        "研究者固定骨干网络（REVE-Small）、数据与训练步数，只变动掩码方式：长度 L 取 1/2/4/8/16/33（从瞬时到覆盖 30 秒窗口），半径 r 取 one/6cm/9cm/12cm/all，共 29 种组合。",
-        "再叠加 MAE 与 JEPA 两种预训练框架，合计 58 个模型，在多套公开评测基准上对比；此前新模型常把架构、数据、目标函数一起换，无法归因。",
-        "文章解释了 EEG 的时空不对称性：同通道信号约 2 秒后相关性 R² 跌到 0.2 以下，而跨通道相关性随距离衰减很慢，因此掩码若过小，模型可以靠通道内上下文蒙对，学不到空间关联。"
-      ],
-      "bullets_en": [
-        "With backbone (REVE-Small), data and training steps held fixed, only the masking scheme varies: length L in 1/2/4/8/16/33 and radius r in one/6cm/9cm/12cm/all, giving 29 combinations.",
-        "Two pretraining frameworks (MAE and JEPA) yield 58 models compared across public benchmarks, allowing attribution that earlier all-in-one model releases could not support.",
-        "The piece explains EEG's space-time asymmetry: same-channel correlation drops below R2=0.2 by about 2 s, while cross-channel correlation decays slowly with distance, so tiny masks let the model guess from local context instead of learning spatial structure."
-      ],
-      "url": "https://www.bilibili.com/read/cv53342472",
-      "published": "2026-10-08T12:09:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "科技行者 10 月 8 日 20:09 发布的论文解读，讲一个把「掩码策略」单独隔离出来的研究：固定 REVE-Small 骨干、数据与训练步数，只改挖空方式——长度 L 六个取值（1/2/4/8/16/33，从瞬时到覆盖整个 30 秒窗口）与半径 r 五个取值（one/6/9/12cm/all）共 29 种组合，再叠加 MAE 与 JEPA 两种框架，得到 58 个预训练模型做对比。文中给出关键测量：同通道信号约 2 秒后相关性 R² 降到 0.2 以下，而跨通道相关性随距离衰减缓慢——这正是「挖太小会是白送答案」的原因。做 EEG 基础模型或复现 LaBraM/REVE/BIOT 的团队可据此设计消融。",
-      "brief_en": "A Chinese explainer (Oct 8, 20:09) of a study that isolates masking strategy for EEG foundation models: with REVE-Small, data and steps fixed, 29 mask schemes (length 1/2/4/8/16/33; radius one/6/9/12cm/all) are crossed with MAE and JEPA for 58 pretrained models. It reports same-channel correlation falling below R2=0.2 within ~2 s while cross-channel correlation decays slowly with distance.",
-      "tags": [
-        "eeg-foundation-model",
-        "masking",
-        "self-supervised",
-        "reve",
-        "ablation"
-      ],
-      "raw_excerpt": "「研究团队定下了一个包含29种(L, r)组合的网格，L取了1、2、4、8、16、33这六个值（对应从瞬时到覆盖整个30秒窗口）」「29种挖空方式乘以2种训练框架，一共58个预训练模型，全部基于同一个骨干网络REVE-Small训练」。",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "bilibili",
-      "content_type": "column",
-      "upstream_id": "cv53342472",
-      "author_handle": "科技行者",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": 0
-      },
-      "quality_score": 8,
-      "why_valuable": "给出可直接照搬的掩码消融网格与时空相关性测量，利于复现与调参。"
-    },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 引入 NeuroRVQ 多模态模型并托管 7 个权重，同时打通 Gaudi 与低精度训练",
-      "title_en": "braindecode Adds NeuroRVQ with Hosted Checkpoints, Intel Gaudi and Low-Precision Support",
+      "title_zh": "braindecode 一天合并 6 个 TorchScript PR：主流模型可脱离 Python 部署",
+      "title_en": "braindecode Lands Six TorchScript PRs in One Day, Making Models Deployable Beyond Python",
       "bullets_zh": [
-        "新增 NeuroRVQ 残差 tokenizer 与 EEG/ECG/EMG/PPG 预设（#1223），并把 7 个已发布 checkpoint 重新托管到 braindecode 名下，加载路径不再依赖原作者的 OpenTSLab 转换。",
-        "#1245 让 BrainOmni 直接读取 braindecode 托管权重；#1246 支持 float64 与 bfloat16 训练，并修复 CodeBrain 在 inference_mode 之后的训练问题。",
-        "#1249 补齐在 Intel Gaudi（HPU）上的可移植算子，使同一套模型能在非 NVIDIA 加速器上跑通。"
+        "连续合并 #1270／#1271／#1272／#1273／#1276：#1270 覆盖 BrainOmni、BrainTokenizer、DANCE、EEGPT、Labram，#1271 覆盖 REVE、SleepFM、SleepFMStager、NeuroRVQTokenizer、MetaNeuromotorHand。",
+        "#1272 脚本化 MVPFormer，#1273 处理 BIOT 与 TFMTokenizer（去掉 **kwargs 的线性注意力），#1276 脚本化 MAPA 并把构建期/调用期 montage 一并处理。",
+        "同日 #1274 把 EEGInceptionMI 的 FFT 卷积抽成 braindecode.functional.fft_conv1d，#1255 新增 TrivialAugment 组合变换。"
       ],
       "bullets_en": [
-        "Adds the NeuroRVQ residual tokenizer with EEG/ECG/EMG/PPG presets (#1223) and re-hosts seven released checkpoints under braindecode, removing the dependency on the original OpenTSLab conversion.",
-        "#1245 points BrainOmni at braindecode-hosted weights; #1246 enables float64 and bfloat16 training and fixes CodeBrain training after inference_mode.",
-        "#1249 fills in portable ops so the same models run on Intel Gaudi (HPU), i.e. beyond NVIDIA accelerators."
+        "Six PRs merged in a row (#1270/#1271/#1272/#1273/#1276): #1270 covers BrainOmni, BrainTokenizer, DANCE, EEGPT and Labram; #1271 covers REVE, SleepFM, SleepFMStager, NeuroRVQTokenizer and MetaNeuromotorHand.",
+        "#1272 scripts MVPFormer, #1273 handles BIOT and TFMTokenizer (linear attention without **kwargs), and #1276 scripts MAPA including construction-time and call-time montages.",
+        "The same day #1274 extracts EEGInceptionMI's FFT convolution into braindecode.functional.fft_conv1d and #1255 adds a TrivialAugment composition transform."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1223",
-      "published": "2026-10-08T16:46:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1270",
+      "published": "2026-10-09T19:40:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 10 月 8 日推进 8 次提交，主线是「权重与硬件不再卡人」：#1223 加入 NeuroRVQ 残差 tokenizer 与 EEG/ECG/EMG/PPG 预设，随后把 7 个已发布 checkpoint 重新托管到 braindecode 仓库，加载不再依赖原项目的转换脚本；#1245 让 BrainOmni 同样读取托管权重；#1246 支持 float64 与 bfloat16 并能修复 CodeBrain 训练；#1249 补齐 Intel Gaudi 上的可移植算子。对要在自有数据上跑多模态基础模型、或手上只有非 NVIDIA 加速器的团队，这一天的改动显著降低了落地成本；建议锁 commit 并核对权重哈希。",
-      "brief_en": "Eight commits on Oct 8 make braindecode's foundation models easier to actually run: NeuroRVQ arrives with EEG/ECG/EMG/PPG presets (#1223) and seven released checkpoints re-hosted under braindecode, BrainOmni switches to hosted weights (#1245), float64/bfloat16 training lands with a CodeBrain fix (#1246), and Intel Gaudi support is filled in (#1249).",
+      "brief": "braindecode 在 10 月 9 日推进 21 次提交，其中六个是成体系的 TorchScript 脚本化：#1270 覆盖 BrainOmni、BrainTokenizer、DANCE、EEGPT、Labram，#1271 覆盖 REVE、SleepFM、SleepFMStager 等，#1272 MVPFormer，#1273 BIOT 与 TFMTokenizer，#1276 MAPA。意义在于这些 EEG 基础模型不再只能跑在 Python 里，可序列化为 TorchScript 供 C++/libtorch 或嵌入式推理使用——这正是实时闭环 BCI 与设备侧部署的门槛。建议固定 commit 并用官方示例复现导出流程，注意 montage 等构建期参数在脚本化后需显式传入。",
+      "brief_en": "braindecode made 21 commits on Oct 9, six of them a systematic TorchScript push: #1270 covers BrainOmni, BrainTokenizer, DANCE, EEGPT and Labram; #1271 covers REVE, SleepFM and friends; #1272 MVPFormer; #1273 BIOT/TFMTokenizer; #1276 MAPA. The models can now be scripted for C++/libtorch inference, a prerequisite for real-time closed-loop and device-side use.",
       "tags": [
         "braindecode",
-        "neurorvq",
+        "torchscript",
+        "deployment",
         "foundation-model",
-        "gaudi",
-        "bfloat16"
+        "realtime"
       ],
-      "raw_excerpt": "\"NeuroRVQ: EEG/ECG/EMG/PPG presets, 7 released checkpoints re-hosted under braindecode\" 2026-10-08T20:31Z; \"[models] Add NeuroRVQ residual tokenizer (#1223)\" 16:46Z; \"Models run on Intel Gaudi (HPU): portable ops for the remaining failures (#1249)\" 13:18Z.",
-      "fetched_at": "2026-10-08T22:05:00Z",
+      "raw_excerpt": "\"TorchScript: script MAPA (construction-time and call-time montages) (#1276)\" 21:29Z; \"TorchScript: script BrainOmni, BrainTokenizer, DANCE, EEGPT, Labram (#1270)\" 19:40Z; \"script BIOT and TFMTokenizer (#1273)\" 20:08Z — 21 commits on 2026-10-09.",
+      "fetched_at": "2026-10-09T22:15:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1223",
+      "upstream_id": "braindecode/braindecode#1270",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 1322,
+        "like": 1323,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "权重托管＋非 NVIDIA 加速器支持，直接降低多模态基础模型的复现门槛。"
+      "why_valuable": "EEG 基础模型可导出 TorchScript，实时/嵌入式部署门槛首次成体系打通。"
     },
     {
-      "type": "Benchmark",
+      "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MOABB 为 31 个数据集接上 NEMAR 开放下载，并标注 Han2024 疲劳标签不可靠",
-      "title_en": "MOABB Wires NEMAR Downloads for 31 Datasets and Flags Unreliable Fatigue Labels",
+      "title_zh": "Awesome-Medical-JEPA：57 篇医学 JEPA 论文清单，EEG 单列一类",
+      "title_en": "Awesome-Medical-JEPA Curates 57 Medical JEPA Papers with a Dedicated EEG Section",
       "bullets_zh": [
-        "#1240 为 31 个 NEMAR 已发布数据集写入 nemar_id，取数不再依赖原站点或人工搬运。",
-        "同时提示 Han2024Fatigue 的疲劳会话试次标签不可靠（session \"1\"），避免使用者把错误标签当成金标准。",
-        "MOABB 是运动想象/睡眠等基准的统一加载层，数据源与标签质量同时变化会直接影响跨研究对比结果。"
+        "收录 57 篇论文、其中 23 篇有官方代码，按医学影像、生理信号（ECG 4 篇／EEG 7 篇／多模态 7 篇）、手术视频、EHR、基因组等分组。",
+        "README 由 data/papers.csv 经 scripts/build_readme.py 自动生成，条目含论文标题、arXiv 链接、一句话贡献与官方仓库徽章。",
+        "EEG 小节直接给出关键工作与代码，例如《What masking geometry works best for EEG foundation models?》（arXiv:2609.33487）与 EEG-JEPA。"
       ],
       "bullets_en": [
-        "#1240 wires nemar_id for 31 loaders whose NEMAR deposits are now published, so downloads no longer depend on the original sites or manual transfers.",
-        "It also warns that Han2024Fatigue fatigue-session trial labels are unreliable (session \"1\"), preventing users from treating bad labels as ground truth.",
-        "MOABB is the shared loading layer for MI/sleep benchmarks, so changes to data sources and label quality directly affect cross-study comparisons."
+        "57 papers, 23 with official code, grouped into medical imaging, physiological signals (ECG 4 / EEG 7 / multimodal 7), surgical video, EHR and genomics.",
+        "The README is generated from data/papers.csv by scripts/build_readme.py, with each entry carrying a title, arXiv link, one-line contribution and repository badge.",
+        "Its EEG section points straight at the key work and code, e.g. \"What masking geometry works best for EEG foundation models?\" (arXiv:2609.33487) and EEG-JEPA."
       ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1240",
-      "published": "2026-10-08T17:23:00Z",
+      "url": "https://github.com/Big-Matrix-R-And-D-Lab/Awesome-Medical-JEPA",
+      "published": "2026-10-09T12:25:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MOABB 在 10 月 8 日做了两件对复现同样重要的事：#1240 给 31 个数据集写入 nemar_id，使这些数据可以直接从 NEMAR 开放仓库拉取，摆脱对原站点可用性与人工搬运的依赖；同一提交链还提示 Han2024Fatigue 的疲劳会话试次标签不可靠，提醒使用者不要把它当成金标准。前者扩大了可自动获取的数据集范围，后者属于「上游主动揭短」——对以 MOABB 为统一入口做跨数据集基准或元分析的团队，升级后应重新核对所依赖数据集的来源与标签版本，避免历史结论建立在不可靠标签上。",
-      "brief_en": "Two changes that matter equally for reproducibility: #1240 wires nemar_id for 31 datasets so they download straight from NEMAR instead of fragile original sites, and the same batch warns that Han2024Fatigue fatigue-session trial labels are unreliable. Teams using MOABB for cross-dataset benchmarks should re-check sources and label versions after upgrading.",
+      "brief": "新建仓库 Awesome-Medical-JEPA（2026-10-09）把 JEPA（联合嵌入预测架构）在医学领域的论文与代码整理成表：57 篇论文、23 篇附官方实现，生理信号单列为一类，其中 EEG 7 篇、ECG 4 篇、多模态与 ICU 监测 7 篇。README 由 data/papers.csv 脚本生成，便于定期更新，也方便直接检索。对做 EEG 基础模型的团队有两点用处：一是快速定位「自监督目标函数该怎么设计」的代表工作；二是它的 EEG 条目正好收录了《What masking geometry works best for EEG foundation models?》（arXiv:2609.33487，代码 eeg-fm-masking）——即 10-08 那条 B站专栏解读的原始论文，可完成溯源闭环。",
+      "brief_en": "Created 2026-10-09, Awesome-Medical-JEPA lists 57 medical JEPA papers (23 with official code) across imaging, physiological signals (EEG 7, ECG 4, multimodal 7), surgical video, EHR and genomics. Its README is generated from data/papers.csv, and the EEG section indexes arXiv:2609.33487 on EEG masking geometry with code, closing the loop on the paper discussed in our Oct 8 item.",
       "tags": [
-        "moabb",
+        "jepa",
+        "self-supervised",
+        "eeg-foundation-model",
+        "awesome-list",
+        "papers"
+      ],
+      "raw_excerpt": "\"Curated list of JEPA (Joint-Embedding Predictive Architecture) papers and code for medicine: medical imaging, ECG/EEG, surgical video, EHR and genomics.\" Badges: papers-57, official code-23. EEG: \"What masking geometry works best for EEG foundation models?\" arXiv:2609.33487, code PierreGtch/eeg-fm-masking.",
+      "fetched_at": "2026-10-09T22:15:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Big-Matrix-R-And-D-Lab/Awesome-Medical-JEPA",
+      "author_handle": "Big-Matrix-R-And-D-Lab",
+      "metrics": {
+        "play": null,
+        "like": 20,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "一举定位 EEG 自监督目标函数的代表工作，并反查到昨日解读论文的原始出处。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "aeon-neuro 重构 CSP：运动想象经典基线进入时间序列分类工具链",
+      "title_en": "aeon-neuro Refactors CSP, Bringing the Classic MI Baseline into Its Toolkit",
+      "bullets_zh": [
+        "PR #180 重构 CSP（共同空间模式）实现，取代此前因冲突搁置的 #153（原作者 abhicodes-007）。",
+        "aeon-neuro 面向基于时间序列分类的 EEG 分析，CSP 是运动想象解码最常用的空间滤波基线。",
+        "同一批还合并 #165（把 UMAP 移入 channel_creation 并重命名）与 #168（移除 channel selector），接口在快速收敛。"
+      ],
+      "bullets_en": [
+        "PR #180 refactors the CSP (Common Spatial Patterns) implementation, superseding #153 which had stalled on conflicts (originally by abhicodes-007).",
+        "aeon-neuro targets EEG classification as a time-series problem, and CSP is the workhorse spatial-filtering baseline for motor-imagery decoding.",
+        "The same batch merged #165 (moving/renaming UMAP into channel_creation) and #168 (removing the channel selector), so interfaces are converging quickly."
+      ],
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/180",
+      "published": "2026-10-09T20:06:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "aeon-neuro 在 10 月 9 日合并 #180，重构了 CSP（共同空间模式）实现，接替此前因冲突搁置的 #153。这个包把 EEG 分类当作时间序列分类问题处理，而 CSP 是运动想象解码里最常用的空间滤波基线——把它做成可复用、可组合的组件，比各实验室自维护一份实现更利于横向对比。同一批还合并了 UMAP 归类调整（#165）与移除 channel selector（#168），说明接口仍在快速变动。对想尝试「经典 CSP 基线 vs 深度模型」对比的团队，这是一个逐渐成熟的接入点；当前版本较新，建议锁定 commit 并把自研 pipeline 与官方示例对齐。",
+      "brief_en": "aeon-neuro merged #180 on Oct 9, refactoring its CSP implementation and superseding the conflict-stalled #153. The package treats EEG classification as time-series classification, and CSP remains the standard spatial-filtering baseline for motor imagery, so a reusable component beats per-lab copies. Interfaces still move fast (#165, #168), so pin a commit.",
+      "tags": [
+        "aeon-neuro",
+        "csp",
+        "motor-imagery",
+        "time-series",
+        "toolkit"
+      ],
+      "raw_excerpt": "\"[ENH] Refactor CSP. Supersedes #153, which conflicted after #165; thanks to @abhicodes-007 for the original change\" — PR #180, merged 2026-10-09T20:06:18Z, 4 files changed. Same-day commits: \"remove channel selector (#168)\", \"move UMAP and test to channel_creation… (#165)\".",
+      "fetched_at": "2026-10-09T22:15:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aeon-toolkit/aeon-neuro#180",
+      "author_handle": "aeon-toolkit",
+      "metrics": {
+        "play": null,
+        "like": 30,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "经典 CSP 基线成为可复用组件，便于与深度模型做公平对比。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGDash 清理 NEMAR 入库：剔除仅衍生物与已被取代的数据集，并放宽摘要超时",
+      "title_en": "EEGDash Cleans Its NEMAR Ingestion: Derivative-Only and Superseded Datasets Out, Digest Timeout Up",
+      "bullets_zh": [
+        "#437 排除仅有衍生物的 nm000389，并放宽 NEMAR digest 的超时限制，解决入库流水线长期失败。",
+        "#436 排除已被 nm000266 取代的 nm000203，避免同一数据集出现重复或过期副本。",
+        "EEGDash 定位为 EEG 开放数据＋工具＋算力平台，入库清洗质量直接决定后续检索与下载的可复现性。"
+      ],
+      "bullets_en": [
+        "#437 excludes the derivative-only nm000389 and raises the NEMAR digest timeout, unblocking an ingestion pipeline that had been failing.",
+        "#436 excludes nm000203 because it was superseded by nm000266, preventing duplicate or stale copies of the same dataset.",
+        "EEGDash positions itself as open EEG data plus tooling and compute, so ingestion hygiene directly determines reproducible retrieval."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/pull/437",
+      "published": "2026-10-09T17:38:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 在 10 月 9 日连续修正 NEMAR 入库逻辑：#437 把只有衍生物的 nm000389 排除在外，并放宽 NEMAR digest 的超时（此前该日更流水线多次因校验与超时失败），#436 排除已被 nm000266 取代的 nm000203，避免同一数据集出现重复或过期副本。对依赖该平台检索公开 EEG 数据的人来说，这类改动的价值在于「测得准」——如果索引里混入仅衍生物或被取代的数据集，后续下载与元数据匹配就会踩坑；升级后建议重新核对所引用数据集的 NEMAR 编号与版本。",
+      "brief_en": "EEGDash fixed its NEMAR ingestion on Oct 9: #437 drops the derivative-only nm000389 and raises the digest timeout that had been failing daily, while #436 removes nm000203 because nm000266 supersedes it, preventing duplicate or stale copies. Anyone pulling open EEG data from the platform should re-check dataset identifiers and versions after the change.",
+      "tags": [
+        "eeg-dash",
         "nemar",
+        "ingestion",
         "datasets",
-        "reproducibility",
-        "label-quality"
+        "data-quality"
       ],
-      "raw_excerpt": "\"Wire nemar_id for 31 loaders whose NEMAR deposits are now published (#1240)\" and \"Warn that Han2024Fatigue fatigue-session trial labels are unreliable (session '1')\" — both committed 2026-10-08T17:23Z.",
-      "fetched_at": "2026-10-08T22:05:00Z",
+      "raw_excerpt": "\"fix(ingestion): exclude derivative-only nm000389 and raise NEMAR digest timeout (#437)\" 2026-10-09T17:38Z; \"Exclude superseded NEMAR dataset nm000203 (replaced by nm000266) (#436)\" 12:27Z.",
+      "fetched_at": "2026-10-09T22:15:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1240",
-      "author_handle": "NeuroTechX",
+      "upstream_id": "eegdash/EEGDash#437",
+      "author_handle": "eegdash",
       "metrics": {
         "play": null,
-        "like": 1065,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "31 个数据集可自动下载，且上游主动标注了不可靠标签，利于避免错误复现。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MI-BCI：把运动想象实验做成可审计的中文开源上位机",
-      "title_en": "MI-BCI, an Auditable Open-Source Motor-Imagery Host Workbench",
-      "bullets_zh": [
-        "面向 Windows 的脑电上位机，把采集、运动想象实验范式、模型训练、在线控制与 AI 辅助研究收在同一个可追溯项目里。",
-        "README 给出功能总览、界面预览、快速开始、数据与安全边界、开发与测试等完整章节，仓库约 900 KB Python 代码。",
-        "作者定位为「首个开源的基于运动想象的脑电上位机 Agent」，目标是让 MI 实验从一次性演示走向可复现闭环。"
-      ],
-      "bullets_en": [
-        "A Windows EEG host application that keeps acquisition, motor-imagery paradigms, model training, online control and AI-assisted research inside one traceable project.",
-        "The README ships a full set of sections: feature overview, UI previews, quick start, data and safety boundaries, development and testing; roughly 900 KB of Python.",
-        "The author frames it as the first open-source motor-imagery EEG host agent, aiming to turn MI experiments from one-off demos into reproducible closed loops."
-      ],
-      "url": "https://github.com/joeeei11/mi-bci",
-      "published": "2026-10-08T04:08:00Z",
-      "source": "github",
-      "language": "zh",
-      "brief": "新建仓库 MI-BCI（2026-10-08）是一个中文的脑电上位机：把信号采集、运动想象实验、模型训练、在线控制与研究资料组织成同一个可审计工作流，解决 MI 研究要在采集软件、实验程序、训练脚本之间来回切换的问题。README 结构完整（功能总览、界面预览、快速开始、数据与安全边界、开发与测试），代码量约 900 KB Python，面向 Windows 实验台。对国内高校实验室和做原型验证的团队，中文文档＋一体化流程能明显降低上手成本；项目很新，建议先在离线数据上验证采集—训练—在线控制链路再接入真实被试。",
-      "brief_en": "Created 2026-10-08, MI-BCI is a Chinese-language EEG host workbench for Windows that keeps acquisition, motor-imagery paradigms, training, online control and research notes in one auditable workflow. The README covers features, UI previews, quick start, data/safety boundaries and testing, with roughly 900 KB of Python aimed at turning MI demos into reproducible closed loops.",
-      "tags": [
-        "motor-imagery",
-        "eeg",
-        "workbench",
-        "open-source",
-        "chinese"
-      ],
-      "raw_excerpt": "\"首个开源的基于运动想象的脑电上位机 Agent … 面向脑机接口研究者的 Windows 实验工作台：从脑电采集、运动想象实验、模型训练，到在线控制与 AI 辅助研究，统一在一个可追溯的项目中完成。\" — README.md（仓库创建于 2026-10-08T04:08Z）",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "joeeei11/mi-bci",
-      "author_handle": "joeeei11",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "中文一体化上位机把采集到在线控制串成可复现工作流，降低实验室上手成本。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "eeg2text-reproductions：六个脑电转文本论文的浏览器内小规模复现（每项都配噪声对照）",
-      "title_en": "eeg2text-reproductions: Browser-Runnable Replications of Six EEG-to-Text Papers with Noise Controls",
-      "bullets_zh": [
-        "为六篇 EEG-to-language 论文（A1–A6）各做一份本地可跑的小规模复现，保留原论文的数据、划分、输入与指标设置。",
-        "每个结果都跑在噪声对照旁边，用于判断模型表现是否真的超过随机/噪声基线——这是 EEG-to-text 领域最容易被忽略的对照。",
-        "看板为纯静态 HTML/JS，用 Web Workers 并行，几秒内跑完五个实验，无需构建步骤，也可直接部署到 Vercel。"
-      ],
-      "bullets_en": [
-        "Six EEG-to-language papers (A1-A6) each get a local, scaled-down replication that keeps the paper's data, splits, inputs and metrics.",
-        "Every result runs next to a noise control, exposing whether a model truly beats chance/noise — the control most often missing in EEG-to-text work.",
-        "The dashboard is plain static HTML/JS with parallel Web Workers, finishing five experiments in seconds, with no build step and one-click Vercel deployment."
-      ],
-      "url": "https://github.com/bleepbloop301/eeg2text-reproductions",
-      "published": "2026-10-08T02:04:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 eeg2text-reproductions（2026-10-08）把六篇「脑电转文本」论文（A1–A6）各做成一份本地可运行的小规模复现：保留原论文的数据、划分、输入与指标，同时并行跑一个噪声对照，用来回答「这个结果是不是噪声碰巧抬上来的」。看板是纯静态 HTML/JS＋Web Workers，无需构建、几秒出结果，可直接部署。该领域此前多次出现「高指标但缺噪声基线」的争议，这种「逐篇复现＋内置噪声控制」的工程化做法对做 EEG-to-text 或评测其他生成式解码的人有直接参考价值，也适合作为教学材料。",
-      "brief_en": "Created 2026-10-08, this repository replicates six EEG-to-language papers (A1-A6) at small scale while keeping each paper's data, splits, inputs and metrics, and runs every result next to a noise control. The dashboard is static HTML/JS with Web Workers, needs no build step, and deploys as-is — a concrete answer to the field's recurring missing-baseline problem.",
-      "tags": [
-        "eeg-to-text",
-        "reproduction",
-        "noise-control",
-        "benchmark",
-        "teaching"
-      ],
-      "raw_excerpt": "\"Small-scale, locally runnable copies of six EEG-to-language papers (A1–A6). Each one keeps the paper's data, split, inputs and metrics, and runs every result next to a noise control.\" … \"The dashboard is plain static HTML/JS with no build step.\"",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "bleepbloop301/eeg2text-reproductions",
-      "author_handle": "bleepbloop301",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "把噪声对照内置进逐篇复现，直击 EEG-to-text 指标虚高的常见问题。"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "IntentLab 运动想象教学演示进入 awesome-bci：可调拒绝阈值与通道敏感性",
-      "title_en": "IntentLab Motor-Imagery Teaching Demo Joins awesome-bci",
-      "bullets_zh": [
-        "演示用已录制的 PhysioNet 运动想象数据在浏览器中运行，配套一份 20 分钟教学练习。",
-        "学习者可以调整拒绝阈值，观察置信度与覆盖率此消彼长，并检查不同通道的敏感性。",
-        "另有小型 Python 示例，从已发表的试次预测结果重建置信度/覆盖率表格，便于课堂对比。"
-      ],
-      "bullets_en": [
-        "The demo runs a browser experiment on recorded PhysioNet motor-imagery EEG, paired with a 20-minute teaching exercise.",
-        "Learners can vary a rejection threshold to see confidence trade against coverage, and inspect channel sensitivity.",
-        "A small Python example reconstructs confidence/coverage tables from published trial predictions for classroom comparison."
-      ],
-      "url": "https://github.com/NeuroTechX/awesome-bci/pull/100",
-      "published": "2026-10-08T12:47:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "awesome-bci 在 10 月 8 日合并 PR #100，收录作者维护的 IntentLab：一个用已录制 PhysioNet 运动想象数据在浏览器里跑的演示实验，配 20 分钟教学练习和一个 Python 示例——后者能从已发表的试次预测重建置信度／覆盖率表格。它的教学重点不是「分类准确率有多高」，而是可调拒绝阈值带来的置信度—覆盖率权衡与通道敏感性，这恰是真实 BCI 使用中最常被忽视的工程环节。适合课堂演示、新手培训，或作为向非技术合作者解释「为什么不能只看准确率」的材料。",
-      "brief_en": "awesome-bci merged PR #100 on Oct 8, adding IntentLab: a browser experiment on recorded PhysioNet motor-imagery data with a 20-minute teaching exercise and a Python example that rebuilds confidence/coverage tables from published trial predictions. Its focus is the threshold-driven confidence-versus-coverage tradeoff and channel sensitivity, not raw accuracy.",
-      "tags": [
-        "motor-imagery",
-        "teaching",
-        "awesome-bci",
-        "physionet",
-        "threshold"
-      ],
-      "raw_excerpt": "\"It provides a browser experiment using recorded PhysioNet motor-imagery EEG, alongside a 20-minute teaching exercise and a small Python example that reconstructs confidence/coverage tables from published trial predictions. Learners can vary a rejection threshold, inspect channel sensitivity…\" — PR #100 body, merged 2026-10-08T12:47:59Z.",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/awesome-bci#100",
-      "author_handle": "shrut10",
-      "metrics": {
-        "play": null,
-        "like": 1548,
+        "like": 89,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "用置信度—覆盖率权衡讲清真实 BCI 的工程约束，可直接用于课堂。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "MNE-Python 校验协方差代数中的 SSP 投影，并修复 MRI 缩放配置",
-      "title_en": "MNE-Python Validates SSP Projections in Covariance Algebra and Fixes MRI Scaling Config",
-      "bullets_zh": [
-        "#14387 在协方差代数运算中校验 SSP 投影，避免投影不一致的协方差被静默合并——这类问题会污染源定位与波束形成结果。",
-        "#14389 修复 scale_mri 配置，涉及 MRI 与头模缩放流程。",
-        "两项均为正确性修复而非功能新增：升级后建议对既有源分析流程做一次数值回归对比。"
-      ],
-      "bullets_en": [
-        "#14387 validates SSP projections during Covariance algebra, stopping covariances with inconsistent projections from being silently combined, which would contaminate source localisation and beamforming.",
-        "#14389 fixes the scale_mri configuration used in MRI and head-model scaling.",
-        "Both are correctness fixes rather than features: after upgrading, rerun a numeric regression on existing source-analysis pipelines."
-      ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14387",
-      "published": "2026-10-08T17:00:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNE-Python 在 10 月 8 日合并两项修复：#14387 让协方差代数运算校验 SSP 投影的一致性——此前投影状态不同的协方差可以被静默相加／相乘，错误不会立刻暴露，却会一路影响源定位与波束形成结果；#14389 修掉 scale_mri 的配置问题。这两项都属于「不改变 API 但改变数值可信度」的类型：对使用诱发协方差做 inverse/beamformer 的团队，建议升级后在既定数据上重跑一次对比，确认结论未受投影校验收紧的影响，并记录所用版本。",
-      "brief_en": "Two correctness fixes landed on Oct 8: #14387 validates SSP projection consistency in Covariance algebra so inconsistent covariances can no longer be silently combined (a quiet source of source-localisation and beamforming error), and #14389 fixes the scale_mri configuration. Both warrant a numeric regression after upgrading.",
-      "tags": [
-        "mne-python",
-        "covariance",
-        "ssp",
-        "source-localisation",
-        "bugfix"
-      ],
-      "raw_excerpt": "\"FIX: Validate SSP projections in Covariance algebra (#14387)\" committed 2026-10-08T17:00Z; \"Fix scale mri cfg (#14389)\" 10:37Z. Latest release remains v1.13.2 (2026-09-11).",
-      "fetched_at": "2026-10-08T22:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14387",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 3537,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "静默合并错误投影会污染源定位，修复后需数值回归验证既有结论。"
+      "why_valuable": "剔除仅衍生物与被取代数据集，避免检索到错误或过期副本。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-BIDS 公开跨进程文件锁 open_lock",
-      "title_en": "MNE-BIDS Exposes open_lock as a Public Cross-Process File Lock",
+      "title_zh": "AutoReject 修复 get_reject_log 忽略 picks 参数的问题",
+      "title_en": "AutoReject Fixes get_reject_log Ignoring Its picks Argument",
       "bullets_zh": [
-        "#1675 把 mne_bids.open_lock 提升为公开 API，用于跨进程安全地写同一 BIDS 数据集。",
-        "并行跑多个被试的处理任务时，索引与 sidecar 文件的并发写入是常见损坏来源，官方锁让脚本不必自造文件锁。",
-        "同期还删除了旧的空文件检查逻辑，写入路径更明确。"
+        "PR #363 修复 AutoReject.get_reject_log 始终使用 self.picks_ 的行为，现在按文档使用传入的 picks，并在为 None 时回退。",
+        "对应 issue #226：只关心部分通道时的拒绝日志会返回错误通道的结果，容易误导人工复核。",
+        "AutoReject 是 MNE 生态里自动剔除坏导／坏试次的标准工具，其日志常被用于质量评估与二次判读。"
       ],
       "bullets_en": [
-        "#1675 promotes mne_bids.open_lock to a public API for safely writing the same BIDS dataset from multiple processes.",
-        "When several subjects are processed in parallel, concurrent writes to index and sidecar files are a common corruption source; an official lock removes the need for home-grown ones.",
-        "The same change drops the old empty-file check, making the write path explicit."
+        "PR #363 makes AutoReject.get_reject_log honour the picks argument as documented, falling back to self.picks_ only when it is None.",
+        "It closes issue #226: when only a subset of channels mattered, the reject log reported the wrong channels and could mislead manual review.",
+        "AutoReject is the standard MNE-ecosystem tool for rejecting bad channels and trials, and its log is routinely used for QC and second-pass review."
       ],
-      "url": "https://github.com/mne-tools/mne-bids/pull/1675",
-      "published": "2026-10-08T10:20:00Z",
+      "url": "https://github.com/autoreject/autoreject/pull/363",
+      "published": "2026-10-09T09:12:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-BIDS 合并 #1675，把原先内部的 open_lock 提升为公开 API：它提供跨进程文件锁，让多个并行任务安全地写入同一个 BIDS 数据集。实际场景很常见——按被试并行跑预处理、同时更新 participants.tsv 或 sidecar JSON，稍有不慎就会出现截断或互相覆盖；此前团队往往自己实现基于 lock 文件的互斥，难以与库的写入路径配合。现在可以按官方方式加锁，也能用于自研调度脚本。对正在把预处理管线并行化的实验室，这是升级后即可简化代码的一处改进。",
-      "brief_en": "MNE-BIDS merged #1675, promoting open_lock to a public API that provides cross-process file locking for writing one BIDS dataset safely. Parallel per-subject jobs updating participants.tsv or sidecar JSON can otherwise truncate or overwrite each other; teams can now lock the official way instead of rolling their own.",
+      "brief": "AutoReject 合并 #363，修掉 get_reject_log 始终使用 self.picks_ 而不理会调用者传入 picks 的问题（对应 issue #226），现在按文档行为执行、传入 None 时才回退。看起来是小事，但拒绝日志通常被用来复核「哪些通道/试次被判为坏」——当分析只关心部分通道时，日志返回错误的通道集合会直接导致人工判读和质控结论出错。使用 AutoReject 做坏导剔除、并把日志纳入质控流程的团队建议升级后重跑一次对比；该库同时是 MNE 生态的标准组件，便于在现有 pipeline 中替换。",
+      "brief_en": "AutoReject merged #363, fixing get_reject_log so it honours the picks argument as documented (falling back to self.picks_ only when None), closing issue #226. Since reject logs drive manual QC of which channels and trials were flagged, wrong channel sets silently corrupted review conclusions for subset analyses.",
       "tags": [
-        "mne-bids",
-        "concurrency",
-        "file-lock",
+        "autoreject",
+        "mne",
+        "qc",
+        "bugfix",
+        "artifact-rejection"
+      ],
+      "raw_excerpt": "\"Honor `picks` argument in `AutoReject.get_reject_log` … Fixes #226. AutoReject.get_reject_log … now uses its `picks` argument and falls back to `self.picks_` when `picks` is `None`, as its docstring says. Before, it always used `self.picks_`.\" — PR #363, merged 2026-10-09T09:12:56Z.",
+      "fetched_at": "2026-10-09T22:15:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "autoreject/autoreject#363",
+      "author_handle": "autoreject",
+      "metrics": {
+        "play": null,
+        "like": 162,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "拒绝日志返回错误通道会污染质控结论，修复后需重跑核对。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Eelbrain 流水线按需生成缺失的 MRI 被试（自动取 fsaverage 并写入缩放参数）",
+      "title_en": "Eelbrain Pipelines Create Missing MRI Subjects On Demand from fsaverage",
+      "bullets_zh": [
+        "#244 的 ensure_mri() 用 mne.datasets.fetch_fsaverage() 下载 fsaverage，并通过 mne.scale_mri() 生成只含「MRI scaling parameters.cfg」的被试目录。",
+        "解决流水线中「有脑电数据但缺个体 MRI」时的中断问题：源定位步骤可自动补齐模板被试。",
+        "涉及 7 个文件，属流水线自动化能力的补充而非单点修补。"
+      ],
+      "bullets_en": [
+        "#244's ensure_mri() downloads fsaverage via mne.datasets.fetch_fsaverage() and builds a subject directory containing only \"MRI scaling parameters.cfg\" produced by mne.scale_mri().",
+        "It removes a common pipeline interruption: EEG data without an individual MRI can now fall back to a scaled template subject automatically.",
+        "The change touches seven files, making it a pipeline-automation addition rather than a one-line patch."
+      ],
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/244",
+      "published": "2026-10-09T00:11:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Eelbrain 合并 #244：流水线现在能按需创建缺失的 MRI 被试目录——ensure_mri() 调用 mne.datasets.fetch_fsaverage() 取 fsaverage，再用 mne.scale_mri() 写入「MRI scaling parameters.cfg」，从而在只有脑电数据、没有个体结构像时也能继续跑源定位相关步骤。改动覆盖 7 个文件，属于提升流水线鲁棒性的自动化补充：过去这类缺文件会在批处理中途报错，需要人工补模板。对做群体分析、被试结构像获取不稳定的实验室，升级后可以少一层人工干预，但需注意模板缩放并不等于个体解剖精度，结论解释仍要谨慎。",
+      "brief_en": "Eelbrain merged #244 so pipelines can create missing MRI subjects on demand: ensure_mri() fetches fsaverage and writes a scaled \"MRI scaling parameters.cfg\" via mne.scale_mri(), letting source-localisation steps proceed when only EEG exists. It touches seven files, replacing a common mid-batch failure with automatic template fallback.",
+      "tags": [
+        "eelbrain",
         "pipeline",
-        "bids"
+        "mri",
+        "fsaverage",
+        "source-localisation"
       ],
-      "raw_excerpt": "\"[MRG] ENH: expose mne_bids.open_lock as a public cross-process file lock (#1675)\" committed 2026-10-08T10:20Z. Latest release remains v0.20.0 (2026-09-29).",
-      "fetched_at": "2026-10-08T22:05:00Z",
+      "raw_excerpt": "\"Pipeline: create missing MRI subjects on demand — ensure_mri() downloads fsaverage with mne.datasets.fetch_fsaverage() and populates a subject directory that holds only an 'MRI scaling parameters.cfg' file with mne.scale_mri().\" — PR #244, merged 2026-10-09T00:11:12Z, 7 files.",
+      "fetched_at": "2026-10-09T22:15:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-bids#1675",
-      "author_handle": "mne-tools",
+      "upstream_id": "Eelbrain/Eelbrain#244",
+      "author_handle": "Eelbrain",
       "metrics": {
         "play": null,
-        "like": 182,
+        "like": 86,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "并行预处理写入 BIDS 的官方互斥方案，可直接替换自造文件锁。"
+      "why_valuable": "批处理不再因缺个体 MRI 中断，模板自动补齐减少人工干预。"
     }
   ],
   "stats": {
-    "fetched": 132,
-    "prefiltered": 116,
-    "llm_rows": 16,
-    "kept": 9,
+    "fetched": 60,
+    "prefiltered": 52,
+    "llm_rows": 8,
+    "kept": 6,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 2
+    "conflicts_dropped": 0
   }
 }
