@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-08T11:36:39.349Z",
+  "generatedAt": "2026-10-09T11:30:36.378Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 62
+      "count": 64
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 17
+      "count": 16
     },
     {
       "id": "physionet",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 4
     }
   ],
   "items": [
@@ -412,25 +412,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008701",
-      "name": "Music_EEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008701",
-      "source": "openneuro",
-      "description": "MET - Music-Induced Emotion EEG Dataset",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-17T08:21:04.491Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -448,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 15861,
+      "downloads": 15721,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -473,7 +454,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1743,
+      "downloads": 1747,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -498,9 +479,9 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1265,
+      "downloads": 1303,
       "likes": 0,
-      "updatedAt": "2026-09-29T03:39:18.000Z",
+      "updatedAt": "2026-10-09T07:06:13.000Z",
       "modality": [
         "EEG"
       ]
@@ -523,7 +504,7 @@
         "benchmark"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1061,
+      "downloads": 1214,
       "likes": 1,
       "updatedAt": "2026-10-08T11:23:24.000Z",
       "modality": [
@@ -548,7 +529,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 334,
+      "downloads": 345,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -573,27 +554,9 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 183,
+      "downloads": 190,
       "likes": 3,
       "updatedAt": "2026-10-05T14:33:34.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 148,
-      "likes": 1,
-      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -616,9 +579,27 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 174,
+      "downloads": 191,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 143,
+      "likes": 1,
+      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -638,7 +619,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 324,
+      "downloads": 329,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -663,7 +644,7 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 68,
+      "downloads": 79,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
       "modality": [
@@ -710,7 +691,7 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 30,
+      "downloads": 35,
       "likes": 0,
       "updatedAt": "2026-10-07T10:09:05.000Z",
       "modality": [
@@ -730,7 +711,7 @@
         "education"
       ],
       "license": "cc-by-4.0",
-      "downloads": 28,
+      "downloads": 36,
       "likes": 0,
       "updatedAt": "2026-10-07T02:33:11.000Z",
       "modality": [
@@ -787,6 +768,22 @@
         "EEG",
         "MEG",
         "iEEG"
+      ]
+    },
+    {
+      "id": "zenodo:23240774",
+      "name": "Dataset related to article: Interictal epileptiform discharges propagation revealed by MEG/foramen ovale-EEG co-recording in patients with temporal lobe epilepsy candidate to neurosurgery",
+      "owner": "Duran, Dunja",
+      "url": "https://doi.org/10.5281/zenodo.23240774",
+      "source": "zenodo",
+      "description": "TABLE 1-2",
+      "tags": [],
+      "license": null,
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-08T00:00:00.000Z",
+      "modality": [
+        "MEG"
       ]
     },
     {
@@ -855,7 +852,7 @@
         "Multisensory processing"
       ],
       "license": "cc-by-4.0",
-      "downloads": 23,
+      "downloads": 39,
       "likes": null,
       "updatedAt": "2026-09-28T00:00:00.000Z",
       "modality": [
@@ -863,12 +860,36 @@
       ]
     },
     {
+      "id": "zenodo:23099932",
+      "name": "Code and aggregate results for: Can a consumer EEG headband and a chest strap map cortical–autonomic state at rest? Coupling, device supply and construction artefacts",
+      "owner": "Griadhi, I Putu, Adiartha",
+      "url": "https://doi.org/10.5281/zenodo.23099932",
+      "source": "zenodo",
+      "description": "Analysis code, the locked analysis plan (versions 1.0&ndash;1.4) and the aggregate result tables and figures for a study asking whether a consumer EEG headband (Muse 2) and a chest strap (Polar H10) can support a two-axis cortical&ndash;autonomic state map at rest in 28 seated r…",
+      "tags": [
+        "EEG",
+        "heart rate variability",
+        "photoplethysmography",
+        "consumer devices",
+        "cortical–autonomic coupling",
+        "Muse 2",
+        "Polar H10"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-02T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23080152",
-      "name": "EEG dataset_Molteni et al. 2026_International Journal of Psychophysiology",
+      "name": "EEG dataset_Molteni et al. 2026",
       "owner": "Molteni, Federica",
       "url": "https://doi.org/10.5281/zenodo.23080152",
       "source": "zenodo",
-      "description": "This dataset is from the article \"From encoding to conscious report: Electrophysiological signatures of iconic memory revealed by a partial report task\" by Molteni et al., 2026, International Journal of Psychophysiology It is composed by 37 .set files (raw EEG datasets imported…",
+      "description": "This dataset is from the article \"From encoding to conscious report: Electrophysiological signatures of iconic memory revealed by a partial report task\" by Molteni et al., 2026 It is composed by 37 .set files (raw EEG datasets imported in EEGLAB), one for each study participant.…",
       "tags": [],
       "license": "cc-by-4.0",
       "downloads": 0,
@@ -941,56 +962,6 @@
       ]
     },
     {
-      "id": "zenodo:22923070",
-      "name": "AiCumene EEG-BCI Sleep–Wake Dataset",
-      "owner": "Bernadotte, Alexandra",
-      "url": "https://doi.org/10.5281/zenodo.22923070",
-      "source": "zenodo",
-      "description": "The AiCumene EEG-BCI Sleep–Wake Dataset has two components. (1) A public synthetic sleep-EEG benchmark of 45 synthetic whole-night polysomnography recordings (S0001–S0045), each paired with a 30-s sleep-stage hypnogram, produced by per-recording oscillator resynthesis of the Sle…",
-      "tags": [
-        "EEG",
-        "BCI",
-        "brain-computer interface",
-        "sleep",
-        "wakefulness",
-        "polysomnography",
-        "synthetic benchmark",
-        "Sleep-EDF surrogate"
-      ],
-      "license": "cc-by-nc-4.0",
-      "downloads": 22,
-      "likes": null,
-      "updatedAt": "2026-09-24T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:22967622",
-      "name": "Musicianship EEG Dataset (BIDS version)",
-      "owner": "Whiteford, Kelly L.",
-      "url": "https://doi.org/10.5281/zenodo.22967622",
-      "source": "zenodo",
-      "description": "This is the BIDS-formatted version of the Musicianship EEG Dataset (collected in 296 participants across 6 sites). Version 1 includes single-channel (Cz) frequency-following responses to a /da/ syllable (6000 trials per participant, two stimulus polarities), with participant, ph…",
-      "tags": [
-        "EEG",
-        "BIDS",
-        "frequency-following response",
-        "FFR",
-        "auditory brainstem",
-        "musical training",
-        "musicianship",
-        "speech encoding"
-      ],
-      "license": "cc-by-nc-4.0",
-      "downloads": 14,
-      "likes": null,
-      "updatedAt": "2026-09-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -1007,7 +978,32 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 10,
-      "updatedAt": "2026-10-08T11:04:49.000Z",
+      "updatedAt": "2026-10-09T06:24:05.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
+      "name": "NMT-4k-EEG-Dataset",
+      "owner": "dll-ncai",
+      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
+      "source": "github",
+      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
+      "tags": [
+        "abnormality-detection",
+        "biomedical-signals",
+        "clinical-eeg",
+        "clinical-reports",
+        "eeg",
+        "eeg-dataset",
+        "electroencephalography",
+        "event-annotations"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-10-08T21:27:55.000Z",
       "modality": [
         "EEG"
       ]
@@ -1031,7 +1027,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 2,
-      "updatedAt": "2026-10-08T03:47:08.000Z",
+      "updatedAt": "2026-10-08T23:52:12.000Z",
       "modality": [
         "EEG"
       ]
