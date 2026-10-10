@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T11:30:36.378Z",
+  "generatedAt": "2026-10-10T10:48:07.179Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 6
     }
   ],
   "items": [
@@ -429,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 15721,
+      "downloads": 15722,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -454,7 +454,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1747,
+      "downloads": 1754,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -479,8 +479,8 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1303,
-      "likes": 0,
+      "downloads": 1473,
+      "likes": 1,
       "updatedAt": "2026-10-09T07:06:13.000Z",
       "modality": [
         "EEG"
@@ -504,7 +504,7 @@
         "benchmark"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1214,
+      "downloads": 1267,
       "likes": 1,
       "updatedAt": "2026-10-08T11:23:24.000Z",
       "modality": [
@@ -554,7 +554,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 190,
+      "downloads": 191,
       "likes": 3,
       "updatedAt": "2026-10-05T14:33:34.000Z",
       "modality": [
@@ -579,7 +579,7 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 191,
+      "downloads": 198,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
       "modality": [
@@ -597,7 +597,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 143,
+      "downloads": 132,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -619,7 +619,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 329,
+      "downloads": 362,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -644,7 +644,7 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 79,
+      "downloads": 83,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
       "modality": [
@@ -691,83 +691,11 @@
         "time-series"
       ],
       "license": null,
-      "downloads": 35,
+      "downloads": 36,
       "likes": 0,
       "updatedAt": "2026-10-07T10:09:05.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "hf:neurodeskorg/eeg-frequency-tagging-sample",
-      "name": "eeg-frequency-tagging-sample",
-      "owner": "neurodeskorg",
-      "url": "https://huggingface.co/datasets/neurodeskorg/eeg-frequency-tagging-sample",
-      "source": "huggingface",
-      "description": "Frequency-tagged EEG sample (NeurodeskEDU) Input data for the NeurodeskEDU notebooks examples/electrophysiology/eeg_with_mne.ipynb. This is a mirror of OSF project c689u. It was copied on 2026-10-07 because OSF rate-limits (HTTP 429) the downloads made by the notebooks' automate…",
-      "tags": [
-        "cc-by-4.0",
-        "neuroimaging",
-        "education"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 36,
-      "likes": 0,
-      "updatedAt": "2026-10-07T02:33:11.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Tree-AI-lab/fr_bci_4d_instruct",
-      "name": "fr_bci_4d_instruct",
-      "owner": "Tree-AI-lab",
-      "url": "https://huggingface.co/datasets/Tree-AI-lab/fr_bci_4d_instruct",
-      "source": "huggingface",
-      "description": "🇨🇮 fr_bci_4d_instruct fr_bci_4d_instruct est le jeu de données d'entraînement par instructions (Instruction Tuning / SFT) bilingue Français–Baoulé (bci) du laboratoire Tree-AI-lab, conçu spécifiquement pour l'entraînement du modèle souverain BABA. Ce dataset est une évolution…",
-      "tags": [
-        "text-generation",
-        "bci",
-        "apache-2.0",
-        "json",
-        "pandas",
-        "instruction-tuning",
-        "baoule",
-        "french"
-      ],
-      "license": "apache-2.0",
-      "downloads": 77,
-      "likes": 0,
-      "updatedAt": "2026-09-27T13:07:27.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
-      "tags": [
-        "bids",
-        "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 182,
-      "updatedAt": "2026-10-08T10:20:48.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
       ]
     },
     {
@@ -795,7 +723,7 @@
       "description": "This repository contains the EEG data of the experiment using questions. The data of the experiment using judgments is available under https://zenodo.org/records/17178030.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 5,
+      "downloads": 6,
       "likes": null,
       "updatedAt": "2026-10-06T00:00:00.000Z",
       "modality": [
@@ -962,6 +890,35 @@
       ]
     },
     {
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
+      "tags": [
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 89,
+      "updatedAt": "2026-10-09T23:10:57.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG",
+        "fNIRS",
+        "EMG"
+      ]
+    },
+    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -977,33 +934,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 10,
-      "updatedAt": "2026-10-09T06:24:05.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
-      "name": "NMT-4k-EEG-Dataset",
-      "owner": "dll-ncai",
-      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
-      "source": "github",
-      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
-      "tags": [
-        "abnormality-detection",
-        "biomedical-signals",
-        "clinical-eeg",
-        "clinical-reports",
-        "eeg",
-        "eeg-dataset",
-        "electroencephalography",
-        "event-annotations"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-08T21:27:55.000Z",
+      "likes": 11,
+      "updatedAt": "2026-10-09T23:43:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -1027,7 +959,78 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 2,
-      "updatedAt": "2026-10-08T23:52:12.000Z",
+      "updatedAt": "2026-10-10T02:13:10.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:Core-Creates/awesome-eeg-software",
+      "name": "awesome-eeg-software",
+      "owner": "Core-Creates",
+      "url": "https://github.com/Core-Creates/awesome-eeg-software",
+      "source": "github",
+      "description": "Curated, verified list of open-source EEG software: EEGLAB, MNE-Python, Brainstorm, FieldTrip, BCI/deep learning, sleep & clinical tools, datasets.",
+      "tags": [
+        "awesome",
+        "awesome-list",
+        "bci",
+        "brainstorm",
+        "eeg",
+        "eeglab",
+        "electrophysiology",
+        "fieldtrip"
+      ],
+      "license": "CC0-1.0",
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-10-10T01:21:44.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:gifale95/EMD",
+      "name": "EMD",
+      "owner": "gifale95",
+      "url": "https://github.com/gifale95/EMD",
+      "source": "github",
+      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
+      "tags": [
+        "eeg",
+        "human-vision",
+        "open-dataset",
+        "videos"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-10-09T16:33:22.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:gorazdbiskoski/EEGSleepTest",
+      "name": "EEGSleepTest",
+      "owner": "gorazdbiskoski",
+      "url": "https://github.com/gorazdbiskoski/EEGSleepTest",
+      "source": "github",
+      "description": "A controlled benchmark of ten hyperparameter optimization algorithms searching the same CNN–LSTM architecture on two EEG sleep datasets (Sleep-EDF, HMC) under a fixed budget. 1,992 evaluations, selected on validation loss and scored on macro F1, which rank the methods differentl…",
+      "tags": [
+        "bayesian-optimization",
+        "benchmark",
+        "cnn-lstm",
+        "deep-learning",
+        "eeg",
+        "genetic-algorithm",
+        "hyperparameter-optimization",
+        "keras"
+      ],
+      "license": "EPL-2.0",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-09T11:39:27.000Z",
       "modality": [
         "EEG"
       ]
