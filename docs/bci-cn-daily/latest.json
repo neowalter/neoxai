@@ -1,339 +1,339 @@
 {
-  "date": "2026-10-11",
-  "generated_at": "2026-10-10T21:32:23.903Z",
+  "date": "2026-10-12",
+  "generated_at": "2026-10-11T21:33:20.156Z",
   "item_count": 7,
   "types": {
-    "Benchmark": 1,
-    "Project": 6
+    "Project": 6,
+    "Benchmark": 1
   },
   "highlights": [
     {
-      "title_zh": "NeurIPS 2026 大脑与身体 Workshop 的 EEG/EMG 基础模型挑战赛开放四赛道",
-      "title_en": "EEG/EMG Foundation Challenge 2026 at the NeurIPS Brain and Body Workshop Opens Four Tracks",
-      "url": "https://neural-interfaces26.github.io/",
-      "brief": "NeurIPS 2026「大脑与身体」Workshop 旗下的 EEG/EMG 基础模型挑战赛（EEG/EMG Foundation Challenge 2026）已开放注册与提交，站点于 10 月 10 日更新。赛制要点：四个解码赛道，专门测试模型在**新刺激／新 session／新被试**上的泛化——这正是 EEG 基础模型当前最大的短板；赛程自 2026-09-21 起，热身期到 10-25（公开数据＋指示性排行榜，注册开放至 10-24），10-28 起进入封存评测直至 11-21。奖金池 2 万美元并含实习机会，31 位组织者来自 15 家机构 8 个国家。对做 EEG 基础模型或想用公开基准验证泛化能力的团队，这是当下最有约束力的评测场之一，且时间窗口仍可参与。"
+      "title_zh": "braindecode 再提速：训练步快 2.5×、惰性 FIF 整批读取与 Gaudi 融合算子",
+      "title_en": "braindecode Speeds Up Again: 2.5x Train Steps, Batched Lazy FIF Reads, Gaudi Fused Kernels",
+      "url": "https://github.com/braindecode/braindecode/pull/1336",
+      "brief": "braindecode 在 10 月 11 日又推进 20 次提交，主题仍是把训练与推理成本压下来：#1336 让 MetaNeuromotorHand 的矩阵对数（eigh）用满全部 CPU 线程，训练步约快 2.5 倍；#1337 把 BaseConcatDataset 的惰性 FIF 读取改为「每个批次的全部窗口一次向 OS 申请」，紧接着前一天的 #1318；同时 HPU 线一次合并多枚利用 Intel Gaudi 融合 SDPA 内核的算子（DANCE、ZUNA、STEEGFormer、MultiHeadAttention）并让 fft_conv1d 在 HPU 上走 overlap-save＋实数 DFT。对在 CPU 上做长训练、或想用非 NVIDIA 加速器跑 EEG 基础模型的团队，这两天累计的改动直接体现在墙钟时间上，建议按 commit 逐项基准对比。"
     },
     {
-      "title_zh": "braindecode 单日 30 次提交：惰性 FIF 整窗读取与一批 CPU 提速、修复",
-      "title_en": "braindecode's 30-Commit Day: Whole-Window Lazy FIF Reads plus CPU Speedups and Fixes",
-      "url": "https://github.com/braindecode/braindecode/pull/1318",
-      "brief": "braindecode 在 10 月 10 日推进 30 次提交，主线是「把大数据的 I/O 与 CPU 推理成本压下来」：#1318 让 EEGWindowsDataset 对惰性 FIF 记录整窗读取，替代逐 1 秒切片；#1305 把 TIDNet/EEGNeX 的长时序卷积换成 fft_conv1d；#1312 与 #1315 优化 NeuroRVQ 多尺度批处理与 in-place addmm（CPU 前向约快 8%）；#1316 用 ELU×正因子实现 SELU 且结果逐位一致。修复侧覆盖无位置通道（NaN loc）、窗口尺寸错误的异常类型、以及 JSON 句柄泄漏。对在本地 CPU 或大数据集上跑基础模型的团队，这一天的改动直接对应训练/推理耗时与偶发崩溃。"
+      "title_zh": "COG-BCI 数据集审计：8 个被试 ID 的脑电逐字节相同，交叉验证存在泄漏",
+      "title_en": "COG-BCI Audit Finds Eight Participant IDs Share Byte-Identical EEG, Leaking Across Splits",
+      "url": "https://github.com/Kxvya18/cogbci-integrity-audit",
+      "brief": "新建仓库 cogbci-integrity-audit（2026-10-11）给一个被广泛使用的公开脑电库 COG-BCI（29 名被试 × 3 session，含 MATB、N-back、PVT、Flanker 任务）做哈希审计，结论很硬：被试 18–24 与 27 在全部三个 session 里的脑电**逐字节相同**，而数据集自带 notebook 却为这些 ID 标注了不同的记录日期与任务顺序。作者指出后果——任何把这些 ID 当作不同人的评测（交叉被试、留一被试、或使用这些被试的竞赛划分）都会把同一段记录同时放进训练与测试，精度被系统性抬高，独立被试数实际只有 22。仓库提供可直接运行的审计脚本，并建议保留 1 个、排除 7 个 ID。做 COG-BCI 基准或元分析的团队应立刻复查自己的划分。"
     },
     {
-      "title_zh": "MNE-Python 新增 DigMontage.drop_channels，并接受 epochs 文件的 BIDS 命名",
-      "title_en": "MNE-Python Adds DigMontage.drop_channels and Accepts BIDS Names for Epochs Files",
-      "url": "https://github.com/mne-tools/mne-python/pull/14397",
-      "brief": "MNE-Python 在 10 月 10 日合并 10 次提交，其中两项对日常流程最直接：#14397 给 DigMontage 增加 drop_channels，可把标准电极位置表裁剪到实际使用的通道子集——此前处理「用了 64 导模板但只保留 32 导」这类场景需要在外部手工重建 montage；#14398 让 epochs 的 FIF 文件接受 BIDS 命名，减少在 BIDS 数据集里混合命名带来的读取摩擦。同日还有 numba/NumPy 优化（#14376）与 _brain.py 拆分的第三阶段（#14400）。对做多数据集整合或统一 montage 管理的团队，这两项都属于可立即替换手工代码的改进；最新发布仍为 v1.13.2，需从 main 获取。"
+      "title_zh": "EEG-FM-Digest：每日自动抓取并分类 arXiv 上的脑电基础模型论文",
+      "title_en": "EEG-FM-Digest Auto-Tracks and Classifies EEG Foundation-Model Papers Daily",
+      "url": "https://github.com/iroblesrazzaq/EEG-FM-Digest",
+      "brief": "EEG-FM-Digest（站点 iroblesrazzaq.github.io/EEG-FM-Digest）用自动化流水线追踪 arXiv 上的脑电基础模型论文：GitHub Actions 每天跑一次 arXiv 查询，随后用 LLM 过滤、再用 Gemma 4 31B 生成摘要，最后按论文类型与架构归类并支持检索。对每天要盯 EEG 基础模型进展的人，这相当于把「散落预印本」变成可检索索引；也提醒一点：条目由 LLM 摘要，引用前应回原文核对，尤其不要把自动分类当权威结论。适合作为我们这类情报工作的交叉校验源。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-11.md",
+  "github_path": "docs/bci-cn-daily/2026-10-12.md",
   "items": [
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "NeurIPS 2026 大脑与身体 Workshop 的 EEG/EMG 基础模型挑战赛开放四赛道",
-      "title_en": "EEG/EMG Foundation Challenge 2026 at the NeurIPS Brain and Body Workshop Opens Four Tracks",
-      "bullets_zh": [
-        "四个解码赛道，测试模型在新刺激、新 session 与新被试上的泛化能力，面向 EEG、EMG、BCI 与睡眠解码。",
-        "赛程 2026-09-21 → 11-21：热身期至 10-25（用公开数据＋指示性排行榜，注册开放至 10-24），10-28 → 11-21 进入封存最终评测。",
-        "2 万美元奖金池与实习机会；31 位组织者来自 15 家机构、8 个国家，数据合作方包括 Alljoined 与 Imperial College London。"
-      ],
-      "bullets_en": [
-        "Four decoding tracks test generalization across new stimuli, sessions and people, covering EEG, EMG, BCI and sleep decoding.",
-        "Timeline 2026-09-21 to 11-21: a warm-up phase to 10-25 on public data with indicative leaderboard feedback (registration open to 10-24), then a sealed final phase 10-28 to 11-21.",
-        "A USD 20,000 prize pool plus internships; 31 organizers from 15 institutions and 8 countries, with datasets from partners including Alljoined and Imperial College London."
-      ],
-      "url": "https://neural-interfaces26.github.io/",
-      "published": "2026-10-10T12:12:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "NeurIPS 2026「大脑与身体」Workshop 旗下的 EEG/EMG 基础模型挑战赛（EEG/EMG Foundation Challenge 2026）已开放注册与提交，站点于 10 月 10 日更新。赛制要点：四个解码赛道，专门测试模型在**新刺激／新 session／新被试**上的泛化——这正是 EEG 基础模型当前最大的短板；赛程自 2026-09-21 起，热身期到 10-25（公开数据＋指示性排行榜，注册开放至 10-24），10-28 起进入封存评测直至 11-21。奖金池 2 万美元并含实习机会，31 位组织者来自 15 家机构 8 个国家。对做 EEG 基础模型或想用公开基准验证泛化能力的团队，这是当下最有约束力的评测场之一，且时间窗口仍可参与。",
-      "brief_en": "The EEG/EMG Foundation Challenge 2026, part of the NeurIPS 2026 Brain and Body Workshop, is open for registration and submissions. Four decoding tracks test generalization to new stimuli, sessions and people; the competition runs Sep 21 to Nov 21 (warm-up to Oct 25, sealed phase from Oct 28), with a USD 20,000 prize pool and 31 organizers from 15 institutions.",
-      "tags": [
-        "challenge",
-        "neurips",
-        "benchmark",
-        "generalization",
-        "eeg"
-      ],
-      "raw_excerpt": "Meta: \"Compete in EEG, EMG, BCI and sleep decoding at the Brain and Body Workshop at NeurIPS 2026. Registration is open. Competition Sep 21-Nov 21.\" Site: \"Four decoding tracks test models across new stimuli, sessions, and people…\" Timeline: warm-up \"Sep 21 → Oct 25\"; sealed final \"Oct 28 → Nov 21\". Repo pushed 2026-10-10T12:12Z.",
-      "fetched_at": "2026-10-10T22:20:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "neural-interfaces26/neural-interfaces26.github.io",
-      "author_handle": "neural-interfaces26",
-      "metrics": {
-        "play": null,
-        "like": 10,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "跨刺激/会话/被试的官方泛化赛道，报名与热身窗口仍开放，可直接参赛验证。"
-    },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 单日 30 次提交：惰性 FIF 整窗读取与一批 CPU 提速、修复",
-      "title_en": "braindecode's 30-Commit Day: Whole-Window Lazy FIF Reads plus CPU Speedups and Fixes",
+      "title_zh": "braindecode 再提速：训练步快 2.5×、惰性 FIF 整批读取与 Gaudi 融合算子",
+      "title_en": "braindecode Speeds Up Again: 2.5x Train Steps, Batched Lazy FIF Reads, Gaudi Fused Kernels",
       "bullets_zh": [
-        "#1318 让 EEGWindowsDataset 在惰性 FIF 记录上一次性读取整个窗口，取代此前每 1 秒窗口单独读取——大数据的 I/O 开销显著下降。",
-        "性能线还包括 #1305（TIDNet/EEGNeX 的长时序卷积改走 fft_conv1d）、#1312／#1315（NeuroRVQ 多尺度批处理与 in-place addmm，CPU 前向快 8%）、#1316（SELU 改为 ELU×正因子，结果逐位一致）。",
-        "修复线：#1309 处理无位置通道（NaN loc）下的 LUNA／SignalJEPA／DGCNN，#1317 让窗口尺寸错误抛 ValueError 而非深度 torch RuntimeError，#1314 关闭 JSON 文件句柄避免 ResourceWarning。"
+        "#1336 让 MetaNeuromotorHand 的矩阵对数 eigh 跑满所有 CPU 线程，训练步约快 2.5 倍。",
+        "#1337 让 BaseConcatDataset 的每个 DataLoader 批次一次性向操作系统申请全部惰性 FIF 窗口，延续 10-10 的 #1318 整窗读取。",
+        "Intel Gaudi（HPU）线同步推进：#1341 fft_conv1d 用 overlap-save 分块＋实数 DFT 矩阵乘、#1340／#1338 让 DANCE、ZUNA、STEEGFormer 与 MultiHeadAttention 走 Gaudi 融合 SDPA 内核、#1339 优化 CodeBrain 的滑窗注意力。"
       ],
       "bullets_en": [
-        "#1318 makes EEGWindowsDataset read a whole window of a lazy FIF recording in one go instead of one 1-second slice at a time, cutting I/O overhead on large datasets.",
-        "Performance work also includes #1305 (TIDNet/EEGNeX long temporal convolutions via fft_conv1d), #1312/#1315 (batched NeuroRVQ scales, in-place addmm for 8% faster CPU forward) and #1316 (SELU as ELU times a positive factor, bit-identical).",
-        "Fixes: #1309 handles channels without positions (NaN loc) in LUNA/SignalJEPA/DGCNN, #1317 raises ValueError instead of a deep torch RuntimeError on wrong window sizes, and #1314 closes JSON file handles."
+        "#1336 runs MetaNeuromotorHand's matrix-logarithm eigh across all CPU threads, making the train step about 2.5x faster.",
+        "#1337 makes each BaseConcatDataset DataLoader batch request all of its lazy FIF windows from the OS at once, extending the Oct 10 whole-window read (#1318).",
+        "The Intel Gaudi (HPU) line advances in parallel: #1341 pushes fft_conv1d to overlap-save blocks with real DFT matmuls, #1340/#1338 route DANCE, ZUNA, STEEGFormer and MultiHeadAttention through Gaudi's fused SDPA kernel, and #1339 tunes CodeBrain's sliding-window attention."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1318",
-      "published": "2026-10-10T20:42:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1336",
+      "published": "2026-10-11T18:34:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 10 月 10 日推进 30 次提交，主线是「把大数据的 I/O 与 CPU 推理成本压下来」：#1318 让 EEGWindowsDataset 对惰性 FIF 记录整窗读取，替代逐 1 秒切片；#1305 把 TIDNet/EEGNeX 的长时序卷积换成 fft_conv1d；#1312 与 #1315 优化 NeuroRVQ 多尺度批处理与 in-place addmm（CPU 前向约快 8%）；#1316 用 ELU×正因子实现 SELU 且结果逐位一致。修复侧覆盖无位置通道（NaN loc）、窗口尺寸错误的异常类型、以及 JSON 句柄泄漏。对在本地 CPU 或大数据集上跑基础模型的团队，这一天的改动直接对应训练/推理耗时与偶发崩溃。",
-      "brief_en": "braindecode landed 30 commits on Oct 10 focused on I/O and CPU cost: #1318 reads whole windows from lazy FIF recordings instead of 1-second slices, #1305 routes TIDNet/EEGNeX long convolutions through fft_conv1d, #1312/#1315 speed up NeuroRVQ batching and in-place addmm (about 8% faster CPU forward), and #1316 keeps SELU bit-identical while cheaper.",
+      "brief": "braindecode 在 10 月 11 日又推进 20 次提交，主题仍是把训练与推理成本压下来：#1336 让 MetaNeuromotorHand 的矩阵对数（eigh）用满全部 CPU 线程，训练步约快 2.5 倍；#1337 把 BaseConcatDataset 的惰性 FIF 读取改为「每个批次的全部窗口一次向 OS 申请」，紧接着前一天的 #1318；同时 HPU 线一次合并多枚利用 Intel Gaudi 融合 SDPA 内核的算子（DANCE、ZUNA、STEEGFormer、MultiHeadAttention）并让 fft_conv1d 在 HPU 上走 overlap-save＋实数 DFT。对在 CPU 上做长训练、或想用非 NVIDIA 加速器跑 EEG 基础模型的团队，这两天累计的改动直接体现在墙钟时间上，建议按 commit 逐项基准对比。",
+      "brief_en": "braindecode landed another 20 commits on Oct 11 cutting training cost: #1336 uses all CPU threads for MetaNeuromotorHand's matrix-logarithm eigh (about 2.5x faster train step), #1337 batches lazy FIF window requests per DataLoader batch, and several HPU PRs route DANCE, ZUNA, STEEGFormer and MultiHeadAttention through Intel Gaudi's fused SDPA kernel while fft_conv1d uses overlap-save blocks.",
       "tags": [
         "braindecode",
         "performance",
-        "lazy-loading",
+        "gaudi",
         "fft-conv",
-        "bugfix"
+        "dataloading"
       ],
-      "raw_excerpt": "\"PERF EEGWindowsDataset: read a window of a lazy FIF recording in one go, not one 1-s [slice] (#1318)\" 20:42Z; \"PERF TIDNet, EEGNeX: long temporal convolutions through fft_conv1d on CPU (#1305)\" 20:22Z; \"FIX LUNA, SignalJEPA and DGCNN with channels that have no position (NaN loc) (#1309)\" 20:32Z — 30 commits on 2026-10-10.",
-      "fetched_at": "2026-10-10T22:20:00Z",
+      "raw_excerpt": "\"PERF MetaNeuromotorHand: matrix logarithm's eigh on all CPU threads (train step 2.5x)\" (#1336) 18:34Z; \"PERF BaseConcatDataset: a DataLoader batch asks the OS for all its lazy FIF windows\" (#1337) 19:14Z; \"PERF fft_conv1d on Intel Gaudi: overlap-save blocks with real DFT matmuls\" (#1341) 21:22Z — 20 commits on 2026-10-11.",
+      "fetched_at": "2026-10-11T22:25:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1318",
+      "upstream_id": "braindecode/braindecode#1336",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 1323,
+        "like": 1324,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "惰性 FIF 整窗读取＋多项 CPU 提速，直接减少大数据集训练与推理耗时。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MNE-Python 新增 DigMontage.drop_channels，并接受 epochs 文件的 BIDS 命名",
-      "title_en": "MNE-Python Adds DigMontage.drop_channels and Accepts BIDS Names for Epochs Files",
-      "bullets_zh": [
-        "#14397 为 DigMontage 增加 drop_channels 方法，使数字化电极位置表可按通道裁剪，便于把 64/128 导模板对齐到自有子系统。",
-        "#14398 让 epochs 的 FIF 文件接受 BIDS 命名，配合 BIDS 数据集读取流程更顺。",
-        "同日还有 #14376（numba/NumPy 优化）与 #14400（_brain.py 拆分第三阶段）等重构与性能改动。"
-      ],
-      "bullets_en": [
-        "#14397 adds drop_channels to DigMontage so digitized electrode-position montages can be trimmed per channel, easing alignment of 64/128-channel templates to a custom subset.",
-        "#14398 lets epochs FIF files use BIDS naming, smoothing integration with BIDS dataset reading pipelines.",
-        "Same day: #14376 (numba/NumPy optimizations) and #14400 (third phase of splitting _brain.py)."
-      ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14397",
-      "published": "2026-10-10T12:10:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNE-Python 在 10 月 10 日合并 10 次提交，其中两项对日常流程最直接：#14397 给 DigMontage 增加 drop_channels，可把标准电极位置表裁剪到实际使用的通道子集——此前处理「用了 64 导模板但只保留 32 导」这类场景需要在外部手工重建 montage；#14398 让 epochs 的 FIF 文件接受 BIDS 命名，减少在 BIDS 数据集里混合命名带来的读取摩擦。同日还有 numba/NumPy 优化（#14376）与 _brain.py 拆分的第三阶段（#14400）。对做多数据集整合或统一 montage 管理的团队，这两项都属于可立即替换手工代码的改进；最新发布仍为 v1.13.2，需从 main 获取。",
-      "brief_en": "MNE-Python merged ten commits on Oct 10, two of them immediately practical: #14397 adds drop_channels to DigMontage so standard electrode templates can be trimmed to the channels actually used, and #14398 accepts BIDS naming for epochs FIF files, reducing friction inside BIDS datasets. Also in the batch: numba/NumPy optimizations (#14376) and phase three of the _brain.py split (#14400).",
-      "tags": [
-        "mne-python",
-        "montage",
-        "bids",
-        "api",
-        "performance"
-      ],
-      "raw_excerpt": "\"ENH: Add drop_channels method to DigMontage (#14397)\" merged 2026-10-10T12:10Z; \"Accept BIDS names for epochs FIF files (#14398)\" 12:46Z; \"Improve numba and NumPy optimizations (#14376)\" 13:45Z. Latest release remains v1.13.2 (2026-09-11).",
-      "fetched_at": "2026-10-10T22:20:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14397",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 3540,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "montage 可按通道裁剪＋epochs 支持 BIDS 命名，直接省掉手工适配代码。"
+      "why_valuable": "训练步 2.5× 与惰性读取整批化，直接缩短大数据集上的墙钟时间。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "Canonical-HMM-Networks v0.6.0：Cam-CAN 预训练的 M/EEG 规范隐马尔可夫模型发布",
-      "title_en": "Canonical-HMM-Networks v0.6.0 Ships Cam-CAN-Pretrained HMMs for M/EEG",
+      "title_zh": "COG-BCI 数据集审计：8 个被试 ID 的脑电逐字节相同，交叉验证存在泄漏",
+      "title_en": "COG-BCI Audit Finds Eight Participant IDs Share Byte-Identical EEG, Leaking Across Splits",
       "bullets_zh": [
-        "仓库提供在 Cam-CAN 数据集上、用时间延迟嵌入方法预训练的「规范」隐马尔可夫模型，可直接用于 M/EEG 状态动力学分析。",
-        "v0.6.0 于 10 月 10 日发布，发行说明注明已针对 osl-dynamics v3.6.2 测试。",
-        "配套论文发表于 Imaging Neuroscience（IMAG.a.1190），仓库含 Jupyter 笔记本与约 140 MB 的模型与示例数据。"
+        "对公开的 COG-BCI（Hinss et al., Scientific Data 10:85, 2023；29 名被试 × 3 session）做哈希审计，发现被试 18、19、20、21、22、23、24、27 在 S1/S2/S3 的脑电完全逐字节相同。",
+        "审计脚本支持对原始 .set/.fdt 或预处理后的 npz 做哈希（本次共 87 段记录、29 名被试），仓库不重新分发数据。",
+        "影响：交叉被试、留一被试或依赖这些 ID 的竞赛划分会把同一段记录同时放进训练与测试，报告精度被抬高，有效独立被试数降为 22；建议保留 1 个、排除其余 7 个并在 22 名唯一被试上报告结果。"
       ],
       "bullets_en": [
-        "The repository provides canonical Hidden Markov Models pretrained on the Cam-CAN dataset with the time-delay embedding approach, ready for M/EEG state-dynamics analysis.",
-        "v0.6.0 was released on Oct 10 and its notes state it is tested against osl-dynamics v3.6.2.",
-        "The companion paper appears in Imaging Neuroscience (IMAG.a.1190); the repo carries Jupyter notebooks plus roughly 140 MB of models and example data."
+        "A hashing audit of the public COG-BCI database (Hinss et al., Scientific Data 10:85, 2023; 29 participants x 3 sessions) found participants 18-24 and 27 share byte-identical EEG in S1, S2 and S3.",
+        "The audit script hashes raw .set/.fdt files or preprocessed npz arrays (87 recordings, 29 subjects) and redistributes no data.",
+        "Impact: cross-subject, leave-one-subject-out or competition splits involving those IDs put one recording in both train and test, inflating reported accuracy and shrinking the effective sample to 22 unique participants; the recommendation is to keep one, drop seven, and report on 22."
       ],
-      "url": "https://github.com/OHBA-analysis/Canonical-HMM-Networks/releases/tag/v0.6.0",
-      "published": "2026-10-10T08:35:00Z",
+      "url": "https://github.com/Kxvya18/cogbci-integrity-audit",
+      "published": "2026-10-11T14:04:00Z",
       "source": "github",
       "language": "en",
-      "brief": "OHBA 的 Canonical-HMM-Networks 发布 v0.6.0（2026-10-10），提供在 Cam-CAN 上以时间延迟嵌入方法预训练的规范隐马尔可夫模型，用于 M/EEG 脑状态动力学分析，发行说明注明已针对 osl-dynamics v3.6.2 测试。价值在于「免训练复用」：多数实验室没有足够数据自行拟合稳定的 HMM，而规范模型可以直接作为基线或先验，比较不同被试/条件下的状态占据与转移。配套论文发表在 Imaging Neuroscience（IMAG.a.1190）。使用前需注意方法学假设（时间延迟嵌入的窗口与状态数），并记录所用版本，便于结果复核。",
-      "brief_en": "OHBA's Canonical-HMM-Networks released v0.6.0 on Oct 10, offering canonical HMMs pretrained on Cam-CAN with time-delay embedding for M/EEG state dynamics, tested against osl-dynamics v3.6.2. Canonical models let labs without enough data to fit stable HMMs reuse a baseline or prior for state occupancy and transition comparisons; the companion paper is in Imaging Neuroscience.",
+      "brief": "新建仓库 cogbci-integrity-audit（2026-10-11）给一个被广泛使用的公开脑电库 COG-BCI（29 名被试 × 3 session，含 MATB、N-back、PVT、Flanker 任务）做哈希审计，结论很硬：被试 18–24 与 27 在全部三个 session 里的脑电**逐字节相同**，而数据集自带 notebook 却为这些 ID 标注了不同的记录日期与任务顺序。作者指出后果——任何把这些 ID 当作不同人的评测（交叉被试、留一被试、或使用这些被试的竞赛划分）都会把同一段记录同时放进训练与测试，精度被系统性抬高，独立被试数实际只有 22。仓库提供可直接运行的审计脚本，并建议保留 1 个、排除 7 个 ID。做 COG-BCI 基准或元分析的团队应立刻复查自己的划分。",
+      "brief_en": "Created 2026-10-11, cogbci-integrity-audit hashes the widely used COG-BCI database: participants 18-24 and 27 have byte-identical EEG in all three sessions, despite the notebook listing distinct recording dates. Treating them as separate people leaks one recording into both train and test, inflating accuracy; the effective sample is 22 unique participants.",
       "tags": [
-        "hmm",
-        "meg",
-        "eeg",
-        "pretrained",
-        "osl-dynamics"
+        "cog-bci",
+        "data-leakage",
+        "reproducibility",
+        "audit",
+        "benchmark"
       ],
-      "raw_excerpt": "Release v0.6.0, published 2026-10-10T08:35:23Z; release notes: \"Tested against osl-dynamics v3.6.2.\" README: \"canonical Hidden Markov Models (HMMs) that were pre-trained on the Cam-CAN dataset … (using the time-delay embedding approach)\"; paper in Imaging Neuroscience (IMAG.a.1190).",
-      "fetched_at": "2026-10-10T22:20:00Z",
+      "raw_excerpt": "\"we found that the released EEG of eight participant IDs is identical: subjects 18, 19, 20, 21, 22, 23, 24 and 27 contain byte-identical EEG in every session (S1, S2, S3)\" … \"Any evaluation that treats these IDs as different people places the same recording in both training and test data … inflates reported accuracy and shrinks the effective sample to 22 unique participants.\"",
+      "fetched_at": "2026-10-11T22:25:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "OHBA-analysis/Canonical-HMM-Networks@v0.6.0",
-      "author_handle": "OHBA-analysis",
-      "metrics": {
-        "play": null,
-        "like": 7,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "免训练即可复用的规范 HMM 基线，适合数据量不足的实验室做状态动力学对比。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "EEGSeizGuard：头皮脑电癫痫发作预测离线工作台（Welch 特征＋逻辑回归＋三维脑网络）",
-      "title_en": "EEGSeizGuard: An Offline Scalp-EEG Seizure Prediction Workbench with Welch Features",
-      "bullets_zh": [
-        "中文文档的一体化研究工作台：数据准备、模型训练、风险预测、效果分析与三维脑网络可视化在同一流程内完成。",
-        "算法为可追溯的单一基线——Welch 频带特征＋逻辑回归，避免「黑箱」式不可复现结论。",
-        "研究版 V1.0，本机离线运行，明确标注仅用于研究用途；仓库创建于 2026-10-10。"
-      ],
-      "bullets_en": [
-        "A Chinese-documented, integrated research workbench: data preparation, model training, risk prediction, performance analysis and 3D brain-network visualisation in one flow.",
-        "The algorithm is a single, traceable baseline — Welch band-power features with logistic regression — instead of an unreproducible black box.",
-        "Release V1.0, runs offline on the local machine, explicitly labelled research-only; the repository was created on 2026-10-10."
-      ],
-      "url": "https://github.com/HuZechong/EEGSeizGuard",
-      "published": "2026-10-10T09:29:00Z",
-      "source": "github",
-      "language": "zh",
-      "brief": "新建仓库 EEGSeizGuard（2026-10-10）是一套中文的头皮脑电癫痫发作预测研究软件：以 Welch 频带特征＋逻辑回归作为可追溯的基线算法，把数据准备、模型训练、风险预测、效果分析与三维脑网络可视化串成一条离线工作流。它的定位很明确——研究版、本机离线、单一算法可追溯，用「简单可解释的基线」回答「信号里是否存在可利用的预测信息」，而不是靠复杂模型堆指标；这对教学、方法学对照和结果复核都更友好。需要提醒：癫痫预测的临床可用性远严于研究指标，仓库本身也声明仅限研究用途，切勿据此做医疗判断。",
-      "brief_en": "Created 2026-10-10, EEGSeizGuard is a Chinese-language scalp-EEG seizure prediction workbench that chains data preparation, training, risk prediction, analysis and 3D brain-network visualisation around a single traceable baseline (Welch band features plus logistic regression). Offline, research-only, and deliberately interpretable rather than a black box.",
-      "tags": [
-        "seizure-prediction",
-        "scalp-eeg",
-        "welch",
-        "logistic-regression",
-        "chinese"
-      ],
-      "raw_excerpt": "「头皮脑电（scalp EEG）癫痫发作预测研究软件：基于 Welch 频带特征与逻辑回归的发作预测基线，提供数据准备、模型训练、风险预测、效果分析与三维脑网络可视化的一体化研究工作台。」「研究用途声明：本软件仅用于研究…」— README.md（仓库创建于 2026-10-10T09:29Z）",
-      "fetched_at": "2026-10-10T22:20:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "HuZechong/EEGSeizGuard",
-      "author_handle": "HuZechong",
-      "metrics": {
-        "play": null,
-        "like": 1,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "中文可追溯的癫痫预测基线工作台，含离线可视化，适合教学与方法学对照。"
-    },
-    {
-      "type": "Project",
-      "level": "Beginner",
-      "title_zh": "Nexus BCI：面向学生的本地脑电实验台（OpenBCI 采集＋引导实验＋交互数学）",
-      "title_en": "Nexus BCI, a Local EEG Science Lab for Students",
-      "bullets_zh": [
-        "定位为学生的「脑电科学项目起点」：采集信号、给实验打标签、测试分类器、理解其中数学。",
-        "随仓库提供开闭眼实验指南与学生入门指南 PDF，以及实验（Experiment Lab）文档，降低从零设计范式的门槛。",
-        "前端为 TypeScript 应用，支持本地运行；仓库创建于 2026-10-10。"
-      ],
-      "bullets_en": [
-        "Positioned as a starting point for student EEG projects: record signals, label experiments, test a classifier and understand the maths.",
-        "Ships PDF guides for the eyes-open/closed experiment and a student starter guide plus an Experiment Lab document, lowering the barrier to designing a first paradigm.",
-        "A locally runnable TypeScript front end; the repository was created on 2026-10-10."
-      ],
-      "url": "https://github.com/zook111/Nexus_BCI",
-      "published": "2026-10-10T18:34:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 Nexus BCI（2026-10-10）把「学生第一次做脑电实验」的整条路径打包：用 OpenBCI 采集、按引导完成实验并打标签、然后测试一个分类器，最后解释其中的数学。仓库提供开闭眼实验指南、学生入门指南与实验文档三份 PDF，以及一个本地运行的 TypeScript 前端，属于少见的「以教学为第一目标」的非侵入式 EEG 项目。对高校课程、科创社团或自学入门者，这类材料能显著缩短从「有板子」到「跑通一次完整实验」的时间；注意它偏教学与演示，不承担研究级数据质量保证。",
-      "brief_en": "Created 2026-10-10, Nexus BCI packages the whole first-EEG-experiment journey: acquire with OpenBCI, run a guided experiment and label it, test a classifier, then understand the maths. It ships PDF guides (eyes-open/closed, student starter, experiment lab) plus a local TypeScript front end — unusual in being teaching-first.",
-      "tags": [
-        "openbci",
-        "education",
-        "beginner",
-        "typescript",
-        "experiment"
-      ],
-      "raw_excerpt": "\"### Your EEG science project starts here. Record signals. Label experiments. Test a classifier. Understand the maths.\" Links: \"First experiment (PDF) eyes-open-closed-experiment-guide\", \"Research guide (PDF) student-starter-guide\", \"Experiment Lab\". Repo created 2026-10-10T18:34Z.",
-      "fetched_at": "2026-10-10T22:20:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "zook111/Nexus_BCI",
-      "author_handle": "zook111",
+      "upstream_id": "Kxvya18/cogbci-integrity-audit",
+      "author_handle": "Kxvya18",
       "metrics": {
         "play": null,
         "like": 0,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "教学优先的 OpenBCI 入门套件，三份实验 PDF 可缩短首次实验搭建时间。"
+      "quality_score": 9,
+      "why_valuable": "直接暴露公开脑电基准的训练/测试泄漏，附可复跑脚本与具体的排除建议。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-BIDS 在 read_raw_bids 中只解析一次 participants.tsv",
-      "title_en": "MNE-BIDS Parses participants.tsv Only Once in read_raw_bids",
+      "title_zh": "EEG-FM-Digest：每日自动抓取并分类 arXiv 上的脑电基础模型论文",
+      "title_en": "EEG-FM-Digest Auto-Tracks and Classifies EEG Foundation-Model Papers Daily",
       "bullets_zh": [
-        "#1681 让 read_raw_bids 只解析一次 participants.tsv，避免在每个被试/每次调用时重复读取与解析。",
-        "对按被试批量读取 BIDS 数据集的流程，这是直接的 I/O 与 CPU 节省，数据集越大、被试越多收益越明显。",
-        "行为保持不变，属内部优化；升级后建议对既有批处理脚本做一次耗时对比与结果一致性检查。"
+        "站点按论文类型与架构分类 EEG 基础模型预印本，并支持检索，解决「arXiv 上散落难找」的问题。",
+        "由 GitHub Actions 每日执行：arXiv 查询 → LLM 过滤 → LLM 摘要（Gemma 4 31B）后写入摘要站点。",
+        "仓库 2026-10-11 仍有更新，属于少见的、与本情报lane 高度重合的自动追踪项目。"
       ],
       "bullets_en": [
-        "#1681 makes read_raw_bids parse participants.tsv once instead of re-reading and re-parsing it per subject or per call.",
-        "For batch pipelines that read a BIDS dataset subject by subject, this is a direct I/O and CPU saving that grows with dataset size.",
-        "Behaviour is unchanged — an internal optimization; compare runtime and outputs on an existing batch script after upgrading."
+        "The site classifies EEG foundation-model preprints by paper type and architecture with search, addressing how scattered these papers are on arXiv.",
+        "GitHub Actions runs daily: an arXiv query, then LLM filtering, then LLM summaries (Gemma 4 31B) written into the digest site.",
+        "The repository was still updated on 2026-10-11; it is an automated tracker unusually well aligned with this lane's beat."
       ],
-      "url": "https://github.com/mne-tools/mne-bids/pull/1681",
-      "published": "2026-10-10T13:36:00Z",
+      "url": "https://github.com/iroblesrazzaq/EEG-FM-Digest",
+      "published": "2026-10-11T16:13:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-BIDS 合并 #1681，让 read_raw_bids 只解析一次 participants.tsv。BIDS 数据集的人口学表在按被试循环读取时会被反复打开与解析，数据量越大这一开销越明显；改动属内部优化、不改变返回结果，因此风险低但收益随规模放大。对管理数十至数百被试数据集的实验室，这类改动通常意味着批处理脚本整体耗时下降，同时减少文件句柄压力；建议升级后对既有脚本做一次耗时对比，并抽查被试元数据是否与之前一致，确认无回归后再推广到生产流程。",
-      "brief_en": "MNE-BIDS merged #1681 so read_raw_bids parses participants.tsv once instead of on every call, a low-risk internal optimization whose benefit grows with dataset size. Labs with dozens to hundreds of subjects should see faster batch pipelines; compare runtime and spot-check metadata consistency after upgrading.",
+      "brief": "EEG-FM-Digest（站点 iroblesrazzaq.github.io/EEG-FM-Digest）用自动化流水线追踪 arXiv 上的脑电基础模型论文：GitHub Actions 每天跑一次 arXiv 查询，随后用 LLM 过滤、再用 Gemma 4 31B 生成摘要，最后按论文类型与架构归类并支持检索。对每天要盯 EEG 基础模型进展的人，这相当于把「散落预印本」变成可检索索引；也提醒一点：条目由 LLM 摘要，引用前应回原文核对，尤其不要把自动分类当权威结论。适合作为我们这类情报工作的交叉校验源。",
+      "brief_en": "EEG-FM-Digest (site iroblesrazzaq.github.io/EEG-FM-Digest) automates tracking of EEG foundation-model preprints: GitHub Actions runs a daily arXiv query, then LLM filtering and Gemma 4 31B summaries, producing a searchable index by paper type and architecture. Useful as a cross-check source, with the caveat that entries are LLM-written and should be verified against the original.",
       "tags": [
-        "mne-bids",
-        "performance",
-        "bids",
-        "io",
-        "pipeline"
+        "eeg-foundation-model",
+        "arxiv",
+        "tracker",
+        "automation",
+        "llm"
       ],
-      "raw_excerpt": "\"ENH: Parse participants.tsv once in read_raw_bids (#1681)\" — merged 2026-10-10T13:36Z. Latest release remains v0.20.0 (2026-09-29).",
-      "fetched_at": "2026-10-10T22:20:00Z",
+      "raw_excerpt": "\"I built this digest to track the influx of EEG FM papers! There are a lot of EEG FM preprints on arXiv that are hard to find … Via github actions, it runs a daily arxiv query, llm filtering, then llm summary with gemma 4 31b\". Repo pushed 2026-10-11T16:13Z.",
+      "fetched_at": "2026-10-11T22:25:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-bids#1681",
-      "author_handle": "mne-tools",
+      "upstream_id": "iroblesrazzaq/EEG-FM-Digest",
+      "author_handle": "iroblesrazzaq",
       "metrics": {
         "play": null,
-        "like": 182,
+        "like": 4,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把散落 arXiv 的 EEG 基础模型论文变成可检索索引，可作交叉校验源。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "NEMAR 新发布三个开放脑电数据集：两个 P300 与一个 VR 运动想象",
+      "title_en": "NEMAR Publishes Three Open EEG Datasets: Two P300 Sets and a VR Motor-Imagery Set",
+      "bullets_zh": [
+        "nm000262：P300-BCI 数据（19 名健康被试 × 3 session，8 通道），比较标准闪光与卡通人脸刺激对 P300 性能的影响（Chailloux Peguero et al. 2020，DOI 10.82901/nemar.nm000262）。",
+        "nm000269：BigP3BCI Study A，13 名健康被试的 P300 数据（Mainsah et al. 2025）。",
+        "nm000292：Vagaja2023，在 VR 中经历具身启动（embodiment priming）的运动想象 BCI 训练数据。"
+      ],
+      "bullets_en": [
+        "nm000262: a P300-BCI dataset (19 healthy participants x 3 sessions, 8-channel montage) comparing standard flashes with cartoon face stimuli (Chailloux Peguero et al. 2020, DOI 10.82901/nemar.nm000262).",
+        "nm000269: BigP3BCI Study A, a P300 dataset from 13 healthy participants (Mainsah et al. 2025).",
+        "nm000292: Vagaja2023, motor-imagery BCI training EEG recorded during embodiment priming in VR."
+      ],
+      "url": "https://github.com/nemarDatasets/nm000262",
+      "published": "2026-10-11T03:03:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "NEMAR 在 10 月 11 日发布了三个开放脑电数据集（各自带 DOI 与 NEMAR 页面）：nm000262 是 19 名健康被试、每人 3 个 session、8 通道的 P300-BCI 数据，研究刺激类型（标准闪光 vs 卡通人脸）对 P300 性能的影响（Chailloux Peguero et al. 2020）；nm000269 是 BigP3BCI 研究 A，13 名健康被试的 P300 数据（Mainsah et al. 2025）；nm000292 是 Vagaja2023，在 VR 中经具身启动后进行运动想象 BCI 训练的数据。对做 P300 拼写器优化、刺激范式比较或 VR 运动想象研究的团队，这些是可以立即下载并复现实验的新数据源；使用前建议核对被试数与 session 结构是否匹配自己的划分设计。",
+      "brief_en": "NEMAR published three open EEG datasets on Oct 11, each with a DOI: nm000262 (P300-BCI, 19 healthy participants x 3 sessions, 8-channel montage, standard flashes versus cartoon faces; Chailloux Peguero et al. 2020), nm000269 (BigP3BCI Study A, P300, 13 healthy participants; Mainsah et al. 2025) and nm000292 (Vagaja2023, motor-imagery BCI training during VR embodiment priming).",
+      "tags": [
+        "nemar",
+        "open-data",
+        "p300",
+        "motor-imagery",
+        "vr"
+      ],
+      "raw_excerpt": "nm000262: \"A P300 brain-computer interface dataset comprising EEG recordings from 19 healthy participants across 3 sessions each … visual stimulation conditions (standard flash vs. cartoon face stimuli)\" (DOI 10.82901/nemar.nm000262). nm000269: \"BigP3BCI Study A — P300 BCI EEG dataset (13 healthy subjects, Mainsah et al. 2025)\". nm000292: \"Vagaja2023: Motor-imagery EEG during embodiment-primed MI-BCI training in VR\". All pushed 2026-10-11.",
+      "fetched_at": "2026-10-11T22:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "nemarDatasets/nm000262",
+      "author_handle": "nemarDatasets",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "三个可直接下载的新数据集，覆盖 P300 刺激范式比较与 VR 运动想象。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "SPDlearn 0.2.1 发布：为 JMLR MLOSS 投稿做准备，补测试与最老依赖 CI",
+      "title_en": "SPDlearn 0.2.1 Prepares Its JMLR MLOSS Submission, Adding Tests and Oldest-Deps CI",
+      "bullets_zh": [
+        "0.2.1 修复许可与署名问题、补充未覆盖代码路径的测试，并新增「最老支持依赖」CI 任务。",
+        "库定位：通过 trivialization 在对称正定（SPD）矩阵上做几何深度学习，用于神经解码——EEG 协方差矩阵与黎曼几何方法的常用底座。",
+        "上一版 0.2.0（09-27）已改进训练稳定性与 wavelet 性能，并加入 EEGSPDNet 的 spd_drop_prob 等 API。"
+      ],
+      "bullets_en": [
+        "0.2.1 fixes licensing and attribution, adds tests for previously uncovered paths and introduces a CI job for the oldest supported dependencies.",
+        "The library does geometric deep learning on symmetric positive definite (SPD) matrices through trivialization for neural decoding, a common basis for EEG covariance and Riemannian methods.",
+        "The previous 0.2.0 (Sep 27) improved training stability and wavelet performance and added APIs such as EEGSPDNet's spd_drop_prob."
+      ],
+      "url": "https://github.com/spdlearn/spd_learn/releases/tag/v0.2.1",
+      "published": "2026-10-11T19:51:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "SPDlearn 发布 0.2.1（2026-10-11）：这是一个在对称正定（SPD）矩阵上做几何深度学习、用于神经解码的 Python 库，通过 trivialization 把 SPD 流形上的运算变成可微网络层——EEG 协方差矩阵与黎曼几何解码的常用底座。本次为补丁版：修许可与署名、补测试覆盖、新增「最老支持依赖」的 CI 任务，并明确为 **JMLR MLOSS** 投稿做准备（软件论文投稿通常意味着接口会趋于稳定，适合现在接入）。相比 pyRiemann 等成熟库，它的 SPD 神经网络层更丰富；若你的管线用协方差＋黎曼分类，值得把 0.2.1 与自研实现做一次数值对齐验证。",
+      "brief_en": "SPDlearn 0.2.1 (Oct 11) is a patch release of a Python library doing geometric deep learning on SPD matrices via trivialization for neural decoding — the usual basis for EEG covariance and Riemannian pipelines. It fixes licensing and attribution, adds tests and an oldest-supported-dependencies CI job, and prepares the package for a JMLR MLOSS submission, which typically signals API stabilisation.",
+      "tags": [
+        "spdlearn",
+        "riemannian",
+        "spd-matrices",
+        "neural-decoding",
+        "release"
+      ],
+      "raw_excerpt": "Release 0.2.1 (2026-10-11T19:51:33Z): \"SPD Learn 0.2.1 is a patch release that fixes licensing and attribution, adds tests and a CI job for the oldest supported dependencies, and prepares the package for the JMLR Machine Learning Open Sour[ce]…\". Repo description: \"A Geometric Deep Learning Python Library for Neural Decoding Through Trivialization\".",
+      "fetched_at": "2026-10-11T22:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "spdlearn/spd_learn@v0.2.1",
+      "author_handle": "spdlearn",
+      "metrics": {
+        "play": null,
+        "like": 40,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "黎曼/SPD 神经网络层的现成实现，且因投稿 MLOSS 接口趋于稳定。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "BHB-EEGSuite 发布 v3.5：Windows 上的 Web 脑电上位机（采集/阻抗/EDF 导出）",
+      "title_en": "BHB-EEGSuite v3.5: A Windows Web Host for EEG Acquisition, Impedance and EDF Export",
+      "bullets_zh": [
+        "对外发布统一为 v3.5：修复通道配置变更后顶图面板的刷新逻辑，新增方差趋势频带多选与通道线型说明。",
+        "基于 Windows 11 的 Web 上位机：采集控制、阻抗检测、离线录制与导出（CSV/EDF）、浏览器端实时可视化。",
+        "Release 提供内置 Python 运行时的免安装包（BHB-EEGSuite-base.zip），音乐模块作为独立扩展分发，降低上手门槛。"
+      ],
+      "bullets_en": [
+        "Public release unified as v3.5: it fixes the top panel refresh after channel-configuration changes and adds multi-select variance-trend bands plus channel line-style documentation.",
+        "A Windows 11 web host for EEG acquisition control, impedance checking, offline recording with CSV/EDF export and browser-based real-time visualisation.",
+        "Releases ship a self-contained package with bundled Python (BHB-EEGSuite-base.zip), with the music module distributed as a separate extension."
+      ],
+      "url": "https://github.com/SpoonRiv/BHB-EEGSuite",
+      "published": "2026-10-11T11:51:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "中文项目 BHB-EEGSuite 于 2026-10-11 发布统一版本 v3.5：Windows 11 上的 Web 脑电上位机，功能覆盖采集控制、阻抗检测、离线录制与导出（CSV/EDF）以及浏览器端实时可视化。本次提交修复了通道配置变更后顶图面板的刷新逻辑，并新增方差趋势频带多选与通道线型说明。它的实用点在于「开箱」——Release 里提供内置 Python 运行时的免安装包，双击 exe 后浏览器打开本地页面即可用，适合自建放大器/开源硬件（如 OpenBCI 类设备）的教学与原型场景；也能作为自研上位机功能的对照参考。注意它面向 Windows，跨平台需求需另寻方案。",
+      "brief_en": "The Chinese project BHB-EEGSuite released unified version v3.5 on Oct 11: a Windows 11 web host for EEG work covering acquisition control, impedance checks, offline recording with CSV/EDF export and browser visualisation. This update fixes the top panel refresh after channel changes and adds variance-trend band multi-select, and its Releases ship a self-contained package with bundled Python.",
+      "tags": [
+        "eeg",
+        "upstream-host",
+        "windows",
+        "edf",
+        "chinese"
+      ],
+      "raw_excerpt": "「BHB EEGSuite 基于 Windows 11 的 Web 上位机：EEG 采集控制、阻抗检测、离线录制与导出（CSV/EDF）、浏览器端实时可视化。」提交（2026-10-11）：「对外发布版本统一为 v3.5」「修复通道配置变更后顶图面板刷新逻辑」「添加方差趋势频带多选与通道线型说明」。",
+      "fetched_at": "2026-10-11T22:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "SpoonRiv/BHB-EEGSuite",
+      "author_handle": "SpoonRiv",
+      "metrics": {
+        "play": null,
+        "like": 6,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "按被试批量读取 BIDS 时免除重复解析，规模越大收益越明显且无行为变更。"
+      "why_valuable": "免安装的中文 Web 上位机，含阻抗/EDF 导出，适合教学与自研硬件原型。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-CPP 连推 30 次提交：把实时框架的报错信息变得可诊断",
+      "title_en": "MNE-CPP Pushes 30 Commits Making Its Real-Time Framework's Errors Diagnosable",
+      "bullets_zh": [
+        "错误报告改进：filter 与 source-estimation skill 提示输入不是 raw FIFF；Neuro-Kernel 明确指出无法解析的文件；Studio 3D 视图提示 .bem 缺少 BEM 曲面。",
+        "修复 Windows/MSVC 下 WorkflowValidationError 的 vftable 被重复发出（LNK4197），并重新生成质量基线。",
+        "MNE-CPP 是实时功能成像的 C++ 框架（177 stars），这类可诊断性改动直接影响在线闭环调试效率。"
+      ],
+      "bullets_en": [
+        "Better error reporting: the filter and source-estimation skills flag non-raw FIFF input, Neuro-Kernel names the file it cannot parse, and the Studio 3D view reports a .bem file without BEM surfaces.",
+        "It also fixes duplicate emission of WorkflowValidationError's vftable on Windows/MSVC (LNK4197) and regenerates quality baselines.",
+        "MNE-CPP is the C++ framework for real-time functional brain imaging (177 stars), where diagnosability directly affects closed-loop debugging speed."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/110874ee46",
+      "published": "2026-10-11T20:44:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 11 日直接向主干推进 30 次提交，主题是「让错误自己说清楚」：filter 与 source-estimation skill 现在会提示输入不是 raw FIFF，Neuro-Kernel 会指出无法解析的具体文件，Studio 3D 视图会提示 .bem 缺少 BEM 曲面；另修复 MSVC 下 WorkflowValidationError 的 vftable 重复发出（LNK4197）并重建质量基线。对用该 C++ 框架做实时闭环的人来说，这类改动减少的是「报错看不出原因」的调试成本——实时场景下往往没有时间逐层排查。若你正基于 MNE-CPP 开发在线流程，这次更新值得同步；同时注意它是活跃的开发分支，接口变动需跟着适配。",
+      "brief_en": "MNE-CPP pushed 30 commits straight to its mainline on Oct 11 with an error-reporting focus: the filter and source-estimation skills flag non-raw FIFF input, Neuro-Kernel names the unparseable file, and the Studio 3D view reports .bem files without BEM surfaces, plus an MSVC LNK4197 fix and regenerated quality baselines — fewer unfathomable failures in real-time closed-loop work.",
+      "tags": [
+        "mne-cpp",
+        "realtime",
+        "cpp",
+        "diagnostics",
+        "bugfix"
+      ],
+      "raw_excerpt": "Commits 2026-10-11: \"FIX: filter and source-estimation skills report non-raw FIFF input\" (89e8c1a29e), \"FIX: Neuro-Kernel names the file it cannot parse as raw\" (729942d535), \"FIX: exported WorkflowValidationError vftable emitted once (MSVC LNK4197)\" (110874ee46), \"MAINT: regenerate quality baselines\" (a1aa9f7ae2) — 30 commits that day.",
+      "fetched_at": "2026-10-11T22:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@110874ee46",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 177,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "实时 C++ 框架的报错可诊断性提升，直接降低在线闭环的调试成本。"
     }
   ],
   "stats": {
     "fetched": 60,
-    "prefiltered": 48,
-    "llm_rows": 12,
+    "prefiltered": 46,
+    "llm_rows": 14,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
