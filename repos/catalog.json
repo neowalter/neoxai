@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-08T01:22:27Z",
+  "generatedAt": "2026-10-11T22:58:03Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 168,
+  "count": 180,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 168
+      "count": 180
     }
   ],
   "items": [
@@ -5535,6 +5535,409 @@
         "contactedAt": "2026-10-08",
         "batch": "batch15",
         "contactedAuthor": "tyukei"
+      }
+    },
+    {
+      "id": "github:A13ssi0/gTec_EEGpipeline",
+      "name": "gTec_EEGpipeline",
+      "owner": "A13ssi0",
+      "author": "A13ssi0",
+      "url": "https://github.com/A13ssi0/gTec_EEGpipeline",
+      "homepage": null,
+      "source": "github",
+      "description": "Complete EEG Pipeline, from Acquisition to Classification, for gTec headsets (Nautilus and Unicorn)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "gtec",
+        "unicorn",
+        "motor-imagery",
+        "riemannian"
+      ],
+      "createdAt": "2025-06-18T14:46:16Z",
+      "updatedAt": "2026-10-11T22:56:06Z",
+      "pushedAt": "2026-10-06T11:45:04Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "A13ssi0"
+      }
+    },
+    {
+      "id": "github:African-Neurodata-Research-Lab-ANR-LAB/ANR-Lab-Mendi-Recorder",
+      "name": "ANR-Lab-Mendi-Recorder",
+      "owner": "African-Neurodata-Research-Lab-ANR-LAB",
+      "author": "African-Neurodata-Research-Lab-ANR-LAB",
+      "url": "https://github.com/African-Neurodata-Research-Lab-ANR-LAB/ANR-Lab-Mendi-Recorder",
+      "homepage": null,
+      "source": "github",
+      "description": "Browser-based Mendi neurotechnology recorder and fNIRS research pipeline developed by African Neurodata Research Lab.",
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "fnirs",
+        "mendi",
+        "web-bluetooth",
+        "recorder",
+        "web"
+      ],
+      "createdAt": "2026-08-26T17:38:07Z",
+      "updatedAt": "2026-10-11T22:55:30Z",
+      "pushedAt": "2026-10-03T17:51:57Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "African-Neurodata-Research-Lab-ANR-LAB"
+      }
+    },
+    {
+      "id": "github:Chaoyi-Z/Customized_HealthMonitor",
+      "name": "Customized_HealthMonitor",
+      "owner": "Chaoyi-Z",
+      "author": "Chaoyi-Z",
+      "url": "https://github.com/Chaoyi-Z/Customized_HealthMonitor",
+      "homepage": null,
+      "source": "github",
+      "description": "Wireless ESP32-S3 + MAX30102 physiological monitor for marmoset and human subjects: HR, SpO2, HRV, skin temp, and PPG over BLE, with Lab Streaming Layer forwarding and NeuroKit2 HRV analysis.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "ppg",
+        "esp32",
+        "lsl",
+        "hrv",
+        "neuroscience"
+      ],
+      "createdAt": "2026-06-15T19:04:08Z",
+      "updatedAt": "2026-10-11T22:56:40Z",
+      "pushedAt": "2026-09-14T20:26:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "Chaoyi-Z"
+      }
+    },
+    {
+      "id": "github:Fotisstam/EEG-Plotter-App",
+      "name": "EEG-Plotter-App",
+      "owner": "Fotisstam",
+      "author": "Fotisstam",
+      "url": "https://github.com/Fotisstam/EEG-Plotter-App",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time multi-channel EEG signal analyzer and plotter in Python using STM32 serial communication.",
+      "language": "C",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "stm32",
+        "pyqtgraph",
+        "viewer",
+        "serial"
+      ],
+      "createdAt": "2026-08-12T17:18:00Z",
+      "updatedAt": "2026-10-11T22:56:52Z",
+      "pushedAt": "2026-09-28T04:48:44Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "Fotisstam"
+      }
+    },
+    {
+      "id": "github:LuanVanTran12395/muse-monitor",
+      "name": "muse-monitor",
+      "owner": "LuanVanTran12395",
+      "author": "LuanVanTran12395",
+      "url": "https://github.com/LuanVanTran12395/muse-monitor",
+      "homepage": null,
+      "source": "github",
+      "description": "Realtime EEG / PPG / fNIRS / IMU monitor for Muse S Athena (PySide6, BrainFlow). Not a medical device.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "athena",
+        "brainflow",
+        "fnirs"
+      ],
+      "createdAt": "2026-10-07T08:02:58Z",
+      "updatedAt": "2026-10-11T22:54:44Z",
+      "pushedAt": "2026-10-09T05:57:31Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "LuanVanTran12395"
+      }
+    },
+    {
+      "id": "github:MindExtendAI/mindfly",
+      "name": "mindfly",
+      "owner": "MindExtendAI",
+      "author": "MindExtendAI",
+      "url": "https://github.com/MindExtendAI/mindfly",
+      "homepage": "https://mindextend.com/mindfly",
+      "source": "github",
+      "description": "MindFly: an EEG-controlled fruit-fly walking simulation using MaleCNS anatomy and Rust/WASM.",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "wasm",
+        "web-bluetooth",
+        "simulation"
+      ],
+      "createdAt": "2026-09-11T06:12:18Z",
+      "updatedAt": "2026-10-11T22:56:17Z",
+      "pushedAt": "2026-09-11T14:38:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "MindExtendAI"
+      }
+    },
+    {
+      "id": "github:fordelkon/tauri-eeg",
+      "name": "tauri-eeg",
+      "owner": "fordelkon",
+      "author": "fordelkon",
+      "url": "https://github.com/fordelkon/tauri-eeg",
+      "homepage": null,
+      "source": "github",
+      "description": "eco-eeg system",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "biosemi",
+        "tauri",
+        "rust",
+        "experiment"
+      ],
+      "createdAt": "2026-06-25T08:58:32Z",
+      "updatedAt": "2026-10-11T22:55:19Z",
+      "pushedAt": "2026-10-09T03:11:04Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "fordelkon"
+      }
+    },
+    {
+      "id": "github:hoeksemaa/brain-pong",
+      "name": "brain-pong",
+      "owner": "hoeksemaa",
+      "author": "hoeksemaa",
+      "url": "https://github.com/hoeksemaa/brain-pong",
+      "homepage": null,
+      "source": "github",
+      "description": "Play Pong with your eyes! EOG processing turns left/right glances into Pong paddle moves. Uses Cerelog 8-channel BCI board, gold electrodes, and 1-2 players.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brainflow",
+        "electrooculography",
+        "eog",
+        "pong",
+        "python",
+        "real-time",
+        "signal-processing"
+      ],
+      "tags": [
+        "eog",
+        "brainflow",
+        "bci",
+        "game",
+        "realtime"
+      ],
+      "createdAt": "2026-04-23T18:08:48Z",
+      "updatedAt": "2026-10-11T22:55:54Z",
+      "pushedAt": "2026-09-08T21:19:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "hoeksemaa"
+      }
+    },
+    {
+      "id": "github:ipeglin/modewise",
+      "name": "modewise",
+      "owner": "ipeglin",
+      "author": "ipeglin",
+      "url": "https://github.com/ipeglin/modewise",
+      "homepage": "https://ipeglin.github.io/modewise/",
+      "source": "github",
+      "description": "Data-adaptive mode decomposition and analysis of multichannel signals (fMRI, EEG), with a Rust core, a Python package and a command line",
+      "language": "Rust",
+      "license": "BSD-3-Clause",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "eeg",
+        "empirical-mode-decomposition",
+        "fmri",
+        "functional-connectivity",
+        "mode-decomposition",
+        "neuroimaging",
+        "python",
+        "rust",
+        "signal-processing",
+        "wavelets"
+      ],
+      "tags": [
+        "eeg",
+        "signal-processing",
+        "rust",
+        "python",
+        "decomposition"
+      ],
+      "createdAt": "2026-10-11T20:57:42Z",
+      "updatedAt": "2026-10-11T22:55:42Z",
+      "pushedAt": "2026-10-11T21:13:19Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "ipeglin"
+      }
+    },
+    {
+      "id": "github:jasonjsnell/XvMuse",
+      "name": "XvMuse",
+      "owner": "jasonjsnell",
+      "author": "jasonjsnell",
+      "url": "https://github.com/jasonjsnell/XvMuse",
+      "homepage": null,
+      "source": "github",
+      "description": "Swift library to connect to the Muse EEG headband",
+      "language": "Swift",
+      "license": "unknown",
+      "stars": 27,
+      "forks": 4,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "swift",
+        "ios",
+        "ppg"
+      ],
+      "createdAt": "2020-07-06T15:14:40Z",
+      "updatedAt": "2026-10-11T22:55:07Z",
+      "pushedAt": "2026-10-10T11:07:46Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "jasonjsnell"
+      }
+    },
+    {
+      "id": "github:liciacastelnovo/epoc_signal_quality_monitor",
+      "name": "epoc_signal_quality_monitor",
+      "owner": "liciacastelnovo",
+      "author": "liciacastelnovo",
+      "url": "https://github.com/liciacastelnovo/epoc_signal_quality_monitor",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time signal quality monitor for the Emotiv EPOC 1.0 EEG headset (Python, macOS)",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "emotiv",
+        "epoc",
+        "signal-quality",
+        "python"
+      ],
+      "createdAt": "2026-09-15T21:50:36Z",
+      "updatedAt": "2026-10-11T22:56:29Z",
+      "pushedAt": "2026-09-15T22:05:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "liciacastelnovo"
+      }
+    },
+    {
+      "id": "github:yuriy-mikityuk/athena-tmr-lucid",
+      "name": "athena-tmr-lucid",
+      "owner": "yuriy-mikityuk",
+      "author": "yuriy-mikityuk",
+      "url": "https://github.com/yuriy-mikityuk/athena-tmr-lucid",
+      "homepage": null,
+      "source": "github",
+      "description": "REM/TMR/TLR engine for Muse S Athena (Konkoly-like protocol)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 7,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "eeg",
+        "lucid-dreaming",
+        "machine-learning",
+        "muse",
+        "neurotech",
+        "python",
+        "signal-processing",
+        "sleep",
+        "tmr"
+      ],
+      "tags": [
+        "eeg",
+        "sleep",
+        "muse",
+        "athena",
+        "closed-loop"
+      ],
+      "createdAt": "2026-04-27T20:54:02Z",
+      "updatedAt": "2026-10-11T22:54:56Z",
+      "pushedAt": "2026-10-09T17:43:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-12",
+        "batch": "batch16",
+        "contactedAuthor": "yuriy-mikityuk"
       }
     }
   ]
