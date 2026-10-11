@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T10:48:07.179Z",
+  "generatedAt": "2026-10-11T11:00:44.778Z",
   "sources": [
     {
       "id": "huggingface",
@@ -429,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 15722,
+      "downloads": 9426,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -454,7 +454,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1754,
+      "downloads": 1766,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -479,7 +479,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1473,
+      "downloads": 1545,
       "likes": 1,
       "updatedAt": "2026-10-09T07:06:13.000Z",
       "modality": [
@@ -504,7 +504,7 @@
         "benchmark"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1267,
+      "downloads": 1277,
       "likes": 1,
       "updatedAt": "2026-10-08T11:23:24.000Z",
       "modality": [
@@ -529,7 +529,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 345,
+      "downloads": 351,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -562,6 +562,24 @@
       ]
     },
     {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 190,
+      "likes": 1,
+      "updatedAt": "2026-10-08T07:54:26.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:windwerfer/neurofeed-eeg-windows",
       "name": "neurofeed-eeg-windows",
       "owner": "windwerfer",
@@ -579,27 +597,9 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 198,
+      "downloads": 206,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 132,
-      "likes": 1,
-      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -619,7 +619,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 362,
+      "downloads": 358,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -644,7 +644,7 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 83,
+      "downloads": 84,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
       "modality": [
@@ -668,7 +668,7 @@
         "bciciv-2a"
       ],
       "license": "other",
-      "downloads": 127,
+      "downloads": 131,
       "likes": 0,
       "updatedAt": "2026-09-24T06:21:41.000Z",
       "modality": [
@@ -676,24 +676,85 @@
       ]
     },
     {
-      "id": "hf:2122ZHU/EEGProbe",
-      "name": "EEGProbe",
-      "owner": "2122ZHU",
-      "url": "https://huggingface.co/datasets/2122ZHU/EEGProbe",
+      "id": "hf:Anticloud/anticloud-eeglab",
+      "name": "anticloud-eeglab",
+      "owner": "Anticloud",
+      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
       "source": "huggingface",
-      "description": "EEGProbe EEGProbe is a signal-grounded benchmark for evaluating whether general-purpose language and vision-language models can extract, align, and reason from EEG evidence with minimal benchmark-induced preprocessing. 🚧 Release status: EEGProbe is currently being prepared for…",
-      "tags": [
-        "eeg",
-        "benchmark",
-        "neuroscience",
-        "vision-language-models",
-        "large-language-models",
-        "time-series"
-      ],
+      "description": "EEGLAB Category: BRAIN_COMPUTER_INTERFACE Status: Active development with Anticloud overlay What This Project Does ICLabel An automatic EEG independent component classifer plugin for EEGLAB. For more information, see the ICLabel website tutorial. This project provides tools, lib…",
+      "tags": [],
       "license": null,
-      "downloads": 36,
+      "downloads": 31,
       "likes": 0,
-      "updatedAt": "2026-10-07T10:09:05.000Z",
+      "updatedAt": "2026-10-09T10:19:17.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "tags": [
+        "bids",
+        "eeg",
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 182,
+      "updatedAt": "2026-10-10T13:37:03.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
+      ]
+    },
+    {
+      "id": "zenodo:15437728",
+      "name": "Altered Interoceptive Predictive Coding in Functional Neurological Disorders",
+      "owner": "Mouthon, Michaël",
+      "url": "https://doi.org/10.5281/zenodo.15437728",
+      "source": "zenodo",
+      "description": "Data repository for the following study: Stoffel N., Mouthon M., Pelentritou A., von der Weid L., Concetti C., De Lucia M., Aybek S. Altered Interoceptive Predictive Coding in Functional Neurological Disorders, Psychophysiology, 2026. This dataset contains: - The raw EEG/ECG rec…",
+      "tags": [
+        "Predictive Coding",
+        "EEG"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 149,
+      "likes": null,
+      "updatedAt": "2026-09-28T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "ECG"
+      ]
+    },
+    {
+      "id": "zenodo:21620509",
+      "name": "EEG audio-tactile spatial localization task under reduced alertness",
+      "owner": "Alameda, Clara",
+      "url": "https://doi.org/10.5281/zenodo.21620509",
+      "source": "zenodo",
+      "description": "This dataset contains raw EEG data recorded at the University of Granada (CIMCYC) between March and June 2025 during an audio&ndash;tactile spatial localization task. The experiment was conducted with healthy easy-sleepers seated in a reclining armchair for approximately 2 hours…",
+      "tags": [
+        "EEG",
+        "Sleep onset",
+        "Perceptual decision-making",
+        "Multisensory processing"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 78,
+      "likes": null,
+      "updatedAt": "2026-09-28T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -723,7 +784,7 @@
       "description": "This repository contains the EEG data of the experiment using questions. The data of the experiment using judgments is available under https://zenodo.org/records/17178030.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 6,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-10-06T00:00:00.000Z",
       "modality": [
@@ -767,22 +828,26 @@
       ]
     },
     {
-      "id": "zenodo:21620509",
-      "name": "EEG audio-tactile spatial localization task under reduced alertness",
-      "owner": "Alameda, Clara",
-      "url": "https://doi.org/10.5281/zenodo.21620509",
+      "id": "zenodo:22923070",
+      "name": "AiCumene EEG-BCI Sleep–Wake Dataset",
+      "owner": "Bernadotte, Alexandra",
+      "url": "https://doi.org/10.5281/zenodo.22923070",
       "source": "zenodo",
-      "description": "This dataset contains raw EEG data recorded at the University of Granada (CIMCYC) between March and June 2025 during an audio&ndash;tactile spatial localization task. The experiment was conducted with healthy easy-sleepers seated in a reclining armchair for approximately 2 hours…",
+      "description": "The AiCumene EEG-BCI Sleep–Wake Dataset has two components. (1) A public synthetic sleep-EEG benchmark of 45 synthetic whole-night polysomnography recordings (S0001–S0045), each paired with a 30-s sleep-stage hypnogram, produced by per-recording oscillator resynthesis of the Sle…",
       "tags": [
         "EEG",
-        "Sleep onset",
-        "Perceptual decision-making",
-        "Multisensory processing"
+        "BCI",
+        "brain-computer interface",
+        "sleep",
+        "wakefulness",
+        "polysomnography",
+        "synthetic benchmark",
+        "Sleep-EDF surrogate"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 39,
+      "license": "cc-by-nc-4.0",
+      "downloads": 62,
       "likes": null,
-      "updatedAt": "2026-09-28T00:00:00.000Z",
+      "updatedAt": "2026-09-24T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -804,7 +869,7 @@
         "Polar H10"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 2,
       "likes": null,
       "updatedAt": "2026-10-02T00:00:00.000Z",
       "modality": [
@@ -836,57 +901,11 @@
       "description": "README &nbsp;EEG Data and Analysis Results ## 1. Overview This repository contains preprocessed EEG data and analysis results associated with: Gnodde, S. C., Aslanov, V., Hogan, A., Francken, J. C., Olcese, U., &amp; Stein, T. &ldquo;Subjective visibility enhances early posterio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 4,
+      "downloads": 5,
       "likes": null,
       "updatedAt": "2026-09-30T00:00:00.000Z",
       "modality": [
         "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23020254",
-      "name": "HEAR-MRI: helix-tragus-junction and nasion fiducials on structural MRI across nine EEG–MRI cohorts, with a cross-cohort detection benchmark",
-      "owner": "McMahon, Michael",
-      "url": "https://doi.org/10.5281/zenodo.23020254",
-      "source": "zenodo",
-      "description": "Version 1.0.1 supersedes 1.0.0. Users of 1.0.0 should migrate: it contains label sets whose subject identity could not be confirmed, and its benchmark splits permit leakage. What changed. The released collection goes from 361 to 342 label sets, one per distinct scan . Nineteen s…",
-      "tags": [
-        "EEG",
-        "MRI",
-        "MEG",
-        "source imaging",
-        "coregistration",
-        "anatomical fiducials",
-        "helix-tragus junction",
-        "defacing"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 9,
-      "likes": null,
-      "updatedAt": "2026-09-28T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "MEG"
-      ]
-    },
-    {
-      "id": "zenodo:15437728",
-      "name": "Altered Interoceptive Predictive Coding in Functional Neurological Disorders",
-      "owner": "Mouthon, Michaël",
-      "url": "https://doi.org/10.5281/zenodo.15437728",
-      "source": "zenodo",
-      "description": "Data repository for the following study: Stoffel N., Mouthon M., Pelentritou A., von der Weid L., Concetti C., De Lucia M., Aybek S. Altered Interoceptive Predictive Coding in Functional Neurological Disorders, Psychophysiology, 2026. This dataset contains: - The raw EEG/ECG rec…",
-      "tags": [
-        "Predictive Coding",
-        "EEG"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-09-28T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
       ]
     },
     {
@@ -935,7 +954,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 11,
-      "updatedAt": "2026-10-09T23:43:00.000Z",
+      "updatedAt": "2026-10-10T21:32:55.000Z",
       "modality": [
         "EEG"
       ]
@@ -959,7 +978,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 2,
-      "updatedAt": "2026-10-10T02:13:10.000Z",
+      "updatedAt": "2026-10-10T21:33:17.000Z",
       "modality": [
         "EEG"
       ]
@@ -990,47 +1009,23 @@
       ]
     },
     {
-      "id": "github:gifale95/EMD",
-      "name": "EMD",
-      "owner": "gifale95",
-      "url": "https://github.com/gifale95/EMD",
+      "id": "github:hassenouni/eeg-dataset-explorer",
+      "name": "eeg-dataset-explorer",
+      "owner": "hassenouni",
+      "url": "https://github.com/hassenouni/eeg-dataset-explorer",
       "source": "github",
-      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
+      "description": "EDF inspection, bounded signal reading and provenance",
       "tags": [
+        "biomedical-engineering",
         "eeg",
-        "human-vision",
-        "open-dataset",
-        "videos"
+        "portfolio",
+        "python",
+        "signal-processing"
       ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-10-09T16:33:22.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:gorazdbiskoski/EEGSleepTest",
-      "name": "EEGSleepTest",
-      "owner": "gorazdbiskoski",
-      "url": "https://github.com/gorazdbiskoski/EEGSleepTest",
-      "source": "github",
-      "description": "A controlled benchmark of ten hyperparameter optimization algorithms searching the same CNN–LSTM architecture on two EEG sleep datasets (Sleep-EDF, HMC) under a fixed budget. 1,992 evaluations, selected on validation loss and scored on macro F1, which rank the methods differentl…",
-      "tags": [
-        "bayesian-optimization",
-        "benchmark",
-        "cnn-lstm",
-        "deep-learning",
-        "eeg",
-        "genetic-algorithm",
-        "hyperparameter-optimization",
-        "keras"
-      ],
-      "license": "EPL-2.0",
+      "license": "MIT",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-09T11:39:27.000Z",
+      "updatedAt": "2026-10-10T15:05:02.000Z",
       "modality": [
         "EEG"
       ]
