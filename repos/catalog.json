@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-11T22:58:03Z",
+  "generatedAt": "2026-10-12T22:53:06Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 180,
+  "count": 192,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 180
+      "count": 192
     }
   ],
   "items": [
@@ -5938,6 +5938,418 @@
         "contactedAt": "2026-10-12",
         "batch": "batch16",
         "contactedAuthor": "yuriy-mikityuk"
+      }
+    },
+    {
+      "id": "github:A12N4V/sema",
+      "name": "sema",
+      "owner": "A12N4V",
+      "author": "A12N4V",
+      "url": "https://github.com/A12N4V/sema",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG analysis workbench over MNE-Python. Every click is a real MNE call, recorded and exportable as a runnable script.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "eeg",
+        "fastapi",
+        "mne-python",
+        "neuroscience",
+        "react",
+        "reproducible-research",
+        "signal-processing",
+        "typescript"
+      ],
+      "tags": [
+        "eeg",
+        "mne",
+        "workbench",
+        "provenance",
+        "python"
+      ],
+      "createdAt": "2026-09-09T23:13:46Z",
+      "updatedAt": "2026-10-12T22:50:56Z",
+      "pushedAt": "2026-10-08T16:44:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "A12N4V"
+      }
+    },
+    {
+      "id": "github:Levahargun/MUSER",
+      "name": "MUSER",
+      "owner": "Levahargun",
+      "author": "Levahargun",
+      "url": "https://github.com/Levahargun/MUSER",
+      "homepage": null,
+      "source": "github",
+      "description": "MUSER is a custom graphical application for connecting to Muse EEG headbands, streaming brainwave data, monitoring contact quality, and recording sessions.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "recorder",
+        "lsl",
+        "edf"
+      ],
+      "createdAt": "2026-10-12T12:54:16Z",
+      "updatedAt": "2026-10-12T22:50:12Z",
+      "pushedAt": "2026-10-12T14:05:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "Levahargun"
+      }
+    },
+    {
+      "id": "github:Luase233/chengsi-neurofeedback",
+      "name": "chengsi-neurofeedback",
+      "owner": "Luase233",
+      "author": "Luase233",
+      "url": "https://github.com/Luase233/chengsi-neurofeedback",
+      "homepage": null,
+      "source": "github",
+      "description": "Chengsi Muse 2 neurofeedback training system for Windows, with reproducible setup, original layered audio, daily protocol and EDF export.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "neurofeedback",
+        "audio",
+        "local-first"
+      ],
+      "createdAt": "2026-10-07T15:16:45Z",
+      "updatedAt": "2026-10-12T22:50:34Z",
+      "pushedAt": "2026-10-12T18:03:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "Luase233"
+      }
+    },
+    {
+      "id": "github:MeiJinyuChen/causal_eeg_phase_tracking",
+      "name": "causal_eeg_phase_tracking",
+      "owner": "MeiJinyuChen",
+      "author": "MeiJinyuChen",
+      "url": "https://github.com/MeiJinyuChen/causal_eeg_phase_tracking",
+      "homepage": null,
+      "source": "github",
+      "description": "Strictly causal 250 Hz streaming EEG cecHT phase estimator for closed-loop sleep neuromodulation; it contains machine-readable contracts, a pseudo-real-time EDF replay evaluation, an offline benchmark for phase-tracking methods, and a single-file host plugin.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "sleep",
+        "closed-loop",
+        "phase-tracking",
+        "realtime"
+      ],
+      "createdAt": "2026-10-10T18:21:39Z",
+      "updatedAt": "2026-10-12T22:50:46Z",
+      "pushedAt": "2026-10-11T10:48:45Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "MeiJinyuChen"
+      }
+    },
+    {
+      "id": "github:Swapnil007-Curious/NeuroVox-v2.0",
+      "name": "NeuroVox-v2.0",
+      "owner": "Swapnil007-Curious",
+      "author": "Swapnil007-Curious",
+      "url": "https://github.com/Swapnil007-Curious/NeuroVox-v2.0",
+      "homepage": null,
+      "source": "github",
+      "description": "NeuroVox v2.0 is a conformal 220\u00d750mm forearm wearable PCB. Powered by an ESP32-S3, it captures high-res 4-channel EMG via AD8232, INA333, and ADS1299 ICs using leadless, integrated dry Ag/AgCl edge electrodes. It features a BNO055 IMU for motion artifact rejection, haptics, a 3W speaker, RGB LEDs, USB-C, and a 3000mAh Li-ion power system.",
+      "language": "C++",
+      "license": "unknown",
+      "stars": 3,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "assistive",
+        "esp32",
+        "ads1299",
+        "llm"
+      ],
+      "createdAt": "2026-06-10T08:57:01Z",
+      "updatedAt": "2026-10-12T22:52:04Z",
+      "pushedAt": "2026-10-07T15:26:26Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "Swapnil007-Curious"
+      }
+    },
+    {
+      "id": "github:abrilcode/neuroback",
+      "name": "neuroback",
+      "owner": "abrilcode",
+      "author": "abrilcode",
+      "url": "https://github.com/abrilcode/neuroback",
+      "homepage": "https://github.com/abrilcode/neuroback#readme",
+      "source": "github",
+      "description": "Closed-loop, alpha-phase-locked light stimulation for OpenBCI. ecHT phase tracking, 109-person real-EEG benchmark, PyQt6 app. Research/teaching, not a medical device.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "alpha-oscillations",
+        "bci",
+        "brainflow",
+        "closed-loop",
+        "eeg",
+        "neurofeedback",
+        "neuroscience",
+        "openbci",
+        "phase-locked-stimulation",
+        "pyqt6",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "openbci",
+        "closed-loop",
+        "neurostimulation",
+        "brainflow"
+      ],
+      "createdAt": "2026-10-12T14:18:30Z",
+      "updatedAt": "2026-10-12T22:50:23Z",
+      "pushedAt": "2026-10-12T15:40:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "abrilcode"
+      }
+    },
+    {
+      "id": "github:alexdni/squiggly",
+      "name": "squiggly",
+      "owner": "alexdni",
+      "author": "alexdni",
+      "url": "https://github.com/alexdni/squiggly",
+      "homepage": "https://squiggly.alexni.ai",
+      "source": "github",
+      "description": "Open source web based EEG visualizer and analyzer",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 34,
+      "forks": 11,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "qeeg",
+        "web",
+        "connectivity",
+        "viewer"
+      ],
+      "createdAt": "2025-11-11T01:13:59Z",
+      "updatedAt": "2026-10-12T22:50:00Z",
+      "pushedAt": "2026-10-12T19:09:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "alexdni"
+      }
+    },
+    {
+      "id": "github:berdakh/pyspeller",
+      "name": "pyspeller",
+      "owner": "berdakh",
+      "author": "berdakh",
+      "url": "https://github.com/berdakh/pyspeller",
+      "homepage": null,
+      "source": "github",
+      "description": "Python BCI speller",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "p300",
+        "lsl",
+        "speller"
+      ],
+      "createdAt": "2026-09-21T10:46:24Z",
+      "updatedAt": "2026-10-12T22:51:30Z",
+      "pushedAt": "2026-09-23T09:13:52Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "berdakh"
+      }
+    },
+    {
+      "id": "github:freakandstein/typewave",
+      "name": "typewave",
+      "owner": "freakandstein",
+      "author": "freakandstein",
+      "url": "https://github.com/freakandstein/typewave",
+      "homepage": "https://freakandstein.github.io/typewave/?lang=id",
+      "source": "github",
+      "description": "Realtime typing + EEG (Muse) visualizer for OBS and TikTok LIVE. Visualisasi realtime ketikan global dan kondisi otak.",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "asmr",
+        "brainwave",
+        "eeg",
+        "html5-canvas",
+        "muse",
+        "neurotech",
+        "obs-studio",
+        "tiktok-live",
+        "typing",
+        "visualization"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "visualization",
+        "obs",
+        "privacy"
+      ],
+      "createdAt": "2026-10-03T12:18:39Z",
+      "updatedAt": "2026-10-12T22:51:08Z",
+      "pushedAt": "2026-10-07T16:13:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "freakandstein"
+      }
+    },
+    {
+      "id": "github:kabaragoya-loves-you/brains",
+      "name": "brains",
+      "owner": "kabaragoya-loves-you",
+      "author": "kabaragoya-loves-you",
+      "url": "https://github.com/kabaragoya-loves-you/brains",
+      "homepage": "https://brains.kabaragoya.com",
+      "source": "github",
+      "description": "A visualizer for the Neurosity Crown.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosity",
+        "visualization",
+        "electron",
+        "web"
+      ],
+      "createdAt": "2026-10-02T05:29:03Z",
+      "updatedAt": "2026-10-12T22:51:41Z",
+      "pushedAt": "2026-10-02T06:29:38Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "kabaragoya-loves-you"
+      }
+    },
+    {
+      "id": "github:maximilianhabs/eeg-navigator",
+      "name": "eeg-navigator",
+      "owner": "maximilianhabs",
+      "author": "maximilianhabs",
+      "url": "https://github.com/maximilianhabs/eeg-navigator",
+      "homepage": "https://eeg.neuro-vibe.de",
+      "source": "github",
+      "description": "Deutschsprachiges EEG-Lehr- und Nachschlagewerk mit EDF-Viewer, Schlaf- und Teaching-Modulen. F\u00fcr medizinisches Fachpersonal; kein Medizinprodukt.",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "edf",
+        "eeg",
+        "medical-education",
+        "neurology",
+        "nextjs",
+        "teaching",
+        "typescript"
+      ],
+      "tags": [
+        "eeg",
+        "edf",
+        "education",
+        "viewer",
+        "clinical"
+      ],
+      "createdAt": "2026-06-14T06:30:51Z",
+      "updatedAt": "2026-10-12T22:51:52Z",
+      "pushedAt": "2026-09-21T11:38:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "maximilianhabs"
+      }
+    },
+    {
+      "id": "github:obo/muse-record",
+      "name": "muse-record",
+      "owner": "obo",
+      "author": "obo",
+      "url": "https://github.com/obo/muse-record",
+      "homepage": null,
+      "source": "github",
+      "description": "Simple script to record MUSE 2 headband raw data.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "ble",
+        "recorder",
+        "linux"
+      ],
+      "createdAt": "2026-09-30T15:48:38Z",
+      "updatedAt": "2026-10-12T22:51:19Z",
+      "pushedAt": "2026-09-30T15:50:01Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-13",
+        "batch": "batch17",
+        "contactedAuthor": "obo"
       }
     }
   ]
