@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-12T22:53:06Z",
+  "generatedAt": "2026-10-13T22:57:20Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 192,
+  "count": 204,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 192
+      "count": 204
     }
   ],
   "items": [
@@ -6350,6 +6350,418 @@
         "contactedAt": "2026-10-13",
         "batch": "batch17",
         "contactedAuthor": "obo"
+      }
+    },
+    {
+      "id": "github:AbhijithSriram/cyton-hardware",
+      "name": "cyton-hardware",
+      "owner": "AbhijithSriram",
+      "author": "AbhijithSriram",
+      "url": "https://github.com/AbhijithSriram/cyton-hardware",
+      "homepage": null,
+      "source": "github",
+      "description": "A custom improved clone of the OpenBCI's Cyton built and tested",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "openbci",
+        "cyton",
+        "wifi",
+        "hardware"
+      ],
+      "createdAt": "2026-10-01T15:48:40Z",
+      "updatedAt": "2026-10-13T22:55:40Z",
+      "pushedAt": "2026-10-01T19:46:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "AbhijithSriram"
+      }
+    },
+    {
+      "id": "github:MatPomGit/eeg-neurolyze",
+      "name": "eeg-neurolyze",
+      "owner": "MatPomGit",
+      "author": "MatPomGit",
+      "url": "https://github.com/MatPomGit/eeg-neurolyze",
+      "homepage": "https://matpomgit.github.io/eeg-neurolyze/",
+      "source": "github",
+      "description": "EEG acquisition, preprocessing, and analysis toolkit for Muse S Athena, Python, and Windows 11",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "athena",
+        "bids",
+        "windows"
+      ],
+      "createdAt": "2026-10-12T11:32:48Z",
+      "updatedAt": "2026-10-13T22:54:09Z",
+      "pushedAt": "2026-10-13T20:37:19Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "MatPomGit"
+      }
+    },
+    {
+      "id": "github:Minik777/databrain",
+      "name": "databrain",
+      "owner": "Minik777",
+      "author": "Minik777",
+      "url": "https://github.com/Minik777/databrain",
+      "homepage": null,
+      "source": "github",
+      "description": "\u041f\u043e\u0442\u043e\u043a\u043e\u0432\u044b\u0439 \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d EEG: Kafka + ClickHouse + Metabase, \u0434\u0435\u0442\u0435\u043a\u0446\u0438\u044f \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f \u0433\u043b\u0430\u0437 \u0432 \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u0438",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "clickhouse",
+        "data-engineering",
+        "docker",
+        "eeg",
+        "kafka",
+        "python",
+        "streaming"
+      ],
+      "tags": [
+        "eeg",
+        "kafka",
+        "streaming",
+        "clickhouse",
+        "realtime"
+      ],
+      "createdAt": "2026-09-13T17:29:06Z",
+      "updatedAt": "2026-10-13T22:56:14Z",
+      "pushedAt": "2026-09-13T17:29:19Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "Minik777"
+      }
+    },
+    {
+      "id": "github:NightProton/NeckWatch",
+      "name": "NeckWatch",
+      "owner": "NightProton",
+      "author": "NightProton",
+      "url": "https://github.com/NightProton/NeckWatch",
+      "homepage": null,
+      "source": "github",
+      "description": "Wearable EMG posture monitor, Arduino + Muscle BioAmp Shield detect sustained neck-bend via real-time muscle signal analysis and alert before it becomes a habit",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "bioamp",
+        "posture",
+        "arduino",
+        "wearable"
+      ],
+      "createdAt": "2026-08-16T09:39:05Z",
+      "updatedAt": "2026-10-13T22:55:51Z",
+      "pushedAt": "2026-09-15T06:31:57Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "NightProton"
+      }
+    },
+    {
+      "id": "github:Rubathiyagish/Muse-Realtime-Monitor",
+      "name": "Muse-Realtime-Monitor",
+      "owner": "Rubathiyagish",
+      "author": "Rubathiyagish",
+      "url": "https://github.com/Rubathiyagish/Muse-Realtime-Monitor",
+      "homepage": null,
+      "source": "github",
+      "description": "A real-time EEG brainwave visualizer for Interaxon Muse headbands using Python and PyQtGraph.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 7,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "biofeedback",
+        "bleak",
+        "brainwaves",
+        "muse",
+        "muse-headband",
+        "neuroscience",
+        "neurotech",
+        "pyqtgraph",
+        "python",
+        "real-time-visualization",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "ble",
+        "visualization",
+        "pyqtgraph"
+      ],
+      "createdAt": "2026-02-12T16:44:45Z",
+      "updatedAt": "2026-10-13T22:54:31Z",
+      "pushedAt": "2026-09-01T12:55:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "Rubathiyagish"
+      }
+    },
+    {
+      "id": "github:Spidoug/MindFlex-EEG-Studio",
+      "name": "MindFlex-EEG-Studio",
+      "owner": "Spidoug",
+      "author": "Spidoug",
+      "url": "https://github.com/Spidoug/MindFlex-EEG-Studio",
+      "homepage": null,
+      "source": "github",
+      "description": "MindFlex EEG Studio is a desktop application for MindFlex/TGAM EEG acquisition, monitoring, diagnostics, RAW-based BCI calibration, validation, live neural control and communication experiments.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "eeg-signals",
+        "mindflex",
+        "neurotechnology",
+        "tgam1",
+        "thinkgear"
+      ],
+      "tags": [
+        "eeg",
+        "mindflex",
+        "tgam",
+        "bci",
+        "desktop"
+      ],
+      "createdAt": "2026-09-02T12:57:48Z",
+      "updatedAt": "2026-10-13T22:54:43Z",
+      "pushedAt": "2026-09-04T23:37:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "Spidoug"
+      }
+    },
+    {
+      "id": "github:TechartdrV2/pipeline-neuroadaptatif-eeg",
+      "name": "pipeline-neuroadaptatif-eeg",
+      "owner": "TechartdrV2",
+      "author": "TechartdrV2",
+      "url": "https://github.com/TechartdrV2/pipeline-neuroadaptatif-eeg",
+      "homepage": null,
+      "source": "github",
+      "description": "Pipeline Python d\u2019informatique affective pour l'\u00e9valuation du stress par asym\u00e9trie frontale EEG via Muse S Athena.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "athena",
+        "faa",
+        "affective"
+      ],
+      "createdAt": "2026-10-13T20:29:20Z",
+      "updatedAt": "2026-10-13T22:54:54Z",
+      "pushedAt": "2026-10-13T20:54:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "TechartdrV2"
+      }
+    },
+    {
+      "id": "github:TheBabelDragon/eeg-loop",
+      "name": "eeg-loop",
+      "owner": "TheBabelDragon",
+      "author": "TheBabelDragon",
+      "url": "https://github.com/TheBabelDragon/eeg-loop",
+      "homepage": null,
+      "source": "github",
+      "description": "Minimal EEG acquisition, signal analysis, inference, and closed-loop control platform",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "esp32",
+        "closed-loop",
+        "acquisition"
+      ],
+      "createdAt": "2026-08-31T23:57:03Z",
+      "updatedAt": "2026-10-13T22:54:20Z",
+      "pushedAt": "2026-09-01T00:05:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "TheBabelDragon"
+      }
+    },
+    {
+      "id": "github:anurag-panda-dev/NeuroSync-AAC",
+      "name": "NeuroSync-AAC",
+      "owner": "anurag-panda-dev",
+      "author": "anurag-panda-dev",
+      "url": "https://github.com/anurag-panda-dev/NeuroSync-AAC",
+      "homepage": null,
+      "source": "github",
+      "description": "Laptop-first responsive web AAC prototype using edge EOG/EMG gesture detection with Arduino UNO R4 WiFi, BioAmp EXG Pill, BLE telemetry, and neural speech.",
+      "language": "C++",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "accessibility",
+        "arduino",
+        "assistive-technology",
+        "augmentative-alternative-communication",
+        "biosignal-processing",
+        "bluetooth-low-energy",
+        "electromyography",
+        "electrooculography",
+        "embedded-systems",
+        "progressive-web-app"
+      ],
+      "tags": [
+        "emg",
+        "aac",
+        "arduino",
+        "ble",
+        "assistive"
+      ],
+      "createdAt": "2026-09-04T15:05:55Z",
+      "updatedAt": "2026-10-13T22:56:02Z",
+      "pushedAt": "2026-09-04T15:06:02Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "anurag-panda-dev"
+      }
+    },
+    {
+      "id": "github:medkar/EEG_API_Unicorn",
+      "name": "EEG_API_Unicorn",
+      "owner": "medkar",
+      "author": "medkar",
+      "url": "https://github.com/medkar/EEG_API_Unicorn",
+      "homepage": null,
+      "source": "github",
+      "description": "Simple API for Unicorn hybrid EEG, for education purposes",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "unicorn",
+        "ssvep",
+        "bci",
+        "api"
+      ],
+      "createdAt": "2026-07-27T07:53:32Z",
+      "updatedAt": "2026-10-13T22:55:05Z",
+      "pushedAt": "2026-10-05T09:49:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "medkar"
+      }
+    },
+    {
+      "id": "github:shaun5297/bsense-p300-pilot",
+      "name": "bsense-p300-pilot",
+      "owner": "shaun5297",
+      "author": "shaun5297",
+      "url": "https://github.com/shaun5297/bsense-p300-pilot",
+      "homepage": null,
+      "source": "github",
+      "description": "Short-session P300 EEG acquisition and subject-specific calibration for brain-controlled robot dogs",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "p300",
+        "lsl",
+        "bci",
+        "calibration"
+      ],
+      "createdAt": "2026-09-11T06:43:38Z",
+      "updatedAt": "2026-10-13T22:55:17Z",
+      "pushedAt": "2026-09-11T08:54:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "shaun5297"
+      }
+    },
+    {
+      "id": "github:zacharywong34174/muse2-yt-scroller",
+      "name": "muse2-yt-scroller",
+      "owner": "zacharywong34174",
+      "author": "zacharywong34174",
+      "url": "https://github.com/zacharywong34174/muse2-yt-scroller",
+      "homepage": null,
+      "source": "github",
+      "description": "Muse 2 blink-to-scroll Python prototype: EEG feature extraction, random-forest classification, safe dry-run mode, and a device-free synthetic demo.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "blink",
+        "hci",
+        "prototype"
+      ],
+      "createdAt": "2026-10-10T15:47:48Z",
+      "updatedAt": "2026-10-13T22:55:28Z",
+      "pushedAt": "2026-10-10T15:51:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-14",
+        "batch": "batch18",
+        "contactedAuthor": "zacharywong34174"
       }
     }
   ]
