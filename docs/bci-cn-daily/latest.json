@@ -1,281 +1,325 @@
 {
-  "date": "2026-10-13",
-  "generated_at": "2026-10-12T21:32:32.274Z",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-13T21:32:44.120Z",
   "item_count": 7,
   "types": {
-    "Project": 7
+    "Benchmark": 2,
+    "Project": 5
   },
   "highlights": [
     {
-      "title_zh": "EEGPrep：EEGLAB 兼容的 Python 原生预处理工具链，新增对 EEGLAB 的每日差分模糊测试",
-      "title_en": "EEGPrep: An EEGLAB-Compatible Python Toolkit Now Fuzz-Tested Against EEGLAB Nightly",
-      "url": "https://github.com/sccn/eegprep",
-      "brief": "SCCN（EEGLAB 团队）维护的 EEGPrep 在 10 月 12 日推进 5 次提交，其中 #449 加入「对 EEGLAB 的每日差分模糊测试」：通过 matlab-batch 逐函数对比 pop_eegfiltnew、pop_reref、pop_resample 与 ASR 的输出，以 EEGLAB 为判定基准，容差人工维护——这把「Python 版能否替代 MATLAB 流程」变成可持续验证的工程问题。EEGPrep 是 Python 原生、可独立运行的 EEGLAB 兼容工具链，保留 EEG/ALLEEG/pop_* 概念，提供 GUI、控制台、CLI 与流水线校验，运行时无需 MATLAB。对受限于许可又需要脚本化的实验室，这是最接近「无缝迁移」的路径；建议先拿自有数据做逐函数比对再切换。"
+      "title_zh": "KAN 用于零校准运动想象解码：严格容量匹配下与 MLP 打平，但可解释性真实",
+      "title_en": "KANs for Zero-Calibration Motor Imagery: Parity With MLPs Under Matched Capacity, Real Interpretability",
+      "url": "https://github.com/kushbhardwaj0/eeg-kan-bci-ieee-bdn",
+      "brief": "UIUC NeuroTech 团队发布（IEEE BDN Workshop）的 KAN 基准仓库，把「KAN 是否真能提升脑电解码」做成可复核的对照实验：在 BNCI2014-001 上做零校准 LOSO 跨被试迁移，严格匹配参数量（CNN-KAN 2,784 vs CNN-MLP 2,780 参数，各 45 个模型、5 个种子），结果 42.37% vs 42.20%（p=1.000）——统计打平，与 EEGNet 亦无显著差异。两个方法学发现更值得注意：网格分辨率提到 G=8 会让精度崩到 30.29%（d=1.086），说明紧凑网格是低信噪比下必需的归纳偏置；而可解释性确有其事——边样条自发呈现 φ(x)∝x²（对应经典 FBCSP 能量标度）与阶跃式 ERD 门控。卷积主干占 99.97% 算力，KAN 头仅 3,752 MACs。"
     },
     {
-      "title_zh": "braindecode 纳入癫痫基础模型 EpiNT（2,700 小时头皮 EEG＋iEEG 预训练，通道无关）",
-      "title_en": "braindecode Adds EpiNT, a Channel-Independent Epilepsy Foundation Model Trained on 2,700 Hours",
-      "url": "https://github.com/braindecode/braindecode/pull/1297",
-      "brief": "braindecode 合并 #1297，把癫痫基础模型 EpiNT 纳入官方模型库（论文 arXiv:2506.17068）：预训练规模为 1,199 名患者的 2,700 小时数据，覆盖头皮 EEG 与颅内 iEEG（ECoG/sEEG），其关键设计是**通道无关**——同一个 checkpoint 可迁移到任意蒙太奇与模态，换设备或换电极布局不必重训。对本 lane 关注的非侵入场景，这提供了「可直接用于头皮 EEG、且对导联配置鲁棒」的现成权重；需要注意其预训练语料含大量颅内数据，跨模态迁移的实际表现在 scalp-only 数据上仍需自行验证。同日 29 次提交中还包括多项 HPU/Gaudi 适配与 CodeBrain 修复。"
+      "title_zh": "MOABB 接入中文手写想象数据集（CCS-HI／SV-HI），并新增认知任务范式",
+      "title_en": "MOABB Adds a Chinese Handwriting-Imagery Dataset (CCS-HI / SV-HI) and a Cognitive Task Paradigm",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1244",
+      "brief": "MOABB 在 10 月 13 日合并 4 项改动，最有价值的是 #1244 接入中文手写想象数据集 Wang2026Handwriting（Wang et al. 2026, Scientific Data；BIDS 组织、CC-BY 4.0，figshare 托管）：21 名健康右利手被试、两类任务各两天两 session——CCS-HI 想象汉字笔画（横竖撇捺折 5 类、每类 40 试次），SV-HI 想象书写拼音单元。这类「汉字笔画/书写」范式在国内 BCI 研究里刚起步，进入 MOABB 意味着可以一行代码取数并与既有基准横向比较。同日 #1246 新增独立的 CognitiveTask 范式、#1247 把该数据集归入认知范式，#1242 修正 Beetl2021 标签映射错误（3 类标签被按 4 类映射加载）。"
     },
     {
-      "title_zh": "Squiggly 网页端 EEG 分析平台新增 sLORETA 源定位与时序动画",
-      "title_en": "Squiggly's Web EEG Platform Adds sLORETA Source Maps and Time-Lapse",
-      "url": "https://github.com/alexdni/squiggly/commit/b27a8728",
-      "brief": "Squiggly（33 stars，MIT 许可）在 10 月 12 日新增两项源定位能力：从清洗后的 19 通道 EEG 计算 sLORETA 源图，并把 sLORETA 结果做成覆盖整段记录的时序动画。该平台定位为「快速、透明的开源 EEG 评估」：区分睁眼与闭眼条件，提供 Docker 部署与演示视频，分析在浏览器端完成。对临床研究之外的场景——教学演示、快速查看一段记录的空间分布、或给非工程背景的合作者看结果——这种「无需本地环境」的路径明显更轻；但要注意 sLORETA 依赖头模与电极坐标假设，玩具级便利不能替代方法学审查，正式结论仍需在标准工具链中复核。"
+      "title_zh": "braindecode 新增 CutMix 批次增强，并继续把 CodeBrain／MSCFormer 推上 HPU",
+      "title_en": "braindecode Adds CutMix Batch Augmentation and Pushes CodeBrain/MSCFormer onto HPU",
+      "url": "https://github.com/braindecode/braindecode/pull/1372",
+      "brief": "braindecode 在 10 月 13 日推进 9 次提交：#1372 加入 CutMix 批次增强——在同一批次内交换样本片段并混合标签，这是 EEG 训练里少见的强正则手段（低信噪比、被试间差异大时通常比简单加噪更有效）；性能侧继续把模型推上 Intel Gaudi：#1390 让 CodeBrain 用实数 DFT 在 HPU 上做频域卷积（不再落到主机 FFT），MSCFormer 把 patch embedding 的时序与空间卷积合并成一次计算。同日还合并了若干模型（其中 sEEG 语音解码器属侵入式方向，本 lane 仅作背景记录）。做 EEG 分类/解码的团队可以试 CutMix 作为常规增强的补充，注意批次构造与标签混合策略需要按任务调整。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-13.md",
+  "github_path": "docs/bci-cn-daily/2026-10-14.md",
   "items": [
     {
-      "type": "Project",
+      "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "EEGPrep：EEGLAB 兼容的 Python 原生预处理工具链，新增对 EEGLAB 的每日差分模糊测试",
-      "title_en": "EEGPrep: An EEGLAB-Compatible Python Toolkit Now Fuzz-Tested Against EEGLAB Nightly",
+      "title_zh": "KAN 用于零校准运动想象解码：严格容量匹配下与 MLP 打平，但可解释性真实",
+      "title_en": "KANs for Zero-Calibration Motor Imagery: Parity With MLPs Under Matched Capacity, Real Interpretability",
       "bullets_zh": [
-        "Python 原生、可独立运行：保留 EEG/ALLEEG/CURRENTSET 与 pop_* 工作流，运行时无需 MATLAB 或 EEGLAB 代码树，同时提供 Qt GUI、交互控制台、CLI、测试与 Sphinx 文档。",
-        "PR #449 加入对 EEGLAB 的每日差分模糊测试：通过 matlab-batch 对比 pop_eegfiltnew、pop_reref、pop_resample 与 ASR 的输出，以 EEGLAB 结果为判定基准，容差由人工维护。",
-        "强调可复现与自动化：CLI 支持结构化 JSON、manifest、流水线校验、稳定错误码，并内置面向 agent 的使用指引。"
+        "在 BNCI2014-001（4 类、9 被试、5,184 试次、5 个随机种子、每架构 45 个模型）上做 LOSO 零校准迁移：CNN-KAN（G=3、2,784 参数）42.37%±15.74，与容量匹配的 CNN-MLP（2,780 参数、42.20%，p=1.000）及 EEGNet（3,444 参数、44.55%，p=1.000）无显著差异——是**统计打平而非涨点**。",
+        "样条网格敏感性：把分辨率提到 G=8 后精度崩到 30.29%±5.66（p=0.023，Cohen's d=1.086），说明低信噪比 EEG 下紧凑网格本身是必要的归纳偏置。",
+        "可解释性可验证：学到的边样条自发呈现二次能量标度（φ(x)∝x²，等价于经典 FBCSP 原理）与阶跃式 ERD 门控阈值；Haufe 正向模式在 C3、C4、Cz 上确认了生理性躯体定位。"
       ],
       "bullets_en": [
-        "Python-native and standalone: it keeps EEG/ALLEEG/CURRENTSET and pop_* workflows without needing MATLAB or an EEGLAB checkout at runtime, and ships a Qt GUI, interactive console, CLI, tests and Sphinx docs.",
-        "PR #449 adds nightly differential fuzzing against EEGLAB: pop_eegfiltnew, pop_reref, pop_resample and ASR are compared through a matlab-batch shim, with EEGLAB output as the oracle and per-function tolerances owned by humans.",
-        "Reproducibility is first-class: structured JSON from the CLI, manifests, pipeline validation, stable error codes and bundled agent guidance."
+        "Zero-calibration LOSO transfer on BNCI2014-001 (4 classes, 9 subjects, 5,184 trials, 5 seeds, 45 models per architecture): CNN-KAN (G=3, 2,784 params) reaches 42.37%±15.74, statistically indistinguishable from a capacity-matched CNN-MLP (2,780 params, 42.20%, p=1.000) and EEGNet (3,444 params, 44.55%, p=1.000) — parity, not gains.",
+        "Spline grid sensitivity: raising resolution to G=8 collapses accuracy to 30.29%±5.66 (p=0.023, Cohen's d=1.086), showing compact grids are a necessary inductive bias in low-SNR EEG.",
+        "Verified interpretability: learned edge splines autonomously recover quadratic energy scaling (phi(x) proportional to x^2, i.e. classical FBCSP) and step-like ERD gating; Haufe forward patterns confirm physiological somatotopy at C3, C4 and Cz."
       ],
-      "url": "https://github.com/sccn/eegprep",
-      "published": "2026-10-12T17:50:00Z",
+      "url": "https://github.com/kushbhardwaj0/eeg-kan-bci-ieee-bdn",
+      "published": "2026-10-13T20:09:00Z",
       "source": "github",
       "language": "en",
-      "brief": "SCCN（EEGLAB 团队）维护的 EEGPrep 在 10 月 12 日推进 5 次提交，其中 #449 加入「对 EEGLAB 的每日差分模糊测试」：通过 matlab-batch 逐函数对比 pop_eegfiltnew、pop_reref、pop_resample 与 ASR 的输出，以 EEGLAB 为判定基准，容差人工维护——这把「Python 版能否替代 MATLAB 流程」变成可持续验证的工程问题。EEGPrep 是 Python 原生、可独立运行的 EEGLAB 兼容工具链，保留 EEG/ALLEEG/pop_* 概念，提供 GUI、控制台、CLI 与流水线校验，运行时无需 MATLAB。对受限于许可又需要脚本化的实验室，这是最接近「无缝迁移」的路径；建议先拿自有数据做逐函数比对再切换。",
-      "brief_en": "SCCN's EEGPrep shipped five commits on Oct 12, including #449 adding nightly differential fuzzing against EEGLAB: pop_eegfiltnew, pop_reref, pop_resample and ASR are compared function by function with EEGLAB as the oracle. EEGPrep is a standalone, Python-native EEGLAB-compatible toolkit (EEG/ALLEEG/pop_*, GUI, console, CLI, manifests) that needs no MATLAB at runtime.",
+      "brief": "UIUC NeuroTech 团队发布（IEEE BDN Workshop）的 KAN 基准仓库，把「KAN 是否真能提升脑电解码」做成可复核的对照实验：在 BNCI2014-001 上做零校准 LOSO 跨被试迁移，严格匹配参数量（CNN-KAN 2,784 vs CNN-MLP 2,780 参数，各 45 个模型、5 个种子），结果 42.37% vs 42.20%（p=1.000）——统计打平，与 EEGNet 亦无显著差异。两个方法学发现更值得注意：网格分辨率提到 G=8 会让精度崩到 30.29%（d=1.086），说明紧凑网格是低信噪比下必需的归纳偏置；而可解释性确有其事——边样条自发呈现 φ(x)∝x²（对应经典 FBCSP 能量标度）与阶跃式 ERD 门控。卷积主干占 99.97% 算力，KAN 头仅 3,752 MACs。",
+      "brief_en": "A UIUC NeuroTech benchmark (IEEE BDN Workshop) tests whether KANs help EEG decoding: under strict parameter matching on BNCI2014-001 with zero-calibration LOSO, CNN-KAN 42.37% vs CNN-MLP 42.20% (p=1.000) and EEGNet 44.55% (p=1.000) — parity, not gains. It also shows grid collapse at G=8 (30.29%, d=1.086) and genuine interpretability: splines recover x^2 energy scaling and ERD gating.",
       "tags": [
-        "eegprep",
-        "eeglab",
-        "preprocessing",
-        "python",
-        "differential-testing"
+        "kan",
+        "motor-imagery",
+        "zero-calibration",
+        "interpretability",
+        "benchmark"
       ],
-      "raw_excerpt": "\"Add nightly differential fuzzing against EEGLAB — Compare pop_eegfiltnew, pop_reref, pop_resample, and ASR with EEGLAB through the matlab-batch shim on a nightly schedule. EEGLAB output is the oracle, per-function tolerances stay human-owned…\" (PR #449, merged 2026-10-12T17:50:12Z). README: \"EEGLAB-compatible, Python-native toolkit … works without calling MATLAB\".",
-      "fetched_at": "2026-10-12T22:30:00Z",
+      "raw_excerpt": "\"CNN-KAN (G = 3, 2,784 parameters) achieves 42.37 +/- 15.74% … matching a capacity-matched CNN-MLP (2,780 parameters, 42.20 +/- 14.45%, p = 1.000) and EEGNet (3,444 parameters, 44.55 +/- 16.75%, p = 1.000). KANs achieve complete parity rather than inflated accuracy gains.\" \"Scaling grid resolution to G = 8 causes decoding accuracy to collapse to 30.29 +/- 5.66% (p = 0.023, Cohen's d = 1.086).\"",
+      "fetched_at": "2026-10-13T22:35:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "sccn/eegprep#449",
-      "author_handle": "sccn",
+      "upstream_id": "kushbhardwaj0/eeg-kan-bci-ieee-bdn",
+      "author_handle": "kushbhardwaj0",
       "metrics": {
         "play": null,
-        "like": 37,
+        "like": 0,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "EEGLAB 兼容的 Python 替代品有了持续对照验证，迁移风险可量化。"
+      "why_valuable": "严格容量匹配的负面/打平结论＋可解释性验证，直接校准 KAN 在 EEG 上的预期。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB 接入中文手写想象数据集（CCS-HI／SV-HI），并新增认知任务范式",
+      "title_en": "MOABB Adds a Chinese Handwriting-Imagery Dataset (CCS-HI / SV-HI) and a Cognitive Task Paradigm",
+      "bullets_zh": [
+        "#1244 加入 Wang2026Handwriting 加载器：Wang et al. (2026, Scientific Data; DOI 10.1038/s41597-026-06708-3) 的中文手写想象数据，figshare 托管（DOI 10.6084/m9.figshare.29987758.v4，CC-BY 4.0，BIDS 组织）。",
+        "数据为 21 名健康右利手被试（10 名女性，22–32 岁），两类任务各分两天两个 session：CCS-HI 想象汉字笔画（横、竖、撇、捺、折 5 类，每类 40 试次）；SV-HI 想象书写拼音单元。",
+        "#1246 新增独立的 CognitiveTask 范式，#1247 把该数据集归入认知范式；并修正 #1242（Beetl2021_A/B 用 4 类映射误加载 3 类最终测试标签）。"
+      ],
+      "bullets_en": [
+        "#1244 adds a Wang2026Handwriting loader: the Chinese handwriting-imagery dataset from Wang et al. (2026, Scientific Data; DOI 10.1038/s41597-026-06708-3), hosted on figshare (DOI 10.6084/m9.figshare.29987758.v4, CC-BY 4.0, BIDS-organised).",
+        "21 healthy right-handed adults (10 female, aged 22-32) perform two imagery tasks in two sessions on separate days: CCS-HI imagines Chinese character strokes (horizontal, vertical, left-falling, right-falling, turning; 40 trials each); SV-HI imagines writing Pinyin units.",
+        "#1246 introduces a standalone CognitiveTask paradigm and #1247 files the dataset under it; #1242 fixes Beetl2021_A/B loading 3-class final test labels with the 4-class map."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1244",
+      "published": "2026-10-13T15:55:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 在 10 月 13 日合并 4 项改动，最有价值的是 #1244 接入中文手写想象数据集 Wang2026Handwriting（Wang et al. 2026, Scientific Data；BIDS 组织、CC-BY 4.0，figshare 托管）：21 名健康右利手被试、两类任务各两天两 session——CCS-HI 想象汉字笔画（横竖撇捺折 5 类、每类 40 试次），SV-HI 想象书写拼音单元。这类「汉字笔画/书写」范式在国内 BCI 研究里刚起步，进入 MOABB 意味着可以一行代码取数并与既有基准横向比较。同日 #1246 新增独立的 CognitiveTask 范式、#1247 把该数据集归入认知范式，#1242 修正 Beetl2021 标签映射错误（3 类标签被按 4 类映射加载）。",
+      "brief_en": "MOABB merged four changes on Oct 13, headlined by #1244: a loader for the Chinese handwriting-imagery dataset Wang2026Handwriting (Wang et al. 2026, Scientific Data; BIDS, CC-BY 4.0) — 21 right-handed adults, two tasks in two sessions each: CCS-HI imagines character strokes (five classes) and SV-HI imagines Pinyin units. #1246 adds a CognitiveTask paradigm; #1242 fixes a Beetl2021 label bug.",
+      "tags": [
+        "moabb",
+        "chinese-handwriting",
+        "motor-imagery",
+        "dataset",
+        "benchmark"
+      ],
+      "raw_excerpt": "\"Adds `Wang2026Handwriting`, a loader for the Chinese handwriting-imagery dataset of Wang et al. (2026), Scientific Data (DOI: 10.1038/s41597-026-06708-3; data on figshare … CC-BY 4.0, BIDS-organized). Dataset: 21 healthy right-handed adults (10 female, aged 22–32) … CCS-HI — imagining the strokes of Chinese characters: 5 classes … 40 trials per class.\" Merged 2026-10-13T15:55:42Z, 8 files.",
+      "fetched_at": "2026-10-13T22:35:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1244",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1068,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "中文汉字笔画/书写想象数据进入 MOABB 基准，可直接与既有范式横向对比。"
     },
     {
       "type": "Project",
-      "level": "Advanced",
-      "title_zh": "braindecode 纳入癫痫基础模型 EpiNT（2,700 小时头皮 EEG＋iEEG 预训练，通道无关）",
-      "title_en": "braindecode Adds EpiNT, a Channel-Independent Epilepsy Foundation Model Trained on 2,700 Hours",
+      "level": "Intermediate",
+      "title_zh": "braindecode 新增 CutMix 批次增强，并继续把 CodeBrain／MSCFormer 推上 HPU",
+      "title_en": "braindecode Adds CutMix Batch Augmentation and Pushes CodeBrain/MSCFormer onto HPU",
       "bullets_zh": [
-        "PR #1297 合并 EpiNT（承接 #1266）：面向癫痫的基础模型，预训练数据为 1,199 名患者的 2,700 小时头皮 EEG 与 iEEG（ECoG/sEEG）。",
-        "模型为通道无关设计——单个 checkpoint 可适配任意蒙太奇与模态（头皮或颅内），因此换设备/换电极布局时无需重新训练。",
-        "同日还有 29 次提交：#1387 修 CodeBrain 在 HPU 惰性模式下的 skip-sum、TFMTokenizer 与 NeuroRVQ 在 Gaudi 上的 group norm 重写、MSVTNet 大输入先做空间投影。"
+        "#1372 新增 CutMix 批次增强：在批次内做样本片段互换与标签混合，为 EEG 训练提供比简单噪声注入更强的正则。",
+        "#1390 让 CodeBrain 在 HPU 上用实数 DFT 做频域卷积（不再走主机 FFT）；MSCFormer 把 patch embedding 的时序与空间卷积合并为一次计算。",
+        "同日还合并 #1297/#1298 等模型（含 sEEG 语音解码器——属侵入式方向，仅作背景记录）。"
       ],
       "bullets_en": [
-        "PR #1297 lands EpiNT (superseding #1266): an epilepsy-oriented foundation model pretrained on 2,700 hours of scalp EEG and iEEG (ECoG/sEEG) from 1,199 patients.",
-        "It is channel independent, so a single checkpoint adapts to any montage and modality, scalp or intracranial, removing the need to retrain when electrode layouts change.",
-        "The same day brought 29 commits, including #1387 fixing CodeBrain's skip-sum in HPU lazy mode, Gaudi-friendly group norms for TFMTokenizer and NeuroRVQ, and MSVTNet projecting spatially first on large inputs."
+        "#1372 adds CutMix batch augmentation, swapping sample segments within a batch and mixing labels for stronger regularisation than simple noise injection.",
+        "#1390 runs CodeBrain's spectral convolution with a real DFT on HPU (no host FFT), and MSCFormer merges the temporal and spatial convolutions of its patch embedding into one compute.",
+        "The same day also merged models such as #1297/#1298, including an sEEG speech decoder that belongs to the invasive track and is noted only as background."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1297",
-      "published": "2026-10-12T20:23:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1372",
+      "published": "2026-10-13T14:14:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 合并 #1297，把癫痫基础模型 EpiNT 纳入官方模型库（论文 arXiv:2506.17068）：预训练规模为 1,199 名患者的 2,700 小时数据，覆盖头皮 EEG 与颅内 iEEG（ECoG/sEEG），其关键设计是**通道无关**——同一个 checkpoint 可迁移到任意蒙太奇与模态，换设备或换电极布局不必重训。对本 lane 关注的非侵入场景，这提供了「可直接用于头皮 EEG、且对导联配置鲁棒」的现成权重；需要注意其预训练语料含大量颅内数据，跨模态迁移的实际表现在 scalp-only 数据上仍需自行验证。同日 29 次提交中还包括多项 HPU/Gaudi 适配与 CodeBrain 修复。",
-      "brief_en": "braindecode merged #1297, adding the epilepsy foundation model EpiNT (arXiv:2506.17068), pretrained on 2,700 hours from 1,199 patients across scalp EEG and intracranial iEEG. Its channel-independent design lets one checkpoint transfer to any montage and modality. For non-invasive use it offers ready scalp-EEG weights, though transfer quality on scalp-only data still needs local validation.",
+      "brief": "braindecode 在 10 月 13 日推进 9 次提交：#1372 加入 CutMix 批次增强——在同一批次内交换样本片段并混合标签，这是 EEG 训练里少见的强正则手段（低信噪比、被试间差异大时通常比简单加噪更有效）；性能侧继续把模型推上 Intel Gaudi：#1390 让 CodeBrain 用实数 DFT 在 HPU 上做频域卷积（不再落到主机 FFT），MSCFormer 把 patch embedding 的时序与空间卷积合并成一次计算。同日还合并了若干模型（其中 sEEG 语音解码器属侵入式方向，本 lane 仅作背景记录）。做 EEG 分类/解码的团队可以试 CutMix 作为常规增强的补充，注意批次构造与标签混合策略需要按任务调整。",
+      "brief_en": "braindecode made nine commits on Oct 13: #1372 adds CutMix batch augmentation (swapping sample segments and mixing labels within a batch), a strong regulariser for low-SNR, high-variability EEG. Performance work continues on Intel Gaudi with #1390 giving CodeBrain a real-DFT spectral convolution on HPU and MSCFormer merging its patch-embedding convolutions into one compute.",
       "tags": [
         "braindecode",
-        "epint",
-        "foundation-model",
-        "channel-independent",
-        "epilepsy"
+        "cutmix",
+        "augmentation",
+        "gaudi",
+        "performance"
       ],
-      "raw_excerpt": "\"Add EpiNT (lands #1266)\" — \"a foundation model built for epilepsy and pretrained on 2,700 h of scalp EEG and iEEG (ECoG/sEEG) from 1,199 patients. It is channel independent, so a single checkpoint works with any montage and modality, scalp or intracranial.\" Merged 2026-10-12T20:23:50Z, 8 files; repo had 29 commits that day.",
-      "fetched_at": "2026-10-12T22:30:00Z",
+      "raw_excerpt": "\"Add CutMix batch augmentation (#1372)\" merged 2026-10-13T14:14Z; \"PERF CodeBrain: real-DFT spectral conv on HPU (no host FFT) (#1390)\" 12:02Z; \"PERF MSCFormer: temporal and spatial convolutions of the patch embedding as one co[nv]\" 12:00Z — 9 commits that day.",
+      "fetched_at": "2026-10-13T22:35:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1297",
+      "upstream_id": "braindecode/braindecode#1372",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 1326,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "通道无关的癫痫基础模型权重可直接用于头皮 EEG，换导联布局无需重训。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Squiggly 网页端 EEG 分析平台新增 sLORETA 源定位与时序动画",
-      "title_en": "Squiggly's Web EEG Platform Adds sLORETA Source Maps and Time-Lapse",
-      "bullets_zh": [
-        "2026-10-12 两次提交：从清洗后的 EEG 计算 sLORETA 源定位图，并支持在整段记录上做 sLORETA 时序动画。",
-        "平台面向 19 通道 EEG 的快速评估，区分睁眼（EO）与闭眼（EC）条件，MIT 许可、提供 Docker 部署与演示视频。",
-        "浏览器端完成分析，降低了「只做一次源定位也要装整套 MATLAB/MNE 环境」的门槛。"
-      ],
-      "bullets_en": [
-        "Two commits on 2026-10-12 compute sLORETA source maps from cleaned EEG and render a sLORETA time lapse across the whole recording.",
-        "The platform targets rapid assessment of 19-channel EEG with separate eyes-open and eyes-closed conditions, under MIT licence with Docker deployment and a demo video.",
-        "Analysis runs in the browser, removing the need to install a full MATLAB/MNE stack just to look at source localisation."
-      ],
-      "url": "https://github.com/alexdni/squiggly/commit/b27a8728",
-      "published": "2026-10-12T19:09:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "Squiggly（33 stars，MIT 许可）在 10 月 12 日新增两项源定位能力：从清洗后的 19 通道 EEG 计算 sLORETA 源图，并把 sLORETA 结果做成覆盖整段记录的时序动画。该平台定位为「快速、透明的开源 EEG 评估」：区分睁眼与闭眼条件，提供 Docker 部署与演示视频，分析在浏览器端完成。对临床研究之外的场景——教学演示、快速查看一段记录的空间分布、或给非工程背景的合作者看结果——这种「无需本地环境」的路径明显更轻；但要注意 sLORETA 依赖头模与电极坐标假设，玩具级便利不能替代方法学审查，正式结论仍需在标准工具链中复核。",
-      "brief_en": "Squiggly (33 stars, MIT) added two source-localisation features on Oct 12: sLORETA source maps from cleaned 19-channel EEG, and a sLORETA time lapse over the whole recording. Positioned as fast, transparent open EEG assessment with EO/EC conditions, Docker deployment and browser-side analysis — convenient for teaching, though sLORETA's head-model assumptions still warrant methodological review.",
-      "tags": [
-        "squiggly",
-        "sloreta",
-        "source-localisation",
-        "web-tool",
-        "eeg"
-      ],
-      "raw_excerpt": "Commits 2026-10-12: \"sLORETA source maps from the cleaned EEG\" (8e46f7e1) 18:48Z and \"sLORETA time lapse over the whole cleaned recording\" (b27a8728) 19:09Z. README: \"Rapid, transparent, open-source tool for analyzing 19-channel EEG recordings with support for Eyes-Open (EO) and Eyes-Closed (EC) conditions.\"",
-      "fetched_at": "2026-10-12T22:30:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "alexdni/squiggly@b27a8728",
-      "author_handle": "alexdni",
-      "metrics": {
-        "play": null,
-        "like": 33,
+        "like": 1328,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "浏览器内即可做 sLORETA 与时间动画，教学与快速复核成本极低。"
+      "why_valuable": "CutMix 为低信噪比 EEG 提供更强正则，HPU 适配继续降低非 NVIDIA 成本。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-Python 修 EEGLAB 导入的 EOG 蒙太奇，并把眼动通道纳入基线校正",
-      "title_en": "MNE-Python Fixes EOG Montage on EEGLAB Import and Includes Eyetrack Channels in Baseline",
+      "title_zh": "mne-rt 准备 JOSS 投稿：实时 M/EEG 处理框架进入同行评议流程",
+      "title_en": "mne-rt Prepares Its JOSS Submission for Real-Time M/EEG Processing",
       "bullets_zh": [
-        "#14396 修正在 EEGLAB 读取器中处理 EOG 通道蒙太奇的问题，避免眼电通道位置映射出错。",
-        "#14390 让基线校正覆盖 eyetrack 通道；#13556 为 Epochs.drop 增加 on_drop_all 参数，改善删空 epoch 时的行为。",
-        "性能侧优化 Spectrum.get_data() 与 TFR.get_data() 的多维索引，并把 _brain.py 拆分推进到第四阶段。"
+        "PR #42（8 个文件）为 JOSS（Journal of Open Source Software）投稿做材料准备，意味着该框架开始走正式的软件论文评议流程。",
+        "mne-rt 定位是实时 M/EEG 信号处理：BCI 闭环里「采集—处理—反馈」的低时延环节，与离线分析工具链的分工不同。",
+        "对要做在线解码/神经反馈的团队，投 JOSS 通常伴随接口收敛与文档补齐，是接入的较好时间点。"
       ],
       "bullets_en": [
-        "#14396 fixes montage handling for EOG channels in the EEGLAB reader, preventing wrong eye-channel position mapping.",
-        "#14390 includes eyetrack channels in baseline correction, and #13556 adds an on_drop_all parameter to Epochs.drop for when all epochs are removed.",
-        "On the performance side it optimises multidimensional indexing in Spectrum.get_data() and TFR.get_data(), and moves the _brain.py split to phase four."
+        "PR #42 (8 files) prepares the JOSS (Journal of Open Source Software) submission materials, moving the framework into formal software-paper review.",
+        "mne-rt targets real-time M/EEG signal processing — the low-latency acquisition-processing-feedback path of a BCI loop, distinct from offline analysis stacks.",
+        "For teams building online decoding or neurofeedback, a JOSS submission usually coincides with interface stabilisation and documentation work, a good moment to adopt it."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14396",
-      "published": "2026-10-12T17:08:00Z",
+      "url": "https://github.com/mne-rt-org/mne-rt/pull/42",
+      "published": "2026-10-13T11:13:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 在 10 月 12 日合并 7 项改动，集中在数据导入与预处理的正确性：#14396 修掉 EEGLAB 读取器里 EOG 通道的蒙太奇处理问题（眼电位置映射错误会连带影响 ICA 与眼动伪迹回归）；#14390 让基线校正覆盖 eyetrack 通道，对 EEG＋眼动联合分析直接相关；#13556 给 Epochs.drop 增加 on_drop_all 参数，明确全部 epoch 被删除时的行为。性能侧优化了 Spectrum.get_data() 与 TFR.get_data() 的多维索引。对从 EEGLAB 迁入数据、或做眼动—脑电融合分析的团队，这几项都对应到具体的数值正确性，建议升级后重跑一段既有数据做前后对比。",
-      "brief_en": "MNE-Python merged seven changes on Oct 12 focused on import and preprocessing correctness: #14396 fixes EOG montage handling in the EEGLAB reader, #14390 includes eyetrack channels in baseline correction (relevant to combined eye-tracking/EEG work), and #13556 adds an on_drop_all parameter to Epochs.drop. Spectrum.get_data() and TFR.get_data() indexing were also optimised.",
+      "brief": "mne-rt 合并 #42（8 个文件），为 **JOSS（Journal of Open Source Software）投稿**准备材料。它的定位是实时 M/EEG 信号处理——BCI 闭环中「采集→处理→反馈」这一段，与 MNE-Python 等离线分析栈互补；长期以来这一环缺少成熟且被正式评议过的开源实现，因此投 JOSS 本身是个信号：接口与文档正在收敛。对做在线解码、神经反馈或实时伪迹抑制的团队，这类框架的价值在于时延与稳定性，而不是算法丰富度；建议在接入前明确其缓冲/丢包策略与实验范式的时间精度要求。",
+      "brief_en": "mne-rt merged #42 (eight files) preparing its JOSS (Journal of Open Source Software) submission. The framework targets real-time M/EEG processing — the acquisition-processing-feedback path of a BCI loop, complementing offline stacks like MNE-Python. A JOSS submission signals converging interfaces and documentation, making this a good moment for online decoding or neurofeedback teams to adopt it.",
       "tags": [
-        "mne-python",
-        "eeglab",
-        "montage",
-        "baseline",
-        "correctness"
+        "mne-rt",
+        "realtime",
+        "joss",
+        "meg",
+        "closed-loop"
       ],
-      "raw_excerpt": "\"FIX: Fix montage handling for EOG channels in EEGLAB reader (#14396)\" 17:08Z; \"FIX: Include eyetrack channels in baseline correction (#14390)\" 10:33Z; \"ENH: Add on_drop_all parameter to Epochs.drop (#13556)\" 10:26Z; \"PERF: Optimize multidimensional indexing in Spectrum.get_data() and TFR.get_data()\" 10:35Z.",
-      "fetched_at": "2026-10-12T22:30:00Z",
+      "raw_excerpt": "PR #42 title: \"Prepare the JOSS submission\"; body: \"What does this change? Prepare the JOSS submission\". Merged 2026-10-13T11:13:48Z, 8 files changed. Repo description: \"Real-time M/EEG signal processing\".",
+      "fetched_at": "2026-10-13T22:35:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14396",
-      "author_handle": "mne-tools",
+      "upstream_id": "mne-rt-org/mne-rt#42",
+      "author_handle": "mne-rt-org",
       "metrics": {
         "play": null,
-        "like": 3544,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "EEGLAB 导入与眼动通道基线校正的数值正确性修复，直接影响 ICA 与融合分析。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "pyRiemann 修三处正确性缺陷：TSClassifier 就地拟合、Potato.partial_fit、mean_thompson 权重",
-      "title_en": "pyRiemann Fixes Three Correctness Bugs in TSClassifier, Potato.partial_fit and mean_thompson",
-      "bullets_zh": [
-        "#503 修掉 TSClassifier 就地修改其参数分类器 clf 的问题（此前会跨调用污染状态）。",
-        "#505 修正 Potato 的 partial_fit()；#499 让 mean_thompson 正确使用 sample_weight 加权。",
-        "pyRiemann 是黎曼几何 EEG 解码（协方差矩阵分类）的主流库，这三处都属「静默出错」类型，容易被指标掩盖。"
-      ],
-      "bullets_en": [
-        "#503 fixes TSClassifier mutating its parameter classifier clf in place, which leaked state across calls.",
-        "#505 corrects partial_fit() in Potato, and #499 makes mean_thompson actually honour sample_weight.",
-        "pyRiemann is the mainstream library for Riemannian EEG decoding of covariance matrices, and all three are silent-failure bugs that metrics easily mask."
-      ],
-      "url": "https://github.com/pyRiemann/pyRiemann/pull/505",
-      "published": "2026-10-12T18:46:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "pyRiemann 在 10 月 12 日合并三项正确性修复：#503 修掉 TSClassifier 就地修改传入分类器（clf）的问题——这会让同一个实例在多次调用间互相污染状态；#505 修正 Potato 的 partial_fit()，涉及在线/增量更新场景；#499 让 mean_thompson 真正使用 sample_weight 加权。三处都属于「不报错但结果悄悄不对」的类型，在黎曼解码流程里尤其危险：协方差均值与分类器状态出错，往往表现为指标小幅波动而非崩溃。使用该类做运动想象解码或跨被试迁移的团队，建议升级后对既有 pipeline 重跑一次并与旧结果比对。",
-      "brief_en": "pyRiemann merged three correctness fixes on Oct 12: #503 stops TSClassifier mutating its classifier parameter in place (state leaking across calls), #505 corrects Potato's partial_fit(), and #499 makes mean_thompson honour sample_weight. All three are silent-failure bugs, dangerous in Riemannian decoding where wrong covariance means or state show up as small metric drifts.",
-      "tags": [
-        "pyriemann",
-        "riemannian",
-        "bugfix",
-        "covariance",
-        "online-learning"
-      ],
-      "raw_excerpt": "\"Correct TSClassifier which fitted its parameter clf in place (#503)\" merged 2026-10-12T05:17Z; \"Correct partial_fit() of Potato (#505)\" 18:46Z; \"Use sample_weight in mean_thompson (#499)\" 05:31Z.",
-      "fetched_at": "2026-10-12T22:30:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "pyRiemann/pyRiemann#505",
-      "author_handle": "pyRiemann",
-      "metrics": {
-        "play": null,
-        "like": 779,
+        "like": 26,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "三处静默出错修复，直接避免黎曼解码流水线里的状态污染与错误加权。"
+      "why_valuable": "实时 M/EEG 环节的成熟开源实现进入正式评议，接口与文档趋于稳定。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "WEFT：把 EEG patch 编码成「有确定数学含义的可读测量词」的独立 tokenizer",
-      "title_en": "WEFT: A Standalone EEG Tokeniser Encoding Patches as Readable, Well-Defined Measurements",
+      "title_zh": "nimbus-mcp v0.13.0：让 AI agent 通过 MCP 直接搭建、训练、分析 EEG/BCI 流水线",
+      "title_en": "nimbus-mcp v0.13.0 Lets AI Agents Build, Train and Analyse EEG/BCI Pipelines over MCP",
       "bullets_zh": [
-        "把 EEG patch 编码为有限、可读的测量词，同时保留可恢复的信号细节；每个 delay word 在模型训练前就具有固定数学含义。",
-        "库本身不训练神经网络、也不估计神经源，输入约定为 19 或 21 通道 × 640 采样（160 Hz，微伏）。",
-        "提供 encode/decode、decode_readable、read_core 与可选的 query-only 缓存（encode_cache 有意不含完整记录），便于直接检查 token 语义。"
+        "发布 v0.13.0（与 PyPI 同步）：以 MCP 服务器形式暴露 Nimbus BCI 能力，覆盖数据集、模型、实验 campaña 与实时会话。",
+        "定位是「让 agent 直接构建、训练与分析 EEG/BCI 流水线」，属把 BCI 工具链接入 AI agent 生态的一类新尝试。",
+        "项目很新（2026-10-04 创建），接口变动频繁；生产使用前需自行评估权限边界与实验可复现性。"
       ],
       "bullets_en": [
-        "It encodes an EEG patch into finite, readable measurement words while keeping recoverable signal detail, with every delay word carrying a fixed mathematical meaning before any model is trained.",
-        "The library trains no neural network and estimates no neural sources; inputs are 19 or 21 channels by 640 samples at 160 Hz in microvolts.",
-        "It exposes encode/decode, decode_readable, read_core and an optional query-only cache whose encode_cache deliberately omits the full recording, making token semantics directly inspectable."
+        "v0.13.0 released and synced from PyPI: it exposes Nimbus BCI as an MCP server covering datasets, models, experiment campaigns and live sessions.",
+        "Its positioning is to let AI agents build, train and analyse EEG/BCI pipelines, part of a new wave of BCI tooling wired into the agent ecosystem.",
+        "The project is very young (created 2026-10-04) with fast-moving interfaces; assess permission boundaries and reproducibility before production use."
       ],
-      "url": "https://github.com/jeetblahiri/weft-tokeniser",
-      "published": "2026-10-12T16:33:00Z",
+      "url": "https://github.com/nimbusbci/nimbus-mcp/releases/tag/v0.13.0",
+      "published": "2026-10-13T18:16:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 WEFT（2026-10-12）提出一种「可解释」的 EEG tokenizer：把 EEG patch 编码成有限个可读测量词，并保留可恢复的信号细节——关键在于每个 delay word 在模型训练之前就有固定的数学含义，因此 token 不是学出来的黑箱表示。库不训练网络、也不做源估计，接口包含 encode/decode、decode_readable、read_core 以及刻意不保留完整记录的 query-only 缓存，方便直接检查 token 语义。对做 EEG 基础模型的人，这提供了一条与「学一个量化码本」不同的路线：可读性换来了可审计性，但需要自行验证在具体下游任务上是否损失性能。",
-      "brief_en": "New repository WEFT (2026-10-12) proposes an interpretable EEG tokeniser: it encodes a patch into finite, readable measurement words while keeping recoverable detail, with each delay word carrying fixed mathematical meaning before training, so tokens are not learned black-box codes. It trains no network and ships encode/decode, decode_readable, read_core and a query-only cache.",
+      "brief": "nimbus-mcp 发布 v0.13.0（与 PyPI 同步），把 Nimbus BCI 封装成 MCP（Model Context Protocol）服务器：agent 可以通过工具调用直接构建、训练与分析 EEG/BCI 流水线，覆盖数据集、模型、实验 campaign 与实时会话。这属于近期值得关注的一类新形态——BCI 工具链不再只面向人，而是同时面向「会用工具的 agent」，与我们这条自动化情报 lane 的形态正好呼应。需要提醒：项目 2026-10-04 才创建、版本迭代很快（已到 0.13），接口稳定性与权限边界（agent 能触发真实采集/实验吗？）都需自行评估，不建议直接用于生产实验。",
+      "brief_en": "nimbus-mcp v0.13.0 (synced from PyPI) wraps Nimbus BCI as an MCP server so agents can build, train and analyse EEG/BCI pipelines through tool calls, spanning datasets, models, experiment campaigns and live sessions. A notable new pattern where BCI tooling targets agents as well as humans — but the project was created 2026-10-04 and iterates fast, so stability and permission boundaries need review.",
       "tags": [
-        "eeg-tokenizer",
-        "foundation-model",
-        "interpretability",
-        "quantisation",
-        "representation"
+        "mcp",
+        "agents",
+        "bci-pipeline",
+        "tooling",
+        "automation"
       ],
-      "raw_excerpt": "\"WEFT encodes an EEG patch as finite, readable measurements together with recoverable signal detail. Each delay word has a fixed mathematical meaning before a model is trained. The library does not train a neural network or estimate neuronal sources.\" Commit: \"Release standalone WEFT EEG tokeniser with finite measurement words and exac[t]…\" (2026-10-12T16:33Z).",
-      "fetched_at": "2026-10-12T22:30:00Z",
+      "raw_excerpt": "Repo description: \"MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live se[ssions])\". Commit 2026-10-13T18:16Z: \"release: v0.13.0 (synced from PyPI)\". Repo created 2026-10-04T21:33Z.",
+      "fetched_at": "2026-10-13T22:35:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "jeetblahiri/weft-tokeniser",
-      "author_handle": "jeetblahiri",
+      "upstream_id": "nimbusbci/nimbus-mcp@v0.13.0",
+      "author_handle": "nimbusbci",
+      "metrics": {
+        "play": null,
+        "like": 2,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "把 EEG/BCI 流水线暴露给 agent 的新形态，值得关注但其权限边界未成熟。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 加固数据集归档解压并修正 _manifest_check_download 报错格式",
+      "title_en": "MNE-Python Hardens Archive Extraction and Fixes Missing-File Errors in Dataset Downloads",
+      "bullets_zh": [
+        "#14407 加固归档解压路径（对数据集下载解包做更严格的校验），并修正 _manifest_check_download 在文件缺失时的错误提示格式。",
+        "自动下载数据集是 MNE 的常见用法，解包环节此前依赖标准库默认行为；加固后异常输入更难造成越界写入或误导性报错。",
+        "同日还有 _brain.py 拆分第五阶段等维护性改动；最新发布仍为 v1.13.2，需从 main 获取。"
+      ],
+      "bullets_en": [
+        "#14407 hardens archive extraction for dataset downloads and fixes the missing-files error format in _manifest_check_download.",
+        "Automatic dataset download is standard MNE usage, and the extraction step previously relied on library defaults; hardening makes malformed archives less likely to write outside the intended path or misreport errors.",
+        "The same day brought maintenance such as phase five of the _brain.py split; the latest release is still v1.13.2, so these come from main."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14407",
+      "published": "2026-10-13T16:00:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14407：加固数据集归档的解压路径并修正 _manifest_check_download 在文件缺失时的报错格式。自动下载公开数据集（如 fsaverage、sample）是 MNE 最常用的功能之一，解包环节此前基本沿用标准库默认行为——对来源不可控的压缩包而言，这属于应当收紧的攻击面；同时「文件缺失」的报错更清晰，能减少把网络问题误判为代码问题的排查时间。对在 CI 或共享集群上跑数据下载的团队，建议把这类改动纳入升级考量；同日还有 _brain.py 拆分第五阶段等维护提交，最新发布仍是 v1.13.2。",
+      "brief_en": "MNE-Python merged #14407, hardening archive extraction for dataset downloads and fixing the missing-files error format in _manifest_check_download. Since auto-downloading public datasets is everyday MNE usage, tightening the unpacking path narrows an attack surface from untrusted archives and clearer errors cut debugging time; the latest release remains v1.13.2.",
+      "tags": [
+        "mne-python",
+        "security",
+        "archive",
+        "datasets",
+        "maintenance"
+      ],
+      "raw_excerpt": "Commit message 2026-10-13T16:00Z: \"MAINT: Harden archive extraction and fix missing files error format in _manifest_check_download (#14407)\" (sha 97f2360f). Same-day commits include \"Splitting _brain.py into multiple modules (phase 5) (#14410)\".",
+      "fetched_at": "2026-10-13T22:35:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14407",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3546,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "收紧不可控压缩包的解压面并澄清缺失文件报错，影响 CI 与共享集群。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EegDenoising：EEGdenoiseNet 的中文 PyTorch 重构版训练框架",
+      "title_en": "EegDenoising: A Chinese PyTorch Framework Rebuilding the EEGdenoiseNet Training Stack",
+      "bullets_zh": [
+        "仓库为 EEGdenoiseNet 的重构版（PyTorch），提供五个模型的统一训练入口、完整命令行参数说明与评价指标定义。",
+        "中文文档覆盖项目结构、环境安装、快速开始、结果文件说明、训练后自动绘图，并支持「新增模型自动发现」。",
+        "含 data/ 与 code/ 目录（约 130 MB），属可直接跑起来的去噪实验框架；免去复现 EEGdenoiseNet 时的工程摩擦。"
+      ],
+      "bullets_en": [
+        "A PyTorch rebuild of the EEGdenoiseNet training stack, with one entry point for five models, documented CLI arguments and explicit metric definitions.",
+        "Chinese documentation covers project structure, installation, quick start, output files, automatic post-training plots and an auto-discovery mechanism for adding new models.",
+        "It ships code/ and data/ (about 130 MB), making it a runnable denoising experiment framework that removes much of the engineering friction of reproducing EEGdenoiseNet."
+      ],
+      "url": "https://github.com/icadada/EegDenoising",
+      "published": "2026-10-13T07:37:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 EegDenoising（2026-10-13）是 EEGdenoiseNet 的中文 PyTorch 重构版训练框架：提供五个去噪模型的统一训练命令、完整的命令行参数说明、评价指标定义与训练后自动绘图，并支持新增模型的自动发现；仓库含 code/ 与 data/（约 130 MB），属于拿来即可跑的工程化实现。对中文团队，它的价值主要在工程摩擦：EEGdenoiseNet 原实现散在多个脚本与说明里，复现时常常卡在数据组织与指标口径上，这份重构把流程收敛成一套 CLI 与中文说明。需要提醒：去噪指标（RRMSE/CC/SNR）依赖合成噪声的假设，真实伪迹（眼动、肌电）分布与之不同，报告结论时应说明数据生成方式。",
+      "brief_en": "Created 2026-10-13, EegDenoising is a Chinese PyTorch rebuild of the EEGdenoiseNet training stack: one entry point for five models, documented CLI options, explicit metrics, automatic post-training plots and model auto-discovery, with code/ and data/ (about 130 MB). Its value is engineering friction removed; note that RRMSE/CC/SNR depend on synthetic-noise assumptions real artefacts do not follow.",
+      "tags": [
+        "denoising",
+        "eegdenoisenet",
+        "pytorch",
+        "chinese",
+        "training-framework"
+      ],
+      "raw_excerpt": "「EEG 去噪网络训练框架（EEGdenoiseNet 重构版，PyTorch 实现）。」说明文档目录含：项目结构与特点、环境安装、快速开始（五个模型的训练命令）、命令行参数完整说明、训练结果文件说明、评价指标定义与计算方式、训练完成后自动绘制的图像、如何新增一个模型（自动发现）。仓库含 code/、data/、requirements.txt、说明文档.md。",
+      "fetched_at": "2026-10-13T22:35:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "icadada/EegDenoising",
+      "author_handle": "icadada",
       "metrics": {
         "play": null,
         "like": 0,
@@ -283,56 +327,13 @@
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "token 语义在训练前即确定，提供可审计的 EEG 表示路线。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "EEG Neurolyze：面向 Muse S Athena 的采集—预处理—分析工具包（含架构文档与 ADR）",
-      "title_en": "EEG Neurolyze: An Acquisition-to-Analysis Toolkit for the Muse S Athena Headband",
-      "bullets_zh": [
-        "面向 Muse S Athena 消费级脑电头环，提供采集、预处理与分析工具，运行环境为 Python 与 Windows 11。",
-        "仓库创建当天即推进 30 次提交，并附完整项目概念、系统架构文档与架构决策记录（ADR），工程规范度高于多数同类项目。",
-        "对用消费级设备做原型或教学的团队，省去从 BLE 采集到分析的重复搭建；但消费级信号质量不支撑临床结论。"
-      ],
-      "bullets_en": [
-        "Targets the consumer Muse S Athena headband with acquisition, preprocessing and analysis tooling on Python and Windows 11.",
-        "It landed 30 commits on the day it was created, with a full project concept, system architecture docs and architecture decision records — more engineering discipline than most peers.",
-        "It saves teams prototyping or teaching with consumer hardware from rebuilding BLE acquisition to analysis, though consumer-grade signal quality cannot support clinical conclusions."
-      ],
-      "url": "https://github.com/MatPomGit/eeg-neurolyze",
-      "published": "2026-10-12T11:32:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 EEG Neurolyze（2026-10-12，创建当天即 30 次提交）面向 Muse S Athena 消费级脑电头环，提供采集、预处理与分析工具，环境为 Python＋Windows 11。相比常见的「一个脚本 + 一段 README」，它带完整的项目概念文档、系统架构说明与架构决策记录（ADR），并支持作为安装包分发（含品牌资源）。对用消费级设备做教学、快速原型或信号处理练手的团队，这能省掉从 BLE 采集到分析管线的重复搭建；需要明确的是消费级头环的通道数、参考与噪声水平都不足以支撑临床或高精度研究结论，定位应放在教学与原型验证。",
-      "brief_en": "Created 2026-10-12 with 30 commits on day one, EEG Neurolyze targets the consumer Muse S Athena headband, covering acquisition, preprocessing and analysis on Python and Windows 11. It ships project concept docs, architecture notes and architecture decision records, saving teams from rebuilding BLE-to-analysis pipelines for teaching or prototyping — signal quality still rules out clinical use.",
-      "tags": [
-        "muse",
-        "consumer-eeg",
-        "toolkit",
-        "python",
-        "windows"
-      ],
-      "raw_excerpt": "Description: \"EEG acquisition, preprocessing, and analysis toolkit for Muse S Athena, Python, and Windows 11.\" README: \"Architecture and roadmap — Full project concept and system architecture; Architecture Decision Records…\" Repo created 2026-10-12T11:32Z with 30 commits that day (latest merged PR #10).",
-      "fetched_at": "2026-10-12T22:30:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "MatPomGit/eeg-neurolyze",
-      "author_handle": "MatPomGit",
-      "metrics": {
-        "play": null,
-        "like": 1,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "消费级头环的开箱工具包＋ADR 文档，省去采集—分析管线重复搭建。"
+      "why_valuable": "中文重构版把 EEGdenoiseNet 收敛成统一 CLI，显著降低复现摩擦力。"
     }
   ],
   "stats": {
     "fetched": 60,
-    "prefiltered": 44,
-    "llm_rows": 16,
+    "prefiltered": 40,
+    "llm_rows": 20,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
