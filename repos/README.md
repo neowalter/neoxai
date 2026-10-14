@@ -28,7 +28,9 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [bci-knowledge-device-assistant](https://github.com/Ksblla/bci-knowledge-device-assistant) | @Ksblla | 面向脑机接口实验室的设备操作与实验流程管理场景，构建 RAG + Agent 智能助手，整合脑电设备手册、实验 SOP、采集规范及历史... | 2026-09-15 | 0 |
 | [bci-mcp](https://github.com/enkhbold470/bci-mcp) | @enkhbold470 | Stream live EEG brain state (focus, calm, attention) from any EEG d... | 2026-09-03 | 19 |
 | [bci-research](https://github.com/ava-agent/bci-research) | @kevinten10 | BCI Research - 脑机接口技术调研 + BCI Agent Demo | 2026-08-10 | 6 |
+| [bci-robot-arm](https://github.com/tandaye21/bci-robot-arm) | @tandaye21 | 基于 SSVEP 的脑控机械臂系统：FBCCA 脑电分类 + YOLOv8 杯子检测 + 蓝牙脑电采集，实现意念控制抓取搬运 | 2026-10-06 | 1 |
 | [bci_tetris](https://github.com/Alex-zeya/bci_tetris) | @Alex-zeya | Python Tetris prototype controlled by Muse EEG frontal alpha/theta ... | 2026-06-11 | 0 |
+| [blackRabbit](https://github.com/dichotomouskeyz/blackRabbit) | @dichotomouskeyz | An open-source platform that records EEG, HRV, EDA and respiration ... | 2026-10-14 | 2 |
 | [Brain-API-Muse-2-](https://github.com/NickMeret2004/Brain-API-Muse-2-) | @NickMeret2004 | Streaming my own brainwaves into a live API. Muse 2 → EEG → ML → an... | 2026-09-28 | 1 |
 | [brain-pong](https://github.com/hoeksemaa/brain-pong) | @hoeksemaa | Play Pong with your eyes! EOG processing turns left/right glances i... | 2026-09-08 | 1 |
 | [brain-speeddial-eeg-jev](https://github.com/AshwaniKottapalli/brain-speeddial-eeg-jev) | @AshwaniKottapalli | Can EEG drive an AI agent? Public-data experiments: mental-command ... | 2026-09-19 | 1 |
@@ -60,6 +62,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [EEG-AffectiveComputing](https://github.com/neural-bit/EEG-AffectiveComputing) | @neural-bit | Real-Time Affective Computing with OpenBCI  | 2026-06-25 | 10 |
 | [eeg-agent](https://github.com/feuler/eeg-agent) | @feuler | Application that reads real-time EEG signals from a NeuroSky MindWa... | 2026-05-07 | 1 |
 | [EEG-Agent](https://github.com/gjyradl/EEG-Agent) | @gjyradl |  | 2026-05-12 | 3 |
+| [EEG-BCI-Car](https://github.com/Danielz-z/EEG-BCI-Car) | @Danielz-z | An EEG-based real-time brain-computer interface system for emergenc... | 2026-10-10 | 7 |
 | [eeg-bw16-cyd](https://github.com/zbnw/eeg-bw16-cyd) | @zbnw | 这是一个基于 BW16 与 ESP32-CYD 的 EEG 原型项目，包含 BLE 数据传输、LCD 波形显示、串口采集工具和网页监视器。 | 2026-09-26 | 2 |
 | [eeg-connection-hub](https://github.com/ManintheCrowds/eeg-connection-hub) | @ManintheCrowds | LAN-first multi-stream EEG feature broker — LSL in, derived feature... | 2026-07-20 | 1 |
 | [eeg-ecg-music-review-agent](https://github.com/scottleimroth/eeg-ecg-music-review-agent) | @scottleimroth | Reading package and MCP tool server for a published EEG/ECG music-l... | 2026-09-18 | 1 |
@@ -89,16 +92,19 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eegloop](https://github.com/neurokinetikz/eegloop) | @neurokinetikz | Streaming EEG loops: one Source, one Block, causal steps that decla... | 2026-09-21 | 1 |
 | [EEGNet](https://github.com/IVeuromancer/EEGNet) | @IVeuromancer | End-to-end BCI pipeline for decoding motor imagery from EEG using C... | 2026-06-05 | 4 |
 | [eegVis](https://github.com/thisPointOn/eegVis) | @thisPointOn | visualize data from the neurosity crown | 2026-02-24 | 1 |
+| [EMG-BIONIC-ARM](https://github.com/SaurabhKhimesra/EMG-BIONIC-ARM) | @SaurabhKhimesra | EMG controlled 3D printed bionic hand: STM32F446 firmware plus a RO... | 2026-09-24 | 2 |
 | [EmotivLSL](https://github.com/Howchie/EmotivLSL) | @Howchie |  | 2026-09-24 | 1 |
 | [ephys-mcp](https://github.com/happyc0der/ephys-mcp) | @happyc0der | MCP server for read-only analysis of intracortical (spike-level) br... | 2026-09-22 | 1 |
 | [epilepsy-agentry](https://github.com/Mcstabbin/epilepsy-agentry) | @Mcstabbin | Reduction pyramid + aspect-agent pool for personal EEG monitoring d... | 2026-09-17 | 1 |
 | [epoc_signal_quality_monitor](https://github.com/liciacastelnovo/epoc_signal_quality_monitor) | @liciacastelnovo | Real-time signal quality monitor for the Emotiv EPOC 1.0 EEG headse... | 2026-09-15 | 1 |
 | [ERPulse](https://github.com/FelixKuon/ERPulse) | @FelixKuon | Live ERP & time-frequency viewer for the g.tec Unicorn Hybrid Black... | 2026-10-05 | 1 |
+| [esp32-gesture-voice](https://github.com/Rxdrea/esp32-gesture-voice) | @Rxdrea | ESP32 sEMG and wrist-pose assistive communication prototype | 2026-10-14 | 1 |
 | [espexp](https://github.com/languel/espexp) | @languel | Force Trainer II (NeuroSky TGAM) EEG -> ThinkGear parser -> p5.js, ... | 2026-09-26 | 1 |
 | [exg-c](https://github.com/Abyss-c0re/exg-c) | @Abyss-c0re | Host app for a Knight ADS1299 board (and compatible USB-serial EXG)... | 2026-10-03 | 2 |
 | [eyecam](https://github.com/Libritor/eyecam) | @Libritor | The human eye as a camera: SSVEP image reconstruction from a Muse E... | 2026-10-04 | 1 |
 | [fah_eeg](https://github.com/beck-2/fah_eeg) | @beck-2 | Muse 2 EEG data collection and live visualization with BrainFlow | 2026-08-19 | 0 |
 | [flappy-brain-bci](https://github.com/aifriend/flappy-brain-bci) | @aifriend | Real-time motor-imagery EEG controller (CSP+LDA, LSL in, UDP out) f... | 2026-08-20 | 1 |
+| [FlyVibing-Engine](https://github.com/LeyeFang/FlyVibing-Engine) | @LeyeFang | An editable, game-engine-style foundation for BCI system developmen... | 2026-10-14 | 1 |
 | [FRED-Project](https://github.com/GiulianoAgostini04/FRED-Project) | @GiulianoAgostini04 | Real-time concentration monitoring system based on frontal-lobe EEG... | 2026-09-16 | 1 |
 | [goofi-pipe](https://github.com/dav0dea/goofi-pipe) | @dav0dea | real-time neuro-/biosignal processing and streaming pipeline | 2026-09-24 | 44 |
 | [gTec_EEGpipeline](https://github.com/A13ssi0/gTec_EEGpipeline) | @A13ssi0 | Complete EEG Pipeline, from Acquisition to Classification, for gTec... | 2026-10-06 | 3 |
@@ -114,6 +120,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [MaxMuse](https://github.com/lched/MaxMuse) | @lched | Max/MSP externals to work with the Muse2 headband (or other devices... | 2026-09-10 | 10 |
 | [mcp-server-biosignal](https://github.com/x-biosignal/mcp-server-biosignal) | @ymatts | MCP catalog for 28 x-biosignal R packages, functions, modalities, a... | 2026-08-03 | 1 |
 | [meditations](https://github.com/writer-in-fancy-pants/meditations) | @writer-in-fancy-pants | Generalized meditation tool integrated with various sensory devices... | 2026-09-12 | 1 |
+| [mi-bci](https://github.com/joeeei11/mi-bci) | @joeeei11 | Open-source motor imagery EEG host computer Agent for reproducible ... | 2026-10-10 | 1 |
 | [mi-control-mapping](https://github.com/luminolous/mi-control-mapping) | @luminolous | Control mapping as a design variable: pricing the posterior-to-comm... | 2026-09-06 | 2 |
 | [mindaid-ssvep-bci](https://github.com/CarmenEngBio/mindaid-ssvep-bci) | @CarmenEngBio | MindAid Assistive SSVEP BCI. Assistive SSVEP-based Brain-Computer I... | 2026-09-20 | 1 |
 | [MindFlex-EEG-Studio](https://github.com/Spidoug/MindFlex-EEG-Studio) | @Spidoug | MindFlex EEG Studio is a desktop application for MindFlex/TGAM EEG ... | 2026-09-04 | 3 |
@@ -171,11 +178,13 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [nfgym](https://github.com/guneteroglu/nfgym) | @guneteroglu | NF-Gym: an offline reinforcement learning benchmark for EEG neurofe... | 2026-08-24 | 0 |
 | [nimbus-mcp](https://github.com/nimbusbci/nimbus-mcp) | @nimbusbci | MCP server for Nimbus BCI — AI agents build, train, and analyze EEG... | 2026-10-05 | 1 |
 | [node-lsl](https://github.com/neurodevs/node-lsl) | @neurodevs | Lab Streaming Layer (LSL) for synchronized streaming of multi-modal... | 2026-10-06 | 9 |
+| [NTXHackathon22](https://github.com/marcelpetrick/NTXHackathon22) | @marcelpetrick | Cleaned-up NTX Hackathon 2022 BCI project: OpenBCI Ganglion EEG rec... | 2026-10-14 | 2 |
 | [olimex-shield](https://github.com/polarizetech/olimex-shield) | @polarizetech | EEG/ECG/EMG with an Arduino + Olimex SHIELD-EKG/EMG: firmware, brid... | 2026-10-02 | 1 |
 | [openbci-mcp](https://github.com/sandraschi/openbci-mcp) | @sandraschi | OpenBCI EEG MCP server (BrainFlow + SOTA webapp) | 2026-09-14 | 2 |
 | [overmind-ng](https://github.com/Thempra/overmind-ng) | @Thempra | Overmind NG - Brainwave/EEG analyzer & EVA battle game (Flutter + B... | 2026-10-03 | 1 |
 | [p300-speller](https://github.com/roshkins/p300-speller) | @roshkins | P300 speller for the 4-channel Muse MU-02 (Windows): transfer-EEGNe... | 2026-07-10 | 0 |
 | [PiEEG-agent](https://github.com/pieeg-club/PiEEG-agent) | @yelabb | Agentic middleware for Brain-Computer Interfaces. Use LLMs to proce... | 2026-06-21 | 9 |
+| [PIEEG-clicker](https://github.com/AbrahamPadua/PIEEG-clicker) | @AbrahamPadua | a clicker that uses pieeg | 2026-10-01 | 1 |
 | [pieeg_app](https://github.com/tyukei/pieeg_app) | @tyukei |  | 2026-10-02 | 1 |
 | [pipeline-neuroadaptatif-eeg](https://github.com/TechartdrV2/pipeline-neuroadaptatif-eeg) | @TechartdrV2 | Pipeline Python d’informatique affective pour l'évaluation du stres... | 2026-10-13 | 2 |
 | [project-aura](https://github.com/13thrule/project-aura) | @13thrule | Open-source ambulatory EEG platform for pre-seizure (pre-ictal) sig... | 2026-08-27 | 2 |
@@ -185,17 +194,20 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [REACT-EEG](https://github.com/IONOFIELD/REACT-EEG) | @IONOFIELD | Desktop EEG review, de-identification, and live acquisition. Import... | 2026-09-20 | 1 |
 | [realtime-ssvep-bci](https://github.com/SoroushZare/realtime-ssvep-bci) | @SoroushZare |  | 2026-08-03 | 0 |
 | [refrain-protocols](https://github.com/refrain-lang/refrain-protocols) | @refrain-lang | Reference neurofeedback & HRV protocol library for Refrain — vendor... | 2026-09-29 | 1 |
+| [rehand-emg-prosthesis](https://github.com/qetad13/rehand-emg-prosthesis) | @qetad13 | sEMG 4채널 손가락 동작 인식 → ESP32-S3 온디바이스 CNN 추론 → ESP-NOW 의수 제어 | 2026-10-13 | 1 |
 | [Remote-LSL-Recorder](https://github.com/GeorgeFejer91/Remote-LSL-Recorder) | @GeorgeFejer91 | A Windows-first Tauri application for discovering, viewing, and rec... | 2026-10-02 | 1 |
 | [resona](https://github.com/S-KSM/resona) | @S-KSM | Resona — local Muse EEG → MCP brain-state pipeline + agents. | 2026-05-11 | 1 |
 | [resonance-neurofeedback](https://github.com/BJOC-ENGINEERING/resonance-neurofeedback) | @BJOC-ENGINEERING | Browser neurofeedback trainer with simulated EEG and optional Muse ... | 2026-09-23 | 1 |
 | [scitex-dataset](https://github.com/scitex-ai/scitex-dataset) | @ywatanabe1989 | Multi-domain scientific dataset fetcher (neuroscience, biology, med... | 2026-09-22 | 1 |
 | [sema](https://github.com/A12N4V/sema) | @A12N4V | EEG analysis workbench over MNE-Python. Every click is a real MNE c... | 2026-10-08 | 3 |
+| [serenibrain-th21a-ble](https://github.com/gweber/serenibrain-th21a-ble) | @gweber | Read the SereniBrain TH21A EEG headband over Bluetooth LE from Pyth... | 2026-10-14 | 1 |
 | [sessantaquattro-eeg-lsl-toolkit](https://github.com/IbrahimKoukash/sessantaquattro-eeg-lsl-toolkit) | @IbrahimKoukash | Stream 64-channel EEG from an OT Bioelettronica Sessantaquattro to ... | 2026-10-03 | 1 |
 | [sogno-cane-app](https://github.com/DvdMng/sogno-cane-app) | @DvdMng | SOGNO_CANE — EEG→MIDI per uomo e cane (Unicorn Hybrid Black): simul... | 2026-09-04 | 1 |
 | [squiggly](https://github.com/alexdni/squiggly) | @alexdni | Open source web based EEG visualizer and analyzer | 2026-10-12 | 34 |
 | [ssvep-acquisition](https://github.com/neurocontrol-lab/ssvep-acquisition) | @neurocontrol-lab | MG24 firmware and Python tools for SSVEP optical measurement and EE... | 2026-09-28 | 1 |
 | [ssvep-bci-robot-arm](https://github.com/TC-TCQKJJ/ssvep-bci-robot-arm) | @TC-TCQKJJ | An educational SSVEP BCI pipeline using PsychoPy, LSL and ABFCCA to... | 2026-07-16 | 1 |
 | [SSVEP-BCI_A-Steady-State-Visual-Evoked-Potential-Based-Brain-Agent-Interface-System](https://github.com/Aik358/SSVEP-BCI_A-Steady-State-Visual-Evoked-Potential-Based-Brain-Agent-Interface-System) | @Aik358 | SSVEP-BCI：基于稳态视觉诱发电位的脑电-Agent 接口系统            SSVEP-BCI_A Steady-St... | 2026-08-01 | 1 |
+| [steadystate-studio](https://github.com/BKrishna-Prasad/steadystate-studio) | @BKrishna-Prasad | EEG-controlled music interface using SSVEP, FBCCA and LSL, with Psy... | 2026-10-08 | 1 |
 | [strands-emotiv](https://github.com/cagataycali/strands-emotiv) | @cagataycali | Research: Embodying the brain. Strands Agents accessing EEG and mor... | 2026-09-02 | 3 |
 | [SYNAPSE-24](https://github.com/AlessioBrillo/SYNAPSE-24) | @AlessioBrillo | 24/7 multimodal bio-sensing wearable platform: tiered acquisition (... | 2026-09-23 | 1 |
 | [Synapse2Action](https://github.com/ZacharyZcR/Synapse2Action) | @ZacharyZcR | EEG, LLM, VLA and robot control research framework | 2026-09-14 | 1 |

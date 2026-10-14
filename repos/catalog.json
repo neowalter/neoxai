@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-13T22:57:20Z",
+  "generatedAt": "2026-10-14T22:53:08Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 204,
+  "count": 216,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 204
+      "count": 216
     }
   ],
   "items": [
@@ -6762,6 +6762,414 @@
         "contactedAt": "2026-10-14",
         "batch": "batch18",
         "contactedAuthor": "zacharywong34174"
+      }
+    },
+    {
+      "id": "github:AbrahamPadua/PIEEG-clicker",
+      "name": "PIEEG-clicker",
+      "owner": "AbrahamPadua",
+      "author": "AbrahamPadua",
+      "url": "https://github.com/AbrahamPadua/PIEEG-clicker",
+      "homepage": null,
+      "source": "github",
+      "description": "a clicker that uses pieeg",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "pieeg",
+        "ads1299",
+        "raspberry-pi",
+        "blink-detection"
+      ],
+      "createdAt": "2026-09-30T18:35:40Z",
+      "updatedAt": "2026-10-14T22:51:52Z",
+      "pushedAt": "2026-10-01T07:48:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "AbrahamPadua"
+      }
+    },
+    {
+      "id": "github:BKrishna-Prasad/steadystate-studio",
+      "name": "steadystate-studio",
+      "owner": "BKrishna-Prasad",
+      "author": "BKrishna-Prasad",
+      "url": "https://github.com/BKrishna-Prasad/steadystate-studio",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG-controlled music interface using SSVEP, FBCCA and LSL, with PsychoPy stimuli, Sonic Pi loop control and a reproducible synthetic EEG demo. Team Beta Band\u2019s Neurovision Music-BCI hackathon project.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "fbcca",
+        "lsl",
+        "music"
+      ],
+      "createdAt": "2026-10-07T01:42:46Z",
+      "updatedAt": "2026-10-14T22:50:43Z",
+      "pushedAt": "2026-10-08T07:24:40Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "BKrishna-Prasad"
+      }
+    },
+    {
+      "id": "github:Danielz-z/EEG-BCI-Car",
+      "name": "EEG-BCI-Car",
+      "owner": "Danielz-z",
+      "author": "Danielz-z",
+      "url": "https://github.com/Danielz-z/EEG-BCI-Car",
+      "homepage": null,
+      "source": "github",
+      "description": "An EEG-based real-time brain-computer interface system for emergency vehicle takeover, integrating model training, offline inference, embedded hardware control, and GUI deployment. ",
+      "language": "C",
+      "license": "MIT",
+      "stars": 7,
+      "forks": 1,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "embedded",
+        "pytorch",
+        "real-time"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "stm32",
+        "lstm",
+        "vehicle"
+      ],
+      "createdAt": "2026-04-03T10:10:02Z",
+      "updatedAt": "2026-10-14T22:52:02Z",
+      "pushedAt": "2026-10-10T00:03:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "Danielz-z"
+      }
+    },
+    {
+      "id": "github:LeyeFang/FlyVibing-Engine",
+      "name": "FlyVibing-Engine",
+      "owner": "LeyeFang",
+      "author": "LeyeFang",
+      "url": "https://github.com/LeyeFang/FlyVibing-Engine",
+      "homepage": null,
+      "source": "github",
+      "description": "An editable, game-engine-style foundation for BCI system development and neurocognitive psychology experiments, with first-party MCP/CLI tooling that lets AI agents operate the editor directly.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "bci",
+        "paradigm-engine",
+        "mcp",
+        "g.tec",
+        "editor"
+      ],
+      "createdAt": "2026-04-25T03:55:56Z",
+      "updatedAt": "2026-10-14T22:50:52Z",
+      "pushedAt": "2026-10-14T12:43:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "LeyeFang"
+      }
+    },
+    {
+      "id": "github:Rxdrea/esp32-gesture-voice",
+      "name": "esp32-gesture-voice",
+      "owner": "Rxdrea",
+      "author": "Rxdrea",
+      "url": "https://github.com/Rxdrea/esp32-gesture-voice",
+      "homepage": null,
+      "source": "github",
+      "description": "ESP32 sEMG and wrist-pose assistive communication prototype",
+      "language": "C++",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "esp32",
+        "imu",
+        "assistive",
+        "aac"
+      ],
+      "createdAt": "2026-10-05T16:20:12Z",
+      "updatedAt": "2026-10-14T22:51:22Z",
+      "pushedAt": "2026-10-14T16:43:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "Rxdrea"
+      }
+    },
+    {
+      "id": "github:SaurabhKhimesra/EMG-BIONIC-ARM",
+      "name": "EMG-BIONIC-ARM",
+      "owner": "SaurabhKhimesra",
+      "author": "SaurabhKhimesra",
+      "url": "https://github.com/SaurabhKhimesra/EMG-BIONIC-ARM",
+      "homepage": null,
+      "source": "github",
+      "description": "EMG controlled 3D printed bionic hand: STM32F446 firmware plus a ROS 2 telemetry bridge",
+      "language": "C",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "bionic-hand",
+        "embedded-c",
+        "emg",
+        "myoware",
+        "pca9685",
+        "prosthetics",
+        "robotics",
+        "ros2",
+        "stm32",
+        "stm32cubeide"
+      ],
+      "tags": [
+        "emg",
+        "stm32",
+        "prosthesis",
+        "ros2",
+        "myoware"
+      ],
+      "createdAt": "2025-10-01T13:09:25Z",
+      "updatedAt": "2026-10-14T22:51:32Z",
+      "pushedAt": "2026-09-24T07:16:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "SaurabhKhimesra"
+      }
+    },
+    {
+      "id": "github:dichotomouskeyz/blackRabbit",
+      "name": "blackRabbit",
+      "owner": "dichotomouskeyz",
+      "author": "dichotomouskeyz",
+      "url": "https://github.com/dichotomouskeyz/blackRabbit",
+      "homepage": null,
+      "source": "github",
+      "description": "An open-source platform that records EEG, HRV, EDA and respiration during psychedelic sessions, links them to behavioral events, and shows which signals responded, with FDR-corrected statistics and an agentic interpretation layer.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "lsl",
+        "xdf",
+        "multimodal",
+        "agent"
+      ],
+      "createdAt": "2026-04-24T05:25:30Z",
+      "updatedAt": "2026-10-14T22:51:42Z",
+      "pushedAt": "2026-10-14T06:55:26Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "dichotomouskeyz"
+      }
+    },
+    {
+      "id": "github:gweber/serenibrain-th21a-ble",
+      "name": "serenibrain-th21a-ble",
+      "owner": "gweber",
+      "author": "gweber",
+      "url": "https://github.com/gweber/serenibrain-th21a-ble",
+      "homepage": null,
+      "source": "github",
+      "description": "Read the SereniBrain TH21A EEG headband over Bluetooth LE from Python, without the vendor app",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "biofeedback",
+        "bleak",
+        "bluetooth-low-energy",
+        "eeg",
+        "neurofeedback",
+        "serenibrain"
+      ],
+      "tags": [
+        "eeg",
+        "ble",
+        "reverse-engineering",
+        "headband",
+        "python"
+      ],
+      "createdAt": "2026-10-14T07:23:14Z",
+      "updatedAt": "2026-10-14T22:50:23Z",
+      "pushedAt": "2026-10-14T07:23:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "gweber"
+      }
+    },
+    {
+      "id": "github:joeeei11/mi-bci",
+      "name": "mi-bci",
+      "owner": "joeeei11",
+      "author": "joeeei11",
+      "url": "https://github.com/joeeei11/mi-bci",
+      "homepage": null,
+      "source": "github",
+      "description": "Open-source motor imagery EEG host computer Agent for reproducible BCI research",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "bci",
+        "mcp",
+        "workbench"
+      ],
+      "createdAt": "2026-10-08T04:08:01Z",
+      "updatedAt": "2026-10-14T22:51:12Z",
+      "pushedAt": "2026-10-10T13:06:27Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "joeeei11"
+      }
+    },
+    {
+      "id": "github:marcelpetrick/NTXHackathon22",
+      "name": "NTXHackathon22",
+      "owner": "marcelpetrick",
+      "author": "marcelpetrick",
+      "url": "https://github.com/marcelpetrick/NTXHackathon22",
+      "homepage": null,
+      "source": "github",
+      "description": "Cleaned-up NTX Hackathon 2022 BCI project: OpenBCI Ganglion EEG recordings explained by a verified manifest, a blink detector validated on ground truth (10/10, F1 = 1.0), a blink-controlled one-row Pacman with an automated replay check, plus FastAPI dashboard, CLI and Docker image.",
+      "language": "Redcode",
+      "license": "GPL-3.0",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "blink-detection",
+        "brain-computer-interface",
+        "eeg",
+        "fastapi",
+        "neurotechx",
+        "openbci",
+        "openbci-ganglion",
+        "pacman",
+        "python",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "openbci",
+        "ganglion",
+        "blink-detection",
+        "toolkit"
+      ],
+      "createdAt": "2022-10-30T10:59:18Z",
+      "updatedAt": "2026-10-14T22:50:33Z",
+      "pushedAt": "2026-10-14T17:07:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "marcelpetrick"
+      }
+    },
+    {
+      "id": "github:qetad13/rehand-emg-prosthesis",
+      "name": "rehand-emg-prosthesis",
+      "owner": "qetad13",
+      "author": "qetad13",
+      "url": "https://github.com/qetad13/rehand-emg-prosthesis",
+      "homepage": null,
+      "source": "github",
+      "description": "sEMG 4\ucc44\ub110 \uc190\uac00\ub77d \ub3d9\uc791 \uc778\uc2dd \u2192 ESP32-S3 \uc628\ub514\ubc14\uc774\uc2a4 CNN \ucd94\ub860 \u2192 ESP-NOW \uc758\uc218 \uc81c\uc5b4",
+      "language": "C",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "esp32",
+        "prosthesis",
+        "tinyml",
+        "esp-now"
+      ],
+      "createdAt": "2026-09-29T17:23:28Z",
+      "updatedAt": "2026-10-14T22:51:02Z",
+      "pushedAt": "2026-10-13T18:41:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "qetad13"
+      }
+    },
+    {
+      "id": "github:tandaye21/bci-robot-arm",
+      "name": "bci-robot-arm",
+      "owner": "tandaye21",
+      "author": "tandaye21",
+      "url": "https://github.com/tandaye21/bci-robot-arm",
+      "homepage": null,
+      "source": "github",
+      "description": "\u57fa\u4e8e SSVEP \u7684\u8111\u63a7\u673a\u68b0\u81c2\u7cfb\u7edf\uff1aFBCCA \u8111\u7535\u5206\u7c7b + YOLOv8 \u676f\u5b50\u68c0\u6d4b + \u84dd\u7259\u8111\u7535\u91c7\u96c6\uff0c\u5b9e\u73b0\u610f\u5ff5\u63a7\u5236\u6293\u53d6\u642c\u8fd0",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "fbcca",
+        "robot-arm",
+        "yolo"
+      ],
+      "createdAt": "2026-10-06T08:29:16Z",
+      "updatedAt": "2026-10-14T22:52:12Z",
+      "pushedAt": "2026-10-06T08:29:48Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-15",
+        "batch": "batch19",
+        "contactedAuthor": "tandaye21"
       }
     }
   ]
