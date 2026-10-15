@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-14T22:53:08Z",
+  "generatedAt": "2026-10-15T22:59:16Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 216,
+  "count": 228,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 216
+      "count": 228
     }
   ],
   "items": [
@@ -7170,6 +7170,404 @@
         "contactedAt": "2026-10-15",
         "batch": "batch19",
         "contactedAuthor": "tandaye21"
+      }
+    },
+    {
+      "id": "github:AnshvardhanShetty/ExoHand",
+      "name": "ExoHand",
+      "owner": "AnshvardhanShetty",
+      "author": "AnshvardhanShetty",
+      "url": "https://github.com/AnshvardhanShetty/ExoHand",
+      "homepage": null,
+      "source": "github",
+      "description": "EMG-controlled hand exoskeleton with real-time intent classification, adaptive motor assistance, and a full-stack rehabilitation platform",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "exoskeleton",
+        "rehabilitation",
+        "teensy",
+        "myoware"
+      ],
+      "createdAt": "2026-05-29T07:52:56Z",
+      "updatedAt": "2026-10-15T22:57:54Z",
+      "pushedAt": "2026-10-07T09:35:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "AnshvardhanShetty"
+      }
+    },
+    {
+      "id": "github:Lh0326/smart-wheelchair",
+      "name": "smart-wheelchair",
+      "owner": "Lh0326",
+      "author": "Lh0326",
+      "url": "https://github.com/Lh0326/smart-wheelchair",
+      "homepage": null,
+      "source": "github",
+      "description": "\u591a\u6a21\u6001\u8f6e\u6905\u4e0a\u4f4d\u673a\u539f\u578b\uff1aROS 2 + Nav2/TEB\uff0c\u96c6\u6210\u8111\u7535/\u5934\u59ff\u3001\u79bb\u7ebf\u8bed\u97f3\u4e0e\u5730\u56fe\u5bfc\u822a\uff0c\u5305\u542b\u969c\u788d\u611f\u77e5\u3001\u901f\u5ea6\u4ef2\u88c1\u548c\u7aef\u4fa7\u63a8\u7406\uff08\u82f1\u7279\u5c14\u676f\u53c2\u8d5b\u4f5c\u54c1\uff09\u3002",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 1,
+      "topics": [
+        "eeg",
+        "navigation",
+        "openvino",
+        "robotics",
+        "ros2"
+      ],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "ros2",
+        "wheelchair",
+        "assistive"
+      ],
+      "createdAt": "2026-08-22T13:00:51Z",
+      "updatedAt": "2026-10-15T22:57:44Z",
+      "pushedAt": "2026-09-29T14:38:42Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "Lh0326"
+      }
+    },
+    {
+      "id": "github:RoaringRohan/therahaptics",
+      "name": "therahaptics",
+      "owner": "RoaringRohan",
+      "author": "RoaringRohan",
+      "url": "https://github.com/RoaringRohan/therahaptics",
+      "homepage": null,
+      "source": "github",
+      "description": "EMG-driven physiotherapy system: a muscle-sensor sleeve, gesture classification, a .NET API and a Unity app for guided exercises.",
+      "language": "HTML",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "esp32",
+        "physiotherapy",
+        "unity",
+        "gesture-recognition"
+      ],
+      "createdAt": "2026-09-14T16:01:05Z",
+      "updatedAt": "2026-10-15T22:58:14Z",
+      "pushedAt": "2026-09-20T03:07:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "RoaringRohan"
+      }
+    },
+    {
+      "id": "github:SamuelSaylor/BioAmp-EXG-Pill-C-Library",
+      "name": "BioAmp-EXG-Pill-C-Library",
+      "owner": "SamuelSaylor",
+      "author": "SamuelSaylor",
+      "url": "https://github.com/SamuelSaylor/BioAmp-EXG-Pill-C-Library",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "C",
+      "license": "NOASSERTION",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "exg",
+        "bioamp",
+        "ads1115",
+        "c",
+        "raspberry-pi"
+      ],
+      "createdAt": "2026-10-14T02:20:01Z",
+      "updatedAt": "2026-10-15T22:57:25Z",
+      "pushedAt": "2026-10-14T19:04:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "SamuelSaylor"
+      }
+    },
+    {
+      "id": "github:ThatDeparted2061/dognosis-multimodal-ingest",
+      "name": "dognosis-multimodal-ingest",
+      "owner": "ThatDeparted2061",
+      "author": "ThatDeparted2061",
+      "url": "https://github.com/ThatDeparted2061/dognosis-multimodal-ingest",
+      "homepage": null,
+      "source": "github",
+      "description": "Go ingestion for live EEG + video + sensor sessions: watermark time alignment, backpressure without drops, Parquet by session/minute. 96.5k samples/s, p99 lag 167 ms, 0 dropped of 23.2M under a 2x burst.",
+      "language": "Go",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "backpressure",
+        "eeg",
+        "go",
+        "parquet",
+        "streaming",
+        "websocket"
+      ],
+      "tags": [
+        "eeg",
+        "ingestion",
+        "go",
+        "parquet",
+        "multimodal"
+      ],
+      "createdAt": "2026-10-14T22:00:24Z",
+      "updatedAt": "2026-10-15T22:58:23Z",
+      "pushedAt": "2026-10-14T22:00:38Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "ThatDeparted2061"
+      }
+    },
+    {
+      "id": "github:Ziraelty/AdaptiveBCI---4-classes",
+      "name": "AdaptiveBCI---4-classes",
+      "owner": "Ziraelty",
+      "author": "Ziraelty",
+      "url": "https://github.com/Ziraelty/AdaptiveBCI---4-classes",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time BCI cursor control using motor imagery EEG (Mentalab Explore) with Riemannian geometry MDM classification, RPA alignment, and smooth geodesic centroid adaptation.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "riemannian",
+        "lsl",
+        "mentalab"
+      ],
+      "createdAt": "2026-07-08T16:51:23Z",
+      "updatedAt": "2026-10-15T22:57:15Z",
+      "pushedAt": "2026-10-15T13:04:51Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "Ziraelty"
+      }
+    },
+    {
+      "id": "github:adhritpradeepashoka/Volition-App",
+      "name": "Volition-App",
+      "owner": "adhritpradeepashoka",
+      "author": "adhritpradeepashoka",
+      "url": "https://github.com/adhritpradeepashoka/Volition-App",
+      "homepage": null,
+      "source": "github",
+      "description": "Volition is a project I built using UpsideDownLab's NPG Lite. Originally meant to provide a more reliable biofeedback ( nerve electrical signals) control system for computers reliant on adaptible thresholds, Volition has since grown to a prototye assistive app that allows a motor disabled user to do multiple tasks, such as turning on a lightbulb.",
+      "language": "Python",
+      "license": "AGPL-3.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "eeg",
+        "npg-lite",
+        "assistive",
+        "ble"
+      ],
+      "createdAt": "2026-10-14T14:09:48Z",
+      "updatedAt": "2026-10-15T22:58:04Z",
+      "pushedAt": "2026-10-14T16:38:54Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "adhritpradeepashoka"
+      }
+    },
+    {
+      "id": "github:anaman/neurobridge",
+      "name": "neurobridge",
+      "owner": "anaman",
+      "author": "anaman",
+      "url": "https://github.com/anaman/neurobridge",
+      "homepage": null,
+      "source": "github",
+      "description": "Single-channel EEG training system for the NingNao/SereniBrain TH21A headband: 64 pre-registered tests, honest state decoding that refuses to over-claim, an agent bridge and a standalone recorder/monitor.",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "ble",
+        "eeg",
+        "eeg-analysis",
+        "fastapi",
+        "neurofeedback",
+        "neurotechnology",
+        "ningnao",
+        "python",
+        "research-tool",
+        "th21a",
+        "tkinter"
+      ],
+      "tags": [
+        "eeg",
+        "headband",
+        "agent-bridge",
+        "neurofeedback",
+        "python"
+      ],
+      "createdAt": "2026-10-15T19:44:05Z",
+      "updatedAt": "2026-10-15T22:56:45Z",
+      "pushedAt": "2026-10-15T19:44:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "anaman"
+      }
+    },
+    {
+      "id": "github:icarus-77/Silent-speech",
+      "name": "Silent-speech",
+      "owner": "icarus-77",
+      "author": "icarus-77",
+      "url": "https://github.com/icarus-77/Silent-speech",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time silent speech recognition using 4-channel facial EMG signals to classify a 6-word vocabulary without audible vocalization. Built with a Random Forest pipeline featuring dynamic baseline Z-score normalization, Voice Activity Detection, 22-dimensional spatial features, soft probabilistic voting, and 5-shot domain adaptation via ESP32.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "silent-speech",
+        "esp32",
+        "realtime",
+        "python"
+      ],
+      "createdAt": "2026-09-30T08:18:52Z",
+      "updatedAt": "2026-10-15T22:57:34Z",
+      "pushedAt": "2026-09-30T08:21:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "icarus-77"
+      }
+    },
+    {
+      "id": "github:ilaydasarikoca/eog-ai-wheelchair",
+      "name": "eog-ai-wheelchair",
+      "owner": "ilaydasarikoca",
+      "author": "ilaydasarikoca",
+      "url": "https://github.com/ilaydasarikoca/eog-ai-wheelchair",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EOG eye-movement classification and command generation for an AI-assisted wheelchair prototype. Python, signal processing, scikit-learn and ESP32.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eog",
+        "wheelchair",
+        "assistive",
+        "realtime",
+        "python"
+      ],
+      "createdAt": "2026-10-10T21:49:44Z",
+      "updatedAt": "2026-10-15T22:58:34Z",
+      "pushedAt": "2026-10-10T21:59:46Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "ilaydasarikoca"
+      }
+    },
+    {
+      "id": "github:ufxpri/sichiray-emg-studio",
+      "name": "sichiray-emg-studio",
+      "owner": "ufxpri",
+      "author": "ufxpri",
+      "url": "https://github.com/ufxpri/sichiray-emg-studio",
+      "homepage": null,
+      "source": "github",
+      "description": "Multi-window workbench for the Sichiray EMG PRO 8-channel armband: signal views, noise diagnosis, filters, WiLoR webcam hand tracking, on-the-spot EMG-to-hand-pose learning",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "armband",
+        "hand-pose",
+        "workbench",
+        "python"
+      ],
+      "createdAt": "2026-09-26T08:33:44Z",
+      "updatedAt": "2026-10-15T22:57:05Z",
+      "pushedAt": "2026-10-15T08:26:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "ufxpri"
+      }
+    },
+    {
+      "id": "github:vanjastankicc/neuropomodoro",
+      "name": "neuropomodoro",
+      "owner": "vanjastankicc",
+      "author": "vanjastankicc",
+      "url": "https://github.com/vanjastankicc/neuropomodoro",
+      "homepage": null,
+      "source": "github",
+      "description": "A Pomodoro timer driven by EEG and smart lighting",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl",
+        "home-assistant",
+        "focus"
+      ],
+      "createdAt": "2026-09-23T11:45:54Z",
+      "updatedAt": "2026-10-15T22:56:55Z",
+      "pushedAt": "2026-09-24T09:43:03Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-16",
+        "batch": "batch20",
+        "contactedAuthor": "vanjastankicc"
       }
     }
   ]
