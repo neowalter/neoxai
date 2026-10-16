@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T09:24:55.339Z",
+  "generatedAt": "2026-10-16T09:17:10.053Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 15
+      "count": 13
     },
     {
       "id": "github",
@@ -429,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8414,
+      "downloads": 7998,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -450,7 +450,7 @@
         "neuroscience"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 2421,
+      "downloads": 3314,
       "likes": 0,
       "updatedAt": "2026-10-12T06:34:45.000Z",
       "modality": [
@@ -458,10 +458,10 @@
       ]
     },
     {
-      "id": "hf:bkowshik/eeg-mi-datasets",
+      "id": "hf:EEGDash/eeg-mi-datasets",
       "name": "eeg-mi-datasets",
-      "owner": "bkowshik",
-      "url": "https://huggingface.co/datasets/bkowshik/eeg-mi-datasets",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eeg-mi-datasets",
       "source": "huggingface",
       "description": "EEG motor imagery datasets Unmodified copies of public EEG motor imagery datasets in the MOABB cache layout. Files extracted from an upstream archive keep their bytes; Weibo2014's also take the names MOABB gives them. Zhou2016's saved Zenodo record is the one generated file; see…",
       "tags": [
@@ -475,9 +475,9 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1951,
+      "downloads": 2959,
       "likes": 1,
-      "updatedAt": "2026-10-09T07:06:13.000Z",
+      "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
         "EEG"
       ]
@@ -500,7 +500,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1790,
+      "downloads": 1873,
       "likes": 1,
       "updatedAt": "2026-10-13T05:16:03.000Z",
       "modality": [
@@ -525,7 +525,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1789,
+      "downloads": 1791,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -543,7 +543,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 376,
+      "downloads": 463,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -568,7 +568,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 231,
+      "downloads": 278,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -640,9 +640,25 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 361,
+      "downloads": 435,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Anticloud/anticloud-eeglab",
+      "name": "anticloud-eeglab",
+      "owner": "Anticloud",
+      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
+      "source": "huggingface",
+      "description": "EEGLAB Category: BRAIN_COMPUTER_INTERFACE Status: Active development with Anticloud overlay What This Project Does ICLabel An automatic EEG independent component classifer plugin for EEGLAB. For more information, see the ICLabel website tutorial. This project provides tools, lib…",
+      "tags": [],
+      "license": null,
+      "downloads": 64,
+      "likes": 0,
+      "updatedAt": "2026-10-14T21:38:38.000Z",
       "modality": [
         "EEG"
       ]
@@ -665,25 +681,9 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 101,
+      "downloads": 107,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Anticloud/anticloud-eeglab",
-      "name": "anticloud-eeglab",
-      "owner": "Anticloud",
-      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
-      "source": "huggingface",
-      "description": "EEGLAB Category: BRAIN_COMPUTER_INTERFACE Status: Active development with Anticloud overlay What This Project Does ICLabel An automatic EEG independent component classifer plugin for EEGLAB. For more information, see the ICLabel website tutorial. This project provides tools, lib…",
-      "tags": [],
-      "license": null,
-      "downloads": 53,
-      "likes": 0,
-      "updatedAt": "2026-10-14T21:38:38.000Z",
       "modality": [
         "EEG"
       ]
@@ -701,7 +701,7 @@
         "arxiv:2104.01233"
       ],
       "license": null,
-      "downloads": 34,
+      "downloads": 41,
       "likes": 0,
       "updatedAt": "2026-10-15T02:50:44.000Z",
       "modality": [
@@ -741,42 +741,53 @@
       ]
     },
     {
-      "id": "zenodo:15437728",
-      "name": "Altered Interoceptive Predictive Coding in Functional Neurological Disorders",
-      "owner": "Mouthon, Michaël",
-      "url": "https://doi.org/10.5281/zenodo.15437728",
+      "id": "zenodo:23397566",
+      "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
+      "owner": "Villa, Alessandro E.P.",
+      "url": "https://doi.org/10.5281/zenodo.23397566",
       "source": "zenodo",
-      "description": "Data repository for the following study: Stoffel N., Mouthon M., Pelentritou A., von der Weid L., Concetti C., De Lucia M., Aybek S. Altered Interoceptive Predictive Coding in Functional Neurological Disorders, Psychophysiology, 2026. This dataset contains: - The raw EEG/ECG rec…",
-      "tags": [
-        "Predictive Coding",
-        "EEG"
-      ],
+      "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
+      "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 149,
+      "downloads": 5,
       "likes": null,
-      "updatedAt": "2026-09-28T00:00:00.000Z",
+      "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
         "EEG",
-        "ECG"
+        "fNIRS"
       ]
     },
     {
-      "id": "zenodo:21620509",
-      "name": "EEG audio-tactile spatial localization task under reduced alertness",
-      "owner": "Alameda, Clara",
-      "url": "https://doi.org/10.5281/zenodo.21620509",
+      "id": "zenodo:23397535",
+      "name": "Generative pretraining improves EEG contrast recovery through measurement-calibrated reconstruction: code and derived analysis data",
+      "owner": "Jia, Xiao",
+      "url": "https://doi.org/10.5281/zenodo.23397535",
       "source": "zenodo",
-      "description": "This dataset contains raw EEG data recorded at the University of Granada (CIMCYC) between March and June 2025 during an audio&ndash;tactile spatial localization task. The experiment was conducted with healthy easy-sleepers seated in a reclining armchair for approximately 2 hours…",
+      "description": "Code and derived analysis data accompanying &ldquo;Generative pretraining improves EEG contrast recovery through measurement-calibrated reconstruction&rdquo; by Xiao Jia. The study presents observation-anchored EEG reconstruction, which uses trial-specific corrections from a gen…",
       "tags": [
-        "EEG",
-        "Sleep onset",
-        "Perceptual decision-making",
-        "Multisensory processing"
+        "EEG reconstruction",
+        "uncertainty quantification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 92,
+      "downloads": 0,
       "likes": null,
-      "updatedAt": "2026-09-28T00:00:00.000Z",
+      "updatedAt": "2026-10-15T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23315438",
+      "name": "NED-Net: an annotation–training loop for rodent EEG event detection",
+      "owner": "Ledri, Marco",
+      "url": "https://doi.org/10.5281/zenodo.23315438",
+      "source": "zenodo",
+      "description": "This dataset holds what is needed to check and reproduce the results of the NED-Net paper without the full recordings: - the reference annotations; - every detection the models produced; - the reviewed precision census; - the trained models; - the EEG of the recordings held out…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 1,
+      "likes": null,
+      "updatedAt": "2026-10-12T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -891,22 +902,6 @@
       ]
     },
     {
-      "id": "zenodo:23080152",
-      "name": "EEG dataset_Molteni et al. 2026",
-      "owner": "Molteni, Federica",
-      "url": "https://doi.org/10.5281/zenodo.23080152",
-      "source": "zenodo",
-      "description": "This dataset is from the article \"From encoding to conscious report: Electrophysiological signatures of iconic memory revealed by a partial report task\" by Molteni et al., 2026 It is composed by 37 .set files (raw EEG datasets imported in EEGLAB), one for each study participant.…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-10-01T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -926,13 +921,29 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-14T10:10:27.000Z",
+      "updatedAt": "2026-10-15T13:04:34.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
+      ]
+    },
+    {
+      "id": "github:yjmantilla/sovabids",
+      "name": "sovabids",
+      "owner": "yjmantilla",
+      "url": "https://github.com/yjmantilla/sovabids",
+      "source": "github",
+      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
+      "tags": [],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 13,
+      "updatedAt": "2026-10-15T19:16:10.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -952,7 +963,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-15T06:23:55.000Z",
+      "updatedAt": "2026-10-16T06:23:50.000Z",
       "modality": [
         "EEG"
       ]
@@ -978,30 +989,6 @@
       "downloads": null,
       "likes": 3,
       "updatedAt": "2026-10-15T07:36:50.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:nimbusbci/nimbus-mcp",
-      "name": "nimbus-mcp",
-      "owner": "nimbusbci",
-      "url": "https://github.com/nimbusbci/nimbus-mcp",
-      "source": "github",
-      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "fastmcp",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-14T17:27:28.000Z",
       "modality": [
         "EEG"
       ]
