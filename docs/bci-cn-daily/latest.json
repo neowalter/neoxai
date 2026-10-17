@@ -1,240 +1,108 @@
 {
-  "date": "2026-10-17",
-  "generated_at": "2026-10-17T12:34:06.712Z",
+  "date": "2026-10-18",
+  "generated_at": "2026-10-17T21:33:02.785Z",
   "item_count": 7,
   "types": {
-    "Benchmark": 2,
-    "Project": 3,
-    "News": 1,
-    "Tutorial": 1
+    "Project": 7
   },
   "highlights": [
     {
-      "title_zh": "EEGMMIDB 上的可复现 CSP＋LDA 基准：欧氏对齐让零样本解码器追平个体训练",
-      "title_en": "A Reproducible CSP+LDA Baseline on EEGMMIDB: Euclidean Alignment Closes the Zero-Shot Gap",
-      "url": "https://github.com/ramzm-pixel/eegmmidb-csp-baseline",
-      "brief": "新建仓库（2026-10-17）给出一份可完整复现的 CSP＋LDA 基准研究：PhysioNet EEGMMIDB、105 名被试（排除 S088/S089/S092/S100），配 REPORT.md、80 项预设统计检验与逐项结果表。结论直指「校准到底值不值」：把他人原始数据直接池化训练，真实「脚部」任务的零样本解码只有 54%（接近随机）；加入**欧氏对齐**后各任务提升 6–19 个点（Holm 校正 p<0.0001），且用另外 104 人训练的模型可追平甚至超过被试自身训练。更有意思的是任务差异——零样本在左右手优于被试内训练，在脚部则打平。做零校准 BCI 或跨被试迁移的团队可把它当基线对照，报告也明说了哪些因素其实没影响。"
+      "title_zh": "EEGLAB 修 ANOVA 单精度累积：F 偏差 0.6%，p 值在 6e-8 以下被算成 0",
+      "title_en": "EEGLAB Fixes Single-Precision ANOVA: F Off by 0.6%, p-Values Saturating to Zero",
+      "url": "https://github.com/sccn/eeglab/pull/977",
+      "brief": "EEGLAB 合并 #977，修掉一个会静默影响统计结论的数值问题：ANOVA 辅助函数把 double 输入累积在**单精度**中，而平方和本身是抵消式运算（ssA=expA−expT、ssAS=expAS−expA−expS+expT 等），单精度约 7 位有效数字会把共同量级抹掉。结果是 F 值相对偏差约 0.6%，并且 `p = 1-fcdf(F)` 在一阶 F 分布尾部被截断为 0（约 6e-8 以下）——对做 ERP 组间比较、需要多重比较校正的研究，这等于把「不显著」误判成「极端显著」。修复改为双精度累积，并顺带修了 nonpositive F 的返回值、rm_anova2 的上尾计算与尾概率共享。凡是在 EEGLAB 里跑过 ANOVA 的项目，建议升级后重跑关键统计。"
     },
     {
-      "title_zh": "EEGPrep 一日 23 次提交：对齐 EEGLAB 的 1 基索引、名值调用与单精度 FIR",
-      "title_en": "EEGPrep's 23-Commit Day: 1-Based Indices, Name/Value Calls and Single-Precision FIR Parity",
-      "url": "https://github.com/sccn/eegprep/pull/501",
-      "brief": "EEGPrep（SCCN/EEGLAB 团队）在 10 月 17 日推进 23 次提交，做的是最容易被忽略、却决定「能否替代 MATLAB」的细节：#501 让数值辅助函数采用 **1 基索引**（MATLAB 语义，处理错就会出现隐蔽的差一位错误）；#503 在 runica 等函数里接受 EEGLAB 风格的名值（name/value）调用；#504 对齐 EEGLAB 的 mmo 增长/删除行为与**单精度 FIR**；#502 补齐单函数的后端 parity 缺口。此前一天刚加入的「每日差分模糊测试」正是这些修复的来源。对正评估从 MATLAB 迁移的实验室，这类逐函数对齐比功能清单更值得看；建议迁移时同时跑自建数据的前后对比。"
+      "title_zh": "braindecode 统一 TimmMlp 并让所有模型支持 reset_parameters",
+      "title_en": "braindecode Unifies TimmMlp and Gives Every Model reset_parameters",
+      "url": "https://github.com/braindecode/braindecode/pull/1454",
+      "brief": "braindecode 在 10 月 17 日推进 16 次提交，主题是「模型构造一致性」：#1454 新增 `modules.TimmMlp` 并让 EEGPT、LUNA 共用（权重键名与输出不变，因此已发布的 checkpoint 继续可用）；#1452 为每个模型实现 `reset_parameters`，并加了覆盖全部模型的参数初始化测试——这类测试能抓出「换随机种子后结果异常」的隐蔽 bug；同时修 `reset_head` 让替换后的 head 继承原模型的 dtype/device 与训练/评估模式。CI 也调整为 PR 上每个家族编译一个模型、master 全量。对复用预训练权重或多设备训练的团队，这批改动降低「同一模型换个入口就行为不同」的风险。"
     },
     {
-      "title_zh": "湖北省委书记、省长出席「科创沙龙」首场，主题直指脑机接口产业化",
-      "title_en": "Hubei's Party Secretary and Governor Open a Science-Industry Salon on BCI Commercialisation",
-      "url": "https://www.bilibili.com/read/cv53475009",
-      "brief": "B站科技号「惠科技」10 月 17 日 10:21 报道：10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加「科创沙龙」首场活动，主题是「脑机接口技术创新、产业落地与生态构建」——这是湖北省委十二届十二次全会部署的科创沙龙首场，定位为政产学研用对接平台。主持人为中国工程院院士、华中科技大学校长尤政；发言者包括华中科大人工智能与自动化学院教授伍冬睿（前沿科技）、中部战区总医院神经外科主任宋健（临床转化）、凝动万生医疗董事长董博雅（产业实践）。对观察国内非侵入式脑机接口产业的人来说，省级主要领导把首场沙龙主题放在脑机接口，是政策关注度的直接信号；后续可跟踪配套资金与试点政策是否落地。"
+      "title_zh": "EEGDash 修正 digest 元数据：时长、采样率与失效数据集清理",
+      "title_en": "EEGDash Corrects Digest Metadata: Durations, Sampling Rates and Broken Dataset Cleanup",
+      "url": "https://github.com/eegdash/EEGDash/pull/458",
+      "brief": "EEGDash 在 10 月 17 日推进 13 次提交，集中修 ingest/digest 的元数据准确性：#458 排除 6 个没有信号文件或上游已删除的数据集；digest 侧改用更可靠来源——采样率取 records.json 的 signal_properties 与 EMG sidecar，对没有其他尺寸来源的录制直接读 **EDF/BDF 头部**，并用头部精确 ntimes 覆盖 NEMAR records.json（撤销此前 n−1 的处理）。这些数字看似琐碎，却是下游分段、滤波与统计的输入：时长差一个采样点会让 epoch 边界整体错位，采样率错一档会让频率轴全错。依赖 EEGDash 元数据做批处理的团队，升级后建议抽样核对几段录制的时长与采样率。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-17.md",
+  "github_path": "docs/bci-cn-daily/2026-10-18.md",
   "items": [
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "EEGMMIDB 上的可复现 CSP＋LDA 基准：欧氏对齐让零样本解码器追平个体训练",
-      "title_en": "A Reproducible CSP+LDA Baseline on EEGMMIDB: Euclidean Alignment Closes the Zero-Shot Gap",
-      "bullets_zh": [
-        "105 名被试（排除 S088/S089/S092/S100）、CSP＋LDA 解码器，全部代码与报告公开，80 项预设检验结果在 results/stats_tests.csv。",
-        "主效应是**被试间对齐**：直接用他人原始数据池化训练时，真实「脚部」任务的零样本解码接近随机（54%）；欧氏对齐（Euclidean Alignment）让各任务提升 6–19 个点（全部 Holm 校正后 p<0.0001）。",
-        "对齐后，用**另外 104 人**训练的模型可媲美甚至超过用被试自身记录训练的模型；零样本在左右手任务上优于被试内训练，「脚部」任务打平——即校准的收益依任务而异。"
-      ],
-      "bullets_en": [
-        "105 subjects (excluding S088/S089/S092/S100) with a CSP+LDA decoder; all code and a report are public, and the 80 pre-specified tests sit in results/stats_tests.csv.",
-        "The main effect is inter-subject alignment: pooling other people's raw data gives a near-chance zero-shot decoder for real feet (54%), while Euclidean Alignment lifts every task by 6-19 points (all Holm-corrected p<0.0001).",
-        "Aligned, a decoder trained on 104 other people matches or beats one trained on the subject's own recording; zero-shot beats within-subject for left/right but ties for feet, so calibration gains are task dependent."
-      ],
-      "url": "https://github.com/ramzm-pixel/eegmmidb-csp-baseline",
-      "published": "2026-10-17T10:49:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库（2026-10-17）给出一份可完整复现的 CSP＋LDA 基准研究：PhysioNet EEGMMIDB、105 名被试（排除 S088/S089/S092/S100），配 REPORT.md、80 项预设统计检验与逐项结果表。结论直指「校准到底值不值」：把他人原始数据直接池化训练，真实「脚部」任务的零样本解码只有 54%（接近随机）；加入**欧氏对齐**后各任务提升 6–19 个点（Holm 校正 p<0.0001），且用另外 104 人训练的模型可追平甚至超过被试自身训练。更有意思的是任务差异——零样本在左右手优于被试内训练，在脚部则打平。做零校准 BCI 或跨被试迁移的团队可把它当基线对照，报告也明说了哪些因素其实没影响。",
-      "brief_en": "Created 2026-10-17, this is a fully reproducible CSP+LDA baseline on PhysioNet EEGMMIDB (105 subjects, excluding S088/S089/S092/S100) with a report, 80 pre-specified tests and code. Headline: pooling other people's raw data gives near-chance zero-shot decoding for feet (54%), while Euclidean Alignment adds 6-19 points (Holm p<0.0001) and models trained on 104 others match within-subject ones.",
-      "tags": [
-        "eegmmidb",
-        "csp",
-        "euclidean-alignment",
-        "zero-calibration",
-        "reproducibility"
-      ],
-      "raw_excerpt": "REPORT.md: \"Aligning subjects is the main effect. Pooling raw data from other people gives a zero-shot decoder that is near chance for real feet (54%). Euclidean Alignment lifts every task by 6 to 19 points (all Holm-corrected p < 0.0001), and a decoder trained on 104 other people then matches or beats one trained on the person's own recording.\" \"Zero-shot beats within-subject for left/right, ties for feet.\"",
-      "fetched_at": "2026-10-17T12:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "ramzm-pixel/eegmmidb-csp-baseline",
-      "author_handle": "ramzm-pixel",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "量化「欧氏对齐＋零样本」相对个体校准的收益与任务差异，可直接当基线。"
-    },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "EEGPrep 一日 23 次提交：对齐 EEGLAB 的 1 基索引、名值调用与单精度 FIR",
-      "title_en": "EEGPrep's 23-Commit Day: 1-Based Indices, Name/Value Calls and Single-Precision FIR Parity",
+      "title_zh": "EEGLAB 修 ANOVA 单精度累积：F 偏差 0.6%，p 值在 6e-8 以下被算成 0",
+      "title_en": "EEGLAB Fixes Single-Precision ANOVA: F Off by 0.6%, p-Values Saturating to Zero",
       "bullets_zh": [
-        "#501 让 EEGLAB 数值辅助函数使用 **1 基索引**——MATLAB 语义的核心差异，不处理就会出现「差一位」的隐性错误。",
-        "#503 在 runica 等函数中接受 EEGLAB 的**名值（name/value）调用**；#504 对齐 EEGLAB 的 mmo 增长/删除行为与单精度 FIR；#502 修单个函数的 Python 后端 parity 缺口。",
-        "这些改动都来自与 MATLAB EEGLAB 的逐函数对照，是「Python 版能否真正替代」的关键工程细节。"
+        "根因：ANOVA 辅助函数把 double 输入累积在**单精度**里，而平方和是抵消式运算（ssA=expA−expT 等），约 7 位有效数字吃掉了共同量级。",
+        "后果：F 值相对误差约 0.6%；更严重的是 p=1−fcdf(F) 在一阶 F 分布尾部**饱和为 0**（约 6e-8 以下），多重比较与校正会因此失效。",
+        "修复：改为双精度累积；另修 nonpositive F 的 p 值返回、rm_anova2 改用 F 上尾、共享尾概率并去掉 Cephes 例外（8 个文件，PR 由 AI 编码 agent 提交）。"
       ],
       "bullets_en": [
-        "#501 makes EEGLAB numerical helpers use 1-based indices — the core MATLAB semantic, where getting it wrong produces silent off-by-one errors.",
-        "#503 accepts EEGLAB-style name/value calls in runica and friends; #504 matches EEGLAB's mmo growth/deletion behaviour and single-precision FIR; #502 closes single-function Python-backend parity gaps.",
-        "All of it comes from function-by-function comparison against MATLAB EEGLAB — the engineering detail that decides whether a Python substitute is truly equivalent."
+        "Root cause: the ANOVA helpers accumulated double inputs in single precision, while sums of squares are cancellation terms (ssA = expA - expT, and so on), so about seven significant digits ate the shared magnitude.",
+        "Impact: F was off by roughly 0.6%, and worse, p = 1-fcdf(F) saturated to 0 in the first-order tail (below about 6e-8), breaking multiple-comparison correction.",
+        "Fix: accumulate in double; also return p-values for nonpositive F, use the F upper tail in rm_anova2, share the tail and drop the Cephes allowance (8 files; the PR was submitted by an AI coding agent)."
       ],
-      "url": "https://github.com/sccn/eegprep/pull/501",
-      "published": "2026-10-17T10:28:00Z",
+      "url": "https://github.com/sccn/eeglab/pull/977",
+      "published": "2026-10-17T15:07:00Z",
       "source": "github",
       "language": "en",
-      "brief": "EEGPrep（SCCN/EEGLAB 团队）在 10 月 17 日推进 23 次提交，做的是最容易被忽略、却决定「能否替代 MATLAB」的细节：#501 让数值辅助函数采用 **1 基索引**（MATLAB 语义，处理错就会出现隐蔽的差一位错误）；#503 在 runica 等函数里接受 EEGLAB 风格的名值（name/value）调用；#504 对齐 EEGLAB 的 mmo 增长/删除行为与**单精度 FIR**；#502 补齐单函数的后端 parity 缺口。此前一天刚加入的「每日差分模糊测试」正是这些修复的来源。对正评估从 MATLAB 迁移的实验室，这类逐函数对齐比功能清单更值得看；建议迁移时同时跑自建数据的前后对比。",
-      "brief_en": "EEGPrep (SCCN) pushed 23 commits on Oct 17 fixing the details that decide whether a Python substitute truly replaces MATLAB: 1-based indexing in numerical helpers (#501), EEGLAB-style name/value calls in runica and friends (#503), matching mmo growth/deletion and single-precision FIR (#504), and single-function parity gaps (#502) — all surfaced by its nightly differential fuzzing against EEGLAB.",
+      "brief": "EEGLAB 合并 #977，修掉一个会静默影响统计结论的数值问题：ANOVA 辅助函数把 double 输入累积在**单精度**中，而平方和本身是抵消式运算（ssA=expA−expT、ssAS=expAS−expA−expS+expT 等），单精度约 7 位有效数字会把共同量级抹掉。结果是 F 值相对偏差约 0.6%，并且 `p = 1-fcdf(F)` 在一阶 F 分布尾部被截断为 0（约 6e-8 以下）——对做 ERP 组间比较、需要多重比较校正的研究，这等于把「不显著」误判成「极端显著」。修复改为双精度累积，并顺带修了 nonpositive F 的返回值、rm_anova2 的上尾计算与尾概率共享。凡是在 EEGLAB 里跑过 ANOVA 的项目，建议升级后重跑关键统计。",
+      "brief_en": "EEGLAB merged #977 fixing a silent statistics bug: ANOVA helpers accumulated double inputs in single precision while sums of squares are cancellation terms, erasing the shared magnitude. F was off by ~0.6% and p = 1-fcdf(F) saturated to 0 below about 6e-8, turning non-significance into extreme significance in ERP comparisons; the fix accumulates in double.",
       "tags": [
-        "eegprep",
         "eeglab",
-        "parity",
-        "1-based-indexing",
-        "fir"
+        "anova",
+        "numerical-precision",
+        "statistics",
+        "erp"
       ],
-      "raw_excerpt": "Commits 2026-10-17: \"Use 1-based indices for EEGLAB numerical helpers (#501)\" 04:49Z; \"Fix single-function Python-backend parity gaps (Part of #430) (#502)\" 05:34Z; \"Accept EEGLAB name/value calls in runica and related functions (#503)\" 10:28Z; \"Match EEGLAB mmo growth, deletion, and single-precision FIR (#504)\" 09:55Z.",
-      "fetched_at": "2026-10-17T12:45:00Z",
+      "raw_excerpt": "\"Double inputs to the ANOVA helpers were accumulated in single. Sums of squares are cancellations (ssA = expA - expT, ssAS = expAS - expA - expS + expT, and the same pattern for the other terms), so single precision, about 7 digits, drops most of the shared magnitude. F was off by about 0.6% relative. p = 1-fcdf(F) saturated to 0 below about 6e-8…\" — PR #977, merged 2026-10-17T15:07:05Z, 8 files.",
+      "fetched_at": "2026-10-17T22:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "sccn/eegprep#501",
+      "upstream_id": "sccn/eeglab#977",
       "author_handle": "sccn",
       "metrics": {
         "play": null,
-        "like": 38,
+        "like": 802,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "1 基索引与单精度 FIR 等语义级对齐，是 MATLAB→Python 迁移是否可信的关键。"
-    },
-    {
-      "type": "News",
-      "level": "Intermediate",
-      "title_zh": "湖北省委书记、省长出席「科创沙龙」首场，主题直指脑机接口产业化",
-      "title_en": "Hubei's Party Secretary and Governor Open a Science-Industry Salon on BCI Commercialisation",
-      "bullets_zh": [
-        "10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加省委十二届十二次全会部署的「科创沙龙」首场，主题为脑机接口技术创新、产业落地与生态构建。",
-        "沙龙由中国工程院院士、华中科技大学校长尤政主持；华中科大人工智能与自动化学院教授伍冬睿讲前沿核心科技，中部战区总医院神经外科主任宋健谈临床转化，凝动万生医疗董事长董博雅讲产业实践。",
-        "形式为无主席台的圆桌，官方定位是政产学研用深度对接平台，服务武汉区域科技创新中心建设。"
-      ],
-      "bullets_en": [
-        "On the evening of Oct 16, Hubei's Party Secretary Guan Zhiou and Governor Li Dianxun joined the first 'science-innovation salon' at Huazhong University of Science and Technology, themed on BCI technology, industrial deployment and ecosystem building.",
-        "The salon was chaired by You Zheng, CAE academician and HUST president; Wu Dongrui (HUST automation) covered frontier technology, Song Jian (Central Theater General Hospital neurosurgery) clinical translation, and Dong Boya (Ningdong Wansheng Medical) industry practice.",
-        "Held as a round table without a podium, it is framed as a government-industry-academia platform supporting Wuhan's regional science and innovation centre."
-      ],
-      "url": "https://www.bilibili.com/read/cv53475009",
-      "published": "2026-10-17T02:21:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站科技号「惠科技」10 月 17 日 10:21 报道：10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加「科创沙龙」首场活动，主题是「脑机接口技术创新、产业落地与生态构建」——这是湖北省委十二届十二次全会部署的科创沙龙首场，定位为政产学研用对接平台。主持人为中国工程院院士、华中科技大学校长尤政；发言者包括华中科大人工智能与自动化学院教授伍冬睿（前沿科技）、中部战区总医院神经外科主任宋健（临床转化）、凝动万生医疗董事长董博雅（产业实践）。对观察国内非侵入式脑机接口产业的人来说，省级主要领导把首场沙龙主题放在脑机接口，是政策关注度的直接信号；后续可跟踪配套资金与试点政策是否落地。",
-      "brief_en": "Hubei's Party Secretary and Governor joined the first 'science-innovation salon' at HUST on the evening of Oct 16, themed on BCI technology, deployment and ecosystem. Chaired by CAE academician and HUST president You Zheng, it featured Wu Dongrui on frontier tech, neurosurgeon Song Jian on clinical translation and Dong Boya on industry practice.",
-      "tags": [
-        "hubei",
-        "policy",
-        "bci-industry",
-        "wuhan",
-        "governance"
-      ],
-      "raw_excerpt": "「10月16日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加了一场形式特殊的会议…主题是『脑机接口技术创新、产业落地与生态构建』。这是湖北省委十二届十二次全会部署的『科创沙龙』首场活动。」「主持沙龙的是中国工程院院士、华中科技大学校长尤政…华中科技大学人工智能与自动化学院教授伍冬睿…」。",
-      "fetched_at": "2026-10-17T12:45:00Z",
-      "platform": "bilibili",
-      "content_type": "column",
-      "upstream_id": "cv53475009",
-      "author_handle": "惠科技",
-      "metrics": {
-        "play": null,
-        "like": 99,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "省级主要领导首场沙龙主题即脑机接口，是国内政策关注度的直接信号。"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB 大批数据集改从 NEMAR 取数（含 Zhou2016 改读 BIDS 发布版）",
-      "title_en": "MOABB Moves Many Datasets to the NEMAR Store, Including Zhou2016's BIDS Release",
-      "bullets_zh": [
-        "10 月 16 日 27 次提交：Zhou2016 改为读取 NEMAR 上的 BIDS 发布版（nm000115）而非 Zenodo（#1303）；MIMED2024、Weibo2014、Shin2017A/B、Leelakittisin2025、MOVING2024、Perdikis2018、Shin2022 等改为直接从 NEMAR 取被试文件。",
-        "同时为 GuttmannFlury2025_SSVEP、Nguyen2017_L、Zhang2025 等启用 nemar_seed_cache，减少重复下载与解包。",
-        "数据源与缓存策略一起变化，直接影响取数成功率、下载量与结果可复现性。"
-      ],
-      "bullets_en": [
-        "27 commits on Oct 16: Zhou2016 now reads the BIDS release on NEMAR (nm000115) instead of Zenodo (#1303), and MIMED2024, Weibo2014, Shin2017A/B, Leelakittisin2025, MOVING2024, Perdikis2018, Shin2022 and others take subject files from the NEMAR store.",
-        "It also enables nemar_seed_cache for GuttmannFlury2025_SSVEP, Nguyen2017_L, Zhang2025 and others, cutting repeated downloads and unpacking.",
-        "Data sources and caching change together, affecting fetch reliability, download volume and reproducibility."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1303",
-      "published": "2026-10-16T19:23:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MOABB 在 10 月 16 日推进 27 次提交，主题是把数据获取整体迁到 **NEMAR**：Zhou2016 改为读取 NEMAR 上的 BIDS 发布版（nm000115）而不再依赖 Zenodo（#1303），MIMED2024、Weibo2014、Shin2017A/B、Leelakittisin2025、MOVING2024、Perdikis2018、Shin2022 等也改为直接从 NEMAR 取被试文件；同时为 GuttmannFlury2025_SSVEP、Nguyen2017_L、Zhang2025 等启用 `nemar_seed_cache` 以减少重复下载与解包。对使用者意味着取数更稳、缓存更省，但也意味着**数据版本来源改变**——若你的结果依赖旧下载，升级后应核对文件哈希或重跑关键流程，避免「同名不同源」带来的静默差异。",
-      "brief_en": "MOABB made 27 commits on Oct 16 moving data access to NEMAR: Zhou2016 reads the BIDS release nm000115 instead of Zenodo (#1303), and MIMED2024, Weibo2014, Shin2017A/B, Leelakittisin2025, MOVING2024, Perdikis2018 and Shin2022 now pull files from NEMAR, with nemar_seed_cache enabled for more. Fetching improves, but provenance changes, so verify hashes after upgrading.",
-      "tags": [
-        "moabb",
-        "nemar",
-        "data-provenance",
-        "caching",
-        "bids"
-      ],
-      "raw_excerpt": "Commits 2026-10-16: \"Zhou2016: read the BIDS release from NEMAR (nm000115) instead of Zenodo (#1303)\" 19:23Z; \"MIMED2024, Weibo2014, Shin2017A/B: take the subject's files from the NEMAR store\" 20:05Z; \"Enable nemar_seed_cache for GuttmannFlury2025_SSVEP, Nguyen2017_L, Zhang2025…\" 19:24Z — 27 commits that day.",
-      "fetched_at": "2026-10-17T12:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1303",
-      "author_handle": "NeuroTechX",
-      "metrics": {
-        "play": null,
-        "like": 1073,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "取数迁到 NEMAR 后更稳更省，但数据来源变了，升级需核对哈希与重跑结果。"
+      "why_valuable": "单精度累积让 F 偏 0.6% 且 p 值饱和为 0，跑过 ANOVA 的项目需重跑统计。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 新增 LabelSmoothing 增强，并放宽 ZUNA 窗口长度限制",
-      "title_en": "braindecode Adds LabelSmoothing and Loosens ZUNA's Window Constraint",
+      "title_zh": "braindecode 统一 TimmMlp 并让所有模型支持 reset_parameters",
+      "title_en": "braindecode Unifies TimmMlp and Gives Every Model reset_parameters",
       "bullets_zh": [
-        "#1401 新增 LabelSmoothing 增强变换：对类别标签做平滑，缓解标签噪声与过度自信，适合被试主观标注类任务。",
-        "#1433 让 ZUNA 接受比 max_seqlen patch 更长的窗口，不再强制截断；SincShallow 对不可行几何在构造期抛清晰的 ValueError。",
-        "#1426 修掉 glorot_weight_zero_bias 在 affine=False BatchNorm 上崩溃的问题；当日共 24 次提交。"
+        "#1454 新增 modules.TimmMlp，EEGPT 与 LUNA 改用它——权重键名与输出保持一致，因此既有 checkpoint 仍然兼容。",
+        "#1452 为**每个**模型实现 reset_parameters，并新增「全部模型参数初始化」测试；同时修 reset_head 让新 head 继承原模型的 dtype、device 与 train/eval 模式。",
+        "CI 调整为 PR 上每个模型家族编译一个、master 上全量编译，在流水线时间与覆盖之间取平衡。"
       ],
       "bullets_en": [
-        "#1401 adds a LabelSmoothing augmentation transform, softening class targets to counter label noise and overconfidence in subjectively annotated tasks.",
-        "#1433 lets ZUNA accept windows longer than max_seqlen patches instead of forcing truncation, and SincShallow raises clear ValueErrors at construction for impossible geometries.",
-        "#1426 fixes glorot_weight_zero_bias crashing on affine=False BatchNorm; 24 commits landed that day."
+        "#1454 adds modules.TimmMlp and switches EEGPT and LUNA to it, keeping the same weight keys and outputs so existing checkpoints stay compatible.",
+        "#1452 implements reset_parameters for every model with an all-models initialization test, and fixes reset_head so a new head inherits the model's dtype, device and train/eval mode.",
+        "CI now compiles one model per family on pull requests and every model on master, balancing pipeline time against coverage."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1401",
-      "published": "2026-10-16T11:39:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1454",
+      "published": "2026-10-17T20:05:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 10 月 16 日推进 24 次提交：#1401 新增 **LabelSmoothing 增强变换**——对类别目标做软化，适合 EEG 里常见的「主观标注、标签噪声大、模型过度自信」场景（以往社区多用交叉熵＋早停硬扛）；#1433 让 ZUNA 接受比 max_seqlen patch 更长的窗口（此前会被强制截断，长试次信息丢失），并让 SincShallow 在构造期对不可行几何抛出清晰 ValueError；#1426 修掉 glorot_weight_zero_bias 在 `affine=False` BatchNorm 上崩溃的问题。做运动想象/情绪分类的训练流程可以直接把 LabelSmoothing 加为常规增强项，注意与类别不平衡策略的交互。",
-      "brief_en": "braindecode made 24 commits on Oct 16: #1401 adds a LabelSmoothing augmentation transform to soften targets against label noise and overconfidence, #1433 lets ZUNA accept windows longer than max_seqlen patches (previously force-truncated) and makes SincShallow raise clear ValueErrors for impossible geometries, and #1426 fixes glorot_weight_zero_bias crashing on affine=False BatchNorm.",
+      "brief": "braindecode 在 10 月 17 日推进 16 次提交，主题是「模型构造一致性」：#1454 新增 `modules.TimmMlp` 并让 EEGPT、LUNA 共用（权重键名与输出不变，因此已发布的 checkpoint 继续可用）；#1452 为每个模型实现 `reset_parameters`，并加了覆盖全部模型的参数初始化测试——这类测试能抓出「换随机种子后结果异常」的隐蔽 bug；同时修 `reset_head` 让替换后的 head 继承原模型的 dtype/device 与训练/评估模式。CI 也调整为 PR 上每个家族编译一个模型、master 全量。对复用预训练权重或多设备训练的团队，这批改动降低「同一模型换个入口就行为不同」的风险。",
+      "brief_en": "braindecode made 16 commits on Oct 17 around construction consistency: #1454 adds modules.TimmMlp shared by EEGPT and LUNA with unchanged weight keys and outputs (so published checkpoints stay usable), #1452 implements reset_parameters for every model plus an all-models initialization test, and reset_head now inherits dtype, device and train/eval mode from the parent model.",
       "tags": [
         "braindecode",
-        "label-smoothing",
-        "augmentation",
-        "zuna",
-        "bugfix"
+        "reset-parameters",
+        "timmmlp",
+        "ci",
+        "checkpoints"
       ],
-      "raw_excerpt": "Commits 2026-10-16: \"Add LabelSmoothing augmentation transform (#1401)\" 11:39Z; \"ZUNA: accept windows longer than max_seqlen patches (#1433)\" 18:36Z; \"Raise clear ValueErrors at construction for impossible geometries in SincShallow\" 15:53Z; \"FIX glorot_weight_zero_bias crashing on affine=False BatchNorm (#1426)\" 11:42Z — 24 commits that day.",
-      "fetched_at": "2026-10-17T12:45:00Z",
+      "raw_excerpt": "Commits 2026-10-17: \"Add modules.TimmMlp; EEGPT and LUNA use it (same keys, same outputs) (#1454)\" 20:05Z; \"reset_parameters for every model; all-models initialization test (#1452)\" 19:48Z; \"FIX reset_head: the new head takes the model's dtype, device and train/eval mo[de]\" 19:46Z.",
+      "fetched_at": "2026-10-17T22:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1401",
+      "upstream_id": "braindecode/braindecode#1454",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -243,102 +111,231 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "LabelSmoothing 直击 EEG 标签噪声与过度自信，ZUNA 长窗口不再被截断。"
+      "why_valuable": "全模型初始化测试能抓出换种子即异常的隐蔽 bug，且不破坏既有 checkpoint。"
     },
     {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "BIDS 文件夹结构讲解：sub-/ses-/task-/run- 怎么排、events.tsv 怎么写",
-      "title_en": "A BIDS Folder-Structure Walkthrough: sub-/ses-/task-/run- and events.tsv",
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGDash 修正 digest 元数据：时长、采样率与失效数据集清理",
+      "title_en": "EEGDash Corrects Digest Metadata: Durations, Sampling Rates and Broken Dataset Cleanup",
       "bullets_zh": [
-        "讲清最小 BIDS 骨架：顶层目录、`sub-01` 等被试目录命名不可改，被试下必须有 `anat` 与 `func` 子目录。",
-        "文件名字段串联：`sub-`（被试）、`ses-`（不同时间点采集）、`task-`（静息写 rest，任务态按类型如 motor）、`run-`（同一时间点重复采集）；只有一个 session/run 可省略，多个则绝不能省。",
-        "辅助文件：任务态 `events.tsv` 需写 onset、duration 与明确的 trial_type（Tab 分隔）；`participants.tsv` 存年龄性别组别且勿泄露真实姓名；最后必须做验证。"
+        "#458 排除 6 个没有信号文件或上游已删除的数据集，避免索引里留下不可下载条目。",
+        "时长与采样率改以更可靠来源为准：从 records.json 的 signal_properties 与 EMG sidecar 取采样率；对无其他尺寸来源的录制直接读 EDF/BDF 头部，并用头部精确 ntimes 覆盖 NEMAR records.json（撤销此前的 n−1 处理）。",
+        "digest 是下游分段、滤波与统计的输入；时长差一个采样点或采样率错一档都会静默传播。"
       ],
       "bullets_en": [
-        "It lays out the minimal BIDS skeleton: a self-named top folder, subject folders like sub-01 whose naming cannot change, and mandatory anat and func subfolders per subject.",
-        "Filename fields chain together: sub- (subject), ses- (separate recording days), task- (rest for resting state, otherwise e.g. motor), run- (repeats within a session); a single session or run may be omitted, multiple ones never.",
-        "Auxiliary files: task events.tsv needs onset, duration and an explicit trial_type (tab separated); participants.tsv holds age/sex/group without real names; validation at the end is mandatory."
+        "#458 excludes six datasets with no signal files or deleted upstream, keeping undownloadable entries out of the index.",
+        "Durations and sampling rates now come from more reliable sources: signal_properties in records.json plus EMG sidecars, and for recordings with no other sizing source the EDF/BDF header is read directly, with exact header ntimes overriding NEMAR records.json (undoing the earlier n-1 treatment).",
+        "The digest feeds downstream epoching, filtering and statistics, so an off-by-one duration or a wrong sampling rate propagates silently."
       ],
-      "url": "https://www.bilibili.com/video/BV19JJ96oErZ/",
-      "published": "2026-10-17T03:31:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站「BrainScience」10 月 17 日发布的 BIDS 结构讲解（13:35），把「数据怎么排」讲成了可照做的清单：顶层目录、`sub-01` 等被试目录命名不可改，被试下必须有 `anat` 与 `func`；文件名字段 `sub-`／`ses-`／`task-`／`run-` 各自的含义与可省略条件；任务态 `events.tsv` 必须写 onset、duration 与明确的 trial_type，`participants.tsv` 存人口学信息但不得泄露真实姓名；最后一步必须跑验证。内容以 fMRI 为例，但命名与目录规则同样适用于 EEG BIDS（本仓库本 lane 就在用）。对刚入门的实验室，这类「照做即合规」的材料比读规范原文省时间。",
-      "brief_en": "A Chinese BIDS walkthrough published Oct 17 by the BrainScience channel turns data organisation into a checklist: immutable subject names like sub-01, mandatory anat and func subfolders, the rules of sub-/ses-/task-/run-, task events.tsv requiring onset, duration and trial_type, participants.tsv without real names, and validation at the end. fMRI examples, same rules for EEG BIDS.",
+      "url": "https://github.com/eegdash/EEGDash/pull/458",
+      "published": "2026-10-17T21:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 在 10 月 17 日推进 13 次提交，集中修 ingest/digest 的元数据准确性：#458 排除 6 个没有信号文件或上游已删除的数据集；digest 侧改用更可靠来源——采样率取 records.json 的 signal_properties 与 EMG sidecar，对没有其他尺寸来源的录制直接读 **EDF/BDF 头部**，并用头部精确 ntimes 覆盖 NEMAR records.json（撤销此前 n−1 的处理）。这些数字看似琐碎，却是下游分段、滤波与统计的输入：时长差一个采样点会让 epoch 边界整体错位，采样率错一档会让频率轴全错。依赖 EEGDash 元数据做批处理的团队，升级后建议抽样核对几段录制的时长与采样率。",
+      "brief_en": "EEGDash made 13 commits on Oct 17 tightening ingest/digest metadata: #458 excludes six datasets with no signal files or deleted upstream, sampling rates come from records.json signal_properties and EMG sidecars, and recordings with no other sizing source get their EDF/BDF header read directly, with exact header ntimes overriding NEMAR records.json (undoing the n-1 treatment).",
       "tags": [
-        "bids",
-        "data-organization",
-        "tutorial",
-        "eeg",
-        "metadata"
+        "eeg-dash",
+        "metadata",
+        "digest",
+        "edf",
+        "data-quality"
       ],
-      "raw_excerpt": "「BIDS 是目前脑影像通用的数据组织格式…被试文件夹 sub-01、sub-02（必须严格按此命名），每个被试下必须有 anat 和 func 两个子文件夹…功能像的命名串联四个字段：sub-、ses-、task-、run-…只有一个 session 或 run 时可省略，有多个就绝不能省。…events.tsv 要写清 onset、duration 和明确的 trial_type…participants.tsv 存年龄、性别、组别，注意别泄露真人姓名。」",
-      "fetched_at": "2026-10-17T12:45:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV19JJ96oErZ",
-      "author_handle": "BrainScience",
+      "raw_excerpt": "Commits 2026-10-17: \"fix(ingest): exclude 6 datasets with no signal files or deleted upstream (#458)\" 21:24Z; \"fix(digest): read the EDF/BDF header of recordings nothing else sized (#456)\" 21:23Z; \"fix(digest): exact header ntimes beat NEMAR records.json; undo the n-1 of Reco[rds]…\" 21:22Z; \"fix(digest): sampling rate from records.json signal_properties and EMG sidecar\" 21:17Z.",
+      "fetched_at": "2026-10-17T22:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash#458",
+      "author_handle": "eegdash",
       "metrics": {
         "play": null,
-        "like": 48,
+        "like": 89,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "时长/采样率是下游分段与滤波的输入，差一点会静默传播到全部结果。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-CPP 修 FiffTag 访问器越界读（截断 payload）",
+      "title_en": "MNE-CPP Fixes FiffTag Accessors Reading Past a Truncated Payload",
+      "bullets_zh": [
+        "FiffTag 结构访问器在 tag payload 被截断时会读过缓冲区边界，修复为按实际长度读取。",
+        "同日构建侧：EMSDK_VERSION 改名 EMSCRIPTEN_VERSION、emsdk_env 不再 unset EMSDK_*；Qt 上限提到 6.12.0、emsdk 5.0.5、ONNX Runtime 1.31.0。",
+        "对接收外部 FIFF 文件（合作方或公开数据集）的实时管线，越界读取属应优先修的健壮性问题。"
+      ],
+      "bullets_en": [
+        "The FiffTag struct accessors read past the buffer when a tag payload is truncated; the fix reads only the actual length.",
+        "Build-side changes the same day rename EMSDK_VERSION to EMSCRIPTEN_VERSION, stop emsdk_env from unsetting EMSDK_*, and raise the Qt ceiling to 6.12.0 with emsdk 5.0.5 and ONNX Runtime 1.31.0.",
+        "For real-time pipelines that ingest external FIFF files (partners or public datasets), an out-of-bounds read is a robustness bug worth fixing first."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/3048d9b50eea",
+      "published": "2026-10-17T18:42:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 17 日合并 20 次提交，其中一条值得单独点出：`FiffTag` 结构访问器在 tag payload 被**截断**时会读过缓冲区边界，现改为按实际长度读取。EEG/MEG 数据交换普遍以 FIFF 为载体，损坏或截断的文件在公开数据集里并不罕见——越界读可能表现为崩溃、NaN，甚至静默读出脏数据，因此这条修复对实时管线尤其重要。同日还有一批构建侧更新：EMSDK_VERSION 改名为 EMSCRIPTEN_VERSION、emsdk_env 不再清理 EMSDK_*，Qt 上限提到 6.12.0，emsdk 升到 5.0.5、ONNX Runtime 升到 1.31.0。用 MNE-CPP 做在线处理或依赖其 WebAssembly 构建的团队建议同步。",
+      "brief_en": "MNE-CPP merged 20 commits on Oct 17, one standing out: FiffTag struct accessors read past the buffer when a payload is truncated and now read only the actual length. FIFF is the common EEG/MEG exchange format and truncated files appear in public datasets, so an out-of-bounds read can mean crashes, NaNs or silently wrong data; Qt 6.12, emsdk 5.0.5 and ONNX Runtime 1.31.0 also landed.",
+      "tags": [
+        "mne-cpp",
+        "fiff",
+        "bounds-check",
+        "realtime",
+        "robustness"
+      ],
+      "raw_excerpt": "Commit 3048d9b50eea, 2026-10-17T18:42Z: \"FIX: FiffTag struct accessors read past a truncated tag payload\". Same-day commits: \"FIX: rename EMSDK_VERSION to EMSCRIPTEN_VERSION; emsdk_env unsets EMSDK_*\" and \"MAINT: raise max Qt to 6.12.0, emsdk 5.0.5, ONNX Runtime 1.31.0\" (20 commits that day).",
+      "fetched_at": "2026-10-17T22:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@3048d9b50eea",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "把 BIDS 命名与目录规则讲成可照做清单，新手可直接用于 EEG 数据整理。"
+      "why_valuable": "截断 FIFF 文件的越界读会致崩溃或脏数据，接收外部数据前应先升级。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "mne-rt 修 GEDAI 去噪器特征值极性，并统一采样率来源",
+      "title_en": "mne-rt Fixes GEDAI Eigenvalue Polarity and Unifies the Sampling-Rate Source",
+      "bullets_zh": [
+        "#47/#48 修 GEDAIDenoiser 在 leadfield 模式下的**特征值极性**问题——极性反了会让伪迹方向判断随之反向。",
+        "另一处改动让 sfreq 参数使用 raw_baseline 的 info，避免基准段与目标段采样率不一致导致的重采样/滤波参数错配。",
+        "mne-rt 是实时 M/EEG 处理框架（v1.2.0 于 10-13 发布），这类修复直接影响在线伪迹抑制的实际效果。"
+      ],
+      "bullets_en": [
+        "#47/#48 fix eigenvalue polarity in GEDAIDenoiser's leadfield mode, where a flipped sign also flips the inferred artefact direction.",
+        "Another change takes the sfreq parameter from raw_baseline's info, avoiding mismatched resampling and filter parameters when baseline and target segments differ in sampling rate.",
+        "mne-rt is a real-time M/EEG processing framework (v1.2.0 released Oct 13), and such fixes directly change online artefact suppression."
+      ],
+      "url": "https://github.com/mne-rt-org/mne-rt/pull/48",
+      "published": "2026-10-17T17:07:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "mne-rt 合并 #48（并保留 #47 的修复范围）：修正 GEDAIDenoiser 在 leadfield 模式下的**特征值极性**问题。这类错误不会抛异常，而是让去噪后的伪迹方向判断反向——在线伪迹抑制里表现为「越抑制越糟」却不报错，排查成本很高。同日另一处改动让 sfreq 参数取自 raw_baseline 的 info，避免基准段与目标段采样率不同导致重采样/滤波参数错配。mne-rt 定位是实时 M/EEG 处理（v1.2.0 于 10-13 发布），适合闭环/神经反馈场景；用 GEDAI 做在线去噪的团队建议升级后对同一段数据比对前后输出方向。",
+      "brief_en": "mne-rt merged #48 (scoped with #47) fixing eigenvalue polarity in GEDAIDenoiser's leadfield mode — a bug that raises nothing but flips the inferred artefact direction, making online suppression worse without an error. Another change takes sfreq from raw_baseline's info to avoid parameter mismatches when baseline and target segments differ in sampling rate.",
+      "tags": [
+        "mne-rt",
+        "gedai",
+        "denoising",
+        "polarity",
+        "realtime"
+      ],
+      "raw_excerpt": "Commits 2026-10-17: \"Fix eigenvalue polarity in leadfield mode for GEDAIDenoiser (#47)\" 12:13Z; \"Update sfreq parameter to use raw_baseline info\" 16:27Z; \"Merge pull request #48 from neurotuning-personal/fix/gedai-leadfield-polarity\" 17:07Z.",
+      "fetched_at": "2026-10-17T22:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-rt-org/mne-rt#48",
+      "author_handle": "mne-rt-org",
+      "metrics": {
+        "play": null,
+        "like": 26,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "极性错误不报错但会让在线去噪反向，排查成本高，升级后应对比输出方向。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "AntroPy 0.2.3：排列熵的多延迟与数值比较修复",
-      "title_en": "AntroPy 0.2.3 Fixes Multi-Delay Permutation Entropy and Value Comparisons",
+      "title_zh": "TorchEEG 修 SEEDDataset 的 trial_id 类型与新版 Matplotlib 绘图崩溃",
+      "title_en": "TorchEEG Fixes SEEDDataset trial_id Typing and a Recent-Matplotlib Plot Crash",
       "bullets_zh": [
-        "#52 起：二维数组上带多个 delay 的 perm_entropy 现在按行各返回一个值（对延迟取平均），空列表等非法 delay 会给出清晰错误。",
-        "perm_entropy（阶数 3/4）改为直接比较原始数值，避免超大整数或非常接近的浮点被混淆；含 NaN 的行返回 NaN 且不影响其他行。",
-        "AntroPy 是 EEG 熵/复杂度指标（排列熵、样本熵、LZ 复杂度等）的常用 Python 实现，v0.2.3 于 10 月 17 日发布。"
+        "#164 修 SEEDDataset 把 trial_id 存成带被试前缀的字符串（如 `jl_eeg1`）的问题，改为整数（fixes #141），避免下游按 id 索引或合并时出错。",
+        "#177 修 plot_graph 在较新 Matplotlib 下的崩溃：为独立 colorbar 显式传入 Axes（新版无法从脱离的 ScalarMappable 推断）。",
+        "TorchEEG 是常用的 EEG 深度学习数据/训练框架（581 stars），两处都属升级环境后才暴露的兼容与数据一致性问题。"
       ],
       "bullets_en": [
-        "From #52: perm_entropy with several delays on a 2-D array now returns one value per row (averaged across delays), and invalid delays such as an empty list raise a clear error.",
-        "perm_entropy (orders 3 and 4) now compares original values directly, so very large integers or very close floats are no longer mixed up; rows containing NaN return NaN without affecting others.",
-        "AntroPy is the go-to Python implementation of EEG entropy/complexity measures (permutation entropy, sample entropy, LZ complexity and more); v0.2.3 shipped on Oct 17."
+        "#164 fixes SEEDDataset saving trial_id as a string with subject prefixes (e.g. jl_eeg1) and makes it an integer (fixes #141), so downstream indexing and merging behave.",
+        "#177 fixes plot_graph crashing on recent Matplotlib by passing the Axes explicitly when creating the standalone colorbar, which newer versions cannot infer from an unattached ScalarMappable.",
+        "TorchEEG is a widely used EEG deep-learning data/training framework (581 stars); both are issues that only appear after an environment upgrade."
       ],
-      "url": "https://github.com/raphaelvallat/antropy/releases/tag/v0.2.3",
-      "published": "2026-10-17T12:24:00Z",
+      "url": "https://github.com/torcheeg/torcheeg/pull/164",
+      "published": "2026-10-17T14:30:00Z",
       "source": "github",
       "language": "en",
-      "brief": "AntroPy 发布 v0.2.3（2026-10-17，379 stars）：这是 EEG 熵与复杂度指标的常用实现（排列熵、样本熵、LZ 复杂度等）。本次两项修复都属「不报错但结果悄悄不对」类型：①二维数组上带多个 delay 的 `perm_entropy` 此前对整块数组返回单值，现在按行各返回一个（延迟方向取平均），非法 delay（如空列表）会明确报错；②阶数 3/4 的排列熵改为直接比较原始数值，避免超大整数或极接近浮点被误判相等，含 NaN 的行返回 NaN 且不污染其他行。做复杂度/微状态分析的管线若批量算多通道熵，建议升级后抽查若干通道结果与旧版差异。",
-      "brief_en": "AntroPy v0.2.3 (Oct 17) fixes two silent-failure bugs in the standard Python library for EEG entropy: perm_entropy with several delays on a 2-D array now returns one value per row with clear errors for invalid delays, and orders 3/4 compare original values so huge integers or near-equal floats are not conflated, with NaN rows isolated.",
+      "brief": "TorchEEG 在 10 月 17 日合并两处修复：#164 让 SEEDDataset 的 `trial_id` 从「带被试前缀的字符串」（如 `jl_eeg1`）改回整数（fixes #141）——字符串 id 在按 id 索引、跨被试合并或与标签表 join 时会静默出错，属于典型的「不影响训练能跑、但影响结果对齐」的问题；#177 修 `plot_graph` 在较新 Matplotlib 下崩溃：独立 colorbar 需要显式传入 Axes，新版无法从脱离的 ScalarMappable 推断。两处都提醒一件事：EEG 工具链嵌套很深，升级 matplotlib/numpy 后要跑一遍可视化与数据加载的冒烟测试。",
+      "brief_en": "TorchEEG merged two fixes on Oct 17: #164 makes SEEDDataset's trial_id an integer instead of a subject-prefixed string such as jl_eeg1 (fixes #141), preventing silent failures when indexing or joining by id, and #177 fixes plot_graph crashing on recent Matplotlib by passing the Axes explicitly for the standalone colorbar.",
       "tags": [
-        "antropy",
-        "entropy",
-        "permutation-entropy",
-        "bugfix",
-        "complexity"
+        "torcheeg",
+        "seed-dataset",
+        "trial-id",
+        "matplotlib",
+        "compatibility"
       ],
-      "raw_excerpt": "Release v0.2.3 (2026-10-17T12:24:26Z): \"`perm_entropy` with several delays on a 2-D array now returns one value per row (averaged across delays) instead of a single value for the whole array. Invalid `delay` inputs, such as an empty list, now raise a clear error (#52). `perm_entropy` (order 3 or 4) now compares the original values directly, so very large integers or very close floats are no longer mixed up. Rows containing NaN now return NaN without affecting the other rows.\"",
-      "fetched_at": "2026-10-17T12:45:00Z",
+      "raw_excerpt": "PR #164: \"Fix SEEDDataset trial_id to be an integer (fixes #141) — the `trial_id` in `SEEDDataset` was being saved as a string with subject-specific prefixes (e.g., `jl_eeg1`)\" merged 2026-10-17T14:30:11Z. PR #177: \"Fix graph colorbar axes for recent Matplotlib — Recent Matplotlib versions cannot infer an Axes from this unattached ScalarMappable, causing plot_graph to fail.\" 15:15:52Z.",
+      "fetched_at": "2026-10-17T22:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "raphaelvallat/antropy@v0.2.3",
-      "author_handle": "raphaelvallat",
+      "upstream_id": "torcheeg/torcheeg#164",
+      "author_handle": "torcheeg",
       "metrics": {
         "play": null,
-        "like": 379,
+        "like": 581,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "多通道批量算排列熵时旧版会给出错值，升级后需抽查通道级结果。"
+      "why_valuable": "字符串 trial_id 会让按 id 合并静默错位，升级后应跑加载与可视化冒烟测试。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Android-BCI：在 Termux 上用 BrainFlow＋Nuitka 把 BCI 流水线编成原生可执行文件",
+      "title_en": "Android-BCI: BrainFlow plus Nuitka Builds a Native BCI Pipeline on Termux",
+      "bullets_zh": [
+        "一个 Android/Termux 上的 BCI 流水线编排器：自动安装 clang、lld、patchelf 等编译依赖，再用 Nuitka 把基于 BrainFlow 的流水线编译为原生可执行文件。",
+        "面向 Linux 与 Android（Termux），目标是降低「在手机/平板上跑端侧 BCI」的环境搭建成本。",
+        "仓库很新（约 76 KB），适合做端侧 EEG 采集与实时处理原型；采用前需自评估 BrainFlow 在 Android 上的设备权限与延迟。"
+      ],
+      "bullets_en": [
+        "An orchestrator for BCI pipelines on Android/Termux: it installs clang, lld and patchelf automatically, then compiles a BrainFlow-based pipeline into a native executable with Nuitka.",
+        "It targets Linux and Android (Termux), aiming to cut the environment setup cost of running on-device BCI on a phone or tablet.",
+        "The repository is very new (about 76 KB) and suits on-device acquisition/processing prototypes; assess BrainFlow's Android permissions and latency before relying on it."
+      ],
+      "url": "https://github.com/KaliZora/Android-BCI",
+      "published": "2026-10-17T18:03:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 Android-BCI（2026-10-17）解决一个具体痛点：想在 Android 上跑 EEG/BCI 处理，通常卡在编译工具链与依赖上。它作为「流水线编排器」，自动通过 apt/pkg 安装 clang、lld、patchelf，再用 Nuitka 把基于 BrainFlow 的处理管线**编译成原生可执行文件**，面向 Linux 与 Android（Termux）。对做端侧/可穿戴 BCI 原型的团队，这能显著缩短「从能装 Python 到能跑实时处理」的时间；但仓库只有 76 KB、未见系统性的延迟与功耗评测，采用前建议先在目标机型上实测采样稳定性与端到端时延。",
+      "brief_en": "Created 2026-10-17, Android-BCI tackles a concrete friction point: running EEG/BCI processing on Android usually stalls on the compiler toolchain. It provisions clang, lld and patchelf, then compiles a BrainFlow-based pipeline into a native executable with Nuitka for Linux and Android (Termux), shortening the path to on-device real-time processing; it is ~76 KB with no latency data yet.",
+      "tags": [
+        "android",
+        "termux",
+        "brainflow",
+        "nuitka",
+        "on-device"
+      ],
+      "raw_excerpt": "README: \"An automated orchestrator that provisions the environment, installs system dependencies, and compiles a BrainFlow-based Brain-Computer Interface (BCI) pipeline into a native executable using Nuitka. Explicitly designed for Linux and Android (Termux).\" Features: automatic provisioning of compilers (`clang`, `lld`, `patchelf`) via `apt` or `pkg`. Repo created 2026-10-17T18:03Z, ~76 KB.",
+      "fetched_at": "2026-10-17T22:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "KaliZora/Android-BCI",
+      "author_handle": "KaliZora",
+      "metrics": {
+        "play": null,
+        "like": 1,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "把 BrainFlow 管线编成 Android 原生可执行文件，省掉端侧工具链搭建。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 102,
-    "llm_rows": 30,
+    "prefiltered": 109,
+    "llm_rows": 23,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 4
+    "conflicts_dropped": 6
   }
 }
