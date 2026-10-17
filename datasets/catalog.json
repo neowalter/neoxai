@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-16T09:17:10.053Z",
+  "generatedAt": "2026-10-17T08:47:37.795Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 65
+      "count": 66
     },
     {
       "id": "openneuro",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 3
     }
   ],
   "items": [
@@ -429,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 7998,
+      "downloads": 8592,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -450,7 +450,7 @@
         "neuroscience"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 3314,
+      "downloads": 4180,
       "likes": 0,
       "updatedAt": "2026-10-12T06:34:45.000Z",
       "modality": [
@@ -475,7 +475,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2959,
+      "downloads": 3947,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -500,7 +500,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1873,
+      "downloads": 1896,
       "likes": 1,
       "updatedAt": "2026-10-13T05:16:03.000Z",
       "modality": [
@@ -525,7 +525,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1791,
+      "downloads": 1794,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -543,7 +543,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 463,
+      "downloads": 493,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -568,7 +568,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 278,
+      "downloads": 294,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -593,9 +593,31 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 403,
+      "downloads": 404,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 536,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -618,7 +640,7 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 213,
+      "downloads": 216,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
       "modality": [
@@ -626,23 +648,40 @@
       ]
     },
     {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
       "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 435,
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 156,
       "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
+      "updatedAt": "2026-10-16T15:07:25.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Emulated-Inc/drowsy-driving-reaction-time-eeg",
+      "name": "drowsy-driving-reaction-time-eeg",
+      "owner": "Emulated-Inc",
+      "url": "https://huggingface.co/datasets/Emulated-Inc/drowsy-driving-reaction-time-eeg",
+      "source": "huggingface",
+      "description": "Sustained-attention driving EEG: 40 sessions as float16 arrays with lane-drift trials This repository is a mirror for reproducible builds: it holds the files produced once from the published originals listed below by the processing described here, so that later builds get exactl…",
+      "tags": [
+        "cc-by-4.0",
+        "csv",
+        "tabular",
+        "neuroscience",
+        "eeg",
+        "driving"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 142,
+      "likes": 0,
+      "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
         "EEG"
       ]
@@ -653,12 +692,12 @@
       "owner": "Anticloud",
       "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
       "source": "huggingface",
-      "description": "EEGLAB Category: BRAIN_COMPUTER_INTERFACE Status: Active development with Anticloud overlay What This Project Does ICLabel An automatic EEG independent component classifer plugin for EEGLAB. For more information, see the ICLabel website tutorial. This project provides tools, lib…",
+      "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
       "tags": [],
       "license": null,
-      "downloads": 64,
+      "downloads": 68,
       "likes": 0,
-      "updatedAt": "2026-10-14T21:38:38.000Z",
+      "updatedAt": "2026-10-17T04:04:51.000Z",
       "modality": [
         "EEG"
       ]
@@ -681,7 +720,7 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 107,
+      "downloads": 112,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
       "modality": [
@@ -701,25 +740,9 @@
         "arxiv:2104.01233"
       ],
       "license": null,
-      "downloads": 41,
+      "downloads": 47,
       "likes": 0,
       "updatedAt": "2026-10-15T02:50:44.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:L-678/eeg-emotion-depression",
-      "name": "eeg-emotion-depression",
-      "owner": "L-678",
-      "url": "https://huggingface.co/datasets/L-678/eeg-emotion-depression",
-      "source": "huggingface",
-      "description": "EEG Emotion Recognition for Depression Detection Results (updated in real-time) Model 30ch Acc 19ch Acc ML (LightGBM) 0.7311±0.0170 - Augmented EEGNetLite training... - EEGNetLite 0.6734±0.0038 0.6723±0.0037 ResNet1D 0.6569±0.0036 0.6539±0.0054 TemporalAttn 0.6495±0.0022 0.6510±…",
-      "tags": [],
-      "license": null,
-      "downloads": 48,
-      "likes": 0,
-      "updatedAt": "2026-10-11T15:17:01.000Z",
       "modality": [
         "EEG"
       ]
@@ -749,7 +772,7 @@
       "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 5,
+      "downloads": 17,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
@@ -769,7 +792,7 @@
         "uncertainty quantification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 4,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
@@ -810,6 +833,22 @@
       ]
     },
     {
+      "id": "zenodo:23204595",
+      "name": "Data underlying \"Effects of Major–Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power\"",
+      "owner": "Asakura, Takumi",
+      "url": "https://doi.org/10.5281/zenodo.23204595",
+      "source": "zenodo",
+      "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 6,
+      "likes": null,
+      "updatedAt": "2026-10-07T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23240774",
       "name": "Dataset related to article: Interictal epileptiform discharges propagation revealed by MEG/foramen ovale-EEG co-recording in patients with temporal lobe epilepsy candidate to neurosurgery",
       "owner": "Duran, Dunja",
@@ -823,22 +862,6 @@
       "updatedAt": "2026-10-08T00:00:00.000Z",
       "modality": [
         "MEG"
-      ]
-    },
-    {
-      "id": "zenodo:23204595",
-      "name": "Data underlying \"Effects of Major–Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power\"",
-      "owner": "Asakura, Takumi",
-      "url": "https://doi.org/10.5281/zenodo.23204595",
-      "source": "zenodo",
-      "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 5,
-      "likes": null,
-      "updatedAt": "2026-10-07T00:00:00.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -921,29 +944,13 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-15T13:04:34.000Z",
+      "updatedAt": "2026-10-16T15:51:29.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:yjmantilla/sovabids",
-      "name": "sovabids",
-      "owner": "yjmantilla",
-      "url": "https://github.com/yjmantilla/sovabids",
-      "source": "github",
-      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
-      "tags": [],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 13,
-      "updatedAt": "2026-10-15T19:16:10.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -963,32 +970,31 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-16T06:23:50.000Z",
+      "updatedAt": "2026-10-17T00:24:12.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
-      "name": "NMT-4k-EEG-Dataset",
-      "owner": "dll-ncai",
-      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
+      "id": "github:nimbusbci/nimbus-mcp",
+      "name": "nimbus-mcp",
+      "owner": "nimbusbci",
+      "url": "https://github.com/nimbusbci/nimbus-mcp",
       "source": "github",
-      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
+      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
       "tags": [
-        "abnormality-detection",
-        "biomedical-signals",
-        "clinical-eeg",
-        "clinical-reports",
+        "bci",
+        "brain-computer-interface",
         "eeg",
-        "eeg-dataset",
-        "electroencephalography",
-        "event-annotations"
+        "fastmcp",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
       ],
-      "license": "MIT",
+      "license": "NOASSERTION",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-10-15T07:36:50.000Z",
+      "updatedAt": "2026-10-16T19:22:04.000Z",
       "modality": [
         "EEG"
       ]
