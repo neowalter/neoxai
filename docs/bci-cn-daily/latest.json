@@ -1,385 +1,344 @@
 {
-  "date": "2026-10-16",
-  "generated_at": "2026-10-15T21:32:11.679Z",
-  "item_count": 8,
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T12:34:06.712Z",
+  "item_count": 7,
   "types": {
-    "Benchmark": 1,
-    "Project": 7
+    "Benchmark": 2,
+    "Project": 3,
+    "News": 1,
+    "Tutorial": 1
   },
   "highlights": [
     {
-      "title_zh": "MOABB 默认排除 Liu2024 的三个「被试」：其实是其他被试的加噪副本",
-      "title_en": "MOABB Now Excludes Three Liu2024 'Subjects' That Are Noised Copies of Others",
-      "url": "https://github.com/NeuroTechX/moabb/pull/1273",
-      "brief": "MOABB 合并 #1273，默认排除 Liu2024 的被试 5、15、49——理由是它们并非独立被试：EDF sub-05 与被试 4 的 sub-04 **逐字节相同**，15 与 49 则是被试 11、47 的重处理副本；在 sourcedata.zip 中这些副本等于对应原始录制在每行叠加 i.i.d. 均匀噪声 [0, 1000) µV，而 participants.tsv 却标注为不同患者。保留它们会让同一段脑电以两个 ID 同时出现在训练与测试两侧，交叉验证精度被系统性抬高。这是继 10-12 报告的 COG-BCI「8 个 ID 逐字节相同」之后，两周内第二起公开 EEG 数据集的身份重复/泄漏问题；所有用 Liu2024 做跨被试基准的团队都应重跑并说明排除了哪些 ID。"
+      "title_zh": "EEGMMIDB 上的可复现 CSP＋LDA 基准：欧氏对齐让零样本解码器追平个体训练",
+      "title_en": "A Reproducible CSP+LDA Baseline on EEGMMIDB: Euclidean Alignment Closes the Zero-Shot Gap",
+      "url": "https://github.com/ramzm-pixel/eegmmidb-csp-baseline",
+      "brief": "新建仓库（2026-10-17）给出一份可完整复现的 CSP＋LDA 基准研究：PhysioNet EEGMMIDB、105 名被试（排除 S088/S089/S092/S100），配 REPORT.md、80 项预设统计检验与逐项结果表。结论直指「校准到底值不值」：把他人原始数据直接池化训练，真实「脚部」任务的零样本解码只有 54%（接近随机）；加入**欧氏对齐**后各任务提升 6–19 个点（Holm 校正 p<0.0001），且用另外 104 人训练的模型可追平甚至超过被试自身训练。更有意思的是任务差异——零样本在左右手优于被试内训练，在脚部则打平。做零校准 BCI 或跨被试迁移的团队可把它当基线对照，报告也明说了哪些因素其实没影响。"
     },
     {
-      "title_zh": "MEL：坐标保持的 EEG 令牌化，用于向 fMRI 平移的 BOLD 预测",
-      "title_en": "MEL: Coordinate-Preserving EEG Tokenisation for fMRI Translation",
-      "url": "https://github.com/KlintQAQ/MEL",
-      "brief": "新建仓库 MEL（2026-10-15，arXiv:2608.29304）提出一种「坐标保持」的 EEG 令牌化用于 fMRI 平移：把每个 fMRI 目标时刻之前的 EEG 历史编码为**标定过的 lag-channel-frequency 测量**，再用 Ridge 回归或紧凑 MLP 预测各脑区 BOLD 时间序列。相比常见的「端到端大模型」路线，它的特点是表示先被固定成有物理含义的测量、再交给简单读出器，因此结果更容易归因；仓库边界写得很清楚——只含主匹配读出实验，消融、机制对照、外部实验与被试排除实验均未包含，并附 provenance/ 与 reference_results/ 便于核对。对做 EEG→fMRI 跨模态映射或想评估「简单读出 vs 深度模型」的研究者，这是一份可复现的对照实现。"
+      "title_zh": "EEGPrep 一日 23 次提交：对齐 EEGLAB 的 1 基索引、名值调用与单精度 FIR",
+      "title_en": "EEGPrep's 23-Commit Day: 1-Based Indices, Name/Value Calls and Single-Precision FIR Parity",
+      "url": "https://github.com/sccn/eegprep/pull/501",
+      "brief": "EEGPrep（SCCN/EEGLAB 团队）在 10 月 17 日推进 23 次提交，做的是最容易被忽略、却决定「能否替代 MATLAB」的细节：#501 让数值辅助函数采用 **1 基索引**（MATLAB 语义，处理错就会出现隐蔽的差一位错误）；#503 在 runica 等函数里接受 EEGLAB 风格的名值（name/value）调用；#504 对齐 EEGLAB 的 mmo 增长/删除行为与**单精度 FIR**；#502 补齐单函数的后端 parity 缺口。此前一天刚加入的「每日差分模糊测试」正是这些修复的来源。对正评估从 MATLAB 迁移的实验室，这类逐函数对齐比功能清单更值得看；建议迁移时同时跑自建数据的前后对比。"
     },
     {
-      "title_zh": "FPGA 加速的 FBCSP＋LDA：4 类运动想象在 ZCU104 上的资源受限实现",
-      "title_en": "FPGA-Accelerated FBCSP+LDA for 4-Class Motor Imagery on a ZCU104",
-      "url": "https://github.com/Ravichanderj/Resource-Efficient-FPGA-Acceleration",
-      "brief": "新建仓库（2026-10-15）给出一个资源受限的 FPGA 实现：在 Xilinx ZCU104（Zynq UltraScale+）上加速 FBCSP＋LDA，用于 BCI Competition IV Dataset 2a 的 4 类运动想象。代码以 zip 包分发，包内是完整的硬件侧工程——C++ 的 LDA 推理实现与头文件、testbench、测试向量、导出的量化权重，以及 fbcsp.py 与 quant_validation.py（量化误差校验）。对做嵌入式/可穿戴 BCI 的团队，这条「经典 CSP 系特征＋线性判别＋定点化验证」的路径比堆深度模型更贴近实际功耗与延迟约束；不过顶层 README 很简、无实验指标表，采用前需自行跑通并核对其量化精度结论。"
+      "title_zh": "湖北省委书记、省长出席「科创沙龙」首场，主题直指脑机接口产业化",
+      "title_en": "Hubei's Party Secretary and Governor Open a Science-Industry Salon on BCI Commercialisation",
+      "url": "https://www.bilibili.com/read/cv53475009",
+      "brief": "B站科技号「惠科技」10 月 17 日 10:21 报道：10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加「科创沙龙」首场活动，主题是「脑机接口技术创新、产业落地与生态构建」——这是湖北省委十二届十二次全会部署的科创沙龙首场，定位为政产学研用对接平台。主持人为中国工程院院士、华中科技大学校长尤政；发言者包括华中科大人工智能与自动化学院教授伍冬睿（前沿科技）、中部战区总医院神经外科主任宋健（临床转化）、凝动万生医疗董事长董博雅（产业实践）。对观察国内非侵入式脑机接口产业的人来说，省级主要领导把首场沙龙主题放在脑机接口，是政策关注度的直接信号；后续可跟踪配套资金与试点政策是否落地。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-16.md",
+  "github_path": "docs/bci-cn-daily/2026-10-17.md",
   "items": [
     {
       "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "MOABB 默认排除 Liu2024 的三个「被试」：其实是其他被试的加噪副本",
-      "title_en": "MOABB Now Excludes Three Liu2024 'Subjects' That Are Noised Copies of Others",
+      "title_zh": "EEGMMIDB 上的可复现 CSP＋LDA 基准：欧氏对齐让零样本解码器追平个体训练",
+      "title_en": "A Reproducible CSP+LDA Baseline on EEGMMIDB: Euclidean Alignment Closes the Zero-Shot Gap",
       "bullets_zh": [
-        "#1273：Liu2024 的被试 5、15、49 由被试 4、11、47 的录制派生——EDF sub-05 与 sub-04 **逐字节相同**（15/49 是 11/47 的重处理副本）。",
-        "在 sourcedata.zip 中，这些副本等于其对应原始录制在每一行上叠加 i.i.d. 均匀噪声 [0, 1000) µV；而 participants.tsv 却把它们列为不同患者。",
-        "后果与处理：保留它们会让同一被试的 EEG 以两个 ID 出现在训练与测试两侧（交叉验证泄漏）；MOABB 现**默认排除**这三个 subject。"
+        "105 名被试（排除 S088/S089/S092/S100）、CSP＋LDA 解码器，全部代码与报告公开，80 项预设检验结果在 results/stats_tests.csv。",
+        "主效应是**被试间对齐**：直接用他人原始数据池化训练时，真实「脚部」任务的零样本解码接近随机（54%）；欧氏对齐（Euclidean Alignment）让各任务提升 6–19 个点（全部 Holm 校正后 p<0.0001）。",
+        "对齐后，用**另外 104 人**训练的模型可媲美甚至超过用被试自身记录训练的模型；零样本在左右手任务上优于被试内训练，「脚部」任务打平——即校准的收益依任务而异。"
       ],
       "bullets_en": [
-        "#1273: Liu2024 subjects 5, 15 and 49 are derived from subjects 4, 11 and 47 — EDF sub-05 is byte-identical to sub-04, and 15/49 are reprocessed copies of 11/47.",
-        "In sourcedata.zip those copies equal their partner's raw recording plus i.i.d. uniform noise in [0, 1000) uV on every row, yet participants.tsv lists them as different patients.",
-        "Impact and handling: keeping them puts one subject's EEG under two IDs on both sides of a split (cross-validation leakage), so MOABB now excludes the three subjects by default."
+        "105 subjects (excluding S088/S089/S092/S100) with a CSP+LDA decoder; all code and a report are public, and the 80 pre-specified tests sit in results/stats_tests.csv.",
+        "The main effect is inter-subject alignment: pooling other people's raw data gives a near-chance zero-shot decoder for real feet (54%), while Euclidean Alignment lifts every task by 6-19 points (all Holm-corrected p<0.0001).",
+        "Aligned, a decoder trained on 104 other people matches or beats one trained on the subject's own recording; zero-shot beats within-subject for left/right but ties for feet, so calibration gains are task dependent."
       ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1273",
-      "published": "2026-10-15T10:18:00Z",
+      "url": "https://github.com/ramzm-pixel/eegmmidb-csp-baseline",
+      "published": "2026-10-17T10:49:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MOABB 合并 #1273，默认排除 Liu2024 的被试 5、15、49——理由是它们并非独立被试：EDF sub-05 与被试 4 的 sub-04 **逐字节相同**，15 与 49 则是被试 11、47 的重处理副本；在 sourcedata.zip 中这些副本等于对应原始录制在每行叠加 i.i.d. 均匀噪声 [0, 1000) µV，而 participants.tsv 却标注为不同患者。保留它们会让同一段脑电以两个 ID 同时出现在训练与测试两侧，交叉验证精度被系统性抬高。这是继 10-12 报告的 COG-BCI「8 个 ID 逐字节相同」之后，两周内第二起公开 EEG 数据集的身份重复/泄漏问题；所有用 Liu2024 做跨被试基准的团队都应重跑并说明排除了哪些 ID。",
-      "brief_en": "MOABB merged #1273, excluding Liu2024 subjects 5, 15 and 49 by default: EDF sub-05 is byte-identical to subject 4's sub-04, and 15/49 are reprocessed copies of subjects 11/47 — in sourcedata.zip each equals its partner's raw recording plus i.i.d. uniform noise in [0,1000) uV per row, though participants.tsv calls them different patients. Keeping them leaks one recording across splits.",
+      "brief": "新建仓库（2026-10-17）给出一份可完整复现的 CSP＋LDA 基准研究：PhysioNet EEGMMIDB、105 名被试（排除 S088/S089/S092/S100），配 REPORT.md、80 项预设统计检验与逐项结果表。结论直指「校准到底值不值」：把他人原始数据直接池化训练，真实「脚部」任务的零样本解码只有 54%（接近随机）；加入**欧氏对齐**后各任务提升 6–19 个点（Holm 校正 p<0.0001），且用另外 104 人训练的模型可追平甚至超过被试自身训练。更有意思的是任务差异——零样本在左右手优于被试内训练，在脚部则打平。做零校准 BCI 或跨被试迁移的团队可把它当基线对照，报告也明说了哪些因素其实没影响。",
+      "brief_en": "Created 2026-10-17, this is a fully reproducible CSP+LDA baseline on PhysioNet EEGMMIDB (105 subjects, excluding S088/S089/S092/S100) with a report, 80 pre-specified tests and code. Headline: pooling other people's raw data gives near-chance zero-shot decoding for feet (54%), while Euclidean Alignment adds 6-19 points (Holm p<0.0001) and models trained on 104 others match within-subject ones.",
       "tags": [
-        "moabb",
-        "liu2024",
-        "data-leakage",
-        "subject-identity",
-        "benchmark"
-      ],
-      "raw_excerpt": "\"Exclude Liu2024 subjects 5, 15 and 49 by default (#1248) — Their released files are derived from the recordings of subjects 4, 11 and 47: EDF sub-05 is bit-identical to sub-04 (15/49 reprocessed copies of 11/47), and in sourcedata.zip each equals its partner's raw recording minus i.i.d. uniform noise in [0, 1000) uV on every row. participants.tsv lists them as different patients, so keeping them puts one subject's EEG under two IDs and leaks it across cro[ss-validation].\"",
-      "fetched_at": "2026-10-15T22:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1273",
-      "author_handle": "NeuroTechX",
-      "metrics": {
-        "play": null,
-        "like": 1072,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "两周内第二起公开 EEG 数据集身份重复/泄漏，直接影响跨被试基准的可信度。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "MEL：坐标保持的 EEG 令牌化，用于向 fMRI 平移的 BOLD 预测",
-      "title_en": "MEL: Coordinate-Preserving EEG Tokenisation for fMRI Translation",
-      "bullets_zh": [
-        "把每个 fMRI 目标时刻之前的 EEG 历史转换成**标定过的 lag-channel-frequency 测量**，再用 Ridge 回归或紧凑 MLP 预测各脑区 BOLD 时间序列（arXiv:2608.29304）。",
-        "仓库明确只包含**主匹配读出实验**，并说明消融、机制对照、外部实验、被试排除实验与历史预测收集器未包含——边界写清楚，便于判断可复现范围。",
-        "工程完备度较高：configs/、model/、data/、provenance/、reference_results/、tests/ 与 Windows CPU 锁定依赖文件（requirements-lock-windows-cpu-py311.txt）。"
-      ],
-      "bullets_en": [
-        "It converts the EEG history preceding each fMRI target time into calibrated lag-channel-frequency measurements, then predicts regional BOLD time courses with Ridge regression or a compact MLP (arXiv:2608.29304).",
-        "The repository states it contains only the main matched-readout experiment, explicitly excluding ablations, mechanism controls, external experiments, participant-exclusion experiments and historical prediction collectors — clear scope for reproducibility.",
-        "Engineering is thorough: configs/, model/, data/, provenance/, reference_results/, tests/ and a Windows CPU lockfile (requirements-lock-windows-cpu-py311.txt)."
-      ],
-      "url": "https://github.com/KlintQAQ/MEL",
-      "published": "2026-10-15T16:15:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 MEL（2026-10-15，arXiv:2608.29304）提出一种「坐标保持」的 EEG 令牌化用于 fMRI 平移：把每个 fMRI 目标时刻之前的 EEG 历史编码为**标定过的 lag-channel-frequency 测量**，再用 Ridge 回归或紧凑 MLP 预测各脑区 BOLD 时间序列。相比常见的「端到端大模型」路线，它的特点是表示先被固定成有物理含义的测量、再交给简单读出器，因此结果更容易归因；仓库边界写得很清楚——只含主匹配读出实验，消融、机制对照、外部实验与被试排除实验均未包含，并附 provenance/ 与 reference_results/ 便于核对。对做 EEG→fMRI 跨模态映射或想评估「简单读出 vs 深度模型」的研究者，这是一份可复现的对照实现。",
-      "brief_en": "Created 2026-10-15 (arXiv:2608.29304), MEL tokenises EEG history into calibrated lag-channel-frequency measurements and predicts regional BOLD time courses with Ridge regression or a compact MLP. The representation is fixed and physically meaningful before a simple readout; the repo scope is explicit (main matched-readout experiment only) and ships provenance/, reference_results/ and tests/.",
-      "tags": [
-        "eeg-fmri",
-        "tokenisation",
-        "bold-prediction",
-        "ridge",
+        "eegmmidb",
+        "csp",
+        "euclidean-alignment",
+        "zero-calibration",
         "reproducibility"
       ],
-      "raw_excerpt": "\"MEL converts the EEG history preceding each fMRI target time into calibrated lag-channel-frequency measurements, then predicts regional BOLD time courses with Ridge regression or a compact MLP. This repository contains the main matched-readout experiment only. Ablations, mechanism controls, external experiments, participant-exclusion experiments and historical prediction collectors are not in[cluded].\" Paper: arXiv 2608.29304.",
-      "fetched_at": "2026-10-15T22:45:00Z",
+      "raw_excerpt": "REPORT.md: \"Aligning subjects is the main effect. Pooling raw data from other people gives a zero-shot decoder that is near chance for real feet (54%). Euclidean Alignment lifts every task by 6 to 19 points (all Holm-corrected p < 0.0001), and a decoder trained on 104 other people then matches or beats one trained on the person's own recording.\" \"Zero-shot beats within-subject for left/right, ties for feet.\"",
+      "fetched_at": "2026-10-17T12:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "KlintQAQ/MEL",
-      "author_handle": "KlintQAQ",
-      "metrics": {
-        "play": null,
-        "like": 2,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "固定物理表示的 EEG→fMRI 平移，可作「简单读出 vs 深度模型」的对照实现。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "FPGA 加速的 FBCSP＋LDA：4 类运动想象在 ZCU104 上的资源受限实现",
-      "title_en": "FPGA-Accelerated FBCSP+LDA for 4-Class Motor Imagery on a ZCU104",
-      "bullets_zh": [
-        "面向 BCI Competition IV Dataset 2a 的 4 类运动想象，目标器件为 Xilinx ZCU104（Zynq UltraScale+）。",
-        "代码包内含硬件侧 C++ LDA 推理（lda_classify.cpp/.h）、testbench（lda_tb.cpp）、测试向量与导出的量化权重（lda_weights.h、lda_export_A01.npz）。",
-        "另附 fbcsp.py 与 quant_validation.py：特征提取与量化误差校验，说明作者关注定点化后的精度损失；README 较简，细节在包内。"
-      ],
-      "bullets_en": [
-        "Targets 4-class motor imagery from BCI Competition IV Dataset 2a on a Xilinx ZCU104 (Zynq UltraScale+).",
-        "The code package contains hardware-side C++ LDA inference (lda_classify.cpp/.h), a testbench (lda_tb.cpp), test vectors and exported quantised weights (lda_weights.h, lda_export_A01.npz).",
-        "It also ships fbcsp.py and quant_validation.py for feature extraction and quantisation-error checking, showing attention to fixed-point accuracy loss; the top-level README is thin and details live inside the package."
-      ],
-      "url": "https://github.com/Ravichanderj/Resource-Efficient-FPGA-Acceleration",
-      "published": "2026-10-15T07:04:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库（2026-10-15）给出一个资源受限的 FPGA 实现：在 Xilinx ZCU104（Zynq UltraScale+）上加速 FBCSP＋LDA，用于 BCI Competition IV Dataset 2a 的 4 类运动想象。代码以 zip 包分发，包内是完整的硬件侧工程——C++ 的 LDA 推理实现与头文件、testbench、测试向量、导出的量化权重，以及 fbcsp.py 与 quant_validation.py（量化误差校验）。对做嵌入式/可穿戴 BCI 的团队，这条「经典 CSP 系特征＋线性判别＋定点化验证」的路径比堆深度模型更贴近实际功耗与延迟约束；不过顶层 README 很简、无实验指标表，采用前需自行跑通并核对其量化精度结论。",
-      "brief_en": "Created 2026-10-15, this repository accelerates FBCSP+LDA on a Xilinx ZCU104 (Zynq UltraScale+) for 4-class motor imagery from BCI Competition IV Dataset 2a. The distributed zip holds a hardware-side package: C++ LDA inference, a testbench, test vectors, exported quantised weights, plus fbcsp.py and quant_validation.py for quantisation checks.",
-      "tags": [
-        "fpga",
-        "fbcsp",
-        "lda",
-        "embedded",
-        "bci-iv-2a"
-      ],
-      "raw_excerpt": "Description: \"FPGA-accelerated FBCSP+LDA classifier for 4-class motor-imagery EEG (BCI Competition IV Dataset 2a), targeting Xilinx ZCU104 (Zynq UltraScale+).\" Zip package contents (18 entries): code_package/hardware/{lda_classify.cpp, lda_classify.h, lda_tb.cpp, lda_test_vectors.h, lda_weights.h, lda_export_A01.npz, fbcsp.py, quant_validation.py, README.md}.",
-      "fetched_at": "2026-10-15T22:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Ravichanderj/Resource-Efficient-FPGA-Acceleration",
-      "author_handle": "Ravichanderj",
+      "upstream_id": "ramzm-pixel/eegmmidb-csp-baseline",
+      "author_handle": "ramzm-pixel",
       "metrics": {
         "play": null,
         "like": 0,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "定点化 FBCSP＋LDA 的 FPGA 工程（含 testbench 与量化校验），贴合功耗约束。"
+      "quality_score": 9,
+      "why_valuable": "量化「欧氏对齐＋零样本」相对个体校准的收益与任务差异，可直接当基线。"
     },
     {
       "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 一日 23 次提交：对齐 EEGLAB 的 1 基索引、名值调用与单精度 FIR",
+      "title_en": "EEGPrep's 23-Commit Day: 1-Based Indices, Name/Value Calls and Single-Precision FIR Parity",
+      "bullets_zh": [
+        "#501 让 EEGLAB 数值辅助函数使用 **1 基索引**——MATLAB 语义的核心差异，不处理就会出现「差一位」的隐性错误。",
+        "#503 在 runica 等函数中接受 EEGLAB 的**名值（name/value）调用**；#504 对齐 EEGLAB 的 mmo 增长/删除行为与单精度 FIR；#502 修单个函数的 Python 后端 parity 缺口。",
+        "这些改动都来自与 MATLAB EEGLAB 的逐函数对照，是「Python 版能否真正替代」的关键工程细节。"
+      ],
+      "bullets_en": [
+        "#501 makes EEGLAB numerical helpers use 1-based indices — the core MATLAB semantic, where getting it wrong produces silent off-by-one errors.",
+        "#503 accepts EEGLAB-style name/value calls in runica and friends; #504 matches EEGLAB's mmo growth/deletion behaviour and single-precision FIR; #502 closes single-function Python-backend parity gaps.",
+        "All of it comes from function-by-function comparison against MATLAB EEGLAB — the engineering detail that decides whether a Python substitute is truly equivalent."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/501",
+      "published": "2026-10-17T10:28:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep（SCCN/EEGLAB 团队）在 10 月 17 日推进 23 次提交，做的是最容易被忽略、却决定「能否替代 MATLAB」的细节：#501 让数值辅助函数采用 **1 基索引**（MATLAB 语义，处理错就会出现隐蔽的差一位错误）；#503 在 runica 等函数里接受 EEGLAB 风格的名值（name/value）调用；#504 对齐 EEGLAB 的 mmo 增长/删除行为与**单精度 FIR**；#502 补齐单函数的后端 parity 缺口。此前一天刚加入的「每日差分模糊测试」正是这些修复的来源。对正评估从 MATLAB 迁移的实验室，这类逐函数对齐比功能清单更值得看；建议迁移时同时跑自建数据的前后对比。",
+      "brief_en": "EEGPrep (SCCN) pushed 23 commits on Oct 17 fixing the details that decide whether a Python substitute truly replaces MATLAB: 1-based indexing in numerical helpers (#501), EEGLAB-style name/value calls in runica and friends (#503), matching mmo growth/deletion and single-precision FIR (#504), and single-function parity gaps (#502) — all surfaced by its nightly differential fuzzing against EEGLAB.",
+      "tags": [
+        "eegprep",
+        "eeglab",
+        "parity",
+        "1-based-indexing",
+        "fir"
+      ],
+      "raw_excerpt": "Commits 2026-10-17: \"Use 1-based indices for EEGLAB numerical helpers (#501)\" 04:49Z; \"Fix single-function Python-backend parity gaps (Part of #430) (#502)\" 05:34Z; \"Accept EEGLAB name/value calls in runica and related functions (#503)\" 10:28Z; \"Match EEGLAB mmo growth, deletion, and single-precision FIR (#504)\" 09:55Z.",
+      "fetched_at": "2026-10-17T12:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#501",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "1 基索引与单精度 FIR 等语义级对齐，是 MATLAB→Python 迁移是否可信的关键。"
+    },
+    {
+      "type": "News",
       "level": "Intermediate",
-      "title_zh": "EEGDash 重新摘要已迁移的数据沉积并清理陈旧记录",
-      "title_en": "EEGDash Re-Digests Moved Deposits and Prunes Stale Records",
+      "title_zh": "湖北省委书记、省长出席「科创沙龙」首场，主题直指脑机接口产业化",
+      "title_en": "Hubei's Party Secretary and Governor Open a Science-Industry Salon on BCI Commercialisation",
       "bullets_zh": [
-        "#442 对「已迁移」的数据沉积重新做 digest，并清理过期记录，避免索引指向失效或错位的数据。",
-        "EEGDash 作为 EEG 开放数据＋工具＋算力平台，索引与实际文件的一致性决定检索结果是否可下载。",
-        "延续 10-09／10-12 两轮入库修复（剔除仅衍生物与被取代数据集），属数据层持续治理。"
+        "10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加省委十二届十二次全会部署的「科创沙龙」首场，主题为脑机接口技术创新、产业落地与生态构建。",
+        "沙龙由中国工程院院士、华中科技大学校长尤政主持；华中科大人工智能与自动化学院教授伍冬睿讲前沿核心科技，中部战区总医院神经外科主任宋健谈临床转化，凝动万生医疗董事长董博雅讲产业实践。",
+        "形式为无主席台的圆桌，官方定位是政产学研用深度对接平台，服务武汉区域科技创新中心建设。"
       ],
       "bullets_en": [
-        "#442 re-digests deposits that have moved and prunes stale records, so the index stops pointing at dead or mismatched data.",
-        "As an open EEG data, tooling and compute platform, EEGDash's value depends on the index matching the actual files users can download.",
-        "It continues the ingestion fixes from Oct 9 and Oct 12 (dropping derivative-only and superseded datasets) — sustained data-layer governance."
+        "On the evening of Oct 16, Hubei's Party Secretary Guan Zhiou and Governor Li Dianxun joined the first 'science-innovation salon' at Huazhong University of Science and Technology, themed on BCI technology, industrial deployment and ecosystem building.",
+        "The salon was chaired by You Zheng, CAE academician and HUST president; Wu Dongrui (HUST automation) covered frontier technology, Song Jian (Central Theater General Hospital neurosurgery) clinical translation, and Dong Boya (Ningdong Wansheng Medical) industry practice.",
+        "Held as a round table without a podium, it is framed as a government-industry-academia platform supporting Wuhan's regional science and innovation centre."
       ],
-      "url": "https://github.com/eegdash/EEGDash/pull/442",
-      "published": "2026-10-15T13:04:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGDash 合并 #442：对已迁移的数据沉积重新做 digest，并清理陈旧记录。这类修复不像新功能那样显眼，却决定平台的可信度——如果索引里残留指向旧地址或错位文件的记录，使用者会在检索到条目后下载失败，或误取另一份数据。结合 10-09、10-12 两轮改动（剔除仅含衍生物的沉积、移除被取代的数据集），可以看出该项目正把「入库—迁移—清理」当作常态化治理，而不是一次性整理。对依赖 EEGDash 检索公开脑电数据的团队，建议在升级后抽样复核所引用数据集的下载与元数据一致性。",
-      "brief_en": "EEGDash merged #442, re-digesting deposits that have moved and pruning stale records. Such fixes are invisible but decide credibility: leftover records pointing at old addresses or mismatched files make users download nothing or the wrong data after a successful search. Together with the Oct 9 and Oct 12 ingestion fixes, it shows ingestion hygiene has become routine maintenance.",
+      "url": "https://www.bilibili.com/read/cv53475009",
+      "published": "2026-10-17T02:21:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站科技号「惠科技」10 月 17 日 10:21 报道：10 月 16 日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加「科创沙龙」首场活动，主题是「脑机接口技术创新、产业落地与生态构建」——这是湖北省委十二届十二次全会部署的科创沙龙首场，定位为政产学研用对接平台。主持人为中国工程院院士、华中科技大学校长尤政；发言者包括华中科大人工智能与自动化学院教授伍冬睿（前沿科技）、中部战区总医院神经外科主任宋健（临床转化）、凝动万生医疗董事长董博雅（产业实践）。对观察国内非侵入式脑机接口产业的人来说，省级主要领导把首场沙龙主题放在脑机接口，是政策关注度的直接信号；后续可跟踪配套资金与试点政策是否落地。",
+      "brief_en": "Hubei's Party Secretary and Governor joined the first 'science-innovation salon' at HUST on the evening of Oct 16, themed on BCI technology, deployment and ecosystem. Chaired by CAE academician and HUST president You Zheng, it featured Wu Dongrui on frontier tech, neurosurgeon Song Jian on clinical translation and Dong Boya on industry practice.",
       "tags": [
-        "eeg-dash",
-        "ingestion",
-        "index-integrity",
-        "open-data",
-        "maintenance"
+        "hubei",
+        "policy",
+        "bci-industry",
+        "wuhan",
+        "governance"
       ],
-      "raw_excerpt": "Commit 2026-10-15T13:04Z: \"fix(ingestion): re-digest moved deposits and prune stale records (#442)\" — following earlier fixes \"exclude derivative-only nm000389 and raise NEMAR digest timeout (#437)\" and \"Exclude superseded NEMAR dataset nm000203 (#436)\".",
-      "fetched_at": "2026-10-15T22:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#442",
-      "author_handle": "eegdash",
+      "raw_excerpt": "「10月16日晚，湖北省委书记关志鸥、省长李殿勋在华中科技大学参加了一场形式特殊的会议…主题是『脑机接口技术创新、产业落地与生态构建』。这是湖北省委十二届十二次全会部署的『科创沙龙』首场活动。」「主持沙龙的是中国工程院院士、华中科技大学校长尤政…华中科技大学人工智能与自动化学院教授伍冬睿…」。",
+      "fetched_at": "2026-10-17T12:45:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53475009",
+      "author_handle": "惠科技",
       "metrics": {
         "play": null,
-        "like": 89,
+        "like": 99,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "索引与文件一致性是开放数据平台的可信度基础，避免检索成功却下载失败。"
+      "quality_score": 8,
+      "why_valuable": "省级主要领导首场沙龙主题即脑机接口，是国内政策关注度的直接信号。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB 大批数据集改从 NEMAR 取数（含 Zhou2016 改读 BIDS 发布版）",
+      "title_en": "MOABB Moves Many Datasets to the NEMAR Store, Including Zhou2016's BIDS Release",
+      "bullets_zh": [
+        "10 月 16 日 27 次提交：Zhou2016 改为读取 NEMAR 上的 BIDS 发布版（nm000115）而非 Zenodo（#1303）；MIMED2024、Weibo2014、Shin2017A/B、Leelakittisin2025、MOVING2024、Perdikis2018、Shin2022 等改为直接从 NEMAR 取被试文件。",
+        "同时为 GuttmannFlury2025_SSVEP、Nguyen2017_L、Zhang2025 等启用 nemar_seed_cache，减少重复下载与解包。",
+        "数据源与缓存策略一起变化，直接影响取数成功率、下载量与结果可复现性。"
+      ],
+      "bullets_en": [
+        "27 commits on Oct 16: Zhou2016 now reads the BIDS release on NEMAR (nm000115) instead of Zenodo (#1303), and MIMED2024, Weibo2014, Shin2017A/B, Leelakittisin2025, MOVING2024, Perdikis2018, Shin2022 and others take subject files from the NEMAR store.",
+        "It also enables nemar_seed_cache for GuttmannFlury2025_SSVEP, Nguyen2017_L, Zhang2025 and others, cutting repeated downloads and unpacking.",
+        "Data sources and caching change together, affecting fetch reliability, download volume and reproducibility."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1303",
+      "published": "2026-10-16T19:23:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 在 10 月 16 日推进 27 次提交，主题是把数据获取整体迁到 **NEMAR**：Zhou2016 改为读取 NEMAR 上的 BIDS 发布版（nm000115）而不再依赖 Zenodo（#1303），MIMED2024、Weibo2014、Shin2017A/B、Leelakittisin2025、MOVING2024、Perdikis2018、Shin2022 等也改为直接从 NEMAR 取被试文件；同时为 GuttmannFlury2025_SSVEP、Nguyen2017_L、Zhang2025 等启用 `nemar_seed_cache` 以减少重复下载与解包。对使用者意味着取数更稳、缓存更省，但也意味着**数据版本来源改变**——若你的结果依赖旧下载，升级后应核对文件哈希或重跑关键流程，避免「同名不同源」带来的静默差异。",
+      "brief_en": "MOABB made 27 commits on Oct 16 moving data access to NEMAR: Zhou2016 reads the BIDS release nm000115 instead of Zenodo (#1303), and MIMED2024, Weibo2014, Shin2017A/B, Leelakittisin2025, MOVING2024, Perdikis2018 and Shin2022 now pull files from NEMAR, with nemar_seed_cache enabled for more. Fetching improves, but provenance changes, so verify hashes after upgrading.",
+      "tags": [
+        "moabb",
+        "nemar",
+        "data-provenance",
+        "caching",
+        "bids"
+      ],
+      "raw_excerpt": "Commits 2026-10-16: \"Zhou2016: read the BIDS release from NEMAR (nm000115) instead of Zenodo (#1303)\" 19:23Z; \"MIMED2024, Weibo2014, Shin2017A/B: take the subject's files from the NEMAR store\" 20:05Z; \"Enable nemar_seed_cache for GuttmannFlury2025_SSVEP, Nguyen2017_L, Zhang2025…\" 19:24Z — 27 commits that day.",
+      "fetched_at": "2026-10-17T12:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1303",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1073,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "取数迁到 NEMAR 后更稳更省，但数据来源变了，升级需核对哈希与重跑结果。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "pyRiemann 把两分类迁移工具泛化为任意类别与域的 make_classification",
-      "title_en": "pyRiemann Generalises Its Two-Class Transfer Helper into make_classification",
+      "title_zh": "braindecode 新增 LabelSmoothing 增强，并放宽 ZUNA 窗口长度限制",
+      "title_en": "braindecode Adds LabelSmoothing and Loosens ZUNA's Window Constraint",
       "bullets_zh": [
-        "#479 修复 #338：原 make_classification_transfer 仅支持 2 类、2 个域与 2×2 SPD 矩阵；新版类别数与域数由 class_names／domain_names 长度决定，并新增 n_dim 参数。",
-        "黎曼几何解码里，跨域/跨被试迁移的合成数据生成是常用实验手段，此前只能做 2×2 的限制使多类场景无法直接构造。",
-        "属 API 泛化（旧名保留语义），升级后建议核对既有脚本的调用方式与生成数据维度。"
+        "#1401 新增 LabelSmoothing 增强变换：对类别标签做平滑，缓解标签噪声与过度自信，适合被试主观标注类任务。",
+        "#1433 让 ZUNA 接受比 max_seqlen patch 更长的窗口，不再强制截断；SincShallow 对不可行几何在构造期抛清晰的 ValueError。",
+        "#1426 修掉 glorot_weight_zero_bias 在 affine=False BatchNorm 上崩溃的问题；当日共 24 次提交。"
       ],
       "bullets_en": [
-        "#479 fixes #338: make_classification_transfer previously handled only two classes, two domains and 2x2 SPD matrices; the generalised version takes class and domain counts from class_names/domain_names and adds an n_dim parameter.",
-        "Synthetic data generation for cross-domain or cross-subject transfer is standard practice in Riemannian decoding, and the old 2x2-only limit blocked multi-class setups.",
-        "It is an API generalisation; existing scripts should be checked for call signature and generated dimensionality after upgrading."
+        "#1401 adds a LabelSmoothing augmentation transform, softening class targets to counter label noise and overconfidence in subjectively annotated tasks.",
+        "#1433 lets ZUNA accept windows longer than max_seqlen patches instead of forcing truncation, and SincShallow raises clear ValueErrors at construction for impossible geometries.",
+        "#1426 fixes glorot_weight_zero_bias crashing on affine=False BatchNorm; 24 commits landed that day."
       ],
-      "url": "https://github.com/pyRiemann/pyRiemann/pull/479",
-      "published": "2026-10-15T10:19:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1401",
+      "published": "2026-10-16T11:39:00Z",
       "source": "github",
       "language": "en",
-      "brief": "pyRiemann 合并 #479，修复 #338：把原本只支持「2 类、2 个域、2×2 SPD 矩阵」的 make_classification_transfer 泛化为通用形式——类别数与域数现在由 class_names／domain_names 的长度决定，并新增 n_dim 参数，最终并入 make_classification。对做黎曼几何 EEG 解码的人来说，这类合成数据工具是构造跨域/跨被试迁移实验、验证分类器鲁棒性的常用手段；旧实现的 2×2 限制让多类或多域场景无法直接使用，只能自己手写。升级后建议核对既有脚本的调用签名与生成矩阵维度，避免因参数语义变化得到形状不同的数据而静默出错。",
-      "brief_en": "pyRiemann merged #479, fixing #338: make_classification_transfer, previously limited to two classes, two domains and 2x2 SPD matrices, is generalised so class and domain counts come from class_names/domain_names, with a new n_dim parameter. This synthetic-data helper underpins cross-domain transfer experiments in Riemannian EEG decoding, where the old limit blocked multi-class setups.",
-      "tags": [
-        "pyriemann",
-        "transfer-learning",
-        "api",
-        "spd",
-        "synthetic-data"
-      ],
-      "raw_excerpt": "PR #479 \"Generalize make_classification_transfer into make_classification\" (fixes #338): \"`make_classification_transfer` was limited to two classes, two domains and 2x2 SPD matrices. This generalizes it along the four axes listed in the issue. The number of classes and the number of domains are now taken from the length of `class_names` and `domain_names`, a new `n_dim` param[eter]…\"",
-      "fetched_at": "2026-10-15T22:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "pyRiemann/pyRiemann#479",
-      "author_handle": "pyRiemann",
-      "metrics": {
-        "play": null,
-        "like": 780,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "解除 2×2 限制后多类/多域迁移实验可直接构造合成数据，需核对调用签名。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "braindecode 修设备上下文与反序列化：缓冲区、频率位移参数与可复用预处理配置",
-      "title_en": "braindecode Fixes Device Contexts and Deserialisation for Buffers and Preprocessing",
-      "bullets_zh": [
-        "#1410 构造 Guetschel2026 缓冲区时尊重当前设备上下文，避免张量落在错误设备上。",
-        "#1408 让频率位移（frequency-shift）参数保留在输入设备上；#1409 在反序列化时保留可复用的预处理配置。",
-        "这三处都属「保存/加载模型后行为变化」或「多设备训练静默出错」类问题，对复用预训练权重的流程影响直接。"
-      ],
-      "bullets_en": [
-        "#1410 respects device contexts when constructing Guetschel2026 buffers, preventing tensors from landing on the wrong device.",
-        "#1408 keeps frequency-shift parameters on the input device, and #1409 preserves reusable preprocessing configuration during deserialisation.",
-        "All three are the kind of bug that changes behaviour after save/load or fails silently in multi-device training, directly affecting workflows that reuse pretrained weights."
-      ],
-      "url": "https://github.com/braindecode/braindecode/pull/1410",
-      "published": "2026-10-15T15:14:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "braindecode 在 10 月 15 日合并三项与「设备与序列化」相关的修复：#1410 在构造 Guetschel2026 缓冲区时尊重设备上下文（此前张量可能被建到与模型不同的设备上）；#1408 让频率位移参数留在输入设备；#1409 在反序列化时保留可复用的预处理配置。这类问题通常不报错，而是在保存/加载模型或更换设备后表现为结果轻微不同或训练失败——使用预训练权重、多 GPU 或 CPU↔GPU 迁移的团队最容易踩到。建议升级后对既有「保存→加载→评测」流程做一次一致性回测，确认输出与升级前一致。",
-      "brief_en": "pyRiemann merged #479, fixing #338: make_classification_transfer, previously limited to two classes, two domains and 2x2 SPD matrices, is generalised so class and domain counts come from class_names/domain_names, with a new n_dim parameter. This synthetic-data helper underpins cross-domain transfer experiments in Riemannian EEG decoding, where the old limit blocked multi-class setups.",
+      "brief": "braindecode 在 10 月 16 日推进 24 次提交：#1401 新增 **LabelSmoothing 增强变换**——对类别目标做软化，适合 EEG 里常见的「主观标注、标签噪声大、模型过度自信」场景（以往社区多用交叉熵＋早停硬扛）；#1433 让 ZUNA 接受比 max_seqlen patch 更长的窗口（此前会被强制截断，长试次信息丢失），并让 SincShallow 在构造期对不可行几何抛出清晰 ValueError；#1426 修掉 glorot_weight_zero_bias 在 `affine=False` BatchNorm 上崩溃的问题。做运动想象/情绪分类的训练流程可以直接把 LabelSmoothing 加为常规增强项，注意与类别不平衡策略的交互。",
+      "brief_en": "braindecode made 24 commits on Oct 16: #1401 adds a LabelSmoothing augmentation transform to soften targets against label noise and overconfidence, #1433 lets ZUNA accept windows longer than max_seqlen patches (previously force-truncated) and makes SincShallow raise clear ValueErrors for impossible geometries, and #1426 fixes glorot_weight_zero_bias crashing on affine=False BatchNorm.",
       "tags": [
         "braindecode",
-        "device-context",
-        "serialization",
-        "pretrained",
+        "label-smoothing",
+        "augmentation",
+        "zuna",
         "bugfix"
       ],
-      "raw_excerpt": "Commits 2026-10-15: \"Respect device contexts when constructing Guetschel2026 buffers (#1410)\" 15:14Z; \"Keep frequency-shift parameters on the input device (#1408)\" 15:11Z; \"Preserve reusable preprocessing configuration during deserialization (#1409)\" 15:14Z.",
-      "fetched_at": "2026-10-15T22:45:00Z",
+      "raw_excerpt": "Commits 2026-10-16: \"Add LabelSmoothing augmentation transform (#1401)\" 11:39Z; \"ZUNA: accept windows longer than max_seqlen patches (#1433)\" 18:36Z; \"Raise clear ValueErrors at construction for impossible geometries in SincShallow\" 15:53Z; \"FIX glorot_weight_zero_bias crashing on affine=False BatchNorm (#1426)\" 11:42Z — 24 commits that day.",
+      "fetched_at": "2026-10-17T12:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1410",
+      "upstream_id": "braindecode/braindecode#1401",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 1330,
+        "like": 1332,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "LabelSmoothing 直击 EEG 标签噪声与过度自信，ZUNA 长窗口不再被截断。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "BIDS 文件夹结构讲解：sub-/ses-/task-/run- 怎么排、events.tsv 怎么写",
+      "title_en": "A BIDS Folder-Structure Walkthrough: sub-/ses-/task-/run- and events.tsv",
+      "bullets_zh": [
+        "讲清最小 BIDS 骨架：顶层目录、`sub-01` 等被试目录命名不可改，被试下必须有 `anat` 与 `func` 子目录。",
+        "文件名字段串联：`sub-`（被试）、`ses-`（不同时间点采集）、`task-`（静息写 rest，任务态按类型如 motor）、`run-`（同一时间点重复采集）；只有一个 session/run 可省略，多个则绝不能省。",
+        "辅助文件：任务态 `events.tsv` 需写 onset、duration 与明确的 trial_type（Tab 分隔）；`participants.tsv` 存年龄性别组别且勿泄露真实姓名；最后必须做验证。"
+      ],
+      "bullets_en": [
+        "It lays out the minimal BIDS skeleton: a self-named top folder, subject folders like sub-01 whose naming cannot change, and mandatory anat and func subfolders per subject.",
+        "Filename fields chain together: sub- (subject), ses- (separate recording days), task- (rest for resting state, otherwise e.g. motor), run- (repeats within a session); a single session or run may be omitted, multiple ones never.",
+        "Auxiliary files: task events.tsv needs onset, duration and an explicit trial_type (tab separated); participants.tsv holds age/sex/group without real names; validation at the end is mandatory."
+      ],
+      "url": "https://www.bilibili.com/video/BV19JJ96oErZ/",
+      "published": "2026-10-17T03:31:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「BrainScience」10 月 17 日发布的 BIDS 结构讲解（13:35），把「数据怎么排」讲成了可照做的清单：顶层目录、`sub-01` 等被试目录命名不可改，被试下必须有 `anat` 与 `func`；文件名字段 `sub-`／`ses-`／`task-`／`run-` 各自的含义与可省略条件；任务态 `events.tsv` 必须写 onset、duration 与明确的 trial_type，`participants.tsv` 存人口学信息但不得泄露真实姓名；最后一步必须跑验证。内容以 fMRI 为例，但命名与目录规则同样适用于 EEG BIDS（本仓库本 lane 就在用）。对刚入门的实验室，这类「照做即合规」的材料比读规范原文省时间。",
+      "brief_en": "A Chinese BIDS walkthrough published Oct 17 by the BrainScience channel turns data organisation into a checklist: immutable subject names like sub-01, mandatory anat and func subfolders, the rules of sub-/ses-/task-/run-, task events.tsv requiring onset, duration and trial_type, participants.tsv without real names, and validation at the end. fMRI examples, same rules for EEG BIDS.",
+      "tags": [
+        "bids",
+        "data-organization",
+        "tutorial",
+        "eeg",
+        "metadata"
+      ],
+      "raw_excerpt": "「BIDS 是目前脑影像通用的数据组织格式…被试文件夹 sub-01、sub-02（必须严格按此命名），每个被试下必须有 anat 和 func 两个子文件夹…功能像的命名串联四个字段：sub-、ses-、task-、run-…只有一个 session 或 run 时可省略，有多个就绝不能省。…events.tsv 要写清 onset、duration 和明确的 trial_type…participants.tsv 存年龄、性别、组别，注意别泄露真人姓名。」",
+      "fetched_at": "2026-10-17T12:45:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV19JJ96oErZ",
+      "author_handle": "BrainScience",
+      "metrics": {
+        "play": null,
+        "like": 48,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "修掉保存/加载与多设备场景的静默行为差异，避免预训练权重流程踩坑。"
+      "why_valuable": "把 BIDS 命名与目录规则讲成可照做清单，新手可直接用于 EEG 数据整理。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-Python 修眼动标定输入并适配 neo 0.14.6",
-      "title_en": "MNE-Python Fixes Eyetracking Calibration Inputs and Adapts to neo 0.14.6",
+      "title_zh": "AntroPy 0.2.3：排列熵的多延迟与数值比较修复",
+      "title_en": "AntroPy 0.2.3 Fixes Multi-Delay Permutation Entropy and Value Comparisons",
       "bullets_zh": [
-        "#14413 在眼动 Calibration 中转换 array-like 输入，避免传入列表/数组时报错。",
-        "#14423 适配 neo 0.14.6（依赖兼容），保证相关读取路径在新版依赖下可用；#14424 重构致谢工具，_brain.py 拆分推进到第六阶段。",
-        "眼动—脑电联合分析是当前增长较快的方向，标定步骤的输入兼容性直接影响预处理脚本。"
+        "#52 起：二维数组上带多个 delay 的 perm_entropy 现在按行各返回一个值（对延迟取平均），空列表等非法 delay 会给出清晰错误。",
+        "perm_entropy（阶数 3/4）改为直接比较原始数值，避免超大整数或非常接近的浮点被混淆；含 NaN 的行返回 NaN 且不影响其他行。",
+        "AntroPy 是 EEG 熵/复杂度指标（排列熵、样本熵、LZ 复杂度等）的常用 Python 实现，v0.2.3 于 10 月 17 日发布。"
       ],
       "bullets_en": [
-        "#14413 converts array-like inputs in eyetracking Calibration, so passing lists/arrays no longer breaks the call.",
-        "#14423 adapts to neo 0.14.6 (dependency compatibility) and #14424 refactors the credit tooling, while the _brain.py split reaches phase six.",
-        "Combined eye-tracking and EEG analysis is a fast-growing area, and calibration input compatibility directly affects preprocessing scripts."
+        "From #52: perm_entropy with several delays on a 2-D array now returns one value per row (averaged across delays), and invalid delays such as an empty list raise a clear error.",
+        "perm_entropy (orders 3 and 4) now compares original values directly, so very large integers or very close floats are no longer mixed up; rows containing NaN return NaN without affecting others.",
+        "AntroPy is the go-to Python implementation of EEG entropy/complexity measures (permutation entropy, sample entropy, LZ complexity and more); v0.2.3 shipped on Oct 17."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14413",
-      "published": "2026-10-15T19:10:00Z",
+      "url": "https://github.com/raphaelvallat/antropy/releases/tag/v0.2.3",
+      "published": "2026-10-17T12:24:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 在 10 月 15 日合并 4 项改动：#14413 修掉眼动 Calibration 对 array-like 输入的处理（此前传列表/数组可能直接报错）；#14423 适配 neo 0.14.6，保证相关数据读取路径在新依赖下可用；#14424 重构致谢与贡献工具；_brain.py 的模块拆分推进到第六阶段。对做 EEG＋眼动联合分析的团队，Calibration 的输入兼容性是最先会被脚本触发的环节；依赖 neo 的项目也需要注意版本适配。最新发布仍为 v1.13.2，这些改动需从 main 获取。",
-      "brief_en": "MNE-Python merged four changes on Oct 15: #14413 fixes array-like input handling in eyetracking Calibration, #14423 adapts the code to neo 0.14.6 for dependency compatibility, #14424 refactors credit tooling, and the _brain.py split reaches phase six. Calibration input handling is the first thing combined eye-tracking/EEG scripts hit; these come from main, as v1.13.2 remains the latest release.",
+      "brief": "AntroPy 发布 v0.2.3（2026-10-17，379 stars）：这是 EEG 熵与复杂度指标的常用实现（排列熵、样本熵、LZ 复杂度等）。本次两项修复都属「不报错但结果悄悄不对」类型：①二维数组上带多个 delay 的 `perm_entropy` 此前对整块数组返回单值，现在按行各返回一个（延迟方向取平均），非法 delay（如空列表）会明确报错；②阶数 3/4 的排列熵改为直接比较原始数值，避免超大整数或极接近浮点被误判相等，含 NaN 的行返回 NaN 且不污染其他行。做复杂度/微状态分析的管线若批量算多通道熵，建议升级后抽查若干通道结果与旧版差异。",
+      "brief_en": "AntroPy v0.2.3 (Oct 17) fixes two silent-failure bugs in the standard Python library for EEG entropy: perm_entropy with several delays on a 2-D array now returns one value per row with clear errors for invalid delays, and orders 3/4 compare original values so huge integers or near-equal floats are not conflated, with NaN rows isolated.",
       "tags": [
-        "mne-python",
-        "eyetracking",
-        "calibration",
-        "neo",
-        "compatibility"
+        "antropy",
+        "entropy",
+        "permutation-entropy",
+        "bugfix",
+        "complexity"
       ],
-      "raw_excerpt": "Commits 2026-10-15: \"FIX: Convert array-like inputs in eyetracking Calibration (#14413)\" 19:10Z; \"fix for neo 0.14.6 (#14423)\" 17:42Z; \"Refactor credit tooling (#14424)\" 17:42Z; \"Splitting _brain.py into multiple modules (phase 6) (#14417)\" 18:28Z.",
-      "fetched_at": "2026-10-15T22:45:00Z",
+      "raw_excerpt": "Release v0.2.3 (2026-10-17T12:24:26Z): \"`perm_entropy` with several delays on a 2-D array now returns one value per row (averaged across delays) instead of a single value for the whole array. Invalid `delay` inputs, such as an empty list, now raise a clear error (#52). `perm_entropy` (order 3 or 4) now compares the original values directly, so very large integers or very close floats are no longer mixed up. Rows containing NaN now return NaN without affecting the other rows.\"",
+      "fetched_at": "2026-10-17T12:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14413",
-      "author_handle": "mne-tools",
+      "upstream_id": "raphaelvallat/antropy@v0.2.3",
+      "author_handle": "raphaelvallat",
       "metrics": {
         "play": null,
-        "like": 3550,
+        "like": 379,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "眼动标定输入兼容性＋neo 依赖适配，直接关系 EEG＋眼动预处理脚本可用性。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Unfold.jl 合入 v0.8.13 版本线：事件越界告警与新增 VIF 支持",
-      "title_en": "Unfold.jl Merges Its v0.8.13 Line: Out-of-Bounds Event Warnings and VIF Support",
-      "bullets_zh": [
-        "v0.8.13 版本线新增两项：#330 在 epoch 函数中对越界事件告警（此前可能是静默处理），#371 首次加入 VIF（方差膨胀因子）支持（提交信息注明由 LLM 生成初版）。",
-        "该库面向 EEG／fMRI／瞳孔等神经影像的回归式（unfolding）分析，是 R 生态之外的 Julia 实现，覆盖 deconvolution、重叠校正等场景。",
-        "顺带完成 DocStringExtensions 兼容性升级；版本号 v0.8.13 与 v0.8.12 前后相隔约一个月。"
-      ],
-      "bullets_en": [
-        "The v0.8.13 line adds #330, warning on out-of-bounds events in the epoch function (previously handled silently), and #371, the first VIF (variance inflation factor) support, with the initial version noted as LLM-generated.",
-        "The library covers regression-style (unfolding) analysis for EEG/fMRI/pupil neuroimaging in Julia, including deconvolution and overlap correction.",
-        "It also bumps DocStringExtensions compatibility; v0.8.13 follows v0.8.12 by about a month."
-      ],
-      "url": "https://github.com/unfoldtoolbox/Unfold.jl/pull/330",
-      "published": "2026-10-15T08:48:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "Unfold.jl 在 10 月 15 日推进 v0.8.13 版本线，两项改动值得注意：#330 在 epoch 函数中**对越界事件发出告警**——此前这类事件可能被静默放过，导致事件相关设计矩阵与实际记录不对应却无人察觉；#371 首次加入 VIF（方差膨胀因子）支持，用于评估回归量之间的共线性，这对重叠校正类模型的可解释性很关键（提交信息注明初版由 LLM 生成）。该库在 Julia 生态提供 EEG／fMRI／瞳孔数据的 unfolding（去卷积＋重叠校正）分析，与 R 端同类工具对应。注意：GitHub 最新**发行**仍是 v0.8.12，v0.8.13 仅存在于版本提交中，如需固定版本请按 commit 指定。",
-      "brief_en": "Unfold.jl advanced its v0.8.13 line on Oct 15: #330 warns on out-of-bounds events in the epoch function (previously silent, desynchronising the design matrix) and #371 adds the first VIF support for regressor collinearity, noted as LLM-generated. The Julia library does unfolding (deconvolution plus overlap correction) for EEG/fMRI/pupil data; GitHub still lists v0.8.12 as latest.",
-      "tags": [
-        "unfold",
-        "julia",
-        "deconvolution",
-        "vif",
-        "event-coding"
-      ],
-      "raw_excerpt": "Commits 2026-10-15: \"Warn on out-of-bounds events in epoch function (#330)\" 08:48Z (tag v0.8.13); \"initial vif version - LLM generated (#371)\" 08:47Z; \"CompatHelper: bump compat for DocStringExtensions to 0.10\". Previous release v0.8.12 (2026-09-09).",
-      "fetched_at": "2026-10-15T22:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "unfoldtoolbox/Unfold.jl#330",
-      "author_handle": "unfoldtoolbox",
-      "metrics": {
-        "play": null,
-        "like": 73,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "越界事件由静默改为告警，并新增 VIF 评估回归量共线性。"
+      "why_valuable": "多通道批量算排列熵时旧版会给出错值，升级后需抽查通道级结果。"
     }
   ],
   "stats": {
-    "fetched": 60,
-    "prefiltered": 48,
-    "llm_rows": 12,
-    "kept": 8,
+    "fetched": 132,
+    "prefiltered": 102,
+    "llm_rows": 30,
+    "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 0
+    "conflicts_dropped": 4
   }
 }
