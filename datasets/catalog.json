@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T08:47:37.795Z",
+  "generatedAt": "2026-10-18T09:04:29.775Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 13
+      "count": 12
     },
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 4
     }
   ],
   "items": [
@@ -429,7 +429,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8592,
+      "downloads": 8702,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -450,7 +450,7 @@
         "neuroscience"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 4180,
+      "downloads": 5016,
       "likes": 0,
       "updatedAt": "2026-10-12T06:34:45.000Z",
       "modality": [
@@ -475,7 +475,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 3947,
+      "downloads": 4500,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -500,7 +500,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1896,
+      "downloads": 1912,
       "likes": 1,
       "updatedAt": "2026-10-13T05:16:03.000Z",
       "modality": [
@@ -525,7 +525,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1794,
+      "downloads": 1799,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -543,7 +543,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 493,
+      "downloads": 534,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -551,26 +551,17 @@
       ]
     },
     {
-      "id": "hf:JayF14/chb-mit-preprocessed-eeg",
-      "name": "chb-mit-preprocessed-eeg",
-      "owner": "JayF14",
-      "url": "https://huggingface.co/datasets/JayF14/chb-mit-preprocessed-eeg",
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
       "source": "huggingface",
-      "description": "CHB-MIT Preprocessed EEG Dataset Feature-Engineered EEG Data for Seizure Forecasting (Pre-Ictal Detection) 347,075 labeled epochs | 24 cases / 22 subjects | 590 features per epoch | ~3.9 GB No raw signal processing needed. Download, load, and train. Research use only. Not for cl…",
-      "tags": [
-        "tabular-classification",
-        "odc-by",
-        "medical",
-        "eeg",
-        "seizure-prediction",
-        "epilepsy",
-        "chb-mit",
-        "neuroscience"
-      ],
-      "license": "odc-by",
-      "downloads": 294,
-      "likes": 4,
-      "updatedAt": "2026-10-12T17:38:42.000Z",
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 421,
+      "likes": 0,
+      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -593,9 +584,34 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 404,
+      "downloads": 504,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:JayF14/chb-mit-preprocessed-eeg",
+      "name": "chb-mit-preprocessed-eeg",
+      "owner": "JayF14",
+      "url": "https://huggingface.co/datasets/JayF14/chb-mit-preprocessed-eeg",
+      "source": "huggingface",
+      "description": "CHB-MIT Preprocessed EEG Dataset Feature-Engineered EEG Data for Seizure Forecasting (Pre-Ictal Detection) 347,075 labeled epochs | 24 cases / 22 subjects | 590 features per epoch | ~3.9 GB No raw signal processing needed. Download, load, and train. Research use only. Not for cl…",
+      "tags": [
+        "tabular-classification",
+        "odc-by",
+        "medical",
+        "eeg",
+        "seizure-prediction",
+        "epilepsy",
+        "chb-mit",
+        "neuroscience"
+      ],
+      "license": "odc-by",
+      "downloads": 303,
+      "likes": 4,
+      "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
         "EEG"
       ]
@@ -615,7 +631,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 536,
+      "downloads": 559,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -648,22 +664,6 @@
       ]
     },
     {
-      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
-      "name": "tuh-eeg-cloud-transfer",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
-      "source": "huggingface",
-      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
-      "tags": [],
-      "license": "other",
-      "downloads": 156,
-      "likes": 0,
-      "updatedAt": "2026-10-16T15:07:25.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:Emulated-Inc/drowsy-driving-reaction-time-eeg",
       "name": "drowsy-driving-reaction-time-eeg",
       "owner": "Emulated-Inc",
@@ -679,7 +679,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 142,
+      "downloads": 149,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -695,7 +695,7 @@
       "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
       "tags": [],
       "license": null,
-      "downloads": 68,
+      "downloads": 79,
       "likes": 0,
       "updatedAt": "2026-10-17T04:04:51.000Z",
       "modality": [
@@ -720,29 +720,9 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 112,
+      "downloads": 115,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Anticloud/anticloud-deep-learning-for-bci",
-      "name": "anticloud-deep-learning-for-bci",
-      "owner": "Anticloud",
-      "url": "https://huggingface.co/datasets/Anticloud/anticloud-deep-learning-for-bci",
-      "source": "huggingface",
-      "description": "DEEP LEARNING FOR BCI Anticloud-hardened packaging of the upstream project DEEP_LEARNING_FOR_BCI in category BRAIN COMPUTER INTERFACE. Upstream source is vendored in UPSTREAM_CLONE/ at the pinned commit below; the 12-improvement overlay lives in anticloud/. Every fact in this fi…",
-      "tags": [
-        "arxiv:1703.05051",
-        "arxiv:1611.08024",
-        "arxiv:2104.01233"
-      ],
-      "license": null,
-      "downloads": 47,
-      "likes": 0,
-      "updatedAt": "2026-10-15T02:50:44.000Z",
       "modality": [
         "EEG"
       ]
@@ -841,7 +821,7 @@
       "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 6,
+      "downloads": 8,
       "likes": null,
       "updatedAt": "2026-10-07T00:00:00.000Z",
       "modality": [
@@ -893,7 +873,7 @@
         "Green view index"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1,
+      "downloads": 2,
       "likes": null,
       "updatedAt": "2026-10-06T00:00:00.000Z",
       "modality": [
@@ -944,7 +924,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-16T15:51:29.000Z",
+      "updatedAt": "2026-10-18T01:43:54.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -970,31 +950,53 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-17T00:24:12.000Z",
+      "updatedAt": "2026-10-17T21:35:48.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:nimbusbci/nimbus-mcp",
-      "name": "nimbus-mcp",
-      "owner": "nimbusbci",
-      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "id": "github:AnikS22/EEG-Signal-CoLabs",
+      "name": "EEG-Signal-CoLabs",
+      "owner": "AnikS22",
+      "url": "https://github.com/AnikS22/EEG-Signal-CoLabs",
       "source": "github",
-      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "description": "Per-subject Random Forest classifiers for four activities (happy/sad video, typing) in the BS-HMS EEG + motion dataset",
       "tags": [
-        "bci",
-        "brain-computer-interface",
+        "affective-computing",
         "eeg",
-        "fastmcp",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol"
+        "jupyter-notebook",
+        "machine-learning",
+        "random-forest",
+        "scikit-learn"
       ],
-      "license": "NOASSERTION",
+      "license": "MIT",
       "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-16T19:22:04.000Z",
+      "likes": 1,
+      "updatedAt": "2026-10-17T18:21:21.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:protire0821/EEG_visualization",
+      "name": "EEG_visualization",
+      "owner": "protire0821",
+      "url": "https://github.com/protire0821/EEG_visualization",
+      "source": "github",
+      "description": "Desktop EEG viewer: filtered waveforms, animated topomap, and seizure annotations for EDF/BDF datasets",
+      "tags": [
+        "chb-mit",
+        "eeg",
+        "mne-python",
+        "neuroscience",
+        "pyqt6",
+        "seizure-detection"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-17T10:35:43.000Z",
       "modality": [
         "EEG"
       ]
