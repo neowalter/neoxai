@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-15T22:59:16Z",
+  "generatedAt": "2026-10-18T23:03:24Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 228,
+  "count": 240,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 228
+      "count": 240
     }
   ],
   "items": [
@@ -7568,6 +7568,422 @@
         "contactedAt": "2026-10-16",
         "batch": "batch20",
         "contactedAuthor": "vanjastankicc"
+      }
+    },
+    {
+      "id": "github:AleksanderDudek/brainlink-bluetooth-macos-integration",
+      "name": "brainlink-bluetooth-macos-integration",
+      "owner": "AleksanderDudek",
+      "author": "AleksanderDudek",
+      "url": "https://github.com/AleksanderDudek/brainlink-bluetooth-macos-integration",
+      "homepage": "https://www.brainaccess.ai/wp-content/uploads/2026/01/MAN-HALO-01.pdf",
+      "source": "github",
+      "description": "I recently bought Halo (https://www.brainaccess.ai/wp-content/uploads/2026/01/MAN-HALO-01.pdf) from Brainlink. It didn't provide macOS support. So I reverse engineered it and created adapter to match it.",
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "fnirs",
+        "ble",
+        "fastapi",
+        "games"
+      ],
+      "createdAt": "2026-04-01T11:06:21Z",
+      "updatedAt": "2026-10-18T23:02:11Z",
+      "pushedAt": "2026-10-18T20:44:31Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "AleksanderDudek"
+      }
+    },
+    {
+      "id": "github:Mojo703/emg-wristband-firmware",
+      "name": "emg-wristband-firmware",
+      "owner": "Mojo703",
+      "author": "Mojo703",
+      "url": "https://github.com/Mojo703/emg-wristband-firmware",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "Rust",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "ads1298",
+        "esp32-s3",
+        "rust",
+        "wristband"
+      ],
+      "createdAt": "2026-06-19T20:26:57Z",
+      "updatedAt": "2026-10-18T23:00:17Z",
+      "pushedAt": "2026-09-25T07:52:34Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "Mojo703"
+      }
+    },
+    {
+      "id": "github:Rujul-Rumale/emg-assistive-hci",
+      "name": "emg-assistive-hci",
+      "owner": "Rujul-Rumale",
+      "author": "Rujul-Rumale",
+      "url": "https://github.com/Rujul-Rumale/emg-assistive-hci",
+      "homepage": null,
+      "source": "github",
+      "description": "Low-cost EMG-to-mouse assistive interface: 2x Muscle BioAmp Patchy + RP2040-Zero + Arduino + Python (pyautogui). ECE Signals and Systems PBL, Anurag University.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "accessibility",
+        "arduino",
+        "assistive-technology",
+        "biomedical",
+        "emg",
+        "human-computer-interaction",
+        "python",
+        "rp2040",
+        "signal-processing"
+      ],
+      "tags": [
+        "emg",
+        "assistive",
+        "bioamp",
+        "rp2040",
+        "hci"
+      ],
+      "createdAt": "2026-10-15T04:38:16Z",
+      "updatedAt": "2026-10-18T23:01:59Z",
+      "pushedAt": "2026-10-15T04:57:59Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "Rujul-Rumale"
+      }
+    },
+    {
+      "id": "github:agustama27/bci-fault-bench-intracortical",
+      "name": "bci-fault-bench-intracortical",
+      "owner": "agustama27",
+      "author": "agustama27",
+      "url": "https://github.com/agustama27/bci-fault-bench-intracortical",
+      "homepage": null,
+      "source": "github",
+      "description": "PoC: intracortical (spike-count) decoding testbed for LSL fault injection \u2014 future line of a TFG",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "bci",
+        "intracortical",
+        "lsl",
+        "kalman",
+        "fault-injection"
+      ],
+      "createdAt": "2026-09-27T15:35:38Z",
+      "updatedAt": "2026-10-18T23:01:14Z",
+      "pushedAt": "2026-10-11T05:28:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "agustama27"
+      }
+    },
+    {
+      "id": "github:aneff8626/Bandstand",
+      "name": "Bandstand",
+      "owner": "aneff8626",
+      "author": "aneff8626",
+      "url": "https://github.com/aneff8626/Bandstand",
+      "homepage": null,
+      "source": "github",
+      "description": "Local macOS EEG experiments and exploratory writing research with Muse headsets. Participant writing, EEG and embeddings stay local.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "macos",
+        "erp",
+        "local-first"
+      ],
+      "createdAt": "2026-10-08T15:48:52Z",
+      "updatedAt": "2026-10-18T23:01:25Z",
+      "pushedAt": "2026-10-16T21:09:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "aneff8626"
+      }
+    },
+    {
+      "id": "github:carla-prados/emg-controlled-mouse",
+      "name": "emg-controlled-mouse",
+      "owner": "carla-prados",
+      "author": "carla-prados",
+      "url": "https://github.com/carla-prados/emg-controlled-mouse",
+      "homepage": "https://carlaprados.com/projects/emg-controlled-mouse/",
+      "source": "github",
+      "description": "A mouse driven by the arm's muscles: five surface-EMG channels click and move the cursor. Built in a week on an Arduino Leonardo, ported here to MicroPython.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "arduino",
+        "assistive-technology",
+        "biomedical-engineering",
+        "electromyography",
+        "emg",
+        "micropython",
+        "raspberry-pi-pico",
+        "signal-processing",
+        "usb-hid"
+      ],
+      "tags": [
+        "emg",
+        "assistive",
+        "micropython",
+        "analog-frontend",
+        "hid"
+      ],
+      "createdAt": "2026-10-01T18:35:34Z",
+      "updatedAt": "2026-10-18T23:01:48Z",
+      "pushedAt": "2026-10-01T18:35:40Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "carla-prados"
+      }
+    },
+    {
+      "id": "github:dengzhe-hou/auto-eeg-analysis",
+      "name": "auto-eeg-analysis",
+      "owner": "dengzhe-hou",
+      "author": "dengzhe-hou",
+      "url": "https://github.com/dengzhe-hou/auto-eeg-analysis",
+      "homepage": "https://dengzhe-hou.github.io/auto-eeg-analysis/",
+      "source": "github",
+      "description": "EEG analysis skills for MNE-Python, with executable specifications and a numerically certified core.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "mne",
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "createdAt": "2026-10-03T07:51:53Z",
+      "updatedAt": "2026-10-18T23:00:40Z",
+      "pushedAt": "2026-10-10T12:36:21Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "dengzhe-hou"
+      }
+    },
+    {
+      "id": "github:guo2686300054/emg-bracelet-teleoperation",
+      "name": "emg-bracelet-teleoperation",
+      "owner": "guo2686300054",
+      "author": "guo2686300054",
+      "url": "https://github.com/guo2686300054/emg-bracelet-teleoperation",
+      "homepage": null,
+      "source": "github",
+      "description": "\u57fa\u4e8eEMG\u808c\u7535\u624b\u73af\u7684\u8fdc\u7a0b\u673a\u68b0\u81c2\u64cd\u63a7\u7cfb\u7edf",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "ble",
+        "pyqt5",
+        "teleoperation",
+        "shared-memory"
+      ],
+      "createdAt": "2026-09-20T08:49:01Z",
+      "updatedAt": "2026-10-18T23:00:28Z",
+      "pushedAt": "2026-09-20T10:17:16Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "guo2686300054"
+      }
+    },
+    {
+      "id": "github:kris-meng/ecog-online",
+      "name": "ecog-online",
+      "owner": "kris-meng",
+      "author": "kris-meng",
+      "url": "https://github.com/kris-meng/ecog-online",
+      "homepage": null,
+      "source": "github",
+      "description": "Online, asynchronous decoding of hand gestures and finger flexion from ECoG, with a 3D replay demo",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "ecog",
+        "bci",
+        "online-decoding",
+        "causal",
+        "python"
+      ],
+      "createdAt": "2026-10-05T07:02:00Z",
+      "updatedAt": "2026-10-18T23:01:02Z",
+      "pushedAt": "2026-10-05T07:50:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "kris-meng"
+      }
+    },
+    {
+      "id": "github:kyrieove/brain-plot",
+      "name": "brain-plot",
+      "owner": "kyrieove",
+      "author": "kyrieove",
+      "url": "https://github.com/kyrieove/brain-plot",
+      "homepage": null,
+      "source": "github",
+      "description": "Paper-ready ERP figures (waveforms + scalp maps) from MNE files: a Claude Code skill",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "erp",
+        "mne",
+        "claude-code",
+        "figures"
+      ],
+      "createdAt": "2026-09-25T23:29:23Z",
+      "updatedAt": "2026-10-18T23:02:23Z",
+      "pushedAt": "2026-10-12T13:07:26Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "kyrieove"
+      }
+    },
+    {
+      "id": "github:pareeknikhil/emg-gui",
+      "name": "emg-gui",
+      "owner": "pareeknikhil",
+      "author": "pareeknikhil",
+      "url": "https://github.com/pareeknikhil/emg-gui",
+      "homepage": null,
+      "source": "github",
+      "description": "A high-performance, multithreaded, real-time visualization engine for acquiring, recording, and exploring raw and filtered EMG signals from OpenBCI boards.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "bandpass-filter",
+        "bci",
+        "biosensors",
+        "brain-computer-interface",
+        "brainflow",
+        "electromyography",
+        "emg",
+        "emg-sensors",
+        "openbci",
+        "python",
+        "real-time",
+        "signal-processing"
+      ],
+      "tags": [
+        "emg",
+        "openbci",
+        "brainflow",
+        "opengl",
+        "visualization"
+      ],
+      "createdAt": "2026-07-19T04:32:58Z",
+      "updatedAt": "2026-10-18T23:01:37Z",
+      "pushedAt": "2026-10-17T06:17:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "pareeknikhil"
+      }
+    },
+    {
+      "id": "github:thebasedcapital/neural-decompile",
+      "name": "neural-decompile",
+      "owner": "thebasedcapital",
+      "author": "thebasedcapital",
+      "url": "https://github.com/thebasedcapital/neural-decompile",
+      "homepage": null,
+      "source": "github",
+      "description": "Self-stabilizing, auditable BCI decoders: label-free drift correction + 30 s patches on human intracortical data (FALCON H1), compiled to streaming Rust; certified RNN algorithm extraction & repair.",
+      "language": "HTML",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "formal-verification",
+        "interpretability",
+        "intracortical",
+        "mechanistic-interpretability",
+        "neural-decoding",
+        "neuralink",
+        "neuroscience",
+        "rust"
+      ],
+      "tags": [
+        "bci",
+        "intracortical",
+        "decoder",
+        "rust",
+        "drift"
+      ],
+      "createdAt": "2026-03-29T17:58:26Z",
+      "updatedAt": "2026-10-18T23:00:51Z",
+      "pushedAt": "2026-10-07T21:39:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-19",
+        "batch": "batch21",
+        "contactedAuthor": "thebasedcapital"
       }
     }
   ]
