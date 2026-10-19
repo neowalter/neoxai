@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T09:04:29.775Z",
+  "generatedAt": "2026-10-19T10:16:53.587Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 12
+      "count": 13
     },
     {
       "id": "github",
@@ -102,6 +102,25 @@
       "updatedAt": "2021-01-01T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008959",
+      "name": "MetaMosquito",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008959",
+      "source": "openneuro",
+      "description": "MetaMosquito",
+      "tags": [
+        "BIDS",
+        "ieeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-10-19T07:58:27.802Z",
+      "modality": [
+        "iEEG"
       ]
     },
     {
@@ -393,25 +412,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008725",
-      "name": "Memtrain MEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008725",
-      "source": "openneuro",
-      "description": "Memtrain MEG",
-      "tags": [
-        "BIDS",
-        "meg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-25T16:18:36.899Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -429,30 +429,9 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8702,
+      "downloads": 8662,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/openneuro-hbn-eeg-raw-v1-0-1",
-      "name": "openneuro-hbn-eeg-raw-v1-0-1",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1",
-      "source": "huggingface",
-      "description": "HBN EEG: 11 OpenNeuro releases (R1-R11), v1.0.1 Import status: complete. Verified payload: 2,003,720,436,764 of 2,003,720,436,764 bytes. Raw BIDS files are mirrored here; EEG files are real file contents, not Git-annex pointers. The import runs from the public OpenNeuro S3 bucke…",
-      "tags": [
-        "cc-by-sa-4.0",
-        "eeg",
-        "bids",
-        "neuroscience"
-      ],
-      "license": "cc-by-sa-4.0",
-      "downloads": 5016,
-      "likes": 0,
-      "updatedAt": "2026-10-12T06:34:45.000Z",
       "modality": [
         "EEG"
       ]
@@ -475,7 +454,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 4500,
+      "downloads": 5710,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -508,65 +487,6 @@
       ]
     },
     {
-      "id": "hf:aspire-osu/maestro-eeg-dataset",
-      "name": "maestro-eeg-dataset",
-      "owner": "aspire-osu",
-      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
-      "source": "huggingface",
-      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
-      "tags": [
-        "audio-classification",
-        "time-series-forecasting",
-        "cc-by-nc-sa-4.0",
-        "audiofolder",
-        "audio",
-        "video",
-        "arxiv:2609.31898",
-        "eeg"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 1799,
-      "likes": 1,
-      "updatedAt": "2026-09-29T21:10:37.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 534,
-      "likes": 1,
-      "updatedAt": "2026-10-08T07:54:26.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
-      "name": "tuh-eeg-cloud-transfer",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
-      "source": "huggingface",
-      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
-      "tags": [],
-      "license": "other",
-      "downloads": 421,
-      "likes": 0,
-      "updatedAt": "2026-10-16T15:07:25.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Brunner-2008-BCICompetition2008GrazDataSetA",
       "name": "Brunner-2008-BCICompetition2008GrazDataSetA",
       "owner": "raei",
@@ -584,9 +504,68 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 504,
+      "downloads": 1850,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:aspire-osu/maestro-eeg-dataset",
+      "name": "maestro-eeg-dataset",
+      "owner": "aspire-osu",
+      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
+      "source": "huggingface",
+      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
+      "tags": [
+        "audio-classification",
+        "time-series-forecasting",
+        "cc-by-nc-sa-4.0",
+        "audiofolder",
+        "audio",
+        "video",
+        "arxiv:2609.31898",
+        "eeg"
+      ],
+      "license": "cc-by-nc-sa-4.0",
+      "downloads": 1800,
+      "likes": 1,
+      "updatedAt": "2026-09-29T21:10:37.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 688,
+      "likes": 1,
+      "updatedAt": "2026-10-08T07:54:26.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
+      "source": "huggingface",
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 426,
+      "likes": 0,
+      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -609,7 +588,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 303,
+      "downloads": 315,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -631,9 +610,32 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 559,
+      "downloads": 586,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Emulated-Inc/drowsy-driving-reaction-time-eeg",
+      "name": "drowsy-driving-reaction-time-eeg",
+      "owner": "Emulated-Inc",
+      "url": "https://huggingface.co/datasets/Emulated-Inc/drowsy-driving-reaction-time-eeg",
+      "source": "huggingface",
+      "description": "Sustained-attention driving EEG: 40 sessions as float16 arrays with lane-drift trials This repository is a mirror for reproducible builds: it holds the files produced once from the published originals listed below by the processing described here, so that later builds get exactl…",
+      "tags": [
+        "cc-by-4.0",
+        "csv",
+        "tabular",
+        "neuroscience",
+        "eeg",
+        "driving"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 173,
+      "likes": 0,
+      "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
         "EEG"
       ]
@@ -664,24 +666,23 @@
       ]
     },
     {
-      "id": "hf:Emulated-Inc/drowsy-driving-reaction-time-eeg",
-      "name": "drowsy-driving-reaction-time-eeg",
-      "owner": "Emulated-Inc",
-      "url": "https://huggingface.co/datasets/Emulated-Inc/drowsy-driving-reaction-time-eeg",
+      "id": "hf:xw1216/openneuro-hbn-eeg-releases-v1-0-1",
+      "name": "openneuro-hbn-eeg-releases-v1-0-1",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-releases-v1-0-1",
       "source": "huggingface",
-      "description": "Sustained-attention driving EEG: 40 sessions as float16 arrays with lane-drift trials This repository is a mirror for reproducible builds: it holds the files produced once from the published originals listed below by the processing described here, so that later builds get exactl…",
+      "description": "HBN EEG: one archive per release, R1-R11 This repository publishes one lossless .tar.gz archive per HBN EEG release, fixed at OpenNeuro version 1.0.1, including R6. Source: https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1/tree/987f221fcf9fe858d01b6c8a918697750…",
       "tags": [
-        "cc-by-4.0",
-        "csv",
-        "tabular",
-        "neuroscience",
+        "cc-by-sa-4.0",
         "eeg",
-        "driving"
+        "hbn",
+        "neuroscience",
+        "archive"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 149,
+      "license": "cc-by-sa-4.0",
+      "downloads": 142,
       "likes": 0,
-      "updatedAt": "2026-10-15T03:39:35.000Z",
+      "updatedAt": "2026-10-17T19:47:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -695,7 +696,7 @@
       "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
       "tags": [],
       "license": null,
-      "downloads": 79,
+      "downloads": 87,
       "likes": 0,
       "updatedAt": "2026-10-17T04:04:51.000Z",
       "modality": [
@@ -720,7 +721,7 @@
         "foundation-models"
       ],
       "license": "apache-2.0",
-      "downloads": 115,
+      "downloads": 121,
       "likes": 0,
       "updatedAt": "2026-10-06T09:34:23.000Z",
       "modality": [
@@ -744,6 +745,24 @@
       ]
     },
     {
+      "id": "zenodo:23464852",
+      "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
+      "owner": "Atiwiwat, Danita",
+      "url": "https://doi.org/10.5281/zenodo.23464852",
+      "source": "zenodo",
+      "description": "Dataset Description This dataset contains physiological recordings and working memory performance data from participants who completed a Sternberg Working Memory task under different levels of cognitive load. The dataset includes Electroencephalogram (EEG), Electrocardiogram (EC…",
+      "tags": [
+        "working memory"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-19T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23397566",
       "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
       "owner": "Villa, Alessandro E.P.",
@@ -758,6 +777,22 @@
       "modality": [
         "EEG",
         "fNIRS"
+      ]
+    },
+    {
+      "id": "zenodo:23441154",
+      "name": "German plural EEG",
+      "owner": "xxx",
+      "url": "https://doi.org/10.5281/zenodo.23441154",
+      "source": "zenodo",
+      "description": "German plural EEG",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 1,
+      "likes": null,
+      "updatedAt": "2026-10-17T00:00:00.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -861,50 +896,6 @@
       ]
     },
     {
-      "id": "zenodo:23182863",
-      "name": "Neurophysiological and Environmental Dataset for Assessing the Cognitive Restorative Potential of Urban Green Infrastructure",
-      "owner": "Ganzory, Dalia",
-      "url": "https://doi.org/10.5281/zenodo.23182863",
-      "source": "zenodo",
-      "description": "This dataset contains the experimental and physiological data collected to investigate the cognitive restorative potential of different urban environmental settings. The dataset combines neurophysiological EEG measures, cardiac R&ndash;R interval measures, and environmental expo…",
-      "tags": [
-        "EEG Data",
-        "Skyview index",
-        "Green view index"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 2,
-      "likes": null,
-      "updatedAt": "2026-10-06T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23099932",
-      "name": "Code and aggregate results for: Can a consumer EEG headband and a chest strap map cortical–autonomic state at rest? Coupling, device supply and construction artefacts",
-      "owner": "Griadhi, I Putu, Adiartha",
-      "url": "https://doi.org/10.5281/zenodo.23099932",
-      "source": "zenodo",
-      "description": "Analysis code, the locked analysis plan (versions 1.0&ndash;1.4) and the aggregate result tables and figures for a study asking whether a consumer EEG headband (Muse 2) and a chest strap (Polar H10) can support a two-axis cortical&ndash;autonomic state map at rest in 28 seated r…",
-      "tags": [
-        "EEG",
-        "heart rate variability",
-        "photoplethysmography",
-        "consumer devices",
-        "cortical–autonomic coupling",
-        "Muse 2",
-        "Polar H10"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 2,
-      "likes": null,
-      "updatedAt": "2026-10-02T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -924,7 +915,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-18T01:43:54.000Z",
+      "updatedAt": "2026-10-19T08:26:31.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -950,7 +941,31 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-17T21:35:48.000Z",
+      "updatedAt": "2026-10-19T06:24:13.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:nimbusbci/nimbus-mcp",
+      "name": "nimbus-mcp",
+      "owner": "nimbusbci",
+      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "source": "github",
+      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "tags": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "fastmcp",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-10-18T13:06:07.000Z",
       "modality": [
         "EEG"
       ]
@@ -974,29 +989,6 @@
       "downloads": null,
       "likes": 1,
       "updatedAt": "2026-10-17T18:21:21.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:protire0821/EEG_visualization",
-      "name": "EEG_visualization",
-      "owner": "protire0821",
-      "url": "https://github.com/protire0821/EEG_visualization",
-      "source": "github",
-      "description": "Desktop EEG viewer: filtered waveforms, animated topomap, and seizure annotations for EDF/BDF datasets",
-      "tags": [
-        "chb-mit",
-        "eeg",
-        "mne-python",
-        "neuroscience",
-        "pyqt6",
-        "seizure-detection"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-17T10:35:43.000Z",
       "modality": [
         "EEG"
       ]
