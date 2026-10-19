@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-18T23:03:24Z",
+  "generatedAt": "2026-10-19T23:04:18Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 240,
+  "count": 251,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 240
+      "count": 251
     }
   ],
   "items": [
@@ -7984,6 +7984,369 @@
         "contactedAt": "2026-10-19",
         "batch": "batch21",
         "contactedAuthor": "thebasedcapital"
+      }
+    },
+    {
+      "id": "github:BrianYuyuan/emg-wireless-controller",
+      "name": "emg-wireless-controller",
+      "owner": "BrianYuyuan",
+      "author": "BrianYuyuan",
+      "url": "https://github.com/BrianYuyuan/emg-wireless-controller",
+      "homepage": null,
+      "source": "github",
+      "description": "A wireless EMG wearable that reads facial muscle signals over Bluetooth and maps them to computer input.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "emg",
+        "esp32",
+        "ble",
+        "game-controller",
+        "myoware"
+      ],
+      "createdAt": "2026-08-17T18:06:14Z",
+      "updatedAt": "2026-10-19T23:03:41Z",
+      "pushedAt": "2026-10-02T19:33:10Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "BrianYuyuan"
+      }
+    },
+    {
+      "id": "github:Mohammed-T-AlQarni/NeuroState-Microstates",
+      "name": "NeuroState-Microstates",
+      "owner": "Mohammed-T-AlQarni",
+      "author": "Mohammed-T-AlQarni",
+      "url": "https://github.com/Mohammed-T-AlQarni/NeuroState-Microstates",
+      "homepage": null,
+      "source": "github",
+      "description": "Explainable EEG-to-microstates research tool (MNE-Python + Pycrostates). Research use only; not clinically validated.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "microstates",
+        "pycrostates",
+        "reproducibility",
+        "validation"
+      ],
+      "createdAt": "2026-10-12T17:06:52Z",
+      "updatedAt": "2026-10-19T23:03:12Z",
+      "pushedAt": "2026-10-12T17:06:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "Mohammed-T-AlQarni"
+      }
+    },
+    {
+      "id": "github:Nigmat-future/neurocalib-bench",
+      "name": "neurocalib-bench",
+      "owner": "Nigmat-future",
+      "author": "Nigmat-future",
+      "url": "https://github.com/Nigmat-future/neurocalib-bench",
+      "homepage": null,
+      "source": "github",
+      "description": "Reproducible CPU-only cross-day neural calibration with fixed data budgets and agent-guided experiments.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "autoresearch",
+        "brain-computer-interface",
+        "neural-decoding",
+        "neuroscience",
+        "reproducible-research"
+      ],
+      "tags": [
+        "intracortical",
+        "bci",
+        "calibration",
+        "benchmark",
+        "decoding"
+      ],
+      "createdAt": "2026-10-18T15:58:00Z",
+      "updatedAt": "2026-10-19T23:02:34Z",
+      "pushedAt": "2026-10-18T20:36:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "Nigmat-future"
+      }
+    },
+    {
+      "id": "github:aryanmhaskar/seeg-semantic-decoder",
+      "name": "seeg-semantic-decoder",
+      "owner": "aryanmhaskar",
+      "author": "aryanmhaskar",
+      "url": "https://github.com/aryanmhaskar/seeg-semantic-decoder",
+      "homepage": null,
+      "source": "github",
+      "description": "Cross patient word decoding from intracranial sEEG: a leave one patient out neural decoder over heterogeneous electrode montages, with its control and ablation programme. Code only, no data.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "seeg",
+        "semantic-decoding",
+        "transformer",
+        "speech",
+        "neural-decoding"
+      ],
+      "createdAt": "2026-09-22T00:46:35Z",
+      "updatedAt": "2026-10-19T23:03:31Z",
+      "pushedAt": "2026-09-22T00:46:40Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "aryanmhaskar"
+      }
+    },
+    {
+      "id": "github:bautipelossi/bci-pcd",
+      "name": "bci-pcd",
+      "owner": "bautipelossi",
+      "author": "bautipelossi",
+      "url": "https://github.com/bautipelossi/bci-pcd",
+      "homepage": null,
+      "source": "github",
+      "description": "Python implementation of Phase Coupling Decomposition (PCD) for removing speech-induced artifacts from intracranial EEG. Final project for the Brain\u2013computer interface (BCI) course at FIQ-UNL.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "ieeg",
+        "speech-bci",
+        "artifact-removal",
+        "ssd",
+        "signal-processing"
+      ],
+      "createdAt": "2026-09-27T13:00:46Z",
+      "updatedAt": "2026-10-19T23:03:02Z",
+      "pushedAt": "2026-10-16T22:22:31Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "bautipelossi"
+      }
+    },
+    {
+      "id": "github:mbote-droid/Neuro-signal",
+      "name": "Neuro-signal",
+      "owner": "mbote-droid",
+      "author": "mbote-droid",
+      "url": "https://github.com/mbote-droid/Neuro-signal",
+      "homepage": null,
+      "source": "github",
+      "description": "Drop an EEG file, get a validated report: QC, 1/f-aware spectra, volume-conduction-robust coupling and seizure-like event candidates, with every number in the explanation traced to a computed metric. Pre-registered hypotheses, synthetic ground truth, held-out CHB-MIT test. Research use only.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "eeg-signals-processing",
+        "neuroscience",
+        "reproducibility",
+        "reproducible-builds",
+        "reproducible-workflows",
+        "seizure-detection",
+        "signal-processing",
+        "validation"
+      ],
+      "tags": [
+        "eeg",
+        "aperiodic",
+        "llm",
+        "explainability",
+        "spectral"
+      ],
+      "createdAt": "2026-10-12T21:38:34Z",
+      "updatedAt": "2026-10-19T23:02:44Z",
+      "pushedAt": "2026-10-19T16:11:34Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "mbote-droid"
+      }
+    },
+    {
+      "id": "github:nazariegosantomeluis-droid/ortesis-bci",
+      "name": "ortesis-bci",
+      "owner": "nazariegosantomeluis-droid",
+      "author": "nazariegosantomeluis-droid",
+      "url": "https://github.com/nazariegosantomeluis-droid/ortesis-bci",
+      "homepage": null,
+      "source": "github",
+      "description": "Construimos una \u00f3rtesis de mano impresa en 3D que se mueve con imaginaci\u00f3n motora y aprende sola a  obedecer mejor, usando la se\u00f1al de error del cerebro (ErrP) como recompensa. Devuelve sensaci\u00f3n por  vibraci\u00f3n y medimos cu\u00e1nto la incorpora el usuario a su esquema corporal, en la l\u00ednea de Stanisa Raspopovic. ",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "errp",
+        "orthosis",
+        "bayesian",
+        "closed-loop"
+      ],
+      "createdAt": "2026-09-28T13:26:01Z",
+      "updatedAt": "2026-10-19T23:02:15Z",
+      "pushedAt": "2026-10-19T22:29:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "nazariegosantomeluis-droid"
+      }
+    },
+    {
+      "id": "github:nidhalom/neuro-graphrag",
+      "name": "neuro-graphrag",
+      "owner": "nidhalom",
+      "author": "nidhalom",
+      "url": "https://github.com/nidhalom/neuro-graphrag",
+      "homepage": null,
+      "source": "github",
+      "description": "GraphRAG for brain-computer-interface research: EEG/BCI abstracts to a knowledge graph that answers multi-hop questions plain vector RAG gets wrong",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "graphrag",
+        "knowledge-graph",
+        "neo4j",
+        "rag"
+      ],
+      "tags": [
+        "bci",
+        "graphrag",
+        "knowledge-graph",
+        "llm",
+        "literature"
+      ],
+      "createdAt": "2026-10-17T23:58:09Z",
+      "updatedAt": "2026-10-19T23:02:25Z",
+      "pushedAt": "2026-10-18T08:47:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "nidhalom"
+      }
+    },
+    {
+      "id": "github:penbek7-maker/muse-microstates",
+      "name": "muse-microstates",
+      "owner": "penbek7-maker",
+      "author": "penbek7-maker",
+      "url": "https://github.com/penbek7-maker/muse-microstates",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EEG band analysis and micro mental states using Muse 2",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl",
+        "osc",
+        "max-msp"
+      ],
+      "createdAt": "2026-01-30T14:03:52Z",
+      "updatedAt": "2026-10-19T23:03:21Z",
+      "pushedAt": "2026-09-23T15:39:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "penbek7-maker"
+      }
+    },
+    {
+      "id": "github:saikkkk19/eeg-motor-imagery-neurofeedback",
+      "name": "eeg-motor-imagery-neurofeedback",
+      "owner": "saikkkk19",
+      "author": "saikkkk19",
+      "url": "https://github.com/saikkkk19/eeg-motor-imagery-neurofeedback",
+      "homepage": null,
+      "source": "github",
+      "description": "Closed-loop motor-imagery neurofeedback BCI (CSP + ensemble, real-time LSL, visual & tactile feedback). Code only; no participant data.",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "csp",
+        "lsl",
+        "neurofeedback"
+      ],
+      "createdAt": "2026-07-26T16:33:30Z",
+      "updatedAt": "2026-10-19T23:02:53Z",
+      "pushedAt": "2026-09-30T07:46:18Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "saikkkk19"
+      }
+    },
+    {
+      "id": "github:spenceleyyy/Robot-Control-EEG-BCI",
+      "name": "Robot-Control-EEG-BCI",
+      "owner": "spenceleyyy",
+      "author": "spenceleyyy",
+      "url": "https://github.com/spenceleyyy/Robot-Control-EEG-BCI",
+      "homepage": null,
+      "source": "github",
+      "description": "This repo uses motor imagery to control a robot arm with a shared control framework. Repo includes MI training, and real time BCI.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "csp",
+        "robot-arm",
+        "bci"
+      ],
+      "createdAt": "2026-09-22T12:28:58Z",
+      "updatedAt": "2026-10-19T23:02:06Z",
+      "pushedAt": "2026-09-22T12:35:13Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-20",
+        "batch": "batch22",
+        "contactedAuthor": "spenceleyyy"
       }
     }
   ]
