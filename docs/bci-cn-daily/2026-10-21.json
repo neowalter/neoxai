@@ -1,0 +1,387 @@
+{
+  "date": "2026-10-21",
+  "generated_at": "2026-10-20T21:32:29.139Z",
+  "item_count": 8,
+  "types": {
+    "News": 1,
+    "Tutorial": 1,
+    "Benchmark": 1,
+    "Project": 5
+  },
+  "highlights": [
+    {
+      "title_zh": "EEG/EMG 挑战赛 Track 2 实战仓库：提交流程、PROTEUS 数据工具与真实基线成绩",
+      "title_en": "A Working EEG/EMG Challenge Track 2 Repo: Submission Contract, PROTEUS Tools, Real Baseline Scores",
+      "url": "https://github.com/pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "brief": "新建仓库（2026-10-20）是 **EEG/EMG Foundation Challenge 2026 Track 2**（跨 session／跨被试解码）的实战工程：给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 内 `submission.py`＋`model.json`）、公开 PROTEUS 数据工具、受监督基线与可复现评测，并明确「上传 ZIP 而不是仓库」这种容易踩的规则。难得的是它**公开了真实成绩**：常数参考基线热身提交 0.33，真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），且推理回放与导出可复现。对想参加该挑战赛的团队，这比读赛制文档更能快速上手；不过作者也提醒常数基线只是平台自检，不能当作有效的心理指令解码器。"
+    },
+    {
+      "title_zh": "9 部门联合发文把脑机接口写进「科技兴商」，工信部点名智能终端攻关",
+      "title_en": "Nine Ministries Put BCI into the 'Tech-Powered Commerce' Document, MIIT Names It a Terminal Priority",
+      "url": "https://www.bilibili.com/read/cv53514611",
+      "brief": "B站科技号「惠科技」10 月 20 日 08:55 报道：10 月 19 日商务部、工信部等 **9 部门联合发布《关于加快推进科技兴商的意见》**，共 18 条举措，脑机接口被明确写入，国新办当天举行专题发布会。发布会上工信部科技司司长魏巍表示，将联合商务部等结合「以旧换新」渠道加快 AI 电脑与手机普及，并推动**脑机接口、具身智能**等智能终端攻关迭代；文件还提出在消费品领域培育技术转移转化机构，加速前沿成果向市场转化。对产业侧，这类文件的信号是「从研发导向转向市场导向」——脑机接口被并入智能终端与消费品转化的政策通道，后续值得跟踪配套资金、试点与标准落地。"
+    },
+    {
+      "title_zh": "解码前必须避开的坑：坏电极、试次不平衡与降采样权衡",
+      "title_en": "MVPA Pitfalls to Avoid: Bad Electrodes, Unbalanced Trials and Downsampling Trade-offs",
+      "url": "https://www.bilibili.com/video/BV1XenF6rEXi/",
+      "brief": "B站「BrainScience」发布的解码方法讲解（09:24），把 MVPA 里最容易踩的三个坑讲得很具体：①**坏电极与伪迹会自己制造「显著」**——用 32 个电极区分两条件时，一个坏电极就足以把 A/B 分开，但这不反映条件差异；若 A 条件眨眼多、B 少，准确率虚高也只是眨眼差异；②**条件间试次数要平衡**（A 100 vs B 30 会扭曲分类权重，常规做法是从 A 随机抽 30，且只在被试内平衡）；③**信噪比权衡**——降采样到 250 Hz 计算量只有 1000 Hz 的四分之一而结果差异不大，super-trial（每 4 个平均）提高信噪比但减少样本量。对刚上手的解码分析者，这三条比任何模型选择都更早决定结果可信度。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-21.md",
+  "items": [
+    {
+      "type": "News",
+      "level": "Intermediate",
+      "title_zh": "9 部门联合发文把脑机接口写进「科技兴商」，工信部点名智能终端攻关",
+      "title_en": "Nine Ministries Put BCI into the 'Tech-Powered Commerce' Document, MIIT Names It a Terminal Priority",
+      "bullets_zh": [
+        "10 月 19 日，商务部、工业和信息化部等 9 部门联合发布《关于加快推进科技兴商的意见》，共 18 条举措，脑机接口被明确写入；国新办当天举行专题发布会。",
+        "工信部科技司司长魏巍：联合商务部等，结合「以旧换新」等渠道加快 AI 电脑、手机普及，推动**脑机接口、具身智能**等智能终端攻关迭代。",
+        "文件还提出聚焦消费品领域培育技术转移转化机构，加速脑机接口、具身智能等前沿成果向市场转化——政策口径从「做得出来」转向「卖得出去」。"
+      ],
+      "bullets_en": [
+        "On Oct 19 nine ministries including Commerce and Industry/IT jointly issued the 'Opinions on Accelerating Tech-Powered Commerce', 18 measures in total, with brain-computer interfaces explicitly included; the State Council Information Office held a briefing the same day.",
+        "Wei Wei, head of MIIT's science and technology department, said his ministry with Commerce will use trade-in channels to speed AI PC and phone adoption and push 'smart terminals' including BCI and embodied AI.",
+        "The document also calls for technology-transfer institutions in consumer goods to move frontier results like BCI to market — policy language shifting from 'can build it' to 'can sell it'."
+      ],
+      "url": "https://www.bilibili.com/read/cv53514611",
+      "published": "2026-10-20T00:55:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站科技号「惠科技」10 月 20 日 08:55 报道：10 月 19 日商务部、工信部等 **9 部门联合发布《关于加快推进科技兴商的意见》**，共 18 条举措，脑机接口被明确写入，国新办当天举行专题发布会。发布会上工信部科技司司长魏巍表示，将联合商务部等结合「以旧换新」渠道加快 AI 电脑与手机普及，并推动**脑机接口、具身智能**等智能终端攻关迭代；文件还提出在消费品领域培育技术转移转化机构，加速前沿成果向市场转化。对产业侧，这类文件的信号是「从研发导向转向市场导向」——脑机接口被并入智能终端与消费品转化的政策通道，后续值得跟踪配套资金、试点与标准落地。",
+      "brief_en": "Bilibili tech account reported on Oct 20 that nine ministries issued the 'Opinions on Accelerating Tech-Powered Commerce' on Oct 19, with 18 measures and BCI explicitly included. MIIT's Wei Wei said trade-in channels will push smart terminals including BCI and embodied AI, and the document promotes technology transfer in consumer goods.",
+      "tags": [
+        "policy",
+        "miit",
+        "bci-industry",
+        "china",
+        "commercialisation"
+      ],
+      "raw_excerpt": "「10 月 19 日，商务部、工业和信息化部等 9 部门联合发布《关于加快推进科技兴商的意见》，国务院新闻办当天举行专题发布会。这份以『科技兴商』为主题的系统性文件，共提出 18 条具体举措，脑机接口被明确写入其中。」「工信部科技司司长魏巍…推动脑机接口、具身智能等智能终端攻关迭代…加速脑机接口、具身智能等前沿科技成果向市场转化。」",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53514611",
+      "author_handle": "惠科技",
+      "metrics": {
+        "play": null,
+        "like": null,
+        "collect": null,
+        "comment": 0
+      },
+      "quality_score": 8,
+      "why_valuable": "国家级文件把脑机接口并入智能终端与消费品转化通道，政策口径转向市场。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "解码前必须避开的坑：坏电极、试次不平衡与降采样权衡",
+      "title_en": "MVPA Pitfalls to Avoid: Bad Electrodes, Unbalanced Trials and Downsampling Trade-offs",
+      "bullets_zh": [
+        "**坏电极会自己「分类成功」**：用 32 个电极区分 A/B 时，一个坏电极就足以把两类分开，但差异来自电极而非条件；伪迹同理（A 条件眨眼多、B 少，准确率虚高只是眨眼差异）。",
+        "**条件间试次必须平衡**：A 有 100 个、B 只有 30 个会影响分类权重，常规做法是从 A 随机抽 30 个；注意这是被试内平衡，不同被试之间可以不等。",
+        "**信噪比权衡**：降采样（1000 Hz 是 250 Hz 的 4 倍计算量，而 200 Hz 与原始差异不大）与 super-trial（每 4 个试次平均换来更高信噪比但样本量减少）。"
+      ],
+      "bullets_en": [
+        "Bad electrodes can 'classify' on their own: with 32 electrodes distinguishing A from B, one bad electrode alone can separate the classes even though the difference is artefactual; same for artefacts when one condition has more blinks.",
+        "Trial counts must be balanced across conditions: A with 100 trials versus B with 30 skews classifier weights, so the usual fix is randomly subsampling A to 30; the balance is within-subject, not across subjects.",
+        "Signal-to-noise trade-offs: downsampling (1000 Hz costs 4x the compute of 250 Hz while 200 Hz differs little from raw) and super-trials (averaging every four trials raises SNR but shrinks sample size)."
+      ],
+      "url": "https://www.bilibili.com/video/BV1XenF6rEXi/",
+      "published": "2026-10-20T03:30:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「BrainScience」发布的解码方法讲解（09:24），把 MVPA 里最容易踩的三个坑讲得很具体：①**坏电极与伪迹会自己制造「显著」**——用 32 个电极区分两条件时，一个坏电极就足以把 A/B 分开，但这不反映条件差异；若 A 条件眨眼多、B 少，准确率虚高也只是眨眼差异；②**条件间试次数要平衡**（A 100 vs B 30 会扭曲分类权重，常规做法是从 A 随机抽 30，且只在被试内平衡）；③**信噪比权衡**——降采样到 250 Hz 计算量只有 1000 Hz 的四分之一而结果差异不大，super-trial（每 4 个平均）提高信噪比但减少样本量。对刚上手的解码分析者，这三条比任何模型选择都更早决定结果可信度。",
+      "brief_en": "A Chinese decoding tutorial spells out three MVPA pitfalls: bad electrodes or artefacts can manufacture significance (one bad electrode suffices to 'separate' two conditions, and unequal blink rates inflate accuracy), trial counts must be balanced within subject (A 100 vs B 30 skews weights; subsample A to 30), and SNR matters (250 Hz costs a quarter of 1000 Hz; super-trials trade n for SNR).",
+      "tags": [
+        "mvpa",
+        "decoding",
+        "artifacts",
+        "trial-balance",
+        "tutorial"
+      ],
+      "raw_excerpt": "「MVPA 对坏电极和伪迹很敏感。用 32 个电极的空间模式区分 A、B：如果某个电极是坏电极，它自己就很容易把两个条件分开——但这不是条件真有差异…A 条件眨眼多、B 条件眨眼少，准确率虚高也只是眨眼差异导致的。」「A 有 100 个、B 只有 30 个，会影响分类权重，通常做法是从 A 中随机抽 30 个。」",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1XenF6rEXi",
+      "author_handle": "BrainScience",
+      "metrics": {
+        "play": null,
+        "like": 26,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "坏电极/伪迹会自己造假显著，试次平衡与降采样权衡讲得很具体。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "EEG/EMG 挑战赛 Track 2 实战仓库：提交流程、PROTEUS 数据工具与真实基线成绩",
+      "title_en": "A Working EEG/EMG Challenge Track 2 Repo: Submission Contract, PROTEUS Tools, Real Baseline Scores",
+      "bullets_zh": [
+        "给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 根目录含 `submission.py`＋`model.json`，训练产物含 `weights.pt`），并说明「上传 ZIP 而非仓库」。",
+        "披露真实成绩：常数参考基线热身提交 **0.33**；真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），含相同推理回放与导出。",
+        "覆盖数据工具（公开 PROTEUS）、受监督基线、可复现评测与本地校验脚本；下一步是在 JarvisLabs 上跑 EEGNet，需 Python 3.12+。"
+      ],
+      "bullets_en": [
+        "It provides a runnable submission contract (run.py warmup and validate; ZIP root with submission.py and model.json, trained runs adding weights.pt) and stresses uploading the ZIP, not the repository.",
+        "It reports real numbers: a constant reference warm-up submission scoring 0.33 and a real-data linear baseline at 0.3797 held-out public cell-averaged balanced accuracy, with identical inference replay and export.",
+        "It covers public PROTEUS data tools, supervised baselines, reproducible evaluation and local validation, with EEGNet on JarvisLabs as the next step on Python 3.12+."
+      ],
+      "url": "https://github.com/pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "published": "2026-10-20T16:10:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库（2026-10-20）是 **EEG/EMG Foundation Challenge 2026 Track 2**（跨 session／跨被试解码）的实战工程：给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 内 `submission.py`＋`model.json`）、公开 PROTEUS 数据工具、受监督基线与可复现评测，并明确「上传 ZIP 而不是仓库」这种容易踩的规则。难得的是它**公开了真实成绩**：常数参考基线热身提交 0.33，真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），且推理回放与导出可复现。对想参加该挑战赛的团队，这比读赛制文档更能快速上手；不过作者也提醒常数基线只是平台自检，不能当作有效的心理指令解码器。",
+      "brief_en": "Created 2026-10-20, this repo is a working project for the EEG/EMG Foundation Challenge 2026 Track 2: a runnable submission contract, public PROTEUS data tools, supervised baselines, reproducible evaluation, and the rule that you upload the ZIP rather than the repository. It also publishes real numbers: 0.33 for a constant warm-up and 0.3797 for a linear baseline.",
+      "tags": [
+        "challenge",
+        "neurips",
+        "track2",
+        "proteus",
+        "baseline"
+      ],
+      "raw_excerpt": "README: \"This repository starts the EEG/EMG Foundation Challenge 2026 Track 2 project with a working submission contract, public PROTEUS data tools, supervised baselines, and reproducible evaluation.\" \"you reported a successful warm-up submission with score 0.33 … A real-data linear baseline … with 0.3797 held-out public cell-averaged balanced accuracy.\" Contents: run.py, submission.py, track2/, scripts, tests, vendor, requirements-*.txt.",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "author_handle": "pattanaikay",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "公开真实基线成绩与提交流程，比读赛制文档更快进入该挑战赛。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "ADS1299 的 Linux 内核 IIO 驱动进 awesome-bci：树莓派直采脑电",
+      "title_en": "A Linux IIO Kernel Driver for the ADS1299 Joins awesome-bci: EEG Directly on a Raspberry Pi",
+      "bullets_zh": [
+        "新增 `ads1299-linux`：TI ADS1299 脑电前端（SPI）的 Linux 内核 IIO 驱动，附带**树莓派 devicetree overlay**。",
+        "已在 Raspberry Pi 4（Linux 6.18）＋ ADS1299 板实测：DRDY 中断触发的缓冲采集、每通道内部测试信号、以及**电极脱落检测（lead-off）**。",
+        "ADS1299 是低成本多通道脑电的常用前端，有内核驱动意味着可以绕过厂商闭源工具直接流式取数。"
+      ],
+      "bullets_en": [
+        "Adds ads1299-linux: a Linux kernel IIO driver for the TI ADS1299 EEG front-end over SPI, with a Raspberry Pi devicetree overlay.",
+        "Tested on a Raspberry Pi 4 (Linux 6.18) with an ADS1299 board: buffered acquisition triggered by the DRDY interrupt, the internal test signal on every channel, and lead-off detection.",
+        "The ADS1299 is a common front-end for low-cost multi-channel EEG, and a kernel driver means streaming data without vendor closed-source tooling."
+      ],
+      "url": "https://github.com/NeuroTechX/awesome-bci/pull/103",
+      "published": "2026-10-20T14:20:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "awesome-bci 合并 #103，收录 `ads1299-linux`：为 TI **ADS1299** 脑电前端（SPI 接口）写的 Linux **内核 IIO 驱动**，并附树莓派 devicetree overlay。据作者说明，它已在 Raspberry Pi 4（Linux 6.18）＋ ADS1299 板上验证：DRDY 中断触发的缓冲采集、每通道内部测试信号、以及**电极脱落检测**。这件事的意义在于打通了「自建低成本脑电」的最后一公里——ADS1299 是开源硬件最常用的多通道前端，过去取数往往依赖厂商闭源工具或 Python 轮询，现在可以直接走内核 IIO 子系统，用标准接口流式读数据。对做可穿戴/教学/自研硬件的团队，这是很实用的一块积木；注意需自行验证不同主板的 SPI 时序与接地噪声。",
+      "brief_en": "awesome-bci merged #103 adding ads1299-linux, a Linux kernel IIO driver for the TI ADS1299 EEG front-end over SPI with a Raspberry Pi devicetree overlay. It is tested on a Pi 4 (Linux 6.18) with an ADS1299 board: DRDY-interrupt buffered acquisition, per-channel internal test signal and lead-off detection — removing reliance on vendor closed-source tools for a popular low-cost EEG front-end.",
+      "tags": [
+        "ads1299",
+        "raspberry-pi",
+        "iio",
+        "open-hardware",
+        "eeg"
+      ],
+      "raw_excerpt": "PR #103: \"Adds ads1299-linux, a Linux kernel (IIO) driver for the TI ADS1299 EEG analog front-end on SPI, with a devicetree overlay for the Raspberry Pi. It is tested on a Raspberry Pi 4 (Linux 6.18) with an ADS1299 board: buffered acquisition from the DRDY interrupt, the internal test signal on every channel, and lead-off detection.\" Merged 2026-10-20T14:20:12Z.",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/awesome-bci#103",
+      "author_handle": "stephan-biomedical-engineer",
+      "metrics": {
+        "play": null,
+        "like": 1555,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "ADS1299 有了内核 IIO 驱动，自建低成本脑电可绕开闭源工具直接流式取数。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-CPP 新增 FiffExplain：把 FIFF 标签、块、单位与通道类型讲清楚",
+      "title_en": "MNE-CPP Adds FiffExplain: Naming FIFF Tags, Blocks, Units and Channel Kinds",
+      "bullets_zh": [
+        "新工具 FiffExplain 会解释 FIFF 文件里的标签、数据块、单位与通道类型；`FiffDirNode::print` 现在能写出完整内容。",
+        "对调试「读进来却看不懂」的 FIFF 文件（第三方设备导出、公开数据集）非常实用，此前往往要在 C++ 里逐字段打印。",
+        "同日另有 24 次提交（CHANGELOG、网站贡献者统计修正、证据重钉），并发布 dev_build（2026-10-20T20:01Z）。"
+      ],
+      "bullets_en": [
+        "The new FiffExplain tool names the FIFF tags, data blocks, units and channel kinds in a file, and FiffDirNode::print now writes the whole structure.",
+        "That is practical for debugging FIFF files that read but look wrong (third-party exports, public datasets), which previously meant printing fields one by one in C++.",
+        "The same day brought 24 commits (changelog entries, contributor-count fix, evidence re-pinning) and a dev_build release at 2026-10-20T20:01Z."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/319ab0dec806",
+      "published": "2026-10-20T19:48:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 20 日推进 24 次提交，最有实用价值的是新工具 **FiffExplain**：它会解释 FIFF 文件里的**标签、数据块、单位与通道类型**，同时 `FiffDirNode::print` 能输出完整结构。FIFF 是 MNE 生态的通用数据格式，第三方设备导出或公开数据集里常出现「能读进来但内容可疑」的文件——以前排查要在 C++ 里逐字段打印，现在可以直接让人读懂文件结构。配合此前几天的 MNE-Python 数值对齐测试，可以看出该项目在系统性地解决「用户能否信任 C++ 侧读到的数据」。做实时处理或需要审计外部 FIFF 文件的团队值得试用；同日还发布了 dev_build。",
+      "brief_en": "MNE-CPP made 24 commits on Oct 20, the most practical being the new FiffExplain tool that names FIFF tags, data blocks, units and channel kinds, with FiffDirNode::print now writing the whole structure. FIFF is the common MNE format, and third-party or public-dataset files often read but look wrong; unpacking them previously meant printing fields one by one in C++. A dev_build also shipped.",
+      "tags": [
+        "mne-cpp",
+        "fiff",
+        "debugging",
+        "tooling",
+        "realtime"
+      ],
+      "raw_excerpt": "Commit 319ab0dec806, 2026-10-20T19:48Z: \"FEAT: FiffExplain names FIFF tags, blocks, units and channel kinds; FiffDirNode::print writes whole [structure]\". Same-day commits include \"FIX: website contributor counts include merge commits, as GitHub does\" (19:55Z) and \"DOC: CHANGELOG entries for epoch rejection…\" (18:44Z); release dev_build (2026-10-20T20:01:44Z).",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@319ab0dec806",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "能把可疑 FIFF 文件的标签/单位/通道类型讲清楚，排查外部数据省大量时间。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 的 statcond 改为双精度 ANOVA 输出，并删掉 20 个「预期失败」测试",
+      "title_en": "EEGPrep's statcond Returns Double-Precision ANOVA and Drops 20 Expected-Failure Tests",
+      "bullets_zh": [
+        "#513 让 `statcond` 的 ANOVA F 与 p 以 float64 返回，与 EEGLAB 修复（#977）保持一致，并移除 20 个严格的「ANOVA 预期失败」测试。",
+        "这是对 10-19 那条 EEGLAB 单精度累积 bug 的**跨实现跟进**：MATLAB 侧改为双精度累积，Python 侧同步，否则两套工具在同一数据上会给出不同的显著性。",
+        "同样由 AI 编码 agent 提交（PR 正文含 Cursor 标记），说明这类「逐函数对齐」工作正在被自动化加速。"
+      ],
+      "bullets_en": [
+        "#513 makes statcond return ANOVA F and p as float64, matching EEGLAB after #977, and removes 20 strict 'ANOVA expected failure' tests.",
+        "It is the cross-implementation follow-up to the Oct 19 single-precision ANOVA bug: MATLAB side accumulates in double, so the Python side must match or the two toolchains disagree on significance.",
+        "Also submitted by an AI coding agent (Cursor markers in the PR body), showing how automated this function-by-function parity work is becoming."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/513",
+      "published": "2026-10-20T20:07:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #513：`statcond` 的 ANOVA **F 与 p 改为 float64 返回**，与昨天 EEGLAB 的修复（#977，把平方和累积从单精度改为双精度）保持一致，同时删掉 20 个严格的「ANOVA 预期失败」测试——这些测试原本就是用来标记「Python 侧与 MATLAB 侧结果不一致」的。这是典型的跨实现跟进：如果只修 MATLAB 侧，两套工具在同一份数据上会得出不同的显著性结论，而研究者往往两边混用。对正在从 EEGLAB 迁移到 Python 的实验室，这类同步修复意味着切换后统计结果不会突变；建议在升级后用同一份数据两端各跑一次 ANOVA 做核对。",
+      "brief_en": "EEGPrep merged #513 so statcond returns ANOVA F and p as float64, matching EEGLAB's Oct 19 fix (#977, accumulating sums of squares in double) and removing 20 strict 'ANOVA expected failure' tests that marked Python-versus-MATLAB disagreements. Labs mixing both toolchains would otherwise get different significance from the same data; run both on one dataset after upgrading.",
+      "tags": [
+        "eegprep",
+        "eeglab",
+        "anova",
+        "parity",
+        "statistics"
+      ],
+      "raw_excerpt": "PR #513: \"Return statcond ANOVA F and p as float64, matching EEGLAB after #977, and drop the 20 strict ANOVA expected failures. EEGLAB d0963be9 accumulates the sums of squares in double…\" Merged 2026-10-20T20:07:45Z.",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#513",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "Python 侧同步双精度 ANOVA，避免两套工具对同一数据给出不同显著性。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "bci_tools：中文团队维护的 BCI 工具箱，用统一启动台管理采集/解码/可视化进程",
+      "title_en": "bci_tools: A Chinese BCI Toolbox with a Unified Launcher for Acquisition and Decoding Processes",
+      "bullets_zh": [
+        "中文文档的团队工具箱：按分类浏览、搜索并打开各工具，每个工具放在 `tools/<名称>/` 下各自维护说明、依赖与测试。",
+        "现有工具「Integrated Term（集成终端控制台）」可集中启动、停止与分组管理采集、解码、设备桥接及可视化进程，并查看终端输出。",
+        "启动台基于 Python 标准库＋Tk，用 uv 管理环境（Python 3.13.14）；日志落在 `.local/logs/`，关闭启动台后已开进程继续运行。"
+      ],
+      "bullets_en": [
+        "A team toolbox with Chinese docs: browse, search and open tools by category, each kept under tools/<name>/ with its own README, dependencies and tests.",
+        "Its current tool, Integrated Term, centrally starts, stops and groups acquisition, decoding, device-bridge and visualisation processes and shows their terminal output.",
+        "The launcher uses only the Python standard library plus Tk, manages environments with uv (Python 3.13.14), keeps logs in .local/logs/, and leaves started tools running after the launcher closes."
+      ],
+      "url": "https://github.com/sillybun/bci_tools",
+      "published": "2026-10-20T12:49:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 bci_tools（2026-10-20）是一个中文团队维护的 BCI 小工具集合，解决的是实验现场最琐碎的问题：采集、解码、设备桥接、可视化往往要开四五个终端，谁挂了、谁在跑都不清楚。它提供统一的 Tk 启动台，按分类/标签搜索并打开工具，每个工具在 `tools/<名称>/` 下自带说明、依赖与测试；当前已收录「Integrated Term（集成终端控制台）」，可集中启动/停止/分组管理这些进程并查看输出。工程细节也考虑到了：用 uv 管理环境、日志写入 `.local/logs/`、关闭启动台后已启动的进程继续运行。对国内实验室的小团队协作，这类「现场工具台」比再造一个算法库更缺、更实用。",
+      "brief_en": "EEGPrep merged #513 so statcond returns ANOVA F and p as float64, matching EEGLAB's Oct 19 fix (#977, accumulating sums of squares in double) and removing 20 strict 'ANOVA expected failure' tests that marked Python-versus-MATLAB disagreements. Labs mixing both toolchains would otherwise get different significance from the same data; run both on one dataset after upgrading.",
+      "tags": [
+        "tooling",
+        "launcher",
+        "process-management",
+        "chinese",
+        "experiment"
+      ],
+      "raw_excerpt": "「团队共同维护的 BCI 小工具集合，用于实验搭建、进程管理、数据检查和日常调试。在统一启动台中按分类浏览、搜索并打开工具。每个工具放在 `tools/<工具名>/`，各自维护说明、依赖和测试。」「Integrated Term（集成终端控制台）｜集中启动、停止和分组管理采集、解码、设备桥接及可视化进程，查看终端输出」",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sillybun/bci_tools",
+      "author_handle": "sillybun",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "把采集/解码/设备桥接进程统一到一个启动台管理，实验现场少切终端。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "pyRiemann 修 RandomOverSampler 在 HPD 矩阵上的采样",
+      "title_en": "pyRiemann Fixes RandomOverSampler When Sampling HPD Matrices",
+      "bullets_zh": [
+        "#508 修 `RandomOverSampler` 在对 **HPD（Hermitian 正定）** 矩阵过采样时的实现问题；此前该类在 SPD 与 HPD 混合或复数场景下会出错。",
+        "过采样是黎曼分类里处理类别不平衡的常用手段，采样错会直接改变类别先验，进而影响阈值与跨被试结果。",
+        "与前一天 #463（`sample_gaussian` 支持数组 sigma 生成 HPD）形成同一主题的连续修复：pyRiemann 正在补齐 HPD/复数信号的完整支持。"
+      ],
+      "bullets_en": [
+        "#508 corrects RandomOverSampler when oversampling HPD (Hermitian positive-definite) matrices, which previously misbehaved in mixed SPD/HPD or complex-valued settings.",
+        "Oversampling is a standard way to handle class imbalance in Riemannian classification, and a wrong sampler shifts the class prior, affecting thresholds and cross-subject results.",
+        "Together with the previous day's #463 (sample_gaussian for HPD with array sigma), it shows pyRiemann filling in complete HPD/complex support."
+      ],
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/508",
+      "published": "2026-10-20T11:11:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "pyRiemann 合并 #508，修 `RandomOverSampler` 在 **HPD（Hermitian 正定）矩阵**上的采样问题。黎曼几何解码里，类别不平衡常用过采样处理，而 HPD 对应的是复数/共轭对称的协方差场景（如 Hilbert 变换后的信号、多通道相位特征）；采样实现不对会让合成样本偏离真实流形分布，直接扭曲类别先验。这与前一天 #463（让 `sample_gaussian` 支持数组 sigma 生成 HPD）是同一主题的连续推进：该库正在把 SPD 时代的实现补齐到 HPD/复数场景。用 pyRiemann 做过采样或多通道相位特征的团队，建议升级后核对增强样本的共轭对称性与类别比例。",
+      "brief_en": "pyRiemann merged #508 fixing RandomOverSampler on HPD (Hermitian positive-definite) matrices. Oversampling is common for class imbalance in Riemannian decoding, and HPD covers complex, conjugate-symmetric covariance cases such as Hilbert-transformed signals; a wrong sampler pushes synthetic samples off the manifold and skews the class prior. It follows #463's HPD support in sample_gaussian.",
+      "tags": [
+        "pyriemann",
+        "oversampling",
+        "hpd",
+        "class-imbalance",
+        "manifold"
+      ],
+      "raw_excerpt": "PR #508 \"Correct RandomOverSampler when sampling HPD matrices\", merged 2026-10-20T11:11:45Z. Preceding day: \"ENH: generalize sample_gaussian to generate HPD matrices for array sigma (#463)\".",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pyRiemann/pyRiemann#508",
+      "author_handle": "pyRiemann",
+      "metrics": {
+        "play": null,
+        "like": 782,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "HPD 过采样错会让合成样本偏离流形、扭曲类别先验，影响阈值与跨被试结果。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 108,
+    "llm_rows": 24,
+    "kept": 8,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 5
+  }
+}

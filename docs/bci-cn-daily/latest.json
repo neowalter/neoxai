@@ -1,385 +1,387 @@
 {
-  "date": "2026-10-20",
-  "generated_at": "2026-10-19T21:33:04.508Z",
+  "date": "2026-10-21",
+  "generated_at": "2026-10-20T21:32:29.139Z",
   "item_count": 8,
   "types": {
-    "Benchmark": 2,
-    "Project": 6
+    "News": 1,
+    "Tutorial": 1,
+    "Benchmark": 1,
+    "Project": 5
   },
   "highlights": [
     {
-      "title_zh": "EEG-benchmark：四个标准实验范式的 PsychoPy 实现（含触发器与显示说明）",
-      "title_en": "EEG-benchmark: PsychoPy Implementations of Four Standard EEG Paradigms",
-      "url": "https://github.com/yirange2/EEG-benchmark",
-      "brief": "新建仓库 EEG-benchmark（2026-10-19）把四个标准 EEG 实验范式做成可直接运行的 PsychoPy 工程：睁眼/闭眼静息（EOEC）、四目标 SSVEP、以及来自 ERP CORE 的 N170 面孔知觉与 Flanker 任务，每个目录各自附**实验设计、触发器映射、数据与显示器说明**，并明确以固定 60 Hz 刷新率为前提做标定。它的价值在于「共享的不只是代码」——范式复现最容易出错的恰恰是触发码时序与显示参数，而这类信息通常在论文里被省略。对需要搭采集流程的实验室、或想把公开数据（ERP CORE、SSVEP 基准）在自己的设备上重跑一遍的团队，这是省时且降低踩坑率的起点。"
+      "title_zh": "EEG/EMG 挑战赛 Track 2 实战仓库：提交流程、PROTEUS 数据工具与真实基线成绩",
+      "title_en": "A Working EEG/EMG Challenge Track 2 Repo: Submission Contract, PROTEUS Tools, Real Baseline Scores",
+      "url": "https://github.com/pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "brief": "新建仓库（2026-10-20）是 **EEG/EMG Foundation Challenge 2026 Track 2**（跨 session／跨被试解码）的实战工程：给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 内 `submission.py`＋`model.json`）、公开 PROTEUS 数据工具、受监督基线与可复现评测，并明确「上传 ZIP 而不是仓库」这种容易踩的规则。难得的是它**公开了真实成绩**：常数参考基线热身提交 0.33，真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），且推理回放与导出可复现。对想参加该挑战赛的团队，这比读赛制文档更能快速上手；不过作者也提醒常数基线只是平台自检，不能当作有效的心理指令解码器。"
     },
     {
-      "title_zh": "eeg-motor-intent-decoder：30 通道脑电的 brain-switch，含漂移与混淆控制、实时 LSL 回放",
-      "title_en": "eeg-motor-intent-decoder: A 30-Channel Brain-Switch with Drift and Confound Controls plus LSL Replay",
-      "url": "https://github.com/ORD1STAR/eeg-motor-intent-decoder",
-      "brief": "新建仓库 eeg-motor-intent-decoder（2026-10-19）做的是「brain-switch」式运动意图解码：从 30 通道 EEG 判别 Idle／Push／Walk 三类，方法上同时给出 Riemann/CSP 与 EEGNet 两类基线，并按「无泄漏」协议评估，额外加入 **drift-null 与混淆控制**。最后两项很值得注意——EEG 闭环实验里，信号漂移与标签/流程混淆是最容易把准确率抬高的因素，作者主动把它们作为对照，比单纯报一个高指标可信得多。仓库还提供实时 **LSL 回放**路径，便于在没有被试时复跑在线流程。对做康复/助行类 BCI 原型的团队，这是一份结构完整、可直接对照的工程范本；仍属硕士项目级，临床结论需另做验证。"
+      "title_zh": "9 部门联合发文把脑机接口写进「科技兴商」，工信部点名智能终端攻关",
+      "title_en": "Nine Ministries Put BCI into the 'Tech-Powered Commerce' Document, MIIT Names It a Terminal Priority",
+      "url": "https://www.bilibili.com/read/cv53514611",
+      "brief": "B站科技号「惠科技」10 月 20 日 08:55 报道：10 月 19 日商务部、工信部等 **9 部门联合发布《关于加快推进科技兴商的意见》**，共 18 条举措，脑机接口被明确写入，国新办当天举行专题发布会。发布会上工信部科技司司长魏巍表示，将联合商务部等结合「以旧换新」渠道加快 AI 电脑与手机普及，并推动**脑机接口、具身智能**等智能终端攻关迭代；文件还提出在消费品领域培育技术转移转化机构，加速前沿成果向市场转化。对产业侧，这类文件的信号是「从研发导向转向市场导向」——脑机接口被并入智能终端与消费品转化的政策通道，后续值得跟踪配套资金、试点与标准落地。"
     },
     {
-      "title_zh": "braindecode 修幅度归因中梯度被清零，并为 ZUNA 加上 Gaudi 融合 RoPE",
-      "title_en": "braindecode Preserves Gradients in Amplitude Attribution and Adds Gaudi Fused RoPE to ZUNA",
-      "url": "https://github.com/braindecode/braindecode/pull/1469",
-      "brief": "braindecode 在 10 月 19 日推进 5 次提交，最需要留意的是 **#1469：修掉幅度归因（amplitude attribution）过程中模型梯度被破坏**的问题。归因/显著图若在梯度被清零或改写的情况下计算，图会失真甚至方向相反——而这类「解释」常被直接用于论文配图与神经生理学解读，错误很隐蔽。其余提交偏性能与可用性：ZUNA 的 rotary embedding 改走 Gaudi 融合 RoPE 内核（#1461）、新增 `registers` 选项（#1468）、AugmentedDataLoader 对改变形状的变换给出清晰 ValueError。对用归因方法解释 EEG 模型的团队，建议升级后重跑既有显著图并与旧结果比对。"
+      "title_zh": "解码前必须避开的坑：坏电极、试次不平衡与降采样权衡",
+      "title_en": "MVPA Pitfalls to Avoid: Bad Electrodes, Unbalanced Trials and Downsampling Trade-offs",
+      "url": "https://www.bilibili.com/video/BV1XenF6rEXi/",
+      "brief": "B站「BrainScience」发布的解码方法讲解（09:24），把 MVPA 里最容易踩的三个坑讲得很具体：①**坏电极与伪迹会自己制造「显著」**——用 32 个电极区分两条件时，一个坏电极就足以把 A/B 分开，但这不反映条件差异；若 A 条件眨眼多、B 少，准确率虚高也只是眨眼差异；②**条件间试次数要平衡**（A 100 vs B 30 会扭曲分类权重，常规做法是从 A 随机抽 30，且只在被试内平衡）；③**信噪比权衡**——降采样到 250 Hz 计算量只有 1000 Hz 的四分之一而结果差异不大，super-trial（每 4 个平均）提高信噪比但减少样本量。对刚上手的解码分析者，这三条比任何模型选择都更早决定结果可信度。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-20.md",
+  "github_path": "docs/bci-cn-daily/2026-10-21.md",
   "items": [
     {
-      "type": "Benchmark",
+      "type": "News",
       "level": "Intermediate",
-      "title_zh": "EEG-benchmark：四个标准实验范式的 PsychoPy 实现（含触发器与显示说明）",
-      "title_en": "EEG-benchmark: PsychoPy Implementations of Four Standard EEG Paradigms",
+      "title_zh": "9 部门联合发文把脑机接口写进「科技兴商」，工信部点名智能终端攻关",
+      "title_en": "Nine Ministries Put BCI into the 'Tech-Powered Commerce' Document, MIIT Names It a Terminal Priority",
       "bullets_zh": [
-        "四个可直接运行的心理物理任务：`01-EOEC`（睁眼/闭眼静息）、`02-SSVEP`（四目标 SSVEP）、`03-Face`（ERP CORE N170 面孔知觉）、`04-Flanker`（ERP CORE Flanker）。",
-        "每个实验目录各自带设计、**触发器（trigger）**、数据与显示器说明，并以固定 60 Hz 刷新率为前提标定——这正是实验复现最常被忽略的两个环节。",
-        "环境约定 Python 3.11；仓库约 13 MB，含 requirements.txt，属「克隆即可用于采集」的工程化范式集合。"
+        "10 月 19 日，商务部、工业和信息化部等 9 部门联合发布《关于加快推进科技兴商的意见》，共 18 条举措，脑机接口被明确写入；国新办当天举行专题发布会。",
+        "工信部科技司司长魏巍：联合商务部等，结合「以旧换新」等渠道加快 AI 电脑、手机普及，推动**脑机接口、具身智能**等智能终端攻关迭代。",
+        "文件还提出聚焦消费品领域培育技术转移转化机构，加速脑机接口、具身智能等前沿成果向市场转化——政策口径从「做得出来」转向「卖得出去」。"
       ],
       "bullets_en": [
-        "Four runnable psychophysics tasks: 01-EOEC (eyes-open/closed resting), 02-SSVEP (four-target SSVEP), 03-Face (ERP CORE N170 face perception) and 04-Flanker (ERP CORE Flanker).",
-        "Each experiment folder carries its own design, trigger, data and display documentation, calibrated for a fixed 60 Hz refresh rate — the two details most often missing from shared paradigms.",
-        "Python 3.11, about 13 MB with requirements.txt: a paradigm collection you can clone and use for acquisition."
+        "On Oct 19 nine ministries including Commerce and Industry/IT jointly issued the 'Opinions on Accelerating Tech-Powered Commerce', 18 measures in total, with brain-computer interfaces explicitly included; the State Council Information Office held a briefing the same day.",
+        "Wei Wei, head of MIIT's science and technology department, said his ministry with Commerce will use trade-in channels to speed AI PC and phone adoption and push 'smart terminals' including BCI and embodied AI.",
+        "The document also calls for technology-transfer institutions in consumer goods to move frontier results like BCI to market — policy language shifting from 'can build it' to 'can sell it'."
       ],
-      "url": "https://github.com/yirange2/EEG-benchmark",
-      "published": "2026-10-19T15:54:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 EEG-benchmark（2026-10-19）把四个标准 EEG 实验范式做成可直接运行的 PsychoPy 工程：睁眼/闭眼静息（EOEC）、四目标 SSVEP、以及来自 ERP CORE 的 N170 面孔知觉与 Flanker 任务，每个目录各自附**实验设计、触发器映射、数据与显示器说明**，并明确以固定 60 Hz 刷新率为前提做标定。它的价值在于「共享的不只是代码」——范式复现最容易出错的恰恰是触发码时序与显示参数，而这类信息通常在论文里被省略。对需要搭采集流程的实验室、或想把公开数据（ERP CORE、SSVEP 基准）在自己的设备上重跑一遍的团队，这是省时且降低踩坑率的起点。",
-      "brief_en": "Created 2026-10-19, EEG-benchmark turns four standard paradigms into runnable PsychoPy projects: eyes-open/closed resting, a four-target SSVEP task, and the ERP CORE N170 face and Flanker tasks. Each folder documents design, trigger mapping, data and display settings, calibrated for a fixed 60 Hz refresh rate — the details usually missing from papers, and the ones that break replication.",
+      "url": "https://www.bilibili.com/read/cv53514611",
+      "published": "2026-10-20T00:55:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站科技号「惠科技」10 月 20 日 08:55 报道：10 月 19 日商务部、工信部等 **9 部门联合发布《关于加快推进科技兴商的意见》**，共 18 条举措，脑机接口被明确写入，国新办当天举行专题发布会。发布会上工信部科技司司长魏巍表示，将联合商务部等结合「以旧换新」渠道加快 AI 电脑与手机普及，并推动**脑机接口、具身智能**等智能终端攻关迭代；文件还提出在消费品领域培育技术转移转化机构，加速前沿成果向市场转化。对产业侧，这类文件的信号是「从研发导向转向市场导向」——脑机接口被并入智能终端与消费品转化的政策通道，后续值得跟踪配套资金、试点与标准落地。",
+      "brief_en": "Bilibili tech account reported on Oct 20 that nine ministries issued the 'Opinions on Accelerating Tech-Powered Commerce' on Oct 19, with 18 measures and BCI explicitly included. MIIT's Wei Wei said trade-in channels will push smart terminals including BCI and embodied AI, and the document promotes technology transfer in consumer goods.",
       "tags": [
-        "psychopy",
-        "paradigm",
-        "ssvep",
-        "erp-core",
-        "reproducibility"
+        "policy",
+        "miit",
+        "bci-industry",
+        "china",
+        "commercialisation"
       ],
-      "raw_excerpt": "README: \"Four windowed PsychoPy experiments configured for a fixed 60 Hz display: `01-EOEC`: eyes-open/eyes-closed resting-state EEG; `02-SSVEP`: four-target SSVEP task; `03-Face`: ERP CORE N170 face-perception task; `04-Flanker`: ERP CORE Flanker task. Each experiment folder contains its own design, trigger, data, and display documentation.\" Contents: 01-EOEC, 02-SSVEP, 03-Face, 04-Flanker, requirements.txt.",
-      "fetched_at": "2026-10-19T23:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "yirange2/EEG-benchmark",
-      "author_handle": "yirange2",
+      "raw_excerpt": "「10 月 19 日，商务部、工业和信息化部等 9 部门联合发布《关于加快推进科技兴商的意见》，国务院新闻办当天举行专题发布会。这份以『科技兴商』为主题的系统性文件，共提出 18 条具体举措，脑机接口被明确写入其中。」「工信部科技司司长魏巍…推动脑机接口、具身智能等智能终端攻关迭代…加速脑机接口、具身智能等前沿科技成果向市场转化。」",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53514611",
+      "author_handle": "惠科技",
       "metrics": {
         "play": null,
-        "like": 1,
+        "like": null,
+        "collect": null,
+        "comment": 0
+      },
+      "quality_score": 8,
+      "why_valuable": "国家级文件把脑机接口并入智能终端与消费品转化通道，政策口径转向市场。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "解码前必须避开的坑：坏电极、试次不平衡与降采样权衡",
+      "title_en": "MVPA Pitfalls to Avoid: Bad Electrodes, Unbalanced Trials and Downsampling Trade-offs",
+      "bullets_zh": [
+        "**坏电极会自己「分类成功」**：用 32 个电极区分 A/B 时，一个坏电极就足以把两类分开，但差异来自电极而非条件；伪迹同理（A 条件眨眼多、B 少，准确率虚高只是眨眼差异）。",
+        "**条件间试次必须平衡**：A 有 100 个、B 只有 30 个会影响分类权重，常规做法是从 A 随机抽 30 个；注意这是被试内平衡，不同被试之间可以不等。",
+        "**信噪比权衡**：降采样（1000 Hz 是 250 Hz 的 4 倍计算量，而 200 Hz 与原始差异不大）与 super-trial（每 4 个试次平均换来更高信噪比但样本量减少）。"
+      ],
+      "bullets_en": [
+        "Bad electrodes can 'classify' on their own: with 32 electrodes distinguishing A from B, one bad electrode alone can separate the classes even though the difference is artefactual; same for artefacts when one condition has more blinks.",
+        "Trial counts must be balanced across conditions: A with 100 trials versus B with 30 skews classifier weights, so the usual fix is randomly subsampling A to 30; the balance is within-subject, not across subjects.",
+        "Signal-to-noise trade-offs: downsampling (1000 Hz costs 4x the compute of 250 Hz while 200 Hz differs little from raw) and super-trials (averaging every four trials raises SNR but shrinks sample size)."
+      ],
+      "url": "https://www.bilibili.com/video/BV1XenF6rEXi/",
+      "published": "2026-10-20T03:30:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「BrainScience」发布的解码方法讲解（09:24），把 MVPA 里最容易踩的三个坑讲得很具体：①**坏电极与伪迹会自己制造「显著」**——用 32 个电极区分两条件时，一个坏电极就足以把 A/B 分开，但这不反映条件差异；若 A 条件眨眼多、B 少，准确率虚高也只是眨眼差异；②**条件间试次数要平衡**（A 100 vs B 30 会扭曲分类权重，常规做法是从 A 随机抽 30，且只在被试内平衡）；③**信噪比权衡**——降采样到 250 Hz 计算量只有 1000 Hz 的四分之一而结果差异不大，super-trial（每 4 个平均）提高信噪比但减少样本量。对刚上手的解码分析者，这三条比任何模型选择都更早决定结果可信度。",
+      "brief_en": "A Chinese decoding tutorial spells out three MVPA pitfalls: bad electrodes or artefacts can manufacture significance (one bad electrode suffices to 'separate' two conditions, and unequal blink rates inflate accuracy), trial counts must be balanced within subject (A 100 vs B 30 skews weights; subsample A to 30), and SNR matters (250 Hz costs a quarter of 1000 Hz; super-trials trade n for SNR).",
+      "tags": [
+        "mvpa",
+        "decoding",
+        "artifacts",
+        "trial-balance",
+        "tutorial"
+      ],
+      "raw_excerpt": "「MVPA 对坏电极和伪迹很敏感。用 32 个电极的空间模式区分 A、B：如果某个电极是坏电极，它自己就很容易把两个条件分开——但这不是条件真有差异…A 条件眨眼多、B 条件眨眼少，准确率虚高也只是眨眼差异导致的。」「A 有 100 个、B 只有 30 个，会影响分类权重，通常做法是从 A 中随机抽 30 个。」",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1XenF6rEXi",
+      "author_handle": "BrainScience",
+      "metrics": {
+        "play": null,
+        "like": 26,
         "collect": null,
         "comment": null
       },
-      "quality_score": 9,
-      "why_valuable": "四个标准范式＋触发器与显示说明齐全，直接省掉实验复现最容易踩的两个坑。"
+      "quality_score": 8,
+      "why_valuable": "坏电极/伪迹会自己造假显著，试次平衡与降采样权衡讲得很具体。"
     },
     {
-      "type": "Project",
+      "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "eeg-motor-intent-decoder：30 通道脑电的 brain-switch，含漂移与混淆控制、实时 LSL 回放",
-      "title_en": "eeg-motor-intent-decoder: A 30-Channel Brain-Switch with Drift and Confound Controls plus LSL Replay",
+      "title_zh": "EEG/EMG 挑战赛 Track 2 实战仓库：提交流程、PROTEUS 数据工具与真实基线成绩",
+      "title_en": "A Working EEG/EMG Challenge Track 2 Repo: Submission Contract, PROTEUS Tools, Real Baseline Scores",
       "bullets_zh": [
-        "任务为 Idle／Push／Walk 三类运动意图，30 通道 EEG；方法覆盖 Riemann/CSP 与 EEGNet 两类基线。",
-        "明确以「无泄漏」方式评估，并加入 **drift-null 与混淆控制**——这两项在真实闭环里最容易造成指标虚高。",
-        "仓库结构完整（data、docs、experiments、models、results、scripts），并提供**实时 LSL 回放**通道，属硕士毕业项目级但工程完成度高。"
+        "给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 根目录含 `submission.py`＋`model.json`，训练产物含 `weights.pt`），并说明「上传 ZIP 而非仓库」。",
+        "披露真实成绩：常数参考基线热身提交 **0.33**；真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），含相同推理回放与导出。",
+        "覆盖数据工具（公开 PROTEUS）、受监督基线、可复现评测与本地校验脚本；下一步是在 JarvisLabs 上跑 EEGNet，需 Python 3.12+。"
       ],
       "bullets_en": [
-        "Idle/Push/Walk motor-intent classes from 30-channel EEG, benchmarked with both Riemann/CSP and EEGNet baselines.",
-        "Evaluated without leakage and with drift-null plus confound controls — the two things that most often inflate metrics in real closed loops.",
-        "A complete layout (data, docs, experiments, models, results, scripts) with a real-time LSL replay path; a master's final project with unusually solid engineering."
+        "It provides a runnable submission contract (run.py warmup and validate; ZIP root with submission.py and model.json, trained runs adding weights.pt) and stresses uploading the ZIP, not the repository.",
+        "It reports real numbers: a constant reference warm-up submission scoring 0.33 and a real-data linear baseline at 0.3797 held-out public cell-averaged balanced accuracy, with identical inference replay and export.",
+        "It covers public PROTEUS data tools, supervised baselines, reproducible evaluation and local validation, with EEGNet on JarvisLabs as the next step on Python 3.12+."
       ],
-      "url": "https://github.com/ORD1STAR/eeg-motor-intent-decoder",
-      "published": "2026-10-19T19:36:00Z",
+      "url": "https://github.com/pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "published": "2026-10-20T16:10:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 eeg-motor-intent-decoder（2026-10-19）做的是「brain-switch」式运动意图解码：从 30 通道 EEG 判别 Idle／Push／Walk 三类，方法上同时给出 Riemann/CSP 与 EEGNet 两类基线，并按「无泄漏」协议评估，额外加入 **drift-null 与混淆控制**。最后两项很值得注意——EEG 闭环实验里，信号漂移与标签/流程混淆是最容易把准确率抬高的因素，作者主动把它们作为对照，比单纯报一个高指标可信得多。仓库还提供实时 **LSL 回放**路径，便于在没有被试时复跑在线流程。对做康复/助行类 BCI 原型的团队，这是一份结构完整、可直接对照的工程范本；仍属硕士项目级，临床结论需另做验证。",
-      "brief_en": "Created 2026-10-19, eeg-motor-intent-decoder targets brain-switch style intent decoding: Idle/Push/Walk from 30-channel EEG, benchmarked with Riemann/CSP and EEGNet, evaluated without leakage and with drift-null plus confound controls — the factors most likely to inflate closed-loop accuracy — and it ships a real-time LSL replay path for offline validation of online pipelines.",
+      "brief": "新建仓库（2026-10-20）是 **EEG/EMG Foundation Challenge 2026 Track 2**（跨 session／跨被试解码）的实战工程：给出可跑的提交契约（`run.py warmup`／`validate`、ZIP 内 `submission.py`＋`model.json`）、公开 PROTEUS 数据工具、受监督基线与可复现评测，并明确「上传 ZIP 而不是仓库」这种容易踩的规则。难得的是它**公开了真实成绩**：常数参考基线热身提交 0.33，真实数据线性基线 **0.3797**（held-out 公开数据 cell-averaged balanced accuracy），且推理回放与导出可复现。对想参加该挑战赛的团队，这比读赛制文档更能快速上手；不过作者也提醒常数基线只是平台自检，不能当作有效的心理指令解码器。",
+      "brief_en": "Created 2026-10-20, this repo is a working project for the EEG/EMG Foundation Challenge 2026 Track 2: a runnable submission contract, public PROTEUS data tools, supervised baselines, reproducible evaluation, and the rule that you upload the ZIP rather than the repository. It also publishes real numbers: 0.33 for a constant warm-up and 0.3797 for a linear baseline.",
       "tags": [
-        "brain-switch",
-        "motor-intent",
-        "riemannian",
-        "eegnet",
-        "lsl"
+        "challenge",
+        "neurips",
+        "track2",
+        "proteus",
+        "baseline"
       ],
-      "raw_excerpt": "Description: \"Brain-switch BCI from 30-ch EEG: Riemann/CSP + EEGNet, drift-null & confound controls, real-time LSL replay. Master's PFE\". README banner: \"Idle / Push / Walk from EEG, evaluated without leakage\". Contents: data, docs, experiments, models, results, scripts, pyproject.toml, requirements.txt.",
-      "fetched_at": "2026-10-19T23:05:00Z",
+      "raw_excerpt": "README: \"This repository starts the EEG/EMG Foundation Challenge 2026 Track 2 project with a working submission contract, public PROTEUS data tools, supervised baselines, and reproducible evaluation.\" \"you reported a successful warm-up submission with score 0.33 … A real-data linear baseline … with 0.3797 held-out public cell-averaged balanced accuracy.\" Contents: run.py, submission.py, track2/, scripts, tests, vendor, requirements-*.txt.",
+      "fetched_at": "2026-10-20T23:10:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "ORD1STAR/eeg-motor-intent-decoder",
-      "author_handle": "ORD1STAR",
+      "upstream_id": "pattanaikay/eeg-emg-challenge-2026-track2-bcidecoding",
+      "author_handle": "pattanaikay",
       "metrics": {
         "play": null,
         "like": 0,
         "collect": null,
         "comment": null
       },
+      "quality_score": 9,
+      "why_valuable": "公开真实基线成绩与提交流程，比读赛制文档更快进入该挑战赛。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "ADS1299 的 Linux 内核 IIO 驱动进 awesome-bci：树莓派直采脑电",
+      "title_en": "A Linux IIO Kernel Driver for the ADS1299 Joins awesome-bci: EEG Directly on a Raspberry Pi",
+      "bullets_zh": [
+        "新增 `ads1299-linux`：TI ADS1299 脑电前端（SPI）的 Linux 内核 IIO 驱动，附带**树莓派 devicetree overlay**。",
+        "已在 Raspberry Pi 4（Linux 6.18）＋ ADS1299 板实测：DRDY 中断触发的缓冲采集、每通道内部测试信号、以及**电极脱落检测（lead-off）**。",
+        "ADS1299 是低成本多通道脑电的常用前端，有内核驱动意味着可以绕过厂商闭源工具直接流式取数。"
+      ],
+      "bullets_en": [
+        "Adds ads1299-linux: a Linux kernel IIO driver for the TI ADS1299 EEG front-end over SPI, with a Raspberry Pi devicetree overlay.",
+        "Tested on a Raspberry Pi 4 (Linux 6.18) with an ADS1299 board: buffered acquisition triggered by the DRDY interrupt, the internal test signal on every channel, and lead-off detection.",
+        "The ADS1299 is a common front-end for low-cost multi-channel EEG, and a kernel driver means streaming data without vendor closed-source tooling."
+      ],
+      "url": "https://github.com/NeuroTechX/awesome-bci/pull/103",
+      "published": "2026-10-20T14:20:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "awesome-bci 合并 #103，收录 `ads1299-linux`：为 TI **ADS1299** 脑电前端（SPI 接口）写的 Linux **内核 IIO 驱动**，并附树莓派 devicetree overlay。据作者说明，它已在 Raspberry Pi 4（Linux 6.18）＋ ADS1299 板上验证：DRDY 中断触发的缓冲采集、每通道内部测试信号、以及**电极脱落检测**。这件事的意义在于打通了「自建低成本脑电」的最后一公里——ADS1299 是开源硬件最常用的多通道前端，过去取数往往依赖厂商闭源工具或 Python 轮询，现在可以直接走内核 IIO 子系统，用标准接口流式读数据。对做可穿戴/教学/自研硬件的团队，这是很实用的一块积木；注意需自行验证不同主板的 SPI 时序与接地噪声。",
+      "brief_en": "awesome-bci merged #103 adding ads1299-linux, a Linux kernel IIO driver for the TI ADS1299 EEG front-end over SPI with a Raspberry Pi devicetree overlay. It is tested on a Pi 4 (Linux 6.18) with an ADS1299 board: DRDY-interrupt buffered acquisition, per-channel internal test signal and lead-off detection — removing reliance on vendor closed-source tools for a popular low-cost EEG front-end.",
+      "tags": [
+        "ads1299",
+        "raspberry-pi",
+        "iio",
+        "open-hardware",
+        "eeg"
+      ],
+      "raw_excerpt": "PR #103: \"Adds ads1299-linux, a Linux kernel (IIO) driver for the TI ADS1299 EEG analog front-end on SPI, with a devicetree overlay for the Raspberry Pi. It is tested on a Raspberry Pi 4 (Linux 6.18) with an ADS1299 board: buffered acquisition from the DRDY interrupt, the internal test signal on every channel, and lead-off detection.\" Merged 2026-10-20T14:20:12Z.",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/awesome-bci#103",
+      "author_handle": "stephan-biomedical-engineer",
+      "metrics": {
+        "play": null,
+        "like": 1555,
+        "collect": null,
+        "comment": null
+      },
       "quality_score": 8,
-      "why_valuable": "主动加入 drift-null 与混淆控制并给出 LSL 回放，评估比只报高指标可信。"
+      "why_valuable": "ADS1299 有了内核 IIO 驱动，自建低成本脑电可绕开闭源工具直接流式取数。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 修幅度归因中梯度被清零，并为 ZUNA 加上 Gaudi 融合 RoPE",
-      "title_en": "braindecode Preserves Gradients in Amplitude Attribution and Adds Gaudi Fused RoPE to ZUNA",
+      "title_zh": "MNE-CPP 新增 FiffExplain：把 FIFF 标签、块、单位与通道类型讲清楚",
+      "title_en": "MNE-CPP Adds FiffExplain: Naming FIFF Tags, Blocks, Units and Channel Kinds",
       "bullets_zh": [
-        "#1469 修「幅度归因（amplitude attribution）」过程中模型梯度被破坏的问题——归因结果若在梯度被清零的情形下计算，解释会失真甚至反向。",
-        "#1461 让 ZUNA 的 rotary embedding 走 Gaudi 融合 RoPE 内核（HPU）；#1468 新增 `registers` 选项（False 表示编码器只作用于 patch token）。",
-        "另修 AugmentedDataLoader 下会改变形状的变换未给出清晰 ValueError 的问题，便于在数据增强配置错误时快速定位。"
+        "新工具 FiffExplain 会解释 FIFF 文件里的标签、数据块、单位与通道类型；`FiffDirNode::print` 现在能写出完整内容。",
+        "对调试「读进来却看不懂」的 FIFF 文件（第三方设备导出、公开数据集）非常实用，此前往往要在 C++ 里逐字段打印。",
+        "同日另有 24 次提交（CHANGELOG、网站贡献者统计修正、证据重钉），并发布 dev_build（2026-10-20T20:01Z）。"
       ],
       "bullets_en": [
-        "#1469 fixes model gradients being clobbered during amplitude attribution, which would make attribution maps wrong or even inverted.",
-        "#1461 routes ZUNA's rotary embedding through Gaudi's fused RoPE kernel on HPU, and #1468 adds a registers option (False keeps the encoder on patch tokens only).",
-        "It also raises a clear ValueError for shape-changing transforms in AugmentedDataLoader, so augmentation misconfiguration surfaces immediately."
+        "The new FiffExplain tool names the FIFF tags, data blocks, units and channel kinds in a file, and FiffDirNode::print now writes the whole structure.",
+        "That is practical for debugging FIFF files that read but look wrong (third-party exports, public datasets), which previously meant printing fields one by one in C++.",
+        "The same day brought 24 commits (changelog entries, contributor-count fix, evidence re-pinning) and a dev_build release at 2026-10-20T20:01Z."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1469",
-      "published": "2026-10-19T08:26:00Z",
+      "url": "https://github.com/mne-tools/mne-cpp/commit/319ab0dec806",
+      "published": "2026-10-20T19:48:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 10 月 19 日推进 5 次提交，最需要留意的是 **#1469：修掉幅度归因（amplitude attribution）过程中模型梯度被破坏**的问题。归因/显著图若在梯度被清零或改写的情况下计算，图会失真甚至方向相反——而这类「解释」常被直接用于论文配图与神经生理学解读，错误很隐蔽。其余提交偏性能与可用性：ZUNA 的 rotary embedding 改走 Gaudi 融合 RoPE 内核（#1461）、新增 `registers` 选项（#1468）、AugmentedDataLoader 对改变形状的变换给出清晰 ValueError。对用归因方法解释 EEG 模型的团队，建议升级后重跑既有显著图并与旧结果比对。",
-      "brief_en": "braindecode made five commits on Oct 19, the one to note is #1469: model gradients were being clobbered during amplitude attribution, which makes attribution maps wrong or inverted — dangerous because such maps are routinely used in papers and neurophysiological interpretation. Also ZUNA's rotary embedding now uses Gaudi's fused RoPE kernel (#1461) and a registers option (#1468).",
+      "brief": "MNE-CPP 在 10 月 20 日推进 24 次提交，最有实用价值的是新工具 **FiffExplain**：它会解释 FIFF 文件里的**标签、数据块、单位与通道类型**，同时 `FiffDirNode::print` 能输出完整结构。FIFF 是 MNE 生态的通用数据格式，第三方设备导出或公开数据集里常出现「能读进来但内容可疑」的文件——以前排查要在 C++ 里逐字段打印，现在可以直接让人读懂文件结构。配合此前几天的 MNE-Python 数值对齐测试，可以看出该项目在系统性地解决「用户能否信任 C++ 侧读到的数据」。做实时处理或需要审计外部 FIFF 文件的团队值得试用；同日还发布了 dev_build。",
+      "brief_en": "MNE-CPP made 24 commits on Oct 20, the most practical being the new FiffExplain tool that names FIFF tags, data blocks, units and channel kinds, with FiffDirNode::print now writing the whole structure. FIFF is the common MNE format, and third-party or public-dataset files often read but look wrong; unpacking them previously meant printing fields one by one in C++. A dev_build also shipped.",
       "tags": [
-        "braindecode",
-        "attribution",
-        "gradients",
-        "zuna",
-        "gaudi"
+        "mne-cpp",
+        "fiff",
+        "debugging",
+        "tooling",
+        "realtime"
       ],
-      "raw_excerpt": "Commits 2026-10-19: \"FIX Preserve model gradients during amplitude attribution (#1469)\" 08:26Z; \"ZUNA: rotary embedding through Gaudi's fused RoPE kernel on HPU (#1461)\" 08:28Z; \"ZUNA: registers option (False = encoder on the patch tokens only) (#1468)\" 08:26Z; \"Clear ValueError for shape-changing transforms in AugmentedDataLoader…\" 08:26Z.",
-      "fetched_at": "2026-10-19T23:05:00Z",
+      "raw_excerpt": "Commit 319ab0dec806, 2026-10-20T19:48Z: \"FEAT: FiffExplain names FIFF tags, blocks, units and channel kinds; FiffDirNode::print writes whole [structure]\". Same-day commits include \"FIX: website contributor counts include merge commits, as GitHub does\" (19:55Z) and \"DOC: CHANGELOG entries for epoch rejection…\" (18:44Z); release dev_build (2026-10-20T20:01:44Z).",
+      "fetched_at": "2026-10-20T23:10:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1469",
-      "author_handle": "braindecode",
-      "metrics": {
-        "play": null,
-        "like": 1333,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "归因图若在梯度被破坏下计算会失真反向，直接影响论文级解释结果的可靠性。"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB 继续把数据集取数迁到 NEMAR，并给 Lenaig2026 改名留弃用别名",
-      "title_en": "MOABB Keeps Migrating Datasets to NEMAR and Renames Lenaig2026 with a Deprecated Alias",
-      "bullets_zh": [
-        "#1319 把 Lenaig2026 更名为 Gueho2026，并保留弃用别名；同时新增 class-name 审计元数据，便于追踪历史命名。",
-        "#1315／#1316／#1317／#1314 继续把 BI2013a、Mainsah2025、Castillos2023、Chang2025 的取数改为优先用 NEMAR 存储（提取好的 runs、store provenance 的文件清单、共享 4Class-CVEP 树等）。",
-        "取数来源改变会影响下载量与可复现性；命名变更则可能让既有脚本静默指向旧类名。"
-      ],
-      "bullets_en": [
-        "#1319 renames Lenaig2026 to Gueho2026 while keeping a deprecated alias and adds class-name audit metadata for tracking historical names.",
-        "#1315/#1316/#1317/#1314 continue moving BI2013a, Mainsah2025, Castillos2023 and Chang2025 to prefer NEMAR storage (extracted runs, store-provenance file lists, the shared 4Class-CVEP tree).",
-        "Changing data sources affects download volume and reproducibility, while renames can leave old scripts silently pointing at a stale class name."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1319",
-      "published": "2026-10-19T20:58:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MOABB 在 10 月 19 日推进 13 次提交，两条线并行：①**数据源迁到 NEMAR**——BI2013a 改用 NEMAR 沉积里已提取的 runs、Mainsah2025 从 store provenance 取文件清单再做 SHA 校验、Castillos2023 优先取共享的 4Class-CVEP 树、Chang2025 匹配 MNE-chang2025-data/ 前缀；②**命名治理**——Lenaig2026 更名为 Gueho2026 并保留弃用别名，同时新增 class-name 审计元数据记录历史命名。对使用者，前者改善下载稳定性，后者意味着旧脚本可能仍能跑（别名）但语义已变；建议升级后确认自己引用的类名与数据来源，并重跑关键结果。",
-      "brief_en": "MOABB made 13 commits on Oct 19 along two lines: more datasets prefer the NEMAR store (BI2013a's extracted runs, Mainsah2025's file lists with SHA checks, Castillos2023's shared 4Class-CVEP tree), and naming governance — Lenaig2026 became Gueho2026 with a deprecated alias plus class-name audit metadata. Old scripts may still run but mean something different.",
-      "tags": [
-        "moabb",
-        "nemar",
-        "dataset-rename",
-        "provenance",
-        "benchmark"
-      ],
-      "raw_excerpt": "PRs merged 2026-10-19: \"Rename Lenaig2026 to Gueho2026 (deprecated alias) + class-name audit metadata (#1319)\" 20:58Z; \"Castillos2023: take the shared 4Class-CVEP tree from the NEMAR store before do[wnloading] (#1317)\" 20:34Z; \"Mainsah2025: take the file list from the store provenance before fetching SHA2[56] (#1316)\" 19:51Z; \"BI2013a: use the extracted runs from the NEMAR deposit (#1315)\" 18:58Z.",
-      "fetched_at": "2026-10-19T23:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1319",
-      "author_handle": "NeuroTechX",
-      "metrics": {
-        "play": null,
-        "like": 1077,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "取数迁 NEMAR 更稳，且改名保留别名——旧脚本能跑但语义变了，需复核。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "EEGDash 支持 S3 对象版本固定，并可从截断的 EEGLAB 沉积中读取已验证样本",
-      "title_en": "EEGDash Pins Per-Record S3 Versions and Reads Verified Samples from Truncated Deposits",
-      "bullets_zh": [
-        "#485 支持按记录粒度固定 S3 对象版本（object version pin），避免上游覆盖同名对象后历史结果静默改变。",
-        "#486 从被截断的 EEGLAB 沉积中读取**已验证样本**（而不是整段失败或读到不完整数据）；#484 保留含不支持 BIDS 实体的原始文件。",
-        "同一批还新增 iEEG 解剖电极标签的元数据暴露（仅标签型数据集），属数据描述能力扩展。"
-      ],
-      "bullets_en": [
-        "#485 honours per-record S3 object version pins, so an upstream overwrite of a same-named object cannot silently change historical results.",
-        "#486 reads verified samples from truncated EEGLAB deposits instead of failing the whole record or returning partial data, and #484 preserves exact files with unsupported BIDS entities.",
-        "The same batch also surfaces iEEG anatomical electrode labels for labels-only datasets, extending metadata coverage."
-      ],
-      "url": "https://github.com/eegdash/EEGDash/pull/485",
-      "published": "2026-10-19T14:43:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGDash 在 10 月 19 日推进 12 次提交，核心是**可复现性**：#485 支持按记录固定 S3 对象版本（version pin），这样即使上游把同名对象覆盖，历史结果也不会静默变化——对大规模开放数据平台，这比任何新功能都重要；#486 从被截断的 EEGLAB 沉积中读取已验证样本（既不整段失败，也不把不完整数据当好数据）；#484 保留含不支持 BIDS 实体的原始文件，避免入库时丢文件。另有 iEEG 解剖电极标签的元数据暴露（仅标签型数据集）。对依赖 EEGDash 做批处理或元分析的团队，版本固定后应把 pin 值记录进自己的实验配置，才能真正做到「重跑得到同一结果」。",
-      "brief_en": "EEGDash made 12 commits on Oct 19 centred on reproducibility: #485 pins per-record S3 object versions so upstream overwrites cannot silently change historical results, #486 reads verified samples from truncated EEGLAB deposits without failing whole records, and #484 preserves files with unsupported BIDS entities.",
-      "tags": [
-        "eeg-dash",
-        "version-pinning",
-        "s3",
-        "truncated-data",
-        "reproducibility"
-      ],
-      "raw_excerpt": "Commits 2026-10-19: \"fix(download): honor per-record S3 object version pins (#485)\" 14:43Z; \"fix(io): read verified samples from truncated EEGLAB deposits (#486)\" 14:50Z; \"fix(dataset): preserve exact files with unsupported BIDS entities (#484)\" 14:18Z; \"feat(dataset): surface iEEG anatomical electrode labels (labels-only dataset…)\" 13:41Z.",
-      "fetched_at": "2026-10-19T23:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#485",
-      "author_handle": "eegdash",
-      "metrics": {
-        "play": null,
-        "like": 89,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "按记录固定 S3 版本，避免上游覆盖导致历史结果静默变化，是复现的关键一步。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MNELAB 1.7.1：重采样支持 NaN，并可用复选框批量选通道/事件/标注",
-      "title_en": "MNELAB 1.7.1: Resampling Now Handles NaNs and Checkbox Selection for Channels/Events",
-      "bullets_zh": [
-        "#719 修复重采样在含 **NaN** 的数据上失败的问题（EEG 中坏段常被置 NaN，此前必须先插值或剔除）。",
-        "通道、事件类型与标注类型均可用复选框选择，Shift 点击可连选范围、表头复选框可全选（#718）。",
-        "另含 macOS 原生窗口背景等外观调整，版本于 10-19 发布（v1.7.1），紧随 1.7.0 之后。"
-      ],
-      "bullets_en": [
-        "#719 fixes resampling failing on data containing NaNs, which is common when bad segments are marked as NaN and previously required interpolation or removal first.",
-        "Channels, event types and annotation types can be selected with checkboxes, with Shift-click for ranges and a header checkbox for all (#718).",
-        "It also includes macOS native window-background polish; v1.7.1 shipped on Oct 19, right after 1.7.0."
-      ],
-      "url": "https://github.com/cbrnr/mnelab/releases/tag/v1.7.1",
-      "published": "2026-10-19T11:18:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNELAB 发布 1.7.1（2026-10-19），最实用的一条是 **#719：重采样现在能处理含 NaN 的数据**。EEG 预处理里常用 NaN 标记坏段（如电极脱落、大伪迹），此前一旦数据里有 NaN，重采样会失败或需要先插值/剔除，打乱流程；修好后可以直接在保留坏段标记的前提下改变采样率。另一项是交互改进：通道、事件类型、标注类型都支持复选框选择，Shift 点击连选、表头一键全选（#718），对几十上百通道的数据集批量操作省事不少。紧随 1.7.0 发布，属快速修复版。",
-      "brief_en": "MNELAB 1.7.1 (Oct 19) most usefully fixes resampling on data containing NaNs (#719): since bad segments are often marked NaN, resampling previously failed unless you interpolated or dropped them first. It also adds checkbox selection for channels, event types and annotation types with Shift-click ranges and a select-all header (#718), following quickly after 1.7.0.",
-      "tags": [
-        "mnelab",
-        "resampling",
-        "nan",
-        "ux",
-        "release"
-      ],
-      "raw_excerpt": "Release v1.7.1 (2026-10-19T11:18:55Z): \"Changed — Select channels, event types, and annotation types with checkboxes (Shift-click checks a range, the header checkbox checks all) (#718)\"; commits that day include \"Fix resampling to work with NaNs (#719)\" 09:38Z and \"Release 1.7.1\".",
-      "fetched_at": "2026-10-19T23:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "cbrnr/mnelab@v1.7.1",
-      "author_handle": "cbrnr",
-      "metrics": {
-        "play": null,
-        "like": 294,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "坏段用 NaN 标记后可直接重采样，不必再插值或剔除，流程更顺。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MNE-Python 修肌电 z-score 标注：坏通道不再参与",
-      "title_en": "MNE-Python Excludes Bad Channels from Muscle z-Score Annotation",
-      "bullets_zh": [
-        "#14418 修 `annotate_muscle_zscore` 未排除坏通道的问题：此前坏导会参与 z-score 统计，导致阈值判断整体偏移。",
-        "肌电伪迹标注常用于自动识别肌肉活动区段；坏导（高阻、脱落、持续噪声）混入会抬高或压低全局分布。",
-        "属单点但影响面广的正确性修复：所有用该函数做自动肌电标注的流程都受影响，建议升级后重跑标注并与人工复核对照。"
-      ],
-      "bullets_en": [
-        "#14418 stops annotate_muscle_zscore from including bad channels, which previously skewed the z-score distribution and thus the threshold decision.",
-        "Muscle-artefact annotation is used to auto-detect EMG bursts; bad channels (high impedance, detached, persistently noisy) distort the global distribution.",
-        "A small but wide-reaching correctness fix: any automated muscle annotation built on this function is affected, so re-run and compare with manual review after upgrading."
-      ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14418",
-      "published": "2026-10-19T19:22:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNE-Python 合并 #14418，修掉 `annotate_muscle_zscore` 未排除**坏通道**的问题。该函数通过计算肌电频段包络的 z-score 来自动标注肌肉活动区段；如果坏导（高阻、接触不良、持续噪声）参与统计，全局分布会被拉偏，阈值判断随之整体偏移——表现为「明明没有肌电却被标出来」或「真实肌电被漏掉」。这是典型的单点修复、影响面却很广：所有依赖自动肌电标注的预处理流程都会受影响。建议升级后对既有数据重跑标注，并与人工复核结果对照，确认坏导比例高的数据集差异有多大。",
-      "brief_en": "MNE-Python merged #14418 so annotate_muscle_zscore excludes bad channels. The function auto-annotates muscle bursts from z-scored EMG-band envelopes, and noisy or detached channels skew the global distribution, shifting the threshold decision — producing false annotations or missing real ones. Any automated muscle annotation built on it should be re-run and compared with manual review.",
-      "tags": [
-        "mne-python",
-        "muscle-artifact",
-        "z-score",
-        "bad-channels",
-        "annotation"
-      ],
-      "raw_excerpt": "Commit 2026-10-19T19:22Z: \"BUG: Exclude bad channels in annotate_muscle_zscore (#14418)\". Latest release remains v1.13.2 (2026-09-11).",
-      "fetched_at": "2026-10-19T23:05:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14418",
+      "upstream_id": "mne-tools/mne-cpp@319ab0dec806",
       "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 3557,
+        "like": 179,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "坏导参与统计会让自动肌电标注整体偏移，所有相关流程需重跑对照。"
+      "quality_score": 8,
+      "why_valuable": "能把可疑 FIFF 文件的标签/单位/通道类型讲清楚，排查外部数据省大量时间。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 的 statcond 改为双精度 ANOVA 输出，并删掉 20 个「预期失败」测试",
+      "title_en": "EEGPrep's statcond Returns Double-Precision ANOVA and Drops 20 Expected-Failure Tests",
+      "bullets_zh": [
+        "#513 让 `statcond` 的 ANOVA F 与 p 以 float64 返回，与 EEGLAB 修复（#977）保持一致，并移除 20 个严格的「ANOVA 预期失败」测试。",
+        "这是对 10-19 那条 EEGLAB 单精度累积 bug 的**跨实现跟进**：MATLAB 侧改为双精度累积，Python 侧同步，否则两套工具在同一数据上会给出不同的显著性。",
+        "同样由 AI 编码 agent 提交（PR 正文含 Cursor 标记），说明这类「逐函数对齐」工作正在被自动化加速。"
+      ],
+      "bullets_en": [
+        "#513 makes statcond return ANOVA F and p as float64, matching EEGLAB after #977, and removes 20 strict 'ANOVA expected failure' tests.",
+        "It is the cross-implementation follow-up to the Oct 19 single-precision ANOVA bug: MATLAB side accumulates in double, so the Python side must match or the two toolchains disagree on significance.",
+        "Also submitted by an AI coding agent (Cursor markers in the PR body), showing how automated this function-by-function parity work is becoming."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/513",
+      "published": "2026-10-20T20:07:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #513：`statcond` 的 ANOVA **F 与 p 改为 float64 返回**，与昨天 EEGLAB 的修复（#977，把平方和累积从单精度改为双精度）保持一致，同时删掉 20 个严格的「ANOVA 预期失败」测试——这些测试原本就是用来标记「Python 侧与 MATLAB 侧结果不一致」的。这是典型的跨实现跟进：如果只修 MATLAB 侧，两套工具在同一份数据上会得出不同的显著性结论，而研究者往往两边混用。对正在从 EEGLAB 迁移到 Python 的实验室，这类同步修复意味着切换后统计结果不会突变；建议在升级后用同一份数据两端各跑一次 ANOVA 做核对。",
+      "brief_en": "EEGPrep merged #513 so statcond returns ANOVA F and p as float64, matching EEGLAB's Oct 19 fix (#977, accumulating sums of squares in double) and removing 20 strict 'ANOVA expected failure' tests that marked Python-versus-MATLAB disagreements. Labs mixing both toolchains would otherwise get different significance from the same data; run both on one dataset after upgrading.",
+      "tags": [
+        "eegprep",
+        "eeglab",
+        "anova",
+        "parity",
+        "statistics"
+      ],
+      "raw_excerpt": "PR #513: \"Return statcond ANOVA F and p as float64, matching EEGLAB after #977, and drop the 20 strict ANOVA expected failures. EEGLAB d0963be9 accumulates the sums of squares in double…\" Merged 2026-10-20T20:07:45Z.",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#513",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "Python 侧同步双精度 ANOVA，避免两套工具对同一数据给出不同显著性。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "pyRiemann 让 sample_gaussian 支持按数组 sigma 生成 HPD 矩阵，并修 TLCenter 排序域问题",
-      "title_en": "pyRiemann Generalises sample_gaussian to HPD Matrices and Fixes TLCenter Domain Ordering",
+      "title_zh": "bci_tools：中文团队维护的 BCI 工具箱，用统一启动台管理采集/解码/可视化进程",
+      "title_en": "bci_tools: A Chinese BCI Toolbox with a Unified Launcher for Acquisition and Decoding Processes",
       "bullets_zh": [
-        "#463 让 `sample_gaussian` 在 sigma 为数组时生成 **HPD（Hermitian 正定）** 矩阵，此前只覆盖 SPD 场景。",
-        "#506 修 `TLCenter.transform()` 在 `\"last\"` 排序下的域顺序处理错误——域顺序错会让中心化参照错位，进而影响迁移结果。",
-        "两者都服务于跨域/跨被试的黎曼迁移实验：合成数据生成与中心化是构造与对齐域的两大基础操作。"
+        "中文文档的团队工具箱：按分类浏览、搜索并打开各工具，每个工具放在 `tools/<名称>/` 下各自维护说明、依赖与测试。",
+        "现有工具「Integrated Term（集成终端控制台）」可集中启动、停止与分组管理采集、解码、设备桥接及可视化进程，并查看终端输出。",
+        "启动台基于 Python 标准库＋Tk，用 uv 管理环境（Python 3.13.14）；日志落在 `.local/logs/`，关闭启动台后已开进程继续运行。"
       ],
       "bullets_en": [
-        "#463 generalises sample_gaussian to produce HPD (Hermitian positive-definite) matrices when sigma is an array, previously limited to the SPD case.",
-        "#506 fixes TLCenter.transform() mishandling domain order under \"last\" sorting, where a wrong domain order misaligns the centring reference and skews transfer results.",
-        "Both serve cross-domain or cross-subject Riemannian transfer, where synthetic sampling and centring are the two foundational operations."
+        "A team toolbox with Chinese docs: browse, search and open tools by category, each kept under tools/<name>/ with its own README, dependencies and tests.",
+        "Its current tool, Integrated Term, centrally starts, stops and groups acquisition, decoding, device-bridge and visualisation processes and shows their terminal output.",
+        "The launcher uses only the Python standard library plus Tk, manages environments with uv (Python 3.13.14), keeps logs in .local/logs/, and leaves started tools running after the launcher closes."
       ],
-      "url": "https://github.com/pyRiemann/pyRiemann/pull/463",
-      "published": "2026-10-19T10:31:00Z",
+      "url": "https://github.com/sillybun/bci_tools",
+      "published": "2026-10-20T12:49:00Z",
       "source": "github",
-      "language": "en",
-      "brief": "pyRiemann 在 10 月 19 日合并两项与迁移学习相关的改动：#463 让 `sample_gaussian` 在 sigma 为数组时生成 **HPD（Hermitian 正定）矩阵**（此前仅覆盖 SPD，复数信号场景受限）；#506 修 `TLCenter.transform()` 在 `\"last\"` 排序下的**域顺序**处理错误——域顺序一旦错位，中心化参照就错了，跨域迁移的结果会跟着偏，且不会报错。对做黎曼几何跨被试/跨域迁移的团队，这两处都属于「实验能跑但结论可能不对」的类型；建议升级后核对域标签顺序与合成数据的共轭对称性，必要时重跑关键对照。",
-      "brief_en": "pyRiemann merged two transfer-learning changes on Oct 19: #463 lets sample_gaussian produce HPD (Hermitian positive-definite) matrices when sigma is an array, beyond the SPD-only case, and #506 fixes TLCenter.transform() mishandling domain order under \"last\" sorting — a misordered domain shifts the centring reference and silently skews cross-domain results.",
+      "language": "zh",
+      "brief": "新建仓库 bci_tools（2026-10-20）是一个中文团队维护的 BCI 小工具集合，解决的是实验现场最琐碎的问题：采集、解码、设备桥接、可视化往往要开四五个终端，谁挂了、谁在跑都不清楚。它提供统一的 Tk 启动台，按分类/标签搜索并打开工具，每个工具在 `tools/<名称>/` 下自带说明、依赖与测试；当前已收录「Integrated Term（集成终端控制台）」，可集中启动/停止/分组管理这些进程并查看输出。工程细节也考虑到了：用 uv 管理环境、日志写入 `.local/logs/`、关闭启动台后已启动的进程继续运行。对国内实验室的小团队协作，这类「现场工具台」比再造一个算法库更缺、更实用。",
+      "brief_en": "EEGPrep merged #513 so statcond returns ANOVA F and p as float64, matching EEGLAB's Oct 19 fix (#977, accumulating sums of squares in double) and removing 20 strict 'ANOVA expected failure' tests that marked Python-versus-MATLAB disagreements. Labs mixing both toolchains would otherwise get different significance from the same data; run both on one dataset after upgrading.",
       "tags": [
-        "pyriemann",
-        "hpd",
-        "transfer-learning",
-        "tlcenter",
-        "domain-order"
+        "tooling",
+        "launcher",
+        "process-management",
+        "chinese",
+        "experiment"
       ],
-      "raw_excerpt": "PRs merged 2026-10-19: \"ENH: generalize sample_gaussian to generate HPD matrices for array sigma (#463)\" 10:31Z; \"Correct transform() of TLCenter used with \\\"last\\\" sorting domains by order of f[irst]… (#506)\" 10:25Z.",
-      "fetched_at": "2026-10-19T23:05:00Z",
+      "raw_excerpt": "「团队共同维护的 BCI 小工具集合，用于实验搭建、进程管理、数据检查和日常调试。在统一启动台中按分类浏览、搜索并打开工具。每个工具放在 `tools/<工具名>/`，各自维护说明、依赖和测试。」「Integrated Term（集成终端控制台）｜集中启动、停止和分组管理采集、解码、设备桥接及可视化进程，查看终端输出」",
+      "fetched_at": "2026-10-20T23:10:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "pyRiemann/pyRiemann#463",
-      "author_handle": "pyRiemann",
+      "upstream_id": "sillybun/bci_tools",
+      "author_handle": "sillybun",
       "metrics": {
         "play": null,
-        "like": 781,
+        "like": 0,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "域顺序错位会让中心化参照偏移且不报错，跨域迁移结论可能因此偏差。"
+      "why_valuable": "把采集/解码/设备桥接进程统一到一个启动台管理，实验现场少切终端。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "pyRiemann 修 RandomOverSampler 在 HPD 矩阵上的采样",
+      "title_en": "pyRiemann Fixes RandomOverSampler When Sampling HPD Matrices",
+      "bullets_zh": [
+        "#508 修 `RandomOverSampler` 在对 **HPD（Hermitian 正定）** 矩阵过采样时的实现问题；此前该类在 SPD 与 HPD 混合或复数场景下会出错。",
+        "过采样是黎曼分类里处理类别不平衡的常用手段，采样错会直接改变类别先验，进而影响阈值与跨被试结果。",
+        "与前一天 #463（`sample_gaussian` 支持数组 sigma 生成 HPD）形成同一主题的连续修复：pyRiemann 正在补齐 HPD/复数信号的完整支持。"
+      ],
+      "bullets_en": [
+        "#508 corrects RandomOverSampler when oversampling HPD (Hermitian positive-definite) matrices, which previously misbehaved in mixed SPD/HPD or complex-valued settings.",
+        "Oversampling is a standard way to handle class imbalance in Riemannian classification, and a wrong sampler shifts the class prior, affecting thresholds and cross-subject results.",
+        "Together with the previous day's #463 (sample_gaussian for HPD with array sigma), it shows pyRiemann filling in complete HPD/complex support."
+      ],
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/508",
+      "published": "2026-10-20T11:11:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "pyRiemann 合并 #508，修 `RandomOverSampler` 在 **HPD（Hermitian 正定）矩阵**上的采样问题。黎曼几何解码里，类别不平衡常用过采样处理，而 HPD 对应的是复数/共轭对称的协方差场景（如 Hilbert 变换后的信号、多通道相位特征）；采样实现不对会让合成样本偏离真实流形分布，直接扭曲类别先验。这与前一天 #463（让 `sample_gaussian` 支持数组 sigma 生成 HPD）是同一主题的连续推进：该库正在把 SPD 时代的实现补齐到 HPD/复数场景。用 pyRiemann 做过采样或多通道相位特征的团队，建议升级后核对增强样本的共轭对称性与类别比例。",
+      "brief_en": "pyRiemann merged #508 fixing RandomOverSampler on HPD (Hermitian positive-definite) matrices. Oversampling is common for class imbalance in Riemannian decoding, and HPD covers complex, conjugate-symmetric covariance cases such as Hilbert-transformed signals; a wrong sampler pushes synthetic samples off the manifold and skews the class prior. It follows #463's HPD support in sample_gaussian.",
+      "tags": [
+        "pyriemann",
+        "oversampling",
+        "hpd",
+        "class-imbalance",
+        "manifold"
+      ],
+      "raw_excerpt": "PR #508 \"Correct RandomOverSampler when sampling HPD matrices\", merged 2026-10-20T11:11:45Z. Preceding day: \"ENH: generalize sample_gaussian to generate HPD matrices for array sigma (#463)\".",
+      "fetched_at": "2026-10-20T23:10:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pyRiemann/pyRiemann#508",
+      "author_handle": "pyRiemann",
+      "metrics": {
+        "play": null,
+        "like": 782,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "HPD 过采样错会让合成样本偏离流形、扭曲类别先验，影响阈值与跨被试结果。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 104,
-    "llm_rows": 28,
+    "prefiltered": 108,
+    "llm_rows": 24,
     "kept": 8,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 6
+    "conflicts_dropped": 5
   }
 }
