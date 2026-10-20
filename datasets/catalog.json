@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:16:53.587Z",
+  "generatedAt": "2026-10-20T09:37:30.202Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 13
+      "count": 14
     },
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 3
     }
   ],
   "items": [
@@ -481,7 +481,7 @@
       "license": "cc-by-4.0",
       "downloads": 1912,
       "likes": 1,
-      "updatedAt": "2026-10-13T05:16:03.000Z",
+      "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
         "EEG"
       ]
@@ -729,6 +729,26 @@
       ]
     },
     {
+      "id": "hf:Anticloud/anticloud-deep-learning-for-bci",
+      "name": "anticloud-deep-learning-for-bci",
+      "owner": "Anticloud",
+      "url": "https://huggingface.co/datasets/Anticloud/anticloud-deep-learning-for-bci",
+      "source": "huggingface",
+      "description": "DEEP LEARNING FOR BCI Anticloud-hardened packaging of the upstream project DEEP_LEARNING_FOR_BCI in category BRAIN COMPUTER INTERFACE. Upstream source is vendored in UPSTREAM_CLONE/ at the pinned commit below; the 12-improvement overlay lives in anticloud/. Every fact in this fi…",
+      "tags": [
+        "arxiv:1703.05051",
+        "arxiv:1611.08024",
+        "arxiv:2104.01233"
+      ],
+      "license": null,
+      "downloads": 51,
+      "likes": 0,
+      "updatedAt": "2026-10-15T02:50:44.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23192855",
       "name": "Raw EEG data of Schoknecht and Vasishth (2026)",
       "owner": "Schoknecht, Pia",
@@ -745,6 +765,24 @@
       ]
     },
     {
+      "id": "zenodo:23494823",
+      "name": "Biomedical Signal and Image Processing with Modern Technologies: Why It Matters for Medicine",
+      "owner": "Xudoyarov Otabek Alisherovich",
+      "url": "https://doi.org/10.5281/zenodo.23494823",
+      "source": "zenodo",
+      "description": "Medical biological signals (ECG, EEG, EMG, PPG) and medical images (X-ray, CT, MRI, ultrasound) are central to modern diagnosis. They are noisy, high-dimensional and time-consuming to interpret.",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-20T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "EMG",
+        "ECG"
+      ]
+    },
+    {
       "id": "zenodo:23464852",
       "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
       "owner": "Atiwiwat, Danita",
@@ -755,7 +793,7 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -788,7 +826,7 @@
       "description": "German plural EEG",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1,
+      "downloads": 6,
       "likes": null,
       "updatedAt": "2026-10-17T00:00:00.000Z",
       "modality": [
@@ -807,7 +845,7 @@
         "uncertainty quantification"
       ],
       "license": "cc-by-4.0",
-      "downloads": 4,
+      "downloads": 7,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
@@ -856,7 +894,7 @@
       "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 8,
+      "downloads": 10,
       "likes": null,
       "updatedAt": "2026-10-07T00:00:00.000Z",
       "modality": [
@@ -880,22 +918,6 @@
       ]
     },
     {
-      "id": "zenodo:23194286",
-      "name": "MIND v1 verification record: frozen predictions, selection records and scoring code",
-      "owner": "Dammu, Hitesh",
-      "url": "https://doi.org/10.5281/zenodo.23194286",
-      "source": "zenodo",
-      "description": "Frozen prediction files, selection records and scoring code for an internal evaluation of EEG research models (MIND v1). Files are available to reviewers on request.",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 3,
-      "likes": null,
-      "updatedAt": "2026-10-06T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -915,7 +937,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-19T08:26:31.000Z",
+      "updatedAt": "2026-10-19T23:42:30.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -941,7 +963,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-19T06:24:13.000Z",
+      "updatedAt": "2026-10-20T06:24:19.000Z",
       "modality": [
         "EEG"
       ]
@@ -965,30 +987,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-10-18T13:06:07.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:AnikS22/EEG-Signal-CoLabs",
-      "name": "EEG-Signal-CoLabs",
-      "owner": "AnikS22",
-      "url": "https://github.com/AnikS22/EEG-Signal-CoLabs",
-      "source": "github",
-      "description": "Per-subject Random Forest classifiers for four activities (happy/sad video, typing) in the BS-HMS EEG + motion dataset",
-      "tags": [
-        "affective-computing",
-        "eeg",
-        "jupyter-notebook",
-        "machine-learning",
-        "random-forest",
-        "scikit-learn"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-10-17T18:21:21.000Z",
+      "updatedAt": "2026-10-19T13:13:28.000Z",
       "modality": [
         "EEG"
       ]
