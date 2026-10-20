@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-19T23:04:18Z",
+  "generatedAt": "2026-10-20T22:54:09Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 251,
+  "count": 260,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 251
+      "count": 260
     }
   ],
   "items": [
@@ -8347,6 +8347,325 @@
         "contactedAt": "2026-10-20",
         "batch": "batch22",
         "contactedAuthor": "spenceleyyy"
+      }
+    },
+    {
+      "id": "github:BellaChenAn/eeg-web-dashboard",
+      "name": "eeg-web-dashboard",
+      "owner": "BellaChenAn",
+      "author": "BellaChenAn",
+      "url": "https://github.com/BellaChenAn/eeg-web-dashboard",
+      "homepage": null,
+      "source": "github",
+      "description": "Live web dashboard for NeuroSky/ThinkGear EEG headsets (MindLink, MindWave): attention, meditation, noise, raw EEG, band power, CSV export",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "consumer-eeg",
+        "dashboard",
+        "local-first"
+      ],
+      "createdAt": "2026-10-20T19:19:19Z",
+      "updatedAt": "2026-10-20T22:52:21Z",
+      "pushedAt": "2026-10-20T19:19:31Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "BellaChenAn"
+      }
+    },
+    {
+      "id": "github:J-Y00N/EEG-Motor-Imagery-Classification",
+      "name": "EEG-Motor-Imagery-Classification",
+      "owner": "J-Y00N",
+      "author": "J-Y00N",
+      "url": "https://github.com/J-Y00N/EEG-Motor-Imagery-Classification",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG motor imagery classification with classical, Riemannian, and EEGNet baselines under unified evaluation protocols. Bronze Prize at KNOU Statistics & Data Analysis Competition '25",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "csp",
+        "eeg",
+        "eeg-classification",
+        "eegnet",
+        "mne",
+        "motor-imagery",
+        "pytorch",
+        "riemannian-geometry",
+        "transfer-learning"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "riemannian",
+        "eegnet",
+        "benchmark"
+      ],
+      "createdAt": "2026-03-18T07:44:28Z",
+      "updatedAt": "2026-10-20T22:53:28Z",
+      "pushedAt": "2026-10-02T13:01:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "J-Y00N"
+      }
+    },
+    {
+      "id": "github:Wang-Shinan/Passive-BCI",
+      "name": "Passive-BCI",
+      "owner": "Wang-Shinan",
+      "author": "Wang-Shinan",
+      "url": "https://github.com/Wang-Shinan/Passive-BCI",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "passive-bci",
+        "web-app",
+        "ads1299",
+        "local-first"
+      ],
+      "createdAt": "2026-07-29T03:50:58Z",
+      "updatedAt": "2026-10-20T22:53:19Z",
+      "pushedAt": "2026-10-19T07:57:10Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "Wang-Shinan"
+      }
+    },
+    {
+      "id": "github:aliodeh-dev/neuro-biometrics-framework",
+      "name": "neuro-biometrics-framework",
+      "owner": "aliodeh-dev",
+      "author": "aliodeh-dev",
+      "url": "https://github.com/aliodeh-dev/neuro-biometrics-framework",
+      "homepage": null,
+      "source": "github",
+      "description": "Neuro-Biometrics is a spoof-resistant brainprint authentication framework for wearable EEG. It combines spatial-temporal 1D-CNNs, temporal self-attention, and supervised contrastive learning to eliminate session drift, paired with a multi-tier liveness engine that intercepts replay and generative spoof attacks with ultrafast edge inference latency",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "biometrics",
+        "wearable-eeg",
+        "contrastive-learning",
+        "security"
+      ],
+      "createdAt": "2026-10-18T12:22:15Z",
+      "updatedAt": "2026-10-20T22:53:09Z",
+      "pushedAt": "2026-10-18T12:23:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "aliodeh-dev"
+      }
+    },
+    {
+      "id": "github:chenyibo11/structure-aware-aad",
+      "name": "structure-aware-aad",
+      "owner": "chenyibo11",
+      "author": "chenyibo11",
+      "url": "https://github.com/chenyibo11/structure-aware-aad",
+      "homepage": null,
+      "source": "github",
+      "description": "Structure-aware EEG auditory attention decoding with LaBraM and EEG-DINO backbones, shared baselines, and experiment commands.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "auditory-attention",
+        "foundation-model",
+        "fine-tuning",
+        "bci"
+      ],
+      "createdAt": "2026-10-19T14:07:30Z",
+      "updatedAt": "2026-10-20T22:53:38Z",
+      "pushedAt": "2026-10-19T14:21:24Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "chenyibo11"
+      }
+    },
+    {
+      "id": "github:dev-yosam/eeg-bci-drone-simulator",
+      "name": "eeg-bci-drone-simulator",
+      "owner": "dev-yosam",
+      "author": "dev-yosam",
+      "url": "https://github.com/dev-yosam/eeg-bci-drone-simulator",
+      "homepage": null,
+      "source": "github",
+      "description": "Unity-based drone simulation for EEG-based BCI error detection research in computer vision-guided autonomous navigation, featuring urban scenarios, collision events, and timestamped UDP markers for future EEG integration.",
+      "language": "C#",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "errp",
+        "unity",
+        "drone",
+        "event-markers"
+      ],
+      "createdAt": "2026-10-16T04:09:24Z",
+      "updatedAt": "2026-10-20T22:53:00Z",
+      "pushedAt": "2026-10-16T04:26:34Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "dev-yosam"
+      }
+    },
+    {
+      "id": "github:devasai-choppa/eeg-harmonize",
+      "name": "eeg-harmonize",
+      "owner": "devasai-choppa",
+      "author": "devasai-choppa",
+      "url": "https://github.com/devasai-choppa/eeg-harmonize",
+      "homepage": null,
+      "source": "github",
+      "description": "Canonical EEG schema and a conversion trail. Designed clips only; TUH is not in the repo.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "data-engineering",
+        "edf",
+        "eeg",
+        "neuroscience",
+        "numpy",
+        "python",
+        "scipy"
+      ],
+      "tags": [
+        "eeg",
+        "data-tooling",
+        "harmonization",
+        "provenance",
+        "edf"
+      ],
+      "createdAt": "2026-10-06T02:56:37Z",
+      "updatedAt": "2026-10-20T22:52:40Z",
+      "pushedAt": "2026-10-16T21:41:02Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "devasai-choppa"
+      }
+    },
+    {
+      "id": "github:elchibek5/eeg-motor-imagery-baseline",
+      "name": "eeg-motor-imagery-baseline",
+      "owner": "elchibek5",
+      "author": "elchibek5",
+      "url": "https://github.com/elchibek5/eeg-motor-imagery-baseline",
+      "homepage": null,
+      "source": "github",
+      "description": "Cross-subject EEG motor imagery classification (4-class BCI) in Python: Riemannian log-covariance + XGBoost, validated by participant. 43\u201346% on unseen subjects (chance 25%), reproducible on public PhysioNet EEGMMIDB in two commands. No GPU.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "baseline",
+        "bci",
+        "brain-computer-interface",
+        "cross-subject",
+        "eeg",
+        "eeg-classification",
+        "eegmmidb",
+        "hackathon",
+        "machine-learning",
+        "motor-imagery",
+        "neuroscience",
+        "neurotech",
+        "physionet",
+        "python",
+        "reproducible-research",
+        "riemannian-geometry",
+        "scikit-learn",
+        "signal-processing",
+        "xgboost"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "riemannian",
+        "cross-subject",
+        "benchmark"
+      ],
+      "createdAt": "2026-01-24T21:24:32Z",
+      "updatedAt": "2026-10-20T22:52:31Z",
+      "pushedAt": "2026-10-18T05:05:34Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "elchibek5"
+      }
+    },
+    {
+      "id": "github:faruk-bmpt/EEG_ME_MI_Gesture_Decoding",
+      "name": "EEG_ME_MI_Gesture_Decoding",
+      "owner": "faruk-bmpt",
+      "author": "faruk-bmpt",
+      "url": "https://github.com/faruk-bmpt/EEG_ME_MI_Gesture_Decoding",
+      "homepage": null,
+      "source": "github",
+      "description": "Reproducible EEG pipeline for hand gesture decoding across motor execution and motor imagery, including cross-subject evaluation, transfer, temporal calibration, and representational similarity analysis.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "gesture-decoding",
+        "transfer-learning",
+        "reproducibility"
+      ],
+      "createdAt": "2026-10-11T07:45:40Z",
+      "updatedAt": "2026-10-20T22:52:50Z",
+      "pushedAt": "2026-10-20T11:27:21Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-21",
+        "batch": "batch23",
+        "contactedAuthor": "faruk-bmpt"
       }
     }
   ]
