@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T09:37:30.202Z",
+  "generatedAt": "2026-10-21T09:37:45.911Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 14
+      "count": 12
     },
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 6
     }
   ],
   "items": [
@@ -179,6 +179,27 @@
       "updatedAt": "2026-09-30T21:04:15.293Z",
       "modality": [
         "MEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008892",
+      "name": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008892",
+      "source": "openneuro",
+      "description": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+      "tags": [
+        "BIDS",
+        "eeg",
+        "nirs"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-30T09:09:51.942Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
       ]
     },
     {
@@ -393,25 +414,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008730",
-      "name": "Flavors of Reward Positivity: Testing the Psychometric Properties of Tasks used to Elicit the Reward Positivity in Healthy Individuals",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008730",
-      "source": "openneuro",
-      "description": "Flavors of Reward Positivity: Testing the Psychometric Properties of Tasks used to Elicit the Reward Positivity in Healthy Individuals",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-08-26T15:08:50.392Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -429,7 +431,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8662,
+      "downloads": 8824,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -454,7 +456,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 5710,
+      "downloads": 6400,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -504,7 +506,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 1850,
+      "downloads": 1951,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -529,7 +531,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1800,
+      "downloads": 1802,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -547,7 +549,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 688,
+      "downloads": 784,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -563,7 +565,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 426,
+      "downloads": 428,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -588,7 +590,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 315,
+      "downloads": 323,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -610,9 +612,33 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 586,
+      "downloads": 638,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:whhhy123/EEGAgentBenchmark",
+      "name": "EEGAgentBenchmark",
+      "owner": "whhhy123",
+      "url": "https://huggingface.co/datasets/whhhy123/EEGAgentBenchmark",
+      "source": "huggingface",
+      "description": "EEGAgentBenchmark EEGAgentBenchmark is the frozen data release for EEGAgentBench, a benchmark of general-purpose LLM agents on EEG knowledge and signal-analysis tasks. The benchmark contains 1,072 evaluation instances across six tasks. This repository provides the 1,034 EEG/PSG…",
+      "tags": [
+        "question-answering",
+        "text-classification",
+        "eeg",
+        "psg",
+        "biomedical",
+        "agents",
+        "benchmark"
+      ],
+      "license": "other",
+      "downloads": 654,
+      "likes": 0,
+      "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
         "EEG"
       ]
@@ -633,7 +659,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 173,
+      "downloads": 175,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -658,108 +684,9 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 216,
+      "downloads": 218,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/openneuro-hbn-eeg-releases-v1-0-1",
-      "name": "openneuro-hbn-eeg-releases-v1-0-1",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-releases-v1-0-1",
-      "source": "huggingface",
-      "description": "HBN EEG: one archive per release, R1-R11 This repository publishes one lossless .tar.gz archive per HBN EEG release, fixed at OpenNeuro version 1.0.1, including R6. Source: https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1/tree/987f221fcf9fe858d01b6c8a918697750…",
-      "tags": [
-        "cc-by-sa-4.0",
-        "eeg",
-        "hbn",
-        "neuroscience",
-        "archive"
-      ],
-      "license": "cc-by-sa-4.0",
-      "downloads": 142,
-      "likes": 0,
-      "updatedAt": "2026-10-17T19:47:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Anticloud/anticloud-eeglab",
-      "name": "anticloud-eeglab",
-      "owner": "Anticloud",
-      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
-      "source": "huggingface",
-      "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
-      "tags": [],
-      "license": null,
-      "downloads": 87,
-      "likes": 0,
-      "updatedAt": "2026-10-17T04:04:51.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Abdulkader/eeg-foundation-leaderboard",
-      "name": "eeg-foundation-leaderboard",
-      "owner": "Abdulkader",
-      "url": "https://huggingface.co/datasets/Abdulkader/eeg-foundation-leaderboard",
-      "source": "huggingface",
-      "description": "EEG Foundation Model Leaderboard — data Backing data for the EEG Foundation Model Leaderboard Space. Files models.json — one record per model: architecture, pretraining objective, parameter count, pretraining corpus scale, paper/code/weights links. results.json — one record per…",
-      "tags": [
-        "apache-2.0",
-        "json",
-        "tabular",
-        "pandas",
-        "arxiv:2405.18765",
-        "eeg",
-        "leaderboard",
-        "foundation-models"
-      ],
-      "license": "apache-2.0",
-      "downloads": 121,
-      "likes": 0,
-      "updatedAt": "2026-10-06T09:34:23.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Anticloud/anticloud-deep-learning-for-bci",
-      "name": "anticloud-deep-learning-for-bci",
-      "owner": "Anticloud",
-      "url": "https://huggingface.co/datasets/Anticloud/anticloud-deep-learning-for-bci",
-      "source": "huggingface",
-      "description": "DEEP LEARNING FOR BCI Anticloud-hardened packaging of the upstream project DEEP_LEARNING_FOR_BCI in category BRAIN COMPUTER INTERFACE. Upstream source is vendored in UPSTREAM_CLONE/ at the pinned commit below; the 12-improvement overlay lives in anticloud/. Every fact in this fi…",
-      "tags": [
-        "arxiv:1703.05051",
-        "arxiv:1611.08024",
-        "arxiv:2104.01233"
-      ],
-      "license": null,
-      "downloads": 51,
-      "likes": 0,
-      "updatedAt": "2026-10-15T02:50:44.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23192855",
-      "name": "Raw EEG data of Schoknecht and Vasishth (2026)",
-      "owner": "Schoknecht, Pia",
-      "url": "https://doi.org/10.5281/zenodo.23192855",
-      "source": "zenodo",
-      "description": "This repository contains the EEG data of the experiment using questions. The data of the experiment using judgments is available under https://zenodo.org/records/17178030.",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 217,
-      "likes": null,
-      "updatedAt": "2026-10-06T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -773,7 +700,7 @@
       "description": "Medical biological signals (ECG, EEG, EMG, PPG) and medical images (X-ray, CT, MRI, ultrasound) are central to modern diagnosis. They are noisy, high-dimensional and time-consuming to interpret.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
       "updatedAt": "2026-10-20T00:00:00.000Z",
       "modality": [
@@ -793,7 +720,7 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1,
+      "downloads": 2,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -809,7 +736,7 @@
       "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 17,
+      "downloads": 19,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
@@ -918,6 +845,22 @@
       ]
     },
     {
+      "id": "zenodo:23194286",
+      "name": "MIND v1 verification record: frozen predictions, selection records and scoring code",
+      "owner": "Dammu, Hitesh",
+      "url": "https://doi.org/10.5281/zenodo.23194286",
+      "source": "zenodo",
+      "description": "Frozen prediction files, selection records and scoring code for an internal evaluation of EEG research models (MIND v1). Files are available to reviewers on request.",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 3,
+      "likes": null,
+      "updatedAt": "2026-10-06T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -937,13 +880,29 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-19T23:42:30.000Z",
+      "updatedAt": "2026-10-21T04:49:08.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
+      ]
+    },
+    {
+      "id": "github:yjmantilla/sovabids",
+      "name": "sovabids",
+      "owner": "yjmantilla",
+      "url": "https://github.com/yjmantilla/sovabids",
+      "source": "github",
+      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
+      "tags": [],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 13,
+      "updatedAt": "2026-10-21T05:20:52.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -963,7 +922,30 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-20T06:24:19.000Z",
+      "updatedAt": "2026-10-21T06:24:12.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:ibr0r0/EEG-Dataset-Recorder",
+      "name": "EEG-Dataset-Recorder",
+      "owner": "ibr0r0",
+      "url": "https://github.com/ibr0r0/EEG-Dataset-Recorder",
+      "source": "github",
+      "description": "Python-based EEG data recorder and simulator for generating timestamped CSV datasets for research and machine learning.",
+      "tags": [
+        "brainflow",
+        "eeg",
+        "eeg-signals",
+        "openbci",
+        "prosthetics",
+        "python"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-10-21T05:34:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -987,7 +969,26 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-10-19T13:13:28.000Z",
+      "updatedAt": "2026-10-20T11:35:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:ksun10071991-boop/eeg-emotion-channel-reduction",
+      "name": "eeg-emotion-channel-reduction",
+      "owner": "ksun10071991-boop",
+      "url": "https://github.com/ksun10071991-boop/eeg-emotion-channel-reduction",
+      "source": "github",
+      "description": "EEG-based emotion recognition under channel reduction (SEED dataset)",
+      "tags": [
+        "eeg",
+        "emotion-recognition"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-21T04:09:47.000Z",
       "modality": [
         "EEG"
       ]
