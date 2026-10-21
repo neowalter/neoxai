@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-20T22:54:09Z",
+  "generatedAt": "2026-10-21T23:00:21Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 260,
+  "count": 270,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 260
+      "count": 270
     }
   ],
   "items": [
@@ -8666,6 +8666,347 @@
         "contactedAt": "2026-10-21",
         "batch": "batch23",
         "contactedAuthor": "faruk-bmpt"
+      }
+    },
+    {
+      "id": "github:CHETHCODEX/Brain-Controlled-Wheelchair-Using-EEG-Signals-and-Machine-Learning",
+      "name": "Brain-Controlled-Wheelchair-Using-EEG-Signals-and-Machine-Learning",
+      "owner": "CHETHCODEX",
+      "author": "CHETHCODEX",
+      "url": "https://github.com/CHETHCODEX/Brain-Controlled-Wheelchair-Using-EEG-Signals-and-Machine-Learning",
+      "homepage": null,
+      "source": "github",
+      "description": "",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "wheelchair",
+        "webots",
+        "safety"
+      ],
+      "createdAt": "2026-10-16T03:01:27Z",
+      "updatedAt": "2026-10-21T22:58:29Z",
+      "pushedAt": "2026-10-20T06:15:52Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "CHETHCODEX"
+      }
+    },
+    {
+      "id": "github:LeoTeca18/edge-eeg-vigilance-fhir",
+      "name": "edge-eeg-vigilance-fhir",
+      "owner": "LeoTeca18",
+      "author": "LeoTeca18",
+      "url": "https://github.com/LeoTeca18/edge-eeg-vigilance-fhir",
+      "homepage": null,
+      "source": "github",
+      "description": "This project implements a real-time, low-latency pipeline for detecting vigilance drops using single-channel consumer EEG devices. By deploying optimized machine learning models at the edge and formatting output alerts as HL7 FHIR-native Observation resources, the system bridges consumer health hardware with enterprise clinical interoperability.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "consumer-eeg",
+        "vigilance",
+        "edge",
+        "fhir"
+      ],
+      "createdAt": "2026-09-18T12:58:15Z",
+      "updatedAt": "2026-10-21T22:59:37Z",
+      "pushedAt": "2026-10-15T22:17:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "LeoTeca18"
+      }
+    },
+    {
+      "id": "github:LukeMainwaring/cortexdj",
+      "name": "cortexdj",
+      "owner": "LukeMainwaring",
+      "author": "LukeMainwaring",
+      "url": "https://github.com/LukeMainwaring/cortexdj",
+      "homepage": null,
+      "source": "github",
+      "description": "An AI-powered EEG classifier that detects emotional states during music listening and curates Spotify playlists grounded in what your brain actually did.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "affective-computing",
+        "ai",
+        "brain-computer-interface",
+        "deep-learning",
+        "eeg",
+        "emotion-recognition",
+        "fastapi",
+        "llm-agent",
+        "nextjs",
+        "pydantic-ai",
+        "pytorch",
+        "spotify-api"
+      ],
+      "tags": [
+        "eeg",
+        "emotion-recognition",
+        "ai-agent",
+        "foundation-model",
+        "music"
+      ],
+      "createdAt": "2026-03-30T14:48:55Z",
+      "updatedAt": "2026-10-21T22:58:58Z",
+      "pushedAt": "2026-10-21T15:16:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "LukeMainwaring"
+      }
+    },
+    {
+      "id": "github:OftenMissYi/Motor-Imagery-BCI",
+      "name": "Motor-Imagery-BCI",
+      "owner": "OftenMissYi",
+      "author": "OftenMissYi",
+      "url": "https://github.com/OftenMissYi/Motor-Imagery-BCI",
+      "homepage": "https://oftenmissyi.github.io/",
+      "source": "github",
+      "description": "Motor-imagery EEG feature extraction and classification with wavelet packets, CSP and PyTorch. Course-project code, visualizations and experiment records.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci-competition-iv",
+        "brain-computer-interface",
+        "csp",
+        "eeg",
+        "motor-imagery",
+        "python",
+        "pytorch",
+        "signal-processing",
+        "wavelet-packet"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "wavelet-packet",
+        "csp",
+        "bci"
+      ],
+      "createdAt": "2026-10-04T09:35:05Z",
+      "updatedAt": "2026-10-21T22:59:18Z",
+      "pushedAt": "2026-10-04T12:52:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "OftenMissYi"
+      }
+    },
+    {
+      "id": "github:Pragyan977538/bci-wheelchair",
+      "name": "bci-wheelchair",
+      "owner": "Pragyan977538",
+      "author": "Pragyan977538",
+      "url": "https://github.com/Pragyan977538/bci-wheelchair",
+      "homepage": null,
+      "source": "github",
+      "description": "Brain-controlled wheelchair using EEG-decoded commands with shared control (Control Systems course project)",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "shared-control",
+        "calibration",
+        "wheelchair"
+      ],
+      "createdAt": "2026-09-27T17:37:42Z",
+      "updatedAt": "2026-10-21T22:58:19Z",
+      "pushedAt": "2026-09-28T18:08:56Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "Pragyan977538"
+      }
+    },
+    {
+      "id": "github:Rocky-Bai-hust/EEG-dinosaur-runner",
+      "name": "EEG-dinosaur-runner",
+      "owner": "Rocky-Bai-hust",
+      "author": "Rocky-Bai-hust",
+      "url": "https://github.com/Rocky-Bai-hust/EEG-dinosaur-runner",
+      "homepage": null,
+      "source": "github",
+      "description": "An Arduino-based EEG interface for controlling a dinosaur runner game.",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "arduino",
+        "brain-computer-interface",
+        "chrome-dinosaur-game",
+        "dinosaur-game",
+        "eeg",
+        "human-computer-interaction",
+        "tgam"
+      ],
+      "tags": [
+        "eeg",
+        "neurosky",
+        "consumer-eeg",
+        "game",
+        "arduino"
+      ],
+      "createdAt": "2026-10-09T07:38:14Z",
+      "updatedAt": "2026-10-21T22:58:38Z",
+      "pushedAt": "2026-10-10T07:27:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "Rocky-Bai-hust"
+      }
+    },
+    {
+      "id": "github:eric5512/FreeEEG",
+      "name": "FreeEEG",
+      "owner": "eric5512",
+      "author": "eric5512",
+      "url": "https://github.com/eric5512/FreeEEG",
+      "homepage": null,
+      "source": "github",
+      "description": "An open hardware EEG system implementation",
+      "language": "C",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "open-hardware",
+        "ads1299",
+        "esp32",
+        "kicad"
+      ],
+      "createdAt": "2025-07-06T22:34:57Z",
+      "updatedAt": "2026-10-21T22:59:08Z",
+      "pushedAt": "2026-10-01T13:03:32Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "eric5512"
+      }
+    },
+    {
+      "id": "github:ganesh2317/calibration-free-eeg-bci",
+      "name": "calibration-free-eeg-bci",
+      "owner": "ganesh2317",
+      "author": "ganesh2317",
+      "url": "https://github.com/ganesh2317/calibration-free-eeg-bci",
+      "homepage": "https://calibration-free-eeg-bci-ep4xusy6usfpiggtndikpc.streamlit.app/",
+      "source": "github",
+      "description": "Deep learning EEG-BCI that decodes left/right motor imagery across unseen subjects \u2014 no per-user calibration required.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "cross-subject",
+        "domain-adaptation",
+        "benchmark"
+      ],
+      "createdAt": "2026-09-13T17:38:53Z",
+      "updatedAt": "2026-10-21T22:58:48Z",
+      "pushedAt": "2026-10-02T18:46:29Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "ganesh2317"
+      }
+    },
+    {
+      "id": "github:itsjiyunbro/MI-Wheelchair-Control",
+      "name": "MI-Wheelchair-Control",
+      "owner": "itsjiyunbro",
+      "author": "itsjiyunbro",
+      "url": "https://github.com/itsjiyunbro/MI-Wheelchair-Control",
+      "homepage": null,
+      "source": "github",
+      "description": "A virtual wheelchair control system based on motor imagery EEG",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "wheelchair",
+        "unity",
+        "realtime"
+      ],
+      "createdAt": "2026-09-20T12:16:47Z",
+      "updatedAt": "2026-10-21T22:58:10Z",
+      "pushedAt": "2026-10-15T12:01:15Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "itsjiyunbro"
+      }
+    },
+    {
+      "id": "github:mtahmidashraf/sane-eeg-privacy-demo",
+      "name": "sane-eeg-privacy-demo",
+      "owner": "mtahmidashraf",
+      "author": "mtahmidashraf",
+      "url": "https://github.com/mtahmidashraf/sane-eeg-privacy-demo",
+      "homepage": null,
+      "source": "github",
+      "description": "Interactive demo of SANE: scrubbing the theta/beta biomarker and spatial fingerprint from real BCI EEG while preserving task decoding.",
+      "language": "HTML",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "neural-privacy",
+        "bci",
+        "euclidean-alignment",
+        "demo"
+      ],
+      "createdAt": "2026-09-26T09:31:36Z",
+      "updatedAt": "2026-10-21T22:59:27Z",
+      "pushedAt": "2026-09-26T09:31:49Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-22",
+        "batch": "batch24",
+        "contactedAuthor": "mtahmidashraf"
       }
     }
   ]
