@@ -48,6 +48,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [brainbeats](https://github.com/sahillim33/brainbeats) | @sahillim33 | Real-time EEG neurofeedback iOS app for the OpenBCI Ganglion | 2026-08-28 | 1 |
 | [BrainExporter](https://github.com/vexpaer/BrainExporter) | @vexpaer | Open-source Android EEG acquisition, monitoring and CSV export for ... | 2026-08-26 | 1 |
 | [BrainflowFocusWidget-webapp](https://github.com/LeonardoFerrisi/BrainflowFocusWidget-webapp) | @LeonardoFerrisi | A basic react+ts webapp that extends brainflow and makes a similar ... | 2026-09-02 | 0 |
+| [brainfold](https://github.com/Drew-Wagner/brainfold) | @Drew-Wagner | Train every fold, seed and subject of an EEG decoding benchmark at ... | 2026-10-20 | 2 |
 | [brainlink-bluetooth-macos-integration](https://github.com/AleksanderDudek/brainlink-bluetooth-macos-integration) | @AleksanderDudek | I recently bought Halo (https://www.brainaccess.ai/wp-content/uploa... | 2026-10-18 | 2 |
 | [brains](https://github.com/kabaragoya-loves-you/brains) | @kabaragoya-loves-you | A visualizer for the Neurosity Crown. | 2026-10-02 | 1 |
 | [bsense-p300-pilot](https://github.com/shaun5297/bsense-p300-pilot) | @shaun5297 | Short-session P300 EEG acquisition and subject-specific calibration... | 2026-09-11 | 1 |
@@ -86,6 +87,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-experiments](https://github.com/pleonardmusic/eeg-experiments) | @pleonardmusic | MindWave EEG recorder + 40/80 Hz ASSR analysis for testing gamma-en... | 2026-10-07 | 2 |
 | [eeg-explorer](https://github.com/RocketSpot/eeg-explorer) | @RocketSpot | Standalone Zone EEG acquisition, labeling, replay, processing, and ... | 2026-09-08 | 1 |
 | [eeg-harmonize](https://github.com/devasai-choppa/eeg-harmonize) | @devasai-choppa | Canonical EEG schema and a conversion trail. Designed clips only; T... | 2026-10-16 | 1 |
+| [eeg-kan-bci-ieee-bdn](https://github.com/kushbhardwaj0/eeg-kan-bci-ieee-bdn) | @kushbhardwaj0 | Interpretable Neural Decoding: Benchmarking Kolmogorov-Arnold Netwo... | 2026-10-15 | 1 |
 | [eeg-loop](https://github.com/TheBabelDragon/eeg-loop) | @TheBabelDragon | Minimal EEG acquisition, signal analysis, inference, and closed-loo... | 2026-09-01 | 1 |
 | [eeg-mcp](https://github.com/AImplifier/eeg-mcp) | @SimKuanGOH |  | 2026-07-26 | 2 |
 | [eeg-mcp](https://github.com/Am1r-codes/eeg-mcp) | @Am1r-codes | Motor-imagery EEG pipeline with a hand-written signal core, validat... | 2026-09-13 | 2 |
@@ -101,6 +103,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-spec](https://github.com/jaaninumberone/eeg-spec) | @jaaninumberone | Device-agnostic ADS1299 EEG specification, reference implementation... | 2026-09-27 | 1 |
 | [eeg-web-dashboard](https://github.com/BellaChenAn/eeg-web-dashboard) | @BellaChenAn | Live web dashboard for NeuroSky/ThinkGear EEG headsets (MindLink, M... | 2026-10-20 | 1 |
 | [eeg-workstation-agent](https://github.com/Neuradock/eeg-workstation-agent) | @JunwenLuo | Open-source EEG analysis agent workflows and prompts for NeuraDock ... | 2026-09-22 | 13 |
+| [EEG32](https://github.com/Iwetter/EEG32) | @Iwetter | 32-channel ADS1299/nRF52832 acquisition board design in KiCad, with... | 2026-10-22 | 1 |
 | [EEG_agent](https://github.com/Leehhhhh1/EEG_agent) | @Leehhhhh1 |  | 2026-09-16 | 2 |
 | [eeg_agent](https://github.com/dharmatarha/eeg_agent) | @dharmatarha | Agentic app for EEG data analysis | 2026-07-15 | 1 |
 | [EEG_Agent](https://github.com/zichunHU/EEG_Agent) | @zichunHU |  | 2026-08-19 | 2 |
@@ -108,6 +111,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [EEG_ME_MI_Gesture_Decoding](https://github.com/faruk-bmpt/EEG_ME_MI_Gesture_Decoding) | @faruk-bmpt | Reproducible EEG pipeline for hand gesture decoding across motor ex... | 2026-10-20 | 1 |
 | [EEG_UHB_LIBRARY](https://github.com/IngAmaury/EEG_UHB_LIBRARY) | @IngAmaury | Modular Python library for the acquisition and processing of EEG si... | 2025-06-27 | 3 |
 | [EEGagent](https://github.com/ZhipengXx/EEGagent) | @zXuff | Multi-agent workflows for EEG-to-image retrieval and fMRI screening... | 2026-09-24 | 3 |
+| [EEGAgentBenchmark](https://github.com/528why/EEGAgentBenchmark) | @528why |  | 2026-09-30 | 5 |
 | [eegdash-llm-tagger](https://github.com/eegdash/eegdash-llm-tagger) | @Kkuntal990 |  | 2026-06-12 | 3 |
 | [EEGDenoiseAgent](https://github.com/hanyilinn/EEGDenoiseAgent) | @hanyilinn | EEG Denoise Agent: A Unified LLM-Agent Framework for Automated EEG ... | 2026-06-04 | 1 |
 | [EEGDrone](https://github.com/Carter-Lawrence/EEGDrone) | @Carter-Lawrence | Motor imagery BCI. Two EEGNet classifiers (move/rest, left/right) r... | 2026-08-13 | 0 |
@@ -165,6 +169,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [mne-rt](https://github.com/mne-rt-org/mne-rt) | @payamsash | Real-time M/EEG signal processing | 2026-09-23 | 25 |
 | [modewise](https://github.com/ipeglin/modewise) | @ipeglin | Data-adaptive mode decomposition and analysis of multichannel signa... | 2026-10-11 | 1 |
 | [Motor-Imagery-BCI](https://github.com/OftenMissYi/Motor-Imagery-BCI) | @OftenMissYi | Motor-imagery EEG feature extraction and classification with wavele... | 2026-10-04 | 1 |
+| [motor_imagery_BCI_decoding-_neural_intentions](https://github.com/lidiascudiero/motor_imagery_BCI_decoding-_neural_intentions) | @lidiascudiero | An end-to-end Neuro-Engineering pipeline for Motor Imagery BCI deco... | 2026-10-19 | 1 |
 | [muse](https://github.com/shanemhansen/muse) | @shanemhansen | Raw EEG capture, storage, and time-travel replay for a Muse 2 headband | 2026-09-02 | 1 |
 | [muse-athena-protocol](https://github.com/mind-vault-lab/muse-athena-protocol) | @mind-vault-lab | Muse S Athena (MS-03) BLE protocol specification — 256 Hz 14-bit EE... | 2026-09-14 | 0 |
 | [muse-calm](https://github.com/GordoJr1/muse-calm) | @GordoJr1 | Calm meditation companion for the Muse 2 headband: live EEG, heart ... | 2026-09-27 | 1 |
@@ -194,6 +199,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [NeuroArt-Muse-Bridge](https://github.com/GTamilSelvan07/NeuroArt-Muse-Bridge) | @GTamilSelvan07 | Stream Muse EEG to TouchDesigner over LSL and OSC with live band po... | 2026-06-23 | 0 |
 | [neuroback](https://github.com/abrilcode/neuroback) | @abrilcode | Closed-loop, alpha-phase-locked light stimulation for OpenBCI. ecHT... | 2026-10-12 | 1 |
 | [NeuroBench_Studio](https://github.com/gel1has3/NeuroBench_Studio) | @gel1has3 | NeuroBench Studio is a conversational AI assistant and visual MLOps... | 2026-09-17 | 4 |
+| [NeuroBot-BCI-Robotic-Arm](https://github.com/rahulagarwal2735/NeuroBot-BCI-Robotic-Arm) | @rahulagarwal2735 | Hybrid EEG-EMG based mind-controlled robotic arm for assistive huma... | 2026-09-30 | 1 |
 | [neurobridge](https://github.com/anaman/neurobridge) | @anaman | Single-channel EEG training system for the NingNao/SereniBrain TH21... | 2026-10-15 | 1 |
 | [neurocalib-bench](https://github.com/Nigmat-future/neurocalib-bench) | @Nigmat-future | Reproducible CPU-only cross-day neural calibration with fixed data ... | 2026-10-18 | 1 |
 | [NeuroClient](https://github.com/jmduea/NeuroClient) | @jmduea | An independent Rust client for the Emotiv Cortex v2 API. | 2026-09-10 | 1 |
@@ -211,6 +217,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [neuropomodoro](https://github.com/vanjastankicc/neuropomodoro) | @vanjastankicc | A Pomodoro timer driven by EEG and smart lighting | 2026-09-24 | 1 |
 | [neuroscope](https://github.com/dopalici/neuroscope) | @dopalici | Real-time Muse 2 EEG dashboard: LSL acquisition, Welch band-power a... | 2026-08-01 | 0 |
 | [neurosift-mcps](https://github.com/magland/neurosift-mcps) | @magland | MCP servers for neurosift | 2025-11-03 | 2 |
+| [neurosonic-ai](https://github.com/Divyanshi12coder/neurosonic-ai) | @Divyanshi12coder | An AI-powered brainwave-to-music platform that combines EEG signal ... | 2026-10-22 | 1 |
 | [NeuroState-Microstates](https://github.com/Mohammed-T-AlQarni/NeuroState-Microstates) | @Mohammed-T-AlQarni | Explainable EEG-to-microstates research tool (MNE-Python + Pycrosta... | 2026-10-12 | 2 |
 | [neurosync](https://github.com/DrDraesel/neurosync) | @DrDraesel | NeuroSync - live EEG study viewer for BrainBit/DragonEEG headsets (... | 2026-10-07 | 1 |
 | [NeuroSync-AAC](https://github.com/anurag-panda-dev/NeuroSync-AAC) | @anurag-panda-dev | Laptop-first responsive web AAC prototype using edge EOG/EMG gestur... | 2026-09-04 | 2 |
@@ -270,6 +277,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [TriTF-AP](https://github.com/Deus191/TriTF-AP) | @Deus191 | Research code for TriTF-AP motor-imagery EEG classification, includ... | 2026-09-20 | 1 |
 | [typewave](https://github.com/freakandstein/typewave) | @freakandstein | Realtime typing + EEG (Muse) visualizer for OBS and TikTok LIVE. Vi... | 2026-10-07 | 1 |
 | [UNICORNConnect](https://github.com/LKreilinger/UNICORNConnect) | @LKreilinger | UNICORNConnect  enables direct connection and data acquisition from... | 2026-10-07 | 1 |
+| [VIBE](https://github.com/baeriswyln/VIBE) | @baeriswyln | Virtual Input via Brain-computer interface - Master Thesis | 2026-10-05 | 1 |
 | [Volition-App](https://github.com/adhritpradeepashoka/Volition-App) | @adhritpradeepashoka | Volition is a project I built using UpsideDownLab's NPG Lite. Origi... | 2026-10-14 | 1 |
 | [VR-EEG-GazeInteraction](https://github.com/cimenbaran/VR-EEG-GazeInteraction) | @cimenbaran | Real-time EEG-driven VR. Streams OpenBCI Cyton brain signals into U... | 2026-09-01 | 1 |
 | [Waveform-EEG-AIStudio](https://github.com/akatsuky999/Waveform-EEG-AIStudio) | @akatsuky999 | An agentic workspace for exploring, analyzing, visualizing, and ann... | 2026-09-22 | 12 |
