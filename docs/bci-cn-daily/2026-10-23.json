@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-23",
+  "generated_at": "2026-10-22T21:32:07.666Z",
+  "item_count": 6,
+  "types": {
+    "Benchmark": 1,
+    "Project": 5
+  },
+  "highlights": [
+    {
+      "title_zh": "MOABB 修 BNCI2015_004 回归：另一个数据集的范式标签被误植入",
+      "title_en": "MOABB Fixes a BNCI2015_004 Regression: Another Dataset's Task Labels Had Been Injected",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1323",
+      "brief": "MOABB 合并 #1323，修掉一个严重的标注回归：#868 曾把 BNCI2015_004 的事件改写成 math/letter/rotation/count/baseline——那是 Keirn & Aunon 1989 另一个数据集的任务，同时把想象窗口从 [3,10] s 写成 [0,4] s。本次依据 BNCI 官方说明「1=WORD…5=FEET」、Scherer et al. (2015, PLoS ONE) 与真实时间线恢复正确映射，并指出 v1.2.0 之前的发行版都是对的。同一提交还修了 Wang2016 被试数、BNCI2014_002 的 DOI 等。所有在该时间段用 MOABB 跑过 BNCI2015_004 的结论都需要重跑。"
+    },
+    {
+      "title_zh": "MNE-Python 拒绝重复的 event_id，并允许 set_meas_date 使用非 UTC 时区",
+      "title_en": "MNE-Python Rejects Duplicate event_id Values and Allows Non-UTC Timezones in set_meas_date",
+      "url": "https://github.com/mne-tools/mne-python/pull/14445",
+      "brief": "MNE-Python 在 10 月 22 日合并 5 项改动，最实用的是 #14445：**构建 Epochs 时拒绝重复的 event_id 值**。此前若两个条件映射到同一个整数（例如手工整理事件表时打错），它们的试次会被静默合并进同一个类别，事后几乎无法发现——结果就是「两类比较」实际上混了一类。另 #14436 允许 `set_meas_date` 设置**非 UTC 时区**（#9953），便于还原实测记录的本地时间与夏令时；#14419 补充文档解释 `annotate_muscle_zscore` 的「通道稀释」现象（承接前一天「坏通道未排除」的修复）。对做事件相关分析的团队，建议升级后跑一遍现有 Epochs 构建脚本，确认没有因重复 id 而报错——报错恰恰说明之前的数据混了类。"
+    },
+    {
+      "title_zh": "EEGDash 按 .vhdr 的 DataFile/MarkerFile 下载，并为每条记录保存 git-annex 键",
+      "title_en": "EEGDash Downloads by the .vhdr's DataFile/MarkerFile and Records Each git-annex Key",
+      "url": "https://github.com/eegdash/EEGDash/pull/496",
+      "brief": "EEGDash 在 10 月 22 日推进 3 次提交，都在补「下载与元数据一致性」：#496 让 BrainVision 格式的依赖文件与下载**跟随 `.vhdr` 里声明的 DataFile/MarkerFile`**（此前按命名约定猜，遇到不规范的公开数据集就会缺文件）；#495 把 EEG2025 竞赛记录路由到公开竞赛桶；#494 为**每条记录保存 git-annex 键**（SHA512E、去扩展名），使内容寻址可跨版本核对——对「上游悄悄替换同名文件」这类问题，这是最直接的防线。对依赖该平台做批处理或元分析的团队，建议在实验配置里记录所用记录的 annex 键，才能真正保证「重跑得到同一份数据」。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-23.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "MOABB 修 BNCI2015_004 回归：另一个数据集的范式标签被误植入",
+      "title_en": "MOABB Fixes a BNCI2015_004 Regression: Another Dataset's Task Labels Had Been Injected",
+      "bullets_zh": [
+        "#1323 恢复 BNCI2015_004 的五类心理任务（**WORD、SUB、NAV、HAND、FEET**）与 [3, 10] s 想象窗口；此前 PR #868 把事件改成了 math/letter/rotation/count/baseline——那是 **Keirn & Aunon 1989 另一个数据集**的任务，并把区间写成 [0, 4] s。",
+        "判定依据充分：BNCI 说明写明「1=WORD、2=SUB、3=NAV、4=HAND、5=FEET」，原始论文（Scherer et al. 2015, PLoS ONE）同名，时间线为 0 s 十字、3–4.25 s 提示、想象持续到 10 s；v1.2.0 之前的每个发行版映射都是对的。",
+        "同一提交还修 Wang2016 的被试数（35）、BNCI2014_002 的 DOI，以及 5 个数据集的 METADATA 事件。"
+      ],
+      "bullets_en": [
+        "#1323 restores BNCI2015_004's five mental tasks (WORD, SUB, NAV, HAND, FEET) and the [3, 10] s imagery window; PR #868 had rewritten the events as math/letter/rotation/count/baseline — the tasks of Keirn & Aunon 1989, a different dataset — with a [0, 4] s interval.",
+        "The evidence is solid: the BNCI description says 1=WORD, 2=SUB, 3=NAV, 4=HAND, 5=FEET, Scherer et al. 2015 (PLoS ONE) names the same tasks, and the timeline is a cross at 0 s, cue at 3-4.25 s, imagery to 10 s; every release through v1.2.0 had the correct mapping.",
+        "The same commit fixes Wang2016's subject count (35), the BNCI2014_002 DOI, and METADATA events for five datasets."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1323",
+      "published": "2026-10-22T15:34:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 合并 #1323，修掉一个严重的标注回归：#868 曾把 BNCI2015_004 的事件改写成 math/letter/rotation/count/baseline——那是 Keirn & Aunon 1989 另一个数据集的任务，同时把想象窗口从 [3,10] s 写成 [0,4] s。本次依据 BNCI 官方说明「1=WORD…5=FEET」、Scherer et al. (2015, PLoS ONE) 与真实时间线恢复正确映射，并指出 v1.2.0 之前的发行版都是对的。同一提交还修了 Wang2016 被试数、BNCI2014_002 的 DOI 等。所有在该时间段用 MOABB 跑过 BNCI2015_004 的结论都需要重跑。",
+      "brief_en": "MOABB merged #1323 fixing a labelling regression: #868 had rewritten BNCI2015_004's events as math/letter/rotation/count/baseline — the tasks of Keirn & Aunon 1989, a different dataset — and set the imagery window to [0, 4] s. The fix follows the BNCI description (1=WORD…5=FEET), Scherer et al. 2015 and the real timeline. Re-run BNCI2015_004 results from that period.",
+      "tags": [
+        "moabb",
+        "bnci2015-004",
+        "labelling",
+        "regression",
+        "benchmark"
+      ],
+      "raw_excerpt": "Commit 9282ba688ec3, PR #1323: \"* BNCI2015_004: restore the five mental tasks (WORD, SUB, NAV, HAND, FEET) and the [3, 10] s imagery window. PR #868 rewrote the dataset's events as math/letter/rotation/count/baseline (the five tasks of Keirn & Aunon 1989, another dataset) and its interval as [0, 4] s. The BNCI description of 004-2015 says '1 equals WORD, 2 equals SUB, 3 equals NAV, 4 equals HAND and 5 equals FEET' … Every release through v1.2.0 had the right mapping\".",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1323",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1077,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "标签被换成另一数据集的范式，类别语义完全变了，相关结论必须重跑。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 拒绝重复的 event_id，并允许 set_meas_date 使用非 UTC 时区",
+      "title_en": "MNE-Python Rejects Duplicate event_id Values and Allows Non-UTC Timezones in set_meas_date",
+      "bullets_zh": [
+        "#14445 在构建 Epochs 时**拒绝重复的 event_id 值**：两个不同条件映射到同一整数时，试次会被静默混在一起，之后无从察觉。",
+        "#14436 允许 `set_meas_date` 设置非 UTC 时区（#9953），便于匹配实测记录的本地时间与夏令时。",
+        "#14419 补充文档解释 `annotate_muscle_zscore` 中的「通道稀释」现象（延续前一天修坏通道未排除的问题）。"
+      ],
+      "bullets_en": [
+        "#14445 rejects duplicate event_id values when constructing Epochs: when two conditions map to the same integer their trials are silently merged, which is nearly impossible to notice later.",
+        "#14436 allows set_meas_date to use a non-UTC timezone (#9953), so recorded local times and daylight saving can be represented correctly.",
+        "#14419 documents the 'channel dilution' effect in annotate_muscle_zscore, following the previous day's fix for bad channels."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14445",
+      "published": "2026-10-22T21:05:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 在 10 月 22 日合并 5 项改动，最实用的是 #14445：**构建 Epochs 时拒绝重复的 event_id 值**。此前若两个条件映射到同一个整数（例如手工整理事件表时打错），它们的试次会被静默合并进同一个类别，事后几乎无法发现——结果就是「两类比较」实际上混了一类。另 #14436 允许 `set_meas_date` 设置**非 UTC 时区**（#9953），便于还原实测记录的本地时间与夏令时；#14419 补充文档解释 `annotate_muscle_zscore` 的「通道稀释」现象（承接前一天「坏通道未排除」的修复）。对做事件相关分析的团队，建议升级后跑一遍现有 Epochs 构建脚本，确认没有因重复 id 而报错——报错恰恰说明之前的数据混了类。",
+      "brief_en": "MNE-Python merged five changes on Oct 22, the most useful being #14445: constructing Epochs now rejects duplicate event_id values. Previously two conditions mapped to the same integer were silently merged into one class, which is nearly impossible to notice afterwards. #14436 allows non-UTC timezones in set_meas_date, and #14419 documents channel dilution in annotate_muscle_zscore.",
+      "tags": [
+        "mne-python",
+        "event-id",
+        "validation",
+        "timezone",
+        "docs"
+      ],
+      "raw_excerpt": "Commits 2026-10-22: \"Reject duplicate event_id values when constructing Epochs (#14445)\" 21:05Z; \"ENH: Allow setting non-UTC timezone in set_meas_date (#9953) (#14436)\" 18:09Z; \"DOC: Explain channel dilution in annotate_muscle_zscore (#14419)\" 17:42Z.",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14445",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3560,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "重复 event_id 会让两个条件静默合并成一类，事后几乎无法发现。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGDash 按 .vhdr 的 DataFile/MarkerFile 下载，并为每条记录保存 git-annex 键",
+      "title_en": "EEGDash Downloads by the .vhdr's DataFile/MarkerFile and Records Each git-annex Key",
+      "bullets_zh": [
+        "#496：BrainVision 的依赖文件与下载改为跟随 **`.vhdr` 里声明的 DataFile/MarkerFile`**，而不是按命名约定猜测——命名不规范的数据集此前会缺文件。",
+        "#495 把 EEG2025 竞赛记录路由到公开竞赛桶；#494 为每条记录保存 **git-annex 键（SHA512E、去掉扩展名）**，使内容寻址可跨版本核对。",
+        "这些改动共同决定「下载到的文件是否与元数据描述一致」，是数据平台可复现性的底层。"
+      ],
+      "bullets_en": [
+        "#496 makes BrainVision dependency files and downloads follow the DataFile/MarkerFile declared in the .vhdr rather than guessing from naming conventions, which broke on non-standard datasets.",
+        "#495 routes EEG2025 competition records to the public competition bucket, and #494 records each recording's git-annex key (SHA512E, extension-less) so content addressing can be checked across versions.",
+        "Together these decide whether downloaded files match their metadata — the foundation of reproducibility for a data platform."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/pull/496",
+      "published": "2026-10-22T14:43:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 在 10 月 22 日推进 3 次提交，都在补「下载与元数据一致性」：#496 让 BrainVision 格式的依赖文件与下载**跟随 `.vhdr` 里声明的 DataFile/MarkerFile`**（此前按命名约定猜，遇到不规范的公开数据集就会缺文件）；#495 把 EEG2025 竞赛记录路由到公开竞赛桶；#494 为**每条记录保存 git-annex 键**（SHA512E、去扩展名），使内容寻址可跨版本核对——对「上游悄悄替换同名文件」这类问题，这是最直接的防线。对依赖该平台做批处理或元分析的团队，建议在实验配置里记录所用记录的 annex 键，才能真正保证「重跑得到同一份数据」。",
+      "brief_en": "EEGDash made three commits on Oct 22 about download-metadata consistency: #496 makes BrainVision dependency files and downloads follow the DataFile/MarkerFile declared in the .vhdr instead of guessing from naming, #495 routes EEG2025 competition records to the public bucket, and #494 records each recording's git-annex key so content addressing can be verified across versions.",
+      "tags": [
+        "eeg-dash",
+        "brainvision",
+        "git-annex",
+        "provenance",
+        "download"
+      ],
+      "raw_excerpt": "PRs merged 2026-10-22: \"fix(brainvision): dep_keys and downloads follow the .vhdr's DataFile/MarkerFile; (#496)\" 14:43Z; \"Route EEG2025 competition records to the public competition bucket (#495)\" 13:48Z; \"fix(digest): record the git-annex key of every recording (SHA512E, extension-les[s]) (#494)\" 13:14Z.",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash#496",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 89,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "按 .vhdr 声明取文件＋记录 annex 键，才能保证下载内容与元数据可核对。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "PolyHubNet：C# 模块化神经生理实验平台，含 actiCHamp 采集与 SSVEP 虚拟键盘",
+      "title_en": "PolyHubNet: A Modular C# Platform with actiCHamp Acquisition and an SSVEP Virtual Piano",
+      "bullets_zh": [
+        "架构：信号源、处理器与实验程序作为独立服务接入 PolyHub，流式处理走 `SignalProcessor` 继承体系，跨进程用 Windows **内存映射文件＋同步对象**传递数据块与事件。",
+        "已实现组件：主程序 PolyHubNet（连接数据流、查看信号、记录事件、录制/回放会话）、**ActiChamp 服务（Brain Products actiCHamp 放大器）**、**NeuroPiano（8 键 SSVEP 视觉刺激＋声音反馈，含标定）**、信号/事件发生器。",
+        "技术栈 Windows＋C#/.NET 4.8＋WinForms，OpenTK/OpenGL 做视觉刺激、NAudio/WASAPI 放声；作者明确提示普通 Windows 无硬实时保证，建议用光电传感器校验刺激时序。"
+      ],
+      "bullets_en": [
+        "Architecture: signal sources, processors and experiment apps attach to PolyHub as independent services; streaming uses a SignalProcessor hierarchy, and cross-process data blocks and events travel over Windows memory-mapped files plus synchronisation objects.",
+        "Implemented: PolyHubNet itself (connect streams, view signals, log events, record/play back sessions), an ActiChamp service for the Brain Products actiCHamp amplifier, NeuroPiano (eight-key SSVEP visual stimulation with audio feedback and calibration), plus signal and event generators.",
+        "Windows, C#/.NET 4.8 and WinForms; OpenTK/OpenGL for stimulation and NAudio/WASAPI for sound, with an explicit warning that plain Windows offers no hard real-time guarantees and stimulus timing should be verified with a photodiode."
+      ],
+      "url": "https://github.com/IgnatDubynin/EEG_BCI_MotorMusic",
+      "published": "2026-10-22T18:07:00Z",
+      "source": "github",
+      "language": "ru",
+      "brief": "新建仓库（2026-10-22，俄文文档）PolyHubNet 是一套模块化神经生理实验平台：信号源、处理器与实验程序作为独立服务接入 PolyHub，流式处理基于 SignalProcessor 体系，跨进程用 Windows 内存映射文件传递数据块与事件。已落地组件包括主程序、对接 Brain Products actiCHamp 放大器的 ActiChamp 服务、8 键 SSVEP 视觉刺激＋声音反馈的 NeuroPiano（带标定）以及信号/事件发生器。技术栈 Windows＋C#/.NET 4.8＋WinForms。作者明确写了局限：普通 Windows 无硬实时保证，刺激时序建议用光电传感器校验。",
+      "brief_en": "Created 2026-10-22, PolyHubNet is a modular neurophysiology platform: sources, processors and experiment apps attach as services, streaming uses a SignalProcessor hierarchy, and cross-process data travels over Windows memory-mapped files. Components include the main app, an ActiChamp service for Brain Products amplifiers and NeuroPiano (SSVEP stimulation), on C#/.NET 4.8.",
+      "tags": [
+        "platform",
+        "actichamp",
+        "ssvep",
+        "csharp",
+        "realtime"
+      ],
+      "raw_excerpt": "README（俄文）：「PolyHubNet — модульная программная платформа для нейрофизиологических экспериментов: регистрации, визуализации, записи, воспроизведения и потоковой обработки сигналов…」组件：「ActiChamp — сервис получения ЭЭГ от усилителя Brain Products actiCHamp」「NeuroPiano — виртуальная клавиатура со зрительной SSVEP-стимуляцией…калибровки восьми целевых клавиш」；「Обычная Windows не обеспечивает жёстких гарантий времени выполнения; точность…рекомендуется проверять фотодатчиком」",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "IgnatDubynin/EEG_BCI_MotorMusic",
+      "author_handle": "IgnatDubynin",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把放大器接入、SSVEP 刺激与录制回放整合成服务架构，还主动标注实时性局限。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "FieldTrip 支持 Cerca cMEG 文件格式（OPM-MEG 设备）",
+      "title_en": "FieldTrip Adds Support for the Cerca cMEG File Format (OPM-MEG)",
+      "bullets_zh": [
+        "新增对 **Cerca cMEG** 文件格式的读取支持——Cerca Magnetics 是 OPM（光泵磁力仪）MEG 的代表厂商之一。",
+        "OPM-MEG 可穿戴、无需液氦，近两年在实验神经科学里快速普及；工具链支持往往落后于硬件，格式缺口会直接卡住分析流程。",
+        "改动为单点、无破坏性；使用该设备或收到合作方 cMEG 数据的团队可直接受益。"
+      ],
+      "bullets_en": [
+        "Adds reading support for the Cerca cMEG file format — Cerca Magnetics is one of the representative OPM (optically pumped magnetometer) MEG vendors.",
+        "Wearable, helium-free OPM-MEG is spreading quickly in experimental neuroscience, and toolchain support usually lags the hardware; a format gap blocks the analysis pipeline outright.",
+        "A focused, non-breaking change that directly helps teams using this hardware or receiving cMEG data from collaborators."
+      ],
+      "url": "https://github.com/fieldtrip/fieldtrip/commit/02149cbf43",
+      "published": "2026-10-22T09:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "FieldTrip 合并一次提交（02149cbf43），**新增对 Cerca cMEG 文件格式的支持**。Cerca Magnetics 是 OPM（光泵磁力仪）MEG 的代表厂商之一：这类设备可穿戴、无需液氦、允许被试在扫描中活动，近两年在实验神经科学里快速普及。但工具链支持通常落后于硬件——没有格式读取支持，实验室拿到数据就得先写转换脚本或退回厂商软件，分析流程被卡在入口。这类改动虽小，对已上 OPM-MEG 的平台是实打实的解阻塞。使用 Cerca 设备、或收到合作方 cMEG 数据的团队可直接升级使用；建议同时确认采样率与通道命名在 FieldTrip 侧是否符合预期。",
+      "brief_en": "FieldTrip added support for the Cerca cMEG file format (commit 02149cbf43). Cerca Magnetics is a representative OPM-MEG vendor: wearable, helium-free sensors that let subjects move, spreading quickly in experimental neuroscience. Toolchain support usually lags the hardware, and without a reader labs must write converters or fall back to vendor software, blocking the pipeline at ingestion.",
+      "tags": [
+        "fieldtrip",
+        "opm-meg",
+        "cmeg",
+        "file-format",
+        "meg"
+      ],
+      "raw_excerpt": "Commit 02149cbf43, 2026-10-22T09:33Z: \"ENH - added support for the Cerca cMEG file format\". Repo: fieldtrip/fieldtrip (MATLAB toolbox for MEG, EEG and iEEG); latest release 20251218.",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "fieldtrip/fieldtrip@02149cbf43",
+      "author_handle": "fieldtrip",
+      "metrics": {
+        "play": null,
+        "like": 992,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "OPM-MEG 厂商格式进入主流工具链，避免实验室在数据入口处自写转换。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "NDNEL-2D-BCI-Control：弗吉尼亚理工实验室的 2D 控制运动想象解码脚手架",
+      "title_en": "NDNEL-2D-BCI-Control: A Motor-Imagery Decoding Scaffold for 2D Control",
+      "bullets_zh": [
+        "弗吉尼亚理工 Neural Dynamics and Neuroengineering Lab 的 2D BCI 控制研究代码：`src/pre-analysis/` 做数据加载、清洗与设计选择验证，`scripts/` 提供可运行分析，`results/` 不入库。",
+        "核心脚本为 `run_r2_map.py` 与 `r2.py`（编码式 R² 映射）配合 `regions.py`，用 **MOABB** 拉取公开数据集（缓存于 `~/mne_data`），原始数据不入库。",
+        "规模不大但结构规范（pyproject 可 `pip install -e .`），适合作为「从公开数据到 R² 空间映射」的最小可复现起点。"
+      ],
+      "bullets_en": [
+        "From Virginia Tech's Neural Dynamics and Neuroengineering Lab: src/pre-analysis handles data loading, cleaning and design-choice validation, scripts holds runnable analyses, and results is untracked.",
+        "The core is run_r2_map.py plus r2.py (encoding-style R² maps) with regions.py, pulling public datasets through MOABB (cached in ~/mne_data) with raw data untracked.",
+        "Small but well-structured (pip install -e . via pyproject), a minimal reproducible starting point for R² spatial mapping from public data."
+      ],
+      "url": "https://github.com/Marvin-Okotie-VT/NDNEL-2D-BCI-Control",
+      "published": "2026-10-22T02:09:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库（2026-10-22）来自弗吉尼亚理工 **Neural Dynamics and Neuroengineering Lab**，主题是运动想象 EEG 的 **2D BCI 控制**解码。代码量不大但结构清楚：`src/pre-analysis/` 负责数据加载、清洗与「设计选择」的验证，`scripts/run_r2_map.py` 调用 `r2.py` 与 `regions.py` 做编码式的 **R² 空间映射**，数据通过 **MOABB** 获取（缓存在 `~/mne_data`，原始数据不入库），可 `pip install -e .` 安装。对想快速复现「从公开数据到 R² 区域映射」这条路径的人，这是一份干净的最小起点；不过目前只有分析脚手架，尚未给出 2D 控制闭环的实现细节，引用其结论前需核对具体数据处理与统计方法。",
+      "brief_en": "Created 2026-10-22 by Virginia Tech's Neural Dynamics and Neuroengineering Lab, this repo covers motor-imagery decoding for 2D BCI control. src/pre-analysis validates loading, cleaning and design choices, scripts/run_r2_map.py drives r2.py and regions.py for encoding-style R² maps, and data comes via MOABB. A minimal reproducible starting point, though the 2D closed loop is not yet implemented.",
+      "tags": [
+        "motor-imagery",
+        "2d-control",
+        "r2-mapping",
+        "moabb",
+        "scaffold"
+      ],
+      "raw_excerpt": "README: \"EEG motor-imagery decoding for 2D BCI control. Neural Dynamics and Neuroengineering Lab, Virginia Tech.\" Layout: \"src/pre-analysis/ data loading, cleaning, and validation of design choices; scripts/ runnable analyses; results/ outputs (not tracked)\". \"Public datasets are fetched through MOABB (cached in `~/mne_data`).\" Files include scripts/run_r2_map.py, src/pre-analysis/{r2.py, regions.py, data.py}.",
+      "fetched_at": "2026-10-22T23:20:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Marvin-Okotie-VT/NDNEL-2D-BCI-Control",
+      "author_handle": "Marvin-Okotie-VT",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "公开数据→R² 空间映射的最小可复现脚手架，标注了数据与统计边界。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 48,
+    "llm_rows": 12,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
