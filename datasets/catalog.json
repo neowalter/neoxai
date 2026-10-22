@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T09:37:45.911Z",
+  "generatedAt": "2026-10-22T09:37:49.544Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 16
+      "count": 17
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 12
+      "count": 13
     },
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 2
     }
   ],
   "items": [
@@ -414,6 +414,25 @@
       ]
     },
     {
+      "id": "openneuro:ds008763",
+      "name": "A resting-state EEG dataset for autistic traits",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008763",
+      "source": "openneuro",
+      "description": "A Resting-state EEG Dataset for Autism Related Traits (EEG Dataset-Autistic Traits)",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-01T05:17:00.630Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -431,7 +450,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8824,
+      "downloads": 8856,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -456,7 +475,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6400,
+      "downloads": 6586,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -481,8 +500,8 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1912,
-      "likes": 1,
+      "downloads": 1898,
+      "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
         "EEG"
@@ -506,7 +525,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 1951,
+      "downloads": 1980,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -549,7 +568,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 784,
+      "downloads": 814,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -590,31 +609,9 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 323,
+      "downloads": 327,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 638,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -636,9 +633,31 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 654,
+      "downloads": 700,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 667,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -684,9 +703,88 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 218,
+      "downloads": 219,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:xw1216/openneuro-hbn-eeg-releases-v1-0-1",
+      "name": "openneuro-hbn-eeg-releases-v1-0-1",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-releases-v1-0-1",
+      "source": "huggingface",
+      "description": "HBN EEG: one archive per release, R1-R11 This repository publishes one lossless .tar.gz archive per HBN EEG release, fixed at OpenNeuro version 1.0.1, including R6. Source: https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1/tree/987f221fcf9fe858d01b6c8a918697750…",
+      "tags": [
+        "cc-by-sa-4.0",
+        "eeg",
+        "hbn",
+        "neuroscience",
+        "archive"
+      ],
+      "license": "cc-by-sa-4.0",
+      "downloads": 145,
+      "likes": 0,
+      "updatedAt": "2026-10-17T19:47:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Anticloud/anticloud-eeglab",
+      "name": "anticloud-eeglab",
+      "owner": "Anticloud",
+      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
+      "source": "huggingface",
+      "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
+      "tags": [],
+      "license": null,
+      "downloads": 90,
+      "likes": 0,
+      "updatedAt": "2026-10-17T04:04:51.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Abdulkader/eeg-foundation-leaderboard",
+      "name": "eeg-foundation-leaderboard",
+      "owner": "Abdulkader",
+      "url": "https://huggingface.co/datasets/Abdulkader/eeg-foundation-leaderboard",
+      "source": "huggingface",
+      "description": "EEG Foundation Model Leaderboard — data Backing data for the EEG Foundation Model Leaderboard Space. Files models.json — one record per model: architecture, pretraining objective, parameter count, pretraining corpus scale, paper/code/weights links. results.json — one record per…",
+      "tags": [
+        "apache-2.0",
+        "json",
+        "tabular",
+        "pandas",
+        "arxiv:2405.18765",
+        "eeg",
+        "leaderboard",
+        "foundation-models"
+      ],
+      "license": "apache-2.0",
+      "downloads": 126,
+      "likes": 0,
+      "updatedAt": "2026-10-06T09:34:23.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23556191",
+      "name": "Data and code for manuscript \"Electrophysiological signatures of episodic memory retrieval in early childhood\" (anonymised for peer review)",
+      "owner": "anonymous",
+      "url": "https://doi.org/10.5281/zenodo.23556191",
+      "source": "zenodo",
+      "description": "This record contains anonymised behavioral and EEG data (BIDS format) and analysis code for the manuscript \"Electrophysiological signatures of episodic memory retrieval in early childhood\". Currently, author information is removed and access is restricted for peer review. If the…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-22T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -700,7 +798,7 @@
       "description": "Medical biological signals (ECG, EEG, EMG, PPG) and medical images (X-ray, CT, MRI, ultrasound) are central to modern diagnosis. They are noisy, high-dimensional and time-consuming to interpret.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1,
+      "downloads": 4,
       "likes": null,
       "updatedAt": "2026-10-20T00:00:00.000Z",
       "modality": [
@@ -736,12 +834,28 @@
       "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 19,
+      "downloads": 22,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
         "EEG",
         "fNIRS"
+      ]
+    },
+    {
+      "id": "zenodo:23478162",
+      "name": "Disentangling stimulus-driven and goal-dependent contributions to the N170's sensitivity to the eye region : Study 2 - EEG and behavioral datasets",
+      "owner": "Demeule, Chanelle",
+      "url": "https://doi.org/10.5281/zenodo.23478162",
+      "source": "zenodo",
+      "description": "Here are all the EEG and behavioral datasets used in Study 2",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-19T00:00:00.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -829,38 +943,6 @@
       ]
     },
     {
-      "id": "zenodo:23240774",
-      "name": "Dataset related to article: Interictal epileptiform discharges propagation revealed by MEG/foramen ovale-EEG co-recording in patients with temporal lobe epilepsy candidate to neurosurgery",
-      "owner": "Duran, Dunja",
-      "url": "https://doi.org/10.5281/zenodo.23240774",
-      "source": "zenodo",
-      "description": "TABLE 1-2",
-      "tags": [],
-      "license": null,
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-10-08T00:00:00.000Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
-      "id": "zenodo:23194286",
-      "name": "MIND v1 verification record: frozen predictions, selection records and scoring code",
-      "owner": "Dammu, Hitesh",
-      "url": "https://doi.org/10.5281/zenodo.23194286",
-      "source": "zenodo",
-      "description": "Frozen prediction files, selection records and scoring code for an internal evaluation of EEG research models (MIND v1). Files are available to reviewers on request.",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 3,
-      "likes": null,
-      "updatedAt": "2026-10-06T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -880,29 +962,13 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-21T04:49:08.000Z",
+      "updatedAt": "2026-10-21T23:35:21.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG",
         "fNIRS",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:yjmantilla/sovabids",
-      "name": "sovabids",
-      "owner": "yjmantilla",
-      "url": "https://github.com/yjmantilla/sovabids",
-      "source": "github",
-      "description": "A python package for the automatic conversion of EEG datasets to the BIDS standard, with a focus on making the most out of metadata.",
-      "tags": [],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 13,
-      "updatedAt": "2026-10-21T05:20:52.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -922,73 +988,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 12,
-      "updatedAt": "2026-10-21T06:24:12.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:ibr0r0/EEG-Dataset-Recorder",
-      "name": "EEG-Dataset-Recorder",
-      "owner": "ibr0r0",
-      "url": "https://github.com/ibr0r0/EEG-Dataset-Recorder",
-      "source": "github",
-      "description": "Python-based EEG data recorder and simulator for generating timestamped CSV datasets for research and machine learning.",
-      "tags": [
-        "brainflow",
-        "eeg",
-        "eeg-signals",
-        "openbci",
-        "prosthetics",
-        "python"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-21T05:34:26.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:nimbusbci/nimbus-mcp",
-      "name": "nimbus-mcp",
-      "owner": "nimbusbci",
-      "url": "https://github.com/nimbusbci/nimbus-mcp",
-      "source": "github",
-      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "fastmcp",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-20T11:35:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:ksun10071991-boop/eeg-emotion-channel-reduction",
-      "name": "eeg-emotion-channel-reduction",
-      "owner": "ksun10071991-boop",
-      "url": "https://github.com/ksun10071991-boop/eeg-emotion-channel-reduction",
-      "source": "github",
-      "description": "EEG-based emotion recognition under channel reduction (SEED dataset)",
-      "tags": [
-        "eeg",
-        "emotion-recognition"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-21T04:09:47.000Z",
+      "updatedAt": "2026-10-22T06:24:12.000Z",
       "modality": [
         "EEG"
       ]
