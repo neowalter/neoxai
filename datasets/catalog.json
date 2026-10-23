@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-22T09:37:49.544Z",
+  "generatedAt": "2026-10-23T09:33:54.693Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 66
+      "count": 65
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 17
+      "count": 16
     },
     {
       "id": "physionet",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 2
+      "count": 4
     }
   ],
   "items": [
@@ -414,25 +414,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008763",
-      "name": "A resting-state EEG dataset for autistic traits",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008763",
-      "source": "openneuro",
-      "description": "A Resting-state EEG Dataset for Autism Related Traits (EEG Dataset-Autistic Traits)",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-01T05:17:00.630Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -450,7 +431,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8856,
+      "downloads": 8865,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -475,7 +456,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6586,
+      "downloads": 6595,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -500,7 +481,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1898,
+      "downloads": 1855,
       "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
@@ -550,7 +531,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1802,
+      "downloads": 1803,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -568,9 +549,33 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 814,
+      "downloads": 836,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:whhhy123/EEGAgentBenchmark",
+      "name": "EEGAgentBenchmark",
+      "owner": "whhhy123",
+      "url": "https://huggingface.co/datasets/whhhy123/EEGAgentBenchmark",
+      "source": "huggingface",
+      "description": "EEGAgentBenchmark EEGAgentBenchmark is the frozen data release for EEGAgentBench, a benchmark of general-purpose LLM agents on EEG knowledge and signal-analysis tasks. The benchmark contains 1,072 evaluation instances across six tasks. This repository provides the 1,034 EEG/PSG…",
+      "tags": [
+        "question-answering",
+        "text-classification",
+        "eeg",
+        "psg",
+        "biomedical",
+        "agents",
+        "benchmark"
+      ],
+      "license": "other",
+      "downloads": 779,
+      "likes": 0,
+      "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
         "EEG"
       ]
@@ -609,33 +614,9 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 327,
+      "downloads": 328,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:whhhy123/EEGAgentBenchmark",
-      "name": "EEGAgentBenchmark",
-      "owner": "whhhy123",
-      "url": "https://huggingface.co/datasets/whhhy123/EEGAgentBenchmark",
-      "source": "huggingface",
-      "description": "EEGAgentBenchmark EEGAgentBenchmark is the frozen data release for EEGAgentBench, a benchmark of general-purpose LLM agents on EEG knowledge and signal-analysis tasks. The benchmark contains 1,072 evaluation instances across six tasks. This repository provides the 1,034 EEG/PSG…",
-      "tags": [
-        "question-answering",
-        "text-classification",
-        "eeg",
-        "psg",
-        "biomedical",
-        "agents",
-        "benchmark"
-      ],
-      "license": "other",
-      "downloads": 700,
-      "likes": 0,
-      "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
         "EEG"
       ]
@@ -655,7 +636,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 667,
+      "downloads": 661,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -749,40 +730,67 @@
       ]
     },
     {
-      "id": "hf:Abdulkader/eeg-foundation-leaderboard",
-      "name": "eeg-foundation-leaderboard",
-      "owner": "Abdulkader",
-      "url": "https://huggingface.co/datasets/Abdulkader/eeg-foundation-leaderboard",
-      "source": "huggingface",
-      "description": "EEG Foundation Model Leaderboard — data Backing data for the EEG Foundation Model Leaderboard Space. Files models.json — one record per model: architecture, pretraining objective, parameter count, pretraining corpus scale, paper/code/weights links. results.json — one record per…",
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
       "tags": [
-        "apache-2.0",
-        "json",
-        "tabular",
-        "pandas",
-        "arxiv:2405.18765",
+        "bids",
         "eeg",
-        "leaderboard",
-        "foundation-models"
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
       ],
-      "license": "apache-2.0",
-      "downloads": 126,
-      "likes": 0,
-      "updatedAt": "2026-10-06T09:34:23.000Z",
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 183,
+      "updatedAt": "2026-10-22T19:26:51.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
+      ]
+    },
+    {
+      "id": "zenodo:23478162",
+      "name": "Disentangling stimulus-driven and goal-dependent contributions to the N170's sensitivity to the eye region : Study 2 - EEG and behavioral datasets",
+      "owner": "Demeule, Chanelle",
+      "url": "https://doi.org/10.5281/zenodo.23478162",
+      "source": "zenodo",
+      "description": "Here are all the EEG and behavioral datasets used in Study 2",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 52,
+      "likes": null,
+      "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "zenodo:23556191",
-      "name": "Data and code for manuscript \"Electrophysiological signatures of episodic memory retrieval in early childhood\" (anonymised for peer review)",
-      "owner": "anonymous",
-      "url": "https://doi.org/10.5281/zenodo.23556191",
+      "id": "zenodo:23574953",
+      "name": "EEG Brain Connectivity Knowledge Graphs (RDF/Turtle): CHB-MIT and EEGMMIDB",
+      "owner": "Nogales, Alberto",
+      "url": "https://doi.org/10.5281/zenodo.23574953",
       "source": "zenodo",
-      "description": "This record contains anonymised behavioral and EEG data (BIDS format) and analysis code for the manuscript \"Electrophysiological signatures of episodic memory retrieval in early childhood\". Currently, author information is removed and access is restricted for peer review. If the…",
-      "tags": [],
+      "description": "RDF/Turtle knowledge graphs of EEG functional connectivity produced by the EEGraphKGExporter pipeline using Pearson correlation (threshold=0.7). Includes four graphs: CHB-MIT subject chb01 seizure-free control (chb01_ctrl.ttl) and ictal recording (chb01_ictal.ttl); EEGMMIDB subj…",
+      "tags": [
+        "EEG",
+        "Knowledge Graph",
+        "RDF",
+        "FAIR",
+        "Brain Connectivity",
+        "PROV-O",
+        "RDF-star",
+        "NIFSTD"
+      ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 28,
       "likes": null,
       "updatedAt": "2026-10-22T00:00:00.000Z",
       "modality": [
@@ -808,6 +816,23 @@
       ]
     },
     {
+      "id": "zenodo:23397566",
+      "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
+      "owner": "Villa, Alessandro E.P.",
+      "url": "https://doi.org/10.5281/zenodo.23397566",
+      "source": "zenodo",
+      "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 24,
+      "likes": null,
+      "updatedAt": "2026-10-15T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
+      ]
+    },
+    {
       "id": "zenodo:23464852",
       "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
       "owner": "Atiwiwat, Danita",
@@ -819,39 +844,6 @@
       ],
       "license": "cc-by-4.0",
       "downloads": 2,
-      "likes": null,
-      "updatedAt": "2026-10-19T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23397566",
-      "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
-      "owner": "Villa, Alessandro E.P.",
-      "url": "https://doi.org/10.5281/zenodo.23397566",
-      "source": "zenodo",
-      "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 22,
-      "likes": null,
-      "updatedAt": "2026-10-15T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "fNIRS"
-      ]
-    },
-    {
-      "id": "zenodo:23478162",
-      "name": "Disentangling stimulus-driven and goal-dependent contributions to the N170's sensitivity to the eye region : Study 2 - EEG and behavioral datasets",
-      "owner": "Demeule, Chanelle",
-      "url": "https://doi.org/10.5281/zenodo.23478162",
-      "source": "zenodo",
-      "description": "Here are all the EEG and behavioral datasets used in Study 2",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -910,6 +902,22 @@
       ]
     },
     {
+      "id": "zenodo:23204595",
+      "name": "Data underlying \"Effects of Major–Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power\"",
+      "owner": "Asakura, Takumi",
+      "url": "https://doi.org/10.5281/zenodo.23204595",
+      "source": "zenodo",
+      "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 11,
+      "likes": null,
+      "updatedAt": "2026-10-07T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23257077",
       "name": "STSM CA24161 – MNE-BIDS workflow & EEG–ECG/HEP protocol",
       "owner": "Marcu, Gabriela Mariana",
@@ -924,22 +932,6 @@
       "modality": [
         "EEG",
         "ECG"
-      ]
-    },
-    {
-      "id": "zenodo:23204595",
-      "name": "Data underlying \"Effects of Major–Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power\"",
-      "owner": "Asakura, Takumi",
-      "url": "https://doi.org/10.5281/zenodo.23204595",
-      "source": "zenodo",
-      "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 10,
-      "likes": null,
-      "updatedAt": "2026-10-07T00:00:00.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -962,7 +954,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-21T23:35:21.000Z",
+      "updatedAt": "2026-10-22T23:11:29.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -987,8 +979,33 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 12,
-      "updatedAt": "2026-10-22T06:24:12.000Z",
+      "likes": 14,
+      "updatedAt": "2026-10-23T06:24:15.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:Rishabh-bgp/beed-ml-study",
+      "name": "beed-ml-study",
+      "owner": "Rishabh-bgp",
+      "url": "https://github.com/Rishabh-bgp/beed-ml-study",
+      "source": "github",
+      "description": "Provenance audit and leakage-aware benchmark of seizure-type classifiers on the Bangalore EEG Epilepsy Dataset — IIT Ropar & NIELIT Ropar AI/ML training research",
+      "tags": [
+        "data-leakage",
+        "eeg",
+        "epilepsy",
+        "iit-ropar",
+        "lightgbm",
+        "machine-learning",
+        "nielit",
+        "python"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-22T20:58:29.000Z",
       "modality": [
         "EEG"
       ]
