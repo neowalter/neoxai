@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-24",
+  "generated_at": "2026-10-23T21:32:17.518Z",
+  "item_count": 6,
+  "types": {
+    "Benchmark": 1,
+    "Project": 5
+  },
+  "highlights": [
+    {
+      "title_zh": "CalibrationFreeBCI：跨数据集左右手运动想象解码，无需目标端监督校准",
+      "title_en": "CalibrationFreeBCI: Cross-Dataset Left/Right Motor Imagery Without Target-Side Calibration",
+      "url": "https://github.com/manaal007/CalibrationFreeBCI",
+      "brief": "新建仓库 CalibrationFreeBCI（2026-10-23）研究一个很实际的问题：**不做目标端监督校准**，能否跨被试、跨数据集解码左右手运动想象。方法上覆盖 source-only 与无监督对齐两条主流路线，且全部可在 CPU 上复现（带 CI 测试徽章）。可贵的是它把结果工件一并提交：独立 LOSO 结果、管线对比表、协方差与类别条件协方差分析、黎曼模型与会话级结果，CSV 与图像一一对应，便于核对而不是只给一张汇总图。对做零校准 BCI 或跨数据集迁移的团队，这份仓库既可作为基线，也可作为「该报哪些对照」的模板；注意跨数据集结论依赖所用对齐方法，引用前应确认其数据划分与统计口径。"
+    },
+    {
+      "title_zh": "MNE-Python 修 fNIRS 插值「本应 NaN 却复制了别的通道」，并支持高分辨率出图",
+      "title_en": "MNE-Python Fixes fNIRS Interpolation Copying Another Channel Instead of NaN",
+      "url": "https://github.com/mne-tools/mne-python/pull/14416",
+      "brief": "MNE-Python 在 10 月 23 日推进 11 次提交，最需要留意的是 **#14416**：对于**没有位置信息**（NaN 或全零）的坏 fNIRS 通道，`interpolate_bads` 会警告其值「将为 NaN」，但内部 `_interpolate_bads_nirs` 实际**复制了另一个通道的数据**——这不是插值，而是凭空造数据，且用户看到的是警告、拿到的是「填好的值」。同批还修了 ICA 源图滑块的分辨率/重复绘制问题（组件多时内存暴涨），并让 `Report.add_epochs` 显示拒绝与平坦阈值；#14447 为 `Brain.screenshot()`／`save_image()` 增加 `scale` 参数以便发表级出图。做 fNIRS 预处理或 ICA 审阅的团队建议升级后复查坏道处理结果。"
+    },
+    {
+      "title_zh": "EEGDash 读 EDF 头里的 NUL 结尾数字，救回 825 段无时长的 iEEG 记录",
+      "title_en": "EEGDash Parses NUL-Terminated EDF Header Numbers, Recovering 825 iEEG Recordings",
+      "url": "https://github.com/eegdash/EEGDash/pull/499",
+      "brief": "EEGDash 合并 #499，修一个典型的「临床导出器怪癖」：三个 NEMAR iEEG 数据集（on004551、on006233、on006914，合计 **825 段记录、332 名受试**）的 EDF 头部数字字段以 **NUL 字节结尾**，解析失败后 `total_duration_s` 为空，于是这些记录在所有时长统计里凭空消失——不影响下载，却让「平台总时长」这类分母算错。修复后其时长恢复。同日 #497 在入库写入前保护显式指定的历史数据源 pin（避免刷新把人工固定的版本冲掉），#498 统一 prune 截止策略并简化下载记账。对做数据集级统计或元分析的人，建议升级后重算一次总时长与样本量，确认之前的数字没有被低估。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-24.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "CalibrationFreeBCI：跨数据集左右手运动想象解码，无需目标端监督校准",
+      "title_en": "CalibrationFreeBCI: Cross-Dataset Left/Right Motor Imagery Without Target-Side Calibration",
+      "bullets_zh": [
+        "目标明确：在**不做目标端监督校准**的前提下，跨被试、跨数据集解码左右手运动想象，全部在 CPU 上可复现（含 CI 测试）。",
+        "仓库直接给出结果工件：独立 LOSO 结果、管线对比、协方差分析与类别条件协方差、黎曼模型与会话级结果（CSV＋PNG 一一对应）。",
+        "方法覆盖 source-only 与无监督对齐两类路线——正是「零校准 BCI 到底能做到多好」这个问题的两条主流答案。"
+      ],
+      "bullets_en": [
+        "The goal is explicit: decode left-versus-right motor imagery across participants and datasets without supervised target-side calibration, reproducible on CPU with CI tests.",
+        "Results ship as artifacts: independent LOSO results, pipeline comparisons, covariance and class-conditional covariance analyses, Riemannian model and session-level results (CSV plus matching PNGs).",
+        "It covers both source-only and unsupervised-alignment routes — the two mainstream answers to how far zero-calibration BCI can go."
+      ],
+      "url": "https://github.com/manaal007/CalibrationFreeBCI",
+      "published": "2026-10-23T13:46:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 CalibrationFreeBCI（2026-10-23）研究一个很实际的问题：**不做目标端监督校准**，能否跨被试、跨数据集解码左右手运动想象。方法上覆盖 source-only 与无监督对齐两条主流路线，且全部可在 CPU 上复现（带 CI 测试徽章）。可贵的是它把结果工件一并提交：独立 LOSO 结果、管线对比表、协方差与类别条件协方差分析、黎曼模型与会话级结果，CSV 与图像一一对应，便于核对而不是只给一张汇总图。对做零校准 BCI 或跨数据集迁移的团队，这份仓库既可作为基线，也可作为「该报哪些对照」的模板；注意跨数据集结论依赖所用对齐方法，引用前应确认其数据划分与统计口径。",
+      "brief_en": "Created 2026-10-23, CalibrationFreeBCI studies whether left-versus-right motor imagery can be decoded across participants and datasets without supervised target-side calibration, covering source-only and unsupervised-alignment routes on CPU with CI tests. Artifacts include LOSO results, pipeline comparisons, covariance analyses and Riemannian session results with matching plots.",
+      "tags": [
+        "calibration-free",
+        "cross-dataset",
+        "motor-imagery",
+        "alignment",
+        "reproducibility"
+      ],
+      "raw_excerpt": "Description: \"Reproducible cross-dataset motor imagery EEG decoding with source only and unsupervised alignment methods\". README: \"Reproducible CPU research on left-versus-right motor imagery EEG decoding across participants and datasets, without supervised target calibration.\" Artifacts include 08b_independent_loso_results.csv, 08b_pipeline_comparison.csv, 09_class_conditional_results.csv, 10_riemannian_session_results.csv with matching PNGs.",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "manaal007/CalibrationFreeBCI",
+      "author_handle": "manaal007",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "零校准跨数据集解码的完整基线，CSV 与图一一对应可直接核对。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 修 fNIRS 插值「本应 NaN 却复制了别的通道」，并支持高分辨率出图",
+      "title_en": "MNE-Python Fixes fNIRS Interpolation Copying Another Channel Instead of NaN",
+      "bullets_zh": [
+        "#14416：对**没有位置信息**（NaN 或全零）的坏 fNIRS 通道，`interpolate_bads` 的警告说其值「将为 NaN」，但 `_interpolate_bads_nirs` 实际**复制了另一个通道**——等于凭空造数据。",
+        "另有 ICA 源图滑块的显存/内存问题修复（限制分辨率、跳过冗余绘制）与 `Report.add_epochs` 显示拒绝/平坦阈值。",
+        "#14447 为 `Brain.screenshot()`／`save_image()` 增加 `scale` 参数，便于导出发表级高分辨率图。"
+      ],
+      "bullets_en": [
+        "#14416: for bad fNIRS channels without positions (NaN or all zero), interpolate_bads warned that values 'will be all NaN', but _interpolate_bads_nirs actually copied another channel — effectively fabricating data.",
+        "The batch also constrains ICA source-slider image resolution (memory blowup) and shows rejection/flat thresholds in Report.add_epochs.",
+        "#14447 adds a scale parameter to Brain.screenshot() and save_image() for publication-resolution exports."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14416",
+      "published": "2026-10-23T19:48:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 在 10 月 23 日推进 11 次提交，最需要留意的是 **#14416**：对于**没有位置信息**（NaN 或全零）的坏 fNIRS 通道，`interpolate_bads` 会警告其值「将为 NaN」，但内部 `_interpolate_bads_nirs` 实际**复制了另一个通道的数据**——这不是插值，而是凭空造数据，且用户看到的是警告、拿到的是「填好的值」。同批还修了 ICA 源图滑块的分辨率/重复绘制问题（组件多时内存暴涨），并让 `Report.add_epochs` 显示拒绝与平坦阈值；#14447 为 `Brain.screenshot()`／`save_image()` 增加 `scale` 参数以便发表级出图。做 fNIRS 预处理或 ICA 审阅的团队建议升级后复查坏道处理结果。",
+      "brief_en": "MNE-Python made 11 commits on Oct 23, the one to watch is #14416: for bad fNIRS channels without positions (NaN or all zero), interpolate_bads warned that values would be all NaN, but _interpolate_bads_nirs actually copied another channel's data. ICA source-slider memory and Report.add_epochs thresholds were also fixed, and #14447 adds a scale parameter for Brain exports.",
+      "tags": [
+        "mne-python",
+        "fnirs",
+        "interpolation",
+        "ica",
+        "bugfix"
+      ],
+      "raw_excerpt": "PR #14416 (fixes #14415): \"For bad fNIRS channels without positions (NaN or all zero), `interpolate_bads` warns that their values 'will be all NaN', but `_interpolate_bads_nirs` copied another channel instead.\" Merged 2026-10-23T19:48Z. Same day: \"BUG: Constrain resolution of ICA source slider images and skip redundant dra[w]\" 19:31Z; \"ENH: Add scale parameter to Brain screenshot and save_image (#14447)\" 19:50Z.",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14416",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3562,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "无位置坏道本应置 NaN 却复制了别的通道，等于凭空造数据，需复查坏道处理。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGDash 读 EDF 头里的 NUL 结尾数字，救回 825 段无时长的 iEEG 记录",
+      "title_en": "EEGDash Parses NUL-Terminated EDF Header Numbers, Recovering 825 iEEG Recordings",
+      "bullets_zh": [
+        "#499：三个 NEMAR iEEG 数据集（on004551、on006233、on006914，共 **825 段记录 / 332 名受试**）因头部数字字段以 **NUL 字节结尾**而解析失败，导致 `total_duration_s` 为空、在所有时长统计里消失。",
+        "修复后这些记录重新获得时长信息；另 #497 在入库写入前保护「显式指定的历史数据源 pin」，#498 统一 prune 截止策略并简化下载记账。",
+        "对做数据集级统计（总时长、样本量）的人，这类 CSV/头解析细节直接决定分母对不对。"
+      ],
+      "bullets_en": [
+        "#499: three NEMAR iEEG datasets (on004551, on006233, on006914; 825 recordings, 332 subjects) failed to parse because header number fields end with NUL bytes, leaving total_duration_s null so they vanished from every duration figure.",
+        "The fix restores durations for those recordings; #497 protects explicit historical source pins before ingestion writes, and #498 shares the prune cutoff policy and simplifies download bookkeeping.",
+        "For dataset-level statistics (total hours, sample counts), such header parsing details decide whether the denominator is right."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/pull/499",
+      "published": "2026-10-23T20:25:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 合并 #499，修一个典型的「临床导出器怪癖」：三个 NEMAR iEEG 数据集（on004551、on006233、on006914，合计 **825 段记录、332 名受试**）的 EDF 头部数字字段以 **NUL 字节结尾**，解析失败后 `total_duration_s` 为空，于是这些记录在所有时长统计里凭空消失——不影响下载，却让「平台总时长」这类分母算错。修复后其时长恢复。同日 #497 在入库写入前保护显式指定的历史数据源 pin（避免刷新把人工固定的版本冲掉），#498 统一 prune 截止策略并简化下载记账。对做数据集级统计或元分析的人，建议升级后重算一次总时长与样本量，确认之前的数字没有被低估。",
+      "brief_en": "EEGDash merged #499 fixing a clinical-exporter quirk: three NEMAR iEEG datasets (on004551, on006233, on006914; 825 recordings, 332 subjects) had EDF header number fields ending in NUL bytes, so parsing failed, total_duration_s stayed null and they vanished from duration statistics. #497 protects explicit historical source pins before ingestion writes and #498 shares the prune policy.",
+      "tags": [
+        "eeg-dash",
+        "edf",
+        "parsing",
+        "duration",
+        "metadata"
+      ],
+      "raw_excerpt": "PR #499: \"fix(digest): read NUL-terminated EDF header numbers — Three NEMAR iEEG datasets (on004551, on006233, on006914; 825 recordings, 332 subjects) have no `ntimes`, so their catalogue `total_duration_s` is null and they drop out of every duration figure. Their EDF headers (a clinical 'POL …' exporter) end two ASCII number fiel[ds]…\". Merged 2026-10-23T20:25Z.",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash#499",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 89,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "头字段 NUL 结尾导致 825 段记录时长为空，数据集级统计的分母会算错。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-CPP 撤回 v2.4.0，改用 v2.4.0-rc 标签并更新代码签名策略",
+      "title_en": "MNE-CPP Withdraws v2.4.0, Replaces It with the v2.4.0-rc Tag and Updates Signing Policy",
+      "bullets_zh": [
+        "提交记录显示 v2.4.0 被**撤回**：发布说明改为「v2.4.0-rc 标签替代 v2.4.0」，代码签名策略文档也不再引用被撤回的 v2.4.0 发布。",
+        "目前仓库 Releases 页最新可见为 `dev_build`（2026-10-23）与 v2.3.0（6 月），v2.4.0 已不可见——曾下载该版本的用户应改用 rc 或 dev_build。",
+        "对依赖其二进制做实时处理或二次分发的团队，发布撤回意味着校验和与签名策略需重新核对。"
+      ],
+      "bullets_en": [
+        "Commit history shows v2.4.0 was withdrawn: the release notes were rewritten so the v2.4.0-rc tag replaces v2.4.0, and the code-signing policy no longer references the withdrawn release.",
+        "The Releases page currently shows dev_build (2026-10-23) and v2.3.0 (June); v2.4.0 is no longer visible, so anyone who downloaded it should move to the rc or dev_build.",
+        "For teams depending on its binaries for real-time processing or redistribution, a withdrawal means checksums and signing policy need re-verification."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/65e13f69054b",
+      "published": "2026-10-23T18:22:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 23 日推进 14 次提交，核心事件是**撤回 v2.4.0**：提交信息显示「为取代 v2.4.0 的 v2.4.0-rc 标签补充发布说明」，并「更新代码签名策略，不再引用被撤回的 v2.4.0 发布」。目前 Releases 页可见的是 `dev_build`（2026-10-23）与 6 月的 v2.3.0，v2.4.0 已不可见。对一个提供实时 C++ 框架的项目，撤回版本通常意味着签名/公证或打包环节出了问题——**曾下载 v2.4.0 的用户应改用 v2.4.0-rc 或 dev_build，并重新核对校验和**。如果你的流水线固定了 v2.4.0 的二进制或安装包，请尽快改锚点，避免后续拿到不一致的产物。",
+      "brief_en": "MNE-CPP made 14 commits on Oct 23 around withdrawing v2.4.0: the release notes now say the v2.4.0-rc tag replaces v2.4.0, and the code-signing policy no longer references the withdrawn release. The Releases page shows dev_build (Oct 23) and v2.3.0 (June) with v2.4.0 gone, so anyone who downloaded it should switch to the rc or dev_build and re-verify checksums.",
+      "tags": [
+        "mne-cpp",
+        "release",
+        "withdrawn",
+        "code-signing",
+        "binaries"
+      ],
+      "raw_excerpt": "Commits 2026-10-23: \"release: notes for the v2.4.0-rc tag that replaces v2.4.0\" (70ec8ce448f8) 16:00Z; \"release: v2.4.0-rc carries the full 2.4.0 notes as its only section\" (c0c1dd3267ff) 16:19Z; \"docs: the code signing policy no longer refers to the withdrawn v2.4.0 release\" (65e13f69054b) 18:22Z. Current releases: dev_build (2026-10-23T18:16:42Z), v2.3.0 (2026-06-14).",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@65e13f69054b",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "v2.4.0 被撤回，固定该版本二进制的流水线需改锚点并重核校验和。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Eelbrain 用内容派生的稳定编码表示 Factor 触发事件",
+      "title_en": "Eelbrain Uses Stable Content-Derived Codes for Factor-Valued Trigger Events",
+      "bullets_zh": [
+        "#210：对值为 Factor（类别型）的触发事件改用**稳定、由内容派生**的编码，避免每次运行得到不同的事件码。",
+        "事件码不稳定会让「按条件取 epoch」的结果在重跑时漂移，跨会话/跨被试合并也会错位，且往往不报错。",
+        "对做事件相关设计矩阵与回归建模的团队，这类编码一致性是结果可复现的前提。"
+      ],
+      "bullets_en": [
+        "#210 gives trigger events whose values are Factor (categorical) a stable, content-derived code instead of codes that can change between runs.",
+        "Unstable event codes make condition-based epoching drift on re-runs and misalign across sessions or subjects, usually without any error.",
+        "For teams building event-related design matrices and regression models, code consistency is a prerequisite for reproducible results."
+      ],
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/210",
+      "published": "2026-10-23T20:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Eelbrain 合并 #210：对值为 **Factor（类别型）的触发事件**改用**稳定、由内容派生**的编码。这听起来像内部细节，但它决定「同一次实验重跑后事件码是否一致」：如果编码依赖插入顺序等运行期因素，按条件取 epoch 会在重跑时漂移，跨会话或跨被试合并也会错位，而且通常不会报错，只会让统计结果悄悄变化。对做事件相关设计矩阵、回归或去卷积建模的团队，事件编码一致性是结果可复现的前提；建议升级后在既有数据集上比对一次事件码与 epoch 计数，确认没有意外变化。",
+      "brief_en": "Eelbrain merged #210 giving Factor-valued trigger events a stable, content-derived code. That decides whether event codes stay identical across re-runs: if coding depends on insertion order, condition-based epoching drifts and misaligns across sessions or subjects, usually without an error. Teams building event-related design matrices should compare event codes and epoch counts after upgrading.",
+      "tags": [
+        "eelbrain",
+        "event-triggers",
+        "factor",
+        "reproducibility",
+        "bugfix"
+      ],
+      "raw_excerpt": "PR #210 title: \"FIX use a stable, content-derived code for Factor-valued event triggers\". Merged 2026-10-23T20:33Z. Repo: Eelbrain/Eelbrain (latest release v0.43.0b0, 2026-10-07).",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Eelbrain/Eelbrain#210",
+      "author_handle": "Eelbrain",
+      "metrics": {
+        "play": null,
+        "like": 87,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "事件码不稳定会让重跑与跨会话合并在不报错的情况下错位。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "TorchEEG 修 SEED-V 日期元数据解析，并补日期回归测试",
+      "title_en": "TorchEEG Fixes SEED-V Date Metadata Parsing and Adds Date Regression Tests",
+      "bullets_zh": [
+        "#159 修 SEED-V 数据集**日期元数据带文件扩展名时解析失败**的问题（此前的解析对文件名格式假设过窄）。",
+        "#183 为 SEED-V 日期元数据新增回归测试，防止同类解析问题再次出现——延续此前 SEEDDataset 的 trial_id 类型修复。",
+        "对用 TorchEEG 加载 SEED 系列的团队，日期字段错误会影响按时间排序、会话划分与元数据校验。"
+      ],
+      "bullets_en": [
+        "#159 fixes SEED-V date metadata failing to parse when the value carries a file extension, where the parser assumed too narrow a filename format.",
+        "#183 adds regression tests for SEED-V date metadata, following the earlier SEEDDataset trial_id typing fix.",
+        "For teams loading SEED datasets through TorchEEG, wrong date fields affect chronological ordering, session splits and metadata checks."
+      ],
+      "url": "https://github.com/torcheeg/torcheeg/pull/159",
+      "published": "2026-10-23T03:23:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "TorchEEG 合并 #159：修 **SEED-V 数据集的日期元数据解析**——当日期值带着文件扩展名时解析会失败（解析器对文件名格式假设过窄）。同日 #183 为 SEED-V 日期元数据补上**回归测试**，防止同类问题复发，这也是继此前 SEEDDataset `trial_id` 类型修复之后的延续治理。表面看是字符串处理小事，但日期字段错会影响按时间排序、会话划分与元数据一致性校验，而这些通常被当成「反正数据在里面」。用 TorchEEG 加载 SEED、SEED-IV、SEED-V 系列的团队建议升级后重跑一次数据集构建，确认日期与试次编号都正确。",
+      "brief_en": "TorchEEG merged #159 fixing SEED-V date metadata parsing when the value carries a file extension, caused by a too-narrow filename assumption, with #183 adding regression tests to prevent recurrence after the earlier SEEDDataset trial_id fix. Wrong date fields affect chronological ordering, session splits and metadata checks; re-run dataset construction after upgrading.",
+      "tags": [
+        "torcheeg",
+        "seed-v",
+        "metadata",
+        "parsing",
+        "regression-tests"
+      ],
+      "raw_excerpt": "PRs merged 2026-10-23: \"fix(seed-v): parse date metadata without file extension (#159)\" 03:23Z; \"Add SEED-V date metadata regression tests (#183)\" 03:37Z; plus \"docs(contributor): contributors readme action update (#155)\" 03:41Z.",
+      "fetched_at": "2026-10-23T23:25:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "torcheeg/torcheeg#159",
+      "author_handle": "torcheeg",
+      "metrics": {
+        "play": null,
+        "like": 582,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "日期元数据解析失败会影响时间排序与会话划分，且已补回归测试防复发。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 48,
+    "llm_rows": 12,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
