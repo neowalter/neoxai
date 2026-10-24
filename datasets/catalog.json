@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T09:33:54.693Z",
+  "generatedAt": "2026-10-24T09:06:35.323Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 6
     }
   ],
   "items": [
@@ -431,9 +431,32 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8865,
+      "downloads": 8879,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23592484",
+      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
+      "owner": "Horáková, Gabriela",
+      "url": "https://doi.org/10.5281/zenodo.23592484",
+      "source": "zenodo",
+      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
+      "tags": [
+        "EEG",
+        "ADHD",
+        "Mind Wandering",
+        "SART",
+        "Probes",
+        "Boredom"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 10181,
+      "likes": null,
+      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -456,7 +479,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6595,
+      "downloads": 6501,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -481,7 +504,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1855,
+      "downloads": 1853,
       "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
@@ -506,7 +529,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 1980,
+      "downloads": 1987,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -531,7 +554,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1803,
+      "downloads": 1804,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -549,7 +572,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 836,
+      "downloads": 871,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -573,7 +596,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 779,
+      "downloads": 1070,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -614,7 +637,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 328,
+      "downloads": 331,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -636,7 +659,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 661,
+      "downloads": 662,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -659,34 +682,9 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 175,
+      "downloads": 177,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:windwerfer/neurofeed-eeg-windows",
-      "name": "neurofeed-eeg-windows",
-      "owner": "windwerfer",
-      "url": "https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows",
-      "source": "huggingface",
-      "description": "Neurofeed EEG Windows Ready-to-train 2-second, 256 Hz EEG windows derived from open EEG/PSG datasets and remapped onto consumer-headset layouts: Muse (AF7, AF8, TP9, TP10) and Neurosity Crown (C3/C4-centred). Every config ships fixed subject-level splits, per-recording manifests…",
-      "tags": [
-        "eeg",
-        "electroencephalography",
-        "muse",
-        "neurosity-crown",
-        "bci",
-        "time-series",
-        "sleep",
-        "vigilance"
-      ],
-      "license": "other",
-      "downloads": 219,
-      "likes": 0,
-      "updatedAt": "2026-10-06T13:21:45.000Z",
       "modality": [
         "EEG"
       ]
@@ -706,25 +704,9 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 145,
+      "downloads": 146,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Anticloud/anticloud-eeglab",
-      "name": "anticloud-eeglab",
-      "owner": "Anticloud",
-      "url": "https://huggingface.co/datasets/Anticloud/anticloud-eeglab",
-      "source": "huggingface",
-      "description": "EEGLAB EEGLAB is an open source signal processing environment for electrophysiological signals running on Matlab and Octave (command line only for Octave). This folder contains original Matlab functions from the EEGLAB (formerly ICA/EEG) Matlab toolbox, all released under the Gn…",
-      "tags": [],
-      "license": null,
-      "downloads": 90,
-      "likes": 0,
-      "updatedAt": "2026-10-17T04:04:51.000Z",
       "modality": [
         "EEG"
       ]
@@ -765,7 +747,7 @@
       "description": "Here are all the EEG and behavioral datasets used in Study 2",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 52,
+      "downloads": 54,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -918,23 +900,6 @@
       ]
     },
     {
-      "id": "zenodo:23257077",
-      "name": "STSM CA24161 – MNE-BIDS workflow & EEG–ECG/HEP protocol",
-      "owner": "Marcu, Gabriela Mariana",
-      "url": "https://doi.org/10.5281/zenodo.23257077",
-      "source": "zenodo",
-      "description": "STSM CA24161 – MNE-BIDS workflow & EEG–ECG/HEP protocol",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-10-09T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -954,7 +919,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-22T23:11:29.000Z",
+      "updatedAt": "2026-10-24T02:51:13.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -980,7 +945,56 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 14,
-      "updatedAt": "2026-10-23T06:24:15.000Z",
+      "updatedAt": "2026-10-24T06:24:12.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:nimbusbci/nimbus-mcp",
+      "name": "nimbus-mcp",
+      "owner": "nimbusbci",
+      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "source": "github",
+      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "tags": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "fastmcp",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-10-23T11:37:47.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:Caroline070590/EEG_emotions_CSF",
+      "name": "EEG_emotions_CSF",
+      "owner": "Caroline070590",
+      "url": "https://github.com/Caroline070590/EEG_emotions_CSF",
+      "source": "github",
+      "description": "Code for \"EEG network organization across affective video conditions\" (Chaos, Solitons & Fractals): stimulus-aware EEG network analysis of the FACED dataset with an independent replication in SEED-VII.",
+      "tags": [
+        "affective-computing",
+        "eeg",
+        "emotion",
+        "functional-connectivity",
+        "graph-neural-networks",
+        "graph-theory",
+        "mixed-effects-models",
+        "network-neuroscience"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-23T19:34:24.000Z",
       "modality": [
         "EEG"
       ]
@@ -1005,7 +1019,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-22T20:58:29.000Z",
+      "updatedAt": "2026-10-23T17:19:02.000Z",
       "modality": [
         "EEG"
       ]
