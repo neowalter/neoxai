@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T09:06:35.323Z",
+  "generatedAt": "2026-10-25T09:24:17.291Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 16
+      "count": 15
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 13
+      "count": 14
     },
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 7
     }
   ],
   "items": [
@@ -395,20 +395,24 @@
       ]
     },
     {
-      "id": "openneuro:ds008768",
-      "name": "Resting-State EEG in Parkinson's Disease and Healthy Controls",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008768",
-      "source": "openneuro",
-      "description": "Resting-State EEG in Parkinson's Disease and Healthy Controls",
+      "id": "zenodo:23592484",
+      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
+      "owner": "Horáková, Gabriela",
+      "url": "https://doi.org/10.5281/zenodo.23592484",
+      "source": "zenodo",
+      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
       "tags": [
-        "BIDS",
-        "eeg"
+        "EEG",
+        "ADHD",
+        "Mind Wandering",
+        "SART",
+        "Probes",
+        "Boredom"
       ],
-      "license": "CC0",
-      "downloads": null,
+      "license": "cc-by-4.0",
+      "downloads": 10183,
       "likes": null,
-      "updatedAt": "2026-09-01T20:37:44.539Z",
+      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -431,32 +435,9 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 8879,
+      "downloads": 7168,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23592484",
-      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
-      "owner": "Horáková, Gabriela",
-      "url": "https://doi.org/10.5281/zenodo.23592484",
-      "source": "zenodo",
-      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
-      "tags": [
-        "EEG",
-        "ADHD",
-        "Mind Wandering",
-        "SART",
-        "Probes",
-        "Boredom"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 10181,
-      "likes": null,
-      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -479,7 +460,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6501,
+      "downloads": 6479,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -504,7 +485,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1853,
+      "downloads": 1915,
       "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
@@ -529,7 +510,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 1987,
+      "downloads": 2003,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -554,7 +535,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1804,
+      "downloads": 1823,
       "likes": 1,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -596,7 +577,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 1070,
+      "downloads": 1074,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -615,6 +596,28 @@
       "downloads": 428,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 717,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -640,28 +643,6 @@
       "downloads": 331,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 662,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -712,30 +693,23 @@
       ]
     },
     {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "id": "zenodo:23371567",
+      "name": "An annotated 32-channel EEG dataset of hand and ankle motor tasks for brain-computer interface feature-extraction benchmarking.",
+      "owner": "Quiroga Forero, Alejandro",
+      "url": "https://doi.org/10.5281/zenodo.23371567",
+      "source": "zenodo",
+      "description": "This deposit contains a 32-channel EEG dataset of executed hand and ankle movements, recorded from 30 healthy volunteers during the offline evaluation of a brain-computer interface (BCI) for motor rehabilitation. It is organised according to the Brain Imaging Data Structure (BID…",
       "tags": [
-        "bids",
-        "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 183,
-      "updatedAt": "2026-10-22T19:26:51.000Z",
-      "modality": [
         "EEG",
-        "MEG",
-        "iEEG"
+        "Motor Intention",
+        "Neurorehabilitation"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 444,
+      "likes": null,
+      "updatedAt": "2026-10-14T00:00:00.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -772,9 +746,25 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 28,
+      "downloads": 33,
       "likes": null,
       "updatedAt": "2026-10-22T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23637330",
+      "name": "Pre-registration: configuration search and locked test for EEG-to-language-model word retrieval on ZuCo 2.0",
+      "owner": "San, Khin Pyae Phyo",
+      "url": "https://doi.org/10.5281/zenodo.23637330",
+      "source": "zenodo",
+      "description": "Pre-registration file for the configuration search and the single locked-test evaluation reported in \"A Reliability-Oriented Evaluation Framework for EEG-to-Language-Model Word Retrieval: Identifying and Controlling Evaluation Shortcuts\" (San, Sugiura, Shimamura; manuscript in p…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -788,7 +778,7 @@
       "description": "Medical biological signals (ECG, EEG, EMG, PPG) and medical images (X-ray, CT, MRI, ultrasound) are central to modern diagnosis. They are noisy, high-dimensional and time-consuming to interpret.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 4,
+      "downloads": 7,
       "likes": null,
       "updatedAt": "2026-10-20T00:00:00.000Z",
       "modality": [
@@ -868,38 +858,6 @@
       ]
     },
     {
-      "id": "zenodo:23315438",
-      "name": "NED-Net: an annotation–training loop for rodent EEG event detection",
-      "owner": "Ledri, Marco",
-      "url": "https://doi.org/10.5281/zenodo.23315438",
-      "source": "zenodo",
-      "description": "This dataset holds what is needed to check and reproduce the results of the NED-Net paper without the full recordings: - the reference annotations; - every detection the models produced; - the reviewed precision census; - the trained models; - the EEG of the recordings held out…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-10-12T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23204595",
-      "name": "Data underlying \"Effects of Major–Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power\"",
-      "owner": "Asakura, Takumi",
-      "url": "https://doi.org/10.5281/zenodo.23204595",
-      "source": "zenodo",
-      "description": "This dataset contains the de-identified minimal analysis-ready data underlying the findings reported in the manuscript &ldquo;Effects of Major&ndash;Minor Musical Tonality on Subjective Affective Impressions and Scalp EEG Band Power&rdquo; (PLOS ONE manuscript ID: PONE-D-26-1666…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 11,
-      "likes": null,
-      "updatedAt": "2026-10-07T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:eegdash/EEGDash",
       "name": "EEGDash",
       "owner": "eegdash",
@@ -919,7 +877,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-24T02:51:13.000Z",
+      "updatedAt": "2026-10-24T14:05:06.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -945,31 +903,81 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 14,
-      "updatedAt": "2026-10-24T06:24:12.000Z",
+      "updatedAt": "2026-10-24T18:24:14.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:nimbusbci/nimbus-mcp",
-      "name": "nimbus-mcp",
-      "owner": "nimbusbci",
-      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "id": "github:toniIepure25/Imagina",
+      "name": "Imagina",
+      "owner": "toniIepure25",
+      "url": "https://github.com/toniIepure25/Imagina",
       "source": "github",
-      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "description": "AI-powered EEG research platform for mental imagery analysis, real OpenMIIR EEG evaluation, signal-quality metrics, dataset readiness, and neurofeedback-inspired experimentation.",
       "tags": [
         "bci",
         "brain-computer-interface",
         "eeg",
-        "fastmcp",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol"
+        "lsl",
+        "machine-learning",
+        "mental-imagery",
+        "neurofeedback",
+        "neuroscience"
       ],
-      "license": "NOASSERTION",
+      "license": null,
       "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-23T11:37:47.000Z",
+      "likes": 2,
+      "updatedAt": "2026-10-24T09:17:16.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:ACT2039/imagined-speech-eeg",
+      "name": "imagined-speech-eeg",
+      "owner": "ACT2039",
+      "url": "https://github.com/ACT2039/imagined-speech-eeg",
+      "source": "github",
+      "description": "Research codebase for imagined-speech EEG recognition, featuring EDF dataset auditing, signal analysis, and reproducible Google Colab experiments.",
+      "tags": [
+        "brain-computer-interface",
+        "eeg",
+        "eeg-classification",
+        "google-colab",
+        "imagined-speech",
+        "machine-learning",
+        "mne-python",
+        "neuroscience"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-25T09:16:38.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:Alejandro-Quiroga-21/cirins-motor-bci-bids",
+      "name": "cirins-motor-bci-bids",
+      "owner": "Alejandro-Quiroga-21",
+      "url": "https://github.com/Alejandro-Quiroga-21/cirins-motor-bci-bids",
+      "source": "github",
+      "description": "Conversion, technical-validation and stimulus-presentation code of the CIRINS Motor BCI EEG dataset (32-channel EEG, 30 participants, executed hand and ankle movements, BIDS)",
+      "tags": [
+        "bci",
+        "bids",
+        "brain-computer-interface",
+        "dataset",
+        "eeg",
+        "mne-python",
+        "motor-execution"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-24T13:10:49.000Z",
       "modality": [
         "EEG"
       ]
