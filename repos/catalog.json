@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-22T23:09:12Z",
+  "generatedAt": "2026-10-25T22:47:19Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 278,
+  "count": 287,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 278
+      "count": 287
     }
   ],
   "items": [
@@ -9277,6 +9277,312 @@
         "contactedAt": "2026-10-23",
         "batch": "batch25",
         "contactedAuthor": "rahulagarwal2735"
+      }
+    },
+    {
+      "id": "github:Charannagadeep/Brainwave",
+      "name": "Brainwave",
+      "owner": "Charannagadeep",
+      "author": "Charannagadeep",
+      "url": "https://github.com/Charannagadeep/Brainwave",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG motor-imagery classification with a hybrid CNN-Transformer: 72.3% accuracy across 103 subjects, 4.2 ms real-time inference (PhysioNet EEGMMIDB).",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 1,
+      "topics": [
+        "brain-computer-interface",
+        "deep-learning",
+        "eeg",
+        "machine-learning",
+        "mne-python",
+        "pytorch",
+        "signal-processing",
+        "transformer"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "transformer",
+        "physionet",
+        "bci"
+      ],
+      "createdAt": "2026-05-13T02:23:50Z",
+      "updatedAt": "2026-10-25T22:45:32Z",
+      "pushedAt": "2026-09-30T23:57:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "Charannagadeep"
+      }
+    },
+    {
+      "id": "github:bilalmkd59/bci-imagerie-motrice",
+      "name": "bci-imagerie-motrice",
+      "owner": "bilalmkd59",
+      "author": "bilalmkd59",
+      "url": "https://github.com/bilalmkd59/bci-imagerie-motrice",
+      "homepage": null,
+      "source": "github",
+      "description": "Interface cerveau-machine par imagerie motrice : CSP, g\u00e9om\u00e9trie riemannienne, EEGNet (BCI Competition IV 2a)",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "riemannian",
+        "eegnet",
+        "bci"
+      ],
+      "createdAt": "2026-10-25T14:08:43Z",
+      "updatedAt": "2026-10-25T22:46:40Z",
+      "pushedAt": "2026-10-25T14:21:37Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "bilalmkd59"
+      }
+    },
+    {
+      "id": "github:cemondri/ssvep-bci-cca",
+      "name": "ssvep-bci-cca",
+      "owner": "cemondri",
+      "author": "cemondri",
+      "url": "https://github.com/cemondri/ssvep-bci-cca",
+      "homepage": null,
+      "source": "github",
+      "description": "This project uses CCA and FBCCA methods to identify which frequency a user is looking at, using the Tsinghua Benchmark dataset.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "cca",
+        "fbcca",
+        "bci"
+      ],
+      "createdAt": "2026-09-22T12:40:18Z",
+      "updatedAt": "2026-10-25T22:45:23Z",
+      "pushedAt": "2026-09-26T17:47:12Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "cemondri"
+      }
+    },
+    {
+      "id": "github:dhruvpatel-05/eeg-motor-imagery-classification",
+      "name": "eeg-motor-imagery-classification",
+      "owner": "dhruvpatel-05",
+      "author": "dhruvpatel-05",
+      "url": "https://github.com/dhruvpatel-05/eeg-motor-imagery-classification",
+      "homepage": null,
+      "source": "github",
+      "description": "Benchmark of EEGNet, TCN, CNN+LSTM, CNN+GRU, and Transformer models on 22-channel EEG with leave-one-subject-out validation",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "in-context-learning",
+        "machine-learning",
+        "operator-learning",
+        "pde",
+        "pytorch",
+        "transformers"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "eegnet",
+        "loso",
+        "bci"
+      ],
+      "createdAt": "2026-03-20T05:24:18Z",
+      "updatedAt": "2026-10-25T22:45:42Z",
+      "pushedAt": "2026-10-12T17:22:55Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "dhruvpatel-05"
+      }
+    },
+    {
+      "id": "github:jcgs1030/eeg-motor-imagery-ersp-cnn",
+      "name": "eeg-motor-imagery-ersp-cnn",
+      "owner": "jcgs1030",
+      "author": "jcgs1030",
+      "url": "https://github.com/jcgs1030/eeg-motor-imagery-ersp-cnn",
+      "homepage": null,
+      "source": "github",
+      "description": "Reproducible pipeline for binary EEG motor imagery classification (left vs. right hand) using ERSP spectrograms and lightweight CNN architectures (EEGNet, ShallowConvNet, SpectNet) evaluated on the BCI Competition IV Dataset 2b. Master's thesis project \u2014 Universidad Instituci\u00f3n Universitaria de Envigado, 2026.",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "ersp",
+        "cnn",
+        "bci"
+      ],
+      "createdAt": "2026-04-27T20:18:10Z",
+      "updatedAt": "2026-10-25T22:46:20Z",
+      "pushedAt": "2026-10-25T21:25:45Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "jcgs1030"
+      }
+    },
+    {
+      "id": "github:odraIA/EEG-XL",
+      "name": "EEG-XL",
+      "owner": "odraIA",
+      "author": "odraIA",
+      "url": "https://github.com/odraIA/EEG-XL",
+      "homepage": null,
+      "source": "github",
+      "description": "Final project of AI Master about decoding EEG and MEG for Imagined Speech Recognition",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "meg",
+        "self-supervised",
+        "word-decoding",
+        "bci"
+      ],
+      "createdAt": "2026-03-16T11:32:54Z",
+      "updatedAt": "2026-10-25T22:46:30Z",
+      "pushedAt": "2026-10-13T15:38:37Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "odraIA"
+      }
+    },
+    {
+      "id": "github:patapee-siri/bci-atcnet-vs-mini-atcnet",
+      "name": "bci-atcnet-vs-mini-atcnet",
+      "owner": "patapee-siri",
+      "author": "patapee-siri",
+      "url": "https://github.com/patapee-siri/bci-atcnet-vs-mini-atcnet",
+      "homepage": null,
+      "source": "github",
+      "description": "ATCNet vs. lightweight Mini-ATCNet for motor imagery EEG classification on BCI Competition IV-2a. Controlled accuracy-vs-efficiency comparison with leakage-free, subject-dependent 5-fold CV.",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "attention",
+        "bci",
+        "brain",
+        "brain-computer-interface",
+        "deep-learning",
+        "eeg",
+        "eeg-classification",
+        "motor-imagery",
+        "neuroscience",
+        "tensorflow"
+      ],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "atcnet",
+        "efficiency",
+        "bci"
+      ],
+      "createdAt": "2026-09-29T15:09:18Z",
+      "updatedAt": "2026-10-25T22:45:52Z",
+      "pushedAt": "2026-10-08T07:42:22Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "patapee-siri"
+      }
+    },
+    {
+      "id": "github:sparsh0106/PhysioNet-EEG-Motor-Movement",
+      "name": "PhysioNet-EEG-Motor-Movement",
+      "owner": "sparsh0106",
+      "author": "sparsh0106",
+      "url": "https://github.com/sparsh0106/PhysioNet-EEG-Motor-Movement",
+      "homepage": null,
+      "source": "github",
+      "description": "Classification of EEG Motor Movement and Imagery (PhysioNet EEGMMIDB) using hybrid CNN-LSTM, CNN-RandomForest, and Optuna tuning.",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "motor-imagery",
+        "cnn-lstm",
+        "physionet",
+        "bci"
+      ],
+      "createdAt": "2025-10-02T23:11:28Z",
+      "updatedAt": "2026-10-25T22:46:01Z",
+      "pushedAt": "2026-10-16T08:02:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "sparsh0106"
+      }
+    },
+    {
+      "id": "github:sushrutha1/eegnet-research-reproduction",
+      "name": "eegnet-research-reproduction",
+      "owner": "sushrutha1",
+      "author": "sushrutha1",
+      "url": "https://github.com/sushrutha1/eegnet-research-reproduction",
+      "homepage": null,
+      "source": "github",
+      "description": "Reproduction of EEGNet for motor-imagery EEG classification on BCI Competition IV-2a.",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "eegnet",
+        "reproduction",
+        "motor-imagery",
+        "bci"
+      ],
+      "createdAt": "2026-10-02T08:26:11Z",
+      "updatedAt": "2026-10-25T22:46:11Z",
+      "pushedAt": "2026-10-02T08:40:55Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-10-26",
+        "batch": "batch26",
+        "contactedAuthor": "sushrutha1"
       }
     }
   ]
