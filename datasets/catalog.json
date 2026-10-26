@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T09:24:17.291Z",
+  "generatedAt": "2026-10-26T10:30:27.788Z",
   "sources": [
     {
       "id": "huggingface",
@@ -395,29 +395,6 @@
       ]
     },
     {
-      "id": "zenodo:23592484",
-      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
-      "owner": "Horáková, Gabriela",
-      "url": "https://doi.org/10.5281/zenodo.23592484",
-      "source": "zenodo",
-      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
-      "tags": [
-        "EEG",
-        "ADHD",
-        "Mind Wandering",
-        "SART",
-        "Probes",
-        "Boredom"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 10183,
-      "likes": null,
-      "updatedAt": "2026-10-23T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -435,9 +412,32 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 7168,
+      "downloads": 7505,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23592484",
+      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
+      "owner": "Horáková, Gabriela",
+      "url": "https://doi.org/10.5281/zenodo.23592484",
+      "source": "zenodo",
+      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
+      "tags": [
+        "EEG",
+        "ADHD",
+        "Mind Wandering",
+        "SART",
+        "Probes",
+        "Boredom"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 10186,
+      "likes": null,
+      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -460,7 +460,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6479,
+      "downloads": 6545,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -485,7 +485,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1915,
+      "downloads": 1970,
       "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
@@ -510,7 +510,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2003,
+      "downloads": 1987,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -535,8 +535,8 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1823,
-      "likes": 1,
+      "downloads": 1826,
+      "likes": 2,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
         "EEG"
@@ -553,7 +553,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 871,
+      "downloads": 877,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -577,25 +577,9 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 1074,
+      "downloads": 1106,
       "likes": 0,
       "updatedAt": "2026-08-18T03:24:57.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
-      "name": "tuh-eeg-cloud-transfer",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
-      "source": "huggingface",
-      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
-      "tags": [],
-      "license": "other",
-      "downloads": 428,
-      "likes": 0,
-      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -615,9 +599,25 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 717,
+      "downloads": 770,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
+      "source": "huggingface",
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 428,
+      "likes": 0,
+      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -640,7 +640,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 331,
+      "downloads": 342,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -663,7 +663,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 177,
+      "downloads": 187,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -685,11 +685,38 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 146,
+      "downloads": 147,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "github:mne-tools/mne-bids",
+      "name": "mne-bids",
+      "owner": "mne-tools",
+      "url": "https://github.com/mne-tools/mne-bids",
+      "source": "github",
+      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "tags": [
+        "bids",
+        "eeg",
+        "electroencephalography",
+        "ieeg",
+        "magnetoencephalography",
+        "meg",
+        "mne",
+        "neuroimaging"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 183,
+      "updatedAt": "2026-10-26T01:54:46.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG"
       ]
     },
     {
@@ -705,7 +732,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 444,
+      "downloads": 457,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -713,17 +740,17 @@
       ]
     },
     {
-      "id": "zenodo:23478162",
-      "name": "Disentangling stimulus-driven and goal-dependent contributions to the N170's sensitivity to the eye region : Study 2 - EEG and behavioral datasets",
-      "owner": "Demeule, Chanelle",
-      "url": "https://doi.org/10.5281/zenodo.23478162",
+      "id": "zenodo:23639153",
+      "name": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
+      "owner": "Lerín Calvo, Alfredo",
+      "url": "https://doi.org/10.5281/zenodo.23639153",
       "source": "zenodo",
-      "description": "Here are all the EEG and behavioral datasets used in Study 2",
+      "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 54,
+      "downloads": 52,
       "likes": null,
-      "updatedAt": "2026-10-19T00:00:00.000Z",
+      "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -746,9 +773,25 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 33,
+      "downloads": 49,
       "likes": null,
       "updatedAt": "2026-10-22T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23478162",
+      "name": "Disentangling stimulus-driven and goal-dependent contributions to the N170's sensitivity to the eye region : Study 2 - EEG and behavioral datasets",
+      "owner": "Demeule, Chanelle",
+      "url": "https://doi.org/10.5281/zenodo.23478162",
+      "source": "zenodo",
+      "description": "Here are all the EEG and behavioral datasets used in Study 2",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 54,
+      "likes": null,
+      "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -788,23 +831,6 @@
       ]
     },
     {
-      "id": "zenodo:23397566",
-      "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
-      "owner": "Villa, Alessandro E.P.",
-      "url": "https://doi.org/10.5281/zenodo.23397566",
-      "source": "zenodo",
-      "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 24,
-      "likes": null,
-      "updatedAt": "2026-10-15T00:00:00.000Z",
-      "modality": [
-        "EEG",
-        "fNIRS"
-      ]
-    },
-    {
       "id": "zenodo:23464852",
       "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
       "owner": "Atiwiwat, Danita",
@@ -815,11 +841,28 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2,
+      "downloads": 8,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23397566",
+      "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
+      "owner": "Villa, Alessandro E.P.",
+      "url": "https://doi.org/10.5281/zenodo.23397566",
+      "source": "zenodo",
+      "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 25,
+      "likes": null,
+      "updatedAt": "2026-10-15T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
       ]
     },
     {
@@ -834,25 +877,6 @@
       "downloads": 6,
       "likes": null,
       "updatedAt": "2026-10-17T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23397535",
-      "name": "Generative pretraining improves EEG contrast recovery through measurement-calibrated reconstruction: code and derived analysis data",
-      "owner": "Jia, Xiao",
-      "url": "https://doi.org/10.5281/zenodo.23397535",
-      "source": "zenodo",
-      "description": "Code and derived analysis data accompanying &ldquo;Generative pretraining improves EEG contrast recovery through measurement-calibrated reconstruction&rdquo; by Xiao Jia. The study presents observation-anchored EEG reconstruction, which uses trial-specific corrections from a gen…",
-      "tags": [
-        "EEG reconstruction",
-        "uncertainty quantification"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 7,
-      "likes": null,
-      "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -877,7 +901,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 89,
-      "updatedAt": "2026-10-24T14:05:06.000Z",
+      "updatedAt": "2026-10-25T23:10:53.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -902,8 +926,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 14,
-      "updatedAt": "2026-10-24T18:24:14.000Z",
+      "likes": 15,
+      "updatedAt": "2026-10-26T06:24:16.000Z",
       "modality": [
         "EEG"
       ]
@@ -929,6 +953,31 @@
       "downloads": null,
       "likes": 2,
       "updatedAt": "2026-10-24T09:17:16.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:Caroline070590/EEG_emotions_CSF",
+      "name": "EEG_emotions_CSF",
+      "owner": "Caroline070590",
+      "url": "https://github.com/Caroline070590/EEG_emotions_CSF",
+      "source": "github",
+      "description": "Code for \"EEG network organization across affective video conditions\" (Chaos, Solitons & Fractals): stimulus-aware EEG network analysis of the FACED dataset with an independent replication in SEED-VII.",
+      "tags": [
+        "affective-computing",
+        "eeg",
+        "emotion",
+        "functional-connectivity",
+        "graph-neural-networks",
+        "graph-theory",
+        "mixed-effects-models",
+        "network-neuroscience"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-26T08:50:10.000Z",
       "modality": [
         "EEG"
       ]
@@ -978,56 +1027,6 @@
       "downloads": null,
       "likes": 0,
       "updatedAt": "2026-10-24T13:10:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Caroline070590/EEG_emotions_CSF",
-      "name": "EEG_emotions_CSF",
-      "owner": "Caroline070590",
-      "url": "https://github.com/Caroline070590/EEG_emotions_CSF",
-      "source": "github",
-      "description": "Code for \"EEG network organization across affective video conditions\" (Chaos, Solitons & Fractals): stimulus-aware EEG network analysis of the FACED dataset with an independent replication in SEED-VII.",
-      "tags": [
-        "affective-computing",
-        "eeg",
-        "emotion",
-        "functional-connectivity",
-        "graph-neural-networks",
-        "graph-theory",
-        "mixed-effects-models",
-        "network-neuroscience"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-23T19:34:24.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Rishabh-bgp/beed-ml-study",
-      "name": "beed-ml-study",
-      "owner": "Rishabh-bgp",
-      "url": "https://github.com/Rishabh-bgp/beed-ml-study",
-      "source": "github",
-      "description": "Provenance audit and leakage-aware benchmark of seizure-type classifiers on the Bangalore EEG Epilepsy Dataset — IIT Ropar & NIELIT Ropar AI/ML training research",
-      "tags": [
-        "data-leakage",
-        "eeg",
-        "epilepsy",
-        "iit-ropar",
-        "lightgbm",
-        "machine-learning",
-        "nielit",
-        "python"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-23T17:19:02.000Z",
       "modality": [
         "EEG"
       ]
