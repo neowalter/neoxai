@@ -1,66 +1,66 @@
 {
-  "date": "2026-10-26",
-  "generated_at": "2026-10-25T23:34:35.492Z",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-26T22:09:46.622Z",
   "item_count": 6,
   "types": {
-    "Project": 5,
-    "Benchmark": 1
+    "Project": 4,
+    "Benchmark": 2
   },
   "highlights": [
     {
-      "title_zh": "YuEEG Rev D：ADS1299＋ESP32-S3 的八通道湿电极脑电开源硬件（含 KiCad 与固件）",
-      "title_en": "YuEEG Rev D: Open 8-Channel Wet-Electrode EEG Hardware on ADS1299 + ESP32-S3",
-      "url": "https://github.com/YuTaoV5/YuEEG",
-      "brief": "YuEEG 在 10 月 26 日凌晨发布 **Rev D 工程评审版**：一套完整的八通道湿电极脑电开源硬件。采集用 ADS1299（默认 500 SPS、增益 12、外部公共 REF、独立 BIAS），主控 ESP32-S3-WROOM-1-N16R8（双核 240 MHz、16 MB Flash、8 MB PSRAM），配 2S 电池管理与均衡、隔离 USB、Wi-Fi 数据输出，仓库含 KiCad 9 原理图/PCB（84×122 mm 四层、332 元件、13 页原理图）、固件与评审交付包。**最值得肯定的是状态写得诚实**：只完成静态检查与固件编译，样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流都尚未验证，并明确「不得据此视为人体使用放行或医疗认证」。对做低成本 EEG 硬件的团队，这是难得的完整参考；但请把它当设计基线，而不是可用的采集设备。"
+      "title_zh": "YuEEG 升到 Rev E：双 Type-C、AMOLED 显示与 microSD 备份",
+      "title_en": "YuEEG Moves to Rev E: Dual Type-C, AMOLED Display and microSD Backup",
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/b16bd38285",
+      "brief": "YuEEG 在 10 月 27 日凌晨把工程推进到 **Rev E**（一次提交改动 **160 个文件**）：在 Rev D 基础上加入**双 Type-C**——DATA/FLASH 走隔离烧录与 CDC、CHARGE/POWER 独立充电与供电且 VBUS 不并联；新增 **AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 输出改为 UDP。采集端仍是 ADS1299 八通道湿电极（500 SPS、增益 12、外部公共 REF、独立 BIAS）＋ESP32-S3。状态说明也同步更新得很克制：只完成静态检查与固件编译，**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流全部未验证**。对做低成本 EEG 硬件的团队这是高质量参考设计，但仍是「设计基线」而非可用设备。"
     },
     {
-      "title_zh": "MOABB 给范式元数据加上数据集与设备列，为 leave-one-device-out 铺路",
-      "title_en": "MOABB Adds Dataset and Device Columns to Paradigm Metadata, Enabling Leave-One-Device-Out",
-      "url": "https://github.com/NeuroTechX/moabb/pull/1328",
-      "brief": "MOABB 合并 #1328：在范式元数据中加入 **dataset** 与 **device** 两列，直接解锁「**留一设备**（leave-one-device-out）」评估。这件事的重要性常被低估——不同放大器的噪声谱、模拟前端滤波与参考方式差异明显，把多设备数据混在一起训练与测试，很容易得到「看起来很好」但无法迁移到新硬件的结论；有了设备列，才能系统地测「换设备还能不能work」。同窗口还有 #1266 版本化文档部署（stable 在 /docs/ 与 /stable/，dev 在 /dev/）与 #1291「把每个滤波带都传进 get_data」的评测修正。做跨数据集/跨设备基准的团队，建议把设备列纳入实验设计报告。"
+      "title_zh": "MNE-CPP 让 macOS 产线签名可选，并报告「为何没选到签名身份」",
+      "title_en": "MNE-CPP Makes macOS Signing Optional and Reports Why No Identity Was Selected",
+      "url": "https://github.com/mne-tools/mne-cpp/commit/81dd2e8f49",
+      "brief": "MNE-CPP 在 10 月 27 日凌晨继续修发布链路（10 次提交）：CI 现在支持对 **macOS dev build 做可选的生产签名与公证**，并新增一条提交专门「**报告为何没有选中签名身份**」（81dd2e8f49）。这条看似琐碎，正对上前一天 v2.4.0 被撤回、改以 v2.4.0-rc 发布的疑点——签名/公证在 CI 上静默失败时，产物在 macOS 上会触发「无法验证开发者」，而日志里什么都没有，只能靠猜。把「为什么没签名」显式写出来，是把发布事故变成可诊断问题的正确做法。同批还包括「docs gate 变绿后部署 dev 网站」。对依赖其 macOS 二进制的用户，建议改用带签名的构建并核对公证状态。"
     },
     {
-      "title_zh": "Squiggly 新增 mu 节律检测：波形事件可在 C3 高亮，并进入会话摘要",
-      "title_en": "Squiggly Adds Mu-Rhythm Detection: Reviewable Waveform Events on C3 and a Spectral Screen",
-      "url": "https://github.com/alexdni/squiggly/commit/1e0704f64a",
-      "brief": "Squiggly（开源 Web 版 19 通道 EEG 评估平台，支持睁眼/闭眼，Docker 就绪）在 10 月 26 日凌晨推进两项 mu 节律能力：波形级 **mu 检测器**把检出结果作为**可复核事件**输出并在 **C3** 上高亮——这点很关键，自动检测在临床/评估场景里必须先「能被逐段核对」，否则没人敢用；另一提交在 MCP 会话摘要中加入**频谱 mu 节律屏幕**，用于快速筛查整段记录。mu 节律是感觉运动皮层的代表性节律，与其平台定位吻合。对做静息态筛查或神经反馈的团队，这套「检测→高亮→复核」的交互模式值得借鉴，而不是直接相信一个检测分数。"
+      "title_zh": "MOABB 加入整数型 PurgedEpochKFold，避免原始 epoch 窗口重叠泄漏",
+      "title_en": "MOABB Adds an Integer-Only PurgedEpochKFold Against Raw-Epoch Window Overlap",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1329",
+      "brief": "MOABB 合并 #1329：新增**整数型 PurgedEpochKFold**，专门处理原始 epoch 窗口重叠导致的泄漏（#280 提出的问题）。这个 PR 刻意做得很小——**只三个文件**（独立 splitter、针对性测试、changelog），并把上位的大 PR #1235 作为「已被取代」关闭，正合「评审友好、可回滚」的做法。技术要点是 purge 边界**只用整数 epoch 索引**计算，不依赖时间戳或采样率，因此在异构数据源上行为一致。对做 EEG 解码的人，窗口重叠是抬高 CV 分数却不报错的最经典陷阱；有显式的 purged splitter，至少能把「泄漏」从隐性假设变成可选配置。建议在做跨被试/跨会话交叉验证时显式启用并记录参数。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-26.md",
+  "github_path": "docs/bci-cn-daily/2026-10-27.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "YuEEG Rev D：ADS1299＋ESP32-S3 的八通道湿电极脑电开源硬件（含 KiCad 与固件）",
-      "title_en": "YuEEG Rev D: Open 8-Channel Wet-Electrode EEG Hardware on ADS1299 + ESP32-S3",
+      "title_zh": "YuEEG 升到 Rev E：双 Type-C、AMOLED 显示与 microSD 备份",
+      "title_en": "YuEEG Moves to Rev E: Dual Type-C, AMOLED Display and microSD Backup",
       "bullets_zh": [
-        "完整工程包：**ADS1299 八通道**（默认 500 SPS、增益 12、外部公共 REF、独立 BIAS）＋ **ESP32-S3-WROOM-1-N16R8**（双核 240 MHz、16 MB Flash、8 MB PSRAM），含 KiCad 9 原理图/PCB、2S 电池管理与均衡、隔离 USB、Wi-Fi 数据输出及配套固件。",
-        "PCB 84×122 mm 四层、**332 个元件、13 页原理图**；Type-C 经数据与电源隔离支持原生 USB 烧录/CDC，并与 Wi-Fi 并行输出。",
-        "作者明确标注状态：**仅完成静态检查与固件编译**，尚未做样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流验证，不得视为可用于人体或医疗。"
+        "Rev E 在 Rev D 基础上增加：**双 Type-C**（DATA/FLASH 隔离烧录与 CDC；CHARGE/POWER 独立充电供电，**VBUS 不并联**）、**AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 改为 UDP 输出。",
+        "采集仍为 ADS1299 八通道湿电极（默认 500 SPS、增益 12、外部公共 REF、独立 BIAS），主控 ESP32-S3-WROOM-1-N16R8；本次提交涉及 **160 个文件**，含 Rev E 设计与电气复核文档及完整评审包。",
+        "状态声明同步更新：静态检查与固件编译完成，但**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流均未验证**，不得视为人体使用放行。"
       ],
       "bullets_en": [
-        "A full engineering package: eight-channel ADS1299 (500 SPS, gain 12, external common REF, independent BIAS) with an ESP32-S3-WROOM-1-N16R8 (dual-core 240 MHz, 16 MB flash, 8 MB PSRAM), including KiCad 9 schematics/PCB, 2S battery management, isolated USB, Wi-Fi streaming and firmware.",
-        "The PCB is 84x122 mm, four layers, 332 components and a 13-page schematic; Type-C supports native USB flashing/CDC through data and power isolation, in parallel with Wi-Fi output.",
-        "The author states plainly that only static checks and firmware compilation are done — prototype flashing, noise, charge/discharge fault, concurrent transfer, isolation withstand and leakage current are unverified, and it must not be treated as fit for human or medical use."
+        "Rev E adds dual Type-C (DATA/FLASH for isolated flashing and CDC; CHARGE/POWER for independent charging and supply with VBUS not paralleled), an AMOLED display (DWO DO0200PFS12, RM67162 driver) and microSD backup, with Wi-Fi switched to UDP.",
+        "Acquisition stays ADS1299 eight-channel wet electrode (500 SPS, gain 12, external common REF, independent BIAS) with an ESP32-S3-WROOM-1-N16R8; the commit touches 160 files including Rev E design review and the full review package.",
+        "The status statement is updated honestly: static checks and firmware build only — display/storage integration, prototype flashing, noise, battery fault, concurrent transfer, isolation withstand and leakage current remain unverified, and it is not cleared for human use."
       ],
-      "url": "https://github.com/YuTaoV5/YuEEG",
-      "published": "2026-10-25T18:52:00Z",
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/b16bd38285",
+      "published": "2026-10-26T17:18:00Z",
       "source": "github",
       "language": "zh",
-      "brief": "YuEEG 在 10 月 26 日凌晨发布 **Rev D 工程评审版**：一套完整的八通道湿电极脑电开源硬件。采集用 ADS1299（默认 500 SPS、增益 12、外部公共 REF、独立 BIAS），主控 ESP32-S3-WROOM-1-N16R8（双核 240 MHz、16 MB Flash、8 MB PSRAM），配 2S 电池管理与均衡、隔离 USB、Wi-Fi 数据输出，仓库含 KiCad 9 原理图/PCB（84×122 mm 四层、332 元件、13 页原理图）、固件与评审交付包。**最值得肯定的是状态写得诚实**：只完成静态检查与固件编译，样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流都尚未验证，并明确「不得据此视为人体使用放行或医疗认证」。对做低成本 EEG 硬件的团队，这是难得的完整参考；但请把它当设计基线，而不是可用的采集设备。",
-      "brief_en": "YuEEG published Rev D on Oct 26 Beijing time: an open 8-channel wet-electrode EEG design with ADS1299 (500 SPS, gain 12, external common REF) and an ESP32-S3 (dual-core 240 MHz, 16 MB flash), 2S battery management, isolated USB and Wi-Fi streaming, plus KiCad 9 schematics/PCB (84x122 mm, four layers, 332 components) and firmware. It states that flashing, noise and safety tests are unverified.",
+      "brief": "YuEEG 在 10 月 27 日凌晨把工程推进到 **Rev E**（一次提交改动 **160 个文件**）：在 Rev D 基础上加入**双 Type-C**——DATA/FLASH 走隔离烧录与 CDC、CHARGE/POWER 独立充电与供电且 VBUS 不并联；新增 **AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 输出改为 UDP。采集端仍是 ADS1299 八通道湿电极（500 SPS、增益 12、外部公共 REF、独立 BIAS）＋ESP32-S3。状态说明也同步更新得很克制：只完成静态检查与固件编译，**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流全部未验证**。对做低成本 EEG 硬件的团队这是高质量参考设计，但仍是「设计基线」而非可用设备。",
+      "brief_en": "YuEEG advanced to Rev E on Oct 27 Beijing time in a 160-file commit: dual Type-C (isolated flashing/CDC on DATA/FLASH, independent charging on CHARGE/POWER, VBUS not paralleled), an AMOLED display (RM67162 driver), microSD backup and Wi-Fi via UDP, still on ADS1299 with an ESP32-S3. It still states only static checks and firmware builds are done, with integration and safety tests unverified.",
       "tags": [
         "open-hardware",
         "ads1299",
-        "esp32-s3",
-        "eeg",
-        "kicad"
+        "rev-e",
+        "amoled",
+        "sd-backup"
       ],
-      "raw_excerpt": "「当前版本为 **Rev D 工程评审版**：ADS1299 + ESP32-S3-WROOM-1-N16R8，包含 KiCad 9 原理图/PCB、2S 电池管理、隔离 USB、Wi-Fi 数据输出及配套固件。」「工程已完成静态检查和固件编译，**尚未完成样机烧录、噪声、充放电故障、并发传输、隔离耐压和漏电流验证**。不应据此将板子视为已获人体使用放行或医疗认证的设备。」PCB「84 × 122 mm、四层、332 个元件；13 页原理图」。",
-      "fetched_at": "2026-10-25T23:45:00Z",
+      "raw_excerpt": "README: 「当前版本为 **Rev E 工程评审版**：ADS1299 + ESP32-S3-WROOM-1-N16R8，双 Type-C、隔离 USB、Wi-Fi UDP、AMOLED 与 microSD 备份。」「双 Type-C | DATA/FLASH 隔离烧录/CDC；CHARGE/POWER 独立充电/供电；VBUS 不并联」。「工程已完成静态检查和固件编译，尚未完成样机烧录、显示/存储联调、噪声、充放电故障、并发传输、隔离耐压和漏电流验证。」Commit b16bd38285: \"Add Rev E dual USB, AMOLED and SD backup EEG hardware\" (160 files).",
+      "fetched_at": "2026-10-26T23:40:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "YuTaoV5/YuEEG",
+      "upstream_id": "YuTaoV5/YuEEG@b16bd38285",
       "author_handle": "YuTaoV5",
       "metrics": {
         "play": null,
@@ -69,41 +69,84 @@
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "完整开源八通道 EEG 硬件（原理图/PCB/固件），且诚实标注全部未验证项。"
+      "why_valuable": "一天内从 Rev D 推到 Rev E 并交付完整评审包，状态声明仍然诚实克制。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-CPP 让 macOS 产线签名可选，并报告「为何没选到签名身份」",
+      "title_en": "MNE-CPP Makes macOS Signing Optional and Reports Why No Identity Was Selected",
+      "bullets_zh": [
+        "CI 现在支持对 macOS dev build 做**可选的生产签名与公证（notarization）**，并在未选到身份时**显式报告原因**——正是这类静默失败导致昨天的 v2.4.0 被撤回、改发 v2.4.0-rc。",
+        "同批 10 次提交还包括「每次 docs gate 变绿后部署 dev 网站」，属发布链路的可观测性修正。",
+        "对下游：签名/公证缺失会让 macOS 用户看到「无法验证开发者」而无法直接运行；把原因写进日志比事后猜更省时间。"
+      ],
+      "bullets_en": [
+        "CI now supports optional production signing and notarization of macOS dev builds, and explicitly reports why no signing identity was selected — exactly the silent failure that forced yesterday's v2.4.0 withdrawal in favour of v2.4.0-rc.",
+        "The batch of ten commits also deploys the dev website after every green docs gate, part of making the release path observable.",
+        "Downstream, missing signing/notarization makes macOS users hit 'unidentified developer' blocks, so logging the reason saves the guesswork."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/81dd2e8f49",
+      "published": "2026-10-26T20:49:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 27 日凌晨继续修发布链路（10 次提交）：CI 现在支持对 **macOS dev build 做可选的生产签名与公证**，并新增一条提交专门「**报告为何没有选中签名身份**」（81dd2e8f49）。这条看似琐碎，正对上前一天 v2.4.0 被撤回、改以 v2.4.0-rc 发布的疑点——签名/公证在 CI 上静默失败时，产物在 macOS 上会触发「无法验证开发者」，而日志里什么都没有，只能靠猜。把「为什么没签名」显式写出来，是把发布事故变成可诊断问题的正确做法。同批还包括「docs gate 变绿后部署 dev 网站」。对依赖其 macOS 二进制的用户，建议改用带签名的构建并核对公证状态。",
+      "brief_en": "MNE-CPP kept fixing its release path on Oct 27 Beijing time: CI now supports optional production signing and notarization for macOS dev builds, plus a commit reporting why no signing identity was selected. That targets yesterday's withdrawn v2.4.0 — silent signing failures produce 'unidentified developer' blocks with nothing in the logs. The dev site deploys after each green docs gate.",
+      "tags": [
+        "mne-cpp",
+        "macos",
+        "codesign",
+        "notarization",
+        "ci"
+      ],
+      "raw_excerpt": "Commits 2026-10-26: \"Release: report why no macOS signing identity was selected\" (81dd2e8f49) 20:49Z; \"CI: optional production signing and notarization of the macOS dev bu[ild]\" (835f663fb2) 20:40Z; \"CI: deploy the dev website after every green docs gate\" (8c6b83751b) 12:28Z. Prior day: v2.4.0 withdrew in favour of v2.4.0-rc.",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@81dd2e8f49",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把 macOS 签名静默失败变成可诊断日志，正是前一天撤回 v2.4.0 的根因方向。"
     },
     {
       "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "MOABB 给范式元数据加上数据集与设备列，为 leave-one-device-out 铺路",
-      "title_en": "MOABB Adds Dataset and Device Columns to Paradigm Metadata, Enabling Leave-One-Device-Out",
+      "title_zh": "MOABB 加入整数型 PurgedEpochKFold，避免原始 epoch 窗口重叠泄漏",
+      "title_en": "MOABB Adds an Integer-Only PurgedEpochKFold Against Raw-Epoch Window Overlap",
       "bullets_zh": [
-        "#1328 在范式元数据中加入 **dataset** 与 **device** 列，使「留一设备」（leave-one-device-out）评估成为可能——此前无法按采集设备切分训练/测试。",
-        "设备信息是跨设备泛化的前提：不同放大器（如 g.tec / BioSemi / Brain Products）在噪声谱与滤波器上差异明显，混在一起评估会高估性能。",
-        "同一窗口还有 #1266 版本化文档部署（stable/dev 双路径）与「把每个滤波带都传进 get_data」的评测修正（#1291）。"
+        "#1329 是一个**刻意最小**的可选跟进（仅三个文件：独立 splitter、针对性测试、changelog），用于解决 #280 提出的**原始 epoch 窗口重叠**问题；上位大 PR #1235 已作为被取代而关闭。",
+        "分割器只用**整数 epoch 索引**计算 purge 边界，不依赖时间戳或采样率，便于在不同数据源上保持一致行为。",
+        "窗口重叠造成的泄漏会抬高交叉验证分数却不报错，是 EEG 解码里最典型的「看起来很好」陷阱。"
       ],
       "bullets_en": [
-        "#1328 adds dataset and device columns to the paradigm metadata, making leave-one-device-out evaluation possible — previously you could not split train/test by acquisition device.",
-        "Device identity underpins cross-device generalisation: amplifiers such as g.tec, BioSemi and Brain Products differ in noise spectra and filters, so mixing them inflates performance.",
-        "The same window brought versioned docs deployment (#1266) and passing every filter band into get_data in evaluations (#1291)."
+        "#1329 is deliberately minimal (three files: a standalone splitter, focused tests, changelog) and addresses the raw-epoch overlap concern from #280; the larger #1235 was closed as superseded.",
+        "The splitter computes purge boundaries from integer epoch indices only, independent of timestamps or sampling rates, keeping behaviour consistent across data sources.",
+        "Overlapping windows inflate cross-validation scores without any error — the classic 'looks great' trap in EEG decoding."
       ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1328",
-      "published": "2026-10-25T18:39:00Z",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1329",
+      "published": "2026-10-26T01:09:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MOABB 合并 #1328：在范式元数据中加入 **dataset** 与 **device** 两列，直接解锁「**留一设备**（leave-one-device-out）」评估。这件事的重要性常被低估——不同放大器的噪声谱、模拟前端滤波与参考方式差异明显，把多设备数据混在一起训练与测试，很容易得到「看起来很好」但无法迁移到新硬件的结论；有了设备列，才能系统地测「换设备还能不能work」。同窗口还有 #1266 版本化文档部署（stable 在 /docs/ 与 /stable/，dev 在 /dev/）与 #1291「把每个滤波带都传进 get_data」的评测修正。做跨数据集/跨设备基准的团队，建议把设备列纳入实验设计报告。",
-      "brief_en": "MOABB merged #1328 adding dataset and device columns to paradigm metadata, unlocking leave-one-device-out evaluation. Amplifiers differ in noise spectra, front-end filtering and referencing, so pooling devices can produce results that look good but do not transfer; the device column makes that testable. The same window added versioned docs and passing every filter band into get_data.",
+      "brief": "MOABB 合并 #1329：新增**整数型 PurgedEpochKFold**，专门处理原始 epoch 窗口重叠导致的泄漏（#280 提出的问题）。这个 PR 刻意做得很小——**只三个文件**（独立 splitter、针对性测试、changelog），并把上位的大 PR #1235 作为「已被取代」关闭，正合「评审友好、可回滚」的做法。技术要点是 purge 边界**只用整数 epoch 索引**计算，不依赖时间戳或采样率，因此在异构数据源上行为一致。对做 EEG 解码的人，窗口重叠是抬高 CV 分数却不报错的最经典陷阱；有显式的 purged splitter，至少能把「泄漏」从隐性假设变成可选配置。建议在做跨被试/跨会话交叉验证时显式启用并记录参数。",
+      "brief_en": "MOABB merged #1329 adding an integer-only PurgedEpochKFold for the raw-epoch overlap problem from #280. Deliberately minimal (three files), it supersedes the larger #1235. Purge boundaries derive from integer epoch indices only, not timestamps or rates, so behaviour stays consistent; overlapping windows otherwise inflate cross-validation scores silently.",
       "tags": [
         "moabb",
-        "leave-one-device-out",
-        "metadata",
-        "generalisation",
-        "benchmark"
+        "cross-validation",
+        "purging",
+        "leakage",
+        "eeg-decoding"
       ],
-      "raw_excerpt": "PR #1328 merged 2026-10-25T18:39Z: \"Add dataset and device columns to the paradigm metadata (leave-one-device-out …)\". Same window: \"ci(docs): deploy versioned docs (stable at /docs/ + /stable/, dev at /dev/) (#1266)\" 10-24T18:15Z; \"Pass every filter band to get_data in the evaluations (#1291)\" 10-24T16:34Z.",
-      "fetched_at": "2026-10-25T23:45:00Z",
+      "raw_excerpt": "PR #1329: \"Add minimal integer-only PurgedEpochKFold for raw epoch windows — This is the **minimal opt-in follow-up** requested by @bruAristimunha in #1235 for the raw-epoch-overlap concern in #280. The original large PR #1235 has now been **closed as superseded**. This PR deliberately contains **only three files**: one standalone splitter, focused tests, and the changelog.\" Merged 2026-10-26T01:09Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1328",
+      "upstream_id": "NeuroTechX/moabb#1329",
       "author_handle": "NeuroTechX",
       "metrics": {
         "play": null,
@@ -112,179 +155,136 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "有了设备列才能测「换放大器还能不能work」，避免混合评估高估性能。"
+      "why_valuable": "窗口重叠会静默抬高交叉验证分数，显式 purged splitter 把泄漏变成可控配置。"
     },
     {
-      "type": "Project",
+      "type": "Benchmark",
       "level": "Intermediate",
-      "title_zh": "Squiggly 新增 mu 节律检测：波形事件可在 C3 高亮，并进入会话摘要",
-      "title_en": "Squiggly Adds Mu-Rhythm Detection: Reviewable Waveform Events on C3 and a Spectral Screen",
+      "title_zh": "MOABB 修 HefmiIch2025：被试其实是别人的会话",
+      "title_en": "MOABB Fixes HefmiIch2025: Its Subjects Were Actually Other People's Sessions",
       "bullets_zh": [
-        "`feat(mu)`：波形级 **mu 检测器**把检测结果作为**可复核事件**输出，并在 **C3** 上高亮——不是给一个分数，而是让人逐段确认。",
-        "另一提交在 MCP 会话摘要中加入**频谱 mu 节律屏幕**，便于快速筛查整段记录是否出现 mu 活动。",
-        "Squiggly 是开源 Web 版 19 通道 EEG 评估平台（支持睁眼/闭眼条件，Docker 就绪）；mu 节律与其「感觉运动」定位天然相关。"
+        "#1326 修 HefmiIch2025 数据集的被试划分——此前把**别人的会话**当成了独立被试，导致「跨被试」评估实质上是跨会话。",
+        "这类元数据错误不会让代码报错，只会让泛化结论偏乐观：同一被试的会话间相关性远高于被试间。",
+        "对用该数据集做跨被试基线的团队，建议升级后重跑并核对被试数与分组口径。"
       ],
       "bullets_en": [
-        "feat(mu): a waveform-level mu detector emits detections as reviewable events and highlights them on C3, giving segment-by-segment confirmation rather than a single score.",
-        "A second commit adds a spectral mu-rhythm screen to the MCP session summary, quickly flagging whether a recording shows mu activity.",
-        "Squiggly is an open-source web platform for 19-channel EEG assessment with eyes-open/closed conditions and Docker support; mu rhythm fits its sensorimotor focus."
+        "#1326 fixes HefmiIch2025's subject split, where sessions belonging to other people had been treated as separate subjects, making 'cross-subject' evaluation effectively cross-session.",
+        "Such metadata errors raise no exception; they only make generalisation claims optimistic, since within-subject sessions correlate far more than across subjects.",
+        "Teams benchmarking cross-subject performance on this dataset should re-run and check subject counts and grouping after upgrading."
       ],
-      "url": "https://github.com/alexdni/squiggly/commit/1e0704f64a",
-      "published": "2026-10-25T20:29:00Z",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1326",
+      "published": "2026-10-26T00:24:00Z",
       "source": "github",
       "language": "en",
-      "brief": "Squiggly（开源 Web 版 19 通道 EEG 评估平台，支持睁眼/闭眼，Docker 就绪）在 10 月 26 日凌晨推进两项 mu 节律能力：波形级 **mu 检测器**把检出结果作为**可复核事件**输出并在 **C3** 上高亮——这点很关键，自动检测在临床/评估场景里必须先「能被逐段核对」，否则没人敢用；另一提交在 MCP 会话摘要中加入**频谱 mu 节律屏幕**，用于快速筛查整段记录。mu 节律是感觉运动皮层的代表性节律，与其平台定位吻合。对做静息态筛查或神经反馈的团队，这套「检测→高亮→复核」的交互模式值得借鉴，而不是直接相信一个检测分数。",
-      "brief_en": "Squiggly, an open-source web platform for 19-channel EEG assessment, added two mu-rhythm features on Oct 26 Beijing time: a waveform-level detector emitting detections as reviewable events highlighted on C3, so results can be checked segment by segment, and a spectral mu screen in the MCP session summary.",
+      "brief": "MOABB 合并 #1326，修 **HefmiIch2025** 数据集的被试划分问题：此前把**别人的会话**当成了独立被试，导致标称的「跨被试」评估实际上退化成「跨会话」——同一被试不同会话之间的相关性远高于被试之间，于是泛化结论会系统性偏乐观，而且**不会报任何错**。这类数据层元数据错误比算法 bug 更难发现，因为它藏在 «subjects» 字段里，只有在严格按被试分组重跑时才会暴露。对用该数据集做跨被试基线的团队，建议升级后重跑并核对被试数与分组口径；同时这也是提醒：引用公开数据集的「跨被试」结果前，先确认其 subject 划分是否可信。",
+      "brief_en": "MOABB merged #1326 fixing HefmiIch2025's subject split, where sessions belonging to other people had been treated as separate subjects — turning nominal cross-subject evaluation into cross-session evaluation, which inflates generalisation claims without any error. These metadata errors hide in the subjects field and only surface when re-running with strict grouping.",
       "tags": [
-        "squiggly",
-        "mu-rhythm",
-        "detection",
-        "c3",
-        "reviewable-events"
+        "moabb",
+        "metadata",
+        "subject-split",
+        "leakage",
+        "dataset"
       ],
-      "raw_excerpt": "Commits 2026-10-25: \"feat(mu): waveform mu detector as reviewable events, highlighted on C3\" (1e0704f64a) 20:29Z; \"feat(mu): spectral mu rhythm screen in the MCP session summary\" (64d2404509) 19:34Z. Repo README: \"Rapid, transparent, open-source tool for analyzing 19-channel EEG recordings with support for Eyes-Open (EO) and Eyes-Closed (EC) conditions.\"",
-      "fetched_at": "2026-10-25T23:45:00Z",
+      "raw_excerpt": "PR #1326 merged 2026-10-26T00:24Z: \"Fix HefmiIch2025 subjects made of other people's sessions: take subjects a[part]\". Same day: \"Cross-system transfer tutorial: masked-mean MDM with groups=\\\"device\\\"\" (#1305) and \"Add minimal integer-only PurgedEpochKFold (#1329)\".",
+      "fetched_at": "2026-10-26T23:40:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "alexdni/squiggly@1e0704f64a",
-      "author_handle": "alexdni",
+      "upstream_id": "NeuroTechX/moabb#1326",
+      "author_handle": "NeuroTechX",
       "metrics": {
         "play": null,
-        "like": 34,
+        "like": 1077,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "自动检测输出为可复核事件而非单一分数，临床/评估场景才敢用。"
+      "quality_score": 7,
+      "why_valuable": "被试划分错会让「跨被试」变成跨会话，泛化结论偏乐观且不报错。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "REMind：面向 Muse S Athena 的 REM 门控记忆重激活引擎（n=1 研究软件）",
-      "title_en": "REMind: A REM-Gated Targeted Memory Reactivation Engine for Muse S Athena",
+      "title_zh": "MNE-BIDS 让 sidecar 无锁读取、原子写入：网络文件系统读快约 40%",
+      "title_en": "MNE-BIDS Reads Sidecars Lock-Free and Writes Atomically: ~40% Faster on Network Filesystems",
       "bullets_zh": [
-        "功能闭环：整夜记录 → **实时 REM 检测** → 安全门控的音频提示，用于「提示与任务/清醒意图配对」的单向 REM 定时范式。",
-        "仓库自带 `CHANGELOG.md`、`TEST_STATUS.md` 与 `.github`，并自我定位为 **n=1 研究软件、非医疗器械**（描述与 README 均写明）。",
-        "同日提交围绕合成管线的 **wander 默认值**（由良好接触会话推导）修复（#249/#250，关联 issue #248），并补文档说明该默认值的来源与影响。"
+        "#1680：读取 sidecar 不再每次加文件锁（写者旧实现会截断文件再填充，因此读侧必须加锁），改为**无锁读 + 原子写**。",
+        "作者实测：**在网络文件系统上读一段记录快约 40%**，单进程与并行写入也更快；这直接改善大型 BIDS 数据集的处理体验。",
+        "原子写同时避免了「读到写了一半的 sidecar」这种极难复现的损坏，对多进程/集群流水线尤其重要。"
       ],
       "bullets_en": [
-        "A closed loop: overnight recording, real-time REM detection and safety-gated audio cueing for a one-way, REM-timed cue protocol pairing cues with a task or lucidity intention.",
-        "The repo ships CHANGELOG, TEST_STATUS and .github workflows and explicitly positions itself as n=1 research software, not a medical device.",
-        "Same-day commits fixed the synthetic pipeline's wander default (derived from good-contact sessions, #249/#250 for issue #248) and documented where that default comes from and what it shifts."
+        "#1680 drops the per-read file lock (needed because the old writer truncated then filled files) in favour of lock-free reads and atomic writes.",
+        "The author measured about 40% faster reads of a recording on a network filesystem, with faster writes both alone and in parallel.",
+        "Atomic writes also prevent reading half-written sidecars — corruption that is nearly impossible to reproduce, and critical for multi-process or cluster pipelines."
       ],
-      "url": "https://github.com/yuriy-mikityuk/remind-eeg",
-      "published": "2026-10-25T21:19:00Z",
+      "url": "https://github.com/mne-tools/mne-bids/pull/1680",
+      "published": "2026-10-26T21:29:00Z",
       "source": "github",
       "language": "en",
-      "brief": "REMind 在 10 月 26 日凌晨更新：一套面向 **Muse S Athena** 的 **REM 门控定向记忆重激活（TMR）**引擎——整夜记录、**实时 REM 检测**、以及经安全门控的音频提示，实现「提示与任务/清醒意图配对」的单向 REM 定时方案。工程上它带有 CHANGELOG、TEST_STATUS 与 CI 配置，并**自我定位为 n=1 研究软件、非医疗器械**，这个边界声明在睡眠干预类项目里很重要。同日提交针对合成管线修 `wander` 默认值（由接触良好的会话推导，#249/#250 关联 #248），并补文档说明该默认值从哪来、会移动什么。对做居家睡眠 EEG 或闭环听觉刺激的团队，这是一份结构完整、边界清晰的参考实现；但 n=1 结论不可外推。",
-      "brief_en": "REMind updated on Oct 26 Beijing time: an engine for the Muse S Athena doing overnight recording, real-time REM detection and safety-gated audio cueing for a one-way REM-timed targeted memory reactivation protocol, with CHANGELOG, TEST_STATUS and CI, and an explicit n=1-research-not-medical-device boundary. Same-day commits fixed the synthetic pipeline's wander default.",
+      "brief": "MNE-BIDS 合并 #1680：sidecar 读写模型整体换掉——**读取不再加文件锁**，写入改为**原子写**。原因是旧实现写入时会「先截断再填充」，读侧只能靠加锁避免读到半个文件；改成原子替换后，读侧可以完全无锁。作者给出的实测数据很有说服力：**在网络文件系统上读取一段记录快约 40%**，单独写与并行写也都更快。对处理大型 BIDS 数据集、或跑多进程/集群流水线的团队，这不只是速度问题——「读到写了一半的 sidecar」是那种一年遇到一次、却极难复现的损坏，原子写直接消掉了它。建议升级后在共享存储上实测一次读写吞吐。",
+      "brief_en": "MNE-BIDS merged #1680 replacing the sidecar I/O model: reads no longer take a file lock and writes are atomic. The old writer truncated files before filling them, forcing lock-protected reads; atomic replacement removes the lock. The author measured about 40% faster reads on a network filesystem, and it eliminates rare half-written-sidecar corruption.",
       "tags": [
-        "remind",
-        "tmr",
-        "sleep",
-        "muse",
-        "closed-loop"
+        "mne-bids",
+        "atomic-write",
+        "locking",
+        "performance",
+        "bids"
       ],
-      "raw_excerpt": "Description: \"REM-gated TMR/TLR research engine for Muse S Athena; n = 1 research software, not a medical device\". README: \"REM-gated Targeted Memory Reactivation engine for the Muse S Athena EEG headset — overnight recording, real-time REM detection, and safety-gated audio cueing for a one-way, REM-timed cue protocol\". Commits 2026-10-25: \"Set the synthetic optics wander default from good-contact sessions\" (f661b07229) 20:31Z; \"Merge pull request #250 from …/fix-248-wander-defa[ult]\" (012fac2ba9) 21:19Z.",
-      "fetched_at": "2026-10-25T23:45:00Z",
+      "raw_excerpt": "PR #1680: \"ENH: Read sidecars without a lock and write them atomically … **Reading a recording takes about 40% less time on a network filesystem, and writing is faster alone and in parallel.** On main, every sidecar read takes a file lock, because a writer truncates the file and fil[ls]…\" Merged 2026-10-26T21:29Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "yuriy-mikityuk/remind-eeg",
-      "author_handle": "yuriy-mikityuk",
+      "upstream_id": "mne-tools/mne-bids#1680",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 7,
+        "like": 183,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "居家睡眠闭环 TMR 的完整实现，且明确 n=1 与“非医疗器械”边界。"
+      "quality_score": 8,
+      "why_valuable": "原子写既提速约 40%，又消除「读到半个 sidecar」这类难复现损坏。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "EegFun.jl 增加通道/条件/试次的选择器，并支持抽象向量与字符串区间",
-      "title_en": "EegFun.jl Adds Ergonomic Selectors for Channels, Conditions and Epochs",
+      "title_zh": "pyRiemann 修 HPD 矩阵的 Shrinkage 收缩",
+      "title_en": "pyRiemann Corrects Shrinkage When Shrinking HPD Matrices",
       "bullets_zh": [
-        "`feat`：新增通道、条件与试次的**选择器 API**，把常见的「按标签挑数据」写法收敛成一致接口；区间选择支持抽象向量与字符串输入。",
-        "`refactor` 改进通道与区间选择实现，另有文档：格式化代码片段并清理教程示例，配 ReadTheDocs 与 CI/codecov。",
-        "Julia 生态在 EEG 分析里相对小众，但类型化数组与性能特性适合大批量试次处理，这类可用性改进能降低跨语言迁移成本。"
+        "#510 修 `Shrinkage` 在收缩 **HPD（Hermitian 正定）** 矩阵时的实现问题，与前一日的 `RandomOverSampler`（#508）属同一批 HPD 支持补齐。",
+        "收缩估计是协方差正则化的主力手段（样本少、通道多时），收缩目标与系数用错会改变特征值结构，进而影响分类边界。",
+        "对使用复数/相位特征或 HPD 场景的团队，建议升级后核对收缩后的矩阵是否仍满足 Hermitian 正定与迹约束。"
       ],
       "bullets_en": [
-        "feat: new selector API for channels, conditions and epochs gives label-based subsetting one consistent interface, with interval selection accepting abstract vectors and strings.",
-        "A refactor improves channel and interval selection, plus docs that format snippets and clean tutorial examples, backed by ReadTheDocs and CI/coverage.",
-        "Julia remains a niche choice for EEG work, but typed arrays and performance suit large trial sets; usability work like this lowers cross-language migration cost."
+        "#510 fixes Shrinkage when shrinking HPD (Hermitian positive-definite) matrices, following the previous day's RandomOverSampler fix (#508) in the same HPD-support push.",
+        "Shrinkage is the standard covariance regulariser when trials are few and channels many; a wrong target or coefficient distorts the eigenvalue structure and thus the classifier boundary.",
+        "Teams using complex or phase features should verify that shrunk matrices remain Hermitian positive-definite and trace-constrained after upgrading."
       ],
-      "url": "https://github.com/igmmgi/EegFun.jl/commit/dbfba58452",
-      "published": "2026-10-25T17:16:00Z",
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/510",
+      "published": "2026-10-26T11:30:00Z",
       "source": "github",
       "language": "en",
-      "brief": "EegFun.jl（Julia 版 EEG 分析包）在 10 月 26 日凌晨推进一组可用性改动：新增**通道、条件与试次的选择器 API**（把「按标签挑数据」的常见写法收敛为一致接口），区间选择开始支持**抽象向量与字符串输入**，并重构了通道与区间的选择实现；配套还有代码片段格式化与教程示例清理。Julia 在 EEG 生态里虽属小众，但其类型化数组与性能特性适合大批量试次处理，选择器这类改进直接决定「迁移过来后写起来顺不顺手」。对已有 Julia 数据管线、或想在有性能瓶颈的批处理环节引入第二语言的团队，值得跟进；不过生态成熟度仍不及 MNE，前置工具链需自备。",
-      "brief_en": "EegFun.jl, a Julia EEG analysis package, added a selector API for channels, conditions and epochs, accepted abstract vectors and strings in interval selection, refactored channel/interval selection, and cleaned up docs on Oct 26 Beijing time. Julia is niche for EEG but its typed arrays suit large trial sets; these changes reduce migration friction, though the ecosystem is less mature than MNE.",
+      "brief": "pyRiemann 合并 #510，修 `Shrinkage` 在收缩 **HPD（Hermitian 正定）矩阵**时的实现问题。这是该库连续第三天补齐 HPD/复数场景支持（10-25 #463 让 `sample_gaussian` 支持数组 sigma 生成 HPD、10-26 #508 修 HPD 过采样、今天 #510 修收缩）。收缩估计是「试次少、通道多」时协方差正则化的主力手段，收缩目标或系数一旦不对，会改变特征值结构——表现为分类边界漂移，而且不报错。对用复数/相位特征做黎曼分类的团队，建议升级后检查收缩后的矩阵是否仍满足 Hermitian 正定与迹约束，并重跑关键对照。",
+      "brief_en": "pyRiemann merged #510 fixing Shrinkage for HPD matrices — the third day of HPD/complex support after #463 and #508. Shrinkage is the main covariance regulariser when trials are few and channels many; a wrong target or coefficient distorts eigenvalue structure and shifts the classifier boundary without error. Verify positive-definiteness and trace after upgrading.",
       "tags": [
-        "julia",
-        "eegfun",
-        "selectors",
-        "api",
-        "tooling"
+        "pyriemann",
+        "shrinkage",
+        "hpd",
+        "covariance",
+        "regularisation"
       ],
-      "raw_excerpt": "Commits 2026-10-25: \"feat: add ergonomic selectors for channels, conditions, and epochs in …\" (2044b95e04) 15:46Z; \"feat: add support for abstract vectors and string inputs in intervals\" (df758869fb) 16:08Z; \"refactor: improve channel and interval selections\" (ec693532b7) 16:58Z; \"docs: format code snippets and clean up tutorial examples\" (dbfba58452) 17:16Z.",
-      "fetched_at": "2026-10-25T23:45:00Z",
+      "raw_excerpt": "PR #510 \"Correct Shrinkage when shrinking HPD matrices\", merged 2026-10-26T11:30Z. Preceding day: \"Correct RandomOverSampler when sampling HPD matrices (#508)\" 2026-10-20T11:11Z; \"generalize sample_gaussian to generate HPD matrices for array sigma (#463)\" 2026-10-20T10:31Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "igmmgi/EegFun.jl@dbfba58452",
-      "author_handle": "igmmgi",
+      "upstream_id": "pyRiemann/pyRiemann#510",
+      "author_handle": "pyRiemann",
       "metrics": {
         "play": null,
-        "like": 4,
+        "like": 784,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "选择器 API 降低 Julia 侧 EEG 分析的使用摩擦，利于批处理迁移。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Eelbrain 简化 derivative_cache 内部实现",
-      "title_en": "Eelbrain Simplifies derivative_cache Internals",
-      "bullets_zh": [
-        "#250 重构 `derivative_cache` 的内部实现，属于对缓存层可维护性的整理（行为预期不变）。",
-        "该缓存服务于 Eelbrain 的导数/分解类计算：缓存键与失效逻辑若复杂，容易在长会话中出现「拿到旧结果」或内存膨胀。",
-        "同窗口另有一次 cibuildwheel 的 dependabot 升级（#235），与功能无关。"
-      ],
-      "bullets_en": [
-        "#250 restructures derivative_cache internals, a maintainability cleanup of the caching layer with behaviour expected to stay the same.",
-        "That cache backs Eelbrain's derivative/decomposition computations: complicated keys or invalidation logic invite stale results or memory growth in long sessions.",
-        "The same window had a dependabot cibuildwheel bump (#235), unrelated to behaviour."
-      ],
-      "url": "https://github.com/Eelbrain/Eelbrain/pull/250",
-      "published": "2026-10-25T16:07:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "Eelbrain 合并 #250：**简化 `derivative_cache` 的内部实现**。这是缓存层的重构（行为预期不变），但值得记录——该缓存服务于导数/分解类计算，缓存键与失效逻辑一旦过于复杂，就容易在长会话里出现「悄悄拿到旧结果」或内存持续增长，而这两种问题都极难在事后定位。同窗口另有一次 cibuildwheel 的 dependabot 升级（#235），与功能无关。对重度使用 Eelbrain 做时频/分解分析的团队，升级后建议跑一遍既有脚本并观察内存占用；若缓存命中行为与预期不符，应及时上报而不是绕过。",
-      "brief_en": "Eelbrain merged #250 simplifying derivative_cache internals — a caching-layer refactor with behaviour expected unchanged, but worth noting since that cache backs derivative and decomposition computations where complicated keys or invalidation invite stale results or memory growth that is hard to diagnose later. A dependabot cibuildwheel bump (#235) landed alongside.",
-      "tags": [
-        "eelbrain",
-        "cache",
-        "refactor",
-        "maintainability",
-        "decomposition"
-      ],
-      "raw_excerpt": "PR #250 merged 2026-10-25T16:07Z: \"Simplify derivative_cache internals\". Same window: \"[dependabot]: Bump pypa/cibuildwheel (#235)\" 15:58Z. Latest release v0.43.0b0 (2026-10-07).",
-      "fetched_at": "2026-10-25T23:45:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Eelbrain/Eelbrain#250",
-      "author_handle": "Eelbrain",
-      "metrics": {
-        "play": null,
-        "like": 87,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "缓存层若过于复杂易在长会话中拿到旧结果或内存膨胀，重构便于排查。"
+      "why_valuable": "收缩出错会改变特征值结构并漂移分类边界，且不报错，需核对正定性。"
     }
   ],
   "stats": {
