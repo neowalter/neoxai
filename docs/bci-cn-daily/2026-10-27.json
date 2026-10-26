@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-27",
+  "generated_at": "2026-10-26T22:09:46.622Z",
+  "item_count": 6,
+  "types": {
+    "Project": 4,
+    "Benchmark": 2
+  },
+  "highlights": [
+    {
+      "title_zh": "YuEEG 升到 Rev E：双 Type-C、AMOLED 显示与 microSD 备份",
+      "title_en": "YuEEG Moves to Rev E: Dual Type-C, AMOLED Display and microSD Backup",
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/b16bd38285",
+      "brief": "YuEEG 在 10 月 27 日凌晨把工程推进到 **Rev E**（一次提交改动 **160 个文件**）：在 Rev D 基础上加入**双 Type-C**——DATA/FLASH 走隔离烧录与 CDC、CHARGE/POWER 独立充电与供电且 VBUS 不并联；新增 **AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 输出改为 UDP。采集端仍是 ADS1299 八通道湿电极（500 SPS、增益 12、外部公共 REF、独立 BIAS）＋ESP32-S3。状态说明也同步更新得很克制：只完成静态检查与固件编译，**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流全部未验证**。对做低成本 EEG 硬件的团队这是高质量参考设计，但仍是「设计基线」而非可用设备。"
+    },
+    {
+      "title_zh": "MNE-CPP 让 macOS 产线签名可选，并报告「为何没选到签名身份」",
+      "title_en": "MNE-CPP Makes macOS Signing Optional and Reports Why No Identity Was Selected",
+      "url": "https://github.com/mne-tools/mne-cpp/commit/81dd2e8f49",
+      "brief": "MNE-CPP 在 10 月 27 日凌晨继续修发布链路（10 次提交）：CI 现在支持对 **macOS dev build 做可选的生产签名与公证**，并新增一条提交专门「**报告为何没有选中签名身份**」（81dd2e8f49）。这条看似琐碎，正对上前一天 v2.4.0 被撤回、改以 v2.4.0-rc 发布的疑点——签名/公证在 CI 上静默失败时，产物在 macOS 上会触发「无法验证开发者」，而日志里什么都没有，只能靠猜。把「为什么没签名」显式写出来，是把发布事故变成可诊断问题的正确做法。同批还包括「docs gate 变绿后部署 dev 网站」。对依赖其 macOS 二进制的用户，建议改用带签名的构建并核对公证状态。"
+    },
+    {
+      "title_zh": "MOABB 加入整数型 PurgedEpochKFold，避免原始 epoch 窗口重叠泄漏",
+      "title_en": "MOABB Adds an Integer-Only PurgedEpochKFold Against Raw-Epoch Window Overlap",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1329",
+      "brief": "MOABB 合并 #1329：新增**整数型 PurgedEpochKFold**，专门处理原始 epoch 窗口重叠导致的泄漏（#280 提出的问题）。这个 PR 刻意做得很小——**只三个文件**（独立 splitter、针对性测试、changelog），并把上位的大 PR #1235 作为「已被取代」关闭，正合「评审友好、可回滚」的做法。技术要点是 purge 边界**只用整数 epoch 索引**计算，不依赖时间戳或采样率，因此在异构数据源上行为一致。对做 EEG 解码的人，窗口重叠是抬高 CV 分数却不报错的最经典陷阱；有显式的 purged splitter，至少能把「泄漏」从隐性假设变成可选配置。建议在做跨被试/跨会话交叉验证时显式启用并记录参数。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-27.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "YuEEG 升到 Rev E：双 Type-C、AMOLED 显示与 microSD 备份",
+      "title_en": "YuEEG Moves to Rev E: Dual Type-C, AMOLED Display and microSD Backup",
+      "bullets_zh": [
+        "Rev E 在 Rev D 基础上增加：**双 Type-C**（DATA/FLASH 隔离烧录与 CDC；CHARGE/POWER 独立充电供电，**VBUS 不并联**）、**AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 改为 UDP 输出。",
+        "采集仍为 ADS1299 八通道湿电极（默认 500 SPS、增益 12、外部公共 REF、独立 BIAS），主控 ESP32-S3-WROOM-1-N16R8；本次提交涉及 **160 个文件**，含 Rev E 设计与电气复核文档及完整评审包。",
+        "状态声明同步更新：静态检查与固件编译完成，但**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流均未验证**，不得视为人体使用放行。"
+      ],
+      "bullets_en": [
+        "Rev E adds dual Type-C (DATA/FLASH for isolated flashing and CDC; CHARGE/POWER for independent charging and supply with VBUS not paralleled), an AMOLED display (DWO DO0200PFS12, RM67162 driver) and microSD backup, with Wi-Fi switched to UDP.",
+        "Acquisition stays ADS1299 eight-channel wet electrode (500 SPS, gain 12, external common REF, independent BIAS) with an ESP32-S3-WROOM-1-N16R8; the commit touches 160 files including Rev E design review and the full review package.",
+        "The status statement is updated honestly: static checks and firmware build only — display/storage integration, prototype flashing, noise, battery fault, concurrent transfer, isolation withstand and leakage current remain unverified, and it is not cleared for human use."
+      ],
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/b16bd38285",
+      "published": "2026-10-26T17:18:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "YuEEG 在 10 月 27 日凌晨把工程推进到 **Rev E**（一次提交改动 **160 个文件**）：在 Rev D 基础上加入**双 Type-C**——DATA/FLASH 走隔离烧录与 CDC、CHARGE/POWER 独立充电与供电且 VBUS 不并联；新增 **AMOLED 显示**（DWO DO0200PFS12，RM67162 驱动）与 **microSD 备份**，Wi-Fi 输出改为 UDP。采集端仍是 ADS1299 八通道湿电极（500 SPS、增益 12、外部公共 REF、独立 BIAS）＋ESP32-S3。状态说明也同步更新得很克制：只完成静态检查与固件编译，**显示/存储联调、样机烧录、噪声、充放电故障、并发传输、隔离耐压与漏电流全部未验证**。对做低成本 EEG 硬件的团队这是高质量参考设计，但仍是「设计基线」而非可用设备。",
+      "brief_en": "YuEEG advanced to Rev E on Oct 27 Beijing time in a 160-file commit: dual Type-C (isolated flashing/CDC on DATA/FLASH, independent charging on CHARGE/POWER, VBUS not paralleled), an AMOLED display (RM67162 driver), microSD backup and Wi-Fi via UDP, still on ADS1299 with an ESP32-S3. It still states only static checks and firmware builds are done, with integration and safety tests unverified.",
+      "tags": [
+        "open-hardware",
+        "ads1299",
+        "rev-e",
+        "amoled",
+        "sd-backup"
+      ],
+      "raw_excerpt": "README: 「当前版本为 **Rev E 工程评审版**：ADS1299 + ESP32-S3-WROOM-1-N16R8，双 Type-C、隔离 USB、Wi-Fi UDP、AMOLED 与 microSD 备份。」「双 Type-C | DATA/FLASH 隔离烧录/CDC；CHARGE/POWER 独立充电/供电；VBUS 不并联」。「工程已完成静态检查和固件编译，尚未完成样机烧录、显示/存储联调、噪声、充放电故障、并发传输、隔离耐压和漏电流验证。」Commit b16bd38285: \"Add Rev E dual USB, AMOLED and SD backup EEG hardware\" (160 files).",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "YuTaoV5/YuEEG@b16bd38285",
+      "author_handle": "YuTaoV5",
+      "metrics": {
+        "play": null,
+        "like": 175,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "一天内从 Rev D 推到 Rev E 并交付完整评审包，状态声明仍然诚实克制。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-CPP 让 macOS 产线签名可选，并报告「为何没选到签名身份」",
+      "title_en": "MNE-CPP Makes macOS Signing Optional and Reports Why No Identity Was Selected",
+      "bullets_zh": [
+        "CI 现在支持对 macOS dev build 做**可选的生产签名与公证（notarization）**，并在未选到身份时**显式报告原因**——正是这类静默失败导致昨天的 v2.4.0 被撤回、改发 v2.4.0-rc。",
+        "同批 10 次提交还包括「每次 docs gate 变绿后部署 dev 网站」，属发布链路的可观测性修正。",
+        "对下游：签名/公证缺失会让 macOS 用户看到「无法验证开发者」而无法直接运行；把原因写进日志比事后猜更省时间。"
+      ],
+      "bullets_en": [
+        "CI now supports optional production signing and notarization of macOS dev builds, and explicitly reports why no signing identity was selected — exactly the silent failure that forced yesterday's v2.4.0 withdrawal in favour of v2.4.0-rc.",
+        "The batch of ten commits also deploys the dev website after every green docs gate, part of making the release path observable.",
+        "Downstream, missing signing/notarization makes macOS users hit 'unidentified developer' blocks, so logging the reason saves the guesswork."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/81dd2e8f49",
+      "published": "2026-10-26T20:49:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10 月 27 日凌晨继续修发布链路（10 次提交）：CI 现在支持对 **macOS dev build 做可选的生产签名与公证**，并新增一条提交专门「**报告为何没有选中签名身份**」（81dd2e8f49）。这条看似琐碎，正对上前一天 v2.4.0 被撤回、改以 v2.4.0-rc 发布的疑点——签名/公证在 CI 上静默失败时，产物在 macOS 上会触发「无法验证开发者」，而日志里什么都没有，只能靠猜。把「为什么没签名」显式写出来，是把发布事故变成可诊断问题的正确做法。同批还包括「docs gate 变绿后部署 dev 网站」。对依赖其 macOS 二进制的用户，建议改用带签名的构建并核对公证状态。",
+      "brief_en": "MNE-CPP kept fixing its release path on Oct 27 Beijing time: CI now supports optional production signing and notarization for macOS dev builds, plus a commit reporting why no signing identity was selected. That targets yesterday's withdrawn v2.4.0 — silent signing failures produce 'unidentified developer' blocks with nothing in the logs. The dev site deploys after each green docs gate.",
+      "tags": [
+        "mne-cpp",
+        "macos",
+        "codesign",
+        "notarization",
+        "ci"
+      ],
+      "raw_excerpt": "Commits 2026-10-26: \"Release: report why no macOS signing identity was selected\" (81dd2e8f49) 20:49Z; \"CI: optional production signing and notarization of the macOS dev bu[ild]\" (835f663fb2) 20:40Z; \"CI: deploy the dev website after every green docs gate\" (8c6b83751b) 12:28Z. Prior day: v2.4.0 withdrew in favour of v2.4.0-rc.",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@81dd2e8f49",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把 macOS 签名静默失败变成可诊断日志，正是前一天撤回 v2.4.0 的根因方向。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "MOABB 加入整数型 PurgedEpochKFold，避免原始 epoch 窗口重叠泄漏",
+      "title_en": "MOABB Adds an Integer-Only PurgedEpochKFold Against Raw-Epoch Window Overlap",
+      "bullets_zh": [
+        "#1329 是一个**刻意最小**的可选跟进（仅三个文件：独立 splitter、针对性测试、changelog），用于解决 #280 提出的**原始 epoch 窗口重叠**问题；上位大 PR #1235 已作为被取代而关闭。",
+        "分割器只用**整数 epoch 索引**计算 purge 边界，不依赖时间戳或采样率，便于在不同数据源上保持一致行为。",
+        "窗口重叠造成的泄漏会抬高交叉验证分数却不报错，是 EEG 解码里最典型的「看起来很好」陷阱。"
+      ],
+      "bullets_en": [
+        "#1329 is deliberately minimal (three files: a standalone splitter, focused tests, changelog) and addresses the raw-epoch overlap concern from #280; the larger #1235 was closed as superseded.",
+        "The splitter computes purge boundaries from integer epoch indices only, independent of timestamps or sampling rates, keeping behaviour consistent across data sources.",
+        "Overlapping windows inflate cross-validation scores without any error — the classic 'looks great' trap in EEG decoding."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1329",
+      "published": "2026-10-26T01:09:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 合并 #1329：新增**整数型 PurgedEpochKFold**，专门处理原始 epoch 窗口重叠导致的泄漏（#280 提出的问题）。这个 PR 刻意做得很小——**只三个文件**（独立 splitter、针对性测试、changelog），并把上位的大 PR #1235 作为「已被取代」关闭，正合「评审友好、可回滚」的做法。技术要点是 purge 边界**只用整数 epoch 索引**计算，不依赖时间戳或采样率，因此在异构数据源上行为一致。对做 EEG 解码的人，窗口重叠是抬高 CV 分数却不报错的最经典陷阱；有显式的 purged splitter，至少能把「泄漏」从隐性假设变成可选配置。建议在做跨被试/跨会话交叉验证时显式启用并记录参数。",
+      "brief_en": "MOABB merged #1329 adding an integer-only PurgedEpochKFold for the raw-epoch overlap problem from #280. Deliberately minimal (three files), it supersedes the larger #1235. Purge boundaries derive from integer epoch indices only, not timestamps or rates, so behaviour stays consistent; overlapping windows otherwise inflate cross-validation scores silently.",
+      "tags": [
+        "moabb",
+        "cross-validation",
+        "purging",
+        "leakage",
+        "eeg-decoding"
+      ],
+      "raw_excerpt": "PR #1329: \"Add minimal integer-only PurgedEpochKFold for raw epoch windows — This is the **minimal opt-in follow-up** requested by @bruAristimunha in #1235 for the raw-epoch-overlap concern in #280. The original large PR #1235 has now been **closed as superseded**. This PR deliberately contains **only three files**: one standalone splitter, focused tests, and the changelog.\" Merged 2026-10-26T01:09Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1329",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1077,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "窗口重叠会静默抬高交叉验证分数，显式 purged splitter 把泄漏变成可控配置。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB 修 HefmiIch2025：被试其实是别人的会话",
+      "title_en": "MOABB Fixes HefmiIch2025: Its Subjects Were Actually Other People's Sessions",
+      "bullets_zh": [
+        "#1326 修 HefmiIch2025 数据集的被试划分——此前把**别人的会话**当成了独立被试，导致「跨被试」评估实质上是跨会话。",
+        "这类元数据错误不会让代码报错，只会让泛化结论偏乐观：同一被试的会话间相关性远高于被试间。",
+        "对用该数据集做跨被试基线的团队，建议升级后重跑并核对被试数与分组口径。"
+      ],
+      "bullets_en": [
+        "#1326 fixes HefmiIch2025's subject split, where sessions belonging to other people had been treated as separate subjects, making 'cross-subject' evaluation effectively cross-session.",
+        "Such metadata errors raise no exception; they only make generalisation claims optimistic, since within-subject sessions correlate far more than across subjects.",
+        "Teams benchmarking cross-subject performance on this dataset should re-run and check subject counts and grouping after upgrading."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1326",
+      "published": "2026-10-26T00:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 合并 #1326，修 **HefmiIch2025** 数据集的被试划分问题：此前把**别人的会话**当成了独立被试，导致标称的「跨被试」评估实际上退化成「跨会话」——同一被试不同会话之间的相关性远高于被试之间，于是泛化结论会系统性偏乐观，而且**不会报任何错**。这类数据层元数据错误比算法 bug 更难发现，因为它藏在 «subjects» 字段里，只有在严格按被试分组重跑时才会暴露。对用该数据集做跨被试基线的团队，建议升级后重跑并核对被试数与分组口径；同时这也是提醒：引用公开数据集的「跨被试」结果前，先确认其 subject 划分是否可信。",
+      "brief_en": "MOABB merged #1326 fixing HefmiIch2025's subject split, where sessions belonging to other people had been treated as separate subjects — turning nominal cross-subject evaluation into cross-session evaluation, which inflates generalisation claims without any error. These metadata errors hide in the subjects field and only surface when re-running with strict grouping.",
+      "tags": [
+        "moabb",
+        "metadata",
+        "subject-split",
+        "leakage",
+        "dataset"
+      ],
+      "raw_excerpt": "PR #1326 merged 2026-10-26T00:24Z: \"Fix HefmiIch2025 subjects made of other people's sessions: take subjects a[part]\". Same day: \"Cross-system transfer tutorial: masked-mean MDM with groups=\\\"device\\\"\" (#1305) and \"Add minimal integer-only PurgedEpochKFold (#1329)\".",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1326",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1077,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "被试划分错会让「跨被试」变成跨会话，泛化结论偏乐观且不报错。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-BIDS 让 sidecar 无锁读取、原子写入：网络文件系统读快约 40%",
+      "title_en": "MNE-BIDS Reads Sidecars Lock-Free and Writes Atomically: ~40% Faster on Network Filesystems",
+      "bullets_zh": [
+        "#1680：读取 sidecar 不再每次加文件锁（写者旧实现会截断文件再填充，因此读侧必须加锁），改为**无锁读 + 原子写**。",
+        "作者实测：**在网络文件系统上读一段记录快约 40%**，单进程与并行写入也更快；这直接改善大型 BIDS 数据集的处理体验。",
+        "原子写同时避免了「读到写了一半的 sidecar」这种极难复现的损坏，对多进程/集群流水线尤其重要。"
+      ],
+      "bullets_en": [
+        "#1680 drops the per-read file lock (needed because the old writer truncated then filled files) in favour of lock-free reads and atomic writes.",
+        "The author measured about 40% faster reads of a recording on a network filesystem, with faster writes both alone and in parallel.",
+        "Atomic writes also prevent reading half-written sidecars — corruption that is nearly impossible to reproduce, and critical for multi-process or cluster pipelines."
+      ],
+      "url": "https://github.com/mne-tools/mne-bids/pull/1680",
+      "published": "2026-10-26T21:29:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-BIDS 合并 #1680：sidecar 读写模型整体换掉——**读取不再加文件锁**，写入改为**原子写**。原因是旧实现写入时会「先截断再填充」，读侧只能靠加锁避免读到半个文件；改成原子替换后，读侧可以完全无锁。作者给出的实测数据很有说服力：**在网络文件系统上读取一段记录快约 40%**，单独写与并行写也都更快。对处理大型 BIDS 数据集、或跑多进程/集群流水线的团队，这不只是速度问题——「读到写了一半的 sidecar」是那种一年遇到一次、却极难复现的损坏，原子写直接消掉了它。建议升级后在共享存储上实测一次读写吞吐。",
+      "brief_en": "MNE-BIDS merged #1680 replacing the sidecar I/O model: reads no longer take a file lock and writes are atomic. The old writer truncated files before filling them, forcing lock-protected reads; atomic replacement removes the lock. The author measured about 40% faster reads on a network filesystem, and it eliminates rare half-written-sidecar corruption.",
+      "tags": [
+        "mne-bids",
+        "atomic-write",
+        "locking",
+        "performance",
+        "bids"
+      ],
+      "raw_excerpt": "PR #1680: \"ENH: Read sidecars without a lock and write them atomically … **Reading a recording takes about 40% less time on a network filesystem, and writing is faster alone and in parallel.** On main, every sidecar read takes a file lock, because a writer truncates the file and fil[ls]…\" Merged 2026-10-26T21:29Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-bids#1680",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 183,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "原子写既提速约 40%，又消除「读到半个 sidecar」这类难复现损坏。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "pyRiemann 修 HPD 矩阵的 Shrinkage 收缩",
+      "title_en": "pyRiemann Corrects Shrinkage When Shrinking HPD Matrices",
+      "bullets_zh": [
+        "#510 修 `Shrinkage` 在收缩 **HPD（Hermitian 正定）** 矩阵时的实现问题，与前一日的 `RandomOverSampler`（#508）属同一批 HPD 支持补齐。",
+        "收缩估计是协方差正则化的主力手段（样本少、通道多时），收缩目标与系数用错会改变特征值结构，进而影响分类边界。",
+        "对使用复数/相位特征或 HPD 场景的团队，建议升级后核对收缩后的矩阵是否仍满足 Hermitian 正定与迹约束。"
+      ],
+      "bullets_en": [
+        "#510 fixes Shrinkage when shrinking HPD (Hermitian positive-definite) matrices, following the previous day's RandomOverSampler fix (#508) in the same HPD-support push.",
+        "Shrinkage is the standard covariance regulariser when trials are few and channels many; a wrong target or coefficient distorts the eigenvalue structure and thus the classifier boundary.",
+        "Teams using complex or phase features should verify that shrunk matrices remain Hermitian positive-definite and trace-constrained after upgrading."
+      ],
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/510",
+      "published": "2026-10-26T11:30:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "pyRiemann 合并 #510，修 `Shrinkage` 在收缩 **HPD（Hermitian 正定）矩阵**时的实现问题。这是该库连续第三天补齐 HPD/复数场景支持（10-25 #463 让 `sample_gaussian` 支持数组 sigma 生成 HPD、10-26 #508 修 HPD 过采样、今天 #510 修收缩）。收缩估计是「试次少、通道多」时协方差正则化的主力手段，收缩目标或系数一旦不对，会改变特征值结构——表现为分类边界漂移，而且不报错。对用复数/相位特征做黎曼分类的团队，建议升级后检查收缩后的矩阵是否仍满足 Hermitian 正定与迹约束，并重跑关键对照。",
+      "brief_en": "pyRiemann merged #510 fixing Shrinkage for HPD matrices — the third day of HPD/complex support after #463 and #508. Shrinkage is the main covariance regulariser when trials are few and channels many; a wrong target or coefficient distorts eigenvalue structure and shifts the classifier boundary without error. Verify positive-definiteness and trace after upgrading.",
+      "tags": [
+        "pyriemann",
+        "shrinkage",
+        "hpd",
+        "covariance",
+        "regularisation"
+      ],
+      "raw_excerpt": "PR #510 \"Correct Shrinkage when shrinking HPD matrices\", merged 2026-10-26T11:30Z. Preceding day: \"Correct RandomOverSampler when sampling HPD matrices (#508)\" 2026-10-20T11:11Z; \"generalize sample_gaussian to generate HPD matrices for array sigma (#463)\" 2026-10-20T10:31Z.",
+      "fetched_at": "2026-10-26T23:40:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pyRiemann/pyRiemann#510",
+      "author_handle": "pyRiemann",
+      "metrics": {
+        "play": null,
+        "like": 784,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "收缩出错会改变特征值结构并漂移分类边界，且不报错，需核对正定性。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 48,
+    "llm_rows": 12,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
