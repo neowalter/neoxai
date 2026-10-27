@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T10:30:27.788Z",
+  "generatedAt": "2026-10-27T10:02:17.423Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 14
+      "count": 13
     },
     {
       "id": "github",
       "ok": true,
-      "count": 7
+      "count": 6
     }
   ],
   "items": [
@@ -435,7 +435,7 @@
         "Boredom"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10186,
+      "downloads": 10195,
       "likes": null,
       "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
@@ -578,7 +578,7 @@
       ],
       "license": "other",
       "downloads": 1106,
-      "likes": 0,
+      "likes": 1,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
         "EEG"
@@ -615,7 +615,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 428,
+      "downloads": 429,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -693,6 +693,28 @@
       ]
     },
     {
+      "id": "hf:2Levi/eeg2vedio-EMD",
+      "name": "eeg2vedio-EMD",
+      "owner": "2Levi",
+      "url": "https://huggingface.co/datasets/2Levi/eeg2vedio-EMD",
+      "source": "huggingface",
+      "description": "EEG Moments Dataset (EMD), preprocessed EEG (mirror) This repository is a byte-identical mirror of the BIDS top-level files and the derivatives/ folder of OpenNeuro ds008257 v1.0.0 (DOI 10.18112/openneuro.ds008257.v1.0.0, license CC0). It was made for the eeg2vis project so the…",
+      "tags": [
+        "cc0-1.0",
+        "video",
+        "eeg",
+        "neuroscience",
+        "visual-decoding"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 56,
+      "likes": 1,
+      "updatedAt": "2026-10-23T05:06:32.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:mne-tools/mne-bids",
       "name": "mne-bids",
       "owner": "mne-tools",
@@ -712,7 +734,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 183,
-      "updatedAt": "2026-10-26T01:54:46.000Z",
+      "updatedAt": "2026-10-26T22:09:34.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -732,7 +754,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 457,
+      "downloads": 465,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -748,7 +770,7 @@
       "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 52,
+      "downloads": 53,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -773,7 +795,7 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 49,
+      "downloads": 57,
       "likes": null,
       "updatedAt": "2026-10-22T00:00:00.000Z",
       "modality": [
@@ -805,7 +827,7 @@
       "description": "Pre-registration file for the configuration search and the single locked-test evaluation reported in \"A Reliability-Oriented Evaluation Framework for EEG-to-Language-Model Word Retrieval: Identifying and Controlling Evaluation Shortcuts\" (San, Sugiura, Shimamura; manuscript in p…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 5,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -841,7 +863,7 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 8,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -900,8 +922,8 @@
       ],
       "license": "BSD-3-Clause",
       "downloads": null,
-      "likes": 89,
-      "updatedAt": "2026-10-25T23:10:53.000Z",
+      "likes": 90,
+      "updatedAt": "2026-10-27T05:33:16.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -927,7 +949,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 15,
-      "updatedAt": "2026-10-26T06:24:16.000Z",
+      "updatedAt": "2026-10-27T06:24:12.000Z",
       "modality": [
         "EEG"
       ]
@@ -977,7 +999,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-26T08:50:10.000Z",
+      "updatedAt": "2026-10-26T20:08:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -1003,30 +1025,6 @@
       "downloads": null,
       "likes": 0,
       "updatedAt": "2026-10-25T09:16:38.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Alejandro-Quiroga-21/cirins-motor-bci-bids",
-      "name": "cirins-motor-bci-bids",
-      "owner": "Alejandro-Quiroga-21",
-      "url": "https://github.com/Alejandro-Quiroga-21/cirins-motor-bci-bids",
-      "source": "github",
-      "description": "Conversion, technical-validation and stimulus-presentation code of the CIRINS Motor BCI EEG dataset (32-channel EEG, 30 participants, executed hand and ankle movements, BIDS)",
-      "tags": [
-        "bci",
-        "bids",
-        "brain-computer-interface",
-        "dataset",
-        "eeg",
-        "mne-python",
-        "motor-execution"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-24T13:10:49.000Z",
       "modality": [
         "EEG"
       ]
