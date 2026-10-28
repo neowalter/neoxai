@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-27T10:02:17.423Z",
+  "generatedAt": "2026-10-28T10:49:05.674Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 65
+      "count": 66
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 15
+      "count": 16
     },
     {
       "id": "physionet",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 5
     }
   ],
   "items": [
@@ -100,6 +100,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009033",
+      "name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009033",
+      "source": "openneuro",
+      "description": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-10-28T03:21:16.878Z",
       "modality": [
         "EEG"
       ]
@@ -412,7 +431,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 7505,
+      "downloads": 7783,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -435,7 +454,7 @@
         "Boredom"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10195,
+      "downloads": 10319,
       "likes": null,
       "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
@@ -460,7 +479,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 6545,
+      "downloads": 6962,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -485,7 +504,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1970,
+      "downloads": 1959,
       "likes": 2,
       "updatedAt": "2026-10-20T04:44:55.000Z",
       "modality": [
@@ -510,7 +529,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 1987,
+      "downloads": 1982,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -535,7 +554,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1826,
+      "downloads": 1836,
       "likes": 2,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -553,7 +572,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 877,
+      "downloads": 966,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -577,7 +596,7 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 1106,
+      "downloads": 1124,
       "likes": 1,
       "updatedAt": "2026-08-18T03:24:57.000Z",
       "modality": [
@@ -599,7 +618,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 770,
+      "downloads": 783,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -615,7 +634,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 429,
+      "downloads": 431,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -640,7 +659,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 342,
+      "downloads": 316,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -663,7 +682,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 187,
+      "downloads": 351,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -685,7 +704,7 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 147,
+      "downloads": 148,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
       "modality": [
@@ -693,23 +712,25 @@
       ]
     },
     {
-      "id": "hf:2Levi/eeg2vedio-EMD",
-      "name": "eeg2vedio-EMD",
-      "owner": "2Levi",
-      "url": "https://huggingface.co/datasets/2Levi/eeg2vedio-EMD",
+      "id": "hf:jatshi/CAS_EEG",
+      "name": "CAS_EEG",
+      "owner": "jatshi",
+      "url": "https://huggingface.co/datasets/jatshi/CAS_EEG",
       "source": "huggingface",
-      "description": "EEG Moments Dataset (EMD), preprocessed EEG (mirror) This repository is a byte-identical mirror of the BIDS top-level files and the derivatives/ folder of OpenNeuro ds008257 v1.0.0 (DOI 10.18112/openneuro.ds008257.v1.0.0, license CC0). It was made for the eeg2vis project so the…",
+      "description": "Complex acoustic scenes. Synchronized EEG. Event-level behaviour. A multi-subject resource for studying auditory target detection in noise and overlapping sound events. Overview &nbsp; | &nbsp; Task & data &nbsp; | &nbsp; Quick start &nbsp; | &nbsp; Documentation &nbsp; | &nbsp;…",
       "tags": [
-        "cc0-1.0",
-        "video",
+        "apache-2.0",
+        "audio",
+        "timeseries",
         "eeg",
-        "neuroscience",
-        "visual-decoding"
+        "auditory-target-detection",
+        "auditory-scene-analysis",
+        "neuroscience"
       ],
-      "license": "cc0-1.0",
-      "downloads": 56,
+      "license": "apache-2.0",
+      "downloads": 46,
       "likes": 1,
-      "updatedAt": "2026-10-23T05:06:32.000Z",
+      "updatedAt": "2026-10-26T11:56:36.000Z",
       "modality": [
         "EEG"
       ]
@@ -754,7 +775,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 465,
+      "downloads": 477,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -770,7 +791,7 @@
       "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 53,
+      "downloads": 75,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -795,7 +816,7 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 57,
+      "downloads": 85,
       "likes": null,
       "updatedAt": "2026-10-22T00:00:00.000Z",
       "modality": [
@@ -811,7 +832,7 @@
       "description": "Here are all the EEG and behavioral datasets used in Study 2",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 54,
+      "downloads": 84,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -824,12 +845,30 @@
       "owner": "San, Khin Pyae Phyo",
       "url": "https://doi.org/10.5281/zenodo.23637330",
       "source": "zenodo",
-      "description": "Pre-registration file for the configuration search and the single locked-test evaluation reported in \"A Reliability-Oriented Evaluation Framework for EEG-to-Language-Model Word Retrieval: Identifying and Controlling Evaluation Shortcuts\" (San, Sugiura, Shimamura; manuscript in p…",
+      "description": "Pre-registration file for the configuration search and the single locked-test evaluation reported in \"A Reliability-Oriented Evaluation Framework for EEG-to-Language-Model Word Retrieval: Identifying and Controlling Evaluation Shortcuts\" (San, Shimamura; manuscript in preparatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 5,
+      "downloads": 11,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23464852",
+      "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
+      "owner": "Atiwiwat, Danita",
+      "url": "https://doi.org/10.5281/zenodo.23464852",
+      "source": "zenodo",
+      "description": "Dataset Description This dataset contains physiological recordings and working memory performance data from participants who completed a Sternberg Working Memory task under different levels of cognitive load. The dataset includes Electroencephalogram (EEG), Electrocardiogram (EC…",
+      "tags": [
+        "working memory"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 17,
+      "likes": null,
+      "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -853,24 +892,6 @@
       ]
     },
     {
-      "id": "zenodo:23464852",
-      "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
-      "owner": "Atiwiwat, Danita",
-      "url": "https://doi.org/10.5281/zenodo.23464852",
-      "source": "zenodo",
-      "description": "Dataset Description This dataset contains physiological recordings and working memory performance data from participants who completed a Sternberg Working Memory task under different levels of cognitive load. The dataset includes Electroencephalogram (EEG), Electrocardiogram (EC…",
-      "tags": [
-        "working memory"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 9,
-      "likes": null,
-      "updatedAt": "2026-10-19T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "zenodo:23397566",
       "name": "Group labels and analysis plan for Ultimatum Game responders (N=29): behavioral and psychometric stratifications for EEG/FD-fNIRS comparisons",
       "owner": "Villa, Alessandro E.P.",
@@ -879,7 +900,7 @@
       "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 25,
+      "downloads": 26,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
@@ -923,7 +944,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 90,
-      "updatedAt": "2026-10-27T05:33:16.000Z",
+      "updatedAt": "2026-10-27T11:20:20.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -948,33 +969,33 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 15,
-      "updatedAt": "2026-10-27T06:24:12.000Z",
+      "likes": 14,
+      "updatedAt": "2026-10-28T06:24:12.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:toniIepure25/Imagina",
-      "name": "Imagina",
-      "owner": "toniIepure25",
-      "url": "https://github.com/toniIepure25/Imagina",
+      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
+      "name": "NMT-4k-EEG-Dataset",
+      "owner": "dll-ncai",
+      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
       "source": "github",
-      "description": "AI-powered EEG research platform for mental imagery analysis, real OpenMIIR EEG evaluation, signal-quality metrics, dataset readiness, and neurofeedback-inspired experimentation.",
+      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
       "tags": [
-        "bci",
-        "brain-computer-interface",
+        "abnormality-detection",
+        "biomedical-signals",
+        "clinical-eeg",
+        "clinical-reports",
         "eeg",
-        "lsl",
-        "machine-learning",
-        "mental-imagery",
-        "neurofeedback",
-        "neuroscience"
+        "eeg-dataset",
+        "electroencephalography",
+        "event-annotations"
       ],
-      "license": null,
+      "license": "MIT",
       "downloads": null,
-      "likes": 2,
-      "updatedAt": "2026-10-24T09:17:16.000Z",
+      "likes": 3,
+      "updatedAt": "2026-10-28T08:20:42.000Z",
       "modality": [
         "EEG"
       ]
@@ -999,32 +1020,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-26T20:08:03.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:ACT2039/imagined-speech-eeg",
-      "name": "imagined-speech-eeg",
-      "owner": "ACT2039",
-      "url": "https://github.com/ACT2039/imagined-speech-eeg",
-      "source": "github",
-      "description": "Research codebase for imagined-speech EEG recognition, featuring EDF dataset auditing, signal analysis, and reproducible Google Colab experiments.",
-      "tags": [
-        "brain-computer-interface",
-        "eeg",
-        "eeg-classification",
-        "google-colab",
-        "imagined-speech",
-        "machine-learning",
-        "mne-python",
-        "neuroscience"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-25T09:16:38.000Z",
+      "updatedAt": "2026-10-27T21:45:19.000Z",
       "modality": [
         "EEG"
       ]
