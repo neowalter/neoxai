@@ -1,0 +1,256 @@
+{
+  "date": "2026-10-29",
+  "generated_at": "2026-10-28T21:31:41.659Z",
+  "item_count": 5,
+  "types": {
+    "Project": 4,
+    "Tutorial": 1
+  },
+  "highlights": [
+    {
+      "title_zh": "EEG 平台仓库清除 2026 年 10 月窃密木马：恶意 Actions 工作流、tasks.json 与字体文件",
+      "title_en": "An EEG Platform Repo Removed October 2026 Credential-Stealing Malware: Workflows, tasks.json, a Font",
+      "url": "https://github.com/dll-ncai/eeg_pre-diagnostic_screening/pull/5",
+      "brief": "一个 EEG 深度学习平台仓库（`eeg_pre-diagnostic_screening`）在 10-28 做了安全事故处置：清除了 **2026 年 10 月被植入的窃密木马**。被确认恶意的文件很典型——伪装成安全与评审自动化的 `.github/workflows/code-review.yml`、`security-audit.yml`，一打开工程就可能执行的 `.vscode/tasks.json`，以及伪装成图标字体的 `public/fonts/fa-solid-400.woff2`。判定依据是「已核实恶意内容 + 证实整文件在该事件期间加入」，且维护者强调这**不是历史重写**：其他分支与 tag 仍需人工排查，GitHub Actions 应保持关闭。对做 EEG 工具链的人来说，这是一份难得的真实供应链攻击样本——建议照此清单检查自己依赖的开源仓库。"
+    },
+    {
+      "title_zh": "MNE-Python 修 read_raw_eximia 的 EEG/EOG 单位缩放（µV 与 V）",
+      "title_en": "MNE-Python Fixes read_raw_eximia's EEG/EOG Scaling Bug (µV vs V)",
+      "url": "https://github.com/mne-tools/mne-python/pull/14461",
+      "brief": "MNE-Python 合并 #14461，把代码库里几处 TODO 清掉了，其中一条是真 bug：`read_raw_eximia` 对 **EEG 与 EOG 数据存在缩放错误（µV 与 V 之间差 1e6）**。单位错六个数量级不会抛异常，却会连带影响滤波阈值、振幅/伪迹拒绝阈值、以及与其他数据集的幅值比较——这类错误通常在你换设备或合并数据时才暴露。同批还删掉了冗余的 `reset_bads` 调用、修正「未被插值的通道」的 bads 状态处理；另外 #14462 为 FSAverage 提供整理过的头部形状、#14412 推进配准 GUI 现代化第 6 阶段。用 Eximia 采集、或把其数据并入流水线的团队，建议升级后核对量级并重跑相关分析。"
+    },
+    {
+      "title_zh": "Eelbrain 的 RawMaxwell 能识别饱和通道并跳过受影响片段",
+      "title_en": "Eelbrain's RawMaxwell Detects Saturated Channels and Skips Affected Segments",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/260",
+      "brief": "Eelbrain 合并 #260：`RawMaxwell` 现在能**检测饱和通道并跳过受影响的时间片段**。这条很实用——饱和（放大器削顶）的数据一旦进入 Maxwell 滤波（SSS/tSSS），误差会通过空间投影扩散到**所有通道**，而不只是坏掉的那一个，事后几乎无法从结果里看出污染来源。改成按片段跳过，就把「整段作废」变成「丢掉受影响的一小段」。同批还有几条「字段被悄悄改写」类修正：#261 在 pandas 3.1 下保留 `'n/a'` 标签、#255 在形态变换时保留 `proportion_explained`、#256 去掉 Pipeline 对 values 事件变量的限制。做 MEG/EEG MaxFilter 流程的团队值得升级并检查既有结果的片段覆盖情况。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-29.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEG 平台仓库清除 2026 年 10 月窃密木马：恶意 Actions 工作流、tasks.json 与字体文件",
+      "title_en": "An EEG Platform Repo Removed October 2026 Credential-Stealing Malware: Workflows, tasks.json, a Font",
+      "bullets_zh": [
+        "处置记录列出被确认恶意的文件：`.github/workflows/code-review.yml`、`.github/workflows/security-audit.yml`（伪装成安全/评审流程）、`.vscode/tasks.json`（打开工程即可能执行）、以及 `public/fonts/fa-solid-400.woff2`（伪装成图标字体）。",
+        "判定依据是「已核实恶意内容 + 证实整文件是在 2026 年 10 月这起事件中被加入」，并强调**这不是历史重写**，其他分支/tag 与所有 manual_review 发现都需人工排查。",
+        "维护者明确要求**保持 GitHub Actions 处于关闭状态**——对任何下载过该仓库或其依赖的项目，这是立即要做的检查清单。"
+      ],
+      "bullets_en": [
+        "The incident-response record lists confirmed malicious files: .github/workflows/code-review.yml and security-audit.yml (disguised as review/security automation), .vscode/tasks.json (can execute when a project is opened), and public/fonts/fa-solid-400.woff2 (a font asset as payload).",
+        "Identification required verified malicious contents plus evidence the whole file was added during the October 2026 incident; it stresses this is not a history rewrite and that other branches, tags and manual_review findings need manual inspection.",
+        "The maintainers explicitly ask to keep GitHub Actions disabled — an immediate checklist item for anyone who cloned the project or depends on it."
+      ],
+      "url": "https://github.com/dll-ncai/eeg_pre-diagnostic_screening/pull/5",
+      "published": "2026-10-28T08:29:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "一个 EEG 深度学习平台仓库（`eeg_pre-diagnostic_screening`）在 10-28 做了安全事故处置：清除了 **2026 年 10 月被植入的窃密木马**。被确认恶意的文件很典型——伪装成安全与评审自动化的 `.github/workflows/code-review.yml`、`security-audit.yml`，一打开工程就可能执行的 `.vscode/tasks.json`，以及伪装成图标字体的 `public/fonts/fa-solid-400.woff2`。判定依据是「已核实恶意内容 + 证实整文件在该事件期间加入」，且维护者强调这**不是历史重写**：其他分支与 tag 仍需人工排查，GitHub Actions 应保持关闭。对做 EEG 工具链的人来说，这是一份难得的真实供应链攻击样本——建议照此清单检查自己依赖的开源仓库。",
+      "brief_en": "An EEG deep-learning repo (eeg_pre-diagnostic_screening) removed credential-stealing malware implanted in Oct 2026: workflows disguised as review and security automation, a .vscode/tasks.json that can execute on project open, and a font file used as payload. The maintainers note it is not a history rewrite, other branches and tags need manual inspection, and GitHub Actions should stay disabled.",
+      "tags": [
+        "security",
+        "supply-chain",
+        "malware",
+        "github-actions",
+        "incident-response"
+      ],
+      "raw_excerpt": "PR #5: \"Security: remove confirmed October 2026 malware — Incident response: review every deleted file. These candidates were identified by verified malicious contents plus evidence that the whole file was added during the October 2026 incident. Files to delete: `.github/workflows/code-review.yml`, `.github/workflows/security-audit.yml`, `.vscode/tasks.json`, `public/fonts/fa-solid-400.woff2`. Not a Git history rewrite; manually investigate other branches/tags and all manual_review findings. Keep GitHub Actions disabled.\"",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "dll-ncai/eeg_pre-diagnostic_screening#5",
+      "author_handle": "dll-ncai",
+      "metrics": {
+        "play": null,
+        "like": 25,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "真实供应链攻击样本，给出可照做的检查清单（工作流/tasks.json/字体资产）。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 修 read_raw_eximia 的 EEG/EOG 单位缩放（µV 与 V）",
+      "title_en": "MNE-Python Fixes read_raw_eximia's EEG/EOG Scaling Bug (µV vs V)",
+      "bullets_zh": [
+        "#14461 清了几个积压 TODO：①`read_raw_eximia` 对 **EEG 与 EOG 数据存在真实的缩放 bug**（µV vs V，差 1e6）；②删掉冗余的 `reset_bads` 调用并修正未被插值通道的 bads 状态处理。",
+        "同批还有 #14462「为 FSAverage 提供精心整理的头部形状」与 #14412「配准 GUI 现代化（第 6 阶段）」，另补两处 changelog。",
+        "单位错 1e6 不会报错，但会连带影响滤波阈值、振幅拒绝与跨数据集比较——用 Eximia 设备的团队尤其应重跑。"
+      ],
+      "bullets_en": [
+        "#14461 cleared long-standing TODOs: read_raw_eximia had a real scaling bug for EEG and EOG data (µV vs V, a factor of 1e6), and the redundant reset_bads call was removed with proper bads handling for non-interpolated channels.",
+        "The same batch adds a curated head shape for FSAverage (#14462) and coregistration GUI modernisation phase 6 (#14412), plus changelog entries.",
+        "A 1e6 unit error raises nothing but skews filter thresholds, amplitude rejection and cross-dataset comparisons — Eximia users in particular should re-run."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14461",
+      "published": "2026-10-28T13:11:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14461，把代码库里几处 TODO 清掉了，其中一条是真 bug：`read_raw_eximia` 对 **EEG 与 EOG 数据存在缩放错误（µV 与 V 之间差 1e6）**。单位错六个数量级不会抛异常，却会连带影响滤波阈值、振幅/伪迹拒绝阈值、以及与其他数据集的幅值比较——这类错误通常在你换设备或合并数据时才暴露。同批还删掉了冗余的 `reset_bads` 调用、修正「未被插值的通道」的 bads 状态处理；另外 #14462 为 FSAverage 提供整理过的头部形状、#14412 推进配准 GUI 现代化第 6 阶段。用 Eximia 采集、或把其数据并入流水线的团队，建议升级后核对量级并重跑相关分析。",
+      "brief_en": "MNE-Python merged #14461 clearing long-standing TODOs, including a real bug: read_raw_eximia scaled EEG and EOG data wrongly between µV and V, a factor of 1e6. That raises no exception but skews filter thresholds, amplitude rejection and cross-dataset comparisons. The batch also fixes bads handling for non-interpolated channels and advances coregistration GUI work.",
+      "tags": [
+        "mne-python",
+        "scaling",
+        "units",
+        "eximia",
+        "bugfix"
+      ],
+      "raw_excerpt": "PR #14461: \"Fix scaling and interp bugs — I tracked down some TODOs in our codebase and ironed them out: 1. read_raw_eximia had a real scaling bug for EEG and EOG data (uV vs V) 2. delete a redundant `reset_bads` call, and assert proper handling of `reset_bads` (and fix it for channels that were not interpolated) 3. remove crufty `test_scaling=False`s…\" Merged 2026-10-28T13:11Z.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14461",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3571,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "µV/V 缩放错 1e6 会连带影响滤波阈值、伪迹拒绝与跨数据集比较，且不报错。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "Eelbrain 的 RawMaxwell 能识别饱和通道并跳过受影响片段",
+      "title_en": "Eelbrain's RawMaxwell Detects Saturated Channels and Skips Affected Segments",
+      "bullets_zh": [
+        "#260：`RawMaxwell` 现在会**检测饱和通道**并**跳过受影响的时间片段**——饱和数据进入 Maxwell 滤波（SSS/tSSS）会污染整段解，且污染是全局的、不易察觉。",
+        "同批还有 #261（pandas 3.1 下保留 `'n/a'` 标签）、#255（形态变换时保留 `proportion_explained`）、#256（去掉 Pipeline 对 values 事件变量的限制），多为「结果字段被悄悄改写」类修正。",
+        "对 MEG/EEG 用 MaxFilter 类流程的团队，饱和检测把「整段结果作废」变成「按片段跳过」，可显著减少无效数据。"
+      ],
+      "bullets_en": [
+        "#260 makes RawMaxwell detect saturated channels and skip the affected time segments — saturated data fed into Maxwell filtering (SSS/tSSS) contaminates the whole solution, globally and inconspicuously.",
+        "The batch also keeps 'n/a' labels under pandas 3.1 (#261), preserves proportion_explained through morphing (#255) and removes a Pipeline constraint on values event variables (#256) — mostly fixes for silently rewritten result fields.",
+        "For teams running MaxFilter-style pipelines, saturation detection turns 'discard the segment' into 'skip the affected span', cutting wasted data."
+      ],
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/260",
+      "published": "2026-10-28T12:58:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Eelbrain 合并 #260：`RawMaxwell` 现在能**检测饱和通道并跳过受影响的时间片段**。这条很实用——饱和（放大器削顶）的数据一旦进入 Maxwell 滤波（SSS/tSSS），误差会通过空间投影扩散到**所有通道**，而不只是坏掉的那一个，事后几乎无法从结果里看出污染来源。改成按片段跳过，就把「整段作废」变成「丢掉受影响的一小段」。同批还有几条「字段被悄悄改写」类修正：#261 在 pandas 3.1 下保留 `'n/a'` 标签、#255 在形态变换时保留 `proportion_explained`、#256 去掉 Pipeline 对 values 事件变量的限制。做 MEG/EEG MaxFilter 流程的团队值得升级并检查既有结果的片段覆盖情况。",
+      "brief_en": "Eelbrain merged #260 so RawMaxwell detects saturated channels and skips affected time segments. Saturated (clipped) data entering Maxwell filtering spreads error across all channels through the spatial projection, and the contamination is nearly invisible afterwards; skipping the span avoids discarding the whole recording. The batch also preserves 'n/a' labels under pandas 3.1.",
+      "tags": [
+        "eelbrain",
+        "maxwell",
+        "saturation",
+        "sss",
+        "data-integrity"
+      ],
+      "raw_excerpt": "Commits 2026-10-28: \"RawMaxwell: detect saturated channels and skip affected segments (#260)\" 12:58Z; \"FIX EventsInput: keep 'n/a' labels in event_factors with pandas 3.1 (#261)\" 11:47Z; \"FIX BoostingResult: preserve proportion_explained when morphing (#255)\" 10:56Z; \"Pipeline: Remove constraint on values event variable (#256)\" 10:54Z.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Eelbrain/Eelbrain#260",
+      "author_handle": "Eelbrain",
+      "metrics": {
+        "play": null,
+        "like": 87,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "饱和数据进 Maxwell 滤波会污染所有通道，按片段跳过避免整段作废。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-CPP 用文档所列 Qt 系统库验证 Linux 构建",
+      "title_en": "MNE-CPP Verifies Linux Builds Against the Documented Qt System Libraries",
+      "bullets_zh": [
+        "提交 f170b000b3 让发布流程在 **Linux 上用文档列明的 Qt 系统库**做验证，而不是只依赖自带/打包版本。",
+        "这直接关系到发行包能否在用户侧正常启动：发行版 Qt 版本差异是 Linux 二进制最常见的「我这儿打不开」来源。",
+        "属于 v2.4.0 发布收尾的一部分（前一天刚补上 macOS 签名/公证与 Windows 无签名回退）。"
+      ],
+      "bullets_en": [
+        "Commit f170b000b3 makes the release workflow verify Linux builds against the Qt system libraries the documentation names, rather than only bundled or self-provided versions.",
+        "That decides whether shipped binaries start on user machines: distro Qt version differences are the most common 'it won't open here' cause for Linux builds.",
+        "It is part of finishing the 2.4.0 release, after macOS signing/notarization and the unsigned-Windows fallback were added the day before."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/f170b000b3",
+      "published": "2026-10-28T09:56:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10-28 提交 f170b000b3：发布流程改为**在 Linux 上用文档所列的 Qt 系统库做验证**，而不是仅依赖自带或打包的 Qt。这条不显眼，却直击 Linux 二进制最常见的问题——不同发行版的 Qt 版本差异会让「在我机器上打不开」成为常态；用文档承诺的库组合去验，才算对用户负责。这也是 v2.4.0 发布收尾的一环（前一天刚补上 macOS 签名/公证、Windows 无签名回退与产物检查记录）。对在下游打包或基于其二进制做实时处理的团队，建议以「文档所列 Qt 版本」为基线测试，而不是用自己环境里最新的 Qt 凑合。",
+      "brief_en": "MNE-CPP commit f170b000b3 makes the release workflow verify Linux builds against the Qt system libraries its documentation names, rather than only bundled versions. Distro Qt differences are the classic reason Linux binaries fail to start, so testing the documented combination is what users need. It completes the 2.4.0 release work after macOS signing and the unsigned-Windows fallback.",
+      "tags": [
+        "mne-cpp",
+        "linux",
+        "qt",
+        "release",
+        "packaging"
+      ],
+      "raw_excerpt": "Commit f170b000b3, 2026-10-28T09:56Z: \"Release: verify Linux with the documented Qt system libraries\". Context: 2026-10-27 added \"Release 2.4.0\", \"allow shipping Windows unsigned with WINDOWS_SIGNING=unavailable\", macOS signing/notarization and artifact-inspection release evidence.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@f170b000b3",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 179,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "按文档 Qt 组合验证 Linux 构建，直接对应「发行版差异导致打不开」的常见故障。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "Muse 与 OpenBCI 的对比流程：Welch PSD、采样连续性、通道校验与 50 Hz 工频",
+      "title_en": "Comparing Muse and OpenBCI: Welch PSD, Sampling Continuity, Channel Validation and 50 Hz Noise",
+      "bullets_zh": [
+        "仓库给出一个可运行的对比脚本（MATLAB/Python 双实现思路），覆盖预处理、**Welch PSD**、频带功率分析、**采样连续性检查**、**通道校验**与 **50 Hz 工频评估**。",
+        "这套检查顺序对消费级设备选型很实用：先确认采样是否连续、通道是否可信，再谈频带功率，否则指标无意义。",
+        "规模很小（单脚本＋README），适合作为自建对比流程的起点；结论需在自己设备上重跑，不能直接引用。"
+      ],
+      "bullets_en": [
+        "The repo ships a runnable comparison script (MATLAB/Python approach) covering preprocessing, Welch PSD, band-power analysis, sampling-continuity checks, channel validation and 50 Hz line-noise assessment.",
+        "That order matters for consumer-device selection: confirm sampling continuity and channel trustworthiness before comparing band power, otherwise the metrics are meaningless.",
+        "It is small (one script plus README) and works as a starting template; results must be re-run on your own hardware rather than quoted."
+      ],
+      "url": "https://github.com/Debarati0106/EEG-Comparison-Muse-OpenBCI",
+      "published": "2026-10-28T18:57:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库（2026-10-28）给出一套 **Muse 与 OpenBCI 的对比流程**：从预处理、**Welch PSD**、频带功率分析，到**采样连续性检查**、**通道校验**和 **50 Hz 工频噪声评估**，并附可运行脚本。价值不在「谁更好」的结论，而在**检查顺序**：先确认采样是否连续、通道是否可信，再比较频带功率——否则后面的指标都建立在不可靠数据上。这类设备对比在社区里常被一句「我觉得 X 更准」带过，有可执行清单就能自己复现。仓库规模很小（单脚本＋README），适合当模板；若要用作采购依据，建议扩大被试数与录音时长，并把 50 Hz 与运动伪迹分开报告。",
+      "brief_en": "Created 2026-10-28, this repo offers a Muse-versus-OpenBCI comparison pipeline: preprocessing, Welch PSD, band-power analysis, sampling-continuity checks, channel validation and 50 Hz line-noise assessment, with a runnable script. Its value is the order of checks — verify sampling continuity and channel trustworthiness before comparing band power — though device conclusions need far more data.",
+      "tags": [
+        "muse",
+        "openbci",
+        "device-comparison",
+        "welch-psd",
+        "line-noise"
+      ],
+      "raw_excerpt": "README: \"Developed an EEG comparison pipeline using MATLAB and Python to evaluate OpenBCI and Muse recordings through signal preprocessing, Welch PSD, frequency-band power analysis, sampling continuity checks, channel validation, and 50 Hz line-noise assessment.\" Files: README.md, eeg_device_comparison_revised.py.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Debarati0106/EEG-Comparison-Muse-OpenBCI",
+      "author_handle": "Debarati0106",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "给出「先验采样与通道、再比频带功率」的可执行设备对比清单。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 50,
+    "llm_rows": 10,
+    "kept": 5,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
