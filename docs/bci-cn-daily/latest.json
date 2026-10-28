@@ -1,109 +1,195 @@
 {
-  "date": "2026-10-28",
-  "generated_at": "2026-10-27T21:32:04.843Z",
-  "item_count": 6,
+  "date": "2026-10-29",
+  "generated_at": "2026-10-28T21:31:41.659Z",
+  "item_count": 5,
   "types": {
-    "Project": 5,
-    "Benchmark": 1
+    "Project": 4,
+    "Tutorial": 1
   },
   "highlights": [
     {
-      "title_zh": "YuEEG 一天内再推 Rev F：主板上顶、充电拆成隔离副板",
-      "title_en": "YuEEG Ships Rev F a Day Later: Top-Side Mainboard and an Isolated Charger Daughterboard",
-      "url": "https://github.com/YuTaoV5/YuEEG/commit/a4dc70be5d",
-      "brief": "YuEEG 在 10-28 凌晨推出 **Rev F**（距 Rev E 仅一天）：把设计拆成「**主板 70×80 mm ＋ 隔离充电副板 44×48 mm**」，两板元件都在正面，AMOLED 叠装在主板之上。采集链保持隔离 USB CDC 与 Wi-Fi UDP **并行**输出、microSD 原始帧备份；安全设计上，主板在采集时只由受保护的 2S 电池供电，充电由副板的独立 Type-C 完成，并明确警示「**充电前拔下整个电极线束**」——这条对湿电极设备是必须写进文档的红线。状态仍是 Rev F 工程评审版：静态检查与固件编译之外的安全/噪声验证未完成。对做低成本八通道 EEG 的团队，两版迭代的取舍（尺寸、隔离、充电）本身就是难得的工程参考。"
+      "title_zh": "EEG 平台仓库清除 2026 年 10 月窃密木马：恶意 Actions 工作流、tasks.json 与字体文件",
+      "title_en": "An EEG Platform Repo Removed October 2026 Credential-Stealing Malware: Workflows, tasks.json, a Font",
+      "url": "https://github.com/dll-ncai/eeg_pre-diagnostic_screening/pull/5",
+      "brief": "一个 EEG 深度学习平台仓库（`eeg_pre-diagnostic_screening`）在 10-28 做了安全事故处置：清除了 **2026 年 10 月被植入的窃密木马**。被确认恶意的文件很典型——伪装成安全与评审自动化的 `.github/workflows/code-review.yml`、`security-audit.yml`，一打开工程就可能执行的 `.vscode/tasks.json`，以及伪装成图标字体的 `public/fonts/fa-solid-400.woff2`。判定依据是「已核实恶意内容 + 证实整文件在该事件期间加入」，且维护者强调这**不是历史重写**：其他分支与 tag 仍需人工排查，GitHub Actions 应保持关闭。对做 EEG 工具链的人来说，这是一份难得的真实供应链攻击样本——建议照此清单检查自己依赖的开源仓库。"
     },
     {
-      "title_zh": "MNE-CPP 重新走 2.4.0 发布：Windows 可无签名、macOS 强制签名公证",
-      "title_en": "MNE-CPP Re-walks the 2.4.0 Release: Unsigned Windows Allowed, Signed macOS Required",
-      "url": "https://github.com/mne-tools/mne-cpp/commit/cde22d1afd",
-      "brief": "MNE-CPP 在 10-28 凌晨提交「Release 2.4.0」，并补上被撤回事件的补救：**Windows 在签名服务不可用时可无签名发布**（`WINDOWS_SIGNING=unavailable`）、**macOS 的 dev/latest 构建签名并公证**、发布证据只保留「产物检查记录」。这条链路终于把「为什么昨天的 v2.4.0 消失」解释清楚了——签名/公证在 CI 上不可用时，产物要么被静默放弃、要么被撤回。需要提醒的是：Releases 页当前仍是 `dev_build`（10-27 14:35）与 v2.3.0，**2.4.0 资产还没出现**，所以这是补救流程而非最终上线。固定依赖其二进制的团队，等 2.4.0 资产与 `SHA256SUMS` 真正出现再升级。"
+      "title_zh": "MNE-Python 修 read_raw_eximia 的 EEG/EOG 单位缩放（µV 与 V）",
+      "title_en": "MNE-Python Fixes read_raw_eximia's EEG/EOG Scaling Bug (µV vs V)",
+      "url": "https://github.com/mne-tools/mne-python/pull/14461",
+      "brief": "MNE-Python 合并 #14461，把代码库里几处 TODO 清掉了，其中一条是真 bug：`read_raw_eximia` 对 **EEG 与 EOG 数据存在缩放错误（µV 与 V 之间差 1e6）**。单位错六个数量级不会抛异常，却会连带影响滤波阈值、振幅/伪迹拒绝阈值、以及与其他数据集的幅值比较——这类错误通常在你换设备或合并数据时才暴露。同批还删掉了冗余的 `reset_bads` 调用、修正「未被插值的通道」的 bads 状态处理；另外 #14462 为 FSAverage 提供整理过的头部形状、#14412 推进配准 GUI 现代化第 6 阶段。用 Eximia 采集、或把其数据并入流水线的团队，建议升级后核对量级并重跑相关分析。"
     },
     {
-      "title_zh": "BrainFlow 修 BLACKMAN_HARRIS 窗口：用的是 Nuttall 系数",
-      "title_en": "BrainFlow Fixes BLACKMAN_HARRIS: It Was Using Nuttall's Coefficients",
-      "url": "https://github.com/brainflow-dev/brainflow/pull/868",
-      "brief": "BrainFlow 合并 #868，修一个不易察觉的 DSP 错误：`DataFilter.get_window(BLACKMAN_HARRIS, n)` 返回的**并不是 Blackman-Harris 窗**——实现里用的 `0.355768, 0.487396, 0.144232, 0.012604` 是 **Nuttall「连续一阶导数」四项窗**的系数（A. H. Nuttall, 1981）。窗函数直接决定频谱泄漏与旁瓣衰减：系数错意味着你算出的 PSD、以及基于窗口的滤波结果都带着「另一种窗」的偏差，而代码不会报任何错。对用 BrainFlow 做在线频谱、睡眠纺锤波检测或带通滤波的团队，建议升级后用纯正弦做一次自检（看主瓣宽度与旁瓣水平），并把既有分析中依赖窗口的部分核对一遍。"
+      "title_zh": "Eelbrain 的 RawMaxwell 能识别饱和通道并跳过受影响片段",
+      "title_en": "Eelbrain's RawMaxwell Detects Saturated Channels and Skips Affected Segments",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/260",
+      "brief": "Eelbrain 合并 #260：`RawMaxwell` 现在能**检测饱和通道并跳过受影响的时间片段**。这条很实用——饱和（放大器削顶）的数据一旦进入 Maxwell 滤波（SSS/tSSS），误差会通过空间投影扩散到**所有通道**，而不只是坏掉的那一个，事后几乎无法从结果里看出污染来源。改成按片段跳过，就把「整段作废」变成「丢掉受影响的一小段」。同批还有几条「字段被悄悄改写」类修正：#261 在 pandas 3.1 下保留 `'n/a'` 标签、#255 在形态变换时保留 `proportion_explained`、#256 去掉 Pipeline 对 values 事件变量的限制。做 MEG/EEG MaxFilter 流程的团队值得升级并检查既有结果的片段覆盖情况。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-28.md",
+  "github_path": "docs/bci-cn-daily/2026-10-29.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "YuEEG 一天内再推 Rev F：主板上顶、充电拆成隔离副板",
-      "title_en": "YuEEG Ships Rev F a Day Later: Top-Side Mainboard and an Isolated Charger Daughterboard",
+      "title_zh": "EEG 平台仓库清除 2026 年 10 月窃密木马：恶意 Actions 工作流、tasks.json 与字体文件",
+      "title_en": "An EEG Platform Repo Removed October 2026 Credential-Stealing Malware: Workflows, tasks.json, a Font",
       "bullets_zh": [
-        "Rev F 把尺寸压到**主板 70×80 mm ＋ 隔离充电副板 44×48 mm**，两板元件全在正面，AMOLED 在主板之上叠装。",
-        "隔离 USB CDC 与 Wi-Fi UDP **并行**，microSD 原始帧备份；主板在采集时只由受保护的 2S 电池供电，副板提供独立充电 Type-C——**充电前必须拔下整个电极线束**（README 明确警示）。",
-        "延续一贯的克制：仍是 Rev F「工程评审版」，静态检查与固件编译之外的安全/噪声验证未完成。"
+        "处置记录列出被确认恶意的文件：`.github/workflows/code-review.yml`、`.github/workflows/security-audit.yml`（伪装成安全/评审流程）、`.vscode/tasks.json`（打开工程即可能执行）、以及 `public/fonts/fa-solid-400.woff2`（伪装成图标字体）。",
+        "判定依据是「已核实恶意内容 + 证实整文件是在 2026 年 10 月这起事件中被加入」，并强调**这不是历史重写**，其他分支/tag 与所有 manual_review 发现都需人工排查。",
+        "维护者明确要求**保持 GitHub Actions 处于关闭状态**——对任何下载过该仓库或其依赖的项目，这是立即要做的检查清单。"
       ],
       "bullets_en": [
-        "Rev F compresses the design to a 70x80 mm mainboard plus a 44x48 mm isolated charger daughterboard, all components on the top side, with the AMOLED stacked above the mainboard.",
-        "Isolated USB CDC and Wi-Fi UDP run in parallel with microSD raw-frame backup; the mainboard is powered only by a protected 2S battery during acquisition while the daughterboard provides an independent charging Type-C, and the README warns to unplug the whole electrode harness before charging.",
-        "It keeps the same restraint: Rev F remains an engineering-review version, with safety and noise validation beyond static checks and firmware builds still outstanding."
+        "The incident-response record lists confirmed malicious files: .github/workflows/code-review.yml and security-audit.yml (disguised as review/security automation), .vscode/tasks.json (can execute when a project is opened), and public/fonts/fa-solid-400.woff2 (a font asset as payload).",
+        "Identification required verified malicious contents plus evidence the whole file was added during the October 2026 incident; it stresses this is not a history rewrite and that other branches, tags and manual_review findings need manual inspection.",
+        "The maintainers explicitly ask to keep GitHub Actions disabled — an immediate checklist item for anyone who cloned the project or depends on it."
       ],
-      "url": "https://github.com/YuTaoV5/YuEEG/commit/a4dc70be5d",
-      "published": "2026-10-27T18:18:00Z",
+      "url": "https://github.com/dll-ncai/eeg_pre-diagnostic_screening/pull/5",
+      "published": "2026-10-28T08:29:00Z",
       "source": "github",
-      "language": "zh",
-      "brief": "YuEEG 在 10-28 凌晨推出 **Rev F**（距 Rev E 仅一天）：把设计拆成「**主板 70×80 mm ＋ 隔离充电副板 44×48 mm**」，两板元件都在正面，AMOLED 叠装在主板之上。采集链保持隔离 USB CDC 与 Wi-Fi UDP **并行**输出、microSD 原始帧备份；安全设计上，主板在采集时只由受保护的 2S 电池供电，充电由副板的独立 Type-C 完成，并明确警示「**充电前拔下整个电极线束**」——这条对湿电极设备是必须写进文档的红线。状态仍是 Rev F 工程评审版：静态检查与固件编译之外的安全/噪声验证未完成。对做低成本八通道 EEG 的团队，两版迭代的取舍（尺寸、隔离、充电）本身就是难得的工程参考。",
-      "brief_en": "YuEEG shipped Rev F a day after Rev E: a 70x80 mm mainboard plus a 44x48 mm isolated charger daughterboard, all parts on the top side with the AMOLED stacked above. Acquisition keeps isolated USB CDC and Wi-Fi UDP in parallel with microSD raw-frame backup, runs only from a protected 2S battery, and warns to unplug the whole electrode harness before charging.",
+      "language": "en",
+      "brief": "一个 EEG 深度学习平台仓库（`eeg_pre-diagnostic_screening`）在 10-28 做了安全事故处置：清除了 **2026 年 10 月被植入的窃密木马**。被确认恶意的文件很典型——伪装成安全与评审自动化的 `.github/workflows/code-review.yml`、`security-audit.yml`，一打开工程就可能执行的 `.vscode/tasks.json`，以及伪装成图标字体的 `public/fonts/fa-solid-400.woff2`。判定依据是「已核实恶意内容 + 证实整文件在该事件期间加入」，且维护者强调这**不是历史重写**：其他分支与 tag 仍需人工排查，GitHub Actions 应保持关闭。对做 EEG 工具链的人来说，这是一份难得的真实供应链攻击样本——建议照此清单检查自己依赖的开源仓库。",
+      "brief_en": "An EEG deep-learning repo (eeg_pre-diagnostic_screening) removed credential-stealing malware implanted in Oct 2026: workflows disguised as review and security automation, a .vscode/tasks.json that can execute on project open, and a font file used as payload. The maintainers note it is not a history rewrite, other branches and tags need manual inspection, and GitHub Actions should stay disabled.",
       "tags": [
-        "open-hardware",
-        "ads1299",
-        "rev-f",
-        "isolation",
-        "battery"
+        "security",
+        "supply-chain",
+        "malware",
+        "github-actions",
+        "incident-response"
       ],
-      "raw_excerpt": "README: 「当前为 **Rev F 工程评审版**：ADS1299 + ESP32-S3-WROOM-1-N16R8，主板 **70 × 80 mm**、隔离充电副板 **44 × 48 mm**，两板元件均在正面，AMOLED 在主板上方叠装。」「主板仅由受保护的 2S 电池供电采集，副板提供独立充电 Type-C。**充电前拔下整个电极线束。**」Commit a4dc70be5d: \"Compact Rev F into top-side mainboard and isolated charger daughterboa[rd]\".",
-      "fetched_at": "2026-10-27T23:40:00Z",
+      "raw_excerpt": "PR #5: \"Security: remove confirmed October 2026 malware — Incident response: review every deleted file. These candidates were identified by verified malicious contents plus evidence that the whole file was added during the October 2026 incident. Files to delete: `.github/workflows/code-review.yml`, `.github/workflows/security-audit.yml`, `.vscode/tasks.json`, `public/fonts/fa-solid-400.woff2`. Not a Git history rewrite; manually investigate other branches/tags and all manual_review findings. Keep GitHub Actions disabled.\"",
+      "fetched_at": "2026-10-28T23:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "YuTaoV5/YuEEG@a4dc70be5d",
-      "author_handle": "YuTaoV5",
+      "upstream_id": "dll-ncai/eeg_pre-diagnostic_screening#5",
+      "author_handle": "dll-ncai",
       "metrics": {
         "play": null,
-        "like": 176,
+        "like": 25,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "两天两版迭代给出尺寸/隔离/充电的工程取舍，并写明充电前拔电极线的红线。"
+      "why_valuable": "真实供应链攻击样本，给出可照做的检查清单（工作流/tasks.json/字体资产）。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-CPP 重新走 2.4.0 发布：Windows 可无签名、macOS 强制签名公证",
-      "title_en": "MNE-CPP Re-walks the 2.4.0 Release: Unsigned Windows Allowed, Signed macOS Required",
+      "title_zh": "MNE-Python 修 read_raw_eximia 的 EEG/EOG 单位缩放（µV 与 V）",
+      "title_en": "MNE-Python Fixes read_raw_eximia's EEG/EOG Scaling Bug (µV vs V)",
       "bullets_zh": [
-        "「Release 2.4.0」提交落在 10-27，同时新增：**Windows 在签名服务不可用时允许无签名发布**（`WINDOWS_SIGNING=unavailable`）、macOS dev/latest 构建**签名并公证**。",
-        "发布证据只保留「产物检查记录」（artifact inspection records），减少把内部构建细节当发布说明。",
-        "注意时点：Releases 页当前仍显示 `dev_build`（10-27 14:35）与 v2.3.0，**2.4.0 资产尚未可见**——这是对前一天撤回的补救流程，而不是最终上线。"
+        "#14461 清了几个积压 TODO：①`read_raw_eximia` 对 **EEG 与 EOG 数据存在真实的缩放 bug**（µV vs V，差 1e6）；②删掉冗余的 `reset_bads` 调用并修正未被插值通道的 bads 状态处理。",
+        "同批还有 #14462「为 FSAverage 提供精心整理的头部形状」与 #14412「配准 GUI 现代化（第 6 阶段）」，另补两处 changelog。",
+        "单位错 1e6 不会报错，但会连带影响滤波阈值、振幅拒绝与跨数据集比较——用 Eximia 设备的团队尤其应重跑。"
       ],
       "bullets_en": [
-        "A \"Release 2.4.0\" commit landed on Oct 27 alongside changes that let Windows ship unsigned when the signing service is unavailable (WINDOWS_SIGNING=unavailable) and sign/notarize macOS dev and latest builds.",
-        "Release evidence is restricted to artifact inspection records, so internal build detail no longer doubles as release notes.",
-        "Timing matters: the Releases page still shows dev_build (Oct 27 14:35) and v2.3.0, with 2.4.0 assets not yet visible — this is the remediation workflow after the withdrawal, not a finished launch."
+        "#14461 cleared long-standing TODOs: read_raw_eximia had a real scaling bug for EEG and EOG data (µV vs V, a factor of 1e6), and the redundant reset_bads call was removed with proper bads handling for non-interpolated channels.",
+        "The same batch adds a curated head shape for FSAverage (#14462) and coregistration GUI modernisation phase 6 (#14412), plus changelog entries.",
+        "A 1e6 unit error raises nothing but skews filter thresholds, amplitude rejection and cross-dataset comparisons — Eximia users in particular should re-run."
       ],
-      "url": "https://github.com/mne-tools/mne-cpp/commit/cde22d1afd",
-      "published": "2026-10-27T21:07:00Z",
+      "url": "https://github.com/mne-tools/mne-python/pull/14461",
+      "published": "2026-10-28T13:11:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-CPP 在 10-28 凌晨提交「Release 2.4.0」，并补上被撤回事件的补救：**Windows 在签名服务不可用时可无签名发布**（`WINDOWS_SIGNING=unavailable`）、**macOS 的 dev/latest 构建签名并公证**、发布证据只保留「产物检查记录」。这条链路终于把「为什么昨天的 v2.4.0 消失」解释清楚了——签名/公证在 CI 上不可用时，产物要么被静默放弃、要么被撤回。需要提醒的是：Releases 页当前仍是 `dev_build`（10-27 14:35）与 v2.3.0，**2.4.0 资产还没出现**，所以这是补救流程而非最终上线。固定依赖其二进制的团队，等 2.4.0 资产与 `SHA256SUMS` 真正出现再升级。",
-      "brief_en": "MNE-CPP committed \"Release 2.4.0\" with fixes for the withdrawal: Windows may ship unsigned when signing is unavailable (WINDOWS_SIGNING=unavailable), macOS dev and latest builds are signed and notarized, and release evidence is limited to artifact inspection records. The Releases page still shows dev_build and v2.3.0, so 2.4.0 assets are not visible yet.",
+      "brief": "MNE-Python 合并 #14461，把代码库里几处 TODO 清掉了，其中一条是真 bug：`read_raw_eximia` 对 **EEG 与 EOG 数据存在缩放错误（µV 与 V 之间差 1e6）**。单位错六个数量级不会抛异常，却会连带影响滤波阈值、振幅/伪迹拒绝阈值、以及与其他数据集的幅值比较——这类错误通常在你换设备或合并数据时才暴露。同批还删掉了冗余的 `reset_bads` 调用、修正「未被插值的通道」的 bads 状态处理；另外 #14462 为 FSAverage 提供整理过的头部形状、#14412 推进配准 GUI 现代化第 6 阶段。用 Eximia 采集、或把其数据并入流水线的团队，建议升级后核对量级并重跑相关分析。",
+      "brief_en": "MNE-Python merged #14461 clearing long-standing TODOs, including a real bug: read_raw_eximia scaled EEG and EOG data wrongly between µV and V, a factor of 1e6. That raises no exception but skews filter thresholds, amplitude rejection and cross-dataset comparisons. The batch also fixes bads handling for non-interpolated channels and advances coregistration GUI work.",
       "tags": [
-        "mne-cpp",
-        "release",
-        "codesign",
-        "notarization",
-        "windows"
+        "mne-python",
+        "scaling",
+        "units",
+        "eximia",
+        "bugfix"
       ],
-      "raw_excerpt": "Commits 2026-10-27: \"Release 2.4.0\" (cde22d1afd) 21:07Z; \"Release: allow shipping Windows unsigned with WINDOWS_SIGNING=unavaila[ble]\" (66d7ce85fa) 20:52Z; \"CI: publish only the artifact inspection records as release evidence\" (dd57dee9f3) 12:40Z; \"CI: sign and notarize the published macOS dev and latest builds\" (0e19661b09) 07:36Z. Releases listing: dev_build 2026-10-27T14:35:35Z, v2.3.0 2026-06-14.",
-      "fetched_at": "2026-10-27T23:40:00Z",
+      "raw_excerpt": "PR #14461: \"Fix scaling and interp bugs — I tracked down some TODOs in our codebase and ironed them out: 1. read_raw_eximia had a real scaling bug for EEG and EOG data (uV vs V) 2. delete a redundant `reset_bads` call, and assert proper handling of `reset_bads` (and fix it for channels that were not interpolated) 3. remove crufty `test_scaling=False`s…\" Merged 2026-10-28T13:11Z.",
+      "fetched_at": "2026-10-28T23:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-cpp@cde22d1afd",
+      "upstream_id": "mne-tools/mne-python#14461",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3571,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "µV/V 缩放错 1e6 会连带影响滤波阈值、伪迹拒绝与跨数据集比较，且不报错。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "Eelbrain 的 RawMaxwell 能识别饱和通道并跳过受影响片段",
+      "title_en": "Eelbrain's RawMaxwell Detects Saturated Channels and Skips Affected Segments",
+      "bullets_zh": [
+        "#260：`RawMaxwell` 现在会**检测饱和通道**并**跳过受影响的时间片段**——饱和数据进入 Maxwell 滤波（SSS/tSSS）会污染整段解，且污染是全局的、不易察觉。",
+        "同批还有 #261（pandas 3.1 下保留 `'n/a'` 标签）、#255（形态变换时保留 `proportion_explained`）、#256（去掉 Pipeline 对 values 事件变量的限制），多为「结果字段被悄悄改写」类修正。",
+        "对 MEG/EEG 用 MaxFilter 类流程的团队，饱和检测把「整段结果作废」变成「按片段跳过」，可显著减少无效数据。"
+      ],
+      "bullets_en": [
+        "#260 makes RawMaxwell detect saturated channels and skip the affected time segments — saturated data fed into Maxwell filtering (SSS/tSSS) contaminates the whole solution, globally and inconspicuously.",
+        "The batch also keeps 'n/a' labels under pandas 3.1 (#261), preserves proportion_explained through morphing (#255) and removes a Pipeline constraint on values event variables (#256) — mostly fixes for silently rewritten result fields.",
+        "For teams running MaxFilter-style pipelines, saturation detection turns 'discard the segment' into 'skip the affected span', cutting wasted data."
+      ],
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/260",
+      "published": "2026-10-28T12:58:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Eelbrain 合并 #260：`RawMaxwell` 现在能**检测饱和通道并跳过受影响的时间片段**。这条很实用——饱和（放大器削顶）的数据一旦进入 Maxwell 滤波（SSS/tSSS），误差会通过空间投影扩散到**所有通道**，而不只是坏掉的那一个，事后几乎无法从结果里看出污染来源。改成按片段跳过，就把「整段作废」变成「丢掉受影响的一小段」。同批还有几条「字段被悄悄改写」类修正：#261 在 pandas 3.1 下保留 `'n/a'` 标签、#255 在形态变换时保留 `proportion_explained`、#256 去掉 Pipeline 对 values 事件变量的限制。做 MEG/EEG MaxFilter 流程的团队值得升级并检查既有结果的片段覆盖情况。",
+      "brief_en": "Eelbrain merged #260 so RawMaxwell detects saturated channels and skips affected time segments. Saturated (clipped) data entering Maxwell filtering spreads error across all channels through the spatial projection, and the contamination is nearly invisible afterwards; skipping the span avoids discarding the whole recording. The batch also preserves 'n/a' labels under pandas 3.1.",
+      "tags": [
+        "eelbrain",
+        "maxwell",
+        "saturation",
+        "sss",
+        "data-integrity"
+      ],
+      "raw_excerpt": "Commits 2026-10-28: \"RawMaxwell: detect saturated channels and skip affected segments (#260)\" 12:58Z; \"FIX EventsInput: keep 'n/a' labels in event_factors with pandas 3.1 (#261)\" 11:47Z; \"FIX BoostingResult: preserve proportion_explained when morphing (#255)\" 10:56Z; \"Pipeline: Remove constraint on values event variable (#256)\" 10:54Z.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Eelbrain/Eelbrain#260",
+      "author_handle": "Eelbrain",
+      "metrics": {
+        "play": null,
+        "like": 87,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "饱和数据进 Maxwell 滤波会污染所有通道，按片段跳过避免整段作废。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-CPP 用文档所列 Qt 系统库验证 Linux 构建",
+      "title_en": "MNE-CPP Verifies Linux Builds Against the Documented Qt System Libraries",
+      "bullets_zh": [
+        "提交 f170b000b3 让发布流程在 **Linux 上用文档列明的 Qt 系统库**做验证，而不是只依赖自带/打包版本。",
+        "这直接关系到发行包能否在用户侧正常启动：发行版 Qt 版本差异是 Linux 二进制最常见的「我这儿打不开」来源。",
+        "属于 v2.4.0 发布收尾的一部分（前一天刚补上 macOS 签名/公证与 Windows 无签名回退）。"
+      ],
+      "bullets_en": [
+        "Commit f170b000b3 makes the release workflow verify Linux builds against the Qt system libraries the documentation names, rather than only bundled or self-provided versions.",
+        "That decides whether shipped binaries start on user machines: distro Qt version differences are the most common 'it won't open here' cause for Linux builds.",
+        "It is part of finishing the 2.4.0 release, after macOS signing/notarization and the unsigned-Windows fallback were added the day before."
+      ],
+      "url": "https://github.com/mne-tools/mne-cpp/commit/f170b000b3",
+      "published": "2026-10-28T09:56:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-CPP 在 10-28 提交 f170b000b3：发布流程改为**在 Linux 上用文档所列的 Qt 系统库做验证**，而不是仅依赖自带或打包的 Qt。这条不显眼，却直击 Linux 二进制最常见的问题——不同发行版的 Qt 版本差异会让「在我机器上打不开」成为常态；用文档承诺的库组合去验，才算对用户负责。这也是 v2.4.0 发布收尾的一环（前一天刚补上 macOS 签名/公证、Windows 无签名回退与产物检查记录）。对在下游打包或基于其二进制做实时处理的团队，建议以「文档所列 Qt 版本」为基线测试，而不是用自己环境里最新的 Qt 凑合。",
+      "brief_en": "MNE-CPP commit f170b000b3 makes the release workflow verify Linux builds against the Qt system libraries its documentation names, rather than only bundled versions. Distro Qt differences are the classic reason Linux binaries fail to start, so testing the documented combination is what users need. It completes the 2.4.0 release work after macOS signing and the unsigned-Windows fallback.",
+      "tags": [
+        "mne-cpp",
+        "linux",
+        "qt",
+        "release",
+        "packaging"
+      ],
+      "raw_excerpt": "Commit f170b000b3, 2026-10-28T09:56Z: \"Release: verify Linux with the documented Qt system libraries\". Context: 2026-10-27 added \"Release 2.4.0\", \"allow shipping Windows unsigned with WINDOWS_SIGNING=unavailable\", macOS signing/notarization and artifact-inspection release evidence.",
+      "fetched_at": "2026-10-28T23:45:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-cpp@f170b000b3",
       "author_handle": "mne-tools",
       "metrics": {
         "play": null,
@@ -111,187 +197,58 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "解释了撤回根因（签名不可用）并给出无签名/公证策略，但资产尚未上线。"
+      "quality_score": 7,
+      "why_valuable": "按文档 Qt 组合验证 Linux 构建，直接对应「发行版差异导致打不开」的常见故障。"
     },
     {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "BrainFlow 修 BLACKMAN_HARRIS 窗口：用的是 Nuttall 系数",
-      "title_en": "BrainFlow Fixes BLACKMAN_HARRIS: It Was Using Nuttall's Coefficients",
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "Muse 与 OpenBCI 的对比流程：Welch PSD、采样连续性、通道校验与 50 Hz 工频",
+      "title_en": "Comparing Muse and OpenBCI: Welch PSD, Sampling Continuity, Channel Validation and 50 Hz Noise",
       "bullets_zh": [
-        "#868：`DataFilter.get_window(BLACKMAN_HARRIS, n)` 返回的并不是 Blackman-Harris 窗——实现里用的 `0.355768, 0.487396, 0.144232, 0.012604` 是 **Nuttall 的连续一阶导数四项窗**系数（Nuttall, 1981）。",
-        "窗函数决定频谱泄漏与旁瓣衰减；系数用错会让 PSD/滤波结果与「你以为的窗」产生的偏差，且不会报错。",
-        "对用 BrainFlow 做在线频谱或带通滤波的团队，建议升级后重跑一次基准信号（如纯正弦）核对旁瓣与主瓣宽度。"
+        "仓库给出一个可运行的对比脚本（MATLAB/Python 双实现思路），覆盖预处理、**Welch PSD**、频带功率分析、**采样连续性检查**、**通道校验**与 **50 Hz 工频评估**。",
+        "这套检查顺序对消费级设备选型很实用：先确认采样是否连续、通道是否可信，再谈频带功率，否则指标无意义。",
+        "规模很小（单脚本＋README），适合作为自建对比流程的起点；结论需在自己设备上重跑，不能直接引用。"
       ],
       "bullets_en": [
-        "#868: DataFilter.get_window(BLACKMAN_HARRIS, n) did not return a Blackman-Harris window — its coefficients 0.355768, 0.487396, 0.144232, 0.012604 are Nuttall's continuous-first-derivative four-term window (Nuttall, 1981).",
-        "Window choice sets spectral leakage and sidelobe attenuation, so wrong coefficients bias PSD and filter results with no error raised.",
-        "Teams using BrainFlow for online spectra or band-pass filtering should re-check mainlobe width and sidelobes on a known sine after upgrading."
+        "The repo ships a runnable comparison script (MATLAB/Python approach) covering preprocessing, Welch PSD, band-power analysis, sampling-continuity checks, channel validation and 50 Hz line-noise assessment.",
+        "That order matters for consumer-device selection: confirm sampling continuity and channel trustworthiness before comparing band power, otherwise the metrics are meaningless.",
+        "It is small (one script plus README) and works as a starting template; results must be re-run on your own hardware rather than quoted."
       ],
-      "url": "https://github.com/brainflow-dev/brainflow/pull/868",
-      "published": "2026-10-27T02:18:00Z",
+      "url": "https://github.com/Debarati0106/EEG-Comparison-Muse-OpenBCI",
+      "published": "2026-10-28T18:57:00Z",
       "source": "github",
       "language": "en",
-      "brief": "BrainFlow 合并 #868，修一个不易察觉的 DSP 错误：`DataFilter.get_window(BLACKMAN_HARRIS, n)` 返回的**并不是 Blackman-Harris 窗**——实现里用的 `0.355768, 0.487396, 0.144232, 0.012604` 是 **Nuttall「连续一阶导数」四项窗**的系数（A. H. Nuttall, 1981）。窗函数直接决定频谱泄漏与旁瓣衰减：系数错意味着你算出的 PSD、以及基于窗口的滤波结果都带着「另一种窗」的偏差，而代码不会报任何错。对用 BrainFlow 做在线频谱、睡眠纺锤波检测或带通滤波的团队，建议升级后用纯正弦做一次自检（看主瓣宽度与旁瓣水平），并把既有分析中依赖窗口的部分核对一遍。",
-      "brief_en": "BrainFlow merged #868 fixing a subtle DSP error: DataFilter.get_window(BLACKMAN_HARRIS, n) did not return a Blackman-Harris window — its coefficients 0.355768, 0.487396, 0.144232, 0.012604 belong to Nuttall's continuous-first-derivative window (1981). Windows govern leakage and sidelobes, so wrong coefficients bias PSD and windowed filters silently.",
+      "brief": "新建仓库（2026-10-28）给出一套 **Muse 与 OpenBCI 的对比流程**：从预处理、**Welch PSD**、频带功率分析，到**采样连续性检查**、**通道校验**和 **50 Hz 工频噪声评估**，并附可运行脚本。价值不在「谁更好」的结论，而在**检查顺序**：先确认采样是否连续、通道是否可信，再比较频带功率——否则后面的指标都建立在不可靠数据上。这类设备对比在社区里常被一句「我觉得 X 更准」带过，有可执行清单就能自己复现。仓库规模很小（单脚本＋README），适合当模板；若要用作采购依据，建议扩大被试数与录音时长，并把 50 Hz 与运动伪迹分开报告。",
+      "brief_en": "Created 2026-10-28, this repo offers a Muse-versus-OpenBCI comparison pipeline: preprocessing, Welch PSD, band-power analysis, sampling-continuity checks, channel validation and 50 Hz line-noise assessment, with a runnable script. Its value is the order of checks — verify sampling continuity and channel trustworthiness before comparing band power — though device conclusions need far more data.",
       "tags": [
-        "brainflow",
-        "window-function",
-        "dsp",
-        "psd",
-        "bugfix"
+        "muse",
+        "openbci",
+        "device-comparison",
+        "welch-psd",
+        "line-noise"
       ],
-      "raw_excerpt": "PR #868: \"`DataFilter.get_window(WindowOperations.BLACKMAN_HARRIS, n)` doesn't return a Blackman-Harris window. `blackman_harris_function` uses `0.355768, 0.487396, 0.144232, 0.012604`, which are Nuttall's coefficients for his 'continuous first derivative' four-term window (A. H. Nuttall, 1981).\" Merged 2026-10-27T02:18Z.",
-      "fetched_at": "2026-10-27T23:40:00Z",
+      "raw_excerpt": "README: \"Developed an EEG comparison pipeline using MATLAB and Python to evaluate OpenBCI and Muse recordings through signal preprocessing, Welch PSD, frequency-band power analysis, sampling continuity checks, channel validation, and 50 Hz line-noise assessment.\" Files: README.md, eeg_device_comparison_revised.py.",
+      "fetched_at": "2026-10-28T23:45:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "brainflow-dev/brainflow#868",
-      "author_handle": "brainflow-dev",
+      "upstream_id": "Debarati0106/EEG-Comparison-Muse-OpenBCI",
+      "author_handle": "Debarati0106",
       "metrics": {
         "play": null,
-        "like": 1777,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "窗口系数用成 Nuttall，PSD 与窗函数滤波结果都带偏差且不报错。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "PyPREP 0.10.0：脱落检测放宽到 <1e-15 V，NoisyChannels 新增平均参考",
-      "title_en": "PyPREP 0.10.0: Dropout Detection Below 1e-15 V and an average_reference Option",
-      "bullets_zh": [
-        "0.10.0 把**脱落（dropout）检测阈值改为 <1e-15 V**，不再要求「精确等于 0」——真实数据里恒定通道常留有极小浮点残差。",
-        "`NoisyChannels` 新增 **`average_reference`** 选项，使噪声通道判定可在平均参考域进行（此前只能按原始参考评估）。",
-        "另要求 **MNE ≥ 1.13**、改用**球面蒙太奇**（spherical montages），并停止支持 Python 3.10。"
-      ],
-      "bullets_en": [
-        "0.10.0 detects dropouts below 1e-15 V instead of demanding an exact zero, since real constant channels often carry tiny floating-point residue.",
-        "NoisyChannels gains an average_reference option so noise-channel detection can run in the average-reference domain rather than only under the original reference.",
-        "It also requires MNE >= 1.13, switches to spherical montages and drops Python 3.10."
-      ],
-      "url": "https://github.com/sappelhoff/pyprep/releases/tag/0.10.0",
-      "published": "2026-10-27T20:33:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "PyPREP（PREP 流水线的 Python 实现）发布 **0.10.0**，三处改动值得注意：①**脱落检测阈值改为 <1e-15 V**，不再要求「精确等于 0」——真实数据中恒定/脱落通道常带极小浮点残差，旧逻辑会漏检；②`NoisyChannels` 新增 **`average_reference`** 选项，使噪声通道判定可在平均参考域进行，与主流 PREP 实践对齐；③依赖上调为 **MNE ≥ 1.13**、改用**球面蒙太奇**、停止支持 Python 3.10。对用 PREP 做自动坏道/噪声通道剔除的团队，升级后建议对比一次检测结果（尤其是曾经「全部通道正常」的数据集），确认新的参考域与阈值没有把原有阈值行为整体改变。",
-      "brief_en": "PyPREP released 0.10.0 with three changes worth noting: dropout detection now triggers below 1e-15 V instead of requiring an exact zero, since constant channels often keep tiny floating-point residue; NoisyChannels gains an average_reference option so noise detection can run in the average-reference domain; and it requires MNE >= 1.13, switches to spherical montages and drops Python 3.10.",
-      "tags": [
-        "pyprep",
-        "prep",
-        "dropout",
-        "average-reference",
-        "release"
-      ],
-      "raw_excerpt": "Release 0.10.0 (2026-10-27T20:33:52Z): \"Require MNE >=1.13, switch to spherical montages, and drop Python 3.10 (#214)\"; \"Add average_reference option to NoisyChannels (#217)\"; \"Detect dropouts below 1e-15 V instead of re[quiring an exact zero] (#218)\".",
-      "fetched_at": "2026-10-27T23:40:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "sappelhoff/pyprep@0.10.0",
-      "author_handle": "sappelhoff",
-      "metrics": {
-        "play": null,
-        "like": 185,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "脱落通道带浮点残差会被旧逻辑漏检，新阈值与参考域选项直接影响坏道剔除。"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "MOABB 修 Gao2026 幅度被误除 256：BDF 头里的标度本来是对的",
-      "title_en": "MOABB Fixes Gao2026 Amplitudes Being Divided by 256: the BDF Header Scale Was Right",
-      "bullets_zh": [
-        "#1331 修 Gao2026 数据集**幅度被多除 256** 的问题——BDF 头部给出的标度本身正确，额外除以 256 使所有样本幅度整体缩小 256 倍。",
-        "幅度错 256 倍不会报错，却会改变所有基于幅值的分析（阈值、伪迹检测、频带功率、跨数据集标准化）。",
-        "对用该数据集做跨数据集基准或预训练的团队，建议升级后重新导出并核对量级（正常 EEG 多为数十 µV）。"
-      ],
-      "bullets_en": [
-        "#1331 fixes Gao2026 amplitudes being divided by 256 on top of a correct BDF header scale, shrinking every sample by that factor.",
-        "A 256x amplitude error raises no exception but distorts every amplitude-based step: thresholds, artefact detection, band power and cross-dataset normalisation.",
-        "Teams using this dataset for cross-dataset benchmarks or pretraining should re-export and sanity-check magnitudes (typical EEG is tens of microvolts)."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1331",
-      "published": "2026-10-27T17:43:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MOABB 合并 #1331，修 **Gao2026** 数据集的幅度问题：数据被**额外除以 256**，而 BDF 头部给出的标度本来是正确的。幅度整体缩小 256 倍不会触发任何异常，却会悄悄影响所有基于幅值的环节——阈值与伪迹检测、频带功率、跨数据集标准化、以及以幅值作为输入的模型预训练。对用该数据集做基准或迁移实验的团队，建议升级后重新导出并核对量级（正常 EEG 多在数十 µV 量级；若看到 0.0x µV 就说明还带着旧标度）。这也是接续 MOABB 近期一系列元数据/标度修复的又一例：数据层错误往往比算法错误更隐蔽。",
-      "brief_en": "MOABB merged #1331 fixing Gao2026 amplitudes being divided by 256 on top of a correct BDF header scale. A 256x shrink triggers no exception but distorts thresholds, artefact detection, band power, cross-dataset normalisation and pretraining. Re-export and sanity-check magnitudes (typical EEG is tens of microvolts; 0.0x uV means the old scaling persists).",
-      "tags": [
-        "moabb",
-        "gao2026",
-        "amplitude",
-        "bdf",
-        "data-correctness"
-      ],
-      "raw_excerpt": "Commit c76d4776f9, 2026-10-27T17:43Z: \"Fix Gao2026 amplitudes divided by 256 (BDF header scale is correct) (#1331)\". Repo: NeuroTechX/moabb.",
-      "fetched_at": "2026-10-27T23:40:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1331",
-      "author_handle": "NeuroTechX",
-      "metrics": {
-        "play": null,
-        "like": 1079,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "幅度多除 256 不报错，却改变阈值、伪迹检测、功率与预训练输入。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "pyRiemann 杂项修正：TLEstimator 不再改调用方估计器，TLSplitter 支持 LeaveOneOut",
-      "title_en": "pyRiemann Misc Fixes: TLEstimator Stops Mutating Input, TLSplitter Supports LeaveOneOut",
-      "bullets_zh": [
-        "#511：`TLEstimator` 现在会**克隆**传入的 estimator 再拟合，不再就地修改调用方对象；`check_init` 返回副本。",
-        "`TLSplitter.get_n_splits()` 改用 `cv.get_n_splits()`（而非 `cv.n_splits`），因此 **`LeaveOneOut` 这类没有 `n_splits` 属性的划分器也能用**。",
-        "另有 `pairwise_distance` 的计算修正；整体是「API 行为一致性」清理，影响可复用流水线与交叉验证脚本。"
-      ],
-      "bullets_en": [
-        "#511 makes TLEstimator clone the estimator before fitting instead of mutating the caller's object, and check_init returns a copy.",
-        "TLSplitter.get_n_splits() now calls cv.get_n_splits() rather than reading cv.n_splits, so splitters such as LeaveOneOut without that attribute work.",
-        "A pairwise_distance fix rounds out the batch — an API-consistency cleanup affecting reusable pipelines and cross-validation scripts."
-      ],
-      "url": "https://github.com/pyRiemann/pyRiemann/pull/511",
-      "published": "2026-10-27T11:47:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "pyRiemann 合并 #511「杂项改进」，但其中两条是实打实的行为修正：①`TLEstimator` 现在**先克隆传入的 estimator 再拟合**，不再就地修改调用方对象——此前同一个 estimator 实例被反复复用时会带着上次的拟合状态，导致结果不可复现；`check_init` 也改为返回副本。②`TLSplitter.get_n_splits()` 改用 `cv.get_n_splits()` 而不是读 `cv.n_splits`，于是 **`LeaveOneOut` 等没有 `n_splits` 属性的划分器也能正常使用**。另有 `pairwise_distance` 的计算修正。对搭了可复用黎曼流水线或自定义交叉验证的团队，建议升级后重跑一次，确认既有脚本没有依赖「estimator 被就地修改」这一副作用。",
-      "brief_en": "pyRiemann merged #511 with two real behavioural fixes: TLEstimator now clones the estimator before fitting instead of mutating the caller's object (reused instances carried stale fitted state and broke reproducibility) and check_init returns a copy; TLSplitter calls cv.get_n_splits() instead of cv.n_splits, so LeaveOneOut works. A pairwise_distance fix rounds it out.",
-      "tags": [
-        "pyriemann",
-        "estimator",
-        "cross-validation",
-        "leave-one-out",
-        "api"
-      ],
-      "raw_excerpt": "PR #511 \"Misc improvements\": \"`TLEstimator`: correct `estimator`, cloned before fitting so that not modified; `TLSplitter`: `get_n_splits()` uses `cv.get_n_splits()` instead of `cv.n_splits`, allowing `LeaveOneOut`; `check_init`: return a copy of input; `pairwise_distance`: compute…\". Merged 2026-10-27T11:47Z.",
-      "fetched_at": "2026-10-27T23:40:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "pyRiemann/pyRiemann#511",
-      "author_handle": "pyRiemann",
-      "metrics": {
-        "play": null,
-        "like": 784,
+        "like": 0,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "就地修改 estimator 会让复用实例携带旧拟合状态，结果不可复现。"
+      "why_valuable": "给出「先验采样与通道、再比频带功率」的可执行设备对比清单。"
     }
   ],
   "stats": {
     "fetched": 60,
-    "prefiltered": 48,
-    "llm_rows": 12,
-    "kept": 6,
+    "prefiltered": 50,
+    "llm_rows": 10,
+    "kept": 5,
     "llm_failed": false,
     "llm_skipped_batches": 0,
     "conflicts_dropped": 0
