@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T10:49:05.674Z",
+  "generatedAt": "2026-10-29T11:05:20.974Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 16
+      "count": 17
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 13
+      "count": 12
     },
     {
       "id": "github",
       "ok": true,
-      "count": 5
+      "count": 6
     }
   ],
   "items": [
@@ -119,6 +119,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2026-10-28T03:21:16.878Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008968",
+      "name": "Spell-IT-Out",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008968",
+      "source": "openneuro",
+      "description": "Spell-IT-Out",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-10-20T16:53:48.323Z",
       "modality": [
         "EEG"
       ]
@@ -395,25 +414,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008834",
-      "name": "PKUEEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008834",
-      "source": "openneuro",
-      "description": "PKUEEG",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T08:20:25.932Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
       "name": "Schalk-2009-EEGMotorMovementImagery",
       "owner": "raei",
@@ -454,7 +454,7 @@
         "Boredom"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10319,
+      "downloads": 10328,
       "likes": null,
       "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
@@ -499,14 +499,14 @@
         "tabular",
         "pandas",
         "arxiv:2109.04463",
+        "arxiv:2510.13068",
         "arxiv:2609.25845",
-        "eeg",
-        "brain-computer-interface"
+        "eeg"
       ],
       "license": "cc-by-4.0",
       "downloads": 1959,
       "likes": 2,
-      "updatedAt": "2026-10-20T04:44:55.000Z",
+      "updatedAt": "2026-10-28T15:13:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -712,30 +712,6 @@
       ]
     },
     {
-      "id": "hf:jatshi/CAS_EEG",
-      "name": "CAS_EEG",
-      "owner": "jatshi",
-      "url": "https://huggingface.co/datasets/jatshi/CAS_EEG",
-      "source": "huggingface",
-      "description": "Complex acoustic scenes. Synchronized EEG. Event-level behaviour. A multi-subject resource for studying auditory target detection in noise and overlapping sound events. Overview &nbsp; | &nbsp; Task & data &nbsp; | &nbsp; Quick start &nbsp; | &nbsp; Documentation &nbsp; | &nbsp;…",
-      "tags": [
-        "apache-2.0",
-        "audio",
-        "timeseries",
-        "eeg",
-        "auditory-target-detection",
-        "auditory-scene-analysis",
-        "neuroscience"
-      ],
-      "license": "apache-2.0",
-      "downloads": 46,
-      "likes": 1,
-      "updatedAt": "2026-10-26T11:56:36.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:mne-tools/mne-bids",
       "name": "mne-bids",
       "owner": "mne-tools",
@@ -791,7 +767,7 @@
       "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 75,
+      "downloads": 77,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -840,6 +816,22 @@
       ]
     },
     {
+      "id": "zenodo:23751376",
+      "name": "Neural decoding reveals a unifying explanation for stimulus-specific memorability",
+      "owner": "Chang, Woohyeuk",
+      "url": "https://doi.org/10.5281/zenodo.23751376",
+      "source": "zenodo",
+      "description": "Data accompanying the preprint &ldquo;Neural decoding reveals a unifying explanation for stimulus-specific memorability&rdquo;. Includes item-level memorability from an online recognition task (989 participants, 2,400 object images), EEG epochs and trial tables from 145 recordin…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-10-29T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23637330",
       "name": "Pre-registration: configuration search and locked test for EEG-to-language-model word retrieval on ZuCo 2.0",
       "owner": "San, Khin Pyae Phyo",
@@ -848,7 +840,7 @@
       "description": "Pre-registration file for the configuration search and the single locked-test evaluation reported in \"A Reliability-Oriented Evaluation Framework for EEG-to-Language-Model Word Retrieval: Identifying and Controlling Evaluation Shortcuts\" (San, Shimamura; manuscript in preparatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 11,
+      "downloads": 12,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -866,7 +858,7 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 17,
+      "downloads": 22,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
@@ -882,7 +874,7 @@
       "description": "Medical biological signals (ECG, EEG, EMG, PPG) and medical images (X-ray, CT, MRI, ultrasound) are central to modern diagnosis. They are noisy, high-dimensional and time-consuming to interpret.",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 7,
+      "downloads": 8,
       "likes": null,
       "updatedAt": "2026-10-20T00:00:00.000Z",
       "modality": [
@@ -900,28 +892,12 @@
       "description": "Pseudonymous group labels (behavioral and psychometric partitions of N=29 participants in an Ultimatum Game study) and an analysis plan fixing the groupings for later EEG/FD-fNIRS comparisons. The groupings are exploratory stratifications derived from the same participants and a…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 26,
+      "downloads": 27,
       "likes": null,
       "updatedAt": "2026-10-15T00:00:00.000Z",
       "modality": [
         "EEG",
         "fNIRS"
-      ]
-    },
-    {
-      "id": "zenodo:23441154",
-      "name": "German plural EEG",
-      "owner": "xxx",
-      "url": "https://doi.org/10.5281/zenodo.23441154",
-      "source": "zenodo",
-      "description": "German plural EEG",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 6,
-      "likes": null,
-      "updatedAt": "2026-10-17T00:00:00.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -969,8 +945,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 14,
-      "updatedAt": "2026-10-28T06:24:12.000Z",
+      "likes": 15,
+      "updatedAt": "2026-10-29T06:24:11.000Z",
       "modality": [
         "EEG"
       ]
@@ -996,6 +972,27 @@
       "downloads": null,
       "likes": 3,
       "updatedAt": "2026-10-28T08:20:42.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:gifale95/EMD",
+      "name": "EMD",
+      "owner": "gifale95",
+      "url": "https://github.com/gifale95/EMD",
+      "source": "github",
+      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
+      "tags": [
+        "eeg",
+        "human-vision",
+        "open-dataset",
+        "videos"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-10-28T17:22:47.000Z",
       "modality": [
         "EEG"
       ]
