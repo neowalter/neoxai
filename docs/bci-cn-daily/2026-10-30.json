@@ -1,0 +1,298 @@
+{
+  "date": "2026-10-30",
+  "generated_at": "2026-10-29T21:31:36.229Z",
+  "item_count": 6,
+  "types": {
+    "Project": 6
+  },
+  "highlights": [
+    {
+      "title_zh": "eeglab2mne：把 EEGLAB 脚本翻成 MNE-Python，并逐步评级「哪几步可以信」",
+      "title_en": "eeglab2mne: Translate EEGLAB Scripts to MNE-Python and Grade Which Steps You Can Trust",
+      "url": "https://github.com/moiz-amer/eeglab2mne",
+      "brief": "新建仓库 eeglab2mne（2026-10-29）解决实验室迁移的真实痛点：读入 EEGLAB 脚本**或 `.set` 文件里的 `EEG.history`**，产出等价 MNE-Python 脚本，并给出**逐步骤评级的迁移报告**（exact / approximate / 不支持）。它把「静默差异」直接点名：基线以毫秒而非秒给出、**1-based 组件编号**、幅度阈值被当成峰峰值阈值、以及 ICA 组件编号在重新拟合后不再有意义——这些正是手工改写时最容易漏、又最难在结果里发现的地方。仓库有 CI 测试与规范结构。对正在从 MATLAB/EEGLAB 迁到 Python 的团队，这比逐行手译可靠得多；但请把报告里的 approximate 视为**必须人工复核**的清单。"
+    },
+    {
+      "title_zh": "YuEEG 再推 Rev G：拆出 35×67 mm 屏幕载板、换 CO5300 AMOLED",
+      "title_en": "YuEEG Ships Rev G: a 35x67 mm Display Carrier and a CO5300 AMOLED",
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/e3ed333823",
+      "brief": "YuEEG 在 10-29 推出 **Rev G**：在主板（70×80 mm）与隔离充电副板（44×48 mm）之外，拆出一块 **35×67 mm 屏幕载板**，把 AMOLED 从「焊在主板」变成可独立更换的模块；驱动也从 Rev F 的 RM67162 换成 **CO5300**，并附 `DISPLAY_INTEGRATION.md` 与 AM178 评审包。采集链与安全约束不变：隔离 USB CDC 与 Wi-Fi UDP 并行、microSD 原始帧备份、采集仅由受保护 2S 电池供电，仍强调**充电前拔下整个电极线束**。三天三个版本（E→F→G），每次都在「可维护性」上做减法而不是堆功能，这种迭代节奏本身就是硬件项目值得参考的样板。"
+    },
+    {
+      "title_zh": "EEG2Gait：脑电步态解码的统一训练/评测/可视化流程（含对比学习与 DDP）",
+      "title_en": "EEG2Gait: A Unified Train/Eval/Visualise Pipeline for EEG Gait Decoding",
+      "url": "https://github.com/NgHanWei/EEG2Gait",
+      "brief": "新建仓库 EEG2Gait（2026-10-29）是脑电**步态解码**的配套实现：覆盖 FBM、GPP、MoBI 三个数据集，方法上用**对比学习＋多头结构**，并提供强基线以便公平比较；工程上支持**单卡/多卡/多节点 DDP** 训练，评测与可视化走同一套流程，便于复现与出图。步态/移动场景（MoBI）的 EEG 解码长期缺统一流程，多数论文各写各的脚本，这类「训练＋评测＋可视化」一体的仓库能显著降低复现成本。提醒：它是论文配套代码，数据划分与指标定义以原文为准，做横向对比前请先确认这些细节，否则容易把「不同口径」当成「方法优劣」。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-30.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "eeglab2mne：把 EEGLAB 脚本翻成 MNE-Python，并逐步评级「哪几步可以信」",
+      "title_en": "eeglab2mne: Translate EEGLAB Scripts to MNE-Python and Grade Which Steps You Can Trust",
+      "bullets_zh": [
+        "输入是 EEGLAB 脚本**或 `.set` 文件里的 `EEG.history`**，输出等价的 MNE-Python 脚本，并生成**迁移报告**逐步评级（✅ exact / ⚠️ approximate …）。",
+        "明确把「静默差异」列为重点：基线以毫秒而非秒给出、**1-based 组件编号**、幅度阈值变成峰峰值阈值、以及 **ICA 组件编号在重新拟合后失去意义**。",
+        "仓库带 CI 测试与 pyproject/src/tests 结构，属可安装工具而非一次性脚本。"
+      ],
+      "bullets_en": [
+        "It takes an EEGLAB script or the EEG.history inside a .set file, emits an equivalent MNE-Python script, and produces a migration report grading each step (exact, approximate, …).",
+        "It names the silent differences explicitly: baselines given in milliseconds rather than seconds, 1-based component numbers, amplitude thresholds turning into peak-to-peak ones, and ICA component numbers losing meaning once ICA is refit.",
+        "It ships CI tests with a proper pyproject/src/tests layout, making it an installable tool rather than a one-off script."
+      ],
+      "url": "https://github.com/moiz-amer/eeglab2mne",
+      "published": "2026-10-29T13:41:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 eeglab2mne（2026-10-29）解决实验室迁移的真实痛点：读入 EEGLAB 脚本**或 `.set` 文件里的 `EEG.history`**，产出等价 MNE-Python 脚本，并给出**逐步骤评级的迁移报告**（exact / approximate / 不支持）。它把「静默差异」直接点名：基线以毫秒而非秒给出、**1-based 组件编号**、幅度阈值被当成峰峰值阈值、以及 ICA 组件编号在重新拟合后不再有意义——这些正是手工改写时最容易漏、又最难在结果里发现的地方。仓库有 CI 测试与规范结构。对正在从 MATLAB/EEGLAB 迁到 Python 的团队，这比逐行手译可靠得多；但请把报告里的 approximate 视为**必须人工复核**的清单。",
+      "brief_en": "Created 2026-10-29, eeglab2mne reads an EEGLAB script or the EEG.history inside a .set file, writes an equivalent MNE-Python script, and grades each migrated step (exact, approximate). It names the silent differences: baselines in milliseconds rather than seconds, 1-based component numbers, amplitude thresholds turning peak-to-peak, and ICA component numbers losing meaning after refitting.",
+      "tags": [
+        "eeglab",
+        "mne-python",
+        "migration",
+        "ica",
+        "reproducibility"
+      ],
+      "raw_excerpt": "README: \"Translate EEGLAB pipelines into MNE-Python, and know exactly which steps you can trust. … `eeglab2mne` reads an EEGLAB script (or the `EEG.history` inside a `.set` file), writes an equivalent MNE-Python script, and produces a **migration report** grading every step\" — 评级含 \"✅ exact: Same operation; results match up to floating-point error\"、\"⚠️ approximate: Same intent, different implementation\". 提及静默差异：\"a baseline given in milliseconds instead of seconds, 1-based component numbers, an amplitude threshold that turns into a peak-to-peak one, or ICA component numbers that stop meaning anything once ICA is refit\".",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "moiz-amer/eeglab2mne",
+      "author_handle": "moiz-amer",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "把迁移中的静默差异（毫秒/1-based/阈值/ICA 编号）逐步骤评级，可直接当复核清单。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "YuEEG 再推 Rev G：拆出 35×67 mm 屏幕载板、换 CO5300 AMOLED",
+      "title_en": "YuEEG Ships Rev G: a 35x67 mm Display Carrier and a CO5300 AMOLED",
+      "bullets_zh": [
+        "Rev G 在主板 70×80 mm 与隔离充电副板 44×48 mm 之外，新增 **35×67 mm 屏幕载板**，各板元件均在正面、AMOLED 叠装于主板之上。",
+        "显示驱动从 Rev F 的 RM67162 换为 **CO5300 AMOLED**，并附 `DISPLAY_INTEGRATION.md` 与 AM178 评审包——屏幕从「焊在主板上」变成独立载板。",
+        "采集与安全设计不变：隔离 USB CDC 与 Wi-Fi UDP 并行、microSD 原始帧备份、仅由受保护 2S 电池供电、**充电前拔下整个电极线束**。"
+      ],
+      "bullets_en": [
+        "Rev G adds a 35x67 mm display carrier board alongside the 70x80 mm mainboard and 44x48 mm isolated charger board, all parts on the top side with the AMOLED stacked above the mainboard.",
+        "The display driver moves from Rev F's RM67162 to a CO5300 AMOLED, with a DISPLAY_INTEGRATION.md and the AM178 review package — the screen no longer has to be soldered to the mainboard.",
+        "Acquisition and safety are unchanged: isolated USB CDC and Wi-Fi UDP in parallel, microSD raw-frame backup, powered only by a protected 2S battery, and unplug the electrode harness before charging."
+      ],
+      "url": "https://github.com/YuTaoV5/YuEEG/commit/e3ed333823",
+      "published": "2026-10-29T14:37:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "YuEEG 在 10-29 推出 **Rev G**：在主板（70×80 mm）与隔离充电副板（44×48 mm）之外，拆出一块 **35×67 mm 屏幕载板**，把 AMOLED 从「焊在主板」变成可独立更换的模块；驱动也从 Rev F 的 RM67162 换成 **CO5300**，并附 `DISPLAY_INTEGRATION.md` 与 AM178 评审包。采集链与安全约束不变：隔离 USB CDC 与 Wi-Fi UDP 并行、microSD 原始帧备份、采集仅由受保护 2S 电池供电，仍强调**充电前拔下整个电极线束**。三天三个版本（E→F→G），每次都在「可维护性」上做减法而不是堆功能，这种迭代节奏本身就是硬件项目值得参考的样板。",
+      "brief_en": "YuEEG shipped Rev G on Oct 29: alongside the 70x80 mm mainboard and 44x48 mm charger board it adds a 35x67 mm display carrier, turning the AMOLED into a replaceable module, and switches the driver from Rev F's RM67162 to a CO5300 with DISPLAY_INTEGRATION.md and the AM178 review package. Acquisition and safety constraints are unchanged, including unplugging the harness before charging.",
+      "tags": [
+        "open-hardware",
+        "ads1299",
+        "rev-g",
+        "amoled",
+        "co5300"
+      ],
+      "raw_excerpt": "README: 「当前为 **Rev G 工程评审版**：ADS1299 + ESP32-S3-WROOM-1-N16R8，主板 **70 × 80 mm**、隔离充电副板 **44 × 48 mm**，另有 35 × 67 mm 屏幕载板，各板元件均在正面，AMOLED 在主板上方叠装。」「支持隔离 USB CDC 与 Wi-Fi UDP 并行、microSD 原始帧备份、状态灯和 CO5300 AMOLED。」Commit e3ed333823: \"Add AM178 CO5300 display carrier and Rev G review delivery\".",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "YuTaoV5/YuEEG@e3ed333823",
+      "author_handle": "YuTaoV5",
+      "metrics": {
+        "play": null,
+        "like": 177,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "三天三版、每次把屏幕拆成独立载板，硬件可维护性演进的清晰样板。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEG2Gait：脑电步态解码的统一训练/评测/可视化流程（含对比学习与 DDP）",
+      "title_en": "EEG2Gait: A Unified Train/Eval/Visualise Pipeline for EEG Gait Decoding",
+      "bullets_zh": [
+        "覆盖 **FBM、GPP、MoBI** 三个数据集，提供对比学习与多头结构，并内置强基线以便公平对比。",
+        "训练侧支持**单卡、多卡与多节点 DDP**，评测与可视化走同一套流程，便于复现实验与出图。",
+        "仓库是论文实现的配套代码，README 要求引用原文；采用前建议核对数据划分与指标定义是否与论文一致。"
+      ],
+      "bullets_en": [
+        "It covers three datasets (FBM, GPP, MoBI) with contrastive learning and multi-head architectures, plus strong baselines for fair comparison.",
+        "Training supports single-GPU, multi-GPU and multi-node DDP, while evaluation and visualisation share one pipeline for reproducibility.",
+        "It is the companion code for a paper and the README asks for citation; check data splits and metric definitions against the paper before adopting."
+      ],
+      "url": "https://github.com/NgHanWei/EEG2Gait",
+      "published": "2026-10-29T13:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 EEG2Gait（2026-10-29）是脑电**步态解码**的配套实现：覆盖 FBM、GPP、MoBI 三个数据集，方法上用**对比学习＋多头结构**，并提供强基线以便公平比较；工程上支持**单卡/多卡/多节点 DDP** 训练，评测与可视化走同一套流程，便于复现与出图。步态/移动场景（MoBI）的 EEG 解码长期缺统一流程，多数论文各写各的脚本，这类「训练＋评测＋可视化」一体的仓库能显著降低复现成本。提醒：它是论文配套代码，数据划分与指标定义以原文为准，做横向对比前请先确认这些细节，否则容易把「不同口径」当成「方法优劣」。",
+      "brief_en": "Created 2026-10-29, EEG2Gait is companion code for EEG gait decoding: three datasets (FBM, GPP, MoBI), contrastive learning with multi-head architectures, strong baselines, and single-GPU/multi-GPU/multi-node DDP training with a shared evaluation and visualisation pipeline. Verify splits and metrics against the paper before comparing methods.",
+      "tags": [
+        "gait",
+        "mobi",
+        "contrastive-learning",
+        "ddp",
+        "reproduction"
+      ],
+      "raw_excerpt": "README: \"A unified training, evaluation, and visualization pipeline for EEG-based gait decoding using contrastive learning, multi-head architectures, and strong baselines. Supports FBM, GPP, and MoBI datasets with single-GPU, multi-GPU, and multi-node DDP training.\" \"If you use this work in your research, please cite the original paper\".",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NgHanWei/EEG2Gait",
+      "author_handle": "NgHanWei",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "步态/MoBI 场景缺统一流程，训练评测可视化一体可显著降低复现成本。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 修 DuIN：换 n_times 加载权重时保持头部输入长度",
+      "title_en": "braindecode Fixes DuIN Checkpoint Loading at a Different n_times",
+      "bullets_zh": [
+        "#1497 让 **DuIN** 在 `n_times` 与训练时不同时也能正确加载 checkpoint——头部保持其原始输入长度，而不是被新窗口长度带偏。",
+        "这类「权重能加载、形状也对、但语义错了」的问题最麻烦：不会报错，只让模型在新窗口长度上表现异常。",
+        "对用预训练 DuIN 做迁移或改变窗口长度的团队，建议升级后对比同权重在两种 n_times 下的输出一致性。"
+      ],
+      "bullets_en": [
+        "#1497 lets DuIN load a checkpoint when n_times differs from training time, with the head keeping its initial input length instead of being skewed by the new window length.",
+        "This class of bug is nasty: weights load, shapes match, but semantics drift — no error, only odd behaviour at the new window length.",
+        "Teams transferring pretrained DuIN or changing window length should compare outputs across both n_times after upgrading."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1497",
+      "published": "2026-10-29T14:54:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 合并 #1497：修 **DuIN** 在「加载 checkpoint 时 `n_times` 与训练时不同」的行为——现在头部保持其**原始输入长度**，不再被新窗口长度带偏。这类 bug 属于最难发现的一类：权重能加载、张量形状也吻合，但语义已经变了，于是模型在新窗口长度上表现异常，却没有任何报错提示你去查。对用预训练 DuIN 做迁移、或想在同一权重上试不同窗口长度的团队，建议升级后做一次一致性检查（同权重在两种 n_times 下的输出差异），并核对推理脚本里是否显式传入了窗口长度。",
+      "brief_en": "braindecode merged #1497 fixing DuIN when a checkpoint is loaded at an n_times different from training: the head now keeps its initial input length instead of being skewed by the new window length. Such bugs are the worst kind — weights load and shapes match, but semantics drift with no error, so models misbehave at the new window length. Verify outputs across both n_times after upgrading.",
+      "tags": [
+        "braindecode",
+        "duin",
+        "checkpoint",
+        "transfer",
+        "bugfix"
+      ],
+      "raw_excerpt": "PR #1497 merged 2026-10-29T14:54Z: \"FIX DuIN: load a checkpoint at another n_times, the head keeping its initi[al input length]\". Repo: braindecode/braindecode.",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1497",
+      "author_handle": "braindecode",
+      "metrics": {
+        "play": null,
+        "like": 1336,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "权重能载、形状也对但语义变了，窗口长度不同的推理会静默异常。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "pyRiemann 修 Kmeans：不再被 sklearn 当分类器，inertia/score 语义对齐",
+      "title_en": "pyRiemann Fixes Kmeans: No Longer Seen as a Classifier, inertia and score Aligned",
+      "bullets_zh": [
+        "#513：`Kmeans` 之前被 scikit-learn 识别为**分类器**（因为它继承了错误的基类/接口），在 `Pipeline` 与交叉验证里会被错误对待。",
+        "同时对齐 sklearn 语义：**`inertia` 改为距离平方和**，`score()` 返回与 inertia 相反的方向（越大越好），避免调参时选反。",
+        "对把黎曼聚类塞进 sklearn 流水线或用 inertia 做肘部法选簇数的团队，这类语义修正会直接改结论。"
+      ],
+      "bullets_en": [
+        "#513: Kmeans was being treated as a classifier by scikit-learn because it inherited the wrong interface, so Pipelines and cross-validation handled it incorrectly.",
+        "It also aligns sklearn semantics: inertia is now the sum of squared distances, and score() returns the opposite direction (higher is better), so tuning no longer optimises the wrong sign.",
+        "Teams plugging Riemannian clustering into sklearn pipelines or using inertia for elbow selection will see conclusions change."
+      ],
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/513",
+      "published": "2026-10-29T20:36:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "pyRiemann 合并 #513，修 `Kmeans` 被 scikit-learn **当成分类器**的问题——起因是接口/基类不匹配，结果在 `Pipeline`、交叉验证与 `GridSearch` 里会被按分类器对待，行为与预期不符。同时把语义对齐 sklearn：**`inertia` 改为距离平方和**，`score()` 返回与 inertia **相反方向**（越大越好）。这两处合起来意味着：如果你之前用 `inertia` 做肘部法选簇数、或依赖 `score()` 的符号排序，结论可能需要重算——尤其 `score()` 方向不一致时，调参会系统性地选反。建议升级后重跑聚类实验并显式检查 `get_params`/`score` 的语义。",
+      "brief_en": "pyRiemann merged #513 fixing Kmeans being treated as a classifier by scikit-learn because of an interface mismatch, which made Pipelines and cross-validation handle it wrongly. It also aligns sklearn semantics: inertia is now the sum of squared distances and score() returns the opposite direction. Anyone using inertia for elbow selection or score() ordering should re-run experiments.",
+      "tags": [
+        "pyriemann",
+        "kmeans",
+        "sklearn",
+        "inertia",
+        "clustering"
+      ],
+      "raw_excerpt": "PR #513: \"Correct Kmeans — Correct `Kmeans` which was seen as a classifier by scikit-learn, and align it on scikit-learn: inertia is now the sum of squared distances, and ``score()`` returns the opposite o[f inertia]…\" Merged 2026-10-29T20:36Z.",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pyRiemann/pyRiemann#513",
+      "author_handle": "pyRiemann",
+      "metrics": {
+        "play": null,
+        "like": 783,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "被当分类器且 score 方向相反，会让流水线与调参系统性选反。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Brainstorm 在 macOS 上警告「大小写不敏感导致重复被试」",
+      "title_en": "Brainstorm Warns About Case-Insensitive Duplicate Subjects on macOS",
+      "bullets_zh": [
+        "提交 5805fe2eac 在数据库模块中新增警告：macOS 默认文件系统**大小写不敏感**，`Subject01` 与 `subject01` 会被视为同一路径，可能造成重复被试或写入冲突。",
+        "同批还改进了插件容器检测（识别正在运行的容器）、`bst_plugin('Install')` 支持 `'latest'` 版本、以及编译版中卸载容器插件。",
+        "对在 macOS 上维护 Brainstorm 数据库（尤其是多人/多机同步）的团队，这个警告能把「被试莫名消失/重复」提前暴露。"
+      ],
+      "bullets_en": [
+        "Commit 5805fe2eac adds a database warning for macOS: the default filesystem is case-insensitive, so Subject01 and subject01 resolve to the same path, risking duplicate subjects or write conflicts.",
+        "The batch also improves detection of running plugin containers, supports 'latest' in bst_plugin('Install'), and allows unloading container plugins in compiled builds.",
+        "For teams maintaining Brainstorm databases on macOS, especially synced across machines, the warning surfaces 'vanished or duplicated subject' problems early."
+      ],
+      "url": "https://github.com/brainstorm-tools/brainstorm3/commit/5805fe2eac",
+      "published": "2026-10-29T18:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Brainstorm 合并一次数据库层的小改动（5805fe2eac）：在 **macOS 上警告「大小写不敏感导致的重复被试」**。macOS 默认文件系统（APFS 默认配置）大小写不敏感，于是 `Subject01` 与 `subject01` 指向同一目录——多人协作或跨机同步时，很容易出现被试目录被覆盖、或数据库里出现看似重复的记录，而这种问题在 Linux/Windows 上不会复现。同批还改进了插件容器检测、`bst_plugin('Install')` 支持 `'latest'`、以及编译版可卸载容器插件。对在 macOS 上维护 Brainstorm 数据库的实验室，建议升级后跑一次体检；更重要的是**在命名规范里统一大小写**，别依赖警告兜底。",
+      "brief_en": "Brainstorm's commit 5805fe2eac warns on macOS when case-insensitive duplicates appear in the database: APFS defaults to case-insensitive, so Subject01 and subject01 resolve to one directory, quietly causing overwritten or duplicated subjects during collaboration — invisible on Linux/Windows. The batch also improves plugin-container detection. Standardise case in naming instead.",
+      "tags": [
+        "brainstorm",
+        "macos",
+        "case-insensitive",
+        "database",
+        "subjects"
+      ],
+      "raw_excerpt": "Commit 5805fe2eac, 2026-10-29T18:33Z: \"DB: Add warning in macOS if case-insensitive duplicated subjects\". Same batch: \"Containers: Improve detection of loaded (running) plugin container\" 17:17Z; \"Plugins: Handle `'latest'` version in `bst_plugin('Install')`\" 17:14Z; \"Distrb: Add option to compile with latest versions of registered plugi[ns]\" 17:52Z.",
+      "fetched_at": "2026-10-29T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "brainstorm-tools/brainstorm3@5805fe2eac",
+      "author_handle": "brainstorm-tools",
+      "metrics": {
+        "play": null,
+        "like": 492,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "APFS 大小写不敏感会让被试目录互相覆盖，Linux/Windows 上还复现不出来。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 50,
+    "llm_rows": 10,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
