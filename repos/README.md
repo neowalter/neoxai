@@ -27,6 +27,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [bci-agent-workflow](https://github.com/Binghui-H/bci-agent-workflow) | @Binghui-H |  | 2026-08-11 | 1 |
 | [bci-arm-control](https://github.com/milli-24/bci-arm-control) | @milli-24 | Hybrid EMG/EEG BCI for prosthetic hand control on consumer-grade Op... | 2026-06-09 | 1 |
 | [bci-atcnet-vs-mini-atcnet](https://github.com/patapee-siri/bci-atcnet-vs-mini-atcnet) | @patapee-siri | ATCNet vs. lightweight Mini-ATCNet for motor imagery EEG classifica... | 2026-10-08 | 2 |
+| [bci-eeg-to-text](https://github.com/fufurobot/bci-eeg-to-text) | @fufurobot | my experiments of bci eeg to text | 2026-10-29 | 1 |
 | [bci-engine](https://github.com/liferoad2017/bci-engine) | @liferoad2017 | Cross-platform BCI middleware that streams raw EEG data from BrainF... | 2026-09-26 | 3 |
 | [bci-fault-bench-intracortical](https://github.com/agustama27/bci-fault-bench-intracortical) | @agustama27 | PoC: intracortical (spike-count) decoding testbed for LSL fault inj... | 2026-10-11 | 1 |
 | [bci-imagerie-motrice](https://github.com/bilalmkd59/bci-imagerie-motrice) | @bilalmkd59 | Interface cerveau-machine par imagerie motrice : CSP, géométrie rie... | 2026-10-25 | 1 |
@@ -84,16 +85,19 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-agent](https://github.com/feuler/eeg-agent) | @feuler | Application that reads real-time EEG signals from a NeuroSky MindWa... | 2026-05-07 | 1 |
 | [EEG-Agent](https://github.com/gjyradl/EEG-Agent) | @gjyradl |  | 2026-05-12 | 3 |
 | [eeg-artifact-removal-pipeline](https://github.com/Avin-Amiri/eeg-artifact-removal-pipeline) | @Avin-Amiri |  A modular pipeline for EEG signal conditioning, ICA ocular artifac... | 2026-10-03 | 1 |
+| [EEG-based-motor-imagery-classification-](https://github.com/NimaAhmadi79/EEG-based-motor-imagery-classification-) | @NimaAhmadi79 | 4-class motor imagery EEG classification on BCI Competition IV 2a u... | 2026-10-28 | 1 |
 | [EEG-BCI-Car](https://github.com/Danielz-z/EEG-BCI-Car) | @Danielz-z | An EEG-based real-time brain-computer interface system for emergenc... | 2026-10-10 | 7 |
 | [eeg-bci-drone-simulator](https://github.com/dev-yosam/eeg-bci-drone-simulator) | @dev-yosam | Unity-based drone simulation for EEG-based BCI error detection rese... | 2026-10-16 | 1 |
 | [eeg-bw16-cyd](https://github.com/zbnw/eeg-bw16-cyd) | @zbnw | 这是一个基于 BW16 与 ESP32-CYD 的 EEG 原型项目，包含 BLE 数据传输、LCD 波形显示、串口采集工具和网页监视器。 | 2026-09-26 | 2 |
 | [EEG-Classification](https://github.com/anthonyalcalde/EEG-Classification) | @anthonyalcalde | Python pipeline that classifies EEG motor imagery (left vs. right h... | 2026-10-14 | 1 |
 | [eeg-connection-hub](https://github.com/ManintheCrowds/eeg-connection-hub) | @ManintheCrowds | LAN-first multi-stream EEG feature broker — LSL in, derived feature... | 2026-07-20 | 1 |
+| [eeg-decoding](https://github.com/fairfriend92/eeg-decoding) | @fairfriend92 | Deep learning for EEG motor imagery decoding. EEGNet, EEG Conformer... | 2026-10-29 | 1 |
 | [EEG-dinosaur-runner](https://github.com/Rocky-Bai-hust/EEG-dinosaur-runner) | @Rocky-Bai-hust | An Arduino-based EEG interface for controlling a dinosaur runner game. | 2026-10-10 | 3 |
 | [eeg-ecg-music-review-agent](https://github.com/scottleimroth/eeg-ecg-music-review-agent) | @scottleimroth | Reading package and MCP tool server for a published EEG/ECG music-l... | 2026-09-18 | 1 |
 | [eeg-experiments](https://github.com/pleonardmusic/eeg-experiments) | @pleonardmusic | MindWave EEG recorder + 40/80 Hz ASSR analysis for testing gamma-en... | 2026-10-07 | 2 |
 | [eeg-explorer](https://github.com/RocketSpot/eeg-explorer) | @RocketSpot | Standalone Zone EEG acquisition, labeling, replay, processing, and... | 2026-09-08 | 1 |
 | [eeg-harmonize](https://github.com/devasai-choppa/eeg-harmonize) | @devasai-choppa | Canonical EEG schema and a conversion trail. Designed clips only; T... | 2026-10-16 | 1 |
+| [eeg-inner-speech-translation](https://github.com/alexsteinerr/eeg-inner-speech-translation) | @alexsteinerr | EEG-based inner-speech-to-text translation for ALS using region-awa... | 2026-10-26 | 1 |
 | [eeg-kan-bci-ieee-bdn](https://github.com/kushbhardwaj0/eeg-kan-bci-ieee-bdn) | @kushbhardwaj0 | Interpretable Neural Decoding: Benchmarking Kolmogorov-Arnold Netwo... | 2026-10-15 | 1 |
 | [eeg-loop](https://github.com/TheBabelDragon/eeg-loop) | @TheBabelDragon | Minimal EEG acquisition, signal analysis, inference, and closed-loo... | 2026-09-01 | 1 |
 | [eeg-mcp](https://github.com/AImplifier/eeg-mcp) | @SimKuanGOH |  | 2026-07-26 | 2 |
@@ -105,6 +109,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-motor-imagery](https://github.com/trenton-pham/eeg-motor-imagery) | @trenton-pham | PhysioNet-style MI prep: 60 Hz notch + ICA then 8–30 Hz on 0.5–3.5... | 2026-10-28 | 1 |
 | [eeg-motor-imagery-baseline](https://github.com/elchibek5/eeg-motor-imagery-baseline) | @elchibek5 | Cross-subject EEG motor imagery classification (4-class BCI) in Pyt... | 2026-10-18 | 1 |
 | [eeg-motor-imagery-bci](https://github.com/PRAVIN-AC/eeg-motor-imagery-bci) | @PRAVIN-AC | EEG motor-imagery decoding pipeline (PhysioNet dataset) — non-invas... | 2026-09-30 | 1 |
+| [eeg-motor-imagery-benchmark](https://github.com/zgu225/eeg-motor-imagery-benchmark) | @zgu225 | Reproducible EEG motor imagery benchmark comparing CSP and compact ... | 2026-10-12 | 1 |
 | [EEG-Motor-Imagery-Classification](https://github.com/J-Y00N/EEG-Motor-Imagery-Classification) | @J-Y00N | EEG motor imagery classification with classical, Riemannian, and EE... | 2026-10-02 | 1 |
 | [eeg-motor-imagery-classification](https://github.com/dhruvpatel-05/eeg-motor-imagery-classification) | @dhruvpatel-05 | Benchmark of EEGNet, TCN, CNN+LSTM, CNN+GRU, and Transformer models... | 2026-10-12 | 2 |
 | [eeg-motor-imagery-decoding](https://github.com/MansiAgrwal/eeg-motor-imagery-decoding) | @MansiAgrwal | Decoding imagined left vs right hand movement from scalp EEG in peo... | 2026-10-27 | 1 |
@@ -114,6 +119,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-neurolyze](https://github.com/MatPomGit/eeg-neurolyze) | @MatPomGit | EEG acquisition, preprocessing, and analysis toolkit for Muse S Ath... | 2026-10-13 | 2 |
 | [EEG-Plotter-App](https://github.com/Fotisstam/EEG-Plotter-App) | @Fotisstam | Real-time multi-channel EEG signal analyzer and plotter in Python u... | 2026-09-28 | 2 |
 | [EEG-Preprocessing-Agent-Pipeline](https://github.com/ivonanicetin/EEG-Preprocessing-Agent-Pipeline) | @ivonanicetin | An AI-assisted EEG preprocessing system that automates QC-based dec... | 2026-08-05 | 1 |
+| [EEG-Pretraining-Value](https://github.com/prestyan/EEG-Pretraining-Value) | @prestyan | New metrics for Evaluating Pretraining Effectiveness in EEG Foundat... | 2026-10-28 | 1 |
 | [EEG-signal-classification-with-tranfer-learning-and-a-small-saple-size](https://github.com/PanagiotisDentsas/EEG-signal-classification-with-tranfer-learning-and-a-small-saple-size) | @PanagiotisDentsas | This study evaluates Transfer Learning  as a solution for classifyi... | 2026-10-23 | 1 |
 | [eeg-spec](https://github.com/jaaninumberone/eeg-spec) | @jaaninumberone | Device-agnostic ADS1299 EEG specification, reference implementation... | 2026-09-27 | 1 |
 | [eeg-web-dashboard](https://github.com/BellaChenAn/eeg-web-dashboard) | @BellaChenAn | Live web dashboard for NeuroSky/ThinkGear EEG headsets (MindLink, M... | 2026-10-20 | 1 |
@@ -135,6 +141,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eegdash-llm-tagger](https://github.com/eegdash/eegdash-llm-tagger) | @Kkuntal990 |  | 2026-06-12 | 3 |
 | [EEGDenoiseAgent](https://github.com/hanyilinn/EEGDenoiseAgent) | @hanyilinn | EEG Denoise Agent: A Unified LLM-Agent Framework for Automated EEG... | 2026-06-04 | 1 |
 | [EEGDrone](https://github.com/Carter-Lawrence/EEGDrone) | @Carter-Lawrence | Motor imagery BCI. Two EEGNet classifiers (move/rest, left/right) r... | 2026-08-13 | 0 |
+| [EEGFMLens](https://github.com/HowardHsuuu/EEGFMLens) | @HowardHsuuu | Causal tracing and EEG-aware interpretability tools for EEG foundat... | 2026-10-29 | 1 |
 | [eeglab_MCP](https://github.com/abwoo/eeglab_MCP) | @abwoo | Local-first EEGLAB MCP server and skill package for EEG research wo... | 2026-06-25 | 1 |
 | [EEGLearning](https://github.com/SANZAAAAA/EEGLearning) | @SANZAAAAA | EEGNet 脑电解码: 想象左手 vs 想象右手 (PhysioNet EEGMMIDB, PyTorch) | 2026-10-08 | 3 |
 | [eegloop](https://github.com/neurokinetikz/eegloop) | @neurokinetikz | Streaming EEG loops: one Source, one Block, causal steps that decla... | 2026-09-21 | 1 |
@@ -162,6 +169,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [ExoHand](https://github.com/AnshvardhanShetty/ExoHand) | @AnshvardhanShetty | EMG-controlled hand exoskeleton with real-time intent classificatio... | 2026-10-07 | 1 |
 | [eyecam](https://github.com/Libritor/eyecam) | @Libritor | The human eye as a camera: SSVEP image reconstruction from a Muse E... | 2026-10-04 | 1 |
 | [fah_eeg](https://github.com/beck-2/fah_eeg) | @beck-2 | Muse 2 EEG data collection and live visualization with BrainFlow | 2026-08-19 | 0 |
+| [Filter-Bank-CSP-and-LDA-Based-Four-Class-Motor-Imagery-EEG-Classifier](https://github.com/manvic-k06/Filter-Bank-CSP-and-LDA-Based-Four-Class-Motor-Imagery-EEG-Classifier) | @manvic-k06 | Four-class motor-imagery EEG classifier (BCI Competition IV 2a): FB... | 2026-10-28 | 1 |
 | [flappy-brain-bci](https://github.com/aifriend/flappy-brain-bci) | @aifriend | Real-time motor-imagery EEG controller (CSP+LDA, LSL in, UDP out) f... | 2026-08-20 | 1 |
 | [FlyVibing-Engine](https://github.com/LeyeFang/FlyVibing-Engine) | @LeyeFang | An editable, game-engine-style foundation for BCI system developmen... | 2026-10-14 | 1 |
 | [FRED-Project](https://github.com/GiulianoAgostini04/FRED-Project) | @GiulianoAgostini04 | Real-time concentration monitoring system based on frontal-lobe EEG... | 2026-09-16 | 1 |
@@ -170,6 +178,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [gTec_EEGpipeline](https://github.com/A13ssi0/gTec_EEGpipeline) | @A13ssi0 | Complete EEG Pipeline, from Acquisition to Classification, for gTec... | 2026-10-06 | 3 |
 | [Henosis](https://github.com/Viandanze/Henosis) | @Viandanze | Human-AI Shared Reasoning System — BCI + LLM fusion with shared rea... | 2026-08-23 | 1 |
 | [hermes-eeg-plugin](https://github.com/buckster123/hermes-eeg-plugin) | @buckster123 | EEG/BCI neural interface plugin for Hermes Agent — OpenBCI hardware... | 2026-04-14 | 5 |
+| [hybrid-body-bci](https://github.com/jacqchuang09/hybrid-body-bci) | @jacqchuang09 | EEG motor imagery control interface for Hybrid Body Robotics: 8-cha... | 2026-10-28 | 1 |
 | [IFNet-EEG-Motor-Imagery](https://github.com/Shaik-Shafi-01/IFNet-EEG-Motor-Imagery) | @Shaik-Shafi-01 | Deep learning based EEG motor imagery classification using IFNet. | 2026-10-21 | 1 |
 | [intentlab-bci](https://github.com/shrut10/intentlab-bci) | @shrut10 | Motor-imagery EEG decoding with subject-held-out evaluation, uncert... | 2026-10-05 | 1 |
 | [IoTBuddy](https://github.com/pacobaco/IoTBuddy) | @pacobaco | **IoT Buddy** is a local-first stateful companion that reads your c... | 2026-08-22 | 0 |
@@ -196,6 +205,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [mne-rt](https://github.com/mne-rt-org/mne-rt) | @payamsash | Real-time M/EEG signal processing | 2026-09-23 | 25 |
 | [modewise](https://github.com/ipeglin/modewise) | @ipeglin | Data-adaptive mode decomposition and analysis of multichannel signa... | 2026-10-11 | 1 |
 | [Motor-Imagery-BCI](https://github.com/OftenMissYi/Motor-Imagery-BCI) | @OftenMissYi | Motor-imagery EEG feature extraction and classification with wavele... | 2026-10-04 | 1 |
+| [motor-imagery-bci](https://github.com/raisheetal31/motor-imagery-bci) | @raisheetal31 | Four-class motor imagery EEG classification using BCI Competition I... | 2026-10-22 | 1 |
 | [motor-imagery-eeg-classification](https://github.com/mekdelawitze/motor-imagery-eeg-classification) | @mekdelawitze | EEGNet CNN vs. CSP+LDA baseline for 4-class motor imagery classific... | 2026-09-30 | 1 |
 | [motor_imagery_BCI_decoding-_neural_intentions](https://github.com/lidiascudiero/motor_imagery_BCI_decoding-_neural_intentions) | @lidiascudiero | An end-to-end Neuro-Engineering pipeline for Motor Imagery BCI deco... | 2026-10-19 | 1 |
 | [muse](https://github.com/shanemhansen/muse) | @shanemhansen | Raw EEG capture, storage, and time-travel replay for a Muse 2 headband | 2026-09-02 | 1 |
@@ -274,6 +284,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [pieeg_app](https://github.com/tyukei/pieeg_app) | @tyukei |  | 2026-10-02 | 1 |
 | [pipeline-neuroadaptatif-eeg](https://github.com/TechartdrV2/pipeline-neuroadaptatif-eeg) | @TechartdrV2 | Pipeline Python d’informatique affective pour l'évaluation du stres... | 2026-10-13 | 2 |
 | [project-aura](https://github.com/13thrule/project-aura) | @13thrule | Open-source ambulatory EEG platform for pre-seizure (pre-ictal) sig... | 2026-08-27 | 2 |
+| [PSDF](https://github.com/KawhiQaQ/PSDF) | @KawhiQaQ | Official implementation of "Source-Free Domain Adaptation based on ... | 2026-10-15 | 1 |
 | [PyEEG-RT](https://github.com/rusty-saber/PyEEG-RT) | @rusty-saber | Real-time EEG acquisition & visualization in Python: streams from a... | 2026-09-14 | 2 |
 | [pyneurale](https://github.com/RanXingchen/pyneurale) | @RanXingchen | An extensible framework for real-time BCI experiments, from device... | 2026-10-01 | 3 |
 | [pyspeller](https://github.com/berdakh/pyspeller) | @berdakh | Python BCI speller | 2026-09-23 | 1 |
@@ -305,6 +316,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [steadystate-studio](https://github.com/BKrishna-Prasad/steadystate-studio) | @BKrishna-Prasad | EEG-controlled music interface using SSVEP, FBCCA and LSL, with Psy... | 2026-10-08 | 1 |
 | [strands-emotiv](https://github.com/cagataycali/strands-emotiv) | @cagataycali | Research: Embodying the brain. Strands Agents accessing EEG and mor... | 2026-09-02 | 3 |
 | [structure-aware-aad](https://github.com/chenyibo11/structure-aware-aad) | @chenyibo11 | Structure-aware EEG auditory attention decoding with LaBraM and EEG... | 2026-10-19 | 1 |
+| [Sustech-EEG-Foundation-Models-Transfer-Learning-Research-Internship](https://github.com/LingQingyang/Sustech-EEG-Foundation-Models-Transfer-Learning-Research-Internship) | @LingQingyang | EEG foundation model research at SUSTech: embedding geometry, rest-... | 2026-10-03 | 1 |
 | [SYNAPSE-24](https://github.com/AlessioBrillo/SYNAPSE-24) | @AlessioBrillo | 24/7 multimodal bio-sensing wearable platform: tiered acquisition (... | 2026-09-23 | 1 |
 | [Synapse2Action](https://github.com/ZacharyZcR/Synapse2Action) | @ZacharyZcR | EEG, LLM, VLA and robot control research framework | 2026-09-14 | 1 |
 | [tauri-eeg](https://github.com/fordelkon/tauri-eeg) | @fordelkon | eco-eeg system | 2026-10-09 | 1 |
