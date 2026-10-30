@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-31",
+  "generated_at": "2026-10-30T21:31:37.185Z",
+  "item_count": 6,
+  "types": {
+    "Benchmark": 1,
+    "Project": 5
+  },
+  "highlights": [
+    {
+      "title_zh": "eeg-repro：三大 EEG 深度学习模型在 BCI IV 2a 上的复现，含一个诚实的失败",
+      "title_en": "eeg-repro: Rerunning EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a, With One Honest Failure",
+      "url": "https://github.com/Tommycode3/eeg-repro",
+      "brief": "新建仓库 eeg-repro（2026-10-30）做的是一件社区长期缺的事：把 **EEGNet、ShallowConvNet、DeepConvNet** 在 BCI IV 2a 上从零复现，与 **FBCSP 基线**并排，并把论文数字放进同一张表。结果值得细读——FBCSP 复现成功（67.7% vs 67.8%），ShallowConvNet 接近（71.4% vs 71.9%），但 **DeepConvNet 只有 55.0%，而论文是 70.1%**，作者判断是因为这里按试次训练、而非按 crop 训练。这种「敢报阴性结果」的做法比又一个刷点仓库有价值得多：它告诉你哪些数字可以当基线、哪些需要在特定训练范式下才成立。所有结果都给出可执行命令与每被试图，适合当复现基准。"
+    },
+    {
+      "title_zh": "flicker2grasp：SSVEP 解码驱动 MuJoCo 机械臂，逐条真实试次回放",
+      "title_en": "flicker2grasp: SSVEP Decoding Driving a MuJoCo Arm, Trial by Trial",
+      "url": "https://github.com/Tommycode3/flicker2grasp",
+      "brief": "新建仓库 flicker2grasp（2026-10-30）把 SSVEP 解码真正接到机器人上：用公开 **12 目标数据集**的**真实留出试次**驱动 MuJoCo 机械臂做抓放，而且**机械臂执行的每条命令都是解码器对真实试次的输出，解码错误用红色标出**——这一点很关键，多数演示会挑成功片段，这个仓库把错误也放给你们看。方法覆盖 CCA、FBCCA、TRCA，并给出具体成绩：**ensemble TRCA＋0.5 s 窗口下 97.1% 的 episode 约 19 秒完成**。带 tests 与 results，属可复现的端到端演示。对做 BCI 应用层（而非只做离线分类）的团队，这是少见的、把「解码→控制」闭环与误差可视化都做出来的参考。"
+    },
+    {
+      "title_zh": "NeuroKiln（脑炉）：协议优先、防泄漏的 BCI 评测与调参平台",
+      "title_en": "NeuroKiln: A Protocol-First, Leakage-Preventing BCI Evaluation and Tuning Platform",
+      "url": "https://github.com/JadueW/neurokiln",
+      "brief": "新建仓库 NeuroKiln（脑炉，2026-10-30）提出一个很对题的定位：**协议优先、可复现、防泄漏**的 BCI 算法评测与调参平台——把数据集、**协议划分**、丹方（DAG）、指标统计、报告与复现包收敛成一条**可审计流水线**。EEG 领域长期的问题是「同一数据集换个划分口径，指标就不可比」，而它把划分协议当成一等公民，从源头记录「这次分数是在什么条件下得到的」。工程形态也很规范（Dockerfile、CI、CHANGELOG、CITATION、Apache-2.0）。注意 README 自标 **alpha**：适合用来建立可审计的评测流程，暂不宜作为基准结论的唯一来源；建议先在小数据集上跑通端到端，再接入自己的协议。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-10-31.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "eeg-repro：三大 EEG 深度学习模型在 BCI IV 2a 上的复现，含一个诚实的失败",
+      "title_en": "eeg-repro: Rerunning EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a, With One Honest Failure",
+      "bullets_zh": [
+        "PyTorch 复现 **EEGNet（Lawhern 2018）、ShallowConvNet 与 DeepConvNet（Schirrmeister 2017）**，在 BCI Competition IV 2a 上与 **FBCSP 基线**并排比对，并把论文数字放进同一张表。",
+        "结果：FBCSP 复现成功（**67.7% vs 67.8%**）、ShallowConvNet 接近（**71.4% vs 71.9%**）、**DeepConvNet 未复现（55.0% vs 70.1%）**，作者判断原因是此处按试次训练而非按 crop 训练。",
+        "所有数字均由仓库代码在笔记本上用 README 给出的命令产出，且附每被试准确率图。"
+      ],
+      "bullets_en": [
+        "PyTorch reimplementations of EEGNet (Lawhern 2018), ShallowConvNet and DeepConvNet (Schirrmeister 2017) on BCI Competition IV 2a, placed next to an FBCSP baseline with the papers' numbers in the same table.",
+        "FBCSP reproduces (67.7% vs 67.8%), ShallowConvNet nearly does (71.4% vs 71.9%), and DeepConvNet does not (55.0% vs 70.1%), most likely because it is trained trial-wise here instead of on crops.",
+        "Every number comes from the repository's own code on a laptop using the documented command, with per-subject accuracy plots."
+      ],
+      "url": "https://github.com/Tommycode3/eeg-repro",
+      "published": "2026-10-30T17:58:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 eeg-repro（2026-10-30）做的是一件社区长期缺的事：把 **EEGNet、ShallowConvNet、DeepConvNet** 在 BCI IV 2a 上从零复现，与 **FBCSP 基线**并排，并把论文数字放进同一张表。结果值得细读——FBCSP 复现成功（67.7% vs 67.8%），ShallowConvNet 接近（71.4% vs 71.9%），但 **DeepConvNet 只有 55.0%，而论文是 70.1%**，作者判断是因为这里按试次训练、而非按 crop 训练。这种「敢报阴性结果」的做法比又一个刷点仓库有价值得多：它告诉你哪些数字可以当基线、哪些需要在特定训练范式下才成立。所有结果都给出可执行命令与每被试图，适合当复现基准。",
+      "brief_en": "Created 2026-10-30, eeg-repro reimplements EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a next to an FBCSP baseline with the papers' numbers in one table. FBCSP reproduces (67.7% vs 67.8%) and ShallowConvNet nearly does (71.4% vs 71.9%), but DeepConvNet reaches only 55.0% against 70.1%, likely because it is trained trial-wise rather than on crops.",
+      "tags": [
+        "replication",
+        "eegnet",
+        "shallowconvnet",
+        "deepconvnet",
+        "fbscp"
+      ],
+      "raw_excerpt": "README: \"PyTorch reimplementations of EEGNet (Lawhern et al., 2018), ShallowConvNet and DeepConvNet (Schirrmeister et al., 2017), trained and tested on BCI Competition IV 2a next to an FBCSP baseline, with the papers' numbers in the same table. FBCSP reproduces (67.7 % vs 67.8 %) and ShallowConvNet nearly does (71.4 % vs 71.9 %). DeepConvNet does not (55.0 % vs 70.1 %), most likely because it is trained trial-wise here instead of on crops.\"",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Tommycode3/eeg-repro",
+      "author_handle": "Tommycode3",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "敢报 DeepConvNet 复现失败，明确哪些数字可当基线、哪些依赖训练范式。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "flicker2grasp：SSVEP 解码驱动 MuJoCo 机械臂，逐条真实试次回放",
+      "title_en": "flicker2grasp: SSVEP Decoding Driving a MuJoCo Arm, Trial by Trial",
+      "bullets_zh": [
+        "用公开 12 目标 SSVEP 数据集的**真实留出试次**驱动 MuJoCo 机械臂做抓放；机械臂执行的每个命令都来自解码器对真实试次的输出，**解码错误以红色显示**。",
+        "报告具体成绩：**ensemble TRCA + 0.5 s 窗口**下 97.1% 的 episode 能在约 19 秒内完成；方法覆盖 CCA、FBCCA、TRCA。",
+        "带 tests、results、pyproject 与 CITATION，属可复现的端到端演示，而不是一段视频。"
+      ],
+      "bullets_en": [
+        "It drives a MuJoCo arm doing pick-and-place from real held-out trials of a public 12-target SSVEP dataset; every command executed is what the decoder output for a real trial, with decoding errors shown in red.",
+        "Reported results: with ensemble TRCA on 0.5 s windows the arm finishes 97.1% of episodes in about 19 s; methods cover CCA, FBCCA and TRCA.",
+        "It ships tests, results, pyproject and CITATION, making it a reproducible end-to-end demo rather than a video."
+      ],
+      "url": "https://github.com/Tommycode3/flicker2grasp",
+      "published": "2026-10-30T15:23:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 flicker2grasp（2026-10-30）把 SSVEP 解码真正接到机器人上：用公开 **12 目标数据集**的**真实留出试次**驱动 MuJoCo 机械臂做抓放，而且**机械臂执行的每条命令都是解码器对真实试次的输出，解码错误用红色标出**——这一点很关键，多数演示会挑成功片段，这个仓库把错误也放给你们看。方法覆盖 CCA、FBCCA、TRCA，并给出具体成绩：**ensemble TRCA＋0.5 s 窗口下 97.1% 的 episode 约 19 秒完成**。带 tests 与 results，属可复现的端到端演示。对做 BCI 应用层（而非只做离线分类）的团队，这是少见的、把「解码→控制」闭环与误差可视化都做出来的参考。",
+      "brief_en": "Created 2026-10-30, flicker2grasp connects SSVEP decoding to a robot: real held-out trials from a public 12-target dataset drive a MuJoCo arm, and every executed command is the decoder's output for a real trial with errors shown in red. It covers CCA, FBCCA and TRCA and reports that ensemble TRCA on 0.5 s windows completes 97.1% of episodes in about 19 s.",
+      "tags": [
+        "ssvep",
+        "trca",
+        "mujoco",
+        "robot-arm",
+        "closed-loop"
+      ],
+      "raw_excerpt": "Description: \"SSVEP BCI on real EEG (CCA, FBCCA, TRCA) driving a MuJoCo robot arm, end to end, benchmarked and tested.\" README: \"Every command it executes is what the decoder output for a real trial of the intended class; decoding errors show in red. With ensemble TRCA on 0.5 s windows the arm finishes 97.1 % of episodes in about 19 s.\"",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Tommycode3/flicker2grasp",
+      "author_handle": "Tommycode3",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "把解码错误也展示出来，并给出可复现的端到端成绩（97.1%/19s）。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "NeuroKiln（脑炉）：协议优先、防泄漏的 BCI 评测与调参平台",
+      "title_en": "NeuroKiln: A Protocol-First, Leakage-Preventing BCI Evaluation and Tuning Platform",
+      "bullets_zh": [
+        "定位是把**数据集、协议划分、丹方（DAG）**、指标统计、报告与复现包收敛成**一条可审计流水线**，核心卖点是「可复现、防泄漏」。",
+        "工程形态完整：Dockerfile、CI、CHANGELOG、CITATION.cff、CONTRIBUTING/CODE_OF_CONDUCT，Apache-2.0，Python 3.10/3.12＋Node 20+，README 自标 **alpha**。",
+        "对「同一数据、不同划分口径下指标不可比」的老问题，把协议（划分）作为一等公民是目前最实际的解法。"
+      ],
+      "bullets_en": [
+        "It folds datasets, protocol splits, recipe DAGs, metric aggregation, reports and reproduction packages into one auditable pipeline, with reproducibility and leakage prevention as the pitch.",
+        "The scaffolding is complete: Dockerfile, CI, CHANGELOG, CITATION.cff, CONTRIBUTING/CODE_OF_CONDUCT, Apache-2.0, Python 3.10/3.12 with Node 20+, and the README labels it alpha.",
+        "For the old problem that metrics are incomparable across split conventions, making the protocol a first-class object is the most practical fix available."
+      ],
+      "url": "https://github.com/JadueW/neurokiln",
+      "published": "2026-10-30T16:17:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 NeuroKiln（脑炉，2026-10-30）提出一个很对题的定位：**协议优先、可复现、防泄漏**的 BCI 算法评测与调参平台——把数据集、**协议划分**、丹方（DAG）、指标统计、报告与复现包收敛成一条**可审计流水线**。EEG 领域长期的问题是「同一数据集换个划分口径，指标就不可比」，而它把划分协议当成一等公民，从源头记录「这次分数是在什么条件下得到的」。工程形态也很规范（Dockerfile、CI、CHANGELOG、CITATION、Apache-2.0）。注意 README 自标 **alpha**：适合用来建立可审计的评测流程，暂不宜作为基准结论的唯一来源；建议先在小数据集上跑通端到端，再接入自己的协议。",
+      "brief_en": "Created 2026-10-30, NeuroKiln pitches protocol-first, reproducible, leakage-preventing BCI evaluation: datasets, protocol splits, recipe DAGs, metrics, reports and reproduction packages in one auditable pipeline. Since metrics stop being comparable once split conventions change, treating the protocol as first-class is the practical fix. It ships Dockerfile, CI and Apache-2.0 but is alpha.",
+      "tags": [
+        "evaluation",
+        "protocol",
+        "leakage",
+        "reproducibility",
+        "platform"
+      ],
+      "raw_excerpt": "Description:「NeuroKiln（脑炉）— 协议优先、可复现的 BCI 算法评测与调参平台」。README:「**可复现、防泄漏的 BCI 算法评测与调参平台** 把数据集、协议划分、丹方（DAG）、指标统计、报告与复现包收敛成一条可审计流水线。」badges: Apache-2.0、Python 3.10|3.12、Node 20+、status alpha。Contents: Dockerfile, Dockerfile, CHANGELOG.md, CITATION.cff, CONTRIBUTING.md, .github 等。",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "JadueW/neurokiln",
+      "author_handle": "JadueW",
+      "metrics": {
+        "play": null,
+        "like": 1,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把划分协议当一等公民，从源头记录指标在什么条件下得到，防泄漏可比。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "aeon-neuro 一天四个 ENH：带标签/分组/溯源的分类用例、更多格式与 BIDS 事件保留",
+      "title_en": "aeon-neuro's Four ENH Commits: Cases With Labels/Groups/Provenance, More Formats, BIDS Events",
+      "bullets_zh": [
+        "「Construct classification cases with **labels, groups and provenance**」把「这份数据怎么来的」写入用例，配合「Prepare **verified EEG metadata corrections**」形成可追溯的元数据链。",
+        "「Extend EEG loading with **additional formats**」与「Preserve source **BIDS events and recording metadata**」解决导入即丢信息的老问题。",
+        "对做跨数据集/跨设备基准的团队，分组与溯源字段是能否做「按被试/设备留一」评估的前提。"
+      ],
+      "bullets_en": [
+        "Constructing classification cases with labels, groups and provenance records how data was produced, paired with prepared verified EEG metadata corrections to form a traceable metadata chain.",
+        "Extending EEG loading with additional formats and preserving source BIDS events plus recording metadata fixes the classic loss of information on import.",
+        "For cross-dataset or cross-device benchmarks, group and provenance fields are the prerequisite for leave-one-subject or leave-one-device evaluation."
+      ],
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/233",
+      "published": "2026-10-30T16:16:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "aeon-neuro 在 10-30 一天推进 5 次提交（4 个 ENH）：①为分类用例加入 **labels / groups / provenance**，让「这份数据来自哪个被试、哪个设备、怎么处理过」随用例一起走；②准备**已核实的 EEG 元数据更正**；③扩展 EEG 读取支持**更多格式**；④在导入时**保留源 BIDS 事件与记录元数据**。这些改动看起来分散，实际都指向同一件事——**别在导入环节丢信息**。对做跨数据集/跨设备基准的团队，分组与溯源字段直接决定能否做「按被试留一」「按设备留一」这类评估；缺失时只能退回粗暴的全局划分，结论会被高估。",
+      "brief_en": "aeon-neuro made five commits on Oct 30, four enhancements: classification cases now carry labels, groups and provenance; verified EEG metadata corrections are prepared; EEG loading supports more formats; and source BIDS events plus recording metadata are preserved on import — all about not losing information, which decides whether leave-one-subject or leave-one-device evaluation is possible.",
+      "tags": [
+        "aeon-neuro",
+        "provenance",
+        "bids",
+        "metadata",
+        "benchmarking"
+      ],
+      "raw_excerpt": "Commits 2026-10-30: \"[ENH] Construct classification cases with labels, groups and provenanc[e]\" (96abe6e6ad) 16:15Z; \"[ENH] Extend EEG loading with additional formats (#225)\" (544b2bc717) 16:04Z; \"[ENH] Preserve source BIDS events and recording metadata (#233)\" (5008958ce2) 16:03Z; \"[ENH] Prepare verified EEG metadata corrections (#218)\" (89fad7028f) 11:37Z.",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aeon-toolkit/aeon-neuro@96abe6e6ad",
+      "author_handle": "aeon-toolkit",
+      "metrics": {
+        "play": null,
+        "like": 33,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "分组与溯源字段是「按被试/设备留一」评估的前提，缺了只能粗暴划分。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 修 FilterBankLayer 的 TorchScript 兼容（PyTorch 2.15）",
+      "title_en": "braindecode Fixes FilterBankLayer's TorchScript Compatibility With PyTorch 2.15",
+      "bullets_zh": [
+        "#1501 让 **FilterBankLayer** 在 PyTorch 2.15 下仍可被 **TorchScript** 编译——滤波器组是 FBCSP 类方法与深度模型融合的常用组件。",
+        "TorchScript 兼容性直接决定模型能否导出、在 C++/移动端或推理服务里跑；一旦回归，通常是部署阶段才暴露。",
+        "同批还有 CI 方面的小修（把已移除贡献者的主页从 Link Check 排除），不影响功能。"
+      ],
+      "bullets_en": [
+        "#1501 keeps FilterBankLayer compilable by TorchScript under PyTorch 2.15; filter banks are a common building block when combining FBCSP-style methods with deep models.",
+        "TorchScript compatibility decides whether a model can be exported and run in C++, on mobile or in an inference service, and regressions usually surface only at deployment.",
+        "A small CI fix (excluding a removed contributor's profile from Link Check) landed alongside, with no behavioural effect."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1501",
+      "published": "2026-10-30T20:25:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 合并 #1501：让 **FilterBankLayer 在 PyTorch 2.15 下仍能通过 TorchScript 编译**。这条对「离线训练完就结束」的团队看似无关，但对要**部署**的人很关键——滤波组层是 FBCSP 式方法与深度模型融合时的常用组件，TorchScript 一旦不兼容，模型就无法导出到 C++、移动端或推理服务，而且这类回归通常到部署阶段才暴露，本地训练一切正常。对已有导出流程的团队，建议在升级 PyTorch 或 braindecode 后，把「训练→保存→`torch.jit.script`→推理结果一致性」做成一条 CI 检查，而不是靠手工试。",
+      "brief_en": "braindecode merged #1501 keeping FilterBankLayer TorchScript-compilable under PyTorch 2.15. Filter banks are a common building block for FBCSP-style deep models, and TorchScript compatibility decides whether a model can be exported to C++, mobile or inference services — regressions usually appear only at deployment. Make train-save-script-infer consistency a CI check.",
+      "tags": [
+        "braindecode",
+        "torchscript",
+        "filterbank",
+        "deployment",
+        "pytorch"
+      ],
+      "raw_excerpt": "PR #1501 merged 2026-10-30T20:25Z: \"FIX FilterBankLayer TorchScript with PyTorch 2.15 (master CI)\". Same day: \"CI: exclude a removed contributor's profile from Link Check (#1502)\" 20:45Z.",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1501",
+      "author_handle": "braindecode",
+      "metrics": {
+        "play": null,
+        "like": 1337,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "TorchScript 不兼容会让模型无法导出部署，且通常到上线才暴露。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 给 GIFTI 导出加时间信息元数据",
+      "title_en": "MNE-Python Adds Timing Metadata to GIFTI Exports",
+      "bullets_zh": [
+        "#14361 在导出 GIFTI 时写入**时间信息元数据**，使表面/几何数据在跨工具传递时保留时间轴语义（此前只剩几何，时间信息靠外部约定）。",
+        "GIFTI 常用于皮层表面与源空间结果交换；缺时间信息会让下游工具（如 Connectome Workbench）无法正确解释时间序列。",
+        "同批另有 pre-commit 钩子版本更新与一处 CI 修复（Azure/figure 检查），不影响行为。"
+      ],
+      "bullets_en": [
+        "#14361 writes timing metadata into GIFTI exports so surface geometry carries temporal semantics across tools, where previously only geometry travelled and time relied on external convention.",
+        "GIFTI is widely used to exchange cortical surface and source-space results; without timing metadata, downstream tools such as Connectome Workbench cannot interpret time series correctly.",
+        "The batch also bumps pre-commit hooks and fixes a CI check, with no behavioural effect."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14361",
+      "published": "2026-10-30T14:05:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14361：导出 **GIFTI** 时写入**时间信息元数据**。GIFTI 是皮层表面与源空间结果交换的常用格式，但过去导出只带几何、时间轴含义要靠外部约定——一旦交给下游工具（典型如 Connectome Workbench），时间序列就可能被按错误的采样解释，或者只能靠人工记录。把时间信息写进文件本身，属于「格式层面消除歧义」的正确做法。对做源空间分析、或需要在 MATLAB/Python/Workbench 之间搬表面数据的团队，建议升级后重导一份并确认下游能读到时间轴；同批的 pre-commit 与 CI 修复不影响行为。",
+      "brief_en": "MNE-Python merged #14361 adding timing metadata to GIFTI exports. GIFTI exchanges cortical surface and source-space results, but exports previously carried only geometry, leaving temporal meaning to external convention — downstream tools like Connectome Workbench could misinterpret time series. Writing timing into the file removes the ambiguity; re-export and confirm downstream reads it.",
+      "tags": [
+        "mne-python",
+        "gifti",
+        "metadata",
+        "surface",
+        "interoperability"
+      ],
+      "raw_excerpt": "Commits 2026-10-30: \"ENH: Add timing metadata to GIFTI exports (#14361)\" (f1eb427989) 14:05Z; \"Fix active figure check and Azure (#14469)\" 17:14Z; \"MAINT: Update pre-commit hook versions (#14432)\" 18:04Z.",
+      "fetched_at": "2026-10-30T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14361",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3575,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "GIFTI 缺时间信息会让下游按错误采样解释，写进文件才算真正可交换。"
+    }
+  ],
+  "stats": {
+    "fetched": 60,
+    "prefiltered": 50,
+    "llm_rows": 12,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
