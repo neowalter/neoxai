@@ -1,10 +1,11 @@
 {
   "date": "2026-10-31",
-  "generated_at": "2026-10-30T21:31:37.185Z",
-  "item_count": 6,
+  "generated_at": "2026-10-31T03:55:27.045Z",
+  "item_count": 7,
   "types": {
     "Benchmark": 1,
-    "Project": 5
+    "Project": 5,
+    "News": 1
   },
   "highlights": [
     {
@@ -20,10 +21,10 @@
       "brief": "新建仓库 flicker2grasp（2026-10-30）把 SSVEP 解码真正接到机器人上：用公开 **12 目标数据集**的**真实留出试次**驱动 MuJoCo 机械臂做抓放，而且**机械臂执行的每条命令都是解码器对真实试次的输出，解码错误用红色标出**——这一点很关键，多数演示会挑成功片段，这个仓库把错误也放给你们看。方法覆盖 CCA、FBCCA、TRCA，并给出具体成绩：**ensemble TRCA＋0.5 s 窗口下 97.1% 的 episode 约 19 秒完成**。带 tests 与 results，属可复现的端到端演示。对做 BCI 应用层（而非只做离线分类）的团队，这是少见的、把「解码→控制」闭环与误差可视化都做出来的参考。"
     },
     {
-      "title_zh": "NeuroKiln（脑炉）：协议优先、防泄漏的 BCI 评测与调参平台",
-      "title_en": "NeuroKiln: A Protocol-First, Leakage-Preventing BCI Evaluation and Tuning Platform",
-      "url": "https://github.com/JadueW/neurokiln",
-      "brief": "新建仓库 NeuroKiln（脑炉，2026-10-30）提出一个很对题的定位：**协议优先、可复现、防泄漏**的 BCI 算法评测与调参平台——把数据集、**协议划分**、丹方（DAG）、指标统计、报告与复现包收敛成一条**可审计流水线**。EEG 领域长期的问题是「同一数据集换个划分口径，指标就不可比」，而它把划分协议当成一等公民，从源头记录「这次分数是在什么条件下得到的」。工程形态也很规范（Dockerfile、CI、CHANGELOG、CITATION、Apache-2.0）。注意 README 自标 **alpha**：适合用来建立可审计的评测流程，暂不宜作为基准结论的唯一来源；建议先在小数据集上跑通端到端，再接入自己的协议。"
+      "title_zh": "《中国科学院院刊》发文：为脑机接口构建「工程性能—临床功能—患者体验」三轴证据框架",
+      "title_en": "CAS Bulletin: A Three-Axis Evidence Framework for BCI — Engineering, Clinical Function, Patient Experience",
+      "url": "https://www.bilibili.com/read/cv53684548",
+      "brief": "B站转载的《中国科学院院刊》2026 年第 9 期文章，讨论 BCI 的**临床证据体系**问题：样本规模小、技术路径差异大、产品迭代快，导致各家安全性与有效性数据难以整合比较，而循证医学那套层级化证据结构无法直接套用。作者提出**三轴证据框架**——把**工程性能、临床功能与患者体验**并列，并针对探索性研究、限定推广、常规化应用三个阶段给出差异化证据要求，最后讨论审评落地路径。对产业与监管双方都有参考价值：它解释清了「为什么 BCI 领域至今缺少可比数据」，并给出可操作的证据分级思路；注意这是政策/方法学讨论，不涉及具体设备性能验证。"
     }
   ],
   "github_path": "docs/bci-cn-daily/2026-10-31.md",
@@ -285,15 +286,58 @@
       },
       "quality_score": 7,
       "why_valuable": "GIFTI 缺时间信息会让下游按错误采样解释，写进文件才算真正可交换。"
+    },
+    {
+      "type": "News",
+      "level": "Advanced",
+      "title_zh": "《中国科学院院刊》发文：为脑机接口构建「工程性能—临床功能—患者体验」三轴证据框架",
+      "title_en": "CAS Bulletin: A Three-Axis Evidence Framework for BCI — Engineering, Clinical Function, Patient Experience",
+      "bullets_zh": [
+        "论文指出 BCI 的固有特征（**样本规模小、技术路径差异大、产品迭代快**）使不同研究的安全性与有效性数据难以整合横向比较，循证医学的层级化证据结构不能直接套用。",
+        "提出**三轴证据框架**：把工程性能、临床功能与**患者体验**并列，并针对探索性研究、限定推广、常规化应用三个发展阶段给出差异化证据要求。",
+        "刊于《中国科学院院刊》2026 年第 9 期「科技与社会」，作者戚文秀、周程（北京大学哲学系）——属政策与监管路径讨论，而非具体设备评测。"
+      ],
+      "bullets_en": [
+        "The paper argues BCI inherent traits — small samples, divergent technical routes and fast product iteration — make safety and efficacy data hard to integrate or compare, so evidence-based medicine hierarchical structure cannot be applied directly.",
+        "It proposes a three-axis evidence framework placing engineering performance, clinical function and patient experience side by side, with differentiated requirements for exploratory research, limited rollout and routine use.",
+        "Published in the CAS Bulletin 2026 issue 9 (Science, Technology and Society) by Qi Wenxiu and Zhou Cheng (Peking University, Philosophy) — a regulatory-path discussion rather than a device evaluation."
+      ],
+      "url": "https://www.bilibili.com/read/cv53684548",
+      "published": "2026-10-30T11:44:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站转载的《中国科学院院刊》2026 年第 9 期文章，讨论 BCI 的**临床证据体系**问题：样本规模小、技术路径差异大、产品迭代快，导致各家安全性与有效性数据难以整合比较，而循证医学那套层级化证据结构无法直接套用。作者提出**三轴证据框架**——把**工程性能、临床功能与患者体验**并列，并针对探索性研究、限定推广、常规化应用三个阶段给出差异化证据要求，最后讨论审评落地路径。对产业与监管双方都有参考价值：它解释清了「为什么 BCI 领域至今缺少可比数据」，并给出可操作的证据分级思路；注意这是政策/方法学讨论，不涉及具体设备性能验证。",
+      "brief_en": "A CAS Bulletin 2026 issue-9 article on the BCI clinical evidence system: small samples, divergent routes and fast iteration make safety and efficacy data hard to integrate, so the evidence-based medicine hierarchy cannot be applied. It proposes a three-axis framework — engineering performance, clinical function, patient experience — with differentiated requirements across three development stages.",
+      "tags": [
+        "evidence-framework",
+        "regulation",
+        "clinical-translation",
+        "policy",
+        "cas-bulletin"
+      ],
+      "raw_excerpt": "「原文刊载于《中国科学院院刊》2026年第9期（科技与社会） 戚文秀 周程 北京大学 哲学系」「受限于该技术固有的样本规模小、技术路径差异大和产品迭代快等特征，不同研究的安全性和有效性数据难以实现有效整合与横向比较」「将工程性能、临床功能与患者体验并列，构建三轴证据框架；进而，针对探索性研究、限定推广与常规化应用3个发展阶段提出差异化的证据要求」",
+      "fetched_at": "2026-10-31T04:05:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53684548",
+      "author_handle": "中国科学院院刊",
+      "metrics": {
+        "play": null,
+        "like": 4,
+        "collect": null,
+        "comment": 1
+      },
+      "quality_score": 9,
+      "why_valuable": "解释清 BCI 缺可比数据的根因，并给出工程/临床/体验三轴的可操作证据分级。"
     }
   ],
   "stats": {
-    "fetched": 60,
-    "prefiltered": 50,
-    "llm_rows": 12,
-    "kept": 6,
+    "fetched": 132,
+    "prefiltered": 96,
+    "llm_rows": 16,
+    "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 0
+    "conflicts_dropped": 2
   }
 }
