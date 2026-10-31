@@ -1,239 +1,239 @@
 {
-  "date": "2026-10-31",
-  "generated_at": "2026-10-31T03:55:27.045Z",
+  "date": "2026-11-01",
+  "generated_at": "2026-10-31T21:32:32.756Z",
   "item_count": 7,
   "types": {
-    "Benchmark": 1,
+    "News": 1,
     "Project": 5,
-    "News": 1
+    "Tutorial": 1
   },
   "highlights": [
     {
-      "title_zh": "eeg-repro：三大 EEG 深度学习模型在 BCI IV 2a 上的复现，含一个诚实的失败",
-      "title_en": "eeg-repro: Rerunning EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a, With One Honest Failure",
-      "url": "https://github.com/Tommycode3/eeg-repro",
-      "brief": "新建仓库 eeg-repro（2026-10-30）做的是一件社区长期缺的事：把 **EEGNet、ShallowConvNet、DeepConvNet** 在 BCI IV 2a 上从零复现，与 **FBCSP 基线**并排，并把论文数字放进同一张表。结果值得细读——FBCSP 复现成功（67.7% vs 67.8%），ShallowConvNet 接近（71.4% vs 71.9%），但 **DeepConvNet 只有 55.0%，而论文是 70.1%**，作者判断是因为这里按试次训练、而非按 crop 训练。这种「敢报阴性结果」的做法比又一个刷点仓库有价值得多：它告诉你哪些数字可以当基线、哪些需要在特定训练范式下才成立。所有结果都给出可执行命令与每被试图，适合当复现基准。"
+      "title_zh": "Squiggly 用谐波梳检测周期性伪迹，并把基频/谐波/通道覆盖率写入结果",
+      "title_en": "Squiggly Detects Periodic Artifacts With a Harmonic Comb and Records Fundamental, Harmonics and Coverage",
+      "url": "https://github.com/alexdni/squiggly/commit/ee943c783b",
+      "brief": "Squiggly 合并 ee943c783b：在**已陷波**的原始 EEG 上运行 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`——每个来源的**基频、谐波、常见频率**，以及被检出的**通道与覆盖率**。默认只记录，只有打开 `preprocessing.remove_periodic_artifacts` 才把这些谱线从原始数据里减去。这个设计比「一律陷波」更可复核：工频谐波与设备周期性噪声经常伪装成脑电节律（例如被误当成 alpha 峰或纺锤波），先量化来源、再决定是否去除，能让评估报告说清「这条线是什么、出现在哪」。对做静息态筛查或自动报告的平台，这是值得借鉴的伪迹处理范式。"
     },
     {
-      "title_zh": "flicker2grasp：SSVEP 解码驱动 MuJoCo 机械臂，逐条真实试次回放",
-      "title_en": "flicker2grasp: SSVEP Decoding Driving a MuJoCo Arm, Trial by Trial",
-      "url": "https://github.com/Tommycode3/flicker2grasp",
-      "brief": "新建仓库 flicker2grasp（2026-10-30）把 SSVEP 解码真正接到机器人上：用公开 **12 目标数据集**的**真实留出试次**驱动 MuJoCo 机械臂做抓放，而且**机械臂执行的每条命令都是解码器对真实试次的输出，解码错误用红色标出**——这一点很关键，多数演示会挑成功片段，这个仓库把错误也放给你们看。方法覆盖 CCA、FBCCA、TRCA，并给出具体成绩：**ensemble TRCA＋0.5 s 窗口下 97.1% 的 episode 约 19 秒完成**。带 tests 与 results，属可复现的端到端演示。对做 BCI 应用层（而非只做离线分类）的团队，这是少见的、把「解码→控制」闭环与误差可视化都做出来的参考。"
+      "title_zh": "Eelbrain 的 boosting 编译优化提到约 3 倍，并把执行上下文写进结果",
+      "title_en": "Eelbrain's Boosting Compilation Optimisation Is ~3x Faster, With Execution Context Recorded",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/265",
+      "brief": "Eelbrain 在 10-31 推进 4 次提交，最关键的是 **#265：boosting 的编译优化，整体约 3 倍提速**。对做 boost 类解码（如 TRF/时间响应函数）的团队，这不是「跑得快一点」——它直接改变能扫多大参数空间、以及交叉验证能否多折，很多原本要跑一夜的实验现在能放进日常迭代。配套的 **#267 把执行上下文写进 `BoostingResult`**（环境、参数、版本随结果保存），让「这条结果是在什么条件下得到的」可追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 marimo 的 notebook 目录。建议升级后既享受提速，也检查上下文记录是否满足你们的复现要求。"
     },
     {
-      "title_zh": "《中国科学院院刊》发文：为脑机接口构建「工程性能—临床功能—患者体验」三轴证据框架",
-      "title_en": "CAS Bulletin: A Three-Axis Evidence Framework for BCI — Engineering, Clinical Function, Patient Experience",
-      "url": "https://www.bilibili.com/read/cv53684548",
-      "brief": "B站转载的《中国科学院院刊》2026 年第 9 期文章，讨论 BCI 的**临床证据体系**问题：样本规模小、技术路径差异大、产品迭代快，导致各家安全性与有效性数据难以整合比较，而循证医学那套层级化证据结构无法直接套用。作者提出**三轴证据框架**——把**工程性能、临床功能与患者体验**并列，并针对探索性研究、限定推广、常规化应用三个阶段给出差异化证据要求，最后讨论审评落地路径。对产业与监管双方都有参考价值：它解释清了「为什么 BCI 领域至今缺少可比数据」，并给出可操作的证据分级思路；注意这是政策/方法学讨论，不涉及具体设备性能验证。"
+      "title_zh": "PiEEG-server 0.50.0：校准功能从云端搬回本地开源服务",
+      "title_en": "PiEEG-server 0.50.0 Ports Calibration From the Cloud Into the Open Local Server",
+      "url": "https://github.com/pieeg-club/PiEEG-server/commit/881508a5cc",
+      "brief": "PiEEG-server 发布 **0.50.0**，把**校准**从 `PiEEG-server-cloud` 移植进开源本地服务：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并带来组件与逻辑测试。这件事对硬件用户的意义是「**不必依赖云端就能校准**」——离线实验室、内网或涉隐私场景都能用，数据不用离开本机。PiEEG 是树莓派 8 通道 EEG 的常用开源方案，而校准是幅值可信的前提：没有它，跨通道、跨设备、跨天的幅度比较基本无从谈起。对自建采集的团队，建议升级后按厂家流程重跑一次校准，并把校准记录（时间、增益、阻抗）纳入实验元数据。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-10-31.md",
+  "github_path": "docs/bci-cn-daily/2026-11-01.md",
   "items": [
     {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "eeg-repro：三大 EEG 深度学习模型在 BCI IV 2a 上的复现，含一个诚实的失败",
-      "title_en": "eeg-repro: Rerunning EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a, With One Honest Failure",
+      "type": "News",
+      "level": "Beginner",
+      "title_zh": "闪电新闻「寻找中国康湾」：无创脑机接口康复如何接入医工闭环",
+      "title_en": "Non-Invasive BCI Rehabilitation Inside a Clinical-Research Loop: A Report From Qingdao",
       "bullets_zh": [
-        "PyTorch 复现 **EEGNet（Lawhern 2018）、ShallowConvNet 与 DeepConvNet（Schirrmeister 2017）**，在 BCI Competition IV 2a 上与 **FBCSP 基线**并排比对，并把论文数字放进同一张表。",
-        "结果：FBCSP 复现成功（**67.7% vs 67.8%**）、ShallowConvNet 接近（**71.4% vs 71.9%**）、**DeepConvNet 未复现（55.0% vs 70.1%）**，作者判断原因是此处按试次训练而非按 crop 训练。",
-        "所有数字均由仓库代码在笔记本上用 README 给出的命令产出，且附每被试准确率图。"
+        "青岛一位两次脑出血的患者在传统康复进入瓶颈后，接受**无创脑机接口康复**：系统捕捉「想要动」的意图并驱动肢体，医生对照**实时脑电**为其定制训练方案。",
+        "报道称两个月后运动与语言功能明显改善；背后是**康复大学＋医院**的「医工闭环」——临床提问题、高校攻关、方案回病房，强调「不用开颅」。",
+        "注意这是媒体单一病例报道（无对照、无量化指标），可作趋势观察，不能当作疗效证据。"
       ],
       "bullets_en": [
-        "PyTorch reimplementations of EEGNet (Lawhern 2018), ShallowConvNet and DeepConvNet (Schirrmeister 2017) on BCI Competition IV 2a, placed next to an FBCSP baseline with the papers' numbers in the same table.",
-        "FBCSP reproduces (67.7% vs 67.8%), ShallowConvNet nearly does (71.4% vs 71.9%), and DeepConvNet does not (55.0% vs 70.1%), most likely because it is trained trial-wise here instead of on crops.",
-        "Every number comes from the repository's own code on a laptop using the documented command, with per-subject accuracy plots."
+        "After conventional rehabilitation plateaued, a patient with two cerebral haemorrhages in Qingdao received non-invasive BCI rehabilitation: the system captures the intention to move and drives the limb, with clinicians tailoring training from real-time EEG.",
+        "The report describes clear motor and language gains after two months, backed by a clinical-research loop between a rehabilitation university and hospitals — problems raised clinically, solved by researchers, returned to the ward, without craniotomy.",
+        "It is a single-case media report with no controls or quantitative measures: useful as a trend signal, not as evidence of efficacy."
       ],
-      "url": "https://github.com/Tommycode3/eeg-repro",
-      "published": "2026-10-30T17:58:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 eeg-repro（2026-10-30）做的是一件社区长期缺的事：把 **EEGNet、ShallowConvNet、DeepConvNet** 在 BCI IV 2a 上从零复现，与 **FBCSP 基线**并排，并把论文数字放进同一张表。结果值得细读——FBCSP 复现成功（67.7% vs 67.8%），ShallowConvNet 接近（71.4% vs 71.9%），但 **DeepConvNet 只有 55.0%，而论文是 70.1%**，作者判断是因为这里按试次训练、而非按 crop 训练。这种「敢报阴性结果」的做法比又一个刷点仓库有价值得多：它告诉你哪些数字可以当基线、哪些需要在特定训练范式下才成立。所有结果都给出可执行命令与每被试图，适合当复现基准。",
-      "brief_en": "Created 2026-10-30, eeg-repro reimplements EEGNet, ShallowConvNet and DeepConvNet on BCI IV 2a next to an FBCSP baseline with the papers' numbers in one table. FBCSP reproduces (67.7% vs 67.8%) and ShallowConvNet nearly does (71.4% vs 71.9%), but DeepConvNet reaches only 55.0% against 70.1%, likely because it is trained trial-wise rather than on crops.",
-      "tags": [
-        "replication",
-        "eegnet",
-        "shallowconvnet",
-        "deepconvnet",
-        "fbscp"
-      ],
-      "raw_excerpt": "README: \"PyTorch reimplementations of EEGNet (Lawhern et al., 2018), ShallowConvNet and DeepConvNet (Schirrmeister et al., 2017), trained and tested on BCI Competition IV 2a next to an FBCSP baseline, with the papers' numbers in the same table. FBCSP reproduces (67.7 % vs 67.8 %) and ShallowConvNet nearly does (71.4 % vs 71.9 %). DeepConvNet does not (55.0 % vs 70.1 %), most likely because it is trained trial-wise here instead of on crops.\"",
-      "fetched_at": "2026-10-30T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Tommycode3/eeg-repro",
-      "author_handle": "Tommycode3",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "敢报 DeepConvNet 复现失败，明确哪些数字可当基线、哪些依赖训练范式。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "flicker2grasp：SSVEP 解码驱动 MuJoCo 机械臂，逐条真实试次回放",
-      "title_en": "flicker2grasp: SSVEP Decoding Driving a MuJoCo Arm, Trial by Trial",
-      "bullets_zh": [
-        "用公开 12 目标 SSVEP 数据集的**真实留出试次**驱动 MuJoCo 机械臂做抓放；机械臂执行的每个命令都来自解码器对真实试次的输出，**解码错误以红色显示**。",
-        "报告具体成绩：**ensemble TRCA + 0.5 s 窗口**下 97.1% 的 episode 能在约 19 秒内完成；方法覆盖 CCA、FBCCA、TRCA。",
-        "带 tests、results、pyproject 与 CITATION，属可复现的端到端演示，而不是一段视频。"
-      ],
-      "bullets_en": [
-        "It drives a MuJoCo arm doing pick-and-place from real held-out trials of a public 12-target SSVEP dataset; every command executed is what the decoder output for a real trial, with decoding errors shown in red.",
-        "Reported results: with ensemble TRCA on 0.5 s windows the arm finishes 97.1% of episodes in about 19 s; methods cover CCA, FBCCA and TRCA.",
-        "It ships tests, results, pyproject and CITATION, making it a reproducible end-to-end demo rather than a video."
-      ],
-      "url": "https://github.com/Tommycode3/flicker2grasp",
-      "published": "2026-10-30T15:23:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 flicker2grasp（2026-10-30）把 SSVEP 解码真正接到机器人上：用公开 **12 目标数据集**的**真实留出试次**驱动 MuJoCo 机械臂做抓放，而且**机械臂执行的每条命令都是解码器对真实试次的输出，解码错误用红色标出**——这一点很关键，多数演示会挑成功片段，这个仓库把错误也放给你们看。方法覆盖 CCA、FBCCA、TRCA，并给出具体成绩：**ensemble TRCA＋0.5 s 窗口下 97.1% 的 episode 约 19 秒完成**。带 tests 与 results，属可复现的端到端演示。对做 BCI 应用层（而非只做离线分类）的团队，这是少见的、把「解码→控制」闭环与误差可视化都做出来的参考。",
-      "brief_en": "Created 2026-10-30, flicker2grasp connects SSVEP decoding to a robot: real held-out trials from a public 12-target dataset drive a MuJoCo arm, and every executed command is the decoder's output for a real trial with errors shown in red. It covers CCA, FBCCA and TRCA and reports that ensemble TRCA on 0.5 s windows completes 97.1% of episodes in about 19 s.",
-      "tags": [
-        "ssvep",
-        "trca",
-        "mujoco",
-        "robot-arm",
-        "closed-loop"
-      ],
-      "raw_excerpt": "Description: \"SSVEP BCI on real EEG (CCA, FBCCA, TRCA) driving a MuJoCo robot arm, end to end, benchmarked and tested.\" README: \"Every command it executes is what the decoder output for a real trial of the intended class; decoding errors show in red. With ensemble TRCA on 0.5 s windows the arm finishes 97.1 % of episodes in about 19 s.\"",
-      "fetched_at": "2026-10-30T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Tommycode3/flicker2grasp",
-      "author_handle": "Tommycode3",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "把解码错误也展示出来，并给出可复现的端到端成绩（97.1%/19s）。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "NeuroKiln（脑炉）：协议优先、防泄漏的 BCI 评测与调参平台",
-      "title_en": "NeuroKiln: A Protocol-First, Leakage-Preventing BCI Evaluation and Tuning Platform",
-      "bullets_zh": [
-        "定位是把**数据集、协议划分、丹方（DAG）**、指标统计、报告与复现包收敛成**一条可审计流水线**，核心卖点是「可复现、防泄漏」。",
-        "工程形态完整：Dockerfile、CI、CHANGELOG、CITATION.cff、CONTRIBUTING/CODE_OF_CONDUCT，Apache-2.0，Python 3.10/3.12＋Node 20+，README 自标 **alpha**。",
-        "对「同一数据、不同划分口径下指标不可比」的老问题，把协议（划分）作为一等公民是目前最实际的解法。"
-      ],
-      "bullets_en": [
-        "It folds datasets, protocol splits, recipe DAGs, metric aggregation, reports and reproduction packages into one auditable pipeline, with reproducibility and leakage prevention as the pitch.",
-        "The scaffolding is complete: Dockerfile, CI, CHANGELOG, CITATION.cff, CONTRIBUTING/CODE_OF_CONDUCT, Apache-2.0, Python 3.10/3.12 with Node 20+, and the README labels it alpha.",
-        "For the old problem that metrics are incomparable across split conventions, making the protocol a first-class object is the most practical fix available."
-      ],
-      "url": "https://github.com/JadueW/neurokiln",
-      "published": "2026-10-30T16:17:00Z",
-      "source": "github",
+      "url": "https://www.bilibili.com/video/BV1GjxC6rEwo/",
+      "published": "2026-10-31T09:30:00Z",
+      "source": "bilibili",
       "language": "zh",
-      "brief": "新建仓库 NeuroKiln（脑炉，2026-10-30）提出一个很对题的定位：**协议优先、可复现、防泄漏**的 BCI 算法评测与调参平台——把数据集、**协议划分**、丹方（DAG）、指标统计、报告与复现包收敛成一条**可审计流水线**。EEG 领域长期的问题是「同一数据集换个划分口径，指标就不可比」，而它把划分协议当成一等公民，从源头记录「这次分数是在什么条件下得到的」。工程形态也很规范（Dockerfile、CI、CHANGELOG、CITATION、Apache-2.0）。注意 README 自标 **alpha**：适合用来建立可审计的评测流程，暂不宜作为基准结论的唯一来源；建议先在小数据集上跑通端到端，再接入自己的协议。",
-      "brief_en": "Created 2026-10-30, NeuroKiln pitches protocol-first, reproducible, leakage-preventing BCI evaluation: datasets, protocol splits, recipe DAGs, metrics, reports and reproduction packages in one auditable pipeline. Since metrics stop being comparable once split conventions change, treating the protocol as first-class is the practical fix. It ships Dockerfile, CI and Apache-2.0 but is alpha.",
+      "brief": "闪电新闻「寻找中国康湾」报道了一位青岛患者的康复路径：两次脑出血后传统康复进入瓶颈，转而接受**无创脑机接口康复**——系统捕捉患者「想要动」的意图并驱动肢体完成动作，医生对照**实时脑电数据**为其定制训练方案；报道称两个月后运动与语言功能明显改善。更值得记录的是其组织方式：**康复大学与医院打通「医工闭环」**，临床提问题、高校攻技术、成熟方案回病房，并强调「不用开颅」。对国内做康复 BCI 的团队，这是一个可参考的落地范式；但请注意这是**单一病例的媒体叙述**，无对照、无量化指标，疗效不能外推。",
+      "brief_en": "A Qingdao TV report follows a patient with two cerebral haemorrhages who received non-invasive BCI rehabilitation: the system reads the intention to move and drives the limb while clinicians adjust training from real-time EEG, with gains reported after two months. Its value is the clinical-research loop between a rehabilitation university and hospitals, though it is one uncorroborated case.",
       "tags": [
-        "evaluation",
-        "protocol",
-        "leakage",
-        "reproducibility",
-        "platform"
+        "rehabilitation",
+        "non-invasive",
+        "clinical-loop",
+        "qingdao",
+        "case-report"
       ],
-      "raw_excerpt": "Description:「NeuroKiln（脑炉）— 协议优先、可复现的 BCI 算法评测与调参平台」。README:「**可复现、防泄漏的 BCI 算法评测与调参平台** 把数据集、协议划分、丹方（DAG）、指标统计、报告与复现包收敛成一条可审计流水线。」badges: Apache-2.0、Python 3.10|3.12、Node 20+、status alpha。Contents: Dockerfile, Dockerfile, CHANGELOG.md, CITATION.cff, CONTRIBUTING.md, .github 等。",
-      "fetched_at": "2026-10-30T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "JadueW/neurokiln",
-      "author_handle": "JadueW",
+      "raw_excerpt": "「直到他们在这里接触到了无创脑机接口康复，才终于等来转机。和传统被动康复不一样，这套技术捕捉患者大脑里『想要动』的意图，再驱动肢体完成动作。医生对照着实时脑电数据，为匙茂昌定制训练方案。短短两个月，他的运动功能和语言功能都有了明显改善。」「背后是康复大学和医院打通的医工闭环：临床提出康复难题，高校科研团队攻关技术难点，再把成熟的方案送回病房。不用开颅…」",
+      "fetched_at": "2026-10-31T23:50:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1GjxC6rEwo",
+      "author_handle": "闪电新闻",
       "metrics": {
         "play": null,
-        "like": 1,
+        "like": 584,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "给出无创康复 BCI 的医工闭环落地范式，但仅是单一病例媒体叙述。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Squiggly 用谐波梳检测周期性伪迹，并把基频/谐波/通道覆盖率写入结果",
+      "title_en": "Squiggly Detects Periodic Artifacts With a Harmonic Comb and Records Fundamental, Harmonics and Coverage",
+      "bullets_zh": [
+        "每次分析都会在**已陷波**的原始 EEG 上跑 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`：每个来源的**基频、谐波、常见频率**，以及出现在哪些通道、覆盖率多少。",
+        "开关 `preprocessing.remove_periodic_artifacts` 打开后，会把这些谱线从原始 EEG 中减去，再做后续清洗——**先记录、再按需去除**。",
+        "这类伪迹（工频谐波、设备周期性噪声）常被当成「脑电节律」，带来源信息的检测比单纯陷波更可复核。"
+      ],
+      "bullets_en": [
+        "Every analysis now runs biofeedback-core's harmonic-comb detector on the mains-notched raw EEG and stores findings in results.periodic_artifacts: each source's fundamental, harmonics, usual frequencies, the channels involved and coverage.",
+        "With preprocessing.remove_periodic_artifacts enabled, those lines are subtracted from the raw EEG before further cleaning — record first, remove on request.",
+        "Such artifacts (mains harmonics, device-periodic noise) are often mistaken for neural rhythms, and provenance-carrying detection is far more auditable than a plain notch filter."
+      ],
+      "url": "https://github.com/alexdni/squiggly/commit/ee943c783b",
+      "published": "2026-10-31T04:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Squiggly 合并 ee943c783b：在**已陷波**的原始 EEG 上运行 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`——每个来源的**基频、谐波、常见频率**，以及被检出的**通道与覆盖率**。默认只记录，只有打开 `preprocessing.remove_periodic_artifacts` 才把这些谱线从原始数据里减去。这个设计比「一律陷波」更可复核：工频谐波与设备周期性噪声经常伪装成脑电节律（例如被误当成 alpha 峰或纺锤波），先量化来源、再决定是否去除，能让评估报告说清「这条线是什么、出现在哪」。对做静息态筛查或自动报告的平台，这是值得借鉴的伪迹处理范式。",
+      "brief_en": "Squiggly merged ee943c783b: a harmonic-comb detector runs on mains-notched raw EEG and stores findings in results.periodic_artifacts — each source's fundamental, harmonics, usual frequencies, channels and coverage. Recording is default; lines are subtracted only when remove_periodic_artifacts is enabled. Such artifacts mimic neural rhythms, so quantifying before removal is more auditable.",
+      "tags": [
+        "squiggly",
+        "artifact",
+        "harmonic-comb",
+        "notch",
+        "provenance"
+      ],
+      "raw_excerpt": "Commit ee943c783b: \"feat(periodic): detect periodic artifacts and remove them on request — Every analysis now runs biofeedback-core's harmonic-comb detector (0.34.0-beta.2) on the mains-notched raw EEG and stores what it finds in results.periodic_artifacts: each source's fundamental, harmonics, their usual frequencies, and the channels it was found on with coverage. With preprocessing.remove_periodic_artifacts on, the lines are subtracted from the raw EEG before cle[aning]\" (15 files).",
+      "fetched_at": "2026-10-31T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "alexdni/squiggly@ee943c783b",
+      "author_handle": "alexdni",
+      "metrics": {
+        "play": null,
+        "like": 34,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "把划分协议当一等公民，从源头记录指标在什么条件下得到，防泄漏可比。"
+      "why_valuable": "先量化伪迹来源（基频/谐波/通道/覆盖率）再按需去除，比一律陷波可复核。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "aeon-neuro 一天四个 ENH：带标签/分组/溯源的分类用例、更多格式与 BIDS 事件保留",
-      "title_en": "aeon-neuro's Four ENH Commits: Cases With Labels/Groups/Provenance, More Formats, BIDS Events",
+      "title_zh": "Eelbrain 的 boosting 编译优化提到约 3 倍，并把执行上下文写进结果",
+      "title_en": "Eelbrain's Boosting Compilation Optimisation Is ~3x Faster, With Execution Context Recorded",
       "bullets_zh": [
-        "「Construct classification cases with **labels, groups and provenance**」把「这份数据怎么来的」写入用例，配合「Prepare **verified EEG metadata corrections**」形成可追溯的元数据链。",
-        "「Extend EEG loading with **additional formats**」与「Preserve source **BIDS events and recording metadata**」解决导入即丢信息的老问题。",
-        "对做跨数据集/跨设备基准的团队，分组与溯源字段是能否做「按被试/设备留一」评估的前提。"
+        "#265「OPT compile optimization (boosting ~3× faster)」——boosting 模型编译阶段优化，整体约 3 倍提速。",
+        "#267「Improve execution_context information stored with BoostingResult」把执行上下文（环境/参数/版本）随结果保存，便于复现与追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 `marimo.notebook_dir()`。",
+        "对做 boost 类解码分析的团队，3 倍提速直接改变「能扫多大参数空间」的可行性；上下文留存则决定结果能否被复现。"
       ],
       "bullets_en": [
-        "Constructing classification cases with labels, groups and provenance records how data was produced, paired with prepared verified EEG metadata corrections to form a traceable metadata chain.",
-        "Extending EEG loading with additional formats and preserving source BIDS events plus recording metadata fixes the classic loss of information on import.",
-        "For cross-dataset or cross-device benchmarks, group and provenance fields are the prerequisite for leave-one-subject or leave-one-device evaluation."
+        "#265 optimises compilation for boosting models, making the pipeline roughly three times faster overall.",
+        "#267 stores richer execution_context with BoostingResult (environment, parameters, versions) for reproducibility; #266 fixes the RawPipe cache toggle and #264 makes load_pipeline use marimo.notebook_dir().",
+        "For boost-based decoding, a 3x speedup changes how large a parameter space is feasible, while the context record decides whether results can be reproduced."
       ],
-      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/233",
-      "published": "2026-10-30T16:16:00Z",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/265",
+      "published": "2026-10-31T10:08:00Z",
       "source": "github",
       "language": "en",
-      "brief": "aeon-neuro 在 10-30 一天推进 5 次提交（4 个 ENH）：①为分类用例加入 **labels / groups / provenance**，让「这份数据来自哪个被试、哪个设备、怎么处理过」随用例一起走；②准备**已核实的 EEG 元数据更正**；③扩展 EEG 读取支持**更多格式**；④在导入时**保留源 BIDS 事件与记录元数据**。这些改动看起来分散，实际都指向同一件事——**别在导入环节丢信息**。对做跨数据集/跨设备基准的团队，分组与溯源字段直接决定能否做「按被试留一」「按设备留一」这类评估；缺失时只能退回粗暴的全局划分，结论会被高估。",
-      "brief_en": "aeon-neuro made five commits on Oct 30, four enhancements: classification cases now carry labels, groups and provenance; verified EEG metadata corrections are prepared; EEG loading supports more formats; and source BIDS events plus recording metadata are preserved on import — all about not losing information, which decides whether leave-one-subject or leave-one-device evaluation is possible.",
+      "brief": "Eelbrain 在 10-31 推进 4 次提交，最关键的是 **#265：boosting 的编译优化，整体约 3 倍提速**。对做 boost 类解码（如 TRF/时间响应函数）的团队，这不是「跑得快一点」——它直接改变能扫多大参数空间、以及交叉验证能否多折，很多原本要跑一夜的实验现在能放进日常迭代。配套的 **#267 把执行上下文写进 `BoostingResult`**（环境、参数、版本随结果保存），让「这条结果是在什么条件下得到的」可追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 marimo 的 notebook 目录。建议升级后既享受提速，也检查上下文记录是否满足你们的复现要求。",
+      "brief_en": "Eelbrain made four commits on Oct 31, the headline being #265: a compilation optimisation making boosting about three times faster, which changes how large a parameter space and how many CV folds are feasible. #267 stores richer execution_context with BoostingResult for traceability, #266 fixes the RawPipe cache toggle and #264 aligns load_pipeline with marimo directories.",
       "tags": [
-        "aeon-neuro",
+        "eelbrain",
+        "boosting",
+        "performance",
         "provenance",
-        "bids",
-        "metadata",
-        "benchmarking"
+        "trf"
       ],
-      "raw_excerpt": "Commits 2026-10-30: \"[ENH] Construct classification cases with labels, groups and provenanc[e]\" (96abe6e6ad) 16:15Z; \"[ENH] Extend EEG loading with additional formats (#225)\" (544b2bc717) 16:04Z; \"[ENH] Preserve source BIDS events and recording metadata (#233)\" (5008958ce2) 16:03Z; \"[ENH] Prepare verified EEG metadata corrections (#218)\" (89fad7028f) 11:37Z.",
-      "fetched_at": "2026-10-30T23:55:00Z",
+      "raw_excerpt": "Commits 2026-10-31: \"OPT compile optimization (boosting ~3 x faster) (#265)\" 10:08Z; \"Improve execution_context information stored with BoostingResult (#267)\" 16:36Z; \"Fix cache toggle for RawPipe (#266)\" 18:17Z; \"load_pipeline: use marimo.notebook_dir() (#264)\" 10:10Z.",
+      "fetched_at": "2026-10-31T23:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "aeon-toolkit/aeon-neuro@96abe6e6ad",
-      "author_handle": "aeon-toolkit",
+      "upstream_id": "Eelbrain/Eelbrain#265",
+      "author_handle": "Eelbrain",
       "metrics": {
         "play": null,
-        "like": 33,
+        "like": 87,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "分组与溯源字段是「按被试/设备留一」评估的前提，缺了只能粗暴划分。"
+      "why_valuable": "3 倍提速直接扩大可扫参数空间，配套执行上下文让结果可追溯。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "PiEEG-server 0.50.0：校准功能从云端搬回本地开源服务",
+      "title_en": "PiEEG-server 0.50.0 Ports Calibration From the Cloud Into the Open Local Server",
+      "bullets_zh": [
+        "0.50.0 把**校准**从 `PiEEG-server-cloud` 移植进开源 `PiEEG-server`：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并附组件与逻辑测试。",
+        "对硬件用户意味着**不依赖云端也能完成校准**——离线实验室、无外网环境可正常使用，数据不必离开本地。",
+        "PiEEG 是树莓派 8 通道 EEG 的常用开源方案；校准是幅值可信的前提，缺它则跨通道/跨设备比较无意义。"
+      ],
+      "bullets_en": [
+        "Version 0.50.0 ports calibration from PiEEG-server-cloud into the open PiEEG-server, adding a CalibrationPage and lib/calibration.ts to the dashboard with component and logic tests.",
+        "For hardware users this means calibrating without the cloud — offline labs and air-gapped setups work, and data need not leave the machine.",
+        "PiEEG is a common open Raspberry Pi 8-channel EEG stack; calibration is the precondition for trustworthy amplitudes and any cross-channel or cross-device comparison."
+      ],
+      "url": "https://github.com/pieeg-club/PiEEG-server/commit/881508a5cc",
+      "published": "2026-10-31T17:50:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "PiEEG-server 发布 **0.50.0**，把**校准**从 `PiEEG-server-cloud` 移植进开源本地服务：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并带来组件与逻辑测试。这件事对硬件用户的意义是「**不必依赖云端就能校准**」——离线实验室、内网或涉隐私场景都能用，数据不用离开本机。PiEEG 是树莓派 8 通道 EEG 的常用开源方案，而校准是幅值可信的前提：没有它，跨通道、跨设备、跨天的幅度比较基本无从谈起。对自建采集的团队，建议升级后按厂家流程重跑一次校准，并把校准记录（时间、增益、阻抗）纳入实验元数据。",
+      "brief_en": "PiEEG-server 0.50.0 ports calibration from PiEEG-server-cloud into the open local server, adding a CalibrationPage and lib/calibration.ts with tests. Users can now calibrate without the cloud, which matters for offline or privacy-sensitive setups. Since calibration underpins trustworthy amplitudes, re-run it after upgrading and keep calibration records.",
+      "tags": [
+        "pieeg",
+        "calibration",
+        "raspberry-pi",
+        "offline",
+        "open-hardware"
+      ],
+      "raw_excerpt": "Commits 2026-10-31: \"Port calibration from PiEEG-server-cloud into PiEEG-server.\" (881508a5cc) 17:50Z — files include dashboard/src/lib/calibration.ts, dashboard/src/components/CalibrationPage…, dashboard/src/__tests__/lib/calibration., dashboard/src/App.tsx; \"Bump version to 0.50.0\" (9de9576ee3) 17:59Z.",
+      "fetched_at": "2026-10-31T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "pieeg-club/PiEEG-server@881508a5cc",
+      "author_handle": "pieeg-club",
+      "metrics": {
+        "play": null,
+        "like": 59,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "校准本地化后可离线使用、数据不出本机，幅值可信才有跨设备比较。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 修 FilterBankLayer 的 TorchScript 兼容（PyTorch 2.15）",
-      "title_en": "braindecode Fixes FilterBankLayer's TorchScript Compatibility With PyTorch 2.15",
+      "title_zh": "braindecode 要求 PyTorch/TorchAudio ≥ 2.6，并加入可选的慢测试层",
+      "title_en": "braindecode Requires PyTorch/TorchAudio >= 2.6 and Adds an Opt-In Slow Test Tier",
       "bullets_zh": [
-        "#1501 让 **FilterBankLayer** 在 PyTorch 2.15 下仍可被 **TorchScript** 编译——滤波器组是 FBCSP 类方法与深度模型融合的常用组件。",
-        "TorchScript 兼容性直接决定模型能否导出、在 C++/移动端或推理服务里跑；一旦回归，通常是部署阶段才暴露。",
-        "同批还有 CI 方面的小修（把已移除贡献者的主页从 Link Check 排除），不影响功能。"
+        "#1504 把依赖下限提到 **PyTorch 与 TorchAudio ≥ 2.6**——旧环境升级时可能需同步升 PyTorch，或遇到 API 变化。",
+        "同批引入**可选的慢测试层**（opt-in）、运行它的 CI 步骤，以及一个 caller-state fixture，让耗时测试不再拖慢日常 PR 反馈。",
+        "对把 braindecode 固定在某版本的下游项目，建议先在独立环境验证 2.6 兼容性再统一升级。"
       ],
       "bullets_en": [
-        "#1501 keeps FilterBankLayer compilable by TorchScript under PyTorch 2.15; filter banks are a common building block when combining FBCSP-style methods with deep models.",
-        "TorchScript compatibility decides whether a model can be exported and run in C++, on mobile or in an inference service, and regressions usually surface only at deployment.",
-        "A small CI fix (excluding a removed contributor's profile from Link Check) landed alongside, with no behavioural effect."
+        "#1504 raises the floor to PyTorch and TorchAudio >= 2.6, so older environments may need a coordinated PyTorch upgrade or hit API changes.",
+        "The same batch adds an opt-in slow test tier, the CI step that runs it, and a caller-state fixture, so expensive tests no longer slow everyday PR feedback.",
+        "Downstream projects pinning braindecode should validate 2.6 compatibility in a separate environment before upgrading everywhere."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1501",
-      "published": "2026-10-30T20:25:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1504",
+      "published": "2026-10-31T21:11:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 合并 #1501：让 **FilterBankLayer 在 PyTorch 2.15 下仍能通过 TorchScript 编译**。这条对「离线训练完就结束」的团队看似无关，但对要**部署**的人很关键——滤波组层是 FBCSP 式方法与深度模型融合时的常用组件，TorchScript 一旦不兼容，模型就无法导出到 C++、移动端或推理服务，而且这类回归通常到部署阶段才暴露，本地训练一切正常。对已有导出流程的团队，建议在升级 PyTorch 或 braindecode 后，把「训练→保存→`torch.jit.script`→推理结果一致性」做成一条 CI 检查，而不是靠手工试。",
-      "brief_en": "braindecode merged #1501 keeping FilterBankLayer TorchScript-compilable under PyTorch 2.15. Filter banks are a common building block for FBCSP-style deep models, and TorchScript compatibility decides whether a model can be exported to C++, mobile or inference services — regressions usually appear only at deployment. Make train-save-script-infer consistency a CI check.",
+      "brief": "braindecode 合并 #1504，把依赖下限提到 **PyTorch 与 TorchAudio ≥ 2.6**。对下游是实际的迁移信号：老环境要么升 PyTorch（可能伴随 API 变化与 CUDA 版本联动），要么继续锁旧版 braindecode，二者不能兼得。同批还引入**可选的慢测试层**（opt-in）与运行它的 CI 步骤，外加 caller-state fixture——把「耗时的集成测试」与「日常 PR 的快速反馈」分开，是维护大型科学库的现实做法。建议先在独立 conda/venv 里验证 2.6 兼容性（尤其涉及自定义算子与 TorchScript 导出路径的代码），再统一升级生产环境。",
+      "brief_en": "braindecode merged #1504 raising the floor to PyTorch and TorchAudio >= 2.6, a real migration signal: upgrade PyTorch (with possible API and CUDA coupling) or stay on older braindecode. It also adds an opt-in slow test tier with its CI step and a caller-state fixture, separating expensive integration tests from fast PR feedback.",
       "tags": [
         "braindecode",
-        "torchscript",
-        "filterbank",
-        "deployment",
-        "pytorch"
+        "pytorch",
+        "dependencies",
+        "ci",
+        "slow-tests"
       ],
-      "raw_excerpt": "PR #1501 merged 2026-10-30T20:25Z: \"FIX FilterBankLayer TorchScript with PyTorch 2.15 (master CI)\". Same day: \"CI: exclude a removed contributor's profile from Link Check (#1502)\" 20:45Z.",
-      "fetched_at": "2026-10-30T23:55:00Z",
+      "raw_excerpt": "Commits 2026-10-31: \"Require PyTorch and TorchAudio >= 2.6 (#1504)\" 21:11Z; \"Opt-in slow test tier, a CI step that runs it, and a caller-state fixt[ure]\" 18:30Z. Repo: braindecode/braindecode.",
+      "fetched_at": "2026-10-31T23:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1501",
+      "upstream_id": "braindecode/braindecode#1504",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -241,103 +241,103 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "TorchScript 不兼容会让模型无法导出部署，且通常到上线才暴露。"
+      "quality_score": 7,
+      "why_valuable": "依赖下限升到 PyTorch 2.6，下游要么升级要么锁旧版，需先隔离验证。"
     },
     {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MNE-Python 给 GIFTI 导出加时间信息元数据",
-      "title_en": "MNE-Python Adds Timing Metadata to GIFTI Exports",
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "BCI Atlas：零依赖、可离线的脑机接口文献导航站（含主题地图与研究空白）",
+      "title_en": "BCI Atlas: A Zero-Dependency, Offline BCI Literature Map With Thematic and Gap Views",
       "bullets_zh": [
-        "#14361 在导出 GIFTI 时写入**时间信息元数据**，使表面/几何数据在跨工具传递时保留时间轴语义（此前只剩几何，时间信息靠外部约定）。",
-        "GIFTI 常用于皮层表面与源空间结果交换；缺时间信息会让下游工具（如 Connectome Workbench）无法正确解释时间序列。",
-        "同批另有 pre-commit 钩子版本更新与一处 CI 修复（Azure/figure 检查），不影响行为。"
+        "中文项目，五个页面：总览、**主题地图**、时间线、文献卡片库、**研究空白**；强调「零依赖、可离线使用」，已部署到 GitHub Pages。",
+        "对刚进入领域的人，它把「哪些方向在做、时间上如何演进、还缺什么」压到一屏可扫；对写综述/开题的人是省时的索引层。",
+        "注意它是导航/索引而非数据库：收录范围与文献覆盖度需自行核对，引用前回到原始论文。"
       ],
       "bullets_en": [
-        "#14361 writes timing metadata into GIFTI exports so surface geometry carries temporal semantics across tools, where previously only geometry travelled and time relied on external convention.",
-        "GIFTI is widely used to exchange cortical surface and source-space results; without timing metadata, downstream tools such as Connectome Workbench cannot interpret time series correctly.",
-        "The batch also bumps pre-commit hooks and fixes a CI check, with no behavioural effect."
+        "A Chinese project with five views — overview, thematic map, timeline, paper cards and research gaps — emphasising zero dependencies and offline use, deployed on GitHub Pages.",
+        "For newcomers it compresses what directions exist, how they evolved and what is missing into screens you can scan; for reviews or proposals it saves indexing time.",
+        "It is a navigation layer rather than a database: check coverage yourself and always return to the original papers before citing."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14361",
-      "published": "2026-10-30T14:05:00Z",
+      "url": "https://github.com/liming0320-guo/bci-atlas",
+      "published": "2026-10-31T04:10:00Z",
       "source": "github",
-      "language": "en",
-      "brief": "MNE-Python 合并 #14361：导出 **GIFTI** 时写入**时间信息元数据**。GIFTI 是皮层表面与源空间结果交换的常用格式，但过去导出只带几何、时间轴含义要靠外部约定——一旦交给下游工具（典型如 Connectome Workbench），时间序列就可能被按错误的采样解释，或者只能靠人工记录。把时间信息写进文件本身，属于「格式层面消除歧义」的正确做法。对做源空间分析、或需要在 MATLAB/Python/Workbench 之间搬表面数据的团队，建议升级后重导一份并确认下游能读到时间轴；同批的 pre-commit 与 CI 修复不影响行为。",
-      "brief_en": "MNE-Python merged #14361 adding timing metadata to GIFTI exports. GIFTI exchanges cortical surface and source-space results, but exports previously carried only geometry, leaving temporal meaning to external convention — downstream tools like Connectome Workbench could misinterpret time series. Writing timing into the file removes the ambiguity; re-export and confirm downstream reads it.",
+      "language": "zh",
+      "brief": "新建仓库 BCI Atlas（脑机接口研究地图，2026-10-31）是一个**零依赖、可离线使用**的中文文献导航站，分五个页面：总览、**主题地图**、时间线、文献卡片库与**研究空白**。它的价值在于「索引层」而不是内容本身——刚进入领域的人可以在几分钟内看清有哪些方向、时间上如何演进、以及作者认为还缺什么；写综述或开题时也比从零检索省时。已部署到 GitHub Pages，可直接浏览。提醒两点：它是导航而非权威数据库，收录范围与覆盖度需自行核对；「研究空白」是作者判断，引用前务必回到原始论文确认。",
+      "brief_en": "Created 2026-10-31, BCI Atlas is a zero-dependency, offline-capable Chinese literature map with five views: overview, thematic map, timeline, paper cards and research gaps. Its value is as an indexing layer — newcomers see which directions exist and how they evolved, reviews save search time — but coverage must be verified and claims traced to original papers.",
       "tags": [
-        "mne-python",
-        "gifti",
-        "metadata",
-        "surface",
-        "interoperability"
+        "literature-map",
+        "navigation",
+        "thematic-map",
+        "chinese",
+        "offline"
       ],
-      "raw_excerpt": "Commits 2026-10-30: \"ENH: Add timing metadata to GIFTI exports (#14361)\" (f1eb427989) 14:05Z; \"Fix active figure check and Azure (#14469)\" 17:14Z; \"MAINT: Update pre-commit hook versions (#14432)\" 18:04Z.",
-      "fetched_at": "2026-10-30T23:55:00Z",
+      "raw_excerpt": "README:「一个零依赖、可离线使用的脑机接口文献导航网站。核心内容分为总览、主题地图、时间线、文献卡片库与研究空白五个页面。」「当前公网网址：<https://liming0320-guo.github.io/bci-atlas/>」Contents size ≈86 KB.",
+      "fetched_at": "2026-10-31T23:50:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14361",
-      "author_handle": "mne-tools",
+      "upstream_id": "liming0320-guo/bci-atlas",
+      "author_handle": "liming0320-guo",
       "metrics": {
         "play": null,
-        "like": 3575,
+        "like": 0,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "GIFTI 缺时间信息会让下游按错误采样解释，写进文件才算真正可交换。"
+      "why_valuable": "把方向/时间线/研究空白压成可扫的索引层，写综述与开题时省检索时间。"
     },
     {
-      "type": "News",
-      "level": "Advanced",
-      "title_zh": "《中国科学院院刊》发文：为脑机接口构建「工程性能—临床功能—患者体验」三轴证据框架",
-      "title_en": "CAS Bulletin: A Three-Axis Evidence Framework for BCI — Engineering, Clinical Function, Patient Experience",
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 从 mne-data 提供 lite-data",
+      "title_en": "MNE-Python Serves Lite-Data From mne-data",
       "bullets_zh": [
-        "论文指出 BCI 的固有特征（**样本规模小、技术路径差异大、产品迭代快**）使不同研究的安全性与有效性数据难以整合横向比较，循证医学的层级化证据结构不能直接套用。",
-        "提出**三轴证据框架**：把工程性能、临床功能与**患者体验**并列，并针对探索性研究、限定推广、常规化应用三个发展阶段给出差异化证据要求。",
-        "刊于《中国科学院院刊》2026 年第 9 期「科技与社会」，作者戚文秀、周程（北京大学哲学系）——属政策与监管路径讨论，而非具体设备评测。"
+        "#14473 让 `mne-data` 承担 **lite-data** 的分发——示例/教学数据集可更轻量地获取，减少首次使用与 CI 的下载负担。",
+        "lite-data 通常是裁剪过的示例数据：字段保留但样本减少，适合教程、单元测试与文档构建。",
+        "对教学与 CI 场景，这能显著缩短「装完就能跑」的时间；完整数据分析仍需原始数据集。"
       ],
       "bullets_en": [
-        "The paper argues BCI inherent traits — small samples, divergent technical routes and fast product iteration — make safety and efficacy data hard to integrate or compare, so evidence-based medicine hierarchical structure cannot be applied directly.",
-        "It proposes a three-axis evidence framework placing engineering performance, clinical function and patient experience side by side, with differentiated requirements for exploratory research, limited rollout and routine use.",
-        "Published in the CAS Bulletin 2026 issue 9 (Science, Technology and Society) by Qi Wenxiu and Zhou Cheng (Peking University, Philosophy) — a regulatory-path discussion rather than a device evaluation."
+        "#14473 has mne-data serve lite-data, making example and teaching datasets lighter to fetch and cutting first-run and CI download costs.",
+        "Lite-data is typically trimmed example data: same fields, fewer samples, suited to tutorials, unit tests and doc builds.",
+        "For teaching and CI this shortens time-to-first-result; full analyses still need the original datasets."
       ],
-      "url": "https://www.bilibili.com/read/cv53684548",
-      "published": "2026-10-30T11:44:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站转载的《中国科学院院刊》2026 年第 9 期文章，讨论 BCI 的**临床证据体系**问题：样本规模小、技术路径差异大、产品迭代快，导致各家安全性与有效性数据难以整合比较，而循证医学那套层级化证据结构无法直接套用。作者提出**三轴证据框架**——把**工程性能、临床功能与患者体验**并列，并针对探索性研究、限定推广、常规化应用三个阶段给出差异化证据要求，最后讨论审评落地路径。对产业与监管双方都有参考价值：它解释清了「为什么 BCI 领域至今缺少可比数据」，并给出可操作的证据分级思路；注意这是政策/方法学讨论，不涉及具体设备性能验证。",
-      "brief_en": "A CAS Bulletin 2026 issue-9 article on the BCI clinical evidence system: small samples, divergent routes and fast iteration make safety and efficacy data hard to integrate, so the evidence-based medicine hierarchy cannot be applied. It proposes a three-axis framework — engineering performance, clinical function, patient experience — with differentiated requirements across three development stages.",
+      "url": "https://github.com/mne-tools/mne-python/pull/14473",
+      "published": "2026-10-31T20:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14473：改由 `mne-data` 提供 **lite-data** 分发。lite-data 一般是裁剪过的示例数据（字段保留、样本变少），恰好覆盖教程、单元测试与文档构建这三类最耗下载的场景——此前它们和完整数据集走同一套获取路径，首次上手与 CI 都要等大文件。改为从 `mne-data` 提供后，教学环境与流水线能更快「装完即跑」。提醒：lite-data 只适合流程演示与回归测试，真正的分析结论仍必须用原始数据；如果你在 CI 里依赖示例数据的统计结果，升级后请核对样本量变化是否影响断言。",
+      "brief_en": "MNE-Python merged #14473 so mne-data serves lite-data: trimmed example data with the same fields but fewer samples, covering tutorials, unit tests and doc builds that previously waited on full datasets. Teaching environments and CI reach results faster, but full analyses need the originals — check whether smaller samples affect test assertions.",
       "tags": [
-        "evidence-framework",
-        "regulation",
-        "clinical-translation",
-        "policy",
-        "cas-bulletin"
+        "mne-python",
+        "lite-data",
+        "examples",
+        "ci",
+        "distribution"
       ],
-      "raw_excerpt": "「原文刊载于《中国科学院院刊》2026年第9期（科技与社会） 戚文秀 周程 北京大学 哲学系」「受限于该技术固有的样本规模小、技术路径差异大和产品迭代快等特征，不同研究的安全性和有效性数据难以实现有效整合与横向比较」「将工程性能、临床功能与患者体验并列，构建三轴证据框架；进而，针对探索性研究、限定推广与常规化应用3个发展阶段提出差异化的证据要求」",
-      "fetched_at": "2026-10-31T04:05:00Z",
-      "platform": "bilibili",
-      "content_type": "column",
-      "upstream_id": "cv53684548",
-      "author_handle": "中国科学院院刊",
+      "raw_excerpt": "Commit 2026-10-31T20:33Z: \"Serve lite-data from mne-data (#14473)\". Repo: mne-tools/mne-python (latest release v1.13.2).",
+      "fetched_at": "2026-10-31T23:50:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14473",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 4,
+        "like": 3577,
         "collect": null,
-        "comment": 1
+        "comment": null
       },
-      "quality_score": 9,
-      "why_valuable": "解释清 BCI 缺可比数据的根因，并给出工程/临床/体验三轴的可操作证据分级。"
+      "quality_score": 7,
+      "why_valuable": "示例数据走轻量分发，教学与 CI 首次上手更快，但结论仍须原始数据。"
     }
   ],
   "stats": {
     "fetched": 132,
     "prefiltered": 96,
-    "llm_rows": 16,
+    "llm_rows": 20,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 2
+    "conflicts_dropped": 4
   }
 }
