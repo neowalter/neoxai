@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T11:01:14.642Z",
+  "generatedAt": "2026-10-31T10:35:58.060Z",
   "sources": [
     {
       "id": "huggingface",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 9
+      "count": 8
     }
   ],
   "items": [
@@ -357,24 +357,20 @@
       ]
     },
     {
-      "id": "zenodo:23592484",
-      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
-      "owner": "Horáková, Gabriela",
-      "url": "https://doi.org/10.5281/zenodo.23592484",
-      "source": "zenodo",
-      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
+      "id": "openneuro:ds008851",
+      "name": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008851",
+      "source": "openneuro",
+      "description": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
       "tags": [
-        "EEG",
-        "ADHD",
-        "Mind Wandering",
-        "SART",
-        "Probes",
-        "Boredom"
+        "BIDS",
+        "eeg"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 10417,
+      "license": "CC0",
+      "downloads": null,
       "likes": null,
-      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "updatedAt": "2026-09-21T08:31:11.516Z",
       "modality": [
         "EEG"
       ]
@@ -397,9 +393,32 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 7333,
+      "downloads": 10726,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23592484",
+      "name": "ATTLAPSE: Behavioral and EEG data of ADHD patients and neurotypical controls during a Go/No-Go task with embedded thought-probes",
+      "owner": "Horáková, Gabriela",
+      "url": "https://doi.org/10.5281/zenodo.23592484",
+      "source": "zenodo",
+      "description": "Protocol Twenty-eight medication-na&iuml;ve patients diagnosed with attention-deficit/hyperactivity disorder (ADHD) and twenty-eight healthy control participants completed a Go/No-Go task (Sustained Attention to Response Task; SART) embedded with thought-probes (experience sampl…",
+      "tags": [
+        "EEG",
+        "ADHD",
+        "Mind Wandering",
+        "SART",
+        "Probes",
+        "Boredom"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 10455,
+      "likes": null,
+      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -422,7 +441,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 6934,
+      "downloads": 6853,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -447,7 +466,7 @@
         "eeg"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2006,
+      "downloads": 2001,
       "likes": 2,
       "updatedAt": "2026-10-28T15:13:25.000Z",
       "modality": [
@@ -472,7 +491,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2020,
+      "downloads": 2040,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -497,27 +516,9 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1677,
+      "downloads": 1628,
       "likes": 2,
       "updatedAt": "2026-09-29T21:10:37.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 1093,
-      "likes": 1,
-      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -539,9 +540,27 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 1330,
+      "downloads": 1491,
       "likes": 1,
       "updatedAt": "2026-08-18T03:24:57.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 1188,
+      "likes": 1,
+      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -561,7 +580,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 780,
+      "downloads": 751,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -577,7 +596,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 432,
+      "downloads": 433,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -600,7 +619,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 388,
+      "downloads": 408,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -625,7 +644,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 321,
+      "downloads": 327,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -647,7 +666,7 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 149,
+      "downloads": 150,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
       "modality": [
@@ -667,7 +686,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 477,
+      "downloads": 479,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -784,6 +803,22 @@
       ]
     },
     {
+      "id": "zenodo:23598820",
+      "name": "Distinguishing evidence accumulation from choice confidence in neural signatures of perceptual decision making",
+      "owner": "Monakhovych, Daria",
+      "url": "https://doi.org/10.5281/zenodo.23598820",
+      "source": "zenodo",
+      "description": "This repository contains anonymised data from an EEG perceptual decision-making task examining how predictive cues influence perceptual choices, confidence, and neural activity. The dataset includes behavioural data, centro-parietal positivity (CPP) and mu-beta activity, as well…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 7,
+      "likes": null,
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23464852",
       "name": "EEG-ECG Dataset for Sternberg Working Memory Task under Low and High Cognitive Load",
       "owner": "Atiwiwat, Danita",
@@ -794,25 +829,9 @@
         "working memory"
       ],
       "license": "cc-by-4.0",
-      "downloads": 24,
+      "downloads": 27,
       "likes": null,
       "updatedAt": "2026-10-19T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23598820",
-      "name": "Distinguishing evidence accumulation from choice confidence in neural signatures of perceptual decision making",
-      "owner": "Monakhovych, Daria",
-      "url": "https://doi.org/10.5281/zenodo.23598820",
-      "source": "zenodo",
-      "description": "This repository contains anonymised data from an EEG perceptual decision-making task examining how predictive cues influence perceptual choices, confidence, and neural activity. The dataset includes behavioural data, centro-parietal positivity (CPP) and mu-beta activity, as well…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -849,8 +868,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 16,
-      "updatedAt": "2026-10-30T06:24:12.000Z",
+      "likes": 17,
+      "updatedAt": "2026-10-31T06:24:12.000Z",
       "modality": [
         "EEG"
       ]
@@ -874,7 +893,7 @@
       "license": "Apache-2.0",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-10-29T21:08:04.000Z",
+      "updatedAt": "2026-10-30T15:12:08.000Z",
       "modality": [
         "EEG"
       ]
@@ -970,7 +989,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-29T22:16:05.000Z",
+      "updatedAt": "2026-10-30T21:37:55.000Z",
       "modality": [
         "EEG"
       ]
@@ -995,32 +1014,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-10-29T17:35:44.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Caroline070590/EEG_emotions_CSF",
-      "name": "EEG_emotions_CSF",
-      "owner": "Caroline070590",
-      "url": "https://github.com/Caroline070590/EEG_emotions_CSF",
-      "source": "github",
-      "description": "Code for \"EEG network organization across affective video conditions\" (Chaos, Solitons & Fractals): stimulus-aware EEG network analysis of the FACED dataset with an independent replication in SEED-VII.",
-      "tags": [
-        "affective-computing",
-        "eeg",
-        "emotion",
-        "functional-connectivity",
-        "graph-neural-networks",
-        "graph-theory",
-        "mixed-effects-models",
-        "network-neuroscience"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-27T21:45:19.000Z",
+      "updatedAt": "2026-10-30T11:29:14.000Z",
       "modality": [
         "EEG"
       ]
