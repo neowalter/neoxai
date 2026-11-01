@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T10:35:58.060Z",
+  "generatedAt": "2026-11-01T11:29:19.397Z",
   "sources": [
     {
       "id": "huggingface",
@@ -393,7 +393,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10726,
+      "downloads": 11193,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -416,7 +416,7 @@
         "Boredom"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10455,
+      "downloads": 10463,
       "likes": null,
       "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
@@ -441,7 +441,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 6853,
+      "downloads": 6930,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -466,7 +466,7 @@
         "eeg"
       ],
       "license": "cc-by-4.0",
-      "downloads": 2001,
+      "downloads": 1996,
       "likes": 2,
       "updatedAt": "2026-10-28T15:13:25.000Z",
       "modality": [
@@ -491,7 +491,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2040,
+      "downloads": 2072,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -516,9 +516,27 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 1628,
+      "downloads": 1608,
       "likes": 2,
       "updatedAt": "2026-09-29T21:10:37.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sigmanova/synthetic_data_for_eeg",
+      "name": "synthetic_data_for_eeg",
+      "owner": "sigmanova",
+      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
+      "source": "huggingface",
+      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
+      "tags": [
+        "afl-3.0"
+      ],
+      "license": "afl-3.0",
+      "downloads": 1260,
+      "likes": 1,
+      "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
         "EEG"
       ]
@@ -540,49 +558,9 @@
         "benchmark"
       ],
       "license": "other",
-      "downloads": 1491,
+      "downloads": 1509,
       "likes": 1,
       "updatedAt": "2026-08-18T03:24:57.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sigmanova/synthetic_data_for_eeg",
-      "name": "synthetic_data_for_eeg",
-      "owner": "sigmanova",
-      "url": "https://huggingface.co/datasets/sigmanova/synthetic_data_for_eeg",
-      "source": "huggingface",
-      "description": "Synthetic data for EEG This repo contains all the new datasets introduced and used for our paper \"On the impact of synthetic data for EEG foundation models pretraining\". Those synthetic datasets where generated using the code avaialable here [https://github.com/JibrilEl/syntheti…",
-      "tags": [
-        "afl-3.0"
-      ],
-      "license": "afl-3.0",
-      "downloads": 1188,
-      "likes": 1,
-      "updatedAt": "2026-10-08T07:54:26.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
-      "name": "eeg-fmri-ds006040-derived",
-      "owner": "Yvhang009",
-      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
-      "source": "huggingface",
-      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "fmri",
-        "neuroimaging",
-        "neurobolt"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 751,
-      "likes": 0,
-      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -596,7 +574,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 433,
+      "downloads": 434,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -619,9 +597,31 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 408,
+      "downloads": 409,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Yvhang009/eeg-fmri-ds006040-derived",
+      "name": "eeg-fmri-ds006040-derived",
+      "owner": "Yvhang009",
+      "url": "https://huggingface.co/datasets/Yvhang009/eeg-fmri-ds006040-derived",
+      "source": "huggingface",
+      "description": "EEG-fMRI ds006040 standardized derivatives This public development dataset is the persistent, versioned data layer for an external NeuroBOLT replication on OpenNeuro ds006040. The repository does not mirror the complete OpenNeuro dataset. OpenNeuro is the authoritative raw-data…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "fmri",
+        "neuroimaging",
+        "neurobolt"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 688,
+      "likes": 0,
+      "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
         "EEG"
       ]
@@ -644,7 +644,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 327,
+      "downloads": 318,
       "likes": 4,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -652,25 +652,29 @@
       ]
     },
     {
-      "id": "hf:xw1216/openneuro-hbn-eeg-releases-v1-0-1",
-      "name": "openneuro-hbn-eeg-releases-v1-0-1",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-releases-v1-0-1",
+      "id": "hf:HABSteam/multimodal-eeg-emotion",
+      "name": "multimodal-eeg-emotion",
+      "owner": "HABSteam",
+      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
       "source": "huggingface",
-      "description": "HBN EEG: one archive per release, R1-R11 This repository publishes one lossless .tar.gz archive per HBN EEG release, fixed at OpenNeuro version 1.0.1, including R6. Source: https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1/tree/987f221fcf9fe858d01b6c8a918697750…",
+      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 384 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
       "tags": [
-        "cc-by-sa-4.0",
         "eeg",
-        "hbn",
+        "ecg",
+        "electrodermal-activity",
+        "respiration",
+        "eye-tracking",
+        "emotion",
         "neuroscience",
-        "archive"
+        "biosignals"
       ],
-      "license": "cc-by-sa-4.0",
-      "downloads": 150,
+      "license": "other",
+      "downloads": 127,
       "likes": 0,
-      "updatedAt": "2026-10-17T19:47:18.000Z",
+      "updatedAt": "2026-10-31T10:14:48.000Z",
       "modality": [
-        "EEG"
+        "EEG",
+        "ECG"
       ]
     },
     {
@@ -686,7 +690,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 479,
+      "downloads": 523,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -711,7 +715,7 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 85,
+      "downloads": 92,
       "likes": null,
       "updatedAt": "2026-10-29T00:00:00.000Z",
       "modality": [
@@ -727,7 +731,7 @@
       "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 79,
+      "downloads": 95,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
       "modality": [
@@ -751,10 +755,10 @@
       ]
     },
     {
-      "id": "zenodo:23787197",
+      "id": "zenodo:23851102",
       "name": "P300-BCI EEG dataset: sitting vs. supine posture",
       "owner": "Chailloux Peguero, Juan David",
-      "url": "https://doi.org/10.5281/zenodo.23787197",
+      "url": "https://doi.org/10.5281/zenodo.23851102",
       "source": "zenodo",
       "description": "# P300-BCI EEG dataset: sitting vs. supine posture EEG recordings of a five-target visual P300 brain&ndash;computer interface (BCI) task. Ten healthy volunteers performed the task in two postures: sitting (SIT) and supine (SUP). This dataset accompanies the article: &gt; Chaillo…",
       "tags": [
@@ -763,9 +767,9 @@
         "information transfer rate"
       ],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
-      "updatedAt": "2026-10-30T00:00:00.000Z",
+      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -787,6 +791,22 @@
       ]
     },
     {
+      "id": "zenodo:23598820",
+      "name": "Distinguishing evidence accumulation from choice confidence in neural signatures of perceptual decision making",
+      "owner": "Monakhovych, Daria",
+      "url": "https://doi.org/10.5281/zenodo.23598820",
+      "source": "zenodo",
+      "description": "This repository contains anonymised data from an EEG perceptual decision-making task examining how predictive cues influence perceptual choices, confidence, and neural activity. The dataset includes behavioural data, centro-parietal positivity (CPP) and mu-beta activity, as well…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 25,
+      "likes": null,
+      "updatedAt": "2026-10-23T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23637330",
       "name": "Pre-registration: configuration search and locked test for EEG-to-language-model word retrieval on ZuCo 2.0",
       "owner": "San, Khin Pyae Phyo",
@@ -798,22 +818,6 @@
       "downloads": 12,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23598820",
-      "name": "Distinguishing evidence accumulation from choice confidence in neural signatures of perceptual decision making",
-      "owner": "Monakhovych, Daria",
-      "url": "https://doi.org/10.5281/zenodo.23598820",
-      "source": "zenodo",
-      "description": "This repository contains anonymised data from an EEG perceptual decision-making task examining how predictive cues influence perceptual choices, confidence, and neural activity. The dataset includes behavioural data, centro-parietal positivity (CPP) and mu-beta activity, as well…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 7,
-      "likes": null,
-      "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -834,6 +838,35 @@
       "updatedAt": "2026-10-19T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
+      "tags": [
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 90,
+      "updatedAt": "2026-11-01T04:28:58.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "iEEG",
+        "fNIRS",
+        "EMG"
       ]
     },
     {
@@ -869,7 +902,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 17,
-      "updatedAt": "2026-10-31T06:24:12.000Z",
+      "updatedAt": "2026-10-31T21:34:01.000Z",
       "modality": [
         "EEG"
       ]
@@ -894,31 +927,6 @@
       "downloads": null,
       "likes": 3,
       "updatedAt": "2026-10-30T15:12:08.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
-      "name": "NMT-4k-EEG-Dataset",
-      "owner": "dll-ncai",
-      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
-      "source": "github",
-      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
-      "tags": [
-        "abnormality-detection",
-        "biomedical-signals",
-        "clinical-eeg",
-        "clinical-reports",
-        "eeg",
-        "eeg-dataset",
-        "electroencephalography",
-        "event-annotations"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 3,
-      "updatedAt": "2026-10-28T08:20:42.000Z",
       "modality": [
         "EEG"
       ]
