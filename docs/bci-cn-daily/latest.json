@@ -1,239 +1,65 @@
 {
-  "date": "2026-11-01",
-  "generated_at": "2026-10-31T21:32:32.756Z",
+  "date": "2026-11-02",
+  "generated_at": "2026-11-01T21:32:54.917Z",
   "item_count": 7,
   "types": {
-    "News": 1,
-    "Project": 5,
-    "Tutorial": 1
+    "Project": 7
   },
   "highlights": [
     {
-      "title_zh": "Squiggly 用谐波梳检测周期性伪迹，并把基频/谐波/通道覆盖率写入结果",
-      "title_en": "Squiggly Detects Periodic Artifacts With a Harmonic Comb and Records Fundamental, Harmonics and Coverage",
-      "url": "https://github.com/alexdni/squiggly/commit/ee943c783b",
-      "brief": "Squiggly 合并 ee943c783b：在**已陷波**的原始 EEG 上运行 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`——每个来源的**基频、谐波、常见频率**，以及被检出的**通道与覆盖率**。默认只记录，只有打开 `preprocessing.remove_periodic_artifacts` 才把这些谱线从原始数据里减去。这个设计比「一律陷波」更可复核：工频谐波与设备周期性噪声经常伪装成脑电节律（例如被误当成 alpha 峰或纺锤波），先量化来源、再决定是否去除，能让评估报告说清「这条线是什么、出现在哪」。对做静息态筛查或自动报告的平台，这是值得借鉴的伪迹处理范式。"
+      "title_zh": "braindecode 新增 NEMARDataset：直接从 NEMAR Zarr 流式读取公开数据集",
+      "title_en": "braindecode Adds NEMARDataset to Stream Public Datasets From the NEMAR Zarr Copy",
+      "url": "https://github.com/braindecode/braindecode/pull/1439",
+      "brief": "braindecode 合并 #1439：新增 **NEMARDataset**，可从 **NEMAR 的 Zarr 服务副本**按需流式读取数据，而不必先整包下载再解压——对动辄几十 GB 的公开 EEG 数据集，这是「先试一下」与「不敢碰」的区别。同批的 #1493 更进一步：**记录基础模型预训练语料**，并新增 `check_pretraining_overlap` 用于检查预训练数据与评测集是否重叠。两条合起来正好对应社区眼下最痛的两件事：公开数据难用、以及「你的 SOTA 是不是见过测试集」。对做 EEG 基础模型或跨数据集基准的团队，建议把语料记录与重叠检查纳入实验流程，而不是事后被质疑再补。"
     },
     {
-      "title_zh": "Eelbrain 的 boosting 编译优化提到约 3 倍，并把执行上下文写进结果",
-      "title_en": "Eelbrain's Boosting Compilation Optimisation Is ~3x Faster, With Execution Context Recorded",
-      "url": "https://github.com/Eelbrain/Eelbrain/pull/265",
-      "brief": "Eelbrain 在 10-31 推进 4 次提交，最关键的是 **#265：boosting 的编译优化，整体约 3 倍提速**。对做 boost 类解码（如 TRF/时间响应函数）的团队，这不是「跑得快一点」——它直接改变能扫多大参数空间、以及交叉验证能否多折，很多原本要跑一夜的实验现在能放进日常迭代。配套的 **#267 把执行上下文写进 `BoostingResult`**（环境、参数、版本随结果保存），让「这条结果是在什么条件下得到的」可追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 marimo 的 notebook 目录。建议升级后既享受提速，也检查上下文记录是否满足你们的复现要求。"
+      "title_zh": "braindecode 修 BENDR 输出与预训练参考不一致，以及 MaxNormLinear 约束错维度",
+      "title_en": "braindecode Fixes BENDR Output Mismatch and MaxNormLinear Constraining the Wrong Axis",
+      "url": "https://github.com/braindecode/braindecode/pull/1498",
+      "brief": "braindecode 同一天修了两处「形状对、能跑、但语义错」的模型 bug：**#1498 让 BENDR contextualizer 的输出与预训练参考一致**（此前加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间出发）；**#1476 修 `MaxNormLinear` 约束了输入列而不是输出单元**（权重归一化作用在错轴）。这类 bug 不会报错，只会让微调结果莫名偏低或方差变大，通常被归咎于「数据不够」。用 BENDR 或 MaxNorm 做过迁移/微调的实验，建议升级后重跑并对比特征统计（均值/方差/维度）是否与参考实现吻合；若差异明显，之前的结论需要重新审视。"
     },
     {
-      "title_zh": "PiEEG-server 0.50.0：校准功能从云端搬回本地开源服务",
-      "title_en": "PiEEG-server 0.50.0 Ports Calibration From the Cloud Into the Open Local Server",
-      "url": "https://github.com/pieeg-club/PiEEG-server/commit/881508a5cc",
-      "brief": "PiEEG-server 发布 **0.50.0**，把**校准**从 `PiEEG-server-cloud` 移植进开源本地服务：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并带来组件与逻辑测试。这件事对硬件用户的意义是「**不必依赖云端就能校准**」——离线实验室、内网或涉隐私场景都能用，数据不用离开本机。PiEEG 是树莓派 8 通道 EEG 的常用开源方案，而校准是幅值可信的前提：没有它，跨通道、跨设备、跨天的幅度比较基本无从谈起。对自建采集的团队，建议升级后按厂家流程重跑一次校准，并把校准记录（时间、增益、阻抗）纳入实验元数据。"
+      "title_zh": "TorchEEG 让常量通道的归一化保持有限值，并修扩散采样与工具默认值",
+      "title_en": "TorchEEG Keeps Normalisation Finite for Constant Channels and Fixes Diffusion Sampling",
+      "url": "https://github.com/torcheeg/torcheeg/pull/337",
+      "brief": "TorchEEG 在 11-01 合并 4 个修复，最实用的是 **#337：常量通道的归一化保持有限值**。真实记录里「某通道方差为 0」（电极脱落、放大器饱和、被屏蔽）非常常见，而 z-score 一遇到 0 方差就会产出 **inf/NaN**，随后污染整个 batch、让训练损失直接崩掉，且现象常被误判为「学习率问题」。同批还修了#338 速度扩散采样与工具默认值、#336 镜像源模块并强制 CPU 测试覆盖、#194 在内存数据集中保留字符串 metadata ID。对用 TorchEEG 做大规模训练/扩散模型的团队，建议升级后检查数据管线里是否已对常量通道做过滤或加保护。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-01.md",
+  "github_path": "docs/bci-cn-daily/2026-11-02.md",
   "items": [
     {
-      "type": "News",
-      "level": "Beginner",
-      "title_zh": "闪电新闻「寻找中国康湾」：无创脑机接口康复如何接入医工闭环",
-      "title_en": "Non-Invasive BCI Rehabilitation Inside a Clinical-Research Loop: A Report From Qingdao",
-      "bullets_zh": [
-        "青岛一位两次脑出血的患者在传统康复进入瓶颈后，接受**无创脑机接口康复**：系统捕捉「想要动」的意图并驱动肢体，医生对照**实时脑电**为其定制训练方案。",
-        "报道称两个月后运动与语言功能明显改善；背后是**康复大学＋医院**的「医工闭环」——临床提问题、高校攻关、方案回病房，强调「不用开颅」。",
-        "注意这是媒体单一病例报道（无对照、无量化指标），可作趋势观察，不能当作疗效证据。"
-      ],
-      "bullets_en": [
-        "After conventional rehabilitation plateaued, a patient with two cerebral haemorrhages in Qingdao received non-invasive BCI rehabilitation: the system captures the intention to move and drives the limb, with clinicians tailoring training from real-time EEG.",
-        "The report describes clear motor and language gains after two months, backed by a clinical-research loop between a rehabilitation university and hospitals — problems raised clinically, solved by researchers, returned to the ward, without craniotomy.",
-        "It is a single-case media report with no controls or quantitative measures: useful as a trend signal, not as evidence of efficacy."
-      ],
-      "url": "https://www.bilibili.com/video/BV1GjxC6rEwo/",
-      "published": "2026-10-31T09:30:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "闪电新闻「寻找中国康湾」报道了一位青岛患者的康复路径：两次脑出血后传统康复进入瓶颈，转而接受**无创脑机接口康复**——系统捕捉患者「想要动」的意图并驱动肢体完成动作，医生对照**实时脑电数据**为其定制训练方案；报道称两个月后运动与语言功能明显改善。更值得记录的是其组织方式：**康复大学与医院打通「医工闭环」**，临床提问题、高校攻技术、成熟方案回病房，并强调「不用开颅」。对国内做康复 BCI 的团队，这是一个可参考的落地范式；但请注意这是**单一病例的媒体叙述**，无对照、无量化指标，疗效不能外推。",
-      "brief_en": "A Qingdao TV report follows a patient with two cerebral haemorrhages who received non-invasive BCI rehabilitation: the system reads the intention to move and drives the limb while clinicians adjust training from real-time EEG, with gains reported after two months. Its value is the clinical-research loop between a rehabilitation university and hospitals, though it is one uncorroborated case.",
-      "tags": [
-        "rehabilitation",
-        "non-invasive",
-        "clinical-loop",
-        "qingdao",
-        "case-report"
-      ],
-      "raw_excerpt": "「直到他们在这里接触到了无创脑机接口康复，才终于等来转机。和传统被动康复不一样，这套技术捕捉患者大脑里『想要动』的意图，再驱动肢体完成动作。医生对照着实时脑电数据，为匙茂昌定制训练方案。短短两个月，他的运动功能和语言功能都有了明显改善。」「背后是康复大学和医院打通的医工闭环：临床提出康复难题，高校科研团队攻关技术难点，再把成熟的方案送回病房。不用开颅…」",
-      "fetched_at": "2026-10-31T23:50:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV1GjxC6rEwo",
-      "author_handle": "闪电新闻",
-      "metrics": {
-        "play": null,
-        "like": 584,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "给出无创康复 BCI 的医工闭环落地范式，但仅是单一病例媒体叙述。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Squiggly 用谐波梳检测周期性伪迹，并把基频/谐波/通道覆盖率写入结果",
-      "title_en": "Squiggly Detects Periodic Artifacts With a Harmonic Comb and Records Fundamental, Harmonics and Coverage",
-      "bullets_zh": [
-        "每次分析都会在**已陷波**的原始 EEG 上跑 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`：每个来源的**基频、谐波、常见频率**，以及出现在哪些通道、覆盖率多少。",
-        "开关 `preprocessing.remove_periodic_artifacts` 打开后，会把这些谱线从原始 EEG 中减去，再做后续清洗——**先记录、再按需去除**。",
-        "这类伪迹（工频谐波、设备周期性噪声）常被当成「脑电节律」，带来源信息的检测比单纯陷波更可复核。"
-      ],
-      "bullets_en": [
-        "Every analysis now runs biofeedback-core's harmonic-comb detector on the mains-notched raw EEG and stores findings in results.periodic_artifacts: each source's fundamental, harmonics, usual frequencies, the channels involved and coverage.",
-        "With preprocessing.remove_periodic_artifacts enabled, those lines are subtracted from the raw EEG before further cleaning — record first, remove on request.",
-        "Such artifacts (mains harmonics, device-periodic noise) are often mistaken for neural rhythms, and provenance-carrying detection is far more auditable than a plain notch filter."
-      ],
-      "url": "https://github.com/alexdni/squiggly/commit/ee943c783b",
-      "published": "2026-10-31T04:24:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "Squiggly 合并 ee943c783b：在**已陷波**的原始 EEG 上运行 biofeedback-core 的**谐波梳检测器**，把结果写入 `results.periodic_artifacts`——每个来源的**基频、谐波、常见频率**，以及被检出的**通道与覆盖率**。默认只记录，只有打开 `preprocessing.remove_periodic_artifacts` 才把这些谱线从原始数据里减去。这个设计比「一律陷波」更可复核：工频谐波与设备周期性噪声经常伪装成脑电节律（例如被误当成 alpha 峰或纺锤波），先量化来源、再决定是否去除，能让评估报告说清「这条线是什么、出现在哪」。对做静息态筛查或自动报告的平台，这是值得借鉴的伪迹处理范式。",
-      "brief_en": "Squiggly merged ee943c783b: a harmonic-comb detector runs on mains-notched raw EEG and stores findings in results.periodic_artifacts — each source's fundamental, harmonics, usual frequencies, channels and coverage. Recording is default; lines are subtracted only when remove_periodic_artifacts is enabled. Such artifacts mimic neural rhythms, so quantifying before removal is more auditable.",
-      "tags": [
-        "squiggly",
-        "artifact",
-        "harmonic-comb",
-        "notch",
-        "provenance"
-      ],
-      "raw_excerpt": "Commit ee943c783b: \"feat(periodic): detect periodic artifacts and remove them on request — Every analysis now runs biofeedback-core's harmonic-comb detector (0.34.0-beta.2) on the mains-notched raw EEG and stores what it finds in results.periodic_artifacts: each source's fundamental, harmonics, their usual frequencies, and the channels it was found on with coverage. With preprocessing.remove_periodic_artifacts on, the lines are subtracted from the raw EEG before cle[aning]\" (15 files).",
-      "fetched_at": "2026-10-31T23:50:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "alexdni/squiggly@ee943c783b",
-      "author_handle": "alexdni",
-      "metrics": {
-        "play": null,
-        "like": 34,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "先量化伪迹来源（基频/谐波/通道/覆盖率）再按需去除，比一律陷波可复核。"
-    },
-    {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "Eelbrain 的 boosting 编译优化提到约 3 倍，并把执行上下文写进结果",
-      "title_en": "Eelbrain's Boosting Compilation Optimisation Is ~3x Faster, With Execution Context Recorded",
+      "title_zh": "braindecode 新增 NEMARDataset：直接从 NEMAR Zarr 流式读取公开数据集",
+      "title_en": "braindecode Adds NEMARDataset to Stream Public Datasets From the NEMAR Zarr Copy",
       "bullets_zh": [
-        "#265「OPT compile optimization (boosting ~3× faster)」——boosting 模型编译阶段优化，整体约 3 倍提速。",
-        "#267「Improve execution_context information stored with BoostingResult」把执行上下文（环境/参数/版本）随结果保存，便于复现与追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 `marimo.notebook_dir()`。",
-        "对做 boost 类解码分析的团队，3 倍提速直接改变「能扫多大参数空间」的可行性；上下文留存则决定结果能否被复现。"
+        "#1439 新增 **NEMARDataset**，可从 NEMAR 的 **Zarr 服务副本**按需流式读取数据——不必先整包下载再本地解压。",
+        "对公开数据基准与预训练，这大幅降低「试一个数据集要下几十 GB」的门槛；同批 #1493 还记录**基础模型预训练语料**并新增 `check_pretraining_overlap`（检查预训练与评测集是否重叠）。",
+        "两者结合的意义：既能更容易地用公开数据，也能更容易证明「评测集没被预训练污染」。"
       ],
       "bullets_en": [
-        "#265 optimises compilation for boosting models, making the pipeline roughly three times faster overall.",
-        "#267 stores richer execution_context with BoostingResult (environment, parameters, versions) for reproducibility; #266 fixes the RawPipe cache toggle and #264 makes load_pipeline use marimo.notebook_dir().",
-        "For boost-based decoding, a 3x speedup changes how large a parameter space is feasible, while the context record decides whether results can be reproduced."
+        "#1439 adds NEMARDataset, streaming data on demand from NEMAR's Zarr serving copy instead of downloading and unpacking whole datasets first.",
+        "For public benchmarks and pretraining this removes the tens-of-gigabytes barrier to trying a dataset; #1493 also records foundation-model pretraining corpora and adds check_pretraining_overlap.",
+        "Together they make public data easier to use and make it easier to show that evaluation sets were not contaminated by pretraining."
       ],
-      "url": "https://github.com/Eelbrain/Eelbrain/pull/265",
-      "published": "2026-10-31T10:08:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1439",
+      "published": "2026-11-01T04:56:00Z",
       "source": "github",
       "language": "en",
-      "brief": "Eelbrain 在 10-31 推进 4 次提交，最关键的是 **#265：boosting 的编译优化，整体约 3 倍提速**。对做 boost 类解码（如 TRF/时间响应函数）的团队，这不是「跑得快一点」——它直接改变能扫多大参数空间、以及交叉验证能否多折，很多原本要跑一夜的实验现在能放进日常迭代。配套的 **#267 把执行上下文写进 `BoostingResult`**（环境、参数、版本随结果保存），让「这条结果是在什么条件下得到的」可追溯；#266 修 RawPipe 缓存开关，#264 让 `load_pipeline` 使用 marimo 的 notebook 目录。建议升级后既享受提速，也检查上下文记录是否满足你们的复现要求。",
-      "brief_en": "Eelbrain made four commits on Oct 31, the headline being #265: a compilation optimisation making boosting about three times faster, which changes how large a parameter space and how many CV folds are feasible. #267 stores richer execution_context with BoostingResult for traceability, #266 fixes the RawPipe cache toggle and #264 aligns load_pipeline with marimo directories.",
-      "tags": [
-        "eelbrain",
-        "boosting",
-        "performance",
-        "provenance",
-        "trf"
-      ],
-      "raw_excerpt": "Commits 2026-10-31: \"OPT compile optimization (boosting ~3 x faster) (#265)\" 10:08Z; \"Improve execution_context information stored with BoostingResult (#267)\" 16:36Z; \"Fix cache toggle for RawPipe (#266)\" 18:17Z; \"load_pipeline: use marimo.notebook_dir() (#264)\" 10:10Z.",
-      "fetched_at": "2026-10-31T23:50:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Eelbrain/Eelbrain#265",
-      "author_handle": "Eelbrain",
-      "metrics": {
-        "play": null,
-        "like": 87,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "3 倍提速直接扩大可扫参数空间，配套执行上下文让结果可追溯。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "PiEEG-server 0.50.0：校准功能从云端搬回本地开源服务",
-      "title_en": "PiEEG-server 0.50.0 Ports Calibration From the Cloud Into the Open Local Server",
-      "bullets_zh": [
-        "0.50.0 把**校准**从 `PiEEG-server-cloud` 移植进开源 `PiEEG-server`：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并附组件与逻辑测试。",
-        "对硬件用户意味着**不依赖云端也能完成校准**——离线实验室、无外网环境可正常使用，数据不必离开本地。",
-        "PiEEG 是树莓派 8 通道 EEG 的常用开源方案；校准是幅值可信的前提，缺它则跨通道/跨设备比较无意义。"
-      ],
-      "bullets_en": [
-        "Version 0.50.0 ports calibration from PiEEG-server-cloud into the open PiEEG-server, adding a CalibrationPage and lib/calibration.ts to the dashboard with component and logic tests.",
-        "For hardware users this means calibrating without the cloud — offline labs and air-gapped setups work, and data need not leave the machine.",
-        "PiEEG is a common open Raspberry Pi 8-channel EEG stack; calibration is the precondition for trustworthy amplitudes and any cross-channel or cross-device comparison."
-      ],
-      "url": "https://github.com/pieeg-club/PiEEG-server/commit/881508a5cc",
-      "published": "2026-10-31T17:50:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "PiEEG-server 发布 **0.50.0**，把**校准**从 `PiEEG-server-cloud` 移植进开源本地服务：dashboard 新增 `CalibrationPage` 与 `lib/calibration.ts`，并带来组件与逻辑测试。这件事对硬件用户的意义是「**不必依赖云端就能校准**」——离线实验室、内网或涉隐私场景都能用，数据不用离开本机。PiEEG 是树莓派 8 通道 EEG 的常用开源方案，而校准是幅值可信的前提：没有它，跨通道、跨设备、跨天的幅度比较基本无从谈起。对自建采集的团队，建议升级后按厂家流程重跑一次校准，并把校准记录（时间、增益、阻抗）纳入实验元数据。",
-      "brief_en": "PiEEG-server 0.50.0 ports calibration from PiEEG-server-cloud into the open local server, adding a CalibrationPage and lib/calibration.ts with tests. Users can now calibrate without the cloud, which matters for offline or privacy-sensitive setups. Since calibration underpins trustworthy amplitudes, re-run it after upgrading and keep calibration records.",
-      "tags": [
-        "pieeg",
-        "calibration",
-        "raspberry-pi",
-        "offline",
-        "open-hardware"
-      ],
-      "raw_excerpt": "Commits 2026-10-31: \"Port calibration from PiEEG-server-cloud into PiEEG-server.\" (881508a5cc) 17:50Z — files include dashboard/src/lib/calibration.ts, dashboard/src/components/CalibrationPage…, dashboard/src/__tests__/lib/calibration., dashboard/src/App.tsx; \"Bump version to 0.50.0\" (9de9576ee3) 17:59Z.",
-      "fetched_at": "2026-10-31T23:50:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "pieeg-club/PiEEG-server@881508a5cc",
-      "author_handle": "pieeg-club",
-      "metrics": {
-        "play": null,
-        "like": 59,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "校准本地化后可离线使用、数据不出本机，幅值可信才有跨设备比较。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "braindecode 要求 PyTorch/TorchAudio ≥ 2.6，并加入可选的慢测试层",
-      "title_en": "braindecode Requires PyTorch/TorchAudio >= 2.6 and Adds an Opt-In Slow Test Tier",
-      "bullets_zh": [
-        "#1504 把依赖下限提到 **PyTorch 与 TorchAudio ≥ 2.6**——旧环境升级时可能需同步升 PyTorch，或遇到 API 变化。",
-        "同批引入**可选的慢测试层**（opt-in）、运行它的 CI 步骤，以及一个 caller-state fixture，让耗时测试不再拖慢日常 PR 反馈。",
-        "对把 braindecode 固定在某版本的下游项目，建议先在独立环境验证 2.6 兼容性再统一升级。"
-      ],
-      "bullets_en": [
-        "#1504 raises the floor to PyTorch and TorchAudio >= 2.6, so older environments may need a coordinated PyTorch upgrade or hit API changes.",
-        "The same batch adds an opt-in slow test tier, the CI step that runs it, and a caller-state fixture, so expensive tests no longer slow everyday PR feedback.",
-        "Downstream projects pinning braindecode should validate 2.6 compatibility in a separate environment before upgrading everywhere."
-      ],
-      "url": "https://github.com/braindecode/braindecode/pull/1504",
-      "published": "2026-10-31T21:11:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "braindecode 合并 #1504，把依赖下限提到 **PyTorch 与 TorchAudio ≥ 2.6**。对下游是实际的迁移信号：老环境要么升 PyTorch（可能伴随 API 变化与 CUDA 版本联动），要么继续锁旧版 braindecode，二者不能兼得。同批还引入**可选的慢测试层**（opt-in）与运行它的 CI 步骤，外加 caller-state fixture——把「耗时的集成测试」与「日常 PR 的快速反馈」分开，是维护大型科学库的现实做法。建议先在独立 conda/venv 里验证 2.6 兼容性（尤其涉及自定义算子与 TorchScript 导出路径的代码），再统一升级生产环境。",
-      "brief_en": "braindecode merged #1504 raising the floor to PyTorch and TorchAudio >= 2.6, a real migration signal: upgrade PyTorch (with possible API and CUDA coupling) or stay on older braindecode. It also adds an opt-in slow test tier with its CI step and a caller-state fixture, separating expensive integration tests from fast PR feedback.",
+      "brief": "braindecode 合并 #1439：新增 **NEMARDataset**，可从 **NEMAR 的 Zarr 服务副本**按需流式读取数据，而不必先整包下载再解压——对动辄几十 GB 的公开 EEG 数据集，这是「先试一下」与「不敢碰」的区别。同批的 #1493 更进一步：**记录基础模型预训练语料**，并新增 `check_pretraining_overlap` 用于检查预训练数据与评测集是否重叠。两条合起来正好对应社区眼下最痛的两件事：公开数据难用、以及「你的 SOTA 是不是见过测试集」。对做 EEG 基础模型或跨数据集基准的团队，建议把语料记录与重叠检查纳入实验流程，而不是事后被质疑再补。",
+      "brief_en": "braindecode merged #1439 adding NEMARDataset, which streams data on demand from NEMAR's Zarr serving copy instead of downloading whole datasets — the difference between trying a public dataset and avoiding it. #1493 also records foundation-model pretraining corpora and adds check_pretraining_overlap, addressing hard-to-use data and SOTA that may have seen the test set.",
       "tags": [
         "braindecode",
-        "pytorch",
-        "dependencies",
-        "ci",
-        "slow-tests"
+        "nemar",
+        "zarr",
+        "streaming",
+        "pretraining"
       ],
-      "raw_excerpt": "Commits 2026-10-31: \"Require PyTorch and TorchAudio >= 2.6 (#1504)\" 21:11Z; \"Opt-in slow test tier, a CI step that runs it, and a caller-state fixt[ure]\" 18:30Z. Repo: braindecode/braindecode.",
-      "fetched_at": "2026-10-31T23:50:00Z",
+      "raw_excerpt": "PRs merged 2026-11-01: \"ENH add NEMARDataset to stream datasets from the NEMAR Zarr serving copy (#1439)\" 04:56Z; \"ENH record foundation-model pretraining corpora and add check_pretraining_ov[erlap] (#1493)\" 04:50Z. Repo: braindecode/braindecode.",
+      "fetched_at": "2026-11-01T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1504",
+      "upstream_id": "braindecode/braindecode#1439",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -241,103 +67,275 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "依赖下限升到 PyTorch 2.6，下游要么升级要么锁旧版，需先隔离验证。"
+      "quality_score": 9,
+      "why_valuable": "流式读取免整包下载，并配套预训练语料记录与重叠检查，直击数据污染质疑。"
     },
     {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "BCI Atlas：零依赖、可离线的脑机接口文献导航站（含主题地图与研究空白）",
-      "title_en": "BCI Atlas: A Zero-Dependency, Offline BCI Literature Map With Thematic and Gap Views",
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 修 BENDR 输出与预训练参考不一致，以及 MaxNormLinear 约束错维度",
+      "title_en": "braindecode Fixes BENDR Output Mismatch and MaxNormLinear Constraining the Wrong Axis",
       "bullets_zh": [
-        "中文项目，五个页面：总览、**主题地图**、时间线、文献卡片库、**研究空白**；强调「零依赖、可离线使用」，已部署到 GitHub Pages。",
-        "对刚进入领域的人，它把「哪些方向在做、时间上如何演进、还缺什么」压到一屏可扫；对写综述/开题的人是省时的索引层。",
-        "注意它是导航/索引而非数据库：收录范围与文献覆盖度需自行核对，引用前回到原始论文。"
+        "#1498：**BENDR contextualizer 的输出与预训练参考不一致**——加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间开始。",
+        "#1476：**`MaxNormLinear` 约束的是输入列而非输出单元**，权重归一化作用在错误轴上，模型容量与稳定性都受影响。",
+        "两个都属于「形状对、能跑、但语义错」类 bug；用 BENDR 或 MaxNorm 做迁移/微调的实验结论建议重跑。"
       ],
       "bullets_en": [
-        "A Chinese project with five views — overview, thematic map, timeline, paper cards and research gaps — emphasising zero dependencies and offline use, deployed on GitHub Pages.",
-        "For newcomers it compresses what directions exist, how they evolved and what is missing into screens you can scan; for reviews or proposals it saves indexing time.",
-        "It is a navigation layer rather than a database: check coverage yourself and always return to the original papers before citing."
+        "#1498: the BENDR contextualizer output did not match the pretrained reference, so loading official weights started transfer learning from the wrong feature space.",
+        "#1476: MaxNormLinear constrained input columns instead of output units, applying weight normalisation along the wrong axis and changing capacity and stability.",
+        "Both are shape-correct, runnable, semantically wrong bugs; re-run transfer or fine-tuning experiments built on BENDR or MaxNorm."
       ],
-      "url": "https://github.com/liming0320-guo/bci-atlas",
-      "published": "2026-10-31T04:10:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1498",
+      "published": "2026-11-01T04:32:00Z",
       "source": "github",
-      "language": "zh",
-      "brief": "新建仓库 BCI Atlas（脑机接口研究地图，2026-10-31）是一个**零依赖、可离线使用**的中文文献导航站，分五个页面：总览、**主题地图**、时间线、文献卡片库与**研究空白**。它的价值在于「索引层」而不是内容本身——刚进入领域的人可以在几分钟内看清有哪些方向、时间上如何演进、以及作者认为还缺什么；写综述或开题时也比从零检索省时。已部署到 GitHub Pages，可直接浏览。提醒两点：它是导航而非权威数据库，收录范围与覆盖度需自行核对；「研究空白」是作者判断，引用前务必回到原始论文确认。",
-      "brief_en": "Created 2026-10-31, BCI Atlas is a zero-dependency, offline-capable Chinese literature map with five views: overview, thematic map, timeline, paper cards and research gaps. Its value is as an indexing layer — newcomers see which directions exist and how they evolved, reviews save search time — but coverage must be verified and claims traced to original papers.",
+      "language": "en",
+      "brief": "braindecode 同一天修了两处「形状对、能跑、但语义错」的模型 bug：**#1498 让 BENDR contextualizer 的输出与预训练参考一致**（此前加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间出发）；**#1476 修 `MaxNormLinear` 约束了输入列而不是输出单元**（权重归一化作用在错轴）。这类 bug 不会报错，只会让微调结果莫名偏低或方差变大，通常被归咎于「数据不够」。用 BENDR 或 MaxNorm 做过迁移/微调的实验，建议升级后重跑并对比特征统计（均值/方差/维度）是否与参考实现吻合；若差异明显，之前的结论需要重新审视。",
+      "brief_en": "braindecode fixed two shape-correct but semantically wrong bugs: #1498 makes the BENDR contextualizer match its pretrained reference, since loading official weights previously started transfer learning from the wrong feature space; #1476 fixes MaxNormLinear constraining input columns rather than output units. Neither raises an error, so weak fine-tuning was easily blamed on data.",
       "tags": [
-        "literature-map",
-        "navigation",
-        "thematic-map",
-        "chinese",
-        "offline"
+        "braindecode",
+        "bendr",
+        "maxnorm",
+        "transfer-learning",
+        "bugfix"
       ],
-      "raw_excerpt": "README:「一个零依赖、可离线使用的脑机接口文献导航网站。核心内容分为总览、主题地图、时间线、文献卡片库与研究空白五个页面。」「当前公网网址：<https://liming0320-guo.github.io/bci-atlas/>」Contents size ≈86 KB.",
-      "fetched_at": "2026-10-31T23:50:00Z",
+      "raw_excerpt": "PRs merged 2026-11-01: \"FIX BENDR contextualizer output to match the pretrained reference (#1498)\" 04:32Z; \"FIX MaxNormLinear constraining input columns instead of output units (#1476)\" 04:40Z; \"FIX get_metadata crashing on datasets without description (#1483)\" 04:39Z.",
+      "fetched_at": "2026-11-01T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "liming0320-guo/bci-atlas",
-      "author_handle": "liming0320-guo",
+      "upstream_id": "braindecode/braindecode#1498",
+      "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 0,
+        "like": 1337,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "把方向/时间线/研究空白压成可扫的索引层，写综述与开题时省检索时间。"
+      "quality_score": 8,
+      "why_valuable": "权重加载后与参考实现不一致、归一化作用错轴，都会让微调结论静默偏移。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-Python 从 mne-data 提供 lite-data",
-      "title_en": "MNE-Python Serves Lite-Data From mne-data",
+      "title_zh": "TorchEEG 让常量通道的归一化保持有限值，并修扩散采样与工具默认值",
+      "title_en": "TorchEEG Keeps Normalisation Finite for Constant Channels and Fixes Diffusion Sampling",
       "bullets_zh": [
-        "#14473 让 `mne-data` 承担 **lite-data** 的分发——示例/教学数据集可更轻量地获取，减少首次使用与 CI 的下载负担。",
-        "lite-data 通常是裁剪过的示例数据：字段保留但样本减少，适合教程、单元测试与文档构建。",
-        "对教学与 CI 场景，这能显著缩短「装完就能跑」的时间；完整数据分析仍需原始数据集。"
+        "#337「Keep normalization finite for **constant channels**」：某通道方差为 0 时，z-score/归一化会产出 inf/NaN 并污染整批数据。",
+        "#338 修速度扩散采样与工具函数默认值；#336 镜像源模块并强制 CPU 测试覆盖；#194 在内存数据集中保留字符串 metadata ID。",
+        "常量通道在真实记录里很常见（脱落、饱和、屏蔽），处置不当会让一个坏通道毁掉整批训练。"
       ],
       "bullets_en": [
-        "#14473 has mne-data serve lite-data, making example and teaching datasets lighter to fetch and cutting first-run and CI download costs.",
-        "Lite-data is typically trimmed example data: same fields, fewer samples, suited to tutorials, unit tests and doc builds.",
-        "For teaching and CI this shortens time-to-first-result; full analyses still need the original datasets."
+        "#337 keeps normalisation finite for constant channels: when a channel has zero variance, z-scoring would emit inf or NaN and poison the whole batch.",
+        "#338 fixes velocity diffusion sampling and utility defaults, #336 mirrors source modules with enforced CPU test coverage, and #194 preserves string metadata IDs in memory datasets.",
+        "Constant channels are common in real recordings (detached, saturated, masked), and one mishandled channel can ruin an entire training batch."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14473",
-      "published": "2026-10-31T20:33:00Z",
+      "url": "https://github.com/torcheeg/torcheeg/pull/337",
+      "published": "2026-11-01T09:26:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14473：改由 `mne-data` 提供 **lite-data** 分发。lite-data 一般是裁剪过的示例数据（字段保留、样本变少），恰好覆盖教程、单元测试与文档构建这三类最耗下载的场景——此前它们和完整数据集走同一套获取路径，首次上手与 CI 都要等大文件。改为从 `mne-data` 提供后，教学环境与流水线能更快「装完即跑」。提醒：lite-data 只适合流程演示与回归测试，真正的分析结论仍必须用原始数据；如果你在 CI 里依赖示例数据的统计结果，升级后请核对样本量变化是否影响断言。",
-      "brief_en": "MNE-Python merged #14473 so mne-data serves lite-data: trimmed example data with the same fields but fewer samples, covering tutorials, unit tests and doc builds that previously waited on full datasets. Teaching environments and CI reach results faster, but full analyses need the originals — check whether smaller samples affect test assertions.",
+      "brief": "TorchEEG 在 11-01 合并 4 个修复，最实用的是 **#337：常量通道的归一化保持有限值**。真实记录里「某通道方差为 0」（电极脱落、放大器饱和、被屏蔽）非常常见，而 z-score 一遇到 0 方差就会产出 **inf/NaN**，随后污染整个 batch、让训练损失直接崩掉，且现象常被误判为「学习率问题」。同批还修了#338 速度扩散采样与工具默认值、#336 镜像源模块并强制 CPU 测试覆盖、#194 在内存数据集中保留字符串 metadata ID。对用 TorchEEG 做大规模训练/扩散模型的团队，建议升级后检查数据管线里是否已对常量通道做过滤或加保护。",
+      "brief_en": "TorchEEG merged four fixes on Nov 1, the most practical being #337: normalisation now stays finite for constant channels. Zero-variance channels (detached, saturated or masked electrodes) are common, and z-scoring them yields inf or NaN that poisons the batch and collapses training, usually misdiagnosed as a learning-rate problem. #338 fixes diffusion sampling defaults.",
       "tags": [
-        "mne-python",
-        "lite-data",
-        "examples",
-        "ci",
-        "distribution"
+        "torcheeg",
+        "normalisation",
+        "constant-channel",
+        "diffusion",
+        "bugfix"
       ],
-      "raw_excerpt": "Commit 2026-10-31T20:33Z: \"Serve lite-data from mne-data (#14473)\". Repo: mne-tools/mne-python (latest release v1.13.2).",
-      "fetched_at": "2026-10-31T23:50:00Z",
+      "raw_excerpt": "PRs merged 2026-11-01: \"Keep normalization finite for constant channels (#337)\" 09:26Z; \"Fix velocity diffusion sampling and utility defaults (#338)\" 09:31Z; \"Mirror source modules and enforce CPU test coverage (#336)\" 09:37Z; \"Preserve string metadata IDs in memory datasets (#194)\" 09:21Z.",
+      "fetched_at": "2026-11-01T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14473",
+      "upstream_id": "torcheeg/torcheeg#337",
+      "author_handle": "torcheeg",
+      "metrics": {
+        "play": null,
+        "like": 584,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "零方差通道会让 z-score 产出 inf/NaN 并污染整批，常被误判为学习率问题。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "NeuroKit2 发布 0.3.0：RR 窗口、RSA 与呼吸衍生指标的一批修正",
+      "title_en": "NeuroKit2 0.3.0: Fixes Across RR Windows, RSA and Respiratory Derivatives",
+      "bullets_zh": [
+        "v0.3.0 距上一版 v0.2.13（3 月）已 8 个月，本次合入 #1179 主发布与一批修正。",
+        "具体包括：**在每个 SDANN 窗口内保留最后一个 RR 间期**（#1213）、`hrv_rsa()` 的 RSA_PorgesBohrer 改为基于**心跳周期**计算、`rsp_rvt()` 把 `sampling_rate` 正确传入呼吸检测。",
+        "这些函数是生理信号流水线的基础件；窗口边界与采样率漏传都会让 HRV/呼吸指标系统性偏移而不报错。"
+      ],
+      "bullets_en": [
+        "v0.3.0 lands eight months after v0.2.13, folding in the #1179 main release plus a batch of fixes.",
+        "Specifically: keep the last RR interval inside each SDANN window (#1213), compute RSA_PorgesBohrer on heart period in hrv_rsa(), and pass sampling_rate into breath detection in rsp_rvt().",
+        "These are the building blocks of physiological pipelines; window-edge and sampling-rate slips shift HRV and respiratory metrics systematically without any error."
+      ],
+      "url": "https://github.com/neuropsychology/NeuroKit/releases/tag/v0.3.0",
+      "published": "2026-11-01T10:20:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "NeuroKit2 发布 **0.3.0**（距 v0.2.13 八个月），合入 #1179 主发布与一批基础函数修正：**在每个 SDANN 窗口内保留最后一个 RR 间期**（#1213，窗口边界少一跳会系统性低估 SDANN）、`hrv_rsa()` 的 RSA_PorgesBohrer 改为基于**心跳周期**计算、`rsp_rvt()` 把 `sampling_rate` 正确传入呼吸检测。这类问题的共同点是**不报错**：窗口切错或采样率漏传，指标只是悄悄偏一点，直到跨研究对比时才发现对不上。对用 NeuroKit2 做 HRV/呼吸衍生分析的团队，建议升级后对同一份数据重算关键指标并与旧版比对差额，再据此决定是否需要重跑既有结论。",
+      "brief_en": "NeuroKit2 released 0.3.0 eight months after v0.2.13, folding in the main #1179 release plus fixes: keep the last RR interval inside each SDANN window (#1213), compute RSA_PorgesBohrer on heart period in hrv_rsa(), and pass sampling_rate into breath detection in rsp_rvt(). Such slips never raise errors — metrics just drift until cross-study comparisons fail.",
+      "tags": [
+        "neurokit2",
+        "hrv",
+        "rsa",
+        "respiratory",
+        "release"
+      ],
+      "raw_excerpt": "Release v0.3.0 (2026-11-01T10:20:17Z): \"[Fix] Keep the last RR interval inside each SDANN window (#1213)\"; \"0.3.0 (#1179)\". Same-day commits: \"Merge #1233: [Fix] rsp_rvt(): pass sampling_rate to breath detection\" 08:49Z; \"Merge #1231: [Fix] hrv_rsa(): compute RSA_PorgesBohrer on heart period\" 08:49Z.",
+      "fetched_at": "2026-11-01T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "neuropsychology/NeuroKit@v0.3.0",
+      "author_handle": "neuropsychology",
+      "metrics": {
+        "play": null,
+        "like": 2410,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "窗口边界与采样率漏传不报错，只让 HRV/呼吸指标系统性偏移。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGDash 标记「MNE 读出的量级不合理」通道，并修正 nV/pV 头部缩放",
+      "title_en": "EEGDash Flags Channels MNE Reads at Implausible Scale and Fixes nV/pV Headers",
+      "bullets_zh": [
+        "#511：对 **MNE 读出的量级明显不合理**的通道打标记，并修正以 **nV/pV** 声明单位的 EDF 头部缩放。",
+        "单位声明错（把 nV 当 µV）会让幅度差 1000 倍，进而破坏伪迹阈值、频带功率与跨数据集比较——且不会报错。",
+        "对入库/分析流水线，这类「标记而不是静默修正」的做法更安全：先暴露、再决定是否重标定。"
+      ],
+      "bullets_en": [
+        "#511 flags channels that MNE reads at an implausible scale and corrects EDF headers declaring nV or pV units.",
+        "A wrong unit declaration (treating nV as µV) shifts amplitudes by 1000x, breaking artefact thresholds, band power and cross-dataset comparisons without any error.",
+        "Flagging rather than silently rescaling is the safer choice for ingestion pipelines: surface it, then decide whether to recalibrate."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/pull/511",
+      "published": "2026-11-01T04:28:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 合并 #511：**标记「MNE 读出的量级不合理」的通道**，并修正以 **nV/pV** 声明单位的 EDF 头部缩放。EEG 数据里单位声明错误是经典陷阱——把 nV 当 µV 会让幅度差 **1000 倍**，伪迹阈值、频带功率、跨数据集归一化全部被带偏，而代码不会报任何错。这个 PR 的处理方式值得借鉴：**先标记、不静默修正**，让人决定是否重标定，避免把「可能是记录问题」的数据悄悄改成「看起来正常」。对做大规模数据入库或跨数据集元分析的团队，建议在流水线里消费这些标记并统计出现频率。",
+      "brief_en": "EEGDash merged #511 flagging channels MNE reads at an implausible scale and correcting EDF headers that declare nV or pV units. Misdeclared units are a classic EEG trap — treating nV as µV shifts amplitudes by 1000x and skews artefact thresholds, band power and cross-dataset normalisation with no error raised. Flagging instead of silently rescaling keeps a human in the loop.",
+      "tags": [
+        "eeg-dash",
+        "edf",
+        "units",
+        "quality-control",
+        "metadata"
+      ],
+      "raw_excerpt": "Commit d4a6823124, 2026-11-01T04:28Z: \"fix(edf): flag channels MNE reads at an implausible scale; scale nV/pV headers (#511)\". Repo: eegdash/EEGDash.",
+      "fetched_at": "2026-11-01T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash#511",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 90,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "单位声明错会让幅度差 1000 倍且不报错，标记而非静默修正更安全。"
+    },
+    {
+      "type": "Project",
+      "level": "Beginner",
+      "title_zh": "独立开发者 NeuroMI Studio：ADS1299＋ESP32-S3 的非侵入式运动想象解码系统 V1",
+      "title_en": "NeuroMI Studio: An Independent Non-Invasive MI Decoding System on ADS1299 + ESP32-S3",
+      "bullets_zh": [
+        "硬件沿用自主设计的 **ADS1299＋ESP32-S3** 方案，范式为 **Graz 左右手运动想象**；V1 已集成多通道可视化、频谱分析、**ERD/ERS**、**ICA 伪迹分析**与 **CSP+LDA** 解码。",
+        "作者明确说明当前展示的是**软件功能与实验流程**，硬件接入、实时解码与机械臂闭环尚未完成——属阶段性 Demo。",
+        "对国内自建 BCI 工具链的个人开发者，这份「范式—分析—解码」串起来的 V1 流程图是少见的完整参考。"
+      ],
+      "bullets_en": [
+        "The hardware is a self-designed ADS1299 + ESP32-S3 stack with a Graz left/right motor-imagery paradigm; V1 already integrates multi-channel viewing, spectral analysis, ERD/ERS, ICA artefact analysis and CSP+LDA decoding.",
+        "The author states plainly that this demo shows software features and the experimental flow, with hardware integration, real-time decoding and robot-arm closed loop still pending.",
+        "For independent developers building a BCI toolchain in China, this end-to-end V1 flow (paradigm, analysis, decoding) is a rare complete reference."
+      ],
+      "url": "https://www.bilibili.com/video/BV1Eaxx6qEtx/",
+      "published": "2026-11-01T13:31:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站独立开发者「超人归来ray」发布 **NeuroMI Studio V1**：硬件基于自主设计的 **ADS1299＋ESP32-S3**，范式用 **Graz 左右手运动想象**，软件已集成多通道可视化、频谱分析、**ERD/ERS**、**ICA 伪迹分析**与 **CSP+LDA** 解码。作者写得很实在：当前展示的是**软件功能与实验流程**，硬件接入、实时解码与机械臂闭环还没做。对国内自建 BCI 工具链的个人或小团队，这份「采集硬件→范式→分析→解码」串起来的 V1 是少见的完整参考；也值得注意它与我们近期收录的开源 ADS1299 硬件（YuEEG、PiEEG）指向同一条低成本路线。",
+      "brief_en": "EEGDash merged #511 flagging channels MNE reads at an implausible scale and correcting EDF headers that declare nV or pV units. Misdeclared units are a classic EEG trap — treating nV as µV shifts amplitudes by 1000x and skews artefact thresholds, band power and cross-dataset normalisation with no error raised. Flagging instead of silently rescaling keeps a human in the loop.",
+      "tags": [
+        "motor-imagery",
+        "csp-lda",
+        "ads1299",
+        "esp32-s3",
+        "independent"
+      ],
+      "raw_excerpt": "「NeuroMI Studio 第一个小版本 Demo 测试。基于自主设计的 ADS1299 + ESP32-S3 硬件架构方案，采用 Graz 左右手运动想象范式，集成多通道 EEG 信号可视化、频谱分析、ERD/ERS、ICA 伪迹分析及 CSP + LDA 运动想象解码等功能。」「目前主要展示 V1 版本的软件功能与实验流程，后续将逐步推进硬件接入、实时解码及脑机接口与机械臂的闭环联动控制。」",
+      "fetched_at": "2026-11-01T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1Eaxx6qEtx",
+      "author_handle": "超人归来ray",
+      "metrics": {
+        "play": null,
+        "like": 54,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把采集硬件→范式→分析→解码串成完整 V1，并诚实标注尚未实现的部分。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 修 trame-pyvista 兼容（0.3 发布后崩溃）",
+      "title_en": "MNE-Python Fixes trame-pyvista Compatibility After Its 0.3 Release",
+      "bullets_zh": [
+        "#14474 修 **trame-pyvista 0.3 发布后导致的渲染失败**（对应 pyvista issue 9520），让交互式三维渲染在后端升级后仍可用。",
+        "作者说明待 conda-forge 的 feedstock PR 落地后，会把 `trame-pyvista` 加入 `pip-pre` 测试矩阵，避免同类升级再次漏检。",
+        "对依赖 `Brain` 交互视图或 notebook 内三维渲染的团队，建议升级后实测一次「打开→旋转→截图」链路。"
+      ],
+      "bullets_en": [
+        "#14474 fixes rendering failures after the trame-pyvista 0.3 release (pyvista issue 9520), keeping interactive 3D rendering working after the backend upgrade.",
+        "The author will add trame-pyvista to the pip-pre test matrix once the conda-forge feedstock PR lands, so similar upgrades are caught automatically.",
+        "Teams relying on Brain interactive views or notebook 3D rendering should exercise an open-rotate-screenshot path after upgrading."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14474",
+      "published": "2026-11-01T01:45:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14474：修 **trame-pyvista 0.3 发布后导致的渲染失败**（对应 pyvista issue 9520），让交互式三维渲染在后端升级后仍可用。这类「上游一升级、下游就崩」的兼容问题对使用者最常见——表现是打开三维视图报错或白屏，而问题并不在 MNE 自己。作者同时说明：等 conda-forge 的 feedstock PR 落地，会把 `trame-pyvista` 加进 `pip-pre` 测试矩阵，让同类升级被自动捕获，这比逐个救火更值得肯定。对依赖 `Brain` 交互视图或 notebook 内三维渲染的团队，建议升级后实测一次「打开→旋转→截图」全链路。",
+      "brief_en": "Bilibili developer 超人归来ray released NeuroMI Studio V1: self-designed ADS1299 + ESP32-S3 hardware, a Graz left/right motor-imagery paradigm, and software covering multi-channel viewing, spectral analysis, ERD/ERS, ICA artefact analysis and CSP+LDA decoding. The author states that hardware integration, real-time decoding and the robot loop are still pending — a rare end-to-end V1.",
+      "tags": [
+        "mne-python",
+        "trame",
+        "pyvista",
+        "rendering",
+        "compatibility"
+      ],
+      "raw_excerpt": "PR #14474: \"Fix for trame-pyvista — Fixes failure in https://github.com/pyvista/pyvista/issues/9520 due to 0.3 release. Once https://github.com/conda-forge/trame-pyvista-feedstock/pull/11 lands I'll add `trame-pyvista` to `pip-pre` to m[atrix]\". Merged 2026-11-01T01:45Z.",
+      "fetched_at": "2026-11-01T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14474",
       "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 3577,
+        "like": 3578,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "示例数据走轻量分发，教学与 CI 首次上手更快，但结论仍须原始数据。"
+      "why_valuable": "上游 trame-pyvista 升级会让三维渲染报错/白屏，且已计划纳入测试矩阵。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 96,
-    "llm_rows": 20,
+    "prefiltered": 98,
+    "llm_rows": 22,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 4
+    "conflicts_dropped": 3
   }
 }
