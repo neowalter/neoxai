@@ -229,7 +229,7 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [muse-sleep-dashboard](https://github.com/southsko/muse-sleep-dashboard) | @southsko | Muse S EEG overnight sleep staging pipeline and dashboard | 2026-09-26 | 1 |
 | [muse.js](https://github.com/Polobase/muse.js) | @Polobase | TypeScript library for Muse EEG headbands, with first-class Muse S... | 2026-09-21 | 2 |
 | [muse2](https://github.com/Winnie-0917/muse2) | @Winnie-0917 | MUSE 2 原始 EEG 擷取工具（muselsl + BLE，即時監控原始腦波） | 2026-09-28 | 2 |
-| [muse2-yt-scroller](https://github.com/zacharywong35374/muse2-yt-scroller) | @zacharywong35374 | Muse 2 blink-to-scroll Python prototype: EEG feature extraction, ra... | 2026-10-10 | 1 |
+| [muse2-yt-scroller](https://github.com/zacharywong34174/muse2-yt-scroller) | @zacharywong34174 | Muse 2 blink-to-scroll Python prototype: EEG feature extraction, ra... | 2026-10-10 | 1 |
 | [MUSER](https://github.com/Levahargun/MUSER) | @Levahargun | MUSER is a custom graphical application for connecting to Muse EEG... | 2026-10-12 | 1 |
 | [MuseScope](https://github.com/kelcamer/MuseScope) | @kelcamer | Live four-channel EEG from a Muse S headband, in the browser over W... | 2026-09-11 | 1 |
 | [NeckWatch](https://github.com/NightProton/NeckWatch) | @NightProton | Wearable EMG posture monitor, Arduino + Muscle BioAmp Shield detect... | 2026-09-15 | 1 |
