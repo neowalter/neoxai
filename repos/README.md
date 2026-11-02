@@ -2,7 +2,7 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
-Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`).
+Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **353** entries after batch32.
 
 | Repo | Author | Description | Last push | Stars |
 | --- | --- | --- | --- | --- |
@@ -347,3 +347,15 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [weft-tokeniser](https://github.com/jeetblahiri/weft-tokeniser) | @jeetblahiri | The EEG tokeniser for designing better EEG foundation models. | 2026-10-12 | 1 |
 | [xavier-tools](https://github.com/MartinBloedorn/xavier-tools) | @MartinBloedorn | Data acquisition, visualization and processing tools for the good o... | 2026-09-19 | 1 |
 | [XvMuse](https://github.com/jasonjsnell/XvMuse) | @jasonjsnell | Swift library to connect to the Muse EEG headband | 2026-10-10 | 27 |
+| [NeuroSync-Framework](https://github.com/PabloSoage/NeuroSync-Framework) | @PabloSoage | Modular framework for real-time synchronization, digital... | 2026-11-02 | 5 |
+| [bci-eeg-robotic-arm](https://github.com/vicentebohlealveal/bci-eeg-robotic-arm) | @vicentebohlealveal | Assistive brain-computer interface: EEG (Muse S) processed... | 2026-11-02 | 1 |
+| [bci-ros2-teleop](https://github.com/mariameltoukhy-cloud/bci-ros2-teleop) | @mariameltoukhy-cloud | Simulated closed-loop BCI: PhysioNet motor-imagery EEG... | 2026-11-01 | 2 |
+| [eeg-therapeutic-states-deep-nn](https://github.com/OmriComay/eeg-therapeutic-states-deep-nn) | @OmriComay | Two small CNNs that estimate therapeutic / regulated brain... | 2026-10-03 | 1 |
+| [spectra-ica-eeg](https://github.com/RafatH0ssain/spectra-ica-eeg) | @RafatH0ssain | 1st place, Machine Learning category, SURGE NeuroHack 2026.... | 2026-10-27 | 2 |
+| [neurband](https://github.com/jlcjak/neurband) | @jlcjak | Open, minimal sEMG wristband like the Meta Neural Band:... | 2026-11-02 | 40 |
+| [RecurFlex](https://github.com/GA10d/RecurFlex) | @GA10d | RecurFlex delivers SOTA-level offline decoding performance... | 2026-10-10 | 1 |
+| [FineMI-enhancements](https://github.com/rmaahin/FineMI-enhancements) | @rmaahin | Trying out some enhancements to improve accuracy on Fine... | 2026-10-30 | 1 |
+| [MotorMind-EEG-BCI](https://github.com/codeishitech/MotorMind-EEG-BCI) | @codeishitech | EEG-based motor imagery classification using signal... | 2026-10-25 | 1 |
+| [be5210-final-ecog](https://github.com/binoyp123/be5210-final-ecog) | @binoyp123 | BE 5210 (Penn) final project: predicting finger flexion... | 2026-10-12 | 1 |
+| [AIMI2026Fall-LAB2](https://github.com/yihmnz/AIMI2026Fall-LAB2) | @yihmnz | NYCU AIMI Fall 2026 Lab 2: EEG motor imagery classification... | 2026-10-26 | 1 |
+| [EEG-Dataset-Recorder](https://github.com/ibr0r0/EEG-Dataset-Recorder) | @ibr0r0 | Python-based EEG data recorder and simulator for generating... | 2026-10-21 | 4 |
