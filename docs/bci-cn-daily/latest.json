@@ -1,65 +1,65 @@
 {
-  "date": "2026-11-02",
-  "generated_at": "2026-11-01T21:32:54.917Z",
-  "item_count": 7,
+  "date": "2026-11-03",
+  "generated_at": "2026-11-02T21:32:01.518Z",
+  "item_count": 6,
   "types": {
-    "Project": 7
+    "Project": 6
   },
   "highlights": [
     {
-      "title_zh": "braindecode 新增 NEMARDataset：直接从 NEMAR Zarr 流式读取公开数据集",
-      "title_en": "braindecode Adds NEMARDataset to Stream Public Datasets From the NEMAR Zarr Copy",
-      "url": "https://github.com/braindecode/braindecode/pull/1439",
-      "brief": "braindecode 合并 #1439：新增 **NEMARDataset**，可从 **NEMAR 的 Zarr 服务副本**按需流式读取数据，而不必先整包下载再解压——对动辄几十 GB 的公开 EEG 数据集，这是「先试一下」与「不敢碰」的区别。同批的 #1493 更进一步：**记录基础模型预训练语料**，并新增 `check_pretraining_overlap` 用于检查预训练数据与评测集是否重叠。两条合起来正好对应社区眼下最痛的两件事：公开数据难用、以及「你的 SOTA 是不是见过测试集」。对做 EEG 基础模型或跨数据集基准的团队，建议把语料记录与重叠检查纳入实验流程，而不是事后被质疑再补。"
+      "title_zh": "braindecode 发布 2.0.0：要求 PyTorch ≥ 2.4，并同时维护 1.8.x 线",
+      "title_en": "braindecode Releases 2.0.0 Requiring PyTorch >= 2.4, With a Parallel 1.8.x Maintenance Line",
+      "url": "https://github.com/braindecode/braindecode/releases/tag/v2.0.0",
+      "brief": "braindecode 发布 **2.0.0**（2026-11-02），是一次需要规划的升级：**要求 PyTorch 2.4** 并删除过时兼容代码、REVE/ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名导致的 FutureWarning、修 CombinedConv 在某维为 1 时的偏置折叠。好消息是同日还发了 **v1.8.2 维护版**，1.8.x 线继续维护，升级不必一次到位。另需留意：2.0 里 **BaRISTA 模型先加后撤**（#1171 → #1172 revert），若你已依赖它，请确认所用版本仍包含。对生产环境，建议先在独立环境跑通旧模型加载与 `torch.jit` 导出，再整体切换。"
     },
     {
-      "title_zh": "braindecode 修 BENDR 输出与预训练参考不一致，以及 MaxNormLinear 约束错维度",
-      "title_en": "braindecode Fixes BENDR Output Mismatch and MaxNormLinear Constraining the Wrong Axis",
-      "url": "https://github.com/braindecode/braindecode/pull/1498",
-      "brief": "braindecode 同一天修了两处「形状对、能跑、但语义错」的模型 bug：**#1498 让 BENDR contextualizer 的输出与预训练参考一致**（此前加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间出发）；**#1476 修 `MaxNormLinear` 约束了输入列而不是输出单元**（权重归一化作用在错轴）。这类 bug 不会报错，只会让微调结果莫名偏低或方差变大，通常被归咎于「数据不够」。用 BENDR 或 MaxNorm 做过迁移/微调的实验，建议升级后重跑并对比特征统计（均值/方差/维度）是否与参考实现吻合；若差异明显，之前的结论需要重新审视。"
+      "title_zh": "MNE-Python 修统计置换检验的三个 bug：漏一、符号约定与 abs 误用",
+      "title_en": "MNE-Python Fixes Three Permutation-Test Bugs: Off-by-One, Sign Convention and abs Misuse",
+      "url": "https://github.com/mne-tools/mne-python/pull/14482",
+      "brief": "MNE-Python 合并 #14482，一次性关掉三个 issue，修的是**置换检验里的三个独立 bug**：①#14479 的**漏一错误**；②**符号约定不一致**——`0/1` 本意是「不翻转/翻转」，但下游函数按相反语义使用；③本应「按尾选一边」的地方误用了 `abs`。作者原话是「这个真费劲」，可以理解：三者都不会让程序崩溃，只会让 **p 值与单/双尾结论偏移**，而这正是统计 bug 最危险的形态——审稿时看不出、复现时对不上。对用 MNE 做置换检验（cluster-based、sign-flip 等）并据此写结论的团队，建议升级后重跑关键统计、对比新旧 p 值，必要时修正论文里的显著性表述。"
     },
     {
-      "title_zh": "TorchEEG 让常量通道的归一化保持有限值，并修扩散采样与工具默认值",
-      "title_en": "TorchEEG Keeps Normalisation Finite for Constant Channels and Fixes Diffusion Sampling",
-      "url": "https://github.com/torcheeg/torcheeg/pull/337",
-      "brief": "TorchEEG 在 11-01 合并 4 个修复，最实用的是 **#337：常量通道的归一化保持有限值**。真实记录里「某通道方差为 0」（电极脱落、放大器饱和、被屏蔽）非常常见，而 z-score 一遇到 0 方差就会产出 **inf/NaN**，随后污染整个 batch、让训练损失直接崩掉，且现象常被误判为「学习率问题」。同批还修了#338 速度扩散采样与工具默认值、#336 镜像源模块并强制 CPU 测试覆盖、#194 在内存数据集中保留字符串 metadata ID。对用 TorchEEG 做大规模训练/扩散模型的团队，建议升级后检查数据管线里是否已对常量通道做过滤或加保护。"
+      "title_zh": "NeuroSkill：Tauri（Rust）＋SvelteKit 的本地优先神经反馈/BCI 桌面应用",
+      "title_en": "NeuroSkill: A Local-First Neurofeedback and BCI Desktop App in Tauri (Rust) + SvelteKit",
+      "url": "https://github.com/NeuroSkill-com/skill",
+      "brief": "NeuroSkill 发布 **0.1.0**（2026-11-02）：一个**本地优先**的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包与设备列表页。它的两个特点值得注意：一是「本地优先」——数据与推理留在本机，对隐私敏感的研究场景更合适；二是 README 明确写着**不是 FDA/CE 批准产品、不得用于诊断或治疗**，消费级神经科技里这种自我限定并不常见。同批提交还移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4），说明有在跟 Rust 生态的安全通告。对想找「可直接装来试用」的开源神经反馈工具的人，这是新选项；用于研究前请自行核对采样率与设备兼容性。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-02.md",
+  "github_path": "docs/bci-cn-daily/2026-11-03.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 新增 NEMARDataset：直接从 NEMAR Zarr 流式读取公开数据集",
-      "title_en": "braindecode Adds NEMARDataset to Stream Public Datasets From the NEMAR Zarr Copy",
+      "title_zh": "braindecode 发布 2.0.0：要求 PyTorch ≥ 2.4，并同时维护 1.8.x 线",
+      "title_en": "braindecode Releases 2.0.0 Requiring PyTorch >= 2.4, With a Parallel 1.8.x Maintenance Line",
       "bullets_zh": [
-        "#1439 新增 **NEMARDataset**，可从 NEMAR 的 **Zarr 服务副本**按需流式读取数据——不必先整包下载再本地解压。",
-        "对公开数据基准与预训练，这大幅降低「试一个数据集要下几十 GB」的门槛；同批 #1493 还记录**基础模型预训练语料**并新增 `check_pretraining_overlap`（检查预训练与评测集是否重叠）。",
-        "两者结合的意义：既能更容易地用公开数据，也能更容易证明「评测集没被预训练污染」。"
+        "**v2.0.0** 正式发布（2026-11-02），要点包括：**要求 PyTorch 2.4** 并移除过时兼容代码、REVE 与 ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名引发的 FutureWarning、修 CombinedConv 在某一维为 1 时的偏置折叠。",
+        "同一天还发布了 **v1.8.2 维护版**（从 tag 发布），说明 2.0 之后 1.8.x 仍有维护线——升级节奏不必一次到位。",
+        "注意 2.0 里 **BaRISTA 模型被加入后又撤销**（#1171 加入、#1172 revert），如果你已开始依赖它，需要确认当前版本是否仍包含。"
       ],
       "bullets_en": [
-        "#1439 adds NEMARDataset, streaming data on demand from NEMAR's Zarr serving copy instead of downloading and unpacking whole datasets first.",
-        "For public benchmarks and pretraining this removes the tens-of-gigabytes barrier to trying a dataset; #1493 also records foundation-model pretraining corpora and adds check_pretraining_overlap.",
-        "Together they make public data easier to use and make it easier to show that evaluation sets were not contaminated by pretraining."
+        "v2.0.0 shipped on 2026-11-02: it requires PyTorch 2.4 and drops obsolete compatibility code, moves REVE and ZUNA to native RMSNorm, fixes the FutureWarning from renamed standard montages on MNE >= 1.13, and fixes CombinedConv bias folding when a dimension is 1.",
+        "A v1.8.2 maintenance release also shipped the same day from its tag, so the 1.8.x line stays supported and upgrades need not happen all at once.",
+        "Inside 2.0 the BaRISTA model was added and then reverted (#1171 then #1172); if you started relying on it, check whether your version still includes it."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1439",
-      "published": "2026-11-01T04:56:00Z",
+      "url": "https://github.com/braindecode/braindecode/releases/tag/v2.0.0",
+      "published": "2026-11-02T19:54:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 合并 #1439：新增 **NEMARDataset**，可从 **NEMAR 的 Zarr 服务副本**按需流式读取数据，而不必先整包下载再解压——对动辄几十 GB 的公开 EEG 数据集，这是「先试一下」与「不敢碰」的区别。同批的 #1493 更进一步：**记录基础模型预训练语料**，并新增 `check_pretraining_overlap` 用于检查预训练数据与评测集是否重叠。两条合起来正好对应社区眼下最痛的两件事：公开数据难用、以及「你的 SOTA 是不是见过测试集」。对做 EEG 基础模型或跨数据集基准的团队，建议把语料记录与重叠检查纳入实验流程，而不是事后被质疑再补。",
-      "brief_en": "braindecode merged #1439 adding NEMARDataset, which streams data on demand from NEMAR's Zarr serving copy instead of downloading whole datasets — the difference between trying a public dataset and avoiding it. #1493 also records foundation-model pretraining corpora and adds check_pretraining_overlap, addressing hard-to-use data and SOTA that may have seen the test set.",
+      "brief": "braindecode 发布 **2.0.0**（2026-11-02），是一次需要规划的升级：**要求 PyTorch 2.4** 并删除过时兼容代码、REVE/ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名导致的 FutureWarning、修 CombinedConv 在某维为 1 时的偏置折叠。好消息是同日还发了 **v1.8.2 维护版**，1.8.x 线继续维护，升级不必一次到位。另需留意：2.0 里 **BaRISTA 模型先加后撤**（#1171 → #1172 revert），若你已依赖它，请确认所用版本仍包含。对生产环境，建议先在独立环境跑通旧模型加载与 `torch.jit` 导出，再整体切换。",
+      "brief_en": "braindecode released 2.0.0 on 2026-11-02, an upgrade worth planning: it requires PyTorch 2.4 and drops obsolete compatibility code, moves REVE and ZUNA to native RMSNorm, fixes montage-rename FutureWarnings on MNE >= 1.13 and a CombinedConv bias-folding bug. A v1.8.2 maintenance release shipped the same day, so 1.8.x stays supported; note BaRISTA was added then reverted inside 2.0.",
       "tags": [
         "braindecode",
-        "nemar",
-        "zarr",
-        "streaming",
-        "pretraining"
+        "release",
+        "pytorch",
+        "rmsnorm",
+        "breaking-change"
       ],
-      "raw_excerpt": "PRs merged 2026-11-01: \"ENH add NEMARDataset to stream datasets from the NEMAR Zarr serving copy (#1439)\" 04:56Z; \"ENH record foundation-model pretraining corpora and add check_pretraining_ov[erlap] (#1493)\" 04:50Z. Repo: braindecode/braindecode.",
-      "fetched_at": "2026-11-01T23:55:00Z",
+      "raw_excerpt": "Release v2.0.0 (2026-11-02T19:54:18Z), notes include: \"Fix CombinedConv bias folding when a dimension is 1 (#1154)\"; \"Fix FutureWarning for renamed standard montages on MNE >= 1.13 (#1164)\"; \"Add BaRISTA model (#1171)\" then \"Revert \\\"Add BaRISTA model\\\" (#1172)\"; \"Require PyTorch 2.4 and remove obsolete compatibility code (#1174)\"; \"Use native RMSNorm directly in REVE and ZUNA (#1176)\". Same day: v1.8.2 (2026-11-02T21:12:45Z) maintenance release.",
+      "fetched_at": "2026-11-02T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1439",
+      "upstream_id": "braindecode/braindecode@v2.0.0",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -68,170 +68,127 @@
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "流式读取免整包下载，并配套预训练语料记录与重叠检查，直击数据污染质疑。"
+      "why_valuable": "2.0 要求 PyTorch 2.4 且有先加后撤的模型，升级前需核对；同时留了 1.8.x 维护线。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 修 BENDR 输出与预训练参考不一致，以及 MaxNormLinear 约束错维度",
-      "title_en": "braindecode Fixes BENDR Output Mismatch and MaxNormLinear Constraining the Wrong Axis",
+      "title_zh": "MNE-Python 修统计置换检验的三个 bug：漏一、符号约定与 abs 误用",
+      "title_en": "MNE-Python Fixes Three Permutation-Test Bugs: Off-by-One, Sign Convention and abs Misuse",
       "bullets_zh": [
-        "#1498：**BENDR contextualizer 的输出与预训练参考不一致**——加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间开始。",
-        "#1476：**`MaxNormLinear` 约束的是输入列而非输出单元**，权重归一化作用在错误轴上，模型容量与稳定性都受影响。",
-        "两个都属于「形状对、能跑、但语义错」类 bug；用 BENDR 或 MaxNorm 做迁移/微调的实验结论建议重跑。"
+        "#14482 一次关掉三个 issue（#14479、#12216、#11511），修的是置换检验里的**三个独立 bug**：①**off-by-one**；②**符号约定不一致**（`0/1` 表示「不翻转/翻转」，但消费端按相反语义使用）；③本应「按尾选一边」的地方误用了 `abs`。",
+        "这些错误不会让代码崩，只会让 p 值与单/双尾结论偏移——统计结果类问题最危险的形态。",
+        "对用 MNE 做置换检验（cluster-based、sign-flip 等）发表结论的团队，建议升级后重跑关键统计并对比旧 p 值。"
       ],
       "bullets_en": [
-        "#1498: the BENDR contextualizer output did not match the pretrained reference, so loading official weights started transfer learning from the wrong feature space.",
-        "#1476: MaxNormLinear constrained input columns instead of output units, applying weight normalisation along the wrong axis and changing capacity and stability.",
-        "Both are shape-correct, runnable, semantically wrong bugs; re-run transfer or fine-tuning experiments built on BENDR or MaxNorm."
+        "#14482 closes three issues (#14479, #12216, #11511) by fixing three independent permutation-test bugs: an off-by-one, a sign-convention mismatch (0/1 meant no-flip/flip but the consumer used the opposite), and an abs() where picking one tail was required.",
+        "None of these crash; they shift p-values and one- versus two-tailed conclusions — the most dangerous shape a statistical bug can take.",
+        "Teams publishing permutation-based results (cluster-based, sign-flip) with MNE should re-run key statistics and compare old p-values after upgrading."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1498",
-      "published": "2026-11-01T04:32:00Z",
+      "url": "https://github.com/mne-tools/mne-python/pull/14482",
+      "published": "2026-11-02T19:40:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 同一天修了两处「形状对、能跑、但语义错」的模型 bug：**#1498 让 BENDR contextualizer 的输出与预训练参考一致**（此前加载官方权重后前向结果对不上参考实现，等于迁移学习从错误的特征空间出发）；**#1476 修 `MaxNormLinear` 约束了输入列而不是输出单元**（权重归一化作用在错轴）。这类 bug 不会报错，只会让微调结果莫名偏低或方差变大，通常被归咎于「数据不够」。用 BENDR 或 MaxNorm 做过迁移/微调的实验，建议升级后重跑并对比特征统计（均值/方差/维度）是否与参考实现吻合；若差异明显，之前的结论需要重新审视。",
-      "brief_en": "braindecode fixed two shape-correct but semantically wrong bugs: #1498 makes the BENDR contextualizer match its pretrained reference, since loading official weights previously started transfer learning from the wrong feature space; #1476 fixes MaxNormLinear constraining input columns rather than output units. Neither raises an error, so weak fine-tuning was easily blamed on data.",
+      "brief": "MNE-Python 合并 #14482，一次性关掉三个 issue，修的是**置换检验里的三个独立 bug**：①#14479 的**漏一错误**；②**符号约定不一致**——`0/1` 本意是「不翻转/翻转」，但下游函数按相反语义使用；③本应「按尾选一边」的地方误用了 `abs`。作者原话是「这个真费劲」，可以理解：三者都不会让程序崩溃，只会让 **p 值与单/双尾结论偏移**，而这正是统计 bug 最危险的形态——审稿时看不出、复现时对不上。对用 MNE 做置换检验（cluster-based、sign-flip 等）并据此写结论的团队，建议升级后重跑关键统计、对比新旧 p 值，必要时修正论文里的显著性表述。",
+      "brief_en": "MNE-Python merged #14482 closing three issues and fixing three independent permutation-test bugs: an off-by-one (#14479), a sign-convention mismatch where 0/1 meant no-flip/flip but the consumer used the opposite, and an abs() where one tail should have been selected. None crash; they shift p-values and one- versus two-tailed conclusions. Re-run permutation statistics after upgrading.",
       "tags": [
-        "braindecode",
-        "bendr",
-        "maxnorm",
-        "transfer-learning",
+        "mne-python",
+        "permutation",
+        "statistics",
+        "p-value",
         "bugfix"
       ],
-      "raw_excerpt": "PRs merged 2026-11-01: \"FIX BENDR contextualizer output to match the pretrained reference (#1498)\" 04:32Z; \"FIX MaxNormLinear constraining input columns instead of output units (#1476)\" 04:40Z; \"FIX get_metadata crashing on datasets without description (#1483)\" 04:39Z.",
-      "fetched_at": "2026-11-01T23:55:00Z",
+      "raw_excerpt": "PR #14482 \"Fix stats permutation bugs — Closes #14479, #12216, #11511. 1. Fix the off-by-one from #14479 2. Fix a sign convention mismatch (0 and 1 meaning don't flip and flip when the consuming function used them in the opposite way) 3. Fix a small bug involving use of `abs` when we actually needed to pick either the [...]\". Merged 2026-11-02T19:40Z. Same day: \"ENH: Allow passing precomputed interpolation data for EEG and MEG\" 20:24Z.",
+      "fetched_at": "2026-11-02T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1498",
-      "author_handle": "braindecode",
+      "upstream_id": "mne-tools/mne-python#14482",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 1337,
+        "like": 3582,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "权重加载后与参考实现不一致、归一化作用错轴，都会让微调结论静默偏移。"
+      "quality_score": 9,
+      "why_valuable": "三个 bug 都不崩但会偏移 p 值与单双尾结论，需重跑关键统计核对。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "TorchEEG 让常量通道的归一化保持有限值，并修扩散采样与工具默认值",
-      "title_en": "TorchEEG Keeps Normalisation Finite for Constant Channels and Fixes Diffusion Sampling",
+      "title_zh": "NeuroSkill：Tauri（Rust）＋SvelteKit 的本地优先神经反馈/BCI 桌面应用",
+      "title_en": "NeuroSkill: A Local-First Neurofeedback and BCI Desktop App in Tauri (Rust) + SvelteKit",
       "bullets_zh": [
-        "#337「Keep normalization finite for **constant channels**」：某通道方差为 0 时，z-score/归一化会产出 inf/NaN 并污染整批数据。",
-        "#338 修速度扩散采样与工具函数默认值；#336 镜像源模块并强制 CPU 测试覆盖；#194 在内存数据集中保留字符串 metadata ID。",
-        "常量通道在真实记录里很常见（脱落、饱和、屏蔽），处置不当会让一个坏通道毁掉整批训练。"
+        "定位为**开源 EXG/BCI 研究工具**：本地优先的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包。",
+        "README 明确声明 **「不是 FDA/CE 批准产品，不得用于诊断或治疗」**——在消费级神经科技里这种自我限定值得肯定。",
+        "本次为 **0.1.0** 首发，并顺手移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4）。"
       ],
       "bullets_en": [
-        "#337 keeps normalisation finite for constant channels: when a channel has zero variance, z-scoring would emit inf or NaN and poison the whole batch.",
-        "#338 fixes velocity diffusion sampling and utility defaults, #336 mirrors source modules with enforced CPU test coverage, and #194 preserves string metadata IDs in memory datasets.",
-        "Constant channels are common in real recordings (detached, saturated, masked), and one mishandled channel can ruin an entire training batch."
+        "An open-source EXG/BCI research tool: a local-first desktop neurofeedback and BCI application built with Tauri v2 (Rust) and SvelteKit, GPL-3.0, with macOS and Windows installers.",
+        "The README states plainly that it is not FDA/CE approved and must not be used for diagnosis or treatment — a welcome boundary in consumer neurotech.",
+        "This is the 0.1.0 first release, which also removed an unused dependency (zip 4) carrying RUSTSEC-2026-0429."
       ],
-      "url": "https://github.com/torcheeg/torcheeg/pull/337",
-      "published": "2026-11-01T09:26:00Z",
+      "url": "https://github.com/NeuroSkill-com/skill",
+      "published": "2026-11-02T18:44:00Z",
       "source": "github",
       "language": "en",
-      "brief": "TorchEEG 在 11-01 合并 4 个修复，最实用的是 **#337：常量通道的归一化保持有限值**。真实记录里「某通道方差为 0」（电极脱落、放大器饱和、被屏蔽）非常常见，而 z-score 一遇到 0 方差就会产出 **inf/NaN**，随后污染整个 batch、让训练损失直接崩掉，且现象常被误判为「学习率问题」。同批还修了#338 速度扩散采样与工具默认值、#336 镜像源模块并强制 CPU 测试覆盖、#194 在内存数据集中保留字符串 metadata ID。对用 TorchEEG 做大规模训练/扩散模型的团队，建议升级后检查数据管线里是否已对常量通道做过滤或加保护。",
-      "brief_en": "TorchEEG merged four fixes on Nov 1, the most practical being #337: normalisation now stays finite for constant channels. Zero-variance channels (detached, saturated or masked electrodes) are common, and z-scoring them yields inf or NaN that poisons the batch and collapses training, usually misdiagnosed as a learning-rate problem. #338 fixes diffusion sampling defaults.",
+      "brief": "NeuroSkill 发布 **0.1.0**（2026-11-02）：一个**本地优先**的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包与设备列表页。它的两个特点值得注意：一是「本地优先」——数据与推理留在本机，对隐私敏感的研究场景更合适；二是 README 明确写着**不是 FDA/CE 批准产品、不得用于诊断或治疗**，消费级神经科技里这种自我限定并不常见。同批提交还移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4），说明有在跟 Rust 生态的安全通告。对想找「可直接装来试用」的开源神经反馈工具的人，这是新选项；用于研究前请自行核对采样率与设备兼容性。",
+      "brief_en": "NeuroSkill released 0.1.0 on 2026-11-02: a local-first desktop neurofeedback and BCI application built with Tauri v2 (Rust) and SvelteKit, GPL-3.0, shipping macOS and Windows installers. Local-first keeps data and inference on the machine, and the README states that it is not FDA/CE approved and must not be used for diagnosis. A dependency with RUSTSEC-2026-0429 was removed.",
       "tags": [
-        "torcheeg",
-        "normalisation",
-        "constant-channel",
-        "diffusion",
-        "bugfix"
+        "neurofeedback",
+        "tauri",
+        "rust",
+        "local-first",
+        "desktop"
       ],
-      "raw_excerpt": "PRs merged 2026-11-01: \"Keep normalization finite for constant channels (#337)\" 09:26Z; \"Fix velocity diffusion sampling and utility defaults (#338)\" 09:31Z; \"Mirror source modules and enforce CPU test coverage (#336)\" 09:37Z; \"Preserve string metadata IDs in memory datasets (#194)\" 09:21Z.",
-      "fetched_at": "2026-11-01T23:55:00Z",
+      "raw_excerpt": "README: \"NeuroSkill is an open-source EXG/BCI research tool. It is not FDA/CE approved and must not be used for diagnosis or treatment.\" \"NeuroSkill is a local-first desktop neurofeedback + BCI app built with **Tauri v2 (Rust)** and **SvelteKit**.\" Commits 2026-11-02: \"0.1.0\" (bb52ecf9f2) 18:44Z; \"zip: drop unused zip 4 (RUSTSEC-2026-0429)\" (4d7348f8e4) 18:48Z.",
+      "fetched_at": "2026-11-02T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "torcheeg/torcheeg#337",
-      "author_handle": "torcheeg",
+      "upstream_id": "NeuroSkill-com/skill",
+      "author_handle": "NeuroSkill-com",
       "metrics": {
         "play": null,
-        "like": 584,
+        "like": 105,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "零方差通道会让 z-score 产出 inf/NaN 并污染整批，常被误判为学习率问题。"
+      "why_valuable": "本地优先的 Rust 桌面神经反馈首发，且明确写了「非医疗器械」边界。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "NeuroKit2 发布 0.3.0：RR 窗口、RSA 与呼吸衍生指标的一批修正",
-      "title_en": "NeuroKit2 0.3.0: Fixes Across RR Windows, RSA and Respiratory Derivatives",
+      "title_zh": "EEGDashCorpus：对多数据集做规划、下载、校验与状态追踪",
+      "title_en": "EEGDashCorpus: Plan, Download, Verify and Track Status Across Many Datasets",
       "bullets_zh": [
-        "v0.3.0 距上一版 v0.2.13（3 月）已 8 个月，本次合入 #1179 主发布与一批修正。",
-        "具体包括：**在每个 SDANN 窗口内保留最后一个 RR 间期**（#1213）、`hrv_rsa()` 的 RSA_PorgesBohrer 改为基于**心跳周期**计算、`rsp_rvt()` 把 `sampling_rate` 正确传入呼吸检测。",
-        "这些函数是生理信号流水线的基础件；窗口边界与采样率漏传都会让 HRV/呼吸指标系统性偏移而不报错。"
+        "#510 新增 **EEGDashCorpus** 抽象：可对**成批数据集**做「规划 → 下载 → 校验 → 状态」的统一管理，而不是逐个 dataset 手工搬运。",
+        "对做元分析或跨数据集预训练的人，这一层几乎是必需的：哪些已下、哪些校验失败、哪些还缺文件，需要可查询的状态而不是脚本里的 print。",
+        "与近期 #485（按记录固定 S3 版本）、#494（记录 git-annex 键）形成一条完整链：**可追溯 + 可批量 + 可校验**。"
       ],
       "bullets_en": [
-        "v0.3.0 lands eight months after v0.2.13, folding in the #1179 main release plus a batch of fixes.",
-        "Specifically: keep the last RR interval inside each SDANN window (#1213), compute RSA_PorgesBohrer on heart period in hrv_rsa(), and pass sampling_rate into breath detection in rsp_rvt().",
-        "These are the building blocks of physiological pipelines; window-edge and sampling-rate slips shift HRV and respiratory metrics systematically without any error."
+        "#510 adds an EEGDashCorpus abstraction that plans, downloads, verifies and tracks status across many datasets rather than moving them one by one.",
+        "For meta-analyses or cross-dataset pretraining this layer is close to mandatory: which datasets are down, which failed verification and what is missing should be queryable state, not print statements.",
+        "It completes a chain with #485 (per-record S3 version pins) and #494 (git-annex keys): traceable, batchable and verifiable."
       ],
-      "url": "https://github.com/neuropsychology/NeuroKit/releases/tag/v0.3.0",
-      "published": "2026-11-01T10:20:00Z",
+      "url": "https://github.com/eegdash/EEGDash/pull/510",
+      "published": "2026-11-02T17:02:00Z",
       "source": "github",
       "language": "en",
-      "brief": "NeuroKit2 发布 **0.3.0**（距 v0.2.13 八个月），合入 #1179 主发布与一批基础函数修正：**在每个 SDANN 窗口内保留最后一个 RR 间期**（#1213，窗口边界少一跳会系统性低估 SDANN）、`hrv_rsa()` 的 RSA_PorgesBohrer 改为基于**心跳周期**计算、`rsp_rvt()` 把 `sampling_rate` 正确传入呼吸检测。这类问题的共同点是**不报错**：窗口切错或采样率漏传，指标只是悄悄偏一点，直到跨研究对比时才发现对不上。对用 NeuroKit2 做 HRV/呼吸衍生分析的团队，建议升级后对同一份数据重算关键指标并与旧版比对差额，再据此决定是否需要重跑既有结论。",
-      "brief_en": "NeuroKit2 released 0.3.0 eight months after v0.2.13, folding in the main #1179 release plus fixes: keep the last RR interval inside each SDANN window (#1213), compute RSA_PorgesBohrer on heart period in hrv_rsa(), and pass sampling_rate into breath detection in rsp_rvt(). Such slips never raise errors — metrics just drift until cross-study comparisons fail.",
-      "tags": [
-        "neurokit2",
-        "hrv",
-        "rsa",
-        "respiratory",
-        "release"
-      ],
-      "raw_excerpt": "Release v0.3.0 (2026-11-01T10:20:17Z): \"[Fix] Keep the last RR interval inside each SDANN window (#1213)\"; \"0.3.0 (#1179)\". Same-day commits: \"Merge #1233: [Fix] rsp_rvt(): pass sampling_rate to breath detection\" 08:49Z; \"Merge #1231: [Fix] hrv_rsa(): compute RSA_PorgesBohrer on heart period\" 08:49Z.",
-      "fetched_at": "2026-11-01T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "neuropsychology/NeuroKit@v0.3.0",
-      "author_handle": "neuropsychology",
-      "metrics": {
-        "play": null,
-        "like": 2410,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "窗口边界与采样率漏传不报错，只让 HRV/呼吸指标系统性偏移。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "EEGDash 标记「MNE 读出的量级不合理」通道，并修正 nV/pV 头部缩放",
-      "title_en": "EEGDash Flags Channels MNE Reads at Implausible Scale and Fixes nV/pV Headers",
-      "bullets_zh": [
-        "#511：对 **MNE 读出的量级明显不合理**的通道打标记，并修正以 **nV/pV** 声明单位的 EDF 头部缩放。",
-        "单位声明错（把 nV 当 µV）会让幅度差 1000 倍，进而破坏伪迹阈值、频带功率与跨数据集比较——且不会报错。",
-        "对入库/分析流水线，这类「标记而不是静默修正」的做法更安全：先暴露、再决定是否重标定。"
-      ],
-      "bullets_en": [
-        "#511 flags channels that MNE reads at an implausible scale and corrects EDF headers declaring nV or pV units.",
-        "A wrong unit declaration (treating nV as µV) shifts amplitudes by 1000x, breaking artefact thresholds, band power and cross-dataset comparisons without any error.",
-        "Flagging rather than silently rescaling is the safer choice for ingestion pipelines: surface it, then decide whether to recalibrate."
-      ],
-      "url": "https://github.com/eegdash/EEGDash/pull/511",
-      "published": "2026-11-01T04:28:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGDash 合并 #511：**标记「MNE 读出的量级不合理」的通道**，并修正以 **nV/pV** 声明单位的 EDF 头部缩放。EEG 数据里单位声明错误是经典陷阱——把 nV 当 µV 会让幅度差 **1000 倍**，伪迹阈值、频带功率、跨数据集归一化全部被带偏，而代码不会报任何错。这个 PR 的处理方式值得借鉴：**先标记、不静默修正**，让人决定是否重标定，避免把「可能是记录问题」的数据悄悄改成「看起来正常」。对做大规模数据入库或跨数据集元分析的团队，建议在流水线里消费这些标记并统计出现频率。",
-      "brief_en": "EEGDash merged #511 flagging channels MNE reads at an implausible scale and correcting EDF headers that declare nV or pV units. Misdeclared units are a classic EEG trap — treating nV as µV shifts amplitudes by 1000x and skews artefact thresholds, band power and cross-dataset normalisation with no error raised. Flagging instead of silently rescaling keeps a human in the loop.",
+      "brief": "EEGDash 合并 #510：新增 **EEGDashCorpus**，把「多数据集」当成一等对象来做**规划、下载、校验与状态追踪**——不再是逐个 dataset 手工搬。对做元分析或跨数据集预训练的团队，这一层几乎是必需的：哪些已下、哪些校验失败、哪些还缺文件，都应该是**可查询的状态**，而不是脚本里的 print 或你自己的 markdown 记录。它与近期两条改动连成一条完整链：#485 按记录固定 S3 对象版本、#494 为每条记录保存 git-annex 键、#510 在批次层面统一管理——**可追溯、可批量、可校验**。建议先用小批数据集试跑规划输出，确认选择规则符合预期再放大。",
+      "brief_en": "EEGDash merged #510 adding EEGDashCorpus, which treats many datasets as one object for planning, downloading, verifying and tracking status instead of moving them one by one. For meta-analyses or cross-dataset pretraining this is close to mandatory: what is downloaded, what failed verification and what is missing should be queryable state rather than print statements.",
       "tags": [
         "eeg-dash",
-        "edf",
-        "units",
-        "quality-control",
-        "metadata"
+        "corpus",
+        "download",
+        "verification",
+        "batch"
       ],
-      "raw_excerpt": "Commit d4a6823124, 2026-11-01T04:28Z: \"fix(edf): flag channels MNE reads at an implausible scale; scale nV/pV headers (#511)\". Repo: eegdash/EEGDash.",
-      "fetched_at": "2026-11-01T23:55:00Z",
+      "raw_excerpt": "PR #510 merged 2026-11-02T17:02Z: \"EEGDashCorpus: plan, download, verify and status over many datasets\". Related: \"fix(download): honor per-record S3 object version pins (#485)\"; \"fix(digest): record the git-annex key of every recording (#494)\".",
+      "fetched_at": "2026-11-02T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#511",
+      "upstream_id": "eegdash/EEGDash#510",
       "author_handle": "eegdash",
       "metrics": {
         "play": null,
@@ -240,100 +197,100 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "单位声明错会让幅度差 1000 倍且不报错，标记而非静默修正更安全。"
-    },
-    {
-      "type": "Project",
-      "level": "Beginner",
-      "title_zh": "独立开发者 NeuroMI Studio：ADS1299＋ESP32-S3 的非侵入式运动想象解码系统 V1",
-      "title_en": "NeuroMI Studio: An Independent Non-Invasive MI Decoding System on ADS1299 + ESP32-S3",
-      "bullets_zh": [
-        "硬件沿用自主设计的 **ADS1299＋ESP32-S3** 方案，范式为 **Graz 左右手运动想象**；V1 已集成多通道可视化、频谱分析、**ERD/ERS**、**ICA 伪迹分析**与 **CSP+LDA** 解码。",
-        "作者明确说明当前展示的是**软件功能与实验流程**，硬件接入、实时解码与机械臂闭环尚未完成——属阶段性 Demo。",
-        "对国内自建 BCI 工具链的个人开发者，这份「范式—分析—解码」串起来的 V1 流程图是少见的完整参考。"
-      ],
-      "bullets_en": [
-        "The hardware is a self-designed ADS1299 + ESP32-S3 stack with a Graz left/right motor-imagery paradigm; V1 already integrates multi-channel viewing, spectral analysis, ERD/ERS, ICA artefact analysis and CSP+LDA decoding.",
-        "The author states plainly that this demo shows software features and the experimental flow, with hardware integration, real-time decoding and robot-arm closed loop still pending.",
-        "For independent developers building a BCI toolchain in China, this end-to-end V1 flow (paradigm, analysis, decoding) is a rare complete reference."
-      ],
-      "url": "https://www.bilibili.com/video/BV1Eaxx6qEtx/",
-      "published": "2026-11-01T13:31:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站独立开发者「超人归来ray」发布 **NeuroMI Studio V1**：硬件基于自主设计的 **ADS1299＋ESP32-S3**，范式用 **Graz 左右手运动想象**，软件已集成多通道可视化、频谱分析、**ERD/ERS**、**ICA 伪迹分析**与 **CSP+LDA** 解码。作者写得很实在：当前展示的是**软件功能与实验流程**，硬件接入、实时解码与机械臂闭环还没做。对国内自建 BCI 工具链的个人或小团队，这份「采集硬件→范式→分析→解码」串起来的 V1 是少见的完整参考；也值得注意它与我们近期收录的开源 ADS1299 硬件（YuEEG、PiEEG）指向同一条低成本路线。",
-      "brief_en": "EEGDash merged #511 flagging channels MNE reads at an implausible scale and correcting EDF headers that declare nV or pV units. Misdeclared units are a classic EEG trap — treating nV as µV shifts amplitudes by 1000x and skews artefact thresholds, band power and cross-dataset normalisation with no error raised. Flagging instead of silently rescaling keeps a human in the loop.",
-      "tags": [
-        "motor-imagery",
-        "csp-lda",
-        "ads1299",
-        "esp32-s3",
-        "independent"
-      ],
-      "raw_excerpt": "「NeuroMI Studio 第一个小版本 Demo 测试。基于自主设计的 ADS1299 + ESP32-S3 硬件架构方案，采用 Graz 左右手运动想象范式，集成多通道 EEG 信号可视化、频谱分析、ERD/ERS、ICA 伪迹分析及 CSP + LDA 运动想象解码等功能。」「目前主要展示 V1 版本的软件功能与实验流程，后续将逐步推进硬件接入、实时解码及脑机接口与机械臂的闭环联动控制。」",
-      "fetched_at": "2026-11-01T23:55:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV1Eaxx6qEtx",
-      "author_handle": "超人归来ray",
-      "metrics": {
-        "play": null,
-        "like": 54,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "把采集硬件→范式→分析→解码串成完整 V1，并诚实标注尚未实现的部分。"
+      "why_valuable": "把多数据集当一等对象做规划/下载/校验/状态，元分析与预训练必需的一层。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-Python 修 trame-pyvista 兼容（0.3 发布后崩溃）",
-      "title_en": "MNE-Python Fixes trame-pyvista Compatibility After Its 0.3 Release",
+      "title_zh": "pyRiemann 修 SVR 使用预计算核时的错误",
+      "title_en": "pyRiemann Fixes SVR When Used With kernel_fct=\"precomputed\"",
       "bullets_zh": [
-        "#14474 修 **trame-pyvista 0.3 发布后导致的渲染失败**（对应 pyvista issue 9520），让交互式三维渲染在后端升级后仍可用。",
-        "作者说明待 conda-forge 的 feedstock PR 落地后，会把 `trame-pyvista` 加入 `pip-pre` 测试矩阵，避免同类升级再次漏检。",
-        "对依赖 `Brain` 交互视图或 notebook 内三维渲染的团队，建议升级后实测一次「打开→旋转→截图」链路。"
+        "#514：修 `SVR` 在 `kernel_fct=\"precomputed\"`（用预先算好的黎曼核矩阵）时的行为错误——预计算核是黎曼回归在大数据上提速的常用路径。",
+        "对回归类任务（如连续运动参数、疲劳度预测），预计算核能让每次调参省掉重复的核矩阵计算；出错则结果与逐样本计算不一致。",
+        "同批还接续近期 HPD/复数支持与 `Kmeans`/`Shrinkage` 修正，属该库连续的「语义对齐 sklearn」治理。"
       ],
       "bullets_en": [
-        "#14474 fixes rendering failures after the trame-pyvista 0.3 release (pyvista issue 9520), keeping interactive 3D rendering working after the backend upgrade.",
-        "The author will add trame-pyvista to the pip-pre test matrix once the conda-forge feedstock PR lands, so similar upgrades are caught automatically.",
-        "Teams relying on Brain interactive views or notebook 3D rendering should exercise an open-rotate-screenshot path after upgrading."
+        "#514 fixes SVR misbehaving with kernel_fct=\"precomputed\", the path that reuses a precomputed Riemannian kernel matrix — a common speed-up for regression on large datasets.",
+        "For regression targets such as continuous movement parameters or fatigue, a precomputed kernel avoids recomputing the matrix on every parameter sweep; when it misbehaves, results diverge from per-sample computation.",
+        "It continues the library's run of aligning semantics with scikit-learn, after HPD support and the Kmeans and Shrinkage fixes."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14474",
-      "published": "2026-11-01T01:45:00Z",
+      "url": "https://github.com/pyRiemann/pyRiemann/pull/514",
+      "published": "2026-11-02T11:51:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14474：修 **trame-pyvista 0.3 发布后导致的渲染失败**（对应 pyvista issue 9520），让交互式三维渲染在后端升级后仍可用。这类「上游一升级、下游就崩」的兼容问题对使用者最常见——表现是打开三维视图报错或白屏，而问题并不在 MNE 自己。作者同时说明：等 conda-forge 的 feedstock PR 落地，会把 `trame-pyvista` 加进 `pip-pre` 测试矩阵，让同类升级被自动捕获，这比逐个救火更值得肯定。对依赖 `Brain` 交互视图或 notebook 内三维渲染的团队，建议升级后实测一次「打开→旋转→截图」全链路。",
-      "brief_en": "Bilibili developer 超人归来ray released NeuroMI Studio V1: self-designed ADS1299 + ESP32-S3 hardware, a Graz left/right motor-imagery paradigm, and software covering multi-channel viewing, spectral analysis, ERD/ERS, ICA artefact analysis and CSP+LDA decoding. The author states that hardware integration, real-time decoding and the robot loop are still pending — a rare end-to-end V1.",
+      "brief": "pyRiemann 合并 #514：修 **`SVR` 在 `kernel_fct=\"precomputed\"` 时的错误**。这条对性能敏感的工作流很实际——用预先算好的黎曼核矩阵能省掉每次调参的重复计算，是回归任务（连续运动参数、疲劳度等）在大数据上的常用手段；一旦这条路径算错，结果会与逐样本计算**悄悄不一致**，而你把差异归因于「随机性」。这也是该库近期一串「语义对齐 sklearn」治理的延续（此前是 HPD 支持、`Kmeans` 被误当分类器、`Shrinkage` 收缩）。建议升级后对同一数据分别用预计算核与默认核跑一次，确认输出一致。",
+      "brief_en": "pyRiemann merged #514 fixing SVR when kernel_fct=\"precomputed\". Reusing a precomputed Riemannian kernel matrix is a common speed-up for regression on large datasets, and when that path misbehaves results diverge from per-sample computation without any error, inviting blame on randomness. It continues the library's sklearn-semantics cleanup after HPD support, the Kmeans fix and Shrinkage.",
       "tags": [
-        "mne-python",
-        "trame",
-        "pyvista",
-        "rendering",
-        "compatibility"
+        "pyriemann",
+        "svr",
+        "precomputed-kernel",
+        "regression",
+        "bugfix"
       ],
-      "raw_excerpt": "PR #14474: \"Fix for trame-pyvista — Fixes failure in https://github.com/pyvista/pyvista/issues/9520 due to 0.3 release. Once https://github.com/conda-forge/trame-pyvista-feedstock/pull/11 lands I'll add `trame-pyvista` to `pip-pre` to m[atrix]\". Merged 2026-11-01T01:45Z.",
-      "fetched_at": "2026-11-01T23:55:00Z",
+      "raw_excerpt": "Commit d7e2842aca, 2026-11-02T11:51Z: \"Fix SVR used with kernel_fct=\\\"precomputed\\\" (#514)\". Repo: pyRiemann/pyRiemann.",
+      "fetched_at": "2026-11-02T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14474",
-      "author_handle": "mne-tools",
+      "upstream_id": "pyRiemann/pyRiemann#514",
+      "author_handle": "pyRiemann",
       "metrics": {
         "play": null,
-        "like": 3578,
+        "like": 783,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "上游 trame-pyvista 升级会让三维渲染报错/白屏，且已计划纳入测试矩阵。"
+      "why_valuable": "预计算核路径算错会与逐样本结果静默不一致，容易被误当作随机波动。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-BIDS 支持用 read_epochs_bids 直接读 epoched FIF",
+      "title_en": "MNE-BIDS Lets read_epochs_bids Read Epoched FIF Files",
+      "bullets_zh": [
+        "#1679：`read_epochs_bids` 现在能读取 **epoched FIF**（此前更适合 raw 或已切分数据格式），让「按 BIDS 路径取数据」覆盖到已分段的研究对象。",
+        "对标准化流水线意味着不必先绕回原始 raw 再手写切分逻辑——BIDS 路径即入口。",
+        "同批另有 dependabot 升级（setup-uv），不影响行为。"
+      ],
+      "bullets_en": [
+        "#1679 makes read_epochs_bids able to read epoched FIF files, extending path-based BIDS access to already-segmented data that previously required a different route.",
+        "For standardised pipelines this means no detour back to raw with hand-written epoching: the BIDS path is the entry point.",
+        "A dependabot bump (setup-uv) landed alongside with no behavioural effect."
+      ],
+      "url": "https://github.com/mne-tools/mne-bids/pull/1679",
+      "published": "2026-11-02T14:56:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-BIDS 合并 #1679：`read_epochs_bids` 现在可以**直接读取 epoched FIF**。此前很多流水线的做法是「从 BIDS 拿到 raw，再自己按事件切分」——同一套切分逻辑在不同项目里重复实现，最容易出现「这边 0.5 s 基线、那边 1 s」的隐性不一致。支持 epoched 数据后，BIDS 路径本身就是入口，切分口径随数据一起走，对多中心协作尤其有意义。同批还有一次 setup-uv 的 dependabot 升级，不影响行为。建议升级后检查现有脚本是否仍在绕行，并统一到 BIDS 入口。",
+      "brief_en": "MNE-BIDS merged #1679 so read_epochs_bids can read epoched FIF files directly. Many pipelines previously fetched raw through BIDS and re-implemented epoching locally, which invites silent inconsistency in baselines and windows across projects; with epoched support the BIDS path becomes the entry point and the segmentation choice travels with the data. A dependabot bump landed alongside.",
+      "tags": [
+        "mne-bids",
+        "epoched",
+        "fif",
+        "bids",
+        "pipeline"
+      ],
+      "raw_excerpt": "Commits 2026-11-02: \"ENH: Read epoched FIF files in read_epochs_bids (#1679)\" (eb94364e46) 14:56Z; \"[dependabot]: Bump astral-sh/setup-uv from 10.3.2 to 10.3.3\" 01:39Z.",
+      "fetched_at": "2026-11-02T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-bids#1679",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 183,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "epoched 数据可直接走 BIDS 入口，切分口径随数据走，减少多中心隐性不一致。"
     }
   ],
   "stats": {
     "fetched": 132,
     "prefiltered": 98,
-    "llm_rows": 22,
-    "kept": 7,
+    "llm_rows": 20,
+    "kept": 6,
     "llm_failed": false,
     "llm_skipped_batches": 0,
     "conflicts_dropped": 3
