@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T12:51:39.234Z",
+  "generatedAt": "2026-11-03T12:20:44.790Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 16
+      "count": 17
     },
     {
       "id": "github",
       "ok": true,
-      "count": 5
+      "count": 8
     }
   ],
   "items": [
@@ -376,63 +376,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008837",
-      "name": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008837",
-      "source": "openneuro",
-      "description": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T18:57:09.583Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008836",
-      "name": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008836",
-      "source": "openneuro",
-      "description": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T17:37:30.442Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008834",
-      "name": "PKUEEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008834",
-      "source": "openneuro",
-      "description": "PKUEEG",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T08:20:25.932Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:EEGDash/eeg-mi-datasets",
       "name": "eeg-mi-datasets",
       "owner": "EEGDash",
@@ -450,7 +393,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11408,
+      "downloads": 11502,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -473,7 +416,7 @@
         "Boredom"
       ],
       "license": "cc-by-4.0",
-      "downloads": 10501,
+      "downloads": 10507,
       "likes": null,
       "updatedAt": "2026-10-23T00:00:00.000Z",
       "modality": [
@@ -498,7 +441,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 6938,
+      "downloads": 6799,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -523,7 +466,7 @@
         "eeg"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1968,
+      "downloads": 1965,
       "likes": 2,
       "updatedAt": "2026-10-28T15:13:25.000Z",
       "modality": [
@@ -548,7 +491,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2093,
+      "downloads": 2096,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -566,7 +509,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1281,
+      "downloads": 1292,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -591,7 +534,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 754,
+      "downloads": 756,
       "likes": 2,
       "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
@@ -630,7 +573,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 413,
+      "downloads": 415,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -652,7 +595,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 680,
+      "downloads": 653,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -677,8 +620,8 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 292,
-      "likes": 4,
+      "downloads": 274,
+      "likes": 5,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
         "EEG"
@@ -690,7 +633,7 @@
       "owner": "HABSteam",
       "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
       "source": "huggingface",
-      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 384 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
+      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
       "tags": [
         "eeg",
         "ecg",
@@ -702,9 +645,9 @@
         "biosignals"
       ],
       "license": "other",
-      "downloads": 130,
+      "downloads": 249,
       "likes": 0,
-      "updatedAt": "2026-11-02T12:50:25.000Z",
+      "updatedAt": "2026-11-03T09:04:43.000Z",
       "modality": [
         "EEG",
         "ECG"
@@ -725,7 +668,7 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 151,
+      "downloads": 153,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
       "modality": [
@@ -752,7 +695,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 183,
-      "updatedAt": "2026-11-02T01:39:15.000Z",
+      "updatedAt": "2026-11-02T22:13:41.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -772,7 +715,7 @@
         "Neurorehabilitation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 527,
+      "downloads": 531,
       "likes": null,
       "updatedAt": "2026-10-14T00:00:00.000Z",
       "modality": [
@@ -791,7 +734,7 @@
         "EEG features"
       ],
       "license": "cc-by-4.0",
-      "downloads": 79,
+      "downloads": 180,
       "likes": null,
       "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
@@ -832,9 +775,45 @@
       "description": "Data set and scripts for EEG pre-processing and statistical analysis in rTMS S1 PwS (EEG)",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 96,
+      "downloads": 104,
       "likes": null,
       "updatedAt": "2026-10-25T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23851102",
+      "name": "P300-BCI EEG dataset: sitting vs. supine posture",
+      "owner": "Chailloux Peguero, Juan David",
+      "url": "https://doi.org/10.5281/zenodo.23851102",
+      "source": "zenodo",
+      "description": "# P300-BCI EEG dataset: sitting vs. supine posture EEG recordings of a five-target visual P300 brain&ndash;computer interface (BCI) task. Ten healthy volunteers performed the task in two postures: sitting (SIT) and supine (SUP). This dataset accompanies the article: &gt; Chaillo…",
+      "tags": [
+        "EEG",
+        "body posture",
+        "information transfer rate"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 64,
+      "likes": null,
+      "updatedAt": "2026-11-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23764504",
+      "name": "Load decoding across WM states",
+      "owner": "Fu, Yingtao",
+      "url": "https://doi.org/10.5281/zenodo.23764504",
+      "source": "zenodo",
+      "description": "This dataset contains preprocessed EEG data from 33 participants in a visual working-memory experiment examining attended and unattended representations under different memory loads. The data are provided in EEGLAB format. Each participant&rsquo;s dataset consists of a paired .s…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 52,
+      "likes": null,
+      "updatedAt": "2026-10-29T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -873,62 +852,17 @@
       ]
     },
     {
-      "id": "zenodo:23878797",
-      "name": "Evidence for claims in manuscript: Foundation Models for EEG: Progress, Challenges, and Opportunities for Clinical Neurophysiology",
+      "id": "zenodo:23901972",
+      "name": "Replication Materials for \"Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence\"",
       "owner": "Anonymous",
-      "url": "https://doi.org/10.5281/zenodo.23878797",
+      "url": "https://doi.org/10.5281/zenodo.23901972",
       "source": "zenodo",
-      "description": "Evidence for claims in manuscript: Foundation Models for EEG: Progress, Challenges, and Opportunities for Clinical Neurophysiology",
+      "description": "This repository contains replication materials associated with the manuscript &ldquo;Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence.&rdquo; Experiment 1 examined the relationships among second language (L…",
       "tags": [],
       "license": "cc-by-4.0",
       "downloads": 0,
       "likes": null,
-      "updatedAt": "2026-11-02T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23851102",
-      "name": "P300-BCI EEG dataset: sitting vs. supine posture",
-      "owner": "Chailloux Peguero, Juan David",
-      "url": "https://doi.org/10.5281/zenodo.23851102",
-      "source": "zenodo",
-      "description": "# P300-BCI EEG dataset: sitting vs. supine posture EEG recordings of a five-target visual P300 brain&ndash;computer interface (BCI) task. Ten healthy volunteers performed the task in two postures: sitting (SIT) and supine (SUP). This dataset accompanies the article: &gt; Chaillo…",
-      "tags": [
-        "EEG",
-        "body posture",
-        "information transfer rate"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 3,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23855268",
-      "name": "Graded Minds:  ERP Evidence for Continuous, Multidimensional Conceptual Processing  in Picture–Word Stroop and Semantic Decision Tasks",
-      "owner": "Di Pietro, Irene",
-      "url": "https://doi.org/10.5281/zenodo.23855268",
-      "source": "zenodo",
-      "description": "This record contains the data, materials, and code accompanying the manuscript \"Graded Minds: ERP Evidence for Continuous, Multidimensional Conceptual Processing in Picture&ndash;Word Stroop and Semantic Decision Tasks\" (Di Pietro, Viviani, &Uuml;lk&uuml;, Vallesi, Montefinese,…",
-      "tags": [
-        "Picture-Word interference",
-        "semantic decision",
-        "semantic similarity",
-        "visual similarity",
-        "task demands",
-        "ERP",
-        "grounded cognition",
-        "word production"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
+      "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -953,7 +887,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 90,
-      "updatedAt": "2026-11-01T04:28:58.000Z",
+      "updatedAt": "2026-11-02T17:02:19.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -979,9 +913,54 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 18,
-      "updatedAt": "2026-11-02T12:24:12.000Z",
+      "updatedAt": "2026-11-03T06:24:12.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "github:nimbusbci/nimbus-mcp",
+      "name": "nimbus-mcp",
+      "owner": "nimbusbci",
+      "url": "https://github.com/nimbusbci/nimbus-mcp",
+      "source": "github",
+      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
+      "tags": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "fastmcp",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol"
+      ],
+      "license": "Apache-2.0",
+      "downloads": null,
+      "likes": 3,
+      "updatedAt": "2026-11-03T00:02:52.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:supernaiter/silent-speech-review",
+      "name": "silent-speech-review",
+      "owner": "supernaiter",
+      "url": "https://github.com/supernaiter/silent-speech-review",
+      "source": "github",
+      "description": "Bilingual (EN/JA) structured reviews of 152 silent speech interface papers: EMG, EEG, ultrasound, EPG, lip reading, radar and acoustic sensing. Sensors, datasets, metrics and open problems for each paper.",
+      "tags": [
+        "silent-speech",
+        "silent-speech-interface",
+        "silent-speech-recognition"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-11-03T07:34:49.000Z",
+      "modality": [
+        "EEG",
+        "EMG"
       ]
     },
     {
@@ -1004,7 +983,7 @@
       "license": "MIT",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-02T12:50:36.000Z",
+      "updatedAt": "2026-11-02T17:25:32.000Z",
       "modality": [
         "EEG"
       ]
@@ -1026,6 +1005,26 @@
       "downloads": null,
       "likes": 1,
       "updatedAt": "2026-11-02T09:23:45.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:jajakarntima29-choo/EEG-Based-Emotion-Classification-Using-the-GAMEEMO-Dataset-A-Reproduction-and-Evaluation-Study",
+      "name": "EEG-Based-Emotion-Classification-Using-the-GAMEEMO-Dataset-A-Reproduction-and-Evaluation-Study",
+      "owner": "jajakarntima29-choo",
+      "url": "https://github.com/jajakarntima29-choo/EEG-Based-Emotion-Classification-Using-the-GAMEEMO-Dataset-A-Reproduction-and-Evaluation-Study",
+      "source": "github",
+      "description": "This project explores emotion recognition through EEG signals using machine learning and the GAMEEMO dataset. We reproduce an existing research approach using SVM, kNN, and MLPNN, while investigating how different evaluation strategies influence model performance and its ability…",
+      "tags": [
+        "eeg",
+        "emotion-recognition",
+        "machine-learning"
+      ],
+      "license": null,
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-03T08:51:23.000Z",
       "modality": [
         "EEG"
       ]
