@@ -1,194 +1,109 @@
 {
-  "date": "2026-11-03",
-  "generated_at": "2026-11-02T21:32:01.518Z",
-  "item_count": 6,
+  "date": "2026-11-04",
+  "generated_at": "2026-11-03T21:32:19.810Z",
+  "item_count": 7,
   "types": {
+    "Benchmark": 1,
     "Project": 6
   },
   "highlights": [
     {
-      "title_zh": "braindecode 发布 2.0.0：要求 PyTorch ≥ 2.4，并同时维护 1.8.x 线",
-      "title_en": "braindecode Releases 2.0.0 Requiring PyTorch >= 2.4, With a Parallel 1.8.x Maintenance Line",
-      "url": "https://github.com/braindecode/braindecode/releases/tag/v2.0.0",
-      "brief": "braindecode 发布 **2.0.0**（2026-11-02），是一次需要规划的升级：**要求 PyTorch 2.4** 并删除过时兼容代码、REVE/ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名导致的 FutureWarning、修 CombinedConv 在某维为 1 时的偏置折叠。好消息是同日还发了 **v1.8.2 维护版**，1.8.x 线继续维护，升级不必一次到位。另需留意：2.0 里 **BaRISTA 模型先加后撤**（#1171 → #1172 revert），若你已依赖它，请确认所用版本仍包含。对生产环境，建议先在独立环境跑通旧模型加载与 `torch.jit` 导出，再整体切换。"
+      "title_zh": "开源 LLM 能读脑电吗？严谨阴性结果：直接解码在随机水平，给它经典解码器才有用",
+      "title_en": "Can an Open LLM Read EEG? A Rigorous Negative Result: Chance Alone, Useful Only With a Decoder Tool",
+      "url": "https://github.com/renantrendt/fireworks-eeg-bci",
+      "brief": "一个难得**敢报阴性结果**的实验：问「开源大模型能否仅凭 4 秒头皮脑电判断想象握左拳还是右拳」，且严格要求**被试独立**（模型没见过测试者），统一 144 个留出试次 + 两项统计检验。结论很干脆：**LLM 读不了脑电本身**——原版 `glm-5p3-flash` 52.8%、LoRA 微调 51.4%，都在随机水平，且约 80% 的试次都答「左」；换更强的 Claude Fable 5.1 也只 54.2%（p=0.18）。**真正有用的是架构**：把 CSP+LDA 解码器封装成工具让它调用，同一模型升到 62.5%（p=0.002），而解码器单独 63.2%——**LLM 提供的是控制层而非精度**，代价约 0.6 秒/次决策。对当前「LLM 直接解码 EEG」的叙事，这是最需要的一剂证据。"
     },
     {
-      "title_zh": "MNE-Python 修统计置换检验的三个 bug：漏一、符号约定与 abs 误用",
-      "title_en": "MNE-Python Fixes Three Permutation-Test Bugs: Off-by-One, Sign Convention and abs Misuse",
-      "url": "https://github.com/mne-tools/mne-python/pull/14482",
-      "brief": "MNE-Python 合并 #14482，一次性关掉三个 issue，修的是**置换检验里的三个独立 bug**：①#14479 的**漏一错误**；②**符号约定不一致**——`0/1` 本意是「不翻转/翻转」，但下游函数按相反语义使用；③本应「按尾选一边」的地方误用了 `abs`。作者原话是「这个真费劲」，可以理解：三者都不会让程序崩溃，只会让 **p 值与单/双尾结论偏移**，而这正是统计 bug 最危险的形态——审稿时看不出、复现时对不上。对用 MNE 做置换检验（cluster-based、sign-flip 等）并据此写结论的团队，建议升级后重跑关键统计、对比新旧 p 值，必要时修正论文里的显著性表述。"
+      "title_zh": "EEGDash 一批 ingest 修复：CTF 残半试次、latin-1 重试与通道名不一致",
+      "title_en": "EEGDash Ingestion Fixes: CTF Partial Trials, latin-1 Retry and Channel-Name Mismatches",
+      "url": "https://github.com/eegdash/EEGDash/pull/516",
+      "brief": "EEGDash 在 11-03 推进 9 次提交，几乎都是「格式不规范也要读对」：#516 对**最后一个 trial 只写了一半的 meg4**只读取完整 trial（残段当有效数据会让该被试的所有指标偏一点）；#517 与 #520 在 **sidecar 记录数与文件头不一致**时正确取到通道名（iEEG、BrainVision/EEGLAB）；#518 让 `.set` digest 解析器在非 UTF-8 时用 **latin-1 重试**，并排除已知问题数据集 ds005787。同批还有 Corpus tab 的 v0 文档（#519）。对做大规模入库的团队，这些修复的价值不在「多支持了某个格式」，而在**避免静默错位**——错一列通道名，后面所有空间分析都会跟着错。"
     },
     {
-      "title_zh": "NeuroSkill：Tauri（Rust）＋SvelteKit 的本地优先神经反馈/BCI 桌面应用",
-      "title_en": "NeuroSkill: A Local-First Neurofeedback and BCI Desktop App in Tauri (Rust) + SvelteKit",
-      "url": "https://github.com/NeuroSkill-com/skill",
-      "brief": "NeuroSkill 发布 **0.1.0**（2026-11-02）：一个**本地优先**的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包与设备列表页。它的两个特点值得注意：一是「本地优先」——数据与推理留在本机，对隐私敏感的研究场景更合适；二是 README 明确写着**不是 FDA/CE 批准产品、不得用于诊断或治疗**，消费级神经科技里这种自我限定并不常见。同批提交还移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4），说明有在跟 Rust 生态的安全通告。对想找「可直接装来试用」的开源神经反馈工具的人，这是新选项；用于研究前请自行核对采样率与设备兼容性。"
+      "title_zh": "EEGEdu 修 256 Hz 滤波采样率、SSVEP/ERP 时序与 BLE 内存泄漏",
+      "title_en": "EEGEdu Fixes the 256 Hz Filter Rate, SSVEP/ERP Timing and BLE Memory Leaks",
+      "url": "https://github.com/kylemath/EEGEdu/commit/ad695d3ed4",
+      "brief": "EEGEdu（浏览器里的交互式脑电教学/实验平台）在 11-03 连推 3 个提交，修的都是「看起来能跑但结果不对」的问题：**256 Hz 滤波的 `samplingRate` 传错**（频率轴整体偏移，SSVEP 目标频率会落到错误位置）、滑块状态闭包、以及 **SSVEP/ERP 刺激时序**。另两条更偏工程：**ConnectableObservable 内存泄漏**、**BLE 断连处理**与 KNN 识别逻辑——浏览器里「BLE 流 + 实时渲染」的组合最容易积累这类隐患，表现为跑十几分钟后越来越卡。对用网页做课堂演示或轻量实验的团队，这类修复直接决定演示是否可信；建议升级后对照已知 SSVEP 频率验证一次。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-03.md",
+  "github_path": "docs/bci-cn-daily/2026-11-04.md",
   "items": [
     {
-      "type": "Project",
+      "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "braindecode 发布 2.0.0：要求 PyTorch ≥ 2.4，并同时维护 1.8.x 线",
-      "title_en": "braindecode Releases 2.0.0 Requiring PyTorch >= 2.4, With a Parallel 1.8.x Maintenance Line",
+      "title_zh": "开源 LLM 能读脑电吗？严谨阴性结果：直接解码在随机水平，给它经典解码器才有用",
+      "title_en": "Can an Open LLM Read EEG? A Rigorous Negative Result: Chance Alone, Useful Only With a Decoder Tool",
       "bullets_zh": [
-        "**v2.0.0** 正式发布（2026-11-02），要点包括：**要求 PyTorch 2.4** 并移除过时兼容代码、REVE 与 ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名引发的 FutureWarning、修 CombinedConv 在某一维为 1 时的偏置折叠。",
-        "同一天还发布了 **v1.8.2 维护版**（从 tag 发布），说明 2.0 之后 1.8.x 仍有维护线——升级节奏不必一次到位。",
-        "注意 2.0 里 **BaRISTA 模型被加入后又撤销**（#1171 加入、#1172 revert），如果你已开始依赖它，需要确认当前版本是否仍包含。"
+        "设定：仅凭 **4 秒头皮脑电**判断「想象握左拳还是右拳」，且**被试独立**（模型从未见过测试者），统一在 **144 个留出试次**上评测并做两项统计检验。",
+        "结果：原版 `glm-5p3-flash` **52.8%**、LoRA 微调 **51.4%**——均在随机水平，且约 80% 的试次都答「左」；换更强的 Claude Fable 5.1 零样本也只有 **54.2%**（p=0.18）。",
+        "但把 **CSP+LDA 解码器封装成工具**给它调用，同一模型升到 **62.5%**（p=0.002），而解码器单独是 **63.2%**（p=0.001）——**LLM 提供的是控制层，不是解码精度**，每次决策约 0.6 秒。"
       ],
       "bullets_en": [
-        "v2.0.0 shipped on 2026-11-02: it requires PyTorch 2.4 and drops obsolete compatibility code, moves REVE and ZUNA to native RMSNorm, fixes the FutureWarning from renamed standard montages on MNE >= 1.13, and fixes CombinedConv bias folding when a dimension is 1.",
-        "A v1.8.2 maintenance release also shipped the same day from its tag, so the 1.8.x line stays supported and upgrades need not happen all at once.",
-        "Inside 2.0 the BaRISTA model was added and then reverted (#1171 then #1172); if you started relying on it, check whether your version still includes it."
+        "Setup: decide from 4 s of scalp EEG whether someone imagined squeezing the left or right fist, person-independent (the model never saw test participants), scored on the same 144 held-out trials with two statistical tests.",
+        "Results: stock glm-5p3-flash scores 52.8% and a LoRA fine-tune 51.4% — both at chance, both answering LEFT about 80% of the time; Claude Fable 5.1 zero-shot reaches only 54.2% (p=0.18).",
+        "Wrapping a CSP+LDA decoder as a tool lifts the same model to 62.5% (p=0.002) against 63.2% for the decoder alone — the LLM contributes control, not decoding accuracy, at ~0.6 s per decision."
       ],
-      "url": "https://github.com/braindecode/braindecode/releases/tag/v2.0.0",
-      "published": "2026-11-02T19:54:00Z",
+      "url": "https://github.com/renantrendt/fireworks-eeg-bci",
+      "published": "2026-11-03T04:29:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 发布 **2.0.0**（2026-11-02），是一次需要规划的升级：**要求 PyTorch 2.4** 并删除过时兼容代码、REVE/ZUNA 改用原生 RMSNorm、修 MNE ≥1.13 下标准蒙太奇改名导致的 FutureWarning、修 CombinedConv 在某维为 1 时的偏置折叠。好消息是同日还发了 **v1.8.2 维护版**，1.8.x 线继续维护，升级不必一次到位。另需留意：2.0 里 **BaRISTA 模型先加后撤**（#1171 → #1172 revert），若你已依赖它，请确认所用版本仍包含。对生产环境，建议先在独立环境跑通旧模型加载与 `torch.jit` 导出，再整体切换。",
-      "brief_en": "braindecode released 2.0.0 on 2026-11-02, an upgrade worth planning: it requires PyTorch 2.4 and drops obsolete compatibility code, moves REVE and ZUNA to native RMSNorm, fixes montage-rename FutureWarnings on MNE >= 1.13 and a CombinedConv bias-folding bug. A v1.8.2 maintenance release shipped the same day, so 1.8.x stays supported; note BaRISTA was added then reverted inside 2.0.",
+      "brief": "一个难得**敢报阴性结果**的实验：问「开源大模型能否仅凭 4 秒头皮脑电判断想象握左拳还是右拳」，且严格要求**被试独立**（模型没见过测试者），统一 144 个留出试次 + 两项统计检验。结论很干脆：**LLM 读不了脑电本身**——原版 `glm-5p3-flash` 52.8%、LoRA 微调 51.4%，都在随机水平，且约 80% 的试次都答「左」；换更强的 Claude Fable 5.1 也只 54.2%（p=0.18）。**真正有用的是架构**：把 CSP+LDA 解码器封装成工具让它调用，同一模型升到 62.5%（p=0.002），而解码器单独 63.2%——**LLM 提供的是控制层而非精度**，代价约 0.6 秒/次决策。对当前「LLM 直接解码 EEG」的叙事，这是最需要的一剂证据。",
+      "brief_en": "A rare honest negative result: can an open LLM tell from 4 s of scalp EEG whether someone imagined a left or right fist squeeze, person-independent, on 144 held-out trials with two statistical tests? It cannot — stock 52.8% and LoRA 51.4% at chance, answering LEFT ~80% of the time, Claude Fable 5.1 only 54.2%. Giving it CSP+LDA as a tool reaches 62.5% versus 63.2% alone: control, not accuracy.",
       "tags": [
-        "braindecode",
-        "release",
-        "pytorch",
-        "rmsnorm",
-        "breaking-change"
+        "llm",
+        "eeg-decoding",
+        "negative-result",
+        "benchmark",
+        "agent"
       ],
-      "raw_excerpt": "Release v2.0.0 (2026-11-02T19:54:18Z), notes include: \"Fix CombinedConv bias folding when a dimension is 1 (#1154)\"; \"Fix FutureWarning for renamed standard montages on MNE >= 1.13 (#1164)\"; \"Add BaRISTA model (#1171)\" then \"Revert \\\"Add BaRISTA model\\\" (#1172)\"; \"Require PyTorch 2.4 and remove obsolete compatibility code (#1174)\"; \"Use native RMSNorm directly in REVE and ZUNA (#1176)\". Same day: v1.8.2 (2026-11-02T21:12:45Z) maintenance release.",
-      "fetched_at": "2026-11-02T23:55:00Z",
+      "raw_excerpt": "README: \"We asked whether an open LLM can tell, from 4 seconds of scalp EEG, whether a person imagined squeezing their left or right fist. We tested the person-independent case… scored on the same 144 held-out trials and checked with two statistical tests.\" \"**Headline:** the LLM cannot read the brain signal itself. Stock `glm-5p3-flash` scores **52.8%** and the LoRA fine-tune **51.4%**… Claude Fable 5.1, zero-shot, scores **54.2%**. Given the classic decoder (CSP+LDA) as a tool, the same stock model scores **62.5%** with no training, against **63.2%** for the decoder alone. The LLM adds control, not accuracy.\"",
+      "fetched_at": "2026-11-03T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode@v2.0.0",
-      "author_handle": "braindecode",
+      "upstream_id": "renantrendt/fireworks-eeg-bci",
+      "author_handle": "renantrendt",
       "metrics": {
         "play": null,
-        "like": 1337,
+        "like": 0,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "2.0 要求 PyTorch 2.4 且有先加后撤的模型，升级前需核对；同时留了 1.8.x 维护线。"
+      "why_valuable": "用 144 试次与统计检验证明 LLM 直接解码在随机水平，价值在架构而非模型。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-Python 修统计置换检验的三个 bug：漏一、符号约定与 abs 误用",
-      "title_en": "MNE-Python Fixes Three Permutation-Test Bugs: Off-by-One, Sign Convention and abs Misuse",
+      "title_zh": "EEGDash 一批 ingest 修复：CTF 残半试次、latin-1 重试与通道名不一致",
+      "title_en": "EEGDash Ingestion Fixes: CTF Partial Trials, latin-1 Retry and Channel-Name Mismatches",
       "bullets_zh": [
-        "#14482 一次关掉三个 issue（#14479、#12216、#11511），修的是置换检验里的**三个独立 bug**：①**off-by-one**；②**符号约定不一致**（`0/1` 表示「不翻转/翻转」，但消费端按相反语义使用）；③本应「按尾选一边」的地方误用了 `abs`。",
-        "这些错误不会让代码崩，只会让 p 值与单/双尾结论偏移——统计结果类问题最危险的形态。",
-        "对用 MNE 做置换检验（cluster-based、sign-flip 等）发表结论的团队，建议升级后重跑关键统计并对比旧 p 值。"
+        "#516：对「**最后一个 trial 只写了一半的 meg4**」只读取完整 trial，避免把残段当有效数据；#517/#520：当 sidecar 记录数与文件头不一致时，正确取到通道名（iEEG、BrainVision/EEGLAB）。",
+        "#518：`.set` digest 解析器在遇到非 UTF-8 时改用 **latin-1 重试**，并排除已知问题数据集 ds005787。",
+        "这些都属于「格式不规范也要读对」的工程活：错一列通道名或多读半段数据，会让下游所有分析静默偏移。"
       ],
       "bullets_en": [
-        "#14482 closes three issues (#14479, #12216, #11511) by fixing three independent permutation-test bugs: an off-by-one, a sign-convention mismatch (0/1 meant no-flip/flip but the consumer used the opposite), and an abs() where picking one tail was required.",
-        "None of these crash; they shift p-values and one- versus two-tailed conclusions — the most dangerous shape a statistical bug can take.",
-        "Teams publishing permutation-based results (cluster-based, sign-flip) with MNE should re-run key statistics and compare old p-values after upgrading."
+        "#516 reads only whole trials from a meg4 whose last trial is only partially written; #517 and #520 resolve channel names when the sidecar count disagrees with the file header (iEEG, BrainVision/EEGLAB).",
+        "#518 retries the .set digest parser with latin-1 when the encoding is not UTF-8, and excludes the known problem dataset ds005787.",
+        "All are 'read it correctly even when the format is sloppy' work: one mislabelled channel column or a half trial silently shifts every downstream analysis."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14482",
-      "published": "2026-11-02T19:40:00Z",
+      "url": "https://github.com/eegdash/EEGDash/pull/516",
+      "published": "2026-11-03T15:22:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14482，一次性关掉三个 issue，修的是**置换检验里的三个独立 bug**：①#14479 的**漏一错误**；②**符号约定不一致**——`0/1` 本意是「不翻转/翻转」，但下游函数按相反语义使用；③本应「按尾选一边」的地方误用了 `abs`。作者原话是「这个真费劲」，可以理解：三者都不会让程序崩溃，只会让 **p 值与单/双尾结论偏移**，而这正是统计 bug 最危险的形态——审稿时看不出、复现时对不上。对用 MNE 做置换检验（cluster-based、sign-flip 等）并据此写结论的团队，建议升级后重跑关键统计、对比新旧 p 值，必要时修正论文里的显著性表述。",
-      "brief_en": "MNE-Python merged #14482 closing three issues and fixing three independent permutation-test bugs: an off-by-one (#14479), a sign-convention mismatch where 0/1 meant no-flip/flip but the consumer used the opposite, and an abs() where one tail should have been selected. None crash; they shift p-values and one- versus two-tailed conclusions. Re-run permutation statistics after upgrading.",
-      "tags": [
-        "mne-python",
-        "permutation",
-        "statistics",
-        "p-value",
-        "bugfix"
-      ],
-      "raw_excerpt": "PR #14482 \"Fix stats permutation bugs — Closes #14479, #12216, #11511. 1. Fix the off-by-one from #14479 2. Fix a sign convention mismatch (0 and 1 meaning don't flip and flip when the consuming function used them in the opposite way) 3. Fix a small bug involving use of `abs` when we actually needed to pick either the [...]\". Merged 2026-11-02T19:40Z. Same day: \"ENH: Allow passing precomputed interpolation data for EEG and MEG\" 20:24Z.",
-      "fetched_at": "2026-11-02T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14482",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 3582,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "三个 bug 都不崩但会偏移 p 值与单双尾结论，需重跑关键统计核对。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "NeuroSkill：Tauri（Rust）＋SvelteKit 的本地优先神经反馈/BCI 桌面应用",
-      "title_en": "NeuroSkill: A Local-First Neurofeedback and BCI Desktop App in Tauri (Rust) + SvelteKit",
-      "bullets_zh": [
-        "定位为**开源 EXG/BCI 研究工具**：本地优先的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包。",
-        "README 明确声明 **「不是 FDA/CE 批准产品，不得用于诊断或治疗」**——在消费级神经科技里这种自我限定值得肯定。",
-        "本次为 **0.1.0** 首发，并顺手移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4）。"
-      ],
-      "bullets_en": [
-        "An open-source EXG/BCI research tool: a local-first desktop neurofeedback and BCI application built with Tauri v2 (Rust) and SvelteKit, GPL-3.0, with macOS and Windows installers.",
-        "The README states plainly that it is not FDA/CE approved and must not be used for diagnosis or treatment — a welcome boundary in consumer neurotech.",
-        "This is the 0.1.0 first release, which also removed an unused dependency (zip 4) carrying RUSTSEC-2026-0429."
-      ],
-      "url": "https://github.com/NeuroSkill-com/skill",
-      "published": "2026-11-02T18:44:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "NeuroSkill 发布 **0.1.0**（2026-11-02）：一个**本地优先**的桌面神经反馈 + BCI 应用，技术栈 **Tauri v2（Rust）＋ SvelteKit**，GPL-3.0，提供 macOS/Windows 安装包与设备列表页。它的两个特点值得注意：一是「本地优先」——数据与推理留在本机，对隐私敏感的研究场景更合适；二是 README 明确写着**不是 FDA/CE 批准产品、不得用于诊断或治疗**，消费级神经科技里这种自我限定并不常见。同批提交还移除了一个含 **RUSTSEC-2026-0429** 告警的无用依赖（zip 4），说明有在跟 Rust 生态的安全通告。对想找「可直接装来试用」的开源神经反馈工具的人，这是新选项；用于研究前请自行核对采样率与设备兼容性。",
-      "brief_en": "NeuroSkill released 0.1.0 on 2026-11-02: a local-first desktop neurofeedback and BCI application built with Tauri v2 (Rust) and SvelteKit, GPL-3.0, shipping macOS and Windows installers. Local-first keeps data and inference on the machine, and the README states that it is not FDA/CE approved and must not be used for diagnosis. A dependency with RUSTSEC-2026-0429 was removed.",
-      "tags": [
-        "neurofeedback",
-        "tauri",
-        "rust",
-        "local-first",
-        "desktop"
-      ],
-      "raw_excerpt": "README: \"NeuroSkill is an open-source EXG/BCI research tool. It is not FDA/CE approved and must not be used for diagnosis or treatment.\" \"NeuroSkill is a local-first desktop neurofeedback + BCI app built with **Tauri v2 (Rust)** and **SvelteKit**.\" Commits 2026-11-02: \"0.1.0\" (bb52ecf9f2) 18:44Z; \"zip: drop unused zip 4 (RUSTSEC-2026-0429)\" (4d7348f8e4) 18:48Z.",
-      "fetched_at": "2026-11-02T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroSkill-com/skill",
-      "author_handle": "NeuroSkill-com",
-      "metrics": {
-        "play": null,
-        "like": 105,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "本地优先的 Rust 桌面神经反馈首发，且明确写了「非医疗器械」边界。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "EEGDashCorpus：对多数据集做规划、下载、校验与状态追踪",
-      "title_en": "EEGDashCorpus: Plan, Download, Verify and Track Status Across Many Datasets",
-      "bullets_zh": [
-        "#510 新增 **EEGDashCorpus** 抽象：可对**成批数据集**做「规划 → 下载 → 校验 → 状态」的统一管理，而不是逐个 dataset 手工搬运。",
-        "对做元分析或跨数据集预训练的人，这一层几乎是必需的：哪些已下、哪些校验失败、哪些还缺文件，需要可查询的状态而不是脚本里的 print。",
-        "与近期 #485（按记录固定 S3 版本）、#494（记录 git-annex 键）形成一条完整链：**可追溯 + 可批量 + 可校验**。"
-      ],
-      "bullets_en": [
-        "#510 adds an EEGDashCorpus abstraction that plans, downloads, verifies and tracks status across many datasets rather than moving them one by one.",
-        "For meta-analyses or cross-dataset pretraining this layer is close to mandatory: which datasets are down, which failed verification and what is missing should be queryable state, not print statements.",
-        "It completes a chain with #485 (per-record S3 version pins) and #494 (git-annex keys): traceable, batchable and verifiable."
-      ],
-      "url": "https://github.com/eegdash/EEGDash/pull/510",
-      "published": "2026-11-02T17:02:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGDash 合并 #510：新增 **EEGDashCorpus**，把「多数据集」当成一等对象来做**规划、下载、校验与状态追踪**——不再是逐个 dataset 手工搬。对做元分析或跨数据集预训练的团队，这一层几乎是必需的：哪些已下、哪些校验失败、哪些还缺文件，都应该是**可查询的状态**，而不是脚本里的 print 或你自己的 markdown 记录。它与近期两条改动连成一条完整链：#485 按记录固定 S3 对象版本、#494 为每条记录保存 git-annex 键、#510 在批次层面统一管理——**可追溯、可批量、可校验**。建议先用小批数据集试跑规划输出，确认选择规则符合预期再放大。",
-      "brief_en": "EEGDash merged #510 adding EEGDashCorpus, which treats many datasets as one object for planning, downloading, verifying and tracking status instead of moving them one by one. For meta-analyses or cross-dataset pretraining this is close to mandatory: what is downloaded, what failed verification and what is missing should be queryable state rather than print statements.",
+      "brief": "EEGDash 在 11-03 推进 9 次提交，几乎都是「格式不规范也要读对」：#516 对**最后一个 trial 只写了一半的 meg4**只读取完整 trial（残段当有效数据会让该被试的所有指标偏一点）；#517 与 #520 在 **sidecar 记录数与文件头不一致**时正确取到通道名（iEEG、BrainVision/EEGLAB）；#518 让 `.set` digest 解析器在非 UTF-8 时用 **latin-1 重试**，并排除已知问题数据集 ds005787。同批还有 Corpus tab 的 v0 文档（#519）。对做大规模入库的团队，这些修复的价值不在「多支持了某个格式」，而在**避免静默错位**——错一列通道名，后面所有空间分析都会跟着错。",
+      "brief_en": "EEGDash made nine commits on Nov 3, nearly all about reading sloppy formats correctly: #516 reads only whole trials from a meg4 whose last trial is half-written; #517 and #520 resolve channel names when the sidecar count disagrees with the header; #518 retries the .set digest parser with latin-1. The value is preventing silent misalignment rather than adding formats.",
       "tags": [
         "eeg-dash",
-        "corpus",
-        "download",
-        "verification",
-        "batch"
+        "ingest",
+        "ctf",
+        "encoding",
+        "channel-names"
       ],
-      "raw_excerpt": "PR #510 merged 2026-11-02T17:02Z: \"EEGDashCorpus: plan, download, verify and status over many datasets\". Related: \"fix(download): honor per-record S3 object version pins (#485)\"; \"fix(digest): record the git-annex key of every recording (#494)\".",
-      "fetched_at": "2026-11-02T23:55:00Z",
+      "raw_excerpt": "PRs merged 2026-11-03: \"fix(ctf): read only the whole trials of a meg4 that ends inside a trial (#516)\" 15:22Z; \"fix(ieeg): header channel names when the sidecar count differs (#517)\" 15:31Z; \"fix(ingest): latin-1 retry in the .set digest parser; exclude ds005787 (#518)\" 16:43Z; \"fix(ingest): BrainVision/EEGLAB header channel names when the sidecar co[unt differs] (#520)\" 21:06Z.",
+      "fetched_at": "2026-11-03T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#510",
+      "upstream_id": "eegdash/EEGDash#516",
       "author_handle": "eegdash",
       "metrics": {
         "play": null,
@@ -197,102 +112,231 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "把多数据集当一等对象做规划/下载/校验/状态，元分析与预训练必需的一层。"
+      "why_valuable": "残半 trial 与通道名错位都会让下游分析静默偏移，属基础正确性修复。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "pyRiemann 修 SVR 使用预计算核时的错误",
-      "title_en": "pyRiemann Fixes SVR When Used With kernel_fct=\"precomputed\"",
+      "title_zh": "EEGEdu 修 256 Hz 滤波采样率、SSVEP/ERP 时序与 BLE 内存泄漏",
+      "title_en": "EEGEdu Fixes the 256 Hz Filter Rate, SSVEP/ERP Timing and BLE Memory Leaks",
       "bullets_zh": [
-        "#514：修 `SVR` 在 `kernel_fct=\"precomputed\"`（用预先算好的黎曼核矩阵）时的行为错误——预计算核是黎曼回归在大数据上提速的常用路径。",
-        "对回归类任务（如连续运动参数、疲劳度预测），预计算核能让每次调参省掉重复的核矩阵计算；出错则结果与逐样本计算不一致。",
-        "同批还接续近期 HPD/复数支持与 `Kmeans`/`Shrinkage` 修正，属该库连续的「语义对齐 sklearn」治理。"
+        "浏览器端脑电教学/实验平台 EEGEdu 修复：**256 Hz 滤波采样率**（`samplingRate` 传错会让频带位置整体偏移）、滑块状态闭包、以及 **SSVEP/ERP 刺激时序**。",
+        "另修 **ConnectableObservable 内存泄漏**、**BLE 断连处理**与 KNN 识别逻辑——浏览器的 BLE + 实时渲染组合最容易积累这类问题。",
+        "对用网页做课堂演示或轻量实验的团队，时序与采样率错误直接决定「演示看起来对不对」。"
       ],
       "bullets_en": [
-        "#514 fixes SVR misbehaving with kernel_fct=\"precomputed\", the path that reuses a precomputed Riemannian kernel matrix — a common speed-up for regression on large datasets.",
-        "For regression targets such as continuous movement parameters or fatigue, a precomputed kernel avoids recomputing the matrix on every parameter sweep; when it misbehaves, results diverge from per-sample computation.",
-        "It continues the library's run of aligning semantics with scikit-learn, after HPD support and the Kmeans and Shrinkage fixes."
+        "The browser-based EEG teaching platform EEGEdu fixed the 256 Hz filter samplingRate (a wrong value shifts every band), slider state closures and SSVEP/ERP stimulus timing.",
+        "It also fixes ConnectableObservable memory leaks, BLE disconnect handling and KNN recognition logic — the browser BLE plus live-rendering combination accumulates such problems.",
+        "For classroom demos or light-weight experiments in the browser, timing and sampling-rate errors decide whether what you see is right."
       ],
-      "url": "https://github.com/pyRiemann/pyRiemann/pull/514",
-      "published": "2026-11-02T11:51:00Z",
+      "url": "https://github.com/kylemath/EEGEdu/commit/ad695d3ed4",
+      "published": "2026-11-03T03:24:00Z",
       "source": "github",
       "language": "en",
-      "brief": "pyRiemann 合并 #514：修 **`SVR` 在 `kernel_fct=\"precomputed\"` 时的错误**。这条对性能敏感的工作流很实际——用预先算好的黎曼核矩阵能省掉每次调参的重复计算，是回归任务（连续运动参数、疲劳度等）在大数据上的常用手段；一旦这条路径算错，结果会与逐样本计算**悄悄不一致**，而你把差异归因于「随机性」。这也是该库近期一串「语义对齐 sklearn」治理的延续（此前是 HPD 支持、`Kmeans` 被误当分类器、`Shrinkage` 收缩）。建议升级后对同一数据分别用预计算核与默认核跑一次，确认输出一致。",
-      "brief_en": "pyRiemann merged #514 fixing SVR when kernel_fct=\"precomputed\". Reusing a precomputed Riemannian kernel matrix is a common speed-up for regression on large datasets, and when that path misbehaves results diverge from per-sample computation without any error, inviting blame on randomness. It continues the library's sklearn-semantics cleanup after HPD support, the Kmeans fix and Shrinkage.",
+      "brief": "EEGEdu（浏览器里的交互式脑电教学/实验平台）在 11-03 连推 3 个提交，修的都是「看起来能跑但结果不对」的问题：**256 Hz 滤波的 `samplingRate` 传错**（频率轴整体偏移，SSVEP 目标频率会落到错误位置）、滑块状态闭包、以及 **SSVEP/ERP 刺激时序**。另两条更偏工程：**ConnectableObservable 内存泄漏**、**BLE 断连处理**与 KNN 识别逻辑——浏览器里「BLE 流 + 实时渲染」的组合最容易积累这类隐患，表现为跑十几分钟后越来越卡。对用网页做课堂演示或轻量实验的团队，这类修复直接决定演示是否可信；建议升级后对照已知 SSVEP 频率验证一次。",
+      "brief_en": "EEGEdu, a browser-based EEG teaching and experiment platform, pushed three commits on Nov 3 fixing problems that run but mislead: the 256 Hz filter samplingRate (shifting the whole frequency axis), SSVEP/ERP stimulus timing, plus ConnectableObservable memory leaks, BLE disconnect handling and KNN logic. Browser BLE with live rendering accumulates such issues as progressive slowdown.",
       "tags": [
-        "pyriemann",
-        "svr",
-        "precomputed-kernel",
-        "regression",
-        "bugfix"
+        "eegedu",
+        "browser",
+        "ssvep",
+        "timing",
+        "ble"
       ],
-      "raw_excerpt": "Commit d7e2842aca, 2026-11-02T11:51Z: \"Fix SVR used with kernel_fct=\\\"precomputed\\\" (#514)\". Repo: pyRiemann/pyRiemann.",
-      "fetched_at": "2026-11-02T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-03: \"Fix 256 Hz filter samplingRate, slider state closures, SSVEP/ERP timing, …\" (ad695d3ed4) 03:24Z; \"Fix ConnectableObservable memory leaks, BLE disconnect handling, KNN rec[ognition]\" (51fa47feaf) 03:52Z; \"Fix GitHub Actions Firebase deploy workflow with --ignore-engines …\" (8c0172ba1a) 04:06Z.",
+      "fetched_at": "2026-11-03T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "pyRiemann/pyRiemann#514",
-      "author_handle": "pyRiemann",
+      "upstream_id": "kylemath/EEGEdu@ad695d3ed4",
+      "author_handle": "kylemath",
       "metrics": {
         "play": null,
-        "like": 783,
+        "like": 204,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "预计算核路径算错会与逐样本结果静默不一致，容易被误当作随机波动。"
+      "quality_score": 8,
+      "why_valuable": "采样率传错会让频率轴整体偏移、SSVEP 目标落错位置，教学演示直接失真。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MNE-BIDS 支持用 read_epochs_bids 直接读 epoched FIF",
-      "title_en": "MNE-BIDS Lets read_epochs_bids Read Epoched FIF Files",
+      "title_zh": "BlueMuse 修 Muse S Athena 启动失败（DATA_2 订阅报 ATT 253）",
+      "title_en": "BlueMuse Fixes Muse S Athena Stream Start Failing With ATT 253 on DATA_2",
       "bullets_zh": [
-        "#1679：`read_epochs_bids` 现在能读取 **epoched FIF**（此前更适合 raw 或已切分数据格式），让「按 BIDS 路径取数据」覆盖到已分段的研究对象。",
-        "对标准化流水线意味着不必先绕回原始 raw 再手写切分逻辑——BIDS 路径即入口。",
-        "同批另有 dependabot 升级（setup-uv），不影响行为。"
+        "#87：修复 **Muse S Athena** 在订阅 `DATA_2` 特性时导致数据流启动失败的问题（蓝牙 ATT 错误码 **253**），让新一代 Muse 头环能在 Windows 上正常出流。",
+        "BlueMuse 是 Windows 上把 Muse 数据转发为 LSL/OSC 的常用工具，配合 OpenBCI GUI 或 Lab Streaming Layer 做实时实验。",
+        "对刚换 Athena 硬件的团队，这属于「不修就没数据」的阻塞项；建议升级后确认 EEG/PPG 两路都能起流。"
       ],
       "bullets_en": [
-        "#1679 makes read_epochs_bids able to read epoched FIF files, extending path-based BIDS access to already-segmented data that previously required a different route.",
-        "For standardised pipelines this means no detour back to raw with hand-written epoching: the BIDS path is the entry point.",
-        "A dependabot bump (setup-uv) landed alongside with no behavioural effect."
+        "#87 fixes Muse S Athena failing to start streaming when subscribing to the DATA_2 characteristic (Bluetooth ATT error 253), letting the newer Muse headset stream on Windows.",
+        "BlueMuse is the common Windows bridge that forwards Muse data to LSL/OSC for real-time experiments with OpenBCI GUI or Lab Streaming Layer.",
+        "For teams that just moved to Athena, this is a 'no fix, no data' blocker; confirm both EEG and PPG streams start after upgrading."
       ],
-      "url": "https://github.com/mne-tools/mne-bids/pull/1679",
-      "published": "2026-11-02T14:56:00Z",
+      "url": "https://github.com/kowalej/BlueMuse/pull/87",
+      "published": "2026-11-03T16:27:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-BIDS 合并 #1679：`read_epochs_bids` 现在可以**直接读取 epoched FIF**。此前很多流水线的做法是「从 BIDS 拿到 raw，再自己按事件切分」——同一套切分逻辑在不同项目里重复实现，最容易出现「这边 0.5 s 基线、那边 1 s」的隐性不一致。支持 epoched 数据后，BIDS 路径本身就是入口，切分口径随数据一起走，对多中心协作尤其有意义。同批还有一次 setup-uv 的 dependabot 升级，不影响行为。建议升级后检查现有脚本是否仍在绕行，并统一到 BIDS 入口。",
-      "brief_en": "MNE-BIDS merged #1679 so read_epochs_bids can read epoched FIF files directly. Many pipelines previously fetched raw through BIDS and re-implemented epoching locally, which invites silent inconsistency in baselines and windows across projects; with epoched support the BIDS path becomes the entry point and the segmentation choice travels with the data. A dependabot bump landed alongside.",
+      "brief": "BlueMuse 合并 #87：修 **Muse S Athena 在订阅 `DATA_2` 特性时数据流启动失败**的问题（蓝牙 **ATT 错误码 253**）。BlueMuse 是 Windows 上把 Muse 数据转发成 LSL/OSC 的常用桥接工具，很多实时实验（OpenBCI GUI、Lab Streaming Layer、PsychoPy 联动）都靠它取数；换到新一代 Athena 头环后如果起流失败，整套实验就卡在第一步。这类问题的排查成本很高——错误码在应用层看不出含义，往往要抓 BLE 日志才定位。对刚升级硬件的团队，这是「不修就没数据」的阻塞项；升级后请确认 EEG 与 PPG 两路都能正常出流。",
+      "brief_en": "BlueMuse merged #87 fixing Muse S Athena failing to start streaming when subscribing to the DATA_2 characteristic (Bluetooth ATT error 253). BlueMuse bridges Muse data to LSL/OSC on Windows for real-time experiments, so a failed start blocks the whole pipeline, and the error code is opaque without BLE logs. Teams that just moved to Athena should confirm both EEG and PPG streams after upgrading.",
       "tags": [
-        "mne-bids",
-        "epoched",
-        "fif",
-        "bids",
-        "pipeline"
+        "bluemuse",
+        "muse",
+        "ble",
+        "att-error",
+        "lsl"
       ],
-      "raw_excerpt": "Commits 2026-11-02: \"ENH: Read epoched FIF files in read_epochs_bids (#1679)\" (eb94364e46) 14:56Z; \"[dependabot]: Bump astral-sh/setup-uv from 10.3.2 to 10.3.3\" 01:39Z.",
-      "fetched_at": "2026-11-02T23:55:00Z",
+      "raw_excerpt": "PR #87 merged 2026-11-03T16:27Z: \"Fix Muse S Athena stream start failing on DATA_2 subscribe (ATT 253)\". Repo: kowalej/BlueMuse (Windows app to stream data from Muse EEG headsets).",
+      "fetched_at": "2026-11-03T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-bids#1679",
+      "upstream_id": "kowalej/BlueMuse#87",
+      "author_handle": "kowalej",
+      "metrics": {
+        "play": null,
+        "like": 244,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "Athena 起流失败会卡住整条实时实验链路，且错误码本身看不出含义。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "DR1M90G-BCI：安路 FPSoC 上的定点 MAC 运动想象推理核（中文）",
+      "title_en": "DR1M90G-BCI: A Fixed-Point MAC Inference Core for Motor Imagery on an Anlogic FPSoC",
+      "bullets_zh": [
+        "PL 侧实现挂在 **AXI-Lite** 上的**定点乘加（MAC）推理核**；PS 侧（ARM/Linux）把 **BCI Competition IV 2a** 的预处理特征逐 trial 送入完成**左右手二分类**，结果经 GPIO/UART 输出。",
+        "交付物完整：TD 工程、设备树、PS 程序与 MATLAB 算法脚本；作者明确边界——**当前是离线回放，不含在线脑电采集**。",
+        "对边缘 BCI（低功耗、确定性时延）是想看的路线：把分类器放 FPGA 逻辑里，而不是靠 CPU 跑 Python。"
+      ],
+      "bullets_en": [
+        "The PL side implements a fixed-point MAC inference core on AXI-Lite; the PS side (ARM/Linux) feeds preprocessed BCI Competition IV 2a features trial by trial for left/right hand classification, with results over GPIO/UART.",
+        "Deliverables include the TD project, device tree, PS program and MATLAB algorithm scripts, with an explicit boundary: this is offline replay without online EEG acquisition.",
+        "For edge BCI (low power, deterministic latency) this is the road worth watching: the classifier lives in FPGA logic rather than Python on a CPU."
+      ],
+      "url": "https://github.com/c9hmdq8s9k-hub/DR1M90G-BCI",
+      "published": "2026-11-03T14:53:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 DR1M90G-BCI（2026-11-03，中文）演示了一条**边缘 BCI** 路线：在安路（Anlogic）**DR1M90G FPSoC** 上，PL 侧做一个挂 **AXI-Lite** 的**定点 MAC 推理核**，PS 侧（ARM/Linux）把 **BCI Competition IV 2a** 的预处理特征逐 trial 送入，完成**左右手运动想象二分类**，结果经 GPIO/UART 输出。交付物相当完整：TD 工程、设备树、PS 程序与 MATLAB 算法脚本都在，并明确边界——**当前是离线回放，不含在线采集**。对关心「分类器放进 FPGA 逻辑、而不是在 CPU 上跑 Python」的低功耗/确定性时延场景，这是可读的参考实现；下一步的在线采集与量化精度影响仍需自行验证。",
+      "brief_en": "Created 2026-11-03, DR1M90G-BCI demonstrates an edge BCI path on an Anlogic FPSoC: a fixed-point MAC inference core on AXI-Lite in the PL, with the PS feeding preprocessed BCI IV 2a features trial by trial for left/right motor imagery, results over GPIO/UART. The TD project, device tree and MATLAB scripts ship too, with an explicit boundary — offline replay only.",
+      "tags": [
+        "fpga",
+        "fpsoc",
+        "motor-imagery",
+        "edge-ai",
+        "anlogic"
+      ],
+      "raw_excerpt": "「基于安路（Anlogic）DR1M90G FPSoC 的运动想象脑电（Motor-Imagery EEG）解码演示系统。PL 侧实现一个 AXI-Lite 挂接的定点乘加（MAC）推理核，PS 侧（ARM/Linux）将 BCI Competition IV 2a 数据集的预处理特征逐 trial 送入 PL 核完成二分类（左手 / 右手运动想象），并将结果通过 GPIO / UART 输出。」「当前为离线回放，不含在线脑电采集。」",
+      "fetched_at": "2026-11-03T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "c9hmdq8s9k-hub/DR1M90G-BCI",
+      "author_handle": "c9hmdq8s9k-hub",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把 MI 分类器放进 FPSoC 逻辑并交付完整工程，且明确仅离线回放的边界。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 提速通道映射与插值选取（autoreject 约 17s→14s）",
+      "title_en": "MNE-Python Speeds Up Channel Mapping and Interpolation Picking (~17s to ~14s in autoreject)",
+      "bullets_zh": [
+        "#14490：跳过不需要的**线圈几何计算**（已有插值数据时）、用 `set` 替代 `np.unique`、**向量化通道定位**，本地测试把 autoreject 从约 17 s 降到约 14 s。",
+        "#14489 同时提速「插值选取」路径——两条优化都指向同一类瓶颈：每次循环重复计算本可复用的几何/映射。",
+        "对批量跑 autoreject 或做大量插值的流水线，这类优化是线性叠加的收益。"
+      ],
+      "bullets_en": [
+        "#14490 skips coil geometry when it is not needed (interpolation data already computed), uses set instead of np.unique and vectorises channel location, cutting autoreject from about 17 s to 14 s locally.",
+        "#14489 speeds up interpolation picking alongside; both target the same bottleneck of recomputing reusable geometry and mappings inside loops.",
+        "For pipelines running autoreject at scale or interpolating heavily, such gains stack linearly."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14490",
+      "published": "2026-11-03T19:21:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14490，做的是朴素的性能清理却收益明确：**跳过不需要的线圈几何计算**（插值数据已算好时就不该重算）、用 `set` 替代 `np.unique`、**向量化通道定位**——本地测试把 `autoreject` 从约 **17 s 降到约 14 s**。同日 #14489 还提速了「插值选取」路径。两条优化指向同一类瓶颈：在循环里重复计算本可复用的几何与映射，这在「按被试/按试次」批量处理的流水线里会被放大。对每天跑几十上百个数据集做自动剔除与插值的团队，这类收益是线性叠加的；建议升级后重跑一次基准，确认与旧版结果一致。",
+      "brief_en": "MNE-Python merged #14490, a plain performance cleanup with clear payoff: skip coil geometry when interpolation data is already available, use set instead of np.unique and vectorise channel location, cutting autoreject from about 17 s to 14 s locally; #14489 speeds up interpolation picking too. Both target recomputing reusable geometry inside loops, which scales in per-subject pipelines.",
+      "tags": [
+        "mne-python",
+        "performance",
+        "autoreject",
+        "interpolation",
+        "vectorisation"
+      ],
+      "raw_excerpt": "PR #14490: \"Speedup MEG and EEG channel mapping — A few simple changes to speed up `autoreject` a bit more (~17s to ~14s in local testing): 1. Skip coil geometry computation if it's not needed (like when interp data has already been computed) 2. Use `set` rather than `np.unique` 3. Vectorize channel location\". Merged 2026-11-03T19:21Z. Same day: \"Speed up interpolation picking (#14489)\" 13:15Z.",
+      "fetched_at": "2026-11-03T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14490",
       "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 183,
+        "like": 3582,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "epoched 数据可直接走 BIDS 入口，切分口径随数据走，减少多中心隐性不一致。"
+      "why_valuable": "循环内重复几何计算被消除，批量 autoreject 流水线的收益线性叠加。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "autoreject 改用新版插值 API，并给出基准对比",
+      "title_en": "autoreject Adopts the New Interpolation API, With a Benchmark Table",
+      "bullets_zh": [
+        "#368：在可用时改用 MNE 新版插值 API（对应 MNE 侧「传入预计算插值数据」的能力），并附基准表：59 通道 EEG 从 **1.969 ± 0.084 s** 降到 **1.880 ± 0.026 s**。",
+        "作者把「信任测试来判断是否真的生效」写在 PR 里，同时给出实测数值——这种「测试 + 基准」双证据比单纯宣称提速可信。",
+        "对做自动坏段剔除与修复的流水线，插值是主要开销之一；升级可顺带获得小幅加速与更新的 MNE 兼容性。"
+      ],
+      "bullets_en": [
+        "#368 uses the newer MNE interpolation API when available (matching MNE's precomputed interpolation data work), with a benchmark table: 59-channel EEG drops from 1.969 ± 0.084 s to 1.880 ± 0.026 s.",
+        "The author notes they trust the tests to prove it works while also reporting measured numbers — a test-plus-benchmark pair is more credible than a speed claim alone.",
+        "For automatic artefact rejection and repair pipelines, interpolation is a major cost, so this brings a modest speed-up plus forward compatibility with MNE."
+      ],
+      "url": "https://github.com/autoreject/autoreject/pull/368",
+      "published": "2026-11-03T13:34:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "autoreject 合并 #368：在可用时改用 **MNE 新版插值 API**（对应 MNE 侧近期「允许传入预计算插值数据」的能力），并附上基准表——**59 通道 EEG 从 1.969 ± 0.084 s 降到 1.880 ± 0.026 s**。幅度不大，但方向正确：插值是自动坏段修复流程里的主要开销之一，复用预计算几何能省掉重复计算，且同时获得与新版 MNE 的兼容性。作者在 PR 里写了「信任测试来判断是否生效」，同时给实测数值——这种「测试 + 基准」双证据比单纯宣称提速可信得多。建议升级后跑一次你常用的数据集，确认剔除与修复结果与旧版一致。",
+      "brief_en": "autoreject merged #368 adopting the newer MNE interpolation API when available, with a benchmark table: 59-channel EEG from 1.969 ± 0.084 s to 1.880 ± 0.026 s. The gain is modest but in the right direction, since interpolation dominates artefact repair and reusing geometry also brings compatibility with newer MNE. Tests plus measured numbers beat a speed claim alone.",
+      "tags": [
+        "autoreject",
+        "interpolation",
+        "mne",
+        "performance",
+        "benchmark"
+      ],
+      "raw_excerpt": "PR #368: \"Use new API for interpolation when available — Benchmarking says things work correctly: | Channels | Older MNE | MNE dev + this PR | | EEG (59 channels) | 1.969 ± 0.084 s | 1.880 ± 0.026 s |\". Merged 2026-11-03T13:34Z.",
+      "fetched_at": "2026-11-03T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "autoreject/autoreject#368",
+      "author_handle": "autoreject",
+      "metrics": {
+        "play": null,
+        "like": 163,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "插值是坏段修复主要开销，复用预计算几何顺带拿到新版 MNE 兼容性。"
     }
   ],
   "stats": {
     "fetched": 132,
     "prefiltered": 98,
-    "llm_rows": 20,
-    "kept": 6,
+    "llm_rows": 21,
+    "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 3
+    "conflicts_dropped": 2
   }
 }
