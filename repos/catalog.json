@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-03T22:54:11Z",
+  "generatedAt": "2026-11-04T22:52:11Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 365,
+  "count": 377,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 365
+      "count": 377
     }
   ],
   "items": [
@@ -12226,6 +12226,447 @@
         "contactedAt": "2026-11-04",
         "batch": "batch33",
         "contactedAuthor": "ontionos"
+      }
+    },
+    {
+      "id": "github:BoAlanL/eeg-p300-transformers",
+      "name": "eeg-p300-transformers",
+      "owner": "BoAlanL",
+      "author": "BoAlanL",
+      "url": "https://github.com/BoAlanL/eeg-p300-transformers",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG P300 target classification with CNN-Transformer and plain Transformer models in PyTorch.",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "p300",
+        "transformer",
+        "cnn"
+      ],
+      "createdAt": "2026-09-25T03:02:46Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-09-25T03:05:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "BoAlanL"
+      }
+    },
+    {
+      "id": "github:Chihang03/vscode-eeg-viewer",
+      "name": "vscode-eeg-viewer",
+      "owner": "Chihang03",
+      "author": "Chihang03",
+      "url": "https://github.com/Chihang03/vscode-eeg-viewer",
+      "homepage": null,
+      "source": "github",
+      "description": "SSVEP \u4e0e ASSR \u7684 VS Code EEG \u6ce2\u5f62\u4e0e PSD \u67e5\u770b\u5668\uff0c\u652f\u6301\u4e09\u901a\u9053\u5e73\u5747\u548c\u72ec\u7acb\u901a\u9053\u67e5\u770b\u3002",
+      "language": "JavaScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "assr",
+        "eeg",
+        "psd",
+        "signal-processing",
+        "ssvep",
+        "vscode-extension"
+      ],
+      "tags": [
+        "eeg",
+        "ssvep",
+        "assr",
+        "vscode",
+        "bci"
+      ],
+      "createdAt": "2026-10-14T08:02:35Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-10-19T06:59:23Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "Chihang03"
+      }
+    },
+    {
+      "id": "github:Ravi-ranjan1801/Brain-Wave-P300-Based-Speller",
+      "name": "Brain-Wave-P300-Based-Speller",
+      "owner": "Ravi-ranjan1801",
+      "author": "Ravi-ranjan1801",
+      "url": "https://github.com/Ravi-ranjan1801/Brain-Wave-P300-Based-Speller",
+      "homepage": null,
+      "source": "github",
+      "description": "An EEG-based brain-computer interface that uses EEGNet deep learning, row-column character decoding and information transfer rate analysis to develop a practical P300 spelling system, comparing 64-channel research performance with a 14-channel EMOTIV EPOC X-compatible configuration.",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "p300",
+        "eegnet",
+        "emotiv"
+      ],
+      "createdAt": "2026-11-04T13:25:38Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-11-04T13:36:27Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "Ravi-ranjan1801"
+      }
+    },
+    {
+      "id": "github:Thrgold/Multimodal_BCI_Motor_Imagery_Decoding_System",
+      "name": "Multimodal_BCI_Motor_Imagery_Decoding_System",
+      "owner": "Thrgold",
+      "author": "Thrgold",
+      "url": "https://github.com/Thrgold/Multimodal_BCI_Motor_Imagery_Decoding_System",
+      "homepage": null,
+      "source": "github",
+      "description": "\u672c\u7814\u7a76\u63a2\u7a76\u8fd0\u52a8\u60f3\u8c61\uff08MI\uff09\u795e\u7ecf\u8868\u5f81\u673a\u5236\uff0c\u7814\u53d1\u591a\u6a21\u6001\u8111\u673a\u63a5\u53e3\uff08Multi-BCI\uff09\u3002MI \u53ef\u534f\u540c\u6fc0\u6d3b\u8fd0\u52a8\u76f8\u5173\u8111\u533a\uff0c\u4e0e\u771f\u5b9e\u8fd0\u52a8\u89e3\u5256\u529f\u80fd\u540c\u6e90\u3002\u7814\u7a76\u540c\u6b65\u91c7\u96c6 EEG\u3001fNIRS \u4fe1\u53f7\uff0c\u7ed3\u5408\u65f6\u9891\u3001\u8840\u6c27\u4e0e\u8111\u7f51\u7edc\u5206\u6790\uff0c\u57fa\u4e8e\u5de6\u53f3\u624b MI \u4efb\u52a1\u6784\u5efa\u516c\u5f00\u591a\u6a21\u6001\u6570\u636e\u96c6\u3002 \u7814\u7a76\u642d\u5efa\u591a\u5c42\u7ea7\u878d\u5408\u6846\u67b6\uff0c\u5229\u7528 CNN\u3001LSTM\u3001\u81ea\u6ce8\u610f\u529b\u6df7\u5408\u7f51\u7edc\u63d0\u53d6\u7279\u5f81\uff0c\u7ecf\u51b3\u7b56\u7ea7\u878d\u5408\u5b8c\u6210\u89e3\u7801\u3002\u7ed3\u679c\u663e\u793a\u878d\u5408\u6a21\u578b\u7cbe\u5ea6\u3001AUC \u5747\u4f18\u4e8e\u5355\u6a21\u6001\u65b9\u6cd5\u3002\u540c\u65f6\u81ea\u7814\u6a21\u5757\u5316 BCI \u5e73\u53f0\uff0c\u517c\u5bb9\u6df1\u5ea6\u5b66\u4e60\u6a21\u578b\uff0c\u914d\u5957\u53ef\u89c6\u5316\u4ea4\u4e92\u4e0e\u81ea\u52a8\u8bc4\u6d4b\u5de5\u5177\uff0c\u964d\u4f4e\u4f7f\u7528\u95e8\u69db\u3002 \u7814\u7a76\u521b\u65b0\u5305\u542b\u6807\u51c6\u5316\u6570\u636e\u96c6\u3001\u591a\u6a21\u6001\u878d\u5408\u89e3\u7801\u7b97\u6cd5\u4e0e\u81ea\u7814 BCI \u5e73\u53f0\uff0c\u4e3a\u8111\u673a\u63a5\u53e3\u7406\u8bba\u7814\u7a76\u53ca\u4e34\u5e8a\u5e94\u7528\u63d0\u4f9b\u652f\u6491\u3002",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "fnirs",
+        "bci",
+        "motor-imagery",
+        "lstm"
+      ],
+      "createdAt": "2026-08-07T08:51:48Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-09-04T18:00:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "Thrgold"
+      }
+    },
+    {
+      "id": "github:beukkung/Motor-imagery-EEG-Classification",
+      "name": "Motor-imagery-EEG-Classification",
+      "owner": "beukkung",
+      "author": "beukkung",
+      "url": "https://github.com/beukkung/Motor-imagery-EEG-Classification",
+      "homepage": null,
+      "source": "github",
+      "description": "Using one-dimension CNN architecture to MI-EEG classification. The project is used OpenBMI dataset and trained with 20 channel sensors. ",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "cnn",
+        "deep-learning",
+        "eeg",
+        "machine-learning",
+        "motor-imagery",
+        "signal-processing",
+        "tensorflow",
+        "time-series-classification"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "cnn",
+        "openbmi"
+      ],
+      "createdAt": "2022-04-12T10:36:03Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-09-21T09:17:39Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "beukkung"
+      }
+    },
+    {
+      "id": "github:gthrash54/AnalyzeLFPs",
+      "name": "AnalyzeLFPs",
+      "owner": "gthrash54",
+      "author": "gthrash54",
+      "url": "https://github.com/gthrash54/AnalyzeLFPs",
+      "homepage": "https://garrettthrash.com",
+      "source": "github",
+      "description": "Analysis app and 46-lesson curriculum for intraoperative DBS and ECoG local field potentials: QC-gated recipes, guardrails, and run provenance",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "curriculum",
+        "deep-brain-stimulation",
+        "ecog",
+        "electrophysiology",
+        "fastapi",
+        "local-field-potentials",
+        "neuroengineering",
+        "python",
+        "react",
+        "signal-processing"
+      ],
+      "tags": [
+        "ecog",
+        "dbs",
+        "lfp",
+        "bci",
+        "curriculum"
+      ],
+      "createdAt": "2026-09-14T00:25:17Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-10-21T19:00:06Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "gthrash54"
+      }
+    },
+    {
+      "id": "github:kirooshii/ECoG-Video-Watching-Analysis-2026",
+      "name": "ECoG-Video-Watching-Analysis-2026",
+      "owner": "kirooshii",
+      "author": "kirooshii",
+      "url": "https://github.com/kirooshii/ECoG-Video-Watching-Analysis-2026",
+      "homepage": null,
+      "source": "github",
+      "description": "A Python pipeline that compares two types of brain signal recordings to classify what a person is looking at. It processes the signals, extracts features, and evaluates two classifiers side-by-side.",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "ecog",
+        "machine-learning"
+      ],
+      "tags": [
+        "ecog",
+        "eeg",
+        "bci",
+        "unicorn",
+        "hackathon"
+      ],
+      "createdAt": "2026-04-25T07:24:33Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-10-23T11:57:46Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "kirooshii"
+      }
+    },
+    {
+      "id": "github:lkorczowski/adaptive-common-spatio-temporal-pattern",
+      "name": "adaptive-common-spatio-temporal-pattern",
+      "owner": "lkorczowski",
+      "author": "lkorczowski",
+      "url": "https://github.com/lkorczowski/adaptive-common-spatio-temporal-pattern",
+      "homepage": null,
+      "source": "github",
+      "description": "ACSTP in Python: robust ERP estimation (regression averaging, spatio-temporal filtering, latency correction, trial weighting). scikit-learn / MNE / MOABB compatible.",
+      "language": "Python",
+      "license": "BSD-3-Clause",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "eeg",
+        "erp",
+        "event-related-potentials",
+        "latency-correction",
+        "mne",
+        "moabb",
+        "p300",
+        "scikit-learn",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "erp",
+        "p300",
+        "acstp",
+        "bci"
+      ],
+      "createdAt": "2026-11-03T23:01:26Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-11-03T23:01:33Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "lkorczowski"
+      }
+    },
+    {
+      "id": "github:saihanh0820/MI-EEG-Transformer",
+      "name": "MI-EEG-Transformer",
+      "owner": "saihanh0820",
+      "author": "saihanh0820",
+      "url": "https://github.com/saihanh0820/MI-EEG-Transformer",
+      "homepage": null,
+      "source": "github",
+      "description": "Research code snapshot for motor-imagery EEG classification with Transformer-based modeling.",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "transformer",
+        "ica"
+      ],
+      "createdAt": "2025-10-01T12:54:38Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-10-02T14:19:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "saihanh0820"
+      }
+    },
+    {
+      "id": "github:sanvihs-05/BCI",
+      "name": "BCI",
+      "owner": "sanvihs-05",
+      "author": "sanvihs-05",
+      "url": "https://github.com/sanvihs-05/BCI",
+      "homepage": null,
+      "source": "github",
+      "description": "Brain-controlled wheelchair: CNN-LSTM EEG + eye-blink control, Unity sim over WebSockets, private blockchain backend with RBAC smart contract",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "wheelchair",
+        "cnn-lstm",
+        "unity"
+      ],
+      "createdAt": "2026-09-22T10:53:01Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-09-22T10:59:58Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "sanvihs-05"
+      }
+    },
+    {
+      "id": "github:sposso/fnirs-datasets",
+      "name": "fnirs-datasets",
+      "owner": "sposso",
+      "author": "sposso",
+      "url": "https://github.com/sposso/fnirs-datasets",
+      "homepage": null,
+      "source": "github",
+      "description": "Loaders for 67 public fNIRS datasets in one common format with channel positions in MNI space. Together, these datasets comprises 1,955 hours of recordings from 2,798 participants",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 5,
+      "forks": 1,
+      "topics": [
+        "brain-computer-interfaces",
+        "datasets",
+        "fnirs",
+        "foundation-models",
+        "noninvasive-neural-activity"
+      ],
+      "tags": [
+        "fnirs",
+        "bci",
+        "datasets",
+        "mni",
+        "foundation-model"
+      ],
+      "createdAt": "2026-10-23T17:47:32Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-11-02T17:21:51Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "sposso"
+      }
+    },
+    {
+      "id": "github:wah644/BlueMuse-macOS",
+      "name": "BlueMuse-macOS",
+      "owner": "wah644",
+      "author": "wah644",
+      "url": "https://github.com/wah644/BlueMuse-macOS",
+      "homepage": null,
+      "source": "github",
+      "description": "macOS app for streaming Muse EEG headsets over LSL (Lab Streaming Layer)",
+      "language": "Swift",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "biosignals",
+        "bluemuse",
+        "bluetooth-low-energy",
+        "brain-computer-interface",
+        "corebluetooth",
+        "eeg",
+        "eeg-streaming",
+        "lab-streaming-layer",
+        "lsl",
+        "macos",
+        "muse",
+        "muse-2",
+        "muse-2016",
+        "muse-athena",
+        "muse-eeg",
+        "muse-s",
+        "neuroscience",
+        "signal-visualization",
+        "smith-lowdown-focus",
+        "swiftui"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "lsl",
+        "macos",
+        "bci"
+      ],
+      "createdAt": "2026-11-04T19:46:34Z",
+      "updatedAt": "2026-11-04T22:51:57Z",
+      "pushedAt": "2026-11-04T20:03:45Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-05",
+        "batch": "batch34",
+        "contactedAuthor": "wah644"
       }
     }
   ]
