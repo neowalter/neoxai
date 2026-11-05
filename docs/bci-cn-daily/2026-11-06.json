@@ -1,0 +1,342 @@
+{
+  "date": "2026-11-06",
+  "generated_at": "2026-11-05T21:31:45.217Z",
+  "item_count": 7,
+  "types": {
+    "Project": 6,
+    "Benchmark": 1
+  },
+  "highlights": [
+    {
+      "title_zh": "MNE-Python 修多窗谱系数缩放、四元数均值与滤波器传递函数分母",
+      "title_en": "MNE-Python Fixes Multitaper Scaling, Quaternion Averaging and a Filter Transfer Denominator",
+      "url": "https://github.com/mne-tools/mne-python/pull/14497",
+      "brief": "MNE-Python 在 11-05 连推 5 个提交，三条是**数值正确性**：#14497 让 **full-normalized 多窗谱系数**乘上 `sqrt(sfreq)`——谱密度口径错时功率绝对值会整体偏，而功率是跨研究比较的基础；#14496 修 `_average_quats` 里**权重未线性应用**（四元数平均偏差会带偏头位），另一条修**滤波器组传递函数的分母**。另有 #14494 把置换检验改为**分块评估**（内存友好），#14499 升级 `h5io` 覆盖一个 **CVE**。对做时频分析、跨研究功率比较或依赖头位变换的团队，建议升级后重算一批 PSD 与配准结果并对照旧值。"
+    },
+    {
+      "title_zh": "braindecode 把 ch_mask（可变通道数）铺到四个基础模型，并加契约测试",
+      "title_en": "braindecode Rolls ch_mask (Variable Channels) Across Four Foundation Models, With Contract Tests",
+      "url": "https://github.com/braindecode/braindecode/pull/1544",
+      "brief": "braindecode 在 11-05 把 **ch_mask（可变通道数）** 一夜铺到四个基础模型：**BIOT #1542、LUNA #1543、CBraMod #1544、REVE/Labram #1549**。这不是加个参数那么简单——真实数据里不同被试、不同电极布局的通道数本来就不一致，过去要么裁到「公共通道子集」（丢信息），要么按受试者单独建模型（丢样本）。同批还让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，并新增「**对每个注册了 ch_mask 的模型做契约测试**」，避免以后新模型漏实现接口。对做多中心或异质蒙太奇训练的团队，这套改动直接把可用数据量放大。"
+    },
+    {
+      "title_zh": "SPD-Learn Encore：逐条主张（claim）的可复现性审计与 54 条图表登记",
+      "title_en": "SPD-Learn Encore: Claim-by-Claim Reproducibility Auditing With a 54-Claim Figure Registry",
+      "url": "https://github.com/spdlearn/encore",
+      "brief": "新建仓库 spdlearn/encore（2026-11-05）把复现性工作推进到**主张（claim）级别**：它结合 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions**，仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志，并登记 **54 条 claim→figure 映射**。与常见的「整篇论文复现成功/失败」相比，这种粒度的价值在于：能指出**哪一条结论站不住**、哪张图对不上，而不是笼统判死。对做基准、审稿或复现挑战的团队，这是一套可直接借鉴的登记结构；也提示评测平台未来可能要求「按 claim 提交」。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-06.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 修多窗谱系数缩放、四元数均值与滤波器传递函数分母",
+      "title_en": "MNE-Python Fixes Multitaper Scaling, Quaternion Averaging and a Filter Transfer Denominator",
+      "bullets_zh": [
+        "#14497：**full-normalized 多窗（multitaper）系数的缩放**改为乘 `sqrt(sfreq)`——谱密度口径错会让功率绝对值整体偏差，而功率正是跨研究比较的基础。",
+        "同日 #14496 修 `_average_quats` 中**权重未线性应用**的问题（四元数平均错会偏头位），另一条修**滤波器组传递函数的分母**，还有一条把置换检验改为**分块评估**以降低内存。",
+        "#14499 顺带把 `h5io` 升级以覆盖一个 **CVE**——安全补丁与算法修正同批落地。"
+      ],
+      "bullets_en": [
+        "#14497 scales full-normalised multitaper coefficients by sqrt(sfreq); a wrong spectral-density convention shifts absolute power, which underpins cross-study comparison.",
+        "Same day fixed _average_quats not applying weights linearly (skewing head position), corrected a filter-bank transfer-function denominator, and chunked permutation evaluation to cut memory.",
+        "#14499 also bumps h5io to cover a CVE, landing a security patch alongside algorithmic fixes."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14497",
+      "published": "2026-11-05T20:58:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 在 11-05 连推 5 个提交，三条是**数值正确性**：#14497 让 **full-normalized 多窗谱系数**乘上 `sqrt(sfreq)`——谱密度口径错时功率绝对值会整体偏，而功率是跨研究比较的基础；#14496 修 `_average_quats` 里**权重未线性应用**（四元数平均偏差会带偏头位），另一条修**滤波器组传递函数的分母**。另有 #14494 把置换检验改为**分块评估**（内存友好），#14499 升级 `h5io` 覆盖一个 **CVE**。对做时频分析、跨研究功率比较或依赖头位变换的团队，建议升级后重算一批 PSD 与配准结果并对照旧值。",
+      "brief_en": "MNE-Python made five commits on Nov 5, three about numerical correctness: #14497 scales full-normalised multitaper coefficients by sqrt(sfreq), since a wrong spectral-density convention shifts absolute power; #14496 fixes _average_quats not applying weights linearly; another corrects a filter-bank transfer denominator. #14494 chunks permutation evaluation and #14499 bumps h5io for a CVE.",
+      "tags": [
+        "mne-python",
+        "multitaper",
+        "psd",
+        "quaternion",
+        "cve"
+      ],
+      "raw_excerpt": "Commits 2026-11-05: \"FIX: Scale full-normalized multitaper coefficients by sqrt(sfreq) (#14497)\" 20:58Z; \"Fix apply weights linearly in _average_quats (#14496)\" 18:15Z; \"PERF: Chunk permutation evaluation in permutation_t_test (#14494)\" 17:21Z; \"FIX: Correct the denominator of the transfer function in the filtering b[ank]\" 02:21Z; \"Update h5io version for CVE (#14499)\" 20:03Z.",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14497",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3583,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "多窗谱口径错会让功率绝对值整体偏差，直接影响跨研究的功率比较。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 把 ch_mask（可变通道数）铺到四个基础模型，并加契约测试",
+      "title_en": "braindecode Rolls ch_mask (Variable Channels) Across Four Foundation Models, With Contract Tests",
+      "bullets_zh": [
+        "一天内 **BIOT（#1542）、LUNA（#1543）、CBraMod（#1544）与 REVE/Labram（#1549）** 全部支持 `ch_mask`——用同一接口处理**通道数不一致**的批次。",
+        "配套提交让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，另有「**对每个注册了 ch_mask 的模型做契约测试**」，防止新模型漏实现。",
+        "对真实数据意义直接：不同被试/不同电极布局的记录不必再裁到「公共通道子集」，可保留全部信息。"
+      ],
+      "bullets_en": [
+        "In one day BIOT (#1542), LUNA (#1543), CBraMod (#1544) and REVE/Labram (#1549) all accept ch_mask, a single interface for batches with differing channel counts.",
+        "Supporting commits make iEEG foundation models return per-token output with padded channels zeroed, and add contract tests for every registered model that takes ch_mask so new ones cannot silently skip it.",
+        "The practical payoff: recordings with different montages need not be trimmed to a common channel subset, so information stays."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1544",
+      "published": "2026-11-05T18:58:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 在 11-05 把 **ch_mask（可变通道数）** 一夜铺到四个基础模型：**BIOT #1542、LUNA #1543、CBraMod #1544、REVE/Labram #1549**。这不是加个参数那么简单——真实数据里不同被试、不同电极布局的通道数本来就不一致，过去要么裁到「公共通道子集」（丢信息），要么按受试者单独建模型（丢样本）。同批还让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，并新增「**对每个注册了 ch_mask 的模型做契约测试**」，避免以后新模型漏实现接口。对做多中心或异质蒙太奇训练的团队，这套改动直接把可用数据量放大。",
+      "brief_en": "braindecode rolled ch_mask (variable channel counts) across four foundation models in one day: BIOT #1542, LUNA #1543, CBraMod #1544 and REVE/Labram #1549. Real recordings differ in channel count, so before you either trimmed to a common subset or trained per subject. Supporting commits zero padded channels and add contract tests so new models cannot skip the interface.",
+      "tags": [
+        "braindecode",
+        "ch-mask",
+        "foundation-models",
+        "heterogeneous",
+        "contract-tests"
+      ],
+      "raw_excerpt": "PRs merged 2026-11-05: \"BIOT: accept ch_mask (#1542)\" 18:10Z; \"LUNA: accept ch_mask (#1543)\" 18:35Z; \"CBraMod: accept ch_mask with the encoder output (#1544)\" 18:58Z; \"REVE, Labram: accept ch_mask (#1539, merged with master) (#1549)\" 17:51Z; \"iEEG foundation models: return the per-token output, padded channels zer[oed]\" 16:49Z; \"Check the ch_mask contract on every registered model that takes it (#154…) 16:35Z.",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1544",
+      "author_handle": "braindecode",
+      "metrics": {
+        "play": null,
+        "like": 1339,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "可变通道数让异质蒙太奇数据不必裁到公共子集，直接放大可用数据量。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "SPD-Learn Encore：逐条主张（claim）的可复现性审计与 54 条图表登记",
+      "title_en": "SPD-Learn Encore: Claim-by-Claim Reproducibility Auditing With a 54-Claim Figure Registry",
+      "bullets_zh": [
+        "把 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions** 结合：仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志。",
+        "核心不是「能不能跑通代码」，而是**逐条主张**核对图表与结论是否可复现，并登记 **54 条 claim→figure** 映射。",
+        "对做基准与复现研究的团队，这种「claim 级」粒度比「整篇论文复现成功/失败」更有用，也更难糊弄。"
+      ],
+      "bullets_en": [
+        "It combines Encore Science's claim-by-claim registry design with ICML 2026 Open Reproductions, shipping papers.json, abstracts.json, claims.json, challenge.json and Trackio logs.",
+        "The point is not whether code runs, but whether each claim and figure reproduces, registered as 54 claim-to-figure mappings.",
+        "For benchmark and reproduction work, claim-level granularity is far more useful — and harder to fake — than whole-paper pass/fail."
+      ],
+      "url": "https://github.com/spdlearn/encore",
+      "published": "2026-11-05T18:04:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 spdlearn/encore（2026-11-05）把复现性工作推进到**主张（claim）级别**：它结合 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions**，仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志，并登记 **54 条 claim→figure 映射**。与常见的「整篇论文复现成功/失败」相比，这种粒度的价值在于：能指出**哪一条结论站不住**、哪张图对不上，而不是笼统判死。对做基准、审稿或复现挑战的团队，这是一套可直接借鉴的登记结构；也提示评测平台未来可能要求「按 claim 提交」。",
+      "brief_en": "Created 2026-11-05, spdlearn/encore pushes reproducibility to claim level: it combines Encore Science's claim-by-claim registry with ICML 2026 Open Reproductions, shipping papers.json, claims.json, challenge.json and Trackio logs with 54 claim-to-figure mappings. Unlike whole-paper pass/fail it can say which conclusion fails and which figure disagrees.",
+      "tags": [
+        "reproducibility",
+        "claim-registry",
+        "icml",
+        "auditing",
+        "benchmark"
+      ],
+      "raw_excerpt": "Description: \"SPD-Learn Encore: Agentic Reproducibility Auditing & 54-Claim Figure Registry (ICML 2026 / NEMAR / Encore Science PoC)\". README: \"Live sub-page for spdlearn.github.io/encore/ combining: Encore Science transparent claim-by-claim registry design, ICML 2026 Open Reproductions (`papers.json`, `abstracts.json`, `claims.json`, `challenge.json`, Trackio logboo[ks])\".",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "spdlearn/encore",
+      "author_handle": "spdlearn",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把复现粒度降到单条 claim，能指出哪条结论/哪张图站不住，而非整篇判死。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MindSoul 1.0 桌面客户端（中文）：32 通道采集与分析，含 MI/SSVEP 工作流",
+      "title_en": "MindSoul 1.0 Desktop Client: 32-Channel Acquisition and Analysis With MI/SSVEP Workflows",
+      "bullets_zh": [
+        "Windows 10/11 64 位脑电采集与分析客户端源码包：**三设备适配**、实时监测、录制，以及 **MI（运动想象）与 SSVEP** 两套工作流。",
+        "依赖写得明确：Python 3.10 64 位、Node 18+、Rust/MSVC 编译环境与 WebView2；厂家扩展要求 Windows x64 与 CPython 匹配。",
+        "对国内自建采集端或想改造现成客户端的团队，这是一份「三设备 + 两范式」都覆盖的实现参考；但需自行核对设备协议与数据格式。"
+      ],
+      "bullets_en": [
+        "A Windows 10/11 64-bit EEG acquisition and analysis client source package with three-device adaptation, live monitoring, recording, and both MI and SSVEP workflows.",
+        "Dependencies are explicit: Python 3.10 64-bit, Node 18+, a Rust/MSVC build environment and WebView2, with the vendor extension requiring matching Windows x64 and CPython.",
+        "For teams building their own acquisition front end or adapting an existing one, it covers three devices and two paradigms — but verify device protocols and file formats yourself."
+      ],
+      "url": "https://github.com/MindSoulBCI/mindsoul-client",
+      "published": "2026-11-05T00:15:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 Mindsoul 1.0（2026-11-05，中文）：**Windows 10/11 64 位脑电采集与分析客户端**源码包，覆盖**三设备适配**、实时监测、录制，以及 **MI（运动想象）与 SSVEP** 两套工作流；依赖写明 Python 3.10 64 位、Node 18+、Rust/MSVC 与 WebView2，并提示厂家扩展对 Windows x64 与 CPython 版本有要求。对国内自建采集端的团队，这份「多设备 + 两范式」一体实现有参考价值——尤其 SSVEP 刺激与 MI 流程常要分别维护两套代码。提醒：仓库是源码包（14 MB），**设备协议与数据格式需自行核对**，未附公开文档说明兼容的放大器型号与 SDK 版本。",
+      "brief_en": "Created 2026-11-05, MindSoul 1.0 is a Windows 10/11 64-bit EEG acquisition and analysis client source package with three-device adaptation, live monitoring, recording and MI/SSVEP workflows, listing Python 3.10, Node 18+, Rust/MSVC and WebView2 as dependencies. It is a useful reference for a multi-device front end covering two paradigms, though device protocols and formats must be verified.",
+      "tags": [
+        "desktop",
+        "acquisition",
+        "mi",
+        "ssvep",
+        "chinese"
+      ],
+      "raw_excerpt": "「Mindsoul1.0 — 源码包 Windows 10/11 64 位脑电采集与分析客户端。包含三设备适配、实时监测、录制、MI（运动想象）和 SSVEP（稳态视觉诱发电位）工作流程。」「安装 Python 3.10 64 位、Node.js 18 及以上、Rust/MSVC（编译环境）和 WebView2（网页运行组件）。」",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "MindSoulBCI/mindsoul-client",
+      "author_handle": "MindSoulBCI",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把三设备适配与 MI/SSVEP 两范式做进同一客户端，国内自建采集端可参考。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGDashCorpus(name)：按名字取用已发布语料",
+      "title_en": "EEGDashCorpus(name): Fetch Released Corpora by Name",
+      "bullets_zh": [
+        "#521：`EEGDashCorpus(name=…)` 支持**按名字取用已发布的语料集合**，把「一批数据集」变成可命名、可复用的对象。",
+        "与上周 #510（规划/下载/校验/状态）衔接：先有批次管理，再有官方发布语料，预训练与基准的数据面才可被引用与复现。",
+        "对写论文的团队，引用「某命名语料 vX」比列举几十个数据集 ID 更可核查。"
+      ],
+      "bullets_en": [
+        "#521 lets EEGDashCorpus(name=...) fetch released corpora by name, turning a batch of datasets into a named, reusable object.",
+        "It builds on #510 (plan/download/verify/status): batch management first, then published corpora, so the data side of pretraining and benchmarks can be cited and reproduced.",
+        "For papers, citing a named corpus version is far more checkable than listing dozens of dataset IDs."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/pull/521",
+      "published": "2026-11-05T17:23:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 合并 #521：`EEGDashCorpus(name=…)` 可以**按名字取用已发布的语料集合**，把「一批数据集」变成可命名、可复用的对象。这补上了上周 #510（规划/下载/校验/状态）之后的最后一环：有了批次管理，再把官方发布语料做成具名版本，预训练与基准的**数据面**才能被别人引用与复现。对写论文的团队，这尤其实际——引用「某命名语料 vX」比在附录里列几十个数据集 ID 更可核查，也让「我用的是哪批数据」不再靠口头说明。建议在自己的方法学部分记录语料名与版本。",
+      "brief_en": "EEGDash merged #521 so EEGDashCorpus(name=...) fetches released corpora by name, turning a batch of datasets into a named, reusable object. It completes last week's #510 batch management: published corpora make the data side of pretraining and benchmarks citable and reproducible, and citing a named corpus version is far more checkable than listing dozens of dataset IDs in an appendix.",
+      "tags": [
+        "eeg-dash",
+        "corpus",
+        "released",
+        "reproducibility",
+        "naming"
+      ],
+      "raw_excerpt": "Commit a20cee1570, 2026-11-05T17:23Z: \"EEGDashCorpus(name): the released corpora by name (#521)\". Preceding: \"EEGDashCorpus: plan, download, verify and status over many datasets (#510)\" 2026-11-02.",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash#521",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 90,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "具名语料让「用的是哪批数据」可引用可核查，比罗列数据集 ID 更可信。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Brainstorm 拆分 raw 时不再保留「零出现次数」的事件类型",
+      "title_en": "Brainstorm Stops Keeping Event Types With Zero Occurrences When Splitting Raw Files",
+      "bullets_zh": [
+        "提交 7ad1e2e3ce：拆分 raw 文件时**不再把出现次数为 0 的事件类型写入输出**——此前会留下空事件类别，让下游按类别筛选时出现「有定义但没数据」的坑。",
+        "对事件相关设计尤其重要：条件表里存在空类别会让 epoch 计数、平衡与统计分组出现空组或除零。",
+        "同批还有 10 月 News 更新（文档），不影响行为。"
+      ],
+      "bullets_en": [
+        "Commit 7ad1e2e3ce stops writing event types with zero occurrences into split raw outputs, which previously left empty categories for downstream filtering.",
+        "That matters for event-related designs: an empty category in the condition table produces empty groups, skewed trial counts or divide-by-zero in later statistics.",
+        "A documentation update for October news landed alongside with no behavioural effect."
+      ],
+      "url": "https://github.com/brainstorm-tools/brainstorm3/commit/7ad1e2e3ce",
+      "published": "2026-11-05T20:31:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Brainstorm 提交 7ad1e2e3ce：**拆分 raw 文件时不再保留「出现次数为 0」的事件类型**。这条看似清理，实际防的是下游的连锁问题——如果输出里留着空事件类别，之后按类别筛选、做 epoch 计数、条件平衡或统计分组时就会出现「有定义、无数据」的空组，甚至除零错误，而报错位置往往离根因很远。对用 Brainstorm 做事件相关分析（ERP、时频）的团队，建议升级后重跑一次拆分并核对事件表与 epoch 计数是否与预期一致；若你之前手工删过空类型，这次可以省掉。",
+      "brief_en": "Brainstorm commit 7ad1e2e3ce stops writing event types with zero occurrences when splitting raw files. It looks like cleanup but prevents downstream breakage: an empty category leads to empty groups, skewed trial counts or divide-by-zero in filtering and statistics, with errors surfacing far from the cause. Re-run a split and check the event table and epoch counts after upgrading.",
+      "tags": [
+        "brainstorm",
+        "events",
+        "split-raw",
+        "epochs",
+        "data-hygiene"
+      ],
+      "raw_excerpt": "Commit 7ad1e2e3ce, 2026-11-05T20:31Z: \"Process: Split raw, do not keep events with zero occurrences in outputs\". Repo: brainstorm-tools/brainstorm3. Same day: \"Doc: Update News Oct 2026\" 15:54Z.",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "brainstorm-tools/brainstorm3@7ad1e2e3ce",
+      "author_handle": "brainstorm-tools",
+      "metrics": {
+        "play": null,
+        "like": 492,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "空事件类别会引发空组/除零，且报错位置离根因很远。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "mne-icalabel 对「非 EEG 数据拟合的 ICA」给出明确报错",
+      "title_en": "mne-icalabel Raises an Informative Error for ICA Fitted on Non-EEG Data",
+      "bullets_zh": [
+        "#342：当传入的 ICA 是在**非 EEG 数据**（如仅 MEG，或通道不匹配）上拟合时，ICLabel 现在给出**明确错误**，而不是返回说不通的分量标签。",
+        "ICLabel 的模型按 EEG 电极空间训练；用错误模态的 ICA 去标注会得到看似合理、实则无意义的类别概率。",
+        "对多模态数据（EEG＋MEG 同录）的团队，这条报错能避免「标签看起来正常但结论没意义」的隐患。"
+      ],
+      "bullets_en": [
+        "#342 makes ICLabel raise an informative error when the ICA was fitted on non-EEG data (MEG only, or mismatched channels) instead of returning implausible component labels.",
+        "The ICLabel model is trained on EEG electrode space, so labelling ICA from the wrong modality yields plausible-looking but meaningless class probabilities.",
+        "For multimodal recordings (EEG plus MEG), the error prevents conclusions built on labels that look fine but mean nothing."
+      ],
+      "url": "https://github.com/mne-tools/mne-icalabel/pull/342",
+      "published": "2026-11-05T11:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "mne-icalabel 合并 #342：当传入的 ICA 是在**非 EEG 数据**上拟合时（例如只有 MEG，或通道与模型不匹配），ICLabel 现在**直接抛出明确错误**，而不是继续返回分量标签。这点很关键：ICLabel 的模型是在 EEG 电极空间上训练的，用错误模态的 ICA 去标注，会得到「概率看起来合理、语义却无意义」的类别（比如把 MEG 伪迹标成眼电），而使用者往往不会怀疑。对同时录 EEG＋MEG 的团队，这条报错能在流程早期拦住错误；也提醒一点：**标注工具的输出必须与输入模态匹配**，别把「能跑」当成「对」。",
+      "brief_en": "mne-icalabel merged #342 so ICLabel raises an informative error when the ICA was fitted on non-EEG data (MEG only or mismatched channels) instead of returning labels. Since the model is trained in EEG electrode space, labelling ICA from the wrong modality yields plausible but meaningless probabilities. A labelling tool must match its input modality.",
+      "tags": [
+        "mne-icalabel",
+        "ica",
+        "validation",
+        "modality",
+        "error-handling"
+      ],
+      "raw_excerpt": "PR #342 merged 2026-11-05T11:33Z: \"Raise an informative error when ICLabel is given an ICA fitted on non-EE[G data]\". Repo: mne-tools/mne-icalabel.",
+      "fetched_at": "2026-11-05T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-icalabel#342",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 125,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "用错模态的 ICA 会得到看似合理却无意义的标签，报错能在早期拦住。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 98,
+    "llm_rows": 22,
+    "kept": 7,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 2
+  }
+}
