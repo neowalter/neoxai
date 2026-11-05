@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:31:28.457Z",
+  "generatedAt": "2026-11-05T12:43:58.944Z",
   "sources": [
     {
       "id": "huggingface",
@@ -412,7 +412,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11683,
+      "downloads": 11702,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -437,11 +437,37 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 6784,
+      "downloads": 5265,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "hf:HABSteam/multimodal-eeg-emotion",
+      "name": "multimodal-eeg-emotion",
+      "owner": "HABSteam",
+      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
+      "source": "huggingface",
+      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
+      "tags": [
+        "eeg",
+        "ecg",
+        "electrodermal-activity",
+        "respiration",
+        "eye-tracking",
+        "emotion",
+        "neuroscience",
+        "biosignals"
+      ],
+      "license": "other",
+      "downloads": 4073,
+      "likes": 6,
+      "updatedAt": "2026-11-03T16:29:43.000Z",
+      "modality": [
+        "EEG",
+        "ECG"
       ]
     },
     {
@@ -462,7 +488,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2117,
+      "downloads": 1994,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -487,7 +513,7 @@
         "eeg"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1829,
+      "downloads": 1522,
       "likes": 2,
       "updatedAt": "2026-10-28T15:13:25.000Z",
       "modality": [
@@ -505,60 +531,9 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1410,
+      "downloads": 1402,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:HABSteam/multimodal-eeg-emotion",
-      "name": "multimodal-eeg-emotion",
-      "owner": "HABSteam",
-      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
-      "source": "huggingface",
-      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
-      "tags": [
-        "eeg",
-        "ecg",
-        "electrodermal-activity",
-        "respiration",
-        "eye-tracking",
-        "emotion",
-        "neuroscience",
-        "biosignals"
-      ],
-      "license": "other",
-      "downloads": 866,
-      "likes": 3,
-      "updatedAt": "2026-11-03T16:29:43.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
-      ]
-    },
-    {
-      "id": "hf:aspire-osu/maestro-eeg-dataset",
-      "name": "maestro-eeg-dataset",
-      "owner": "aspire-osu",
-      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
-      "source": "huggingface",
-      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
-      "tags": [
-        "audio-classification",
-        "time-series-forecasting",
-        "cc-by-nc-sa-4.0",
-        "audiofolder",
-        "audio",
-        "video",
-        "arxiv:2609.31898",
-        "eeg"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 663,
-      "likes": 2,
-      "updatedAt": "2026-09-29T21:10:37.000Z",
       "modality": [
         "EEG"
       ]
@@ -579,7 +554,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 473,
+      "downloads": 480,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -595,7 +570,7 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 437,
+      "downloads": 438,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
@@ -620,7 +595,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 244,
+      "downloads": 220,
       "likes": 5,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -642,7 +617,7 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 577,
+      "downloads": 579,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
       "modality": [
@@ -650,70 +625,58 @@
       ]
     },
     {
-      "id": "hf:xw1216/openneuro-hbn-eeg-releases-v1-0-1",
-      "name": "openneuro-hbn-eeg-releases-v1-0-1",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-releases-v1-0-1",
+      "id": "hf:samuki-hf/eeg-gaze-viewer-public",
+      "name": "eeg-gaze-viewer-public",
+      "owner": "samuki-hf",
+      "url": "https://huggingface.co/datasets/samuki-hf/eeg-gaze-viewer-public",
       "source": "huggingface",
-      "description": "HBN EEG: one archive per release, R1-R11 This repository publishes one lossless .tar.gz archive per HBN EEG release, fixed at OpenNeuro version 1.0.1, including R6. Source: https://huggingface.co/datasets/xw1216/openneuro-hbn-eeg-raw-v1-0-1/tree/987f221fcf9fe858d01b6c8a918697750…",
-      "tags": [
-        "cc-by-sa-4.0",
-        "eeg",
-        "hbn",
-        "neuroscience",
-        "archive"
-      ],
-      "license": "cc-by-sa-4.0",
-      "downloads": 155,
+      "description": "EEG and gaze recordings Lossless viewer exports of ZuCo and Frank EEG, gaze where available, and Michaelov's electrode-level N400 table. Original values and missing records are retained without new preprocessing. These exports cover selected source fields. ZuCo 1, Hollenstein et…",
+      "tags": [],
+      "license": null,
+      "downloads": 121,
       "likes": 0,
-      "updatedAt": "2026-10-17T19:47:18.000Z",
+      "updatedAt": "2026-11-05T00:49:32.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
+      "id": "hf:EEGDash/eegdash-corpus-v0",
+      "name": "eegdash-corpus-v0",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "source": "huggingface",
+      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
       "tags": [
-        "bids",
         "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
+        "neuroscience",
+        "foundation-model",
+        "zarr"
       ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 183,
-      "updatedAt": "2026-11-02T22:13:41.000Z",
+      "license": "other",
+      "downloads": 65,
+      "likes": 1,
+      "updatedAt": "2026-11-01T11:24:53.000Z",
       "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
+        "EEG"
       ]
     },
     {
-      "id": "zenodo:23371567",
-      "name": "An annotated 32-channel EEG dataset of hand and ankle motor tasks for brain-computer interface feature-extraction benchmarking.",
-      "owner": "Quiroga Forero, Alejandro",
-      "url": "https://doi.org/10.5281/zenodo.23371567",
+      "id": "zenodo:23851102",
+      "name": "P300-BCI EEG dataset: sitting vs. supine posture",
+      "owner": "Chailloux Peguero, Juan David",
+      "url": "https://doi.org/10.5281/zenodo.23851102",
       "source": "zenodo",
-      "description": "This deposit contains a 32-channel EEG dataset of executed hand and ankle movements, recorded from 30 healthy volunteers during the offline evaluation of a brain-computer interface (BCI) for motor rehabilitation. It is organised according to the Brain Imaging Data Structure (BID…",
+      "description": "# P300-BCI EEG dataset: sitting vs. supine posture EEG recordings of a five-target visual P300 brain&ndash;computer interface (BCI) task. Ten healthy volunteers performed the task in two postures: sitting (SIT) and supine (SUP). This dataset accompanies the article: &gt; Chaillo…",
       "tags": [
         "EEG",
-        "Motor Intention",
-        "Neurorehabilitation"
+        "body posture",
+        "information transfer rate"
       ],
       "license": "cc-by-4.0",
-      "downloads": 532,
+      "downloads": 437,
       "likes": null,
-      "updatedAt": "2026-10-14T00:00:00.000Z",
+      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -730,7 +693,7 @@
         "EEG features"
       ],
       "license": "cc-by-4.0",
-      "downloads": 192,
+      "downloads": 235,
       "likes": null,
       "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
@@ -771,29 +734,9 @@
         "NIFSTD"
       ],
       "license": "cc-by-4.0",
-      "downloads": 94,
+      "downloads": 95,
       "likes": null,
       "updatedAt": "2026-10-29T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23851102",
-      "name": "P300-BCI EEG dataset: sitting vs. supine posture",
-      "owner": "Chailloux Peguero, Juan David",
-      "url": "https://doi.org/10.5281/zenodo.23851102",
-      "source": "zenodo",
-      "description": "# P300-BCI EEG dataset: sitting vs. supine posture EEG recordings of a five-target visual P300 brain&ndash;computer interface (BCI) task. Ten healthy volunteers performed the task in two postures: sitting (SIT) and supine (SUP). This dataset accompanies the article: &gt; Chaillo…",
-      "tags": [
-        "EEG",
-        "body posture",
-        "information transfer rate"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 68,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -840,23 +783,7 @@
       "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 5,
-      "likes": null,
-      "updatedAt": "2026-11-03T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23901972",
-      "name": "Replication Materials for \"Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence\"",
-      "owner": "Anonymous",
-      "url": "https://doi.org/10.5281/zenodo.23901972",
-      "source": "zenodo",
-      "description": "This repository contains replication materials associated with the manuscript &ldquo;Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence.&rdquo; Experiment 1 examined the relationships among second language (L…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 3,
+      "downloads": 13,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
@@ -881,9 +808,50 @@
         "word production"
       ],
       "license": "cc-by-4.0",
-      "downloads": 8,
+      "downloads": 20,
       "likes": null,
       "updatedAt": "2026-11-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23958219",
+      "name": "Participant-Level Results and Trial-Level Predictions for Cross-Dataset Motor Imagery EEG Decoding Using Euclidean Alignment",
+      "owner": "Katona, Jozsef",
+      "url": "https://doi.org/10.5281/zenodo.23958219",
+      "source": "zenodo",
+      "description": "This dataset accompanies the research manuscript entitled&nbsp; &ldquo;Unlabeled target EEG improves cross-dataset motor imagery decoding through Euclidean alignment&rdquo; , submitted to Scientific Reports. The study investigates the effects of Euclidean alignment (EA) on cross…",
+      "tags": [
+        "Motor imagery",
+        "Electroencephalography (EEG)",
+        "Euclidean alignment",
+        "Domain adaptation",
+        "Unlabeled calibration",
+        "EEG classification",
+        "EEGNet",
+        "Minimum distance to mean"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 1,
+      "likes": null,
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23901972",
+      "name": "Replication Materials for \"Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence\"",
+      "owner": "Anonymous",
+      "url": "https://doi.org/10.5281/zenodo.23901972",
+      "source": "zenodo",
+      "description": "This repository contains replication materials associated with the manuscript &ldquo;Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence.&rdquo; Experiment 1 examined the relationships among second language (L…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 3,
+      "likes": null,
+      "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -933,8 +901,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 18,
-      "updatedAt": "2026-11-04T12:24:11.000Z",
+      "likes": 19,
+      "updatedAt": "2026-11-05T12:24:11.000Z",
       "modality": [
         "EEG"
       ]
@@ -958,7 +926,7 @@
       "license": "Apache-2.0",
       "downloads": null,
       "likes": 3,
-      "updatedAt": "2026-11-03T21:29:41.000Z",
+      "updatedAt": "2026-11-04T14:30:30.000Z",
       "modality": [
         "EEG"
       ]
@@ -983,30 +951,34 @@
       "license": "MIT",
       "downloads": null,
       "likes": 2,
-      "updatedAt": "2026-11-04T02:49:45.000Z",
+      "updatedAt": "2026-11-04T13:34:01.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:supernaiter/silent-speech-review",
-      "name": "silent-speech-review",
-      "owner": "supernaiter",
-      "url": "https://github.com/supernaiter/silent-speech-review",
+      "id": "github:piterkarpov-111/german-photovoltaics-dataset-2026",
+      "name": "german-photovoltaics-dataset-2026",
+      "owner": "piterkarpov-111",
+      "url": "https://github.com/piterkarpov-111/german-photovoltaics-dataset-2026",
       "source": "github",
-      "description": "Bilingual (EN/JA) structured reviews of 152 silent speech interface papers: EMG, EEG, ultrasound, EPG, lip reading, radar and acoustic sensing. Sensors, datasets, metrics and open problems for each paper.",
+      "description": "Offener Referenzdatensatz: Photovoltaik-Ertrag (DWD/PVGIS), Montagekosten (€/kWp), Solarpflicht & EEG 2026/2027 für alle 16 Bundesländer & 51 Großstädte in Deutschland — von https://solarmetrik.de",
       "tags": [
-        "silent-speech",
-        "silent-speech-interface",
-        "silent-speech-recognition"
+        "dataset",
+        "deutschland",
+        "dwd",
+        "eeg-2026",
+        "energiewende",
+        "open-data",
+        "photovoltaik",
+        "pvgis"
       ],
-      "license": "NOASSERTION",
+      "license": null,
       "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-11-03T07:34:49.000Z",
+      "likes": 0,
+      "updatedAt": "2026-11-04T17:08:36.000Z",
       "modality": [
-        "EEG",
-        "EMG"
+        "EEG"
       ]
     },
     {
@@ -1024,7 +996,31 @@
       "license": null,
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-11-03T08:51:23.000Z",
+      "updatedAt": "2026-11-04T15:31:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:viranovskaya/neurodata-release-security-audit",
+      "name": "neurodata-release-security-audit",
+      "owner": "viranovskaya",
+      "url": "https://github.com/viranovskaya/neurodata-release-security-audit",
+      "source": "github",
+      "description": "Read-only pre-release security checks for EEG and BIDS datasets",
+      "tags": [
+        "bids",
+        "data-privacy",
+        "eeg",
+        "metadata",
+        "neurodata",
+        "python",
+        "reproducible-research"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-04T15:28:49.000Z",
       "modality": [
         "EEG"
       ]
