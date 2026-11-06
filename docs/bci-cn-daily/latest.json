@@ -1,109 +1,238 @@
 {
-  "date": "2026-11-06",
-  "generated_at": "2026-11-05T21:31:45.217Z",
+  "date": "2026-11-07",
+  "generated_at": "2026-11-06T21:32:17.515Z",
   "item_count": 7,
   "types": {
-    "Project": 6,
-    "Benchmark": 1
+    "Tutorial": 1,
+    "Project": 6
   },
   "highlights": [
     {
-      "title_zh": "MNE-Python 修多窗谱系数缩放、四元数均值与滤波器传递函数分母",
-      "title_en": "MNE-Python Fixes Multitaper Scaling, Quaternion Averaging and a Filter Transfer Denominator",
-      "url": "https://github.com/mne-tools/mne-python/pull/14497",
-      "brief": "MNE-Python 在 11-05 连推 5 个提交，三条是**数值正确性**：#14497 让 **full-normalized 多窗谱系数**乘上 `sqrt(sfreq)`——谱密度口径错时功率绝对值会整体偏，而功率是跨研究比较的基础；#14496 修 `_average_quats` 里**权重未线性应用**（四元数平均偏差会带偏头位），另一条修**滤波器组传递函数的分母**。另有 #14494 把置换检验改为**分块评估**（内存友好），#14499 升级 `h5io` 覆盖一个 **CVE**。对做时频分析、跨研究功率比较或依赖头位变换的团队，建议升级后重算一批 PSD 与配准结果并对照旧值。"
+      "title_zh": "非侵入式脑机接口的技术栈，哪几层真能迁到人形机器人？",
+      "title_en": "Which Layers of the Non-Invasive BCI Stack Actually Transfer to Humanoid Robots?",
+      "url": "https://www.bilibili.com/read/cv53792270",
+      "brief": "B站专栏「非侵入式脑机接口」的这篇技术概览质量明显高于同类：它把信号链拆成**电极与前端、特征与解码、指令映射、闭环与安全**四段，指出**第一段绑定人体解剖、几乎不可迁移**，而后三段绑定的是「弱信号、强干扰、小样本」这组工程条件——人形机器人面对的约束恰好相同。文中给出量级依据（头皮脑电 10–100 µV，眨眼/咬合伪迹可达数百 µV 至 mV）与四项可复用技术的量化门槛（微针阵列 300–600 µm、接触阻抗 30–70 kΩ 等），结论是**2026 年真正可复用的是解码中间层与控制仲裁逻辑，不是脑电帽**。对做跨域迁移或想判断「什么能复用」的人，这是一篇少见的、带数字的冷静分析。"
     },
     {
-      "title_zh": "braindecode 把 ch_mask（可变通道数）铺到四个基础模型，并加契约测试",
-      "title_en": "braindecode Rolls ch_mask (Variable Channels) Across Four Foundation Models, With Contract Tests",
-      "url": "https://github.com/braindecode/braindecode/pull/1544",
-      "brief": "braindecode 在 11-05 把 **ch_mask（可变通道数）** 一夜铺到四个基础模型：**BIOT #1542、LUNA #1543、CBraMod #1544、REVE/Labram #1549**。这不是加个参数那么简单——真实数据里不同被试、不同电极布局的通道数本来就不一致，过去要么裁到「公共通道子集」（丢信息），要么按受试者单独建模型（丢样本）。同批还让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，并新增「**对每个注册了 ch_mask 的模型做契约测试**」，避免以后新模型漏实现接口。对做多中心或异质蒙太奇训练的团队，这套改动直接把可用数据量放大。"
+      "title_zh": "PhysioWave-T（NeurIPS 2025）：面向生理信号的 token 高效小波基础模型",
+      "title_en": "PhysioWave-T (NeurIPS 2025): Token-Efficient Wavelet Foundation Models for Biosignals",
+      "url": "https://github.com/ForeverBlue816/PhysioWave/commit/a6664ddf39",
+      "brief": "PhysioWave 在 11-06 推进 4 个提交，把 **NeurIPS 2025 论文代码**整理成可用模型：**PhysioWave-T —— token 高效的小波基础模型**，覆盖 EEG/ECG 等生理信号（arXiv 2506.10351），并发布**可安装包与 Hugging Face 权重**；同日补齐 CITATION.cff、精简依赖、Hub 卡片模板与训练曲线。对 EEG 基础模型，**token 效率**直接决定上下文长度与推理成本，而小波分解提供多尺度归纳偏置——这是「不靠无脑堆参数」的另一条路线。对想在自己的数据集上试预训练模型的团队，现在有了权重与安装包可直接上手；建议先按论文设定核对预处理与归一化，再谈迁移效果。"
     },
     {
-      "title_zh": "SPD-Learn Encore：逐条主张（claim）的可复现性审计与 54 条图表登记",
-      "title_en": "SPD-Learn Encore: Claim-by-Claim Reproducibility Auditing With a 54-Claim Figure Registry",
-      "url": "https://github.com/spdlearn/encore",
-      "brief": "新建仓库 spdlearn/encore（2026-11-05）把复现性工作推进到**主张（claim）级别**：它结合 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions**，仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志，并登记 **54 条 claim→figure 映射**。与常见的「整篇论文复现成功/失败」相比，这种粒度的价值在于：能指出**哪一条结论站不住**、哪张图对不上，而不是笼统判死。对做基准、审稿或复现挑战的团队，这是一套可直接借鉴的登记结构；也提示评测平台未来可能要求「按 claim 提交」。"
+      "title_zh": "Neuromorphic-BCI-Core：可综合的 64 通道脉冲神经 BCI SoC（Verilog，45nm）",
+      "title_en": "Neuromorphic-BCI-Core: A Synthesizable 64-Channel Spiking BCI SoC in Verilog With 45nm Layout",
+      "url": "https://github.com/suryasenthilr/Neuromorphic-BCI-Core",
+      "brief": "新建仓库 Neuromorphic-BCI-Core（2026-11-06）是一份少见的「从 RTL 到版图」的神经形态 BCI 实现：用 **SystemVerilog/Verilog-2005** 写可综合核心，含 **64 个 LIF 神经元**与运动解码器，面向实时神经解码与运动意图分类，并附 **45nm 版图**。架构针对**异步脉冲串**设计、声称**零帧延迟**，输入走 **4 相 AER 握手**——这与「按块采样再推理」的常规数字 BCI 管线是两条路。对做神经形态硬件、超低延迟解码或想了解 AER 接口的团队，这是可读的完整工程；但「64 LIF 神经元＋零帧延迟」能否支撑实际解码精度，需要自行综合、仿真并复现指标。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-06.md",
+  "github_path": "docs/bci-cn-daily/2026-11-07.md",
   "items": [
+    {
+      "type": "Tutorial",
+      "level": "Advanced",
+      "title_zh": "非侵入式脑机接口的技术栈，哪几层真能迁到人形机器人？",
+      "title_en": "Which Layers of the Non-Invasive BCI Stack Actually Transfer to Humanoid Robots?",
+      "bullets_zh": [
+        "作者把信号链拆成四段：**电极与前端、特征与解码、指令映射、闭环与安全**——第一段绑定人体解剖几乎不可迁移，后三段绑定的是「**弱信号、强干扰、小样本**」，而人形机器人面对同一组约束。",
+        "给出量级依据：头皮脑电 **10–100 µV**，而眨眼/咬合伪迹可达数百 µV 至 mV，差一个数量级以上；关节电机反电动势与 PWM 干扰对力觉/位置传感器的压制关系与此相似。",
+        "列出四项可复用技术与量化条件（如微针阵列 300–600 µm 穿透 10–40 µm 角质层、接触阻抗 30–70 kΩ），并明确结论：**2026 年可复用的是解码中间层与控制仲裁逻辑，不是那顶脑电帽**。"
+      ],
+      "bullets_en": [
+        "The author splits the signal chain into four stages — electrodes/front end, features/decoding, command mapping, and closed loop/safety — where the first is anatomy-bound and barely transferable, while the rest share the same 'weak signal, strong interference, small samples' constraints humanoid robots face.",
+        "Quantitative grounding: scalp EEG is 10-100 uV while blink and jaw artefacts reach hundreds of uV to millivolts, over an order of magnitude; joint back-EMF and PWM interference suppress force/position sensors similarly.",
+        "Four reusable techniques come with numbers (microneedle arrays 300-600 um through 10-40 um stratum corneum, contact impedance 30-70 kOhm), concluding that what transfers in 2026 is the decoding middle layer and control arbitration, not the EEG cap."
+      ],
+      "url": "https://www.bilibili.com/read/cv53792270",
+      "published": "2026-11-06T12:17:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站专栏「非侵入式脑机接口」的这篇技术概览质量明显高于同类：它把信号链拆成**电极与前端、特征与解码、指令映射、闭环与安全**四段，指出**第一段绑定人体解剖、几乎不可迁移**，而后三段绑定的是「弱信号、强干扰、小样本」这组工程条件——人形机器人面对的约束恰好相同。文中给出量级依据（头皮脑电 10–100 µV，眨眼/咬合伪迹可达数百 µV 至 mV）与四项可复用技术的量化门槛（微针阵列 300–600 µm、接触阻抗 30–70 kΩ 等），结论是**2026 年真正可复用的是解码中间层与控制仲裁逻辑，不是脑电帽**。对做跨域迁移或想判断「什么能复用」的人，这是一篇少见的、带数字的冷静分析。",
+      "brief_en": "A Bilibili column splits the non-invasive BCI signal chain into electrodes/front end, features/decoding, command mapping and safety: the first is anatomy-bound while the rest share the weak-signal, strong-interference, small-sample constraints of humanoid robots. It grounds claims (EEG 10-100 uV versus artefacts reaching mV) and concludes the decoding middle layer transfers, not the cap.",
+      "tags": [
+        "non-invasive",
+        "stack",
+        "humanoid",
+        "transfer",
+        "analysis"
+      ],
+      "raw_excerpt": "「拆开非侵入式脑机接口的技术栈，能迁移到人形机器人的部分比市场宣传的少，比工程实际需要的多。2026年真正可复用的是解码中间层与控制仲裁逻辑，不是那顶脑电帽。」「非侵入式脑机接口的信号链分四段：电极与前端、特征与解码、指令映射、闭环与安全。第一段绑定人体解剖结构，几乎无法迁移；后三段绑定的是『弱信号、强干扰、小样本』这一组工程条件」「头皮脑电幅值仅10至100微伏，眨眼与咬合产生的眼电、肌电伪迹可达数百微伏至毫伏」「微针阵列电极高度多在300至600微米，穿透10至40微米厚的角质层…接触阻抗可压至30至70千欧」",
+      "fetched_at": "2026-11-06T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53792270",
+      "author_handle": "非侵入式脑机接口",
+      "metrics": {
+        "play": null,
+        "like": null,
+        "collect": null,
+        "comment": 0
+      },
+      "quality_score": 9,
+      "why_valuable": "把「什么能迁到机器人」按信号链分层并给出量化门槛，结论有数字支撑。"
+    },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-Python 修多窗谱系数缩放、四元数均值与滤波器传递函数分母",
-      "title_en": "MNE-Python Fixes Multitaper Scaling, Quaternion Averaging and a Filter Transfer Denominator",
+      "title_zh": "PhysioWave-T（NeurIPS 2025）：面向生理信号的 token 高效小波基础模型",
+      "title_en": "PhysioWave-T (NeurIPS 2025): Token-Efficient Wavelet Foundation Models for Biosignals",
       "bullets_zh": [
-        "#14497：**full-normalized 多窗（multitaper）系数的缩放**改为乘 `sqrt(sfreq)`——谱密度口径错会让功率绝对值整体偏差，而功率正是跨研究比较的基础。",
-        "同日 #14496 修 `_average_quats` 中**权重未线性应用**的问题（四元数平均错会偏头位），另一条修**滤波器组传递函数的分母**，还有一条把置换检验改为**分块评估**以降低内存。",
-        "#14499 顺带把 `h5io` 升级以覆盖一个 **CVE**——安全补丁与算法修正同批落地。"
+        "定位是**小波域、token 高效**的生理信号基础模型，覆盖 EEG/ECG 等；论文为 NeurIPS 2025（arXiv 2506.10351），并发布可安装包与 **Hugging Face 权重**。",
+        "本次更新补齐工程化：CITATION.cff、精简依赖、Hub 卡片模板与训练曲线，README 加入 Hub collection 链接——从「论文代码」走向「可复用模型」。",
+        "对 EEG 基础模型，token 效率直接决定上下文长度与推理成本；小波分解提供多尺度归纳偏置，替代部分「堆大模型」的路线。"
       ],
       "bullets_en": [
-        "#14497 scales full-normalised multitaper coefficients by sqrt(sfreq); a wrong spectral-density convention shifts absolute power, which underpins cross-study comparison.",
-        "Same day fixed _average_quats not applying weights linearly (skewing head position), corrected a filter-bank transfer-function denominator, and chunked permutation evaluation to cut memory.",
-        "#14499 also bumps h5io to cover a CVE, landing a security patch alongside algorithmic fixes."
+        "It positions itself as a wavelet-domain, token-efficient biosignal foundation model covering EEG and ECG, published at NeurIPS 2025 (arXiv 2506.10351) with an installable package and Hugging Face weights.",
+        "This update adds engineering polish: CITATION.cff, trimmed requirements, Hub card templates and training curves, plus a Hub collection link — moving from paper code to reusable model.",
+        "For EEG foundation models token efficiency governs context length and inference cost, and wavelet decomposition supplies multi-scale inductive bias instead of simply scaling up."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14497",
-      "published": "2026-11-05T20:58:00Z",
+      "url": "https://github.com/ForeverBlue816/PhysioWave/commit/a6664ddf39",
+      "published": "2026-11-06T04:16:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 在 11-05 连推 5 个提交，三条是**数值正确性**：#14497 让 **full-normalized 多窗谱系数**乘上 `sqrt(sfreq)`——谱密度口径错时功率绝对值会整体偏，而功率是跨研究比较的基础；#14496 修 `_average_quats` 里**权重未线性应用**（四元数平均偏差会带偏头位），另一条修**滤波器组传递函数的分母**。另有 #14494 把置换检验改为**分块评估**（内存友好），#14499 升级 `h5io` 覆盖一个 **CVE**。对做时频分析、跨研究功率比较或依赖头位变换的团队，建议升级后重算一批 PSD 与配准结果并对照旧值。",
-      "brief_en": "MNE-Python made five commits on Nov 5, three about numerical correctness: #14497 scales full-normalised multitaper coefficients by sqrt(sfreq), since a wrong spectral-density convention shifts absolute power; #14496 fixes _average_quats not applying weights linearly; another corrects a filter-bank transfer denominator. #14494 chunks permutation evaluation and #14499 bumps h5io for a CVE.",
+      "brief": "PhysioWave 在 11-06 推进 4 个提交，把 **NeurIPS 2025 论文代码**整理成可用模型：**PhysioWave-T —— token 高效的小波基础模型**，覆盖 EEG/ECG 等生理信号（arXiv 2506.10351），并发布**可安装包与 Hugging Face 权重**；同日补齐 CITATION.cff、精简依赖、Hub 卡片模板与训练曲线。对 EEG 基础模型，**token 效率**直接决定上下文长度与推理成本，而小波分解提供多尺度归纳偏置——这是「不靠无脑堆参数」的另一条路线。对想在自己的数据集上试预训练模型的团队，现在有了权重与安装包可直接上手；建议先按论文设定核对预处理与归一化，再谈迁移效果。",
+      "brief_en": "PhysioWave made four commits on Nov 6 turning NeurIPS 2025 paper code into a usable model: PhysioWave-T, a token-efficient wavelet foundation model for EEG and ECG (arXiv 2506.10351), shipped as an installable package with Hugging Face weights, plus CITATION.cff, trimmed requirements and Hub cards. Token efficiency governs context length and inference cost.",
       "tags": [
-        "mne-python",
-        "multitaper",
-        "psd",
-        "quaternion",
-        "cve"
+        "neurips",
+        "foundation-model",
+        "wavelet",
+        "token-efficiency",
+        "weights"
       ],
-      "raw_excerpt": "Commits 2026-11-05: \"FIX: Scale full-normalized multitaper coefficients by sqrt(sfreq) (#14497)\" 20:58Z; \"Fix apply weights linearly in _average_quats (#14496)\" 18:15Z; \"PERF: Chunk permutation evaluation in permutation_t_test (#14494)\" 17:21Z; \"FIX: Correct the denominator of the transfer function in the filtering b[ank]\" 02:21Z; \"Update h5io version for CVE (#14499)\" 20:03Z.",
-      "fetched_at": "2026-11-05T23:55:00Z",
+      "raw_excerpt": "README: \"PhysioWave-T: Token-Efficient Wavelet Foundation Models for Biosignals\" — badges \"NeurIPS 2025\" and arXiv \"2506.10351\", Hugging Face link. Commits 2026-11-06: \"PhysioWave-T: token-efficient wavelet foundation models for EEG, ECG and …\" (a6664ddf39) 04:16Z; \"Wavelet-W logo, installable package, trimmed requirements, CITATION.cff\" 04:35Z; \"Hub card templates: PhysioWave-T titles, training curves\" 05:20Z.",
+      "fetched_at": "2026-11-06T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14497",
-      "author_handle": "mne-tools",
+      "upstream_id": "ForeverBlue816/PhysioWave@a6664ddf39",
+      "author_handle": "ForeverBlue816",
       "metrics": {
         "play": null,
-        "like": 3583,
+        "like": 195,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "多窗谱口径错会让功率绝对值整体偏差，直接影响跨研究的功率比较。"
+      "why_valuable": "小波+token 效率是「不靠堆参数」的路线，且已发布权重与安装包可直接试。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 把 ch_mask（可变通道数）铺到四个基础模型，并加契约测试",
-      "title_en": "braindecode Rolls ch_mask (Variable Channels) Across Four Foundation Models, With Contract Tests",
+      "title_zh": "Neuromorphic-BCI-Core：可综合的 64 通道脉冲神经 BCI SoC（Verilog，45nm）",
+      "title_en": "Neuromorphic-BCI-Core: A Synthesizable 64-Channel Spiking BCI SoC in Verilog With 45nm Layout",
       "bullets_zh": [
-        "一天内 **BIOT（#1542）、LUNA（#1543）、CBraMod（#1544）与 REVE/Labram（#1549）** 全部支持 `ch_mask`——用同一接口处理**通道数不一致**的批次。",
-        "配套提交让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，另有「**对每个注册了 ch_mask 的模型做契约测试**」，防止新模型漏实现。",
-        "对真实数据意义直接：不同被试/不同电极布局的记录不必再裁到「公共通道子集」，可保留全部信息。"
+        "用 **SystemVerilog/Verilog-2005** 实现面向实时 BCI 神经解码与运动意图分类的**脉冲神经网络核心**：**64 个 LIF 神经元**、运动解码器，并附带 **45nm 版图**。",
+        "架构针对**异步脉冲串**设计，声称**零帧延迟**（zero frame latency），输入采用 **4 相 AER（Address-Event Representation）握手**——这与「按块采样再推理」的常规数字 BCI 路线不同。",
+        "对做神经形态硬件或超低延迟解码的团队，这是少见的「从 RTL 到版图」完整实现；但算法指标需自行复现验证。"
       ],
       "bullets_en": [
-        "In one day BIOT (#1542), LUNA (#1543), CBraMod (#1544) and REVE/Labram (#1549) all accept ch_mask, a single interface for batches with differing channel counts.",
-        "Supporting commits make iEEG foundation models return per-token output with padded channels zeroed, and add contract tests for every registered model that takes ch_mask so new ones cannot silently skip it.",
-        "The practical payoff: recordings with different montages need not be trimmed to a common channel subset, so information stays."
+        "A spiking neural core for real-time BCI neural decoding and motor-intent classification in SystemVerilog/Verilog-2005, with 64 LIF neurons, a motor decoder and a 45nm layout.",
+        "The architecture targets asynchronous spike trains with claimed zero frame latency and a 4-phase AER input handshake, unlike conventional digital BCI pipelines that sample in blocks then infer.",
+        "For neuromorphic hardware or ultra-low-latency decoding work this is a rare RTL-to-layout implementation, though its algorithmic claims need independent reproduction."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1544",
-      "published": "2026-11-05T18:58:00Z",
+      "url": "https://github.com/suryasenthilr/Neuromorphic-BCI-Core",
+      "published": "2026-11-06T13:17:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 11-05 把 **ch_mask（可变通道数）** 一夜铺到四个基础模型：**BIOT #1542、LUNA #1543、CBraMod #1544、REVE/Labram #1549**。这不是加个参数那么简单——真实数据里不同被试、不同电极布局的通道数本来就不一致，过去要么裁到「公共通道子集」（丢信息），要么按受试者单独建模型（丢样本）。同批还让 iEEG 基础模型**返回 per-token 输出并对补齐通道置零**，并新增「**对每个注册了 ch_mask 的模型做契约测试**」，避免以后新模型漏实现接口。对做多中心或异质蒙太奇训练的团队，这套改动直接把可用数据量放大。",
-      "brief_en": "braindecode rolled ch_mask (variable channel counts) across four foundation models in one day: BIOT #1542, LUNA #1543, CBraMod #1544 and REVE/Labram #1549. Real recordings differ in channel count, so before you either trimmed to a common subset or trained per subject. Supporting commits zero padded channels and add contract tests so new models cannot skip the interface.",
+      "brief": "新建仓库 Neuromorphic-BCI-Core（2026-11-06）是一份少见的「从 RTL 到版图」的神经形态 BCI 实现：用 **SystemVerilog/Verilog-2005** 写可综合核心，含 **64 个 LIF 神经元**与运动解码器，面向实时神经解码与运动意图分类，并附 **45nm 版图**。架构针对**异步脉冲串**设计、声称**零帧延迟**，输入走 **4 相 AER 握手**——这与「按块采样再推理」的常规数字 BCI 管线是两条路。对做神经形态硬件、超低延迟解码或想了解 AER 接口的团队，这是可读的完整工程；但「64 LIF 神经元＋零帧延迟」能否支撑实际解码精度，需要自行综合、仿真并复现指标。",
+      "brief_en": "Created 2026-11-06, Neuromorphic-BCI-Core is a rare RTL-to-layout neuromorphic BCI: a synthesizable SystemVerilog core with 64 LIF neurons and a motor decoder for real-time decoding and motor-intent classification, plus a 45nm layout. It targets asynchronous spike trains with claimed zero frame latency and a 4-phase AER handshake; accuracy claims need independent reproduction.",
       "tags": [
-        "braindecode",
-        "ch-mask",
-        "foundation-models",
-        "heterogeneous",
-        "contract-tests"
+        "neuromorphic",
+        "spiking",
+        "aer",
+        "verilog",
+        "soc"
       ],
-      "raw_excerpt": "PRs merged 2026-11-05: \"BIOT: accept ch_mask (#1542)\" 18:10Z; \"LUNA: accept ch_mask (#1543)\" 18:35Z; \"CBraMod: accept ch_mask with the encoder output (#1544)\" 18:58Z; \"REVE, Labram: accept ch_mask (#1539, merged with master) (#1549)\" 17:51Z; \"iEEG foundation models: return the per-token output, padded channels zer[oed]\" 16:49Z; \"Check the ch_mask contract on every registered model that takes it (#154…) 16:35Z.",
-      "fetched_at": "2026-11-05T23:55:00Z",
+      "raw_excerpt": "README: \"This core is a synthesizable bio-inspired Neuromorphic Processor designed for real-time Brain-Computer Interface (BCI) neural decoding and motor intent classification. Designed in SystemVerilog/Verilog-2005, the architecture processes asynchronous neural spike trains with zero frame latency. It features a 4-phase Address-Event Representation (AER) input handshake…\" Description: \"Synthesizable 64-Ch Neuromorphic Brain-Computer Interface (BCI) SoC in Verilog with 64 LIF neurons, motor decoder, and 45nm layout.\"",
+      "fetched_at": "2026-11-06T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1544",
+      "upstream_id": "suryasenthilr/Neuromorphic-BCI-Core",
+      "author_handle": "suryasenthilr",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "少见的 RTL→版图完整神经形态 BCI 实现，AER 异步路线与常规数字管线不同。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 拒绝「对复数 Welch 系数做平均」这种无意义组合",
+      "title_en": "MNE-Python Rejects Averaging Complex Welch Coefficients",
+      "bullets_zh": [
+        "#14498（修 #14495）：当 Welch 指定 `output=\"complex\"` 又要求 `average=\"mean\"`/`\"median\"` 时**直接报错**——各段傅里叶系数**相位不一致**，平均后的功率不等于功率的平均。",
+        "这是一个「能算、但算出来没有物理意义」的组合，此前会静默返回误导性谱。",
+        "对做相位敏感分析（相位锁值、跨试次相干、复数谱）的团队，这条校验能把「结果不对但流程不报错」挡在入口。"
+      ],
+      "bullets_en": [
+        "#14498 (fixing #14495) raises an error when Welch uses output=\"complex\" with average=\"mean\" or \"median\": the per-segment Fourier coefficients have inconsistent phases, so power from the average is not the average of power.",
+        "It was a computable but physically meaningless combination that previously returned a misleading spectrum silently.",
+        "Teams doing phase-sensitive work (phase locking, cross-trial coherence, complex spectra) get that failure blocked at the entry point."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14498",
+      "published": "2026-11-06T17:54:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14498（修 #14495）：当 Welch 指定 **`output=\"complex\"`** 又要求 **`average=\"mean\"`/`\"median\"`** 时**直接报错拒绝**。原因很本质——各段的傅里叶系数**相位不一致**，把它们平均后再平方得到的功率，**不等于**各段功率的平均；此前这个组合能跑通，只是返回一张没有物理意义的谱。这类「能算但算错」的 API 组合是静默错误的高发区，尤其在做相位敏感分析（相位锁值、跨试次相干、复数谱）时，结果看起来完全正常。建议升级后检查既有脚本是否踩过这个组合，并改用对功率做平均、或保留 per-segment 的复数谱自行处理。",
+      "brief_en": "MNE-Python merged #14498 (fixing #14495) to raise an error when Welch uses output=\"complex\" with average=\"mean\" or \"median\": per-segment Fourier coefficients have inconsistent phases, so power from the average is not the average of power. The combination used to return a physically meaningless spectrum silently — a classic silent-error pairing for phase-sensitive analyses.",
+      "tags": [
+        "mne-python",
+        "welch",
+        "complex",
+        "phase",
+        "validation"
+      ],
+      "raw_excerpt": "PR #14498: \"FIX: Reject averaged complex Welch coefficients — Fixes #14495. Welch `output=\\\"complex\\\"` with `average=\\\"mean\\\"` or `\\\"median\\\"` averages the Fourier coefficients across segments. Their phases do not line up, so the power formed from the average is not the average of the pow[er]…\" Merged 2026-11-06T17:54Z.",
+      "fetched_at": "2026-11-06T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14498",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3585,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "相位不一致的复数系数平均后功率无意义，报错把静默错误挡在入口。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 的 MAPA 支持 ch_mask 与逐样本传感器坐标",
+      "title_en": "braindecode's MAPA Accepts ch_mask With Per-Sample Sensor Indices",
+      "bullets_zh": [
+        "#1550：`MAPA` 接受带**逐样本 `sensor_indices`（batch, n_chans, 3）** 的 `ch_mask`，使**同一批次可混合不同蒙太奇与通道数**的记录，与 #1487 的 iEEG 基础模型一致。",
+        "实现上**注意力不会跨掩码通道**（attention never crosses），补齐通道不参与注意力计算——这才是「变长通道」不污染结果的关键。",
+        "对多中心数据、或同一实验里换过电极布局的团队，不必再按布局拆成多个模型。"
+      ],
+      "bullets_en": [
+        "#1550 lets MAPA accept a ch_mask with per-sample sensor_indices (batch, n_chans, 3), so one batch can mix recordings with different montages and channel counts, consistent with the iEEG foundation models of #1487.",
+        "Attention never crosses masked channels, so padded channels do not participate in attention — the key to variable-length channels not contaminating results.",
+        "Multi-centre data or studies that changed electrode layouts no longer need one model per layout."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1550",
+      "published": "2026-11-06T14:14:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 合并 #1550：`MAPA` 现在接受带**逐样本 `sensor_indices`（batch, n_chans, 3）** 的 `ch_mask`，于是**同一批次可混合不同蒙太奇、不同通道数**的记录，与 #1487 的 iEEG 基础模型口径一致。关键实现细节是**注意力不跨越被掩码的通道**——补齐通道既不参与注意力，也不干扰真实通道的表示，这才是「变长通道」不污染结果的正确做法（如果只在输入端置零、却仍让注意力看到它们，结果仍会被稀释）。对多中心数据或中途换过电极布局的实验，不必再按布局拆模型；建议升级后与「裁到公共通道子集」的旧流程对比一次指标。",
+      "brief_en": "braindecode merged #1550 so MAPA accepts a ch_mask with per-sample sensor_indices (batch, n_chans, 3), letting one batch mix montages and channel counts, consistent with #1487. Crucially, attention never crosses masked channels, so padding neither participates nor dilutes real representations — the correct way to avoid contamination. Studies that changed layouts no longer need separate models.",
+      "tags": [
+        "braindecode",
+        "mapa",
+        "ch-mask",
+        "montage",
+        "attention"
+      ],
+      "raw_excerpt": "PR #1550: \"MAPA: accept ch_mask with per-sample sensor_indices — `MAPA` accepts a `ch_mask` of real channels with per-sample `sensor_indices`, `(batch, n_chans, 3)`, so one batch can mix recordings with different montages and channel counts, as the iEEG foundation models of #1487. - Attention never cros[ses masked channels]…\" Merged 2026-11-06T14:14Z.",
+      "fetched_at": "2026-11-06T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1550",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -111,86 +240,43 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 9,
-      "why_valuable": "可变通道数让异质蒙太奇数据不必裁到公共子集，直接放大可用数据量。"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "SPD-Learn Encore：逐条主张（claim）的可复现性审计与 54 条图表登记",
-      "title_en": "SPD-Learn Encore: Claim-by-Claim Reproducibility Auditing With a 54-Claim Figure Registry",
-      "bullets_zh": [
-        "把 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions** 结合：仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志。",
-        "核心不是「能不能跑通代码」，而是**逐条主张**核对图表与结论是否可复现，并登记 **54 条 claim→figure** 映射。",
-        "对做基准与复现研究的团队，这种「claim 级」粒度比「整篇论文复现成功/失败」更有用，也更难糊弄。"
-      ],
-      "bullets_en": [
-        "It combines Encore Science's claim-by-claim registry design with ICML 2026 Open Reproductions, shipping papers.json, abstracts.json, claims.json, challenge.json and Trackio logs.",
-        "The point is not whether code runs, but whether each claim and figure reproduces, registered as 54 claim-to-figure mappings.",
-        "For benchmark and reproduction work, claim-level granularity is far more useful — and harder to fake — than whole-paper pass/fail."
-      ],
-      "url": "https://github.com/spdlearn/encore",
-      "published": "2026-11-05T18:04:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 spdlearn/encore（2026-11-05）把复现性工作推进到**主张（claim）级别**：它结合 **Encore Science** 的「按主张登记」设计与 **ICML 2026 Open Reproductions**，仓库内含 `papers.json`、`abstracts.json`、`claims.json`、`challenge.json` 与 Trackio 日志，并登记 **54 条 claim→figure 映射**。与常见的「整篇论文复现成功/失败」相比，这种粒度的价值在于：能指出**哪一条结论站不住**、哪张图对不上，而不是笼统判死。对做基准、审稿或复现挑战的团队，这是一套可直接借鉴的登记结构；也提示评测平台未来可能要求「按 claim 提交」。",
-      "brief_en": "Created 2026-11-05, spdlearn/encore pushes reproducibility to claim level: it combines Encore Science's claim-by-claim registry with ICML 2026 Open Reproductions, shipping papers.json, claims.json, challenge.json and Trackio logs with 54 claim-to-figure mappings. Unlike whole-paper pass/fail it can say which conclusion fails and which figure disagrees.",
-      "tags": [
-        "reproducibility",
-        "claim-registry",
-        "icml",
-        "auditing",
-        "benchmark"
-      ],
-      "raw_excerpt": "Description: \"SPD-Learn Encore: Agentic Reproducibility Auditing & 54-Claim Figure Registry (ICML 2026 / NEMAR / Encore Science PoC)\". README: \"Live sub-page for spdlearn.github.io/encore/ combining: Encore Science transparent claim-by-claim registry design, ICML 2026 Open Reproductions (`papers.json`, `abstracts.json`, `claims.json`, `challenge.json`, Trackio logboo[ks])\".",
-      "fetched_at": "2026-11-05T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "spdlearn/encore",
-      "author_handle": "spdlearn",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
       "quality_score": 8,
-      "why_valuable": "把复现粒度降到单条 claim，能指出哪条结论/哪张图站不住，而非整篇判死。"
+      "why_valuable": "注意力不跨掩码通道，才是变长通道不稀释真实表示的关键实现。"
     },
     {
       "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MindSoul 1.0 桌面客户端（中文）：32 通道采集与分析，含 MI/SSVEP 工作流",
-      "title_en": "MindSoul 1.0 Desktop Client: 32-Channel Acquisition and Analysis With MI/SSVEP Workflows",
+      "level": "Beginner",
+      "title_zh": "EEG API Unicorn：面向学生的 Unicorn Hybrid Black 采集/解码/推流 API",
+      "title_en": "EEG API Unicorn: A Student-Friendly Acquisition, Decoding and Streaming API",
       "bullets_zh": [
-        "Windows 10/11 64 位脑电采集与分析客户端源码包：**三设备适配**、实时监测、录制，以及 **MI（运动想象）与 SSVEP** 两套工作流。",
-        "依赖写得明确：Python 3.10 64 位、Node 18+、Rust/MSVC 编译环境与 WebView2；厂家扩展要求 Windows x64 与 CPython 匹配。",
-        "对国内自建采集端或想改造现成客户端的团队，这是一份「三设备 + 两范式」都覆盖的实现参考；但需自行核对设备协议与数据格式。"
+        "面向**学生**的 BCI API：采集 **Unicorn Hybrid Black** 头戴设备，内置现成范式解码（**SSVEP、c-VEP、P300、运动想象、ErrP** 等），并把结果**推流**给 Unity / Python / MATLAB / ROS 2 / Wi-Fi 微控制器。",
+        "价值在于「一条链路打通」：设备→采集→解码→网络输出，避免每个教学项目重复造轮子。",
+        "对课程与社团项目很实用；做正式研究前需自行核对采样率、通道映射与各项范式的默认参数。"
       ],
       "bullets_en": [
-        "A Windows 10/11 64-bit EEG acquisition and analysis client source package with three-device adaptation, live monitoring, recording, and both MI and SSVEP workflows.",
-        "Dependencies are explicit: Python 3.10 64-bit, Node 18+, a Rust/MSVC build environment and WebView2, with the vendor extension requiring matching Windows x64 and CPython.",
-        "For teams building their own acquisition front end or adapting an existing one, it covers three devices and two paradigms — but verify device protocols and file formats yourself."
+        "A student-oriented BCI API: it acquires a Unicorn Hybrid Black headset, decodes with ready-made paradigms (SSVEP, c-VEP, P300, motor imagery, ErrP and more) and streams results to Unity, Python, MATLAB, ROS 2 or a Wi-Fi microcontroller.",
+        "Its value is one continuous path — device, acquisition, decoding, network output — so teaching projects need not rebuild the plumbing.",
+        "Practical for courses and clubs; for research, verify sampling rate, channel mapping and each paradigm's defaults first."
       ],
-      "url": "https://github.com/MindSoulBCI/mindsoul-client",
-      "published": "2026-11-05T00:15:00Z",
+      "url": "https://github.com/medkar/EEG_API_Unicorn",
+      "published": "2026-11-06T16:41:00Z",
       "source": "github",
-      "language": "zh",
-      "brief": "新建仓库 Mindsoul 1.0（2026-11-05，中文）：**Windows 10/11 64 位脑电采集与分析客户端**源码包，覆盖**三设备适配**、实时监测、录制，以及 **MI（运动想象）与 SSVEP** 两套工作流；依赖写明 Python 3.10 64 位、Node 18+、Rust/MSVC 与 WebView2，并提示厂家扩展对 Windows x64 与 CPython 版本有要求。对国内自建采集端的团队，这份「多设备 + 两范式」一体实现有参考价值——尤其 SSVEP 刺激与 MI 流程常要分别维护两套代码。提醒：仓库是源码包（14 MB），**设备协议与数据格式需自行核对**，未附公开文档说明兼容的放大器型号与 SDK 版本。",
-      "brief_en": "Created 2026-11-05, MindSoul 1.0 is a Windows 10/11 64-bit EEG acquisition and analysis client source package with three-device adaptation, live monitoring, recording and MI/SSVEP workflows, listing Python 3.10, Node 18+, Rust/MSVC and WebView2 as dependencies. It is a useful reference for a multi-device front end covering two paradigms, though device protocols and formats must be verified.",
+      "language": "en",
+      "brief": "新建仓库 EEG_API_Unicorn（2026-11-06）定位很明确：**面向学生的脑机接口 API**。它采集 **Unicorn Hybrid Black** 头戴设备，用现成范式做解码（**SSVEP、c-VEP、P300、运动想象、ErrP** 等），再把结果**推流**给 Unity、Python、MATLAB、ROS 2 甚至 Wi-Fi 上的微控制器——把「设备→采集→解码→网络输出」这条链路一次打通。对课程、社团或入门项目，这能省掉每个项目重复搭管线的工夫，把精力放回范式与实验设计。用于正式研究前建议核对：采样率、通道映射、各范式的默认窗口与阈值，以及 Unicorn 的固件版本——这些参数差异会直接影响结果可比性。",
+      "brief_en": "Created 2026-11-06, EEG_API_Unicorn is explicitly a BCI API for students: it acquires a Unicorn Hybrid Black headset, decodes with ready-made paradigms (SSVEP, c-VEP, P300, motor imagery, ErrP) and streams results to Unity, Python, MATLAB, ROS 2 or a microcontroller, connecting device, acquisition, decoding and output. For research, verify sampling rate, channel mapping and firmware first.",
       "tags": [
-        "desktop",
-        "acquisition",
-        "mi",
+        "unicorn",
+        "api",
         "ssvep",
-        "chinese"
+        "p300",
+        "education"
       ],
-      "raw_excerpt": "「Mindsoul1.0 — 源码包 Windows 10/11 64 位脑电采集与分析客户端。包含三设备适配、实时监测、录制、MI（运动想象）和 SSVEP（稳态视觉诱发电位）工作流程。」「安装 Python 3.10 64 位、Node.js 18 及以上、Rust/MSVC（编译环境）和 WebView2（网页运行组件）。」",
-      "fetched_at": "2026-11-05T23:55:00Z",
+      "raw_excerpt": "README: \"A **brain-computer interface API for students**: it acquires a **Unicorn Hybrid Black** EEG headset, decodes it with ready-made paradigms, and **streams the result over the network**, so any application (Unity, Python, MATLAB, ROS 2, a microcontroller on the Wi-Fi) can build on it.\" Paradigms listed: \"SSVEP · c-VEP · P300 · Motor Imagery · ErrP\".",
+      "fetched_at": "2026-11-06T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "MindSoulBCI/mindsoul-client",
-      "author_handle": "MindSoulBCI",
+      "upstream_id": "medkar/EEG_API_Unicorn",
+      "author_handle": "medkar",
       "metrics": {
         "play": null,
         "like": 0,
@@ -198,136 +284,50 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "把三设备适配与 MI/SSVEP 两范式做进同一客户端，国内自建采集端可参考。"
+      "why_valuable": "一条链路打通设备→解码→推流，教学项目不用重复造管线。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "EEGDashCorpus(name)：按名字取用已发布语料",
-      "title_en": "EEGDashCorpus(name): Fetch Released Corpora by Name",
+      "title_zh": "Eelbrain 在 Pipeline-GUI 右键菜单里加入 mne_browse_raw",
+      "title_en": "Eelbrain Adds mne_browse_raw to the Pipeline-GUI Context Menu",
       "bullets_zh": [
-        "#521：`EEGDashCorpus(name=…)` 支持**按名字取用已发布的语料集合**，把「一批数据集」变成可命名、可复用的对象。",
-        "与上周 #510（规划/下载/校验/状态）衔接：先有批次管理，再有官方发布语料，预训练与基准的数据面才可被引用与复现。",
-        "对写论文的团队，引用「某命名语料 vX」比列举几十个数据集 ID 更可核查。"
+        "#270：在 Pipeline-GUI 的上下文菜单里加入 **`mne_browse_raw`**，可直接从流水线节点跳到 MNE 的原始数据浏览器核查数据。",
+        "对调试很有用：在 GUI 里定位到某个数据节点后，不必切终端、拼路径，就能用熟悉的浏览器查看原始波形与事件。",
+        "属小幅体验改进，不改变分析逻辑。"
       ],
       "bullets_en": [
-        "#521 lets EEGDashCorpus(name=...) fetch released corpora by name, turning a batch of datasets into a named, reusable object.",
-        "It builds on #510 (plan/download/verify/status): batch management first, then published corpora, so the data side of pretraining and benchmarks can be cited and reproduced.",
-        "For papers, citing a named corpus version is far more checkable than listing dozens of dataset IDs."
+        "#270 adds mne_browse_raw to the Pipeline-GUI context menu, jumping from a pipeline node straight into MNE's raw-data browser.",
+        "That helps debugging: once a node is located in the GUI, inspecting raw traces and events no longer requires switching to a terminal and reconstructing the path.",
+        "A small usability change with no effect on analysis logic."
       ],
-      "url": "https://github.com/eegdash/EEGDash/pull/521",
-      "published": "2026-11-05T17:23:00Z",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/270",
+      "published": "2026-11-06T12:22:00Z",
       "source": "github",
       "language": "en",
-      "brief": "EEGDash 合并 #521：`EEGDashCorpus(name=…)` 可以**按名字取用已发布的语料集合**，把「一批数据集」变成可命名、可复用的对象。这补上了上周 #510（规划/下载/校验/状态）之后的最后一环：有了批次管理，再把官方发布语料做成具名版本，预训练与基准的**数据面**才能被别人引用与复现。对写论文的团队，这尤其实际——引用「某命名语料 vX」比在附录里列几十个数据集 ID 更可核查，也让「我用的是哪批数据」不再靠口头说明。建议在自己的方法学部分记录语料名与版本。",
-      "brief_en": "EEGDash merged #521 so EEGDashCorpus(name=...) fetches released corpora by name, turning a batch of datasets into a named, reusable object. It completes last week's #510 batch management: published corpora make the data side of pretraining and benchmarks citable and reproducible, and citing a named corpus version is far more checkable than listing dozens of dataset IDs in an appendix.",
+      "brief": "Eelbrain 合并 #270：在 **Pipeline-GUI 的上下文菜单**里加入 **`mne_browse_raw`**，可以直接从流水线节点跳到 MNE 的原始数据浏览器。这条改动不大但很实用——调试流水线时经常需要「这个节点喂进去的原始数据到底长什么样」，此前要切到终端、重新拼路径、再打开浏览器，注意力被打断好几次；现在右键即可。属体验改进，不改变任何分析逻辑。对用 Eelbrain 管理多步预处理/建模流程的团队，建议升级后试一下右键菜单，确认路径解析在你的项目结构下正确。",
+      "brief_en": "Eelbrain merged #270 adding mne_browse_raw to the Pipeline-GUI context menu, jumping from a pipeline node straight into MNE's raw data browser. It is a small but practical usability gain: checking what raw data a node received no longer requires switching to a terminal and rebuilding paths. Analysis logic is unchanged; verify path resolution against your project layout after upgrading.",
       "tags": [
-        "eeg-dash",
-        "corpus",
-        "released",
-        "reproducibility",
-        "naming"
+        "eelbrain",
+        "pipeline-gui",
+        "mne",
+        "debugging",
+        "usability"
       ],
-      "raw_excerpt": "Commit a20cee1570, 2026-11-05T17:23Z: \"EEGDashCorpus(name): the released corpora by name (#521)\". Preceding: \"EEGDashCorpus: plan, download, verify and status over many datasets (#510)\" 2026-11-02.",
-      "fetched_at": "2026-11-05T23:55:00Z",
+      "raw_excerpt": "Commit a655d38fef, 2026-11-06T12:22Z: \"Pipeline-GUI: add mne_browse_raw to context menu (#270)\". Repo: Eelbrain/Eelbrain.",
+      "fetched_at": "2026-11-06T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#521",
-      "author_handle": "eegdash",
+      "upstream_id": "Eelbrain/Eelbrain#270",
+      "author_handle": "Eelbrain",
       "metrics": {
         "play": null,
-        "like": 90,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "具名语料让「用的是哪批数据」可引用可核查，比罗列数据集 ID 更可信。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Brainstorm 拆分 raw 时不再保留「零出现次数」的事件类型",
-      "title_en": "Brainstorm Stops Keeping Event Types With Zero Occurrences When Splitting Raw Files",
-      "bullets_zh": [
-        "提交 7ad1e2e3ce：拆分 raw 文件时**不再把出现次数为 0 的事件类型写入输出**——此前会留下空事件类别，让下游按类别筛选时出现「有定义但没数据」的坑。",
-        "对事件相关设计尤其重要：条件表里存在空类别会让 epoch 计数、平衡与统计分组出现空组或除零。",
-        "同批还有 10 月 News 更新（文档），不影响行为。"
-      ],
-      "bullets_en": [
-        "Commit 7ad1e2e3ce stops writing event types with zero occurrences into split raw outputs, which previously left empty categories for downstream filtering.",
-        "That matters for event-related designs: an empty category in the condition table produces empty groups, skewed trial counts or divide-by-zero in later statistics.",
-        "A documentation update for October news landed alongside with no behavioural effect."
-      ],
-      "url": "https://github.com/brainstorm-tools/brainstorm3/commit/7ad1e2e3ce",
-      "published": "2026-11-05T20:31:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "Brainstorm 提交 7ad1e2e3ce：**拆分 raw 文件时不再保留「出现次数为 0」的事件类型**。这条看似清理，实际防的是下游的连锁问题——如果输出里留着空事件类别，之后按类别筛选、做 epoch 计数、条件平衡或统计分组时就会出现「有定义、无数据」的空组，甚至除零错误，而报错位置往往离根因很远。对用 Brainstorm 做事件相关分析（ERP、时频）的团队，建议升级后重跑一次拆分并核对事件表与 epoch 计数是否与预期一致；若你之前手工删过空类型，这次可以省掉。",
-      "brief_en": "Brainstorm commit 7ad1e2e3ce stops writing event types with zero occurrences when splitting raw files. It looks like cleanup but prevents downstream breakage: an empty category leads to empty groups, skewed trial counts or divide-by-zero in filtering and statistics, with errors surfacing far from the cause. Re-run a split and check the event table and epoch counts after upgrading.",
-      "tags": [
-        "brainstorm",
-        "events",
-        "split-raw",
-        "epochs",
-        "data-hygiene"
-      ],
-      "raw_excerpt": "Commit 7ad1e2e3ce, 2026-11-05T20:31Z: \"Process: Split raw, do not keep events with zero occurrences in outputs\". Repo: brainstorm-tools/brainstorm3. Same day: \"Doc: Update News Oct 2026\" 15:54Z.",
-      "fetched_at": "2026-11-05T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "brainstorm-tools/brainstorm3@7ad1e2e3ce",
-      "author_handle": "brainstorm-tools",
-      "metrics": {
-        "play": null,
-        "like": 492,
+        "like": 88,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "空事件类别会引发空组/除零，且报错位置离根因很远。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "mne-icalabel 对「非 EEG 数据拟合的 ICA」给出明确报错",
-      "title_en": "mne-icalabel Raises an Informative Error for ICA Fitted on Non-EEG Data",
-      "bullets_zh": [
-        "#342：当传入的 ICA 是在**非 EEG 数据**（如仅 MEG，或通道不匹配）上拟合时，ICLabel 现在给出**明确错误**，而不是返回说不通的分量标签。",
-        "ICLabel 的模型按 EEG 电极空间训练；用错误模态的 ICA 去标注会得到看似合理、实则无意义的类别概率。",
-        "对多模态数据（EEG＋MEG 同录）的团队，这条报错能避免「标签看起来正常但结论没意义」的隐患。"
-      ],
-      "bullets_en": [
-        "#342 makes ICLabel raise an informative error when the ICA was fitted on non-EEG data (MEG only, or mismatched channels) instead of returning implausible component labels.",
-        "The ICLabel model is trained on EEG electrode space, so labelling ICA from the wrong modality yields plausible-looking but meaningless class probabilities.",
-        "For multimodal recordings (EEG plus MEG), the error prevents conclusions built on labels that look fine but mean nothing."
-      ],
-      "url": "https://github.com/mne-tools/mne-icalabel/pull/342",
-      "published": "2026-11-05T11:33:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "mne-icalabel 合并 #342：当传入的 ICA 是在**非 EEG 数据**上拟合时（例如只有 MEG，或通道与模型不匹配），ICLabel 现在**直接抛出明确错误**，而不是继续返回分量标签。这点很关键：ICLabel 的模型是在 EEG 电极空间上训练的，用错误模态的 ICA 去标注，会得到「概率看起来合理、语义却无意义」的类别（比如把 MEG 伪迹标成眼电），而使用者往往不会怀疑。对同时录 EEG＋MEG 的团队，这条报错能在流程早期拦住错误；也提醒一点：**标注工具的输出必须与输入模态匹配**，别把「能跑」当成「对」。",
-      "brief_en": "mne-icalabel merged #342 so ICLabel raises an informative error when the ICA was fitted on non-EEG data (MEG only or mismatched channels) instead of returning labels. Since the model is trained in EEG electrode space, labelling ICA from the wrong modality yields plausible but meaningless probabilities. A labelling tool must match its input modality.",
-      "tags": [
-        "mne-icalabel",
-        "ica",
-        "validation",
-        "modality",
-        "error-handling"
-      ],
-      "raw_excerpt": "PR #342 merged 2026-11-05T11:33Z: \"Raise an informative error when ICLabel is given an ICA fitted on non-EE[G data]\". Repo: mne-tools/mne-icalabel.",
-      "fetched_at": "2026-11-05T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-icalabel#342",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 125,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "用错模态的 ICA 会得到看似合理却无意义的标签，报错能在早期拦住。"
+      "why_valuable": "从流水线节点直达原始数据浏览器，调试时省掉切终端拼路径的打断。"
     }
   ],
   "stats": {
