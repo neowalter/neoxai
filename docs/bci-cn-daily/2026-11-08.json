@@ -1,0 +1,299 @@
+{
+  "date": "2026-11-08",
+  "generated_at": "2026-11-07T21:32:11.727Z",
+  "item_count": 6,
+  "types": {
+    "Benchmark": 1,
+    "Project": 5
+  },
+  "highlights": [
+    {
+      "title_zh": "EEG 基础模型学到的是「谁」还是「在做什么」？COSYNE 2027 的零校准证据",
+      "title_en": "Do EEG Foundation Models Encode the User or the Action? Zero-Calibration Evidence (COSYNE 2027)",
+      "url": "https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions",
+      "brief": "新建仓库（2026-11-07，COSYNE 2027）研究一个很尖锐的问题：**EEG 基础模型学到的是「谁」还是「在做什么」**？结论是前者远多于后者——**冻结的基础模型编码用户身份远强于编码运动意图**，这就解释了跨用户迁移为什么难，也让「零校准」宣称必须被追问。作者顺着这个发现做了实用工作：**任务训练的双频带编码器＋原型读出＋无标签逐用户重定心**，能在**未见用户**上识别**新加入的手指**、无需校准数据。对做 EEG 基础模型或跨被试解码的团队，这是「把表征拆开看」的范例：建议把 identity-vs-task 分离度做成常规评测项，而不是只看下游准确率。"
+    },
+    {
+      "title_zh": "EEGLAB 的 runica 加速约 1.4 倍，且结果与旧代码一致到 5e-15",
+      "title_en": "EEGLAB Speeds Up runica by ~1.4x With Identical Results (Agreement to 5e-15)",
+      "url": "https://github.com/sccn/eeglab/pull/983",
+      "brief": "EEGLAB 合并 #983：把 **runica（extended Infomax）加速约 1.4 倍，且结果不变**。做法是重写逐块的 **tanh、sign、bias 乘积与峰度估计**，但不改算术结构——因此**9 份记录上权重与旧代码一致到 5e-15**，步数、顺序、符号完全相同。实测在空闲 8 核笔记本（MATLAB R2026a + MKL）上完整 extended 运行快 **1.34–1.44 倍**，线程设置未动，`bsxfun` 还照顾了 R2016b 之前的 MATLAB。ICA 是 EEGLAB 流程里最慢的一步，这个量级的加速对批量预处理是实打实的。作者也诚实标注**未在 Intel/macOS/Octave 测试**——建议在自己的平台上先用同一份数据跑一次，比对权重差异再替换。"
+    },
+    {
+      "title_zh": "BrainFlow 给带功率加信号质量检查与可选通道剔除",
+      "title_en": "BrainFlow Adds Signal-Quality Checks and Optional Channel Rejection to Band Powers",
+      "url": "https://github.com/brainflow-dev/brainflow/pull/875",
+      "brief": "BrainFlow 合并 #875：计算**带功率**时可以先做**信号质量检查**，并**选择性剔除劣质通道**（平坦、噪声大的），避免无效通道的功率混进结果；同批 #873 引入**可复用的带功率上下文**与**有界的原生工作线程**，把线程与内存占用限定在可预期范围。这两条合起来解决的是在线场景的典型痛点：一是坏通道功率污染判决（神经反馈、SSVEP 检测里直接表现为准确率掉且查不出原因），二是线程无界增长导致长时间运行后抖动甚至崩溃。对做实时 BCI 的团队，建议升级后确认真实数据上的通道剔除规则与日志——「悄悄剔了哪个通道」必须可追溯。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-08.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "EEG 基础模型学到的是「谁」还是「在做什么」？COSYNE 2027 的零校准证据",
+      "title_en": "Do EEG Foundation Models Encode the User or the Action? Zero-Calibration Evidence (COSYNE 2027)",
+      "bullets_zh": [
+        "核心结论：**冻结的 EEG 基础模型编码「用户是谁」远多于「想象了哪个动作」**——这直接解释了为什么跨用户迁移难，也解释了「零校准」宣称的水分。",
+        "作者据此构建解码器：**任务训练的双频带编码器＋原型读出＋无标签的逐用户重定心**，能在**未见用户**上识别**新加入的手指**且不需要校准数据。",
+        "对做基础模型评测的团队，这是把「表征里到底有什么」拆开看的范例：*identity vs task* 的分离度应成为常规检查项。"
+      ],
+      "bullets_en": [
+        "The finding: frozen EEG foundation models encode who the user is far more than which motor action they imagined — explaining why cross-user transfer is hard and why zero-calibration claims deserve scrutiny.",
+        "They build a decoder from this: a task-trained two-band encoder, a prototype readout and label-free per-user re-centering, recognising a newly added finger in an unseen user with no calibration data.",
+        "For foundation-model evaluation this is a template for asking what a representation actually contains: identity-versus-task separability should become a routine check."
+      ],
+      "url": "https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions",
+      "published": "2026-11-07T05:22:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库（2026-11-07，COSYNE 2027）研究一个很尖锐的问题：**EEG 基础模型学到的是「谁」还是「在做什么」**？结论是前者远多于后者——**冻结的基础模型编码用户身份远强于编码运动意图**，这就解释了跨用户迁移为什么难，也让「零校准」宣称必须被追问。作者顺着这个发现做了实用工作：**任务训练的双频带编码器＋原型读出＋无标签逐用户重定心**，能在**未见用户**上识别**新加入的手指**、无需校准数据。对做 EEG 基础模型或跨被试解码的团队，这是「把表征拆开看」的范例：建议把 identity-vs-task 分离度做成常规评测项，而不是只看下游准确率。",
+      "brief_en": "Created 2026-11-07, this repo asks whether EEG foundation models encode who the user is or what they are doing — the answer is the former far more strongly, explaining hard cross-user transfer and putting zero-calibration claims under scrutiny. It then builds a task-trained two-band encoder with prototype readout and label-free re-centering, recognising a new finger without calibration.",
+      "tags": [
+        "foundation-model",
+        "cross-user",
+        "zero-calibration",
+        "representation",
+        "cosyne"
+      ],
+      "raw_excerpt": "README: \"We show that frozen EEG foundation models encode who the user is far more than which motor action they imagine, and build a decoder (task-trained two-band encoder, prototype readout, label-free per-user re-centering) that recognises a newly added finger in an unseen user with no calibration data.\" Description mentions COSYNE 2027.",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "UnnatPar/do-eeg-models-fit-users-or-actions",
+      "author_handle": "UnnatPar",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "指出基础模型编码身份多于任务，直接质疑零校准宣称并给出可用解码器。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGLAB 的 runica 加速约 1.4 倍，且结果与旧代码一致到 5e-15",
+      "title_en": "EEGLAB Speeds Up runica by ~1.4x With Identical Results (Agreement to 5e-15)",
+      "bullets_zh": [
+        "重写 `runica`（extended Infomax）中的逐块 **tanh、sign、bias 乘积与峰度估计**，不改算术结构；完整 extended 运行在 8 核笔记本上**快 1.34–1.44 倍**。",
+        "在 **9 份记录上权重与现版本一致到 5e-15**，且步数、顺序、符号完全相同；线程设置未动，`bsxfun` 保证 MATLAB R2016b 之前版本仍可用。",
+        "作者明确未在 Intel/macOS/Octave 上测试——ICA 是 EEGLAB 流程里最慢的一步，这个收益对批量预处理很实际。"
+      ],
+      "bullets_en": [
+        "It rewrites the per-block tanh, sign and bias products and the kurtosis estimate in runica (extended Infomax) without changing the arithmetic; full extended runs are 1.34-1.44x faster on an 8-core laptop.",
+        "On nine recordings weights match the current code to 5e-15 with identical step counts, order and signs; thread settings are untouched and bsxfun keeps pre-R2016b MATLAB working.",
+        "The author notes it is untested on Intel, macOS and Octave — ICA is the slowest step of any EEGLAB pipeline, so the gain is practically meaningful for batch preprocessing."
+      ],
+      "url": "https://github.com/sccn/eeglab/pull/983",
+      "published": "2026-11-07T21:26:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGLAB 合并 #983：把 **runica（extended Infomax）加速约 1.4 倍，且结果不变**。做法是重写逐块的 **tanh、sign、bias 乘积与峰度估计**，但不改算术结构——因此**9 份记录上权重与旧代码一致到 5e-15**，步数、顺序、符号完全相同。实测在空闲 8 核笔记本（MATLAB R2026a + MKL）上完整 extended 运行快 **1.34–1.44 倍**，线程设置未动，`bsxfun` 还照顾了 R2016b 之前的 MATLAB。ICA 是 EEGLAB 流程里最慢的一步，这个量级的加速对批量预处理是实打实的。作者也诚实标注**未在 Intel/macOS/Octave 测试**——建议在自己的平台上先用同一份数据跑一次，比对权重差异再替换。",
+      "brief_en": "EEGLAB merged #983 speeding up runica (extended Infomax) about 1.4x with unchanged results: it rewrites per-block tanh, sign, bias products and the kurtosis estimate without altering the arithmetic, so weights match the old code to 5e-15 across nine recordings with identical steps, order and signs. Full extended runs are 1.34-1.44x faster on an 8-core laptop; untested on Intel, macOS or Octave.",
+      "tags": [
+        "eeglab",
+        "ica",
+        "runica",
+        "performance",
+        "identical-results"
+      ],
+      "raw_excerpt": "PR #983: \"Speed up runica extended Infomax about 1.4x with identical results — Rewrites the per-block tanh, sign and bias products and the kurtosis estimate in runica without changing the arithmetic. Full extended runs were 1.34-1.44x faster on an idle 8-core laptop (MATLAB R2026a, MKL). On 9 recordings the weights match the current code to 5e-15 with the same step counts, order and signs. … Not yet tested on Intel, macOS or Octave.\"",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eeglab#983",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 810,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "ICA 是最慢一步，1.4x 且权重一致到 5e-15，批量预处理收益直接。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "BrainFlow 给带功率加信号质量检查与可选通道剔除",
+      "title_en": "BrainFlow Adds Signal-Quality Checks and Optional Channel Rejection to Band Powers",
+      "bullets_zh": [
+        "#875：计算**带功率**时可先做**信号质量检查**，并对**劣质通道**选择性剔除（如平坦/噪声通道），避免把无效通道的功率混入结果。",
+        "同批 #873 引入**可复用的带功率上下文＋有界的原生工作线程**，把线程/内存占用控制在可预期范围——在线场景最怕线程无界增长。",
+        "对实时 BCI（神经反馈、SSVEP 检测）尤其重要：坏通道的功率若参与判决，会直接拉低在线准确率且难以定位。"
+      ],
+      "bullets_en": [
+        "#875 runs signal-quality checks before computing band powers and can optionally reject bad channels (flat or noisy) so their power does not pollute results.",
+        "It follows #873, which adds reusable band-power contexts with bounded native workers, keeping thread and memory use predictable — unbounded threads are an online-scenario hazard.",
+        "For real-time BCI such as neurofeedback or SSVEP detection this matters: power from a dead channel degrades online accuracy and is hard to trace."
+      ],
+      "url": "https://github.com/brainflow-dev/brainflow/pull/875",
+      "published": "2026-11-07T21:27:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "BrainFlow 合并 #875：计算**带功率**时可以先做**信号质量检查**，并**选择性剔除劣质通道**（平坦、噪声大的），避免无效通道的功率混进结果；同批 #873 引入**可复用的带功率上下文**与**有界的原生工作线程**，把线程与内存占用限定在可预期范围。这两条合起来解决的是在线场景的典型痛点：一是坏通道功率污染判决（神经反馈、SSVEP 检测里直接表现为准确率掉且查不出原因），二是线程无界增长导致长时间运行后抖动甚至崩溃。对做实时 BCI 的团队，建议升级后确认真实数据上的通道剔除规则与日志——「悄悄剔了哪个通道」必须可追溯。",
+      "brief_en": "BrainFlow merged #875 running signal-quality checks before band-power computation with optional rejection of bad channels (flat or noisy), plus #873's reusable band-power contexts with bounded native workers to keep thread and memory use predictable. Together they address online hazards: dead-channel power degrading decisions invisibly, and unbounded threads destabilising long runs.",
+      "tags": [
+        "brainflow",
+        "band-power",
+        "quality-control",
+        "threading",
+        "realtime"
+      ],
+      "raw_excerpt": "Commits 2026-11-07: \"Add signal-quality checks and optional channel rejection for band powers\" (c60ebca87c) 21:27Z; \"Add reusable band-power contexts with bounded native workers (#873)\" (695122e8fa) 18:54Z; \"docs: nest Swift and Apple guides under installation and API (#874)\" 18:51Z.",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "brainflow-dev/brainflow#875",
+      "author_handle": "brainflow-dev",
+      "metrics": {
+        "play": null,
+        "like": 1787,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "坏通道功率会污染在线判决且难定位，剔除需可追溯；线程有界同样关键。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 继续移植 EEGLAB GUI：对话框与编辑选择（F37…F124）",
+      "title_en": "EEGPrep Keeps Porting the EEGLAB GUI: Dialogs and Edit Selections (F37 ... F124)",
+      "bullets_zh": [
+        "本次「Stream 2」落地一批 GUI 功能：**Select data 对话框的通道类型为空问题（F37）**、教程事件描述规范化（F39）、**拒绝菜单动作接线与对话框适配屏幕（F102/F105）**、事件字段描述与文件选择器。",
+        "同批还修 **`pop_select` 的 fuzz 索引**与**基线求和的舍入**（#564/#565）——把 GUI 移植与数值一致性放在一起推。",
+        "对希望脱离 MATLAB 的实验室，这类「功能覆盖清单（F 编号）」比一句「已支持」更能判断可用程度。"
+      ],
+      "bullets_en": [
+        "Stream 2 lands a batch of GUI features: fixing empty channel types in the Select data dialog (F37), normalising tutorial event descriptions (F39), wiring rejection-menu actions and fitting dialogs to screen (F102/F105), plus event field descriptions and a file picker.",
+        "The same batch fixes pop_select fuzz indexing and baseline summation roundoff (#564/#565), advancing GUI parity and numerical agreement together.",
+        "For labs leaving MATLAB, an explicit function-coverage list (the F numbers) tells far more about readiness than a claim of support."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/566",
+      "published": "2026-11-07T03:10:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #566（「Stream 2」）：继续把 **EEGLAB 的 GUI 功能**移植到 Python——包括修 **Select data 对话框里通道类型为空**（F37）、规范化教程事件描述（F39）、**接通拒绝菜单动作并让对话框适配屏幕**（F102/F105）、补事件字段描述与文件选择器。同批还修了 `pop_select` 的 **fuzz 索引**与**基线求和舍入**（#564/#565），等于把「界面覆盖」与「数值一致性」一起推进。对想脱离 MATLAB 的实验室，这类带 **F 编号的功能覆盖清单**比「已支持」三个字有用得多——你可以按清单判断自己常用的那条操作路径是否已经能跑。",
+      "brief_en": "EEGPrep merged #566 (Stream 2) continuing the EEGLAB GUI port: fixing empty channel types in the Select data dialog (F37), normalising tutorial event descriptions (F39), wiring rejection-menu actions and screen-fitting dialogs (F102/F105), plus pop_select fuzz indexing and baseline roundoff fixes. An explicit function-coverage list beats a claim of support.",
+      "tags": [
+        "eegprep",
+        "eeglab",
+        "gui-port",
+        "fuzz",
+        "parity"
+      ],
+      "raw_excerpt": "Commit 1bdd1a2835 (PR #566): \"Stream 2: Dialogs and Edit selection (F37, F39, F40, F44, F48, F50, F100, F101, F102, F105, F124) — * Fix empty channel types in Select data dialog (F37) * Normalize tutorial event descriptions in selection dialog (F39) * Wire rejection menu actions and fit dialogs to screen (F102 F105) …\". Related same day: \"Fix pop_select fuzz indexing and document pop_rmbase roundoff (#564)\"; \"Accept bounded baseline summation roundoff in fuzz comparisons (#565)\".",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#566",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "带 F 编号的功能覆盖清单能判断常用操作路径是否可脱离 MATLAB 运行。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Eelbrain 新增 RawICA：按任务分别估计 ICA",
+      "title_en": "Eelbrain Adds a RawICA Option to Estimate ICA Per Task",
+      "bullets_zh": [
+        "#275：新增 **`RawICA`** 选项，允许**按任务分别估计 ICA**，而不是在整段连续记录上只做一次分解。",
+        "动机很实际：不同任务的伪迹构成与状态差异明显（如静息 vs 任务、不同刺激条件），全局 ICA 往往在某一任务上表现好、另一任务上残留伪迹。",
+        "代价是每个任务各自拟合，计算量与分量编号的可比性需注意；跨任务比较成分时要自行对齐。"
+      ],
+      "bullets_en": [
+        "#275 adds a RawICA option letting ICA be estimated per task instead of once over the whole continuous recording.",
+        "The motivation is practical: artefact composition and state differ across tasks (rest versus task, different stimulus conditions), so a global ICA often cleans one task well and leaves residues in another.",
+        "The cost is one fit per task, with more compute and non-comparable component numbering; align components yourself before cross-task comparison."
+      ],
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/275",
+      "published": "2026-11-07T19:39:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Eelbrain 合并 #275：新增 **`RawICA`** 选项，允许**按任务分别估计 ICA**，而不是在整段连续记录上做一次全局分解。这个改动的动机很实际：不同任务之间的伪迹构成与状态差异明显（静息 vs 任务、不同刺激条件），全局 ICA 经常在某一任务上清理得很好、另一任务却残留眨眼或肌电——而使用者往往只检查了第一个任务。代价也要清楚：每个任务各自拟合会增加计算量，且**分量编号在不同任务间不可直接比较**，做跨任务成分对齐时需自己处理。对做多任务范式的团队，建议先在小数据集上比较「全局 vs 按任务」的伪迹残留与分量稳定性，再决定是否切换。",
+      "brief_en": "Eelbrain merged #275 adding a RawICA option to estimate ICA per task rather than once over a continuous recording. Different tasks have different artefact composition and states, so a global decomposition often cleans one task well and leaves blinks or EMG in another. The cost is one fit per task and non-comparable component numbering; compare residual artefacts before switching.",
+      "tags": [
+        "eelbrain",
+        "ica",
+        "per-task",
+        "artifacts",
+        "pipeline"
+      ],
+      "raw_excerpt": "Commit 1de503eda5, 2026-11-07T19:39Z: \"Add RawICA option to estimate ICA per task (#275)\". Repo: Eelbrain/Eelbrain.",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Eelbrain/Eelbrain#275",
+      "author_handle": "Eelbrain",
+      "metrics": {
+        "play": null,
+        "like": 88,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "全局 ICA 常在某一任务清理好、另一任务残留，按任务估计更稳但编号不可比。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Squiggly 的相干分析支持连接耳与 Laplacian 参考",
+      "title_en": "Squiggly Coherence Now Supports Linked-Ears and Laplacian References",
+      "bullets_zh": [
+        "相干（coherence）**高度依赖参考**，此前只在平均参考下提供；现在增加**连接耳（linked ears）**与**最近邻 Hjorth Laplacian** 两种参考。",
+        "实现细节讲究：连接耳参考通过**加回平均参考减掉的共模**来还原文件自身参考，且**仅当所有 EEG 通道都标记为 -LE** 时才启用；作者称在真实 -LE 记录上结果吻合。",
+        "对做功能连接或静息态对称性分析的团队，「换参考后相干是否还成立」是关键问题，多参考实现让这一点可被检验。"
+      ],
+      "bullets_en": [
+        "Coherence depends heavily on the reference, and it was previously offered only under average reference; it now also supports linked ears and a nearest-neighbour Hjorth Laplacian.",
+        "The linked-ears path restores the file's own reference by adding back the common mode the average reference removed, enabled only when every EEG channel is labelled -LE; the author reports agreement on real -LE recordings.",
+        "For functional connectivity or resting-state symmetry work, whether coherence survives a reference change is a key question, and offering multiple references makes it testable."
+      ],
+      "url": "https://github.com/alexdni/squiggly/commit/2cb7216e64",
+      "published": "2026-11-07T00:01:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Squiggly 提交 2cb7216e64：相干分析（coherence）现在支持 **连接耳（linked ears）** 与 **最近邻 Hjorth Laplacian** 参考，此前只有平均参考。这条改动的技术含量在于细节：连接耳参考是**把平均参考减掉的共模加回来**以还原文件自身参考，而且**仅当所有 EEG 通道都标注为 -LE** 时才启用，作者称在真实 -LE 记录上结果吻合。为什么重要——**相干高度依赖参考电极**，同一份数据换参考后连接模式可能变样，而多数工具只给一种参考，让你无法检验结论是否稳健。对做功能连接、静息态对称性分析的团队，多参考实现正好让「换参考还成立吗」成为可做的检查。",
+      "brief_en": "Squiggly commit 2cb7216e64 adds linked-ears and nearest-neighbour Hjorth Laplacian references to coherence, previously average-reference only. The linked-ears path adds back the common mode the average reference removed, enabled only when every EEG channel is labelled -LE. Since coherence depends heavily on reference, offering several makes robustness to reference choice testable.",
+      "tags": [
+        "squiggly",
+        "coherence",
+        "reference",
+        "laplacian",
+        "connectivity"
+      ],
+      "raw_excerpt": "Commit 2cb7216e64: \"feat(coherence): linked-ears and Laplacian references — Coherence depends heavily on the reference, so offer it on linked ears and a nearest-neighbour (Hjorth) Laplacian as well as the average reference. Linked ears restores the file's own reference by adding back the common mode the average reference subtracted, only when every EEG channel is labelled -LE. On real -LE recordings the result matche[s]…\"",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "alexdni/squiggly@2cb7216e64",
+      "author_handle": "alexdni",
+      "metrics": {
+        "play": null,
+        "like": 34,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "相干高度依赖参考，多参考实现让「换参考结论是否成立」可被检验。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 98,
+    "llm_rows": 18,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 2
+  }
+}
