@@ -1,153 +1,67 @@
 {
-  "date": "2026-11-07",
-  "generated_at": "2026-11-06T21:32:17.515Z",
-  "item_count": 7,
+  "date": "2026-11-08",
+  "generated_at": "2026-11-07T21:32:11.727Z",
+  "item_count": 6,
   "types": {
-    "Tutorial": 1,
-    "Project": 6
+    "Benchmark": 1,
+    "Project": 5
   },
   "highlights": [
     {
-      "title_zh": "非侵入式脑机接口的技术栈，哪几层真能迁到人形机器人？",
-      "title_en": "Which Layers of the Non-Invasive BCI Stack Actually Transfer to Humanoid Robots?",
-      "url": "https://www.bilibili.com/read/cv53792270",
-      "brief": "B站专栏「非侵入式脑机接口」的这篇技术概览质量明显高于同类：它把信号链拆成**电极与前端、特征与解码、指令映射、闭环与安全**四段，指出**第一段绑定人体解剖、几乎不可迁移**，而后三段绑定的是「弱信号、强干扰、小样本」这组工程条件——人形机器人面对的约束恰好相同。文中给出量级依据（头皮脑电 10–100 µV，眨眼/咬合伪迹可达数百 µV 至 mV）与四项可复用技术的量化门槛（微针阵列 300–600 µm、接触阻抗 30–70 kΩ 等），结论是**2026 年真正可复用的是解码中间层与控制仲裁逻辑，不是脑电帽**。对做跨域迁移或想判断「什么能复用」的人，这是一篇少见的、带数字的冷静分析。"
+      "title_zh": "EEG 基础模型学到的是「谁」还是「在做什么」？COSYNE 2027 的零校准证据",
+      "title_en": "Do EEG Foundation Models Encode the User or the Action? Zero-Calibration Evidence (COSYNE 2027)",
+      "url": "https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions",
+      "brief": "新建仓库（2026-11-07，COSYNE 2027）研究一个很尖锐的问题：**EEG 基础模型学到的是「谁」还是「在做什么」**？结论是前者远多于后者——**冻结的基础模型编码用户身份远强于编码运动意图**，这就解释了跨用户迁移为什么难，也让「零校准」宣称必须被追问。作者顺着这个发现做了实用工作：**任务训练的双频带编码器＋原型读出＋无标签逐用户重定心**，能在**未见用户**上识别**新加入的手指**、无需校准数据。对做 EEG 基础模型或跨被试解码的团队，这是「把表征拆开看」的范例：建议把 identity-vs-task 分离度做成常规评测项，而不是只看下游准确率。"
     },
     {
-      "title_zh": "PhysioWave-T（NeurIPS 2025）：面向生理信号的 token 高效小波基础模型",
-      "title_en": "PhysioWave-T (NeurIPS 2025): Token-Efficient Wavelet Foundation Models for Biosignals",
-      "url": "https://github.com/ForeverBlue816/PhysioWave/commit/a6664ddf39",
-      "brief": "PhysioWave 在 11-06 推进 4 个提交，把 **NeurIPS 2025 论文代码**整理成可用模型：**PhysioWave-T —— token 高效的小波基础模型**，覆盖 EEG/ECG 等生理信号（arXiv 2506.10351），并发布**可安装包与 Hugging Face 权重**；同日补齐 CITATION.cff、精简依赖、Hub 卡片模板与训练曲线。对 EEG 基础模型，**token 效率**直接决定上下文长度与推理成本，而小波分解提供多尺度归纳偏置——这是「不靠无脑堆参数」的另一条路线。对想在自己的数据集上试预训练模型的团队，现在有了权重与安装包可直接上手；建议先按论文设定核对预处理与归一化，再谈迁移效果。"
+      "title_zh": "EEGLAB 的 runica 加速约 1.4 倍，且结果与旧代码一致到 5e-15",
+      "title_en": "EEGLAB Speeds Up runica by ~1.4x With Identical Results (Agreement to 5e-15)",
+      "url": "https://github.com/sccn/eeglab/pull/983",
+      "brief": "EEGLAB 合并 #983：把 **runica（extended Infomax）加速约 1.4 倍，且结果不变**。做法是重写逐块的 **tanh、sign、bias 乘积与峰度估计**，但不改算术结构——因此**9 份记录上权重与旧代码一致到 5e-15**，步数、顺序、符号完全相同。实测在空闲 8 核笔记本（MATLAB R2026a + MKL）上完整 extended 运行快 **1.34–1.44 倍**，线程设置未动，`bsxfun` 还照顾了 R2016b 之前的 MATLAB。ICA 是 EEGLAB 流程里最慢的一步，这个量级的加速对批量预处理是实打实的。作者也诚实标注**未在 Intel/macOS/Octave 测试**——建议在自己的平台上先用同一份数据跑一次，比对权重差异再替换。"
     },
     {
-      "title_zh": "Neuromorphic-BCI-Core：可综合的 64 通道脉冲神经 BCI SoC（Verilog，45nm）",
-      "title_en": "Neuromorphic-BCI-Core: A Synthesizable 64-Channel Spiking BCI SoC in Verilog With 45nm Layout",
-      "url": "https://github.com/suryasenthilr/Neuromorphic-BCI-Core",
-      "brief": "新建仓库 Neuromorphic-BCI-Core（2026-11-06）是一份少见的「从 RTL 到版图」的神经形态 BCI 实现：用 **SystemVerilog/Verilog-2005** 写可综合核心，含 **64 个 LIF 神经元**与运动解码器，面向实时神经解码与运动意图分类，并附 **45nm 版图**。架构针对**异步脉冲串**设计、声称**零帧延迟**，输入走 **4 相 AER 握手**——这与「按块采样再推理」的常规数字 BCI 管线是两条路。对做神经形态硬件、超低延迟解码或想了解 AER 接口的团队，这是可读的完整工程；但「64 LIF 神经元＋零帧延迟」能否支撑实际解码精度，需要自行综合、仿真并复现指标。"
+      "title_zh": "BrainFlow 给带功率加信号质量检查与可选通道剔除",
+      "title_en": "BrainFlow Adds Signal-Quality Checks and Optional Channel Rejection to Band Powers",
+      "url": "https://github.com/brainflow-dev/brainflow/pull/875",
+      "brief": "BrainFlow 合并 #875：计算**带功率**时可以先做**信号质量检查**，并**选择性剔除劣质通道**（平坦、噪声大的），避免无效通道的功率混进结果；同批 #873 引入**可复用的带功率上下文**与**有界的原生工作线程**，把线程与内存占用限定在可预期范围。这两条合起来解决的是在线场景的典型痛点：一是坏通道功率污染判决（神经反馈、SSVEP 检测里直接表现为准确率掉且查不出原因），二是线程无界增长导致长时间运行后抖动甚至崩溃。对做实时 BCI 的团队，建议升级后确认真实数据上的通道剔除规则与日志——「悄悄剔了哪个通道」必须可追溯。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-07.md",
+  "github_path": "docs/bci-cn-daily/2026-11-08.md",
   "items": [
     {
-      "type": "Tutorial",
+      "type": "Benchmark",
       "level": "Advanced",
-      "title_zh": "非侵入式脑机接口的技术栈，哪几层真能迁到人形机器人？",
-      "title_en": "Which Layers of the Non-Invasive BCI Stack Actually Transfer to Humanoid Robots?",
+      "title_zh": "EEG 基础模型学到的是「谁」还是「在做什么」？COSYNE 2027 的零校准证据",
+      "title_en": "Do EEG Foundation Models Encode the User or the Action? Zero-Calibration Evidence (COSYNE 2027)",
       "bullets_zh": [
-        "作者把信号链拆成四段：**电极与前端、特征与解码、指令映射、闭环与安全**——第一段绑定人体解剖几乎不可迁移，后三段绑定的是「**弱信号、强干扰、小样本**」，而人形机器人面对同一组约束。",
-        "给出量级依据：头皮脑电 **10–100 µV**，而眨眼/咬合伪迹可达数百 µV 至 mV，差一个数量级以上；关节电机反电动势与 PWM 干扰对力觉/位置传感器的压制关系与此相似。",
-        "列出四项可复用技术与量化条件（如微针阵列 300–600 µm 穿透 10–40 µm 角质层、接触阻抗 30–70 kΩ），并明确结论：**2026 年可复用的是解码中间层与控制仲裁逻辑，不是那顶脑电帽**。"
+        "核心结论：**冻结的 EEG 基础模型编码「用户是谁」远多于「想象了哪个动作」**——这直接解释了为什么跨用户迁移难，也解释了「零校准」宣称的水分。",
+        "作者据此构建解码器：**任务训练的双频带编码器＋原型读出＋无标签的逐用户重定心**，能在**未见用户**上识别**新加入的手指**且不需要校准数据。",
+        "对做基础模型评测的团队，这是把「表征里到底有什么」拆开看的范例：*identity vs task* 的分离度应成为常规检查项。"
       ],
       "bullets_en": [
-        "The author splits the signal chain into four stages — electrodes/front end, features/decoding, command mapping, and closed loop/safety — where the first is anatomy-bound and barely transferable, while the rest share the same 'weak signal, strong interference, small samples' constraints humanoid robots face.",
-        "Quantitative grounding: scalp EEG is 10-100 uV while blink and jaw artefacts reach hundreds of uV to millivolts, over an order of magnitude; joint back-EMF and PWM interference suppress force/position sensors similarly.",
-        "Four reusable techniques come with numbers (microneedle arrays 300-600 um through 10-40 um stratum corneum, contact impedance 30-70 kOhm), concluding that what transfers in 2026 is the decoding middle layer and control arbitration, not the EEG cap."
+        "The finding: frozen EEG foundation models encode who the user is far more than which motor action they imagined — explaining why cross-user transfer is hard and why zero-calibration claims deserve scrutiny.",
+        "They build a decoder from this: a task-trained two-band encoder, a prototype readout and label-free per-user re-centering, recognising a newly added finger in an unseen user with no calibration data.",
+        "For foundation-model evaluation this is a template for asking what a representation actually contains: identity-versus-task separability should become a routine check."
       ],
-      "url": "https://www.bilibili.com/read/cv53792270",
-      "published": "2026-11-06T12:17:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站专栏「非侵入式脑机接口」的这篇技术概览质量明显高于同类：它把信号链拆成**电极与前端、特征与解码、指令映射、闭环与安全**四段，指出**第一段绑定人体解剖、几乎不可迁移**，而后三段绑定的是「弱信号、强干扰、小样本」这组工程条件——人形机器人面对的约束恰好相同。文中给出量级依据（头皮脑电 10–100 µV，眨眼/咬合伪迹可达数百 µV 至 mV）与四项可复用技术的量化门槛（微针阵列 300–600 µm、接触阻抗 30–70 kΩ 等），结论是**2026 年真正可复用的是解码中间层与控制仲裁逻辑，不是脑电帽**。对做跨域迁移或想判断「什么能复用」的人，这是一篇少见的、带数字的冷静分析。",
-      "brief_en": "A Bilibili column splits the non-invasive BCI signal chain into electrodes/front end, features/decoding, command mapping and safety: the first is anatomy-bound while the rest share the weak-signal, strong-interference, small-sample constraints of humanoid robots. It grounds claims (EEG 10-100 uV versus artefacts reaching mV) and concludes the decoding middle layer transfers, not the cap.",
-      "tags": [
-        "non-invasive",
-        "stack",
-        "humanoid",
-        "transfer",
-        "analysis"
-      ],
-      "raw_excerpt": "「拆开非侵入式脑机接口的技术栈，能迁移到人形机器人的部分比市场宣传的少，比工程实际需要的多。2026年真正可复用的是解码中间层与控制仲裁逻辑，不是那顶脑电帽。」「非侵入式脑机接口的信号链分四段：电极与前端、特征与解码、指令映射、闭环与安全。第一段绑定人体解剖结构，几乎无法迁移；后三段绑定的是『弱信号、强干扰、小样本』这一组工程条件」「头皮脑电幅值仅10至100微伏，眨眼与咬合产生的眼电、肌电伪迹可达数百微伏至毫伏」「微针阵列电极高度多在300至600微米，穿透10至40微米厚的角质层…接触阻抗可压至30至70千欧」",
-      "fetched_at": "2026-11-06T23:55:00Z",
-      "platform": "bilibili",
-      "content_type": "column",
-      "upstream_id": "cv53792270",
-      "author_handle": "非侵入式脑机接口",
-      "metrics": {
-        "play": null,
-        "like": null,
-        "collect": null,
-        "comment": 0
-      },
-      "quality_score": 9,
-      "why_valuable": "把「什么能迁到机器人」按信号链分层并给出量化门槛，结论有数字支撑。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "PhysioWave-T（NeurIPS 2025）：面向生理信号的 token 高效小波基础模型",
-      "title_en": "PhysioWave-T (NeurIPS 2025): Token-Efficient Wavelet Foundation Models for Biosignals",
-      "bullets_zh": [
-        "定位是**小波域、token 高效**的生理信号基础模型，覆盖 EEG/ECG 等；论文为 NeurIPS 2025（arXiv 2506.10351），并发布可安装包与 **Hugging Face 权重**。",
-        "本次更新补齐工程化：CITATION.cff、精简依赖、Hub 卡片模板与训练曲线，README 加入 Hub collection 链接——从「论文代码」走向「可复用模型」。",
-        "对 EEG 基础模型，token 效率直接决定上下文长度与推理成本；小波分解提供多尺度归纳偏置，替代部分「堆大模型」的路线。"
-      ],
-      "bullets_en": [
-        "It positions itself as a wavelet-domain, token-efficient biosignal foundation model covering EEG and ECG, published at NeurIPS 2025 (arXiv 2506.10351) with an installable package and Hugging Face weights.",
-        "This update adds engineering polish: CITATION.cff, trimmed requirements, Hub card templates and training curves, plus a Hub collection link — moving from paper code to reusable model.",
-        "For EEG foundation models token efficiency governs context length and inference cost, and wavelet decomposition supplies multi-scale inductive bias instead of simply scaling up."
-      ],
-      "url": "https://github.com/ForeverBlue816/PhysioWave/commit/a6664ddf39",
-      "published": "2026-11-06T04:16:00Z",
+      "url": "https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions",
+      "published": "2026-11-07T05:22:00Z",
       "source": "github",
       "language": "en",
-      "brief": "PhysioWave 在 11-06 推进 4 个提交，把 **NeurIPS 2025 论文代码**整理成可用模型：**PhysioWave-T —— token 高效的小波基础模型**，覆盖 EEG/ECG 等生理信号（arXiv 2506.10351），并发布**可安装包与 Hugging Face 权重**；同日补齐 CITATION.cff、精简依赖、Hub 卡片模板与训练曲线。对 EEG 基础模型，**token 效率**直接决定上下文长度与推理成本，而小波分解提供多尺度归纳偏置——这是「不靠无脑堆参数」的另一条路线。对想在自己的数据集上试预训练模型的团队，现在有了权重与安装包可直接上手；建议先按论文设定核对预处理与归一化，再谈迁移效果。",
-      "brief_en": "PhysioWave made four commits on Nov 6 turning NeurIPS 2025 paper code into a usable model: PhysioWave-T, a token-efficient wavelet foundation model for EEG and ECG (arXiv 2506.10351), shipped as an installable package with Hugging Face weights, plus CITATION.cff, trimmed requirements and Hub cards. Token efficiency governs context length and inference cost.",
+      "brief": "新建仓库（2026-11-07，COSYNE 2027）研究一个很尖锐的问题：**EEG 基础模型学到的是「谁」还是「在做什么」**？结论是前者远多于后者——**冻结的基础模型编码用户身份远强于编码运动意图**，这就解释了跨用户迁移为什么难，也让「零校准」宣称必须被追问。作者顺着这个发现做了实用工作：**任务训练的双频带编码器＋原型读出＋无标签逐用户重定心**，能在**未见用户**上识别**新加入的手指**、无需校准数据。对做 EEG 基础模型或跨被试解码的团队，这是「把表征拆开看」的范例：建议把 identity-vs-task 分离度做成常规评测项，而不是只看下游准确率。",
+      "brief_en": "Created 2026-11-07, this repo asks whether EEG foundation models encode who the user is or what they are doing — the answer is the former far more strongly, explaining hard cross-user transfer and putting zero-calibration claims under scrutiny. It then builds a task-trained two-band encoder with prototype readout and label-free re-centering, recognising a new finger without calibration.",
       "tags": [
-        "neurips",
         "foundation-model",
-        "wavelet",
-        "token-efficiency",
-        "weights"
+        "cross-user",
+        "zero-calibration",
+        "representation",
+        "cosyne"
       ],
-      "raw_excerpt": "README: \"PhysioWave-T: Token-Efficient Wavelet Foundation Models for Biosignals\" — badges \"NeurIPS 2025\" and arXiv \"2506.10351\", Hugging Face link. Commits 2026-11-06: \"PhysioWave-T: token-efficient wavelet foundation models for EEG, ECG and …\" (a6664ddf39) 04:16Z; \"Wavelet-W logo, installable package, trimmed requirements, CITATION.cff\" 04:35Z; \"Hub card templates: PhysioWave-T titles, training curves\" 05:20Z.",
-      "fetched_at": "2026-11-06T23:55:00Z",
+      "raw_excerpt": "README: \"We show that frozen EEG foundation models encode who the user is far more than which motor action they imagine, and build a decoder (task-trained two-band encoder, prototype readout, label-free per-user re-centering) that recognises a newly added finger in an unseen user with no calibration data.\" Description mentions COSYNE 2027.",
+      "fetched_at": "2026-11-07T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "ForeverBlue816/PhysioWave@a6664ddf39",
-      "author_handle": "ForeverBlue816",
-      "metrics": {
-        "play": null,
-        "like": 195,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "小波+token 效率是「不靠堆参数」的路线，且已发布权重与安装包可直接试。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "Neuromorphic-BCI-Core：可综合的 64 通道脉冲神经 BCI SoC（Verilog，45nm）",
-      "title_en": "Neuromorphic-BCI-Core: A Synthesizable 64-Channel Spiking BCI SoC in Verilog With 45nm Layout",
-      "bullets_zh": [
-        "用 **SystemVerilog/Verilog-2005** 实现面向实时 BCI 神经解码与运动意图分类的**脉冲神经网络核心**：**64 个 LIF 神经元**、运动解码器，并附带 **45nm 版图**。",
-        "架构针对**异步脉冲串**设计，声称**零帧延迟**（zero frame latency），输入采用 **4 相 AER（Address-Event Representation）握手**——这与「按块采样再推理」的常规数字 BCI 路线不同。",
-        "对做神经形态硬件或超低延迟解码的团队，这是少见的「从 RTL 到版图」完整实现；但算法指标需自行复现验证。"
-      ],
-      "bullets_en": [
-        "A spiking neural core for real-time BCI neural decoding and motor-intent classification in SystemVerilog/Verilog-2005, with 64 LIF neurons, a motor decoder and a 45nm layout.",
-        "The architecture targets asynchronous spike trains with claimed zero frame latency and a 4-phase AER input handshake, unlike conventional digital BCI pipelines that sample in blocks then infer.",
-        "For neuromorphic hardware or ultra-low-latency decoding work this is a rare RTL-to-layout implementation, though its algorithmic claims need independent reproduction."
-      ],
-      "url": "https://github.com/suryasenthilr/Neuromorphic-BCI-Core",
-      "published": "2026-11-06T13:17:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 Neuromorphic-BCI-Core（2026-11-06）是一份少见的「从 RTL 到版图」的神经形态 BCI 实现：用 **SystemVerilog/Verilog-2005** 写可综合核心，含 **64 个 LIF 神经元**与运动解码器，面向实时神经解码与运动意图分类，并附 **45nm 版图**。架构针对**异步脉冲串**设计、声称**零帧延迟**，输入走 **4 相 AER 握手**——这与「按块采样再推理」的常规数字 BCI 管线是两条路。对做神经形态硬件、超低延迟解码或想了解 AER 接口的团队，这是可读的完整工程；但「64 LIF 神经元＋零帧延迟」能否支撑实际解码精度，需要自行综合、仿真并复现指标。",
-      "brief_en": "Created 2026-11-06, Neuromorphic-BCI-Core is a rare RTL-to-layout neuromorphic BCI: a synthesizable SystemVerilog core with 64 LIF neurons and a motor decoder for real-time decoding and motor-intent classification, plus a 45nm layout. It targets asynchronous spike trains with claimed zero frame latency and a 4-phase AER handshake; accuracy claims need independent reproduction.",
-      "tags": [
-        "neuromorphic",
-        "spiking",
-        "aer",
-        "verilog",
-        "soc"
-      ],
-      "raw_excerpt": "README: \"This core is a synthesizable bio-inspired Neuromorphic Processor designed for real-time Brain-Computer Interface (BCI) neural decoding and motor intent classification. Designed in SystemVerilog/Verilog-2005, the architecture processes asynchronous neural spike trains with zero frame latency. It features a 4-phase Address-Event Representation (AER) input handshake…\" Description: \"Synthesizable 64-Ch Neuromorphic Brain-Computer Interface (BCI) SoC in Verilog with 64 LIF neurons, motor decoder, and 45nm layout.\"",
-      "fetched_at": "2026-11-06T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "suryasenthilr/Neuromorphic-BCI-Core",
-      "author_handle": "suryasenthilr",
+      "upstream_id": "UnnatPar/do-eeg-models-fit-users-or-actions",
+      "author_handle": "UnnatPar",
       "metrics": {
         "play": null,
         "like": 0,
@@ -155,170 +69,170 @@
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "少见的 RTL→版图完整神经形态 BCI 实现，AER 异步路线与常规数字管线不同。"
+      "why_valuable": "指出基础模型编码身份多于任务，直接质疑零校准宣称并给出可用解码器。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-Python 拒绝「对复数 Welch 系数做平均」这种无意义组合",
-      "title_en": "MNE-Python Rejects Averaging Complex Welch Coefficients",
+      "title_zh": "EEGLAB 的 runica 加速约 1.4 倍，且结果与旧代码一致到 5e-15",
+      "title_en": "EEGLAB Speeds Up runica by ~1.4x With Identical Results (Agreement to 5e-15)",
       "bullets_zh": [
-        "#14498（修 #14495）：当 Welch 指定 `output=\"complex\"` 又要求 `average=\"mean\"`/`\"median\"` 时**直接报错**——各段傅里叶系数**相位不一致**，平均后的功率不等于功率的平均。",
-        "这是一个「能算、但算出来没有物理意义」的组合，此前会静默返回误导性谱。",
-        "对做相位敏感分析（相位锁值、跨试次相干、复数谱）的团队，这条校验能把「结果不对但流程不报错」挡在入口。"
+        "重写 `runica`（extended Infomax）中的逐块 **tanh、sign、bias 乘积与峰度估计**，不改算术结构；完整 extended 运行在 8 核笔记本上**快 1.34–1.44 倍**。",
+        "在 **9 份记录上权重与现版本一致到 5e-15**，且步数、顺序、符号完全相同；线程设置未动，`bsxfun` 保证 MATLAB R2016b 之前版本仍可用。",
+        "作者明确未在 Intel/macOS/Octave 上测试——ICA 是 EEGLAB 流程里最慢的一步，这个收益对批量预处理很实际。"
       ],
       "bullets_en": [
-        "#14498 (fixing #14495) raises an error when Welch uses output=\"complex\" with average=\"mean\" or \"median\": the per-segment Fourier coefficients have inconsistent phases, so power from the average is not the average of power.",
-        "It was a computable but physically meaningless combination that previously returned a misleading spectrum silently.",
-        "Teams doing phase-sensitive work (phase locking, cross-trial coherence, complex spectra) get that failure blocked at the entry point."
+        "It rewrites the per-block tanh, sign and bias products and the kurtosis estimate in runica (extended Infomax) without changing the arithmetic; full extended runs are 1.34-1.44x faster on an 8-core laptop.",
+        "On nine recordings weights match the current code to 5e-15 with identical step counts, order and signs; thread settings are untouched and bsxfun keeps pre-R2016b MATLAB working.",
+        "The author notes it is untested on Intel, macOS and Octave — ICA is the slowest step of any EEGLAB pipeline, so the gain is practically meaningful for batch preprocessing."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14498",
-      "published": "2026-11-06T17:54:00Z",
+      "url": "https://github.com/sccn/eeglab/pull/983",
+      "published": "2026-11-07T21:26:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14498（修 #14495）：当 Welch 指定 **`output=\"complex\"`** 又要求 **`average=\"mean\"`/`\"median\"`** 时**直接报错拒绝**。原因很本质——各段的傅里叶系数**相位不一致**，把它们平均后再平方得到的功率，**不等于**各段功率的平均；此前这个组合能跑通，只是返回一张没有物理意义的谱。这类「能算但算错」的 API 组合是静默错误的高发区，尤其在做相位敏感分析（相位锁值、跨试次相干、复数谱）时，结果看起来完全正常。建议升级后检查既有脚本是否踩过这个组合，并改用对功率做平均、或保留 per-segment 的复数谱自行处理。",
-      "brief_en": "MNE-Python merged #14498 (fixing #14495) to raise an error when Welch uses output=\"complex\" with average=\"mean\" or \"median\": per-segment Fourier coefficients have inconsistent phases, so power from the average is not the average of power. The combination used to return a physically meaningless spectrum silently — a classic silent-error pairing for phase-sensitive analyses.",
+      "brief": "EEGLAB 合并 #983：把 **runica（extended Infomax）加速约 1.4 倍，且结果不变**。做法是重写逐块的 **tanh、sign、bias 乘积与峰度估计**，但不改算术结构——因此**9 份记录上权重与旧代码一致到 5e-15**，步数、顺序、符号完全相同。实测在空闲 8 核笔记本（MATLAB R2026a + MKL）上完整 extended 运行快 **1.34–1.44 倍**，线程设置未动，`bsxfun` 还照顾了 R2016b 之前的 MATLAB。ICA 是 EEGLAB 流程里最慢的一步，这个量级的加速对批量预处理是实打实的。作者也诚实标注**未在 Intel/macOS/Octave 测试**——建议在自己的平台上先用同一份数据跑一次，比对权重差异再替换。",
+      "brief_en": "EEGLAB merged #983 speeding up runica (extended Infomax) about 1.4x with unchanged results: it rewrites per-block tanh, sign, bias products and the kurtosis estimate without altering the arithmetic, so weights match the old code to 5e-15 across nine recordings with identical steps, order and signs. Full extended runs are 1.34-1.44x faster on an 8-core laptop; untested on Intel, macOS or Octave.",
       "tags": [
-        "mne-python",
-        "welch",
-        "complex",
-        "phase",
-        "validation"
+        "eeglab",
+        "ica",
+        "runica",
+        "performance",
+        "identical-results"
       ],
-      "raw_excerpt": "PR #14498: \"FIX: Reject averaged complex Welch coefficients — Fixes #14495. Welch `output=\\\"complex\\\"` with `average=\\\"mean\\\"` or `\\\"median\\\"` averages the Fourier coefficients across segments. Their phases do not line up, so the power formed from the average is not the average of the pow[er]…\" Merged 2026-11-06T17:54Z.",
-      "fetched_at": "2026-11-06T23:55:00Z",
+      "raw_excerpt": "PR #983: \"Speed up runica extended Infomax about 1.4x with identical results — Rewrites the per-block tanh, sign and bias products and the kurtosis estimate in runica without changing the arithmetic. Full extended runs were 1.34-1.44x faster on an idle 8-core laptop (MATLAB R2026a, MKL). On 9 recordings the weights match the current code to 5e-15 with the same step counts, order and signs. … Not yet tested on Intel, macOS or Octave.\"",
+      "fetched_at": "2026-11-07T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14498",
-      "author_handle": "mne-tools",
+      "upstream_id": "sccn/eeglab#983",
+      "author_handle": "sccn",
       "metrics": {
         "play": null,
-        "like": 3585,
+        "like": 810,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "相位不一致的复数系数平均后功率无意义，报错把静默错误挡在入口。"
+      "quality_score": 9,
+      "why_valuable": "ICA 是最慢一步，1.4x 且权重一致到 5e-15，批量预处理收益直接。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 的 MAPA 支持 ch_mask 与逐样本传感器坐标",
-      "title_en": "braindecode's MAPA Accepts ch_mask With Per-Sample Sensor Indices",
+      "title_zh": "BrainFlow 给带功率加信号质量检查与可选通道剔除",
+      "title_en": "BrainFlow Adds Signal-Quality Checks and Optional Channel Rejection to Band Powers",
       "bullets_zh": [
-        "#1550：`MAPA` 接受带**逐样本 `sensor_indices`（batch, n_chans, 3）** 的 `ch_mask`，使**同一批次可混合不同蒙太奇与通道数**的记录，与 #1487 的 iEEG 基础模型一致。",
-        "实现上**注意力不会跨掩码通道**（attention never crosses），补齐通道不参与注意力计算——这才是「变长通道」不污染结果的关键。",
-        "对多中心数据、或同一实验里换过电极布局的团队，不必再按布局拆成多个模型。"
+        "#875：计算**带功率**时可先做**信号质量检查**，并对**劣质通道**选择性剔除（如平坦/噪声通道），避免把无效通道的功率混入结果。",
+        "同批 #873 引入**可复用的带功率上下文＋有界的原生工作线程**，把线程/内存占用控制在可预期范围——在线场景最怕线程无界增长。",
+        "对实时 BCI（神经反馈、SSVEP 检测）尤其重要：坏通道的功率若参与判决，会直接拉低在线准确率且难以定位。"
       ],
       "bullets_en": [
-        "#1550 lets MAPA accept a ch_mask with per-sample sensor_indices (batch, n_chans, 3), so one batch can mix recordings with different montages and channel counts, consistent with the iEEG foundation models of #1487.",
-        "Attention never crosses masked channels, so padded channels do not participate in attention — the key to variable-length channels not contaminating results.",
-        "Multi-centre data or studies that changed electrode layouts no longer need one model per layout."
+        "#875 runs signal-quality checks before computing band powers and can optionally reject bad channels (flat or noisy) so their power does not pollute results.",
+        "It follows #873, which adds reusable band-power contexts with bounded native workers, keeping thread and memory use predictable — unbounded threads are an online-scenario hazard.",
+        "For real-time BCI such as neurofeedback or SSVEP detection this matters: power from a dead channel degrades online accuracy and is hard to trace."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1550",
-      "published": "2026-11-06T14:14:00Z",
+      "url": "https://github.com/brainflow-dev/brainflow/pull/875",
+      "published": "2026-11-07T21:27:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 合并 #1550：`MAPA` 现在接受带**逐样本 `sensor_indices`（batch, n_chans, 3）** 的 `ch_mask`，于是**同一批次可混合不同蒙太奇、不同通道数**的记录，与 #1487 的 iEEG 基础模型口径一致。关键实现细节是**注意力不跨越被掩码的通道**——补齐通道既不参与注意力，也不干扰真实通道的表示，这才是「变长通道」不污染结果的正确做法（如果只在输入端置零、却仍让注意力看到它们，结果仍会被稀释）。对多中心数据或中途换过电极布局的实验，不必再按布局拆模型；建议升级后与「裁到公共通道子集」的旧流程对比一次指标。",
-      "brief_en": "braindecode merged #1550 so MAPA accepts a ch_mask with per-sample sensor_indices (batch, n_chans, 3), letting one batch mix montages and channel counts, consistent with #1487. Crucially, attention never crosses masked channels, so padding neither participates nor dilutes real representations — the correct way to avoid contamination. Studies that changed layouts no longer need separate models.",
+      "brief": "BrainFlow 合并 #875：计算**带功率**时可以先做**信号质量检查**，并**选择性剔除劣质通道**（平坦、噪声大的），避免无效通道的功率混进结果；同批 #873 引入**可复用的带功率上下文**与**有界的原生工作线程**，把线程与内存占用限定在可预期范围。这两条合起来解决的是在线场景的典型痛点：一是坏通道功率污染判决（神经反馈、SSVEP 检测里直接表现为准确率掉且查不出原因），二是线程无界增长导致长时间运行后抖动甚至崩溃。对做实时 BCI 的团队，建议升级后确认真实数据上的通道剔除规则与日志——「悄悄剔了哪个通道」必须可追溯。",
+      "brief_en": "BrainFlow merged #875 running signal-quality checks before band-power computation with optional rejection of bad channels (flat or noisy), plus #873's reusable band-power contexts with bounded native workers to keep thread and memory use predictable. Together they address online hazards: dead-channel power degrading decisions invisibly, and unbounded threads destabilising long runs.",
       "tags": [
-        "braindecode",
-        "mapa",
-        "ch-mask",
-        "montage",
-        "attention"
+        "brainflow",
+        "band-power",
+        "quality-control",
+        "threading",
+        "realtime"
       ],
-      "raw_excerpt": "PR #1550: \"MAPA: accept ch_mask with per-sample sensor_indices — `MAPA` accepts a `ch_mask` of real channels with per-sample `sensor_indices`, `(batch, n_chans, 3)`, so one batch can mix recordings with different montages and channel counts, as the iEEG foundation models of #1487. - Attention never cros[ses masked channels]…\" Merged 2026-11-06T14:14Z.",
-      "fetched_at": "2026-11-06T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-07: \"Add signal-quality checks and optional channel rejection for band powers\" (c60ebca87c) 21:27Z; \"Add reusable band-power contexts with bounded native workers (#873)\" (695122e8fa) 18:54Z; \"docs: nest Swift and Apple guides under installation and API (#874)\" 18:51Z.",
+      "fetched_at": "2026-11-07T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1550",
-      "author_handle": "braindecode",
+      "upstream_id": "brainflow-dev/brainflow#875",
+      "author_handle": "brainflow-dev",
       "metrics": {
         "play": null,
-        "like": 1339,
+        "like": 1787,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "注意力不跨掩码通道，才是变长通道不稀释真实表示的关键实现。"
+      "why_valuable": "坏通道功率会污染在线判决且难定位，剔除需可追溯；线程有界同样关键。"
     },
     {
       "type": "Project",
-      "level": "Beginner",
-      "title_zh": "EEG API Unicorn：面向学生的 Unicorn Hybrid Black 采集/解码/推流 API",
-      "title_en": "EEG API Unicorn: A Student-Friendly Acquisition, Decoding and Streaming API",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 继续移植 EEGLAB GUI：对话框与编辑选择（F37…F124）",
+      "title_en": "EEGPrep Keeps Porting the EEGLAB GUI: Dialogs and Edit Selections (F37 ... F124)",
       "bullets_zh": [
-        "面向**学生**的 BCI API：采集 **Unicorn Hybrid Black** 头戴设备，内置现成范式解码（**SSVEP、c-VEP、P300、运动想象、ErrP** 等），并把结果**推流**给 Unity / Python / MATLAB / ROS 2 / Wi-Fi 微控制器。",
-        "价值在于「一条链路打通」：设备→采集→解码→网络输出，避免每个教学项目重复造轮子。",
-        "对课程与社团项目很实用；做正式研究前需自行核对采样率、通道映射与各项范式的默认参数。"
+        "本次「Stream 2」落地一批 GUI 功能：**Select data 对话框的通道类型为空问题（F37）**、教程事件描述规范化（F39）、**拒绝菜单动作接线与对话框适配屏幕（F102/F105）**、事件字段描述与文件选择器。",
+        "同批还修 **`pop_select` 的 fuzz 索引**与**基线求和的舍入**（#564/#565）——把 GUI 移植与数值一致性放在一起推。",
+        "对希望脱离 MATLAB 的实验室，这类「功能覆盖清单（F 编号）」比一句「已支持」更能判断可用程度。"
       ],
       "bullets_en": [
-        "A student-oriented BCI API: it acquires a Unicorn Hybrid Black headset, decodes with ready-made paradigms (SSVEP, c-VEP, P300, motor imagery, ErrP and more) and streams results to Unity, Python, MATLAB, ROS 2 or a Wi-Fi microcontroller.",
-        "Its value is one continuous path — device, acquisition, decoding, network output — so teaching projects need not rebuild the plumbing.",
-        "Practical for courses and clubs; for research, verify sampling rate, channel mapping and each paradigm's defaults first."
+        "Stream 2 lands a batch of GUI features: fixing empty channel types in the Select data dialog (F37), normalising tutorial event descriptions (F39), wiring rejection-menu actions and fitting dialogs to screen (F102/F105), plus event field descriptions and a file picker.",
+        "The same batch fixes pop_select fuzz indexing and baseline summation roundoff (#564/#565), advancing GUI parity and numerical agreement together.",
+        "For labs leaving MATLAB, an explicit function-coverage list (the F numbers) tells far more about readiness than a claim of support."
       ],
-      "url": "https://github.com/medkar/EEG_API_Unicorn",
-      "published": "2026-11-06T16:41:00Z",
+      "url": "https://github.com/sccn/eegprep/pull/566",
+      "published": "2026-11-07T03:10:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 EEG_API_Unicorn（2026-11-06）定位很明确：**面向学生的脑机接口 API**。它采集 **Unicorn Hybrid Black** 头戴设备，用现成范式做解码（**SSVEP、c-VEP、P300、运动想象、ErrP** 等），再把结果**推流**给 Unity、Python、MATLAB、ROS 2 甚至 Wi-Fi 上的微控制器——把「设备→采集→解码→网络输出」这条链路一次打通。对课程、社团或入门项目，这能省掉每个项目重复搭管线的工夫，把精力放回范式与实验设计。用于正式研究前建议核对：采样率、通道映射、各范式的默认窗口与阈值，以及 Unicorn 的固件版本——这些参数差异会直接影响结果可比性。",
-      "brief_en": "Created 2026-11-06, EEG_API_Unicorn is explicitly a BCI API for students: it acquires a Unicorn Hybrid Black headset, decodes with ready-made paradigms (SSVEP, c-VEP, P300, motor imagery, ErrP) and streams results to Unity, Python, MATLAB, ROS 2 or a microcontroller, connecting device, acquisition, decoding and output. For research, verify sampling rate, channel mapping and firmware first.",
+      "brief": "EEGPrep 合并 #566（「Stream 2」）：继续把 **EEGLAB 的 GUI 功能**移植到 Python——包括修 **Select data 对话框里通道类型为空**（F37）、规范化教程事件描述（F39）、**接通拒绝菜单动作并让对话框适配屏幕**（F102/F105）、补事件字段描述与文件选择器。同批还修了 `pop_select` 的 **fuzz 索引**与**基线求和舍入**（#564/#565），等于把「界面覆盖」与「数值一致性」一起推进。对想脱离 MATLAB 的实验室，这类带 **F 编号的功能覆盖清单**比「已支持」三个字有用得多——你可以按清单判断自己常用的那条操作路径是否已经能跑。",
+      "brief_en": "EEGPrep merged #566 (Stream 2) continuing the EEGLAB GUI port: fixing empty channel types in the Select data dialog (F37), normalising tutorial event descriptions (F39), wiring rejection-menu actions and screen-fitting dialogs (F102/F105), plus pop_select fuzz indexing and baseline roundoff fixes. An explicit function-coverage list beats a claim of support.",
       "tags": [
-        "unicorn",
-        "api",
-        "ssvep",
-        "p300",
-        "education"
+        "eegprep",
+        "eeglab",
+        "gui-port",
+        "fuzz",
+        "parity"
       ],
-      "raw_excerpt": "README: \"A **brain-computer interface API for students**: it acquires a **Unicorn Hybrid Black** EEG headset, decodes it with ready-made paradigms, and **streams the result over the network**, so any application (Unity, Python, MATLAB, ROS 2, a microcontroller on the Wi-Fi) can build on it.\" Paradigms listed: \"SSVEP · c-VEP · P300 · Motor Imagery · ErrP\".",
-      "fetched_at": "2026-11-06T23:55:00Z",
+      "raw_excerpt": "Commit 1bdd1a2835 (PR #566): \"Stream 2: Dialogs and Edit selection (F37, F39, F40, F44, F48, F50, F100, F101, F102, F105, F124) — * Fix empty channel types in Select data dialog (F37) * Normalize tutorial event descriptions in selection dialog (F39) * Wire rejection menu actions and fit dialogs to screen (F102 F105) …\". Related same day: \"Fix pop_select fuzz indexing and document pop_rmbase roundoff (#564)\"; \"Accept bounded baseline summation roundoff in fuzz comparisons (#565)\".",
+      "fetched_at": "2026-11-07T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "medkar/EEG_API_Unicorn",
-      "author_handle": "medkar",
+      "upstream_id": "sccn/eegprep#566",
+      "author_handle": "sccn",
       "metrics": {
         "play": null,
-        "like": 0,
+        "like": 38,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "一条链路打通设备→解码→推流，教学项目不用重复造管线。"
+      "why_valuable": "带 F 编号的功能覆盖清单能判断常用操作路径是否可脱离 MATLAB 运行。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "Eelbrain 在 Pipeline-GUI 右键菜单里加入 mne_browse_raw",
-      "title_en": "Eelbrain Adds mne_browse_raw to the Pipeline-GUI Context Menu",
+      "title_zh": "Eelbrain 新增 RawICA：按任务分别估计 ICA",
+      "title_en": "Eelbrain Adds a RawICA Option to Estimate ICA Per Task",
       "bullets_zh": [
-        "#270：在 Pipeline-GUI 的上下文菜单里加入 **`mne_browse_raw`**，可直接从流水线节点跳到 MNE 的原始数据浏览器核查数据。",
-        "对调试很有用：在 GUI 里定位到某个数据节点后，不必切终端、拼路径，就能用熟悉的浏览器查看原始波形与事件。",
-        "属小幅体验改进，不改变分析逻辑。"
+        "#275：新增 **`RawICA`** 选项，允许**按任务分别估计 ICA**，而不是在整段连续记录上只做一次分解。",
+        "动机很实际：不同任务的伪迹构成与状态差异明显（如静息 vs 任务、不同刺激条件），全局 ICA 往往在某一任务上表现好、另一任务上残留伪迹。",
+        "代价是每个任务各自拟合，计算量与分量编号的可比性需注意；跨任务比较成分时要自行对齐。"
       ],
       "bullets_en": [
-        "#270 adds mne_browse_raw to the Pipeline-GUI context menu, jumping from a pipeline node straight into MNE's raw-data browser.",
-        "That helps debugging: once a node is located in the GUI, inspecting raw traces and events no longer requires switching to a terminal and reconstructing the path.",
-        "A small usability change with no effect on analysis logic."
+        "#275 adds a RawICA option letting ICA be estimated per task instead of once over the whole continuous recording.",
+        "The motivation is practical: artefact composition and state differ across tasks (rest versus task, different stimulus conditions), so a global ICA often cleans one task well and leaves residues in another.",
+        "The cost is one fit per task, with more compute and non-comparable component numbering; align components yourself before cross-task comparison."
       ],
-      "url": "https://github.com/Eelbrain/Eelbrain/pull/270",
-      "published": "2026-11-06T12:22:00Z",
+      "url": "https://github.com/Eelbrain/Eelbrain/pull/275",
+      "published": "2026-11-07T19:39:00Z",
       "source": "github",
       "language": "en",
-      "brief": "Eelbrain 合并 #270：在 **Pipeline-GUI 的上下文菜单**里加入 **`mne_browse_raw`**，可以直接从流水线节点跳到 MNE 的原始数据浏览器。这条改动不大但很实用——调试流水线时经常需要「这个节点喂进去的原始数据到底长什么样」，此前要切到终端、重新拼路径、再打开浏览器，注意力被打断好几次；现在右键即可。属体验改进，不改变任何分析逻辑。对用 Eelbrain 管理多步预处理/建模流程的团队，建议升级后试一下右键菜单，确认路径解析在你的项目结构下正确。",
-      "brief_en": "Eelbrain merged #270 adding mne_browse_raw to the Pipeline-GUI context menu, jumping from a pipeline node straight into MNE's raw data browser. It is a small but practical usability gain: checking what raw data a node received no longer requires switching to a terminal and rebuilding paths. Analysis logic is unchanged; verify path resolution against your project layout after upgrading.",
+      "brief": "Eelbrain 合并 #275：新增 **`RawICA`** 选项，允许**按任务分别估计 ICA**，而不是在整段连续记录上做一次全局分解。这个改动的动机很实际：不同任务之间的伪迹构成与状态差异明显（静息 vs 任务、不同刺激条件），全局 ICA 经常在某一任务上清理得很好、另一任务却残留眨眼或肌电——而使用者往往只检查了第一个任务。代价也要清楚：每个任务各自拟合会增加计算量，且**分量编号在不同任务间不可直接比较**，做跨任务成分对齐时需自己处理。对做多任务范式的团队，建议先在小数据集上比较「全局 vs 按任务」的伪迹残留与分量稳定性，再决定是否切换。",
+      "brief_en": "Eelbrain merged #275 adding a RawICA option to estimate ICA per task rather than once over a continuous recording. Different tasks have different artefact composition and states, so a global decomposition often cleans one task well and leaves blinks or EMG in another. The cost is one fit per task and non-comparable component numbering; compare residual artefacts before switching.",
       "tags": [
         "eelbrain",
-        "pipeline-gui",
-        "mne",
-        "debugging",
-        "usability"
+        "ica",
+        "per-task",
+        "artifacts",
+        "pipeline"
       ],
-      "raw_excerpt": "Commit a655d38fef, 2026-11-06T12:22Z: \"Pipeline-GUI: add mne_browse_raw to context menu (#270)\". Repo: Eelbrain/Eelbrain.",
-      "fetched_at": "2026-11-06T23:55:00Z",
+      "raw_excerpt": "Commit 1de503eda5, 2026-11-07T19:39Z: \"Add RawICA option to estimate ICA per task (#275)\". Repo: Eelbrain/Eelbrain.",
+      "fetched_at": "2026-11-07T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "Eelbrain/Eelbrain#270",
+      "upstream_id": "Eelbrain/Eelbrain#275",
       "author_handle": "Eelbrain",
       "metrics": {
         "play": null,
@@ -326,15 +240,58 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "从流水线节点直达原始数据浏览器，调试时省掉切终端拼路径的打断。"
+      "quality_score": 8,
+      "why_valuable": "全局 ICA 常在某一任务清理好、另一任务残留，按任务估计更稳但编号不可比。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Squiggly 的相干分析支持连接耳与 Laplacian 参考",
+      "title_en": "Squiggly Coherence Now Supports Linked-Ears and Laplacian References",
+      "bullets_zh": [
+        "相干（coherence）**高度依赖参考**，此前只在平均参考下提供；现在增加**连接耳（linked ears）**与**最近邻 Hjorth Laplacian** 两种参考。",
+        "实现细节讲究：连接耳参考通过**加回平均参考减掉的共模**来还原文件自身参考，且**仅当所有 EEG 通道都标记为 -LE** 时才启用；作者称在真实 -LE 记录上结果吻合。",
+        "对做功能连接或静息态对称性分析的团队，「换参考后相干是否还成立」是关键问题，多参考实现让这一点可被检验。"
+      ],
+      "bullets_en": [
+        "Coherence depends heavily on the reference, and it was previously offered only under average reference; it now also supports linked ears and a nearest-neighbour Hjorth Laplacian.",
+        "The linked-ears path restores the file's own reference by adding back the common mode the average reference removed, enabled only when every EEG channel is labelled -LE; the author reports agreement on real -LE recordings.",
+        "For functional connectivity or resting-state symmetry work, whether coherence survives a reference change is a key question, and offering multiple references makes it testable."
+      ],
+      "url": "https://github.com/alexdni/squiggly/commit/2cb7216e64",
+      "published": "2026-11-07T00:01:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "Squiggly 提交 2cb7216e64：相干分析（coherence）现在支持 **连接耳（linked ears）** 与 **最近邻 Hjorth Laplacian** 参考，此前只有平均参考。这条改动的技术含量在于细节：连接耳参考是**把平均参考减掉的共模加回来**以还原文件自身参考，而且**仅当所有 EEG 通道都标注为 -LE** 时才启用，作者称在真实 -LE 记录上结果吻合。为什么重要——**相干高度依赖参考电极**，同一份数据换参考后连接模式可能变样，而多数工具只给一种参考，让你无法检验结论是否稳健。对做功能连接、静息态对称性分析的团队，多参考实现正好让「换参考还成立吗」成为可做的检查。",
+      "brief_en": "Squiggly commit 2cb7216e64 adds linked-ears and nearest-neighbour Hjorth Laplacian references to coherence, previously average-reference only. The linked-ears path adds back the common mode the average reference removed, enabled only when every EEG channel is labelled -LE. Since coherence depends heavily on reference, offering several makes robustness to reference choice testable.",
+      "tags": [
+        "squiggly",
+        "coherence",
+        "reference",
+        "laplacian",
+        "connectivity"
+      ],
+      "raw_excerpt": "Commit 2cb7216e64: \"feat(coherence): linked-ears and Laplacian references — Coherence depends heavily on the reference, so offer it on linked ears and a nearest-neighbour (Hjorth) Laplacian as well as the average reference. Linked ears restores the file's own reference by adding back the common mode the average reference subtracted, only when every EEG channel is labelled -LE. On real -LE recordings the result matche[s]…\"",
+      "fetched_at": "2026-11-07T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "alexdni/squiggly@2cb7216e64",
+      "author_handle": "alexdni",
+      "metrics": {
+        "play": null,
+        "like": 34,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "相干高度依赖参考，多参考实现让「换参考结论是否成立」可被检验。"
     }
   ],
   "stats": {
     "fetched": 132,
     "prefiltered": 98,
-    "llm_rows": 22,
-    "kept": 7,
+    "llm_rows": 18,
+    "kept": 6,
     "llm_failed": false,
     "llm_skipped_batches": 0,
     "conflicts_dropped": 2
