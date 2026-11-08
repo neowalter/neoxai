@@ -2,7 +2,7 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
-Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **389** entries after batch35.
+Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **401** entries after batch36.
 
 | Repo | Author | Description | Last push | Stars |
 | --- | --- | --- | --- | --- |
@@ -395,3 +395,15 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-fnirs-motor-imagery](https://github.com/gugu1031/eeg-fnirs-motor-imagery) | @gugu1031 | PyTorch EEG-fNIRS motor imagery decoding with subject-ind... | 2026-08-28 | 1 |
 | [eegnet-v2](https://github.com/istiaqfuad/eegnet-v2) | @istiaqfuad | Motor-imagery EEG decoding with covariance alignment (EA/... | 2026-08-29 | 6 |
 | [Fatigue-check-Transformer-1.0](https://github.com/shepherd0106/Fatigue-check-Transformer-1.0) | @shepherd0106 | Fatigue check（Transformer）1.0 - EEG/fNIRS fatigue classif... | 2026-10-16 | 0 |
+| [multimodal-bci-robot-control](https://github.com/AltayErkul/multimodal-bci-robot-control) | @AltayErkul | Hybrid gaze and EEG motor-imagery shared control for robo... | 2026-11-07 | 0 |
+| [LeakCheck](https://github.com/JOYJIT-06/LeakCheck) | @JOYJIT-06 | A leakage-aware benchmarking framework for evaluating val... | 2026-11-08 | 0 |
+| [ecog-conformal](https://github.com/Mohith26/ecog-conformal) | @Mohith26 | Calibrated uncertainty for speech decoding from human hig... | 2026-11-08 | 0 |
+| [EARSENSE-Minor-and-Major-Project](https://github.com/Tanishkaaa016/EARSENSE-Minor-and-Major-Project) | @Tanishkaaa016 | Wearable ear-mounted EEG system for P300 detection and an... | 2026-11-05 | 0 |
+| [do-eeg-models-fit-users-or-actions](https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions) | @UnnatPar | Do EEG models fit users or actions? Zero-calibration BCI ... | 2026-11-07 | 0 |
+| [SIIT-bobo-goggles](https://github.com/Warit-Yuv/SIIT-bobo-goggles) | @Warit-Yuv | EEG and Gaze tracking ROSMASTER-M1 Robot Teleoperation. | 2026-11-08 | 0 |
+| [diy-eeg-mac](https://github.com/agteo/diy-eeg-mac) | @agteo | Eight-channel ADS1299/ESP32-S3 EEG board, with macOS tool... | 2026-11-08 | 1 |
+| [muse](https://github.com/antonio-pedro-ribeiro/muse) | @antonio-pedro-ribeiro | Record, watch and analyze EEG from a Muse S Athena headba... | 2026-11-06 | 3 |
+| [ssvep-bci-arm](https://github.com/oppo-poop/ssvep-bci-arm) | @oppo-poop | ssvep-bci control Rbotic arm | 2026-11-07 | 0 |
+| [eeg-motor-imagery-classification](https://github.com/samarthp11/eeg-motor-imagery-classification) | @samarthp11 | Machine learning classification of left and right motor i... | 2026-11-04 | 0 |
+| [neuroassist-systema](https://github.com/tql-mee6/neuroassist-systema) | @tql-mee6 | Research prototype: Russian scanning keyboard, CSP + LDA,... | 2026-11-08 | 0 |
+| [ssvep-based-bci-for-hospital-bed](https://github.com/zychpatryk/ssvep-based-bci-for-hospital-bed) | @zychpatryk | Non-Invasive SSVEP-Based Brain-Computer Interface for Hos... | 2026-11-07 | 0 |
