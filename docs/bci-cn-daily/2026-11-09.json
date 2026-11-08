@@ -1,0 +1,343 @@
+{
+  "date": "2026-11-09",
+  "generated_at": "2026-11-08T21:32:11.075Z",
+  "item_count": 7,
+  "types": {
+    "Benchmark": 1,
+    "Project": 5,
+    "Tutorial": 1
+  },
+  "highlights": [
+    {
+      "title_zh": "MOABB 删掉「凭空捏造的注视点」：自定步/听觉协议里本不存在",
+      "title_en": "MOABB Removes a Fabricated Fixation Cross That Never Existed in Self-Paced Protocols",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1346",
+      "brief": "MOABB 合并 #1346：从 **self-paced / 听觉 / epoch-locked** 协议的时间线里**删除一个伪造的 fixation cross 事件**——原始协议里根本没有它。这条值得单独说，因为凭空插入的事件会让所有「锁时到注视点」的分析（ERP、解码、时频基线）都建立在一个不存在的锚点上，而结果看起来完全正常。同批 16 次提交还做了**有论文依据的元数据修订**、恢复 HefmiIch2025 的 `nemar_id`（nm000347 v1.0.5）、在测试中跟踪全部 8 个「按论文申请」的 NEMAR 沉积，并把重依赖导入延后以加快启动。对依赖 MOABB 时间线的团队，**凡是用到 self-paced/听觉协议的结果都值得重跑核对**。"
+    },
+    {
+      "title_zh": "aeon-neuro 修降采样抗混叠与频带边界功率",
+      "title_en": "aeon-neuro Fixes Anti-Aliased Downsampling for All Ratios and Power at Non-Bin Band Edges",
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/190",
+      "brief": "aeon-neuro 合并两个会**静默改变频带特征**的修复：**#190** 让**所有降采样比例**都走 `resample_poly` 抗混叠——此前部分整数比没有抗混叠，高频成分会折叠进低频，把肌电/工频混成「alpha 增高」；**#302** 在**频带边界不落在 bin 上**时保留功率，此前边界截断会把间隙里的能量丢掉，导致频带功率系统性偏低。两者都不报错，只会让特征整体偏移，进而影响分类/回归结论。对用 aeon-neuro 或自己实现类似流程的团队，建议升级后**重算特征并做前后对比**；若差异明显，之前的模型结论需要重新审视。"
+    },
+    {
+      "title_zh": "EEG Reviewer：本地睡眠脑电复核工具（分期/SWI/癫痫候选筛查）",
+      "title_en": "EEG Reviewer: A Local Sleep-EEG Review Tool With Staging, SWI and Seizure-Candidate Screening",
+      "url": "https://github.com/elba1212/eeg-reviewer",
+      "brief": "新建仓库 EEG Reviewer（2026-11-08）是一个 **Windows 本地桌面应用**，定位是**睡眠脑电的专家复核**：支持睡眠分期估计、**棘慢波（spike-wave）候选复核**、N2/N3 的 SWI 汇总、在安装兼容模型时做**癫痫候选筛查**，以及伪迹与分期复核、电极分布汇总和本地报告导出。两个特点值得注意：一是**本地运行**，对涉及患者数据的临床研究更易合规；二是 README 明确写着**「研究软件、非诊断设备」**，自动化结果必须由专家判断——这条边界在当前「AI 读脑电」的叙事里很难得。对做睡眠/癫痫方向的小团队，它可作为复核工作流的起点；采用前请核对所用模型的训练数据与适用人群。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-09.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "MOABB 删掉「凭空捏造的注视点」：自定步/听觉协议里本不存在",
+      "title_en": "MOABB Removes a Fabricated Fixation Cross That Never Existed in Self-Paced Protocols",
+      "bullets_zh": [
+        "#1346：从 **self-paced / 听觉 / epoch-locked** 协议的时间线里删除**伪造的 fixation cross（注视点）事件**——原协议根本没有这个事件。",
+        "同批 16 次提交还做了**有论文依据的元数据修订**、恢复 HefmiIch2025 的 `nemar_id`（nm000347 v1.0.5）、并在 NEMAR 测试中跟踪全部 8 个「按论文申请」的沉积；另有延迟重依赖导入的启动提速。",
+        "凭空插入事件会让基于时间线的分析（锁时到「注视点」的 ERP/解码）建立在不存在的锚点上——这是数据层最严重的一类错误。"
+      ],
+      "bullets_en": [
+        "#1346 removes a fabricated fixation-cross event from the timelines of self-paced, auditory and epoch-locked protocols — the original protocols never contained it.",
+        "The batch of 16 commits also revises metadata against sources, restores HefmiIch2025's nemar_id (nm000347 v1.0.5), tracks all eight publication-requested NEMAR deposits in tests, and defers heavy imports for faster startup.",
+        "Inventing an event makes timeline-locked analyses (ERPs or decoding anchored to that 'fixation') rest on an anchor that never existed — among the most serious data-layer errors."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1346",
+      "published": "2026-11-08T16:08:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 合并 #1346：从 **self-paced / 听觉 / epoch-locked** 协议的时间线里**删除一个伪造的 fixation cross 事件**——原始协议里根本没有它。这条值得单独说，因为凭空插入的事件会让所有「锁时到注视点」的分析（ERP、解码、时频基线）都建立在一个不存在的锚点上，而结果看起来完全正常。同批 16 次提交还做了**有论文依据的元数据修订**、恢复 HefmiIch2025 的 `nemar_id`（nm000347 v1.0.5）、在测试中跟踪全部 8 个「按论文申请」的 NEMAR 沉积，并把重依赖导入延后以加快启动。对依赖 MOABB 时间线的团队，**凡是用到 self-paced/听觉协议的结果都值得重跑核对**。",
+      "brief_en": "MOABB merged #1346 removing a fabricated fixation-cross event from self-paced, auditory and epoch-locked protocol timelines — it never existed. Inventing an event makes every fixation-locked ERP, decoding or baseline rest on a non-existent anchor while results look normal. The batch also revises metadata against sources, restores HefmiIch2025's nemar_id and tracks eight NEMAR deposits.",
+      "tags": [
+        "moabb",
+        "timeline",
+        "fabricated-event",
+        "metadata",
+        "data-integrity"
+      ],
+      "raw_excerpt": "Commit bcfd4a766f, 2026-11-08T16:08Z: \"fix(timeline): remove fabricated fixation cross from self-paced/auditory/epoch-locked protocols (#1346)\". Same window: \"fix(metadata): paper-grounded metadata revision and runtime alignment ac[ross]\"; \"Restore HefmiIch2025 nemar_id (nm000347 v1.0.5) and enrich Brodu2012/Wan[g]\"; \"test(datasets): track all 8 publication-requested NEMAR deposits\"; \"PERF: Defer heavy dataset/BIDS/NEMAR imports\".",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1346",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1084,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "伪造的注视点事件会让锁时分析锚定在不存在的时间点，结果却看起来正常。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "aeon-neuro 修降采样抗混叠与频带边界功率",
+      "title_en": "aeon-neuro Fixes Anti-Aliased Downsampling for All Ratios and Power at Non-Bin Band Edges",
+      "bullets_zh": [
+        "#190：**所有降采样比例**都改用 `resample_poly` 做抗混叠——此前部分整数比未抗混叠，高频会折叠进低频，且不报错。",
+        "#302：**频带边界不在 bin 上时保留功率**——此前边界截断会把落在边界间隙的能量丢掉，频带功率系统性偏低。",
+        "两处都直接影响频带特征：混叠会污染 alpha/beta，边界处理会低估功率；对用 aeon-neuro 做分类/回归的团队，建议升级后重算特征并比对。"
+      ],
+      "bullets_en": [
+        "#190 applies anti-aliased downsampling with resample_poly for all ratios; some integer ratios previously skipped anti-aliasing, folding high frequencies into low bands without any error.",
+        "#302 preserves power when band edges fall between bins, where truncation previously discarded energy in the boundary gap and systematically under-reported band power.",
+        "Both affect band features directly — aliasing pollutes alpha/beta and edge handling underestimates power — so recompute features and compare after upgrading."
+      ],
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/190",
+      "published": "2026-11-08T17:12:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "aeon-neuro 合并两个会**静默改变频带特征**的修复：**#190** 让**所有降采样比例**都走 `resample_poly` 抗混叠——此前部分整数比没有抗混叠，高频成分会折叠进低频，把肌电/工频混成「alpha 增高」；**#302** 在**频带边界不落在 bin 上**时保留功率，此前边界截断会把间隙里的能量丢掉，导致频带功率系统性偏低。两者都不报错，只会让特征整体偏移，进而影响分类/回归结论。对用 aeon-neuro 或自己实现类似流程的团队，建议升级后**重算特征并做前后对比**；若差异明显，之前的模型结论需要重新审视。",
+      "brief_en": "aeon-neuro merged two fixes that silently alter band features: #190 applies resample_poly anti-aliasing for all downsample ratios, since some integer ratios folded high frequencies into low bands; #302 preserves power when band edges fall between bins, where truncation discarded boundary energy. Recompute features and compare after upgrading.",
+      "tags": [
+        "aeon-neuro",
+        "resampling",
+        "anti-aliasing",
+        "band-power",
+        "bugfix"
+      ],
+      "raw_excerpt": "PRs merged 2026-11-08: \"[BUG] Anti-alias downsample with resample_poly for all ratios (#190)\" 17:12Z; \"[BUG] Preserve power at non-bin band edges (#302)\" 16:48Z; \"[DOC] Fill in transformations API reference\" 16:46Z.",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aeon-toolkit/aeon-neuro#190",
+      "author_handle": "aeon-toolkit",
+      "metrics": {
+        "play": null,
+        "like": 35,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "未抗混叠会把高频折进低频、边界截断会低估功率，都会静默偏移特征。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEG Reviewer：本地睡眠脑电复核工具（分期/SWI/癫痫候选筛查）",
+      "title_en": "EEG Reviewer: A Local Sleep-EEG Review Tool With Staging, SWI and Seizure-Candidate Screening",
+      "bullets_zh": [
+        "Windows 本地桌面应用，面向**专家复核**：睡眠分期估计、**棘慢波候选复核**、N2/N3 的 SWI 汇总、在安装兼容模型时做**癫痫候选筛查**、伪迹与分期复核、电极分布汇总与本地报告导出。",
+        "README 明确写着「**研究软件、非诊断设备**」，自动化结果需专家判断——边界说明到位。",
+        "对做睡眠/癫痫方向的小团队，本地化 + 可导出报告的组合比云端服务更贴合临床研究的数据合规要求。"
+      ],
+      "bullets_en": [
+        "A local Windows desktop app for expert review: sleep-stage estimates, spike-wave candidate review, N2/N3 SWI summaries, seizure-candidate screening when a compatible model is installed, artefact and stage review, electrode distribution summaries and local report export.",
+        "The README states plainly that it is research software and not a diagnostic device, with automated results requiring expert judgement.",
+        "For small sleep or epilepsy groups, local processing plus exportable reports fits clinical-research data governance better than cloud services."
+      ],
+      "url": "https://github.com/elba1212/eeg-reviewer",
+      "published": "2026-11-08T13:34:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 EEG Reviewer（2026-11-08）是一个 **Windows 本地桌面应用**，定位是**睡眠脑电的专家复核**：支持睡眠分期估计、**棘慢波（spike-wave）候选复核**、N2/N3 的 SWI 汇总、在安装兼容模型时做**癫痫候选筛查**，以及伪迹与分期复核、电极分布汇总和本地报告导出。两个特点值得注意：一是**本地运行**，对涉及患者数据的临床研究更易合规；二是 README 明确写着**「研究软件、非诊断设备」**，自动化结果必须由专家判断——这条边界在当前「AI 读脑电」的叙事里很难得。对做睡眠/癫痫方向的小团队，它可作为复核工作流的起点；采用前请核对所用模型的训练数据与适用人群。",
+      "brief_en": "Created 2026-11-08, EEG Reviewer is a local Windows desktop app for sleep-EEG expert review: staging estimates, spike-wave candidate review, N2/N3 SWI summaries, seizure-candidate screening with a compatible model, artefact review and local report export. It runs locally for data governance and states that it is research software, not a diagnostic device.",
+      "tags": [
+        "sleep",
+        "review-tool",
+        "spike-wave",
+        "seizure",
+        "desktop"
+      ],
+      "raw_excerpt": "README: \"A local Windows desktop application for reviewing sleep EEG. It supports sleep-stage estimates, spike-wave candidate review, N2/N3 SWI summaries, possible-seizure screening when a compatible model is installed, artifact and stage review, electrode distribution summaries, and local report exports. This is research software for expert review. It is not a diagnostic device.\"",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "elba1212/eeg-reviewer",
+      "author_handle": "elba1212",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "本地化+可导出报告契合临床研究合规，并明确「非诊断设备」边界。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "从零开始系列：干/湿/半干电极，以及一套 14 集的脑机接口入门课",
+      "title_en": "A 14-Part BCI Crash Course, Including Dry, Wet and Semi-Dry Electrodes",
+      "bullets_zh": [
+        "本集讲**干电极、湿电极、半干电极**；整季 14 集覆盖**同步 vs 异步系统、Marker 的重要性、范式设计、离线 vs 在线、自发 vs 诱发、侵入 vs 非侵入、系统模块、EEG/ECoG/LFP/Spike 区别**等。",
+        "从合集列表看，这是中文区少见的**系统化入门路径**（每集 13–23 分钟），适合作为新人第一周的自学清单。",
+        "克制说明：本集页面简介只有标签与合集列表，**未提供文字讲稿**，因此本条只描述系列结构与主题覆盖，不对单集技术细节作断言。"
+      ],
+      "bullets_en": [
+        "This episode covers dry, wet and semi-dry electrodes; the 14-part season spans synchronous versus asynchronous systems, why markers matter, paradigm design, offline versus online, spontaneous versus evoked, invasive versus non-invasive, system modules and EEG/ECoG/LFP/spike differences.",
+        "The episode list makes it a rare systematic Chinese-language entry path (13-23 minutes each), usable as a first-week self-study checklist.",
+        "Deliberately limited: the page offers only tags and the collection list, with no written script, so this entry describes the series structure rather than asserting episode content."
+      ],
+      "url": "https://www.bilibili.com/video/BV1hEWJ6NExW/",
+      "published": "2026-11-08T12:45:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「脑机接口从零开始」系列的第 14 集讲**干电极、湿电极与半干电极**的区别；从页面合集看，整季 14 集覆盖了入门最需要的骨架：**同步 vs 异步系统、为什么没有 Marker 会白忙、范式怎么设计、离线 vs 在线、自发 vs 诱发、侵入 vs 非侵入、系统由哪些模块组成、EEG/ECoG/LFP/Spike 的区别**。对中文区的新人，这是一条难得的**系统化自学路径**（每集 13–23 分钟），比零散科普视频更适合建立整体框架。需要说明：本集页面简介只有标签与合集列表、**没有文字讲稿**，所以本条只描述系列结构，不替单集技术细节下断言。",
+      "brief_en": "Episode 14 of a Chinese 'BCI from scratch' series covers dry, wet and semi-dry electrodes; the collection shows 14 episodes spanning synchronous versus asynchronous systems, paradigm design, offline versus online, invasive versus non-invasive and EEG/ECoG/LFP/spike differences. A rare systematic path for Chinese newcomers. The page has only tags, so this describes structure only.",
+      "tags": [
+        "electrodes",
+        "tutorial-series",
+        "paradigm",
+        "markers",
+        "chinese"
+      ],
+      "raw_excerpt": "页面简介与合集列表：「脑机接口：干电极、湿电极、半干电极」「脑机接口从零开始系列（14/14）5619播放」；合集内可见标题：「脑机接口同步系统VS异步系统 13:42」「脑信号采得再漂亮，没有Marker也可能白忙 18:10」「脑机接口实验范式怎么设计？22:15」「离线VS在线脑机接口系统 15:17」「自发式vs诱发式 19:38」「侵入式VS非侵入式 20:29」「系统由哪些模块组成 19:50」「EEG、ECOG、LFP、Spike有什么区别 22:41」。",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1hEWJ6NExW",
+      "author_handle": "史蒂芬周未来实验室",
+      "metrics": {
+        "play": null,
+        "like": 25,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "14 集系统入门路径稀缺；但单集无文字讲稿，只据合集列表描述结构。"
+    },
+    {
+      "type": "Project",
+      "level": "Beginner",
+      "title_zh": "Fidetype：为「神经文字输入」做可弃权、防幻觉的可信层（M0 早期）",
+      "title_en": "Fidetype: A Calibrated, Abstaining, Hallucination-Aware Trust Layer for Neural Text Entry (M0)",
+      "bullets_zh": [
+        "目标是为 BCI 文字输入提供**校准（calibrated）、可弃权（abstaining）、防幻觉（hallucination-aware）**的解码层——即「不确定时宁可不输出」，而不是硬给一个字符。",
+        "作者标注状态为 **早期研究（里程碑 M0）**：目前只有第一个组件存在，其余为计划中——这种诚实披露值得肯定。",
+        "对做拼写器/语言模型辅助 BCI 的团队，「弃权 + 校准」是比继续堆准确率更现实的方向。"
+      ],
+      "bullets_en": [
+        "It aims to give BCI text entry a calibrated, abstaining, hallucination-aware decoding layer — preferring no output over a confident wrong character.",
+        "The author states it is early research (milestone M0): only the first component exists and most parts are planned, which is honest disclosure.",
+        "For speller or language-model-assisted BCI work, abstention plus calibration is a more realistic direction than chasing raw accuracy."
+      ],
+      "url": "https://github.com/zhangzibo/fidetype",
+      "published": "2026-11-08T08:49:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 Fidetype（2026-11-08）提出一个对路的目标：为**神经文字输入**做一层**可信（trust）解码**——**校准、可弃权、防幻觉**。核心思想是「不确定时宁可不输出字符，也不硬猜」，这对拼写器类 BCI 比继续堆准确率更贴近真实使用：一个错误字符在沟通场景里的代价远高于延迟。作者也把状态写得很诚实：**里程碑 M0，目前只有第一个组件存在，其余为计划中**，并带 CI 测试徽章。对做 P300 拼写器或语言模型辅助解码的团队，这个「弃权 + 校准」的框架值得参考；但现阶段不宜当作可用工具，需等组件补齐。",
+      "brief_en": "Created 2026-11-08, Fidetype proposes a calibrated, abstaining, hallucination-aware trust layer for neural text entry — preferring no character over a confident wrong one, which for spellers matters more than raw accuracy. The author states it is milestone M0 with only the first component existing and most parts planned. Worth watching, not yet usable.",
+      "tags": [
+        "text-entry",
+        "abstention",
+        "calibration",
+        "speller",
+        "early-stage"
+      ],
+      "raw_excerpt": "README: \"**An open trust layer for neural text entry: calibrated, abstaining, hallucination-aware BCI text decoding.**\" \"Status: early research (milestone M0). Only the first component exists today. Most parts below are **planned**.\"",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "zhangzibo/fidetype",
+      "author_handle": "zhangzibo",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "「弃权+校准」比堆准确率更贴近沟通场景，且作者诚实标 M0 早期。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "BrainFlow 降低 Python FFT 与 C# 通道封包开销",
+      "title_en": "BrainFlow Reduces Python FFT and C# Channel-Packing Overhead",
+      "bullets_zh": [
+        "#871：优化 **Python 侧 FFT** 调用与 **C# 侧通道封包**开销——这两处都在实时路径上，直接影响在线延迟与抖动。",
+        "同批还有文档构建修复（Sphinx/Doxygen）与 Docker 镜像里 CRAN 依赖安装——工程健壮性维护。",
+        "对高通道数实时 BCI（如 32/64 通道 + 在线谱分析），FFT 与封包往往是隐藏的瓶颈。"
+      ],
+      "bullets_en": [
+        "#871 reduces Python-side FFT overhead and C# channel-packing cost, both on the real-time path and thus affecting online latency and jitter.",
+        "The batch also fixes Sphinx and Doxygen doc builds and CRAN dependency installation in the Docker image — engineering maintenance.",
+        "For high-channel-count real-time BCI (32 or 64 channels with online spectra), FFT and packing are often the hidden bottleneck."
+      ],
+      "url": "https://github.com/brainflow-dev/brainflow/pull/871",
+      "published": "2026-11-08T07:13:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "BrainFlow 合并 #871：**降低 Python 侧 FFT 与 C# 侧通道封包的开销**。这两处都在**实时路径**上——FFT 决定在线谱分析的延迟，封包决定多通道数据跨语言传递的成本，对 32/64 通道的实时 BCI 往往是隐藏瓶颈：日志里看不出，表现是「数据偶尔卡一下」或延迟越跑越大。同批还有 Sphinx/Doxygen 文档构建修复与 Docker 镜像里 CRAN 依赖安装。对做高通道实时采集+在线分析的团队，建议升级后在目标通道数下实测端到端延迟与抖动，再用自己的指标确认收益，而不是只看 PR 里的描述。",
+      "brief_en": "BrainFlow merged #871 reducing Python-side FFT overhead and C# channel-packing cost, both on the real-time path: FFT governs online spectral latency and packing governs cross-language multi-channel transfer, hidden bottlenecks at 32 or 64 channels that show up as occasional stalls. Measure end-to-end latency at your channel count after upgrading.",
+      "tags": [
+        "brainflow",
+        "fft",
+        "performance",
+        "realtime",
+        "packing"
+      ],
+      "raw_excerpt": "Commits 2026-11-08: \"Reduce Python FFT and C# channel-packing overhead (#871)\" (2efa9b0944) 07:13Z; \"Fix CRAN dependency installation in the Docker image (#876)\" 13:57Z; \"Fix Sphinx documentation builds and Doxygen warnings (#877)\" 13:58Z.",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "brainflow-dev/brainflow#871",
+      "author_handle": "brainflow-dev",
+      "metrics": {
+        "play": null,
+        "like": 1787,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "FFT 与封包在实时路径上是隐藏瓶颈，表现为偶发卡顿与延迟累积。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "HED-Python：标签扩展只允许命名字符，并固定测试基线",
+      "title_en": "HED-Python Restricts Tag Extensions to Name Characters and Pins Its Test Baseline",
+      "bullets_zh": [
+        "PR #1497 系列：**标签扩展（tag extension）只允许命名字符**，防止在事件标注里引入解析歧义字符；同时**固定 `hed-tests` 的提交**，让校验结果可复现。",
+        "HED 是事件标注的开放标准，用于把实验事件与其含义结构化——标注越自由，跨数据集整合越难；收紧字符集是必要的一致性措施。",
+        "对做 BIDS/事件标注或需要跨实验室汇总的团队，固定测试基线比「兼容最新」更能保证校验结论稳定。"
+      ],
+      "bullets_en": [
+        "PR #1497 restricts tag extensions to name characters, preventing ambiguous characters in event annotations, and pins the hed-tests commit so validation results are reproducible.",
+        "HED is an open standard for structured event annotation; looser annotations make cross-dataset integration harder, so tightening the character set is a consistency measure.",
+        "For BIDS or event-annotation work spanning labs, a pinned test baseline keeps validation conclusions stable better than tracking latest."
+      ],
+      "url": "https://github.com/hed-standard/hed-python/pull/1497",
+      "published": "2026-11-08T20:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "HED-Python 合并 #1497 一批校验收紧：**标签扩展只允许命名字符**（避免在事件标注里引入解析歧义），同时**把 `hed-tests` 固定到具体提交**，让同一份标注在任何时候得到相同的校验结论。HED 是事件标注的开放标准，用于把「什么时候发生了什么、意味着什么」结构化——标注越自由，跨数据集整合越痛苦，因此收紧字符集是必要的一致性措施；而固定测试基线，比「永远跟最新」更能保证结论可比。对做 BIDS 事件标注、或多实验室汇总数据的团队，建议在项目里也固定 HED 校验版本，并记录在元数据中。",
+      "brief_en": "HED-Python merged #1497 tightening validation: tag extensions are limited to name characters to avoid parse ambiguity, and hed-tests is pinned to a specific commit so the same annotation validates identically over time. HED structures what happened and what it means; a pinned baseline beats tracking latest for cross-lab comparability.",
+      "tags": [
+        "hed",
+        "annotation",
+        "validation",
+        "bids",
+        "reproducibility"
+      ],
+      "raw_excerpt": "Commits 2026-11-08: \"Allow only name characters in tag extensions\" (63f906c2da) 19:29Z; \"Pin hed-tests 568ac2b\" (355fc57766) 19:29Z; \"Merge pull request #1497 from VisLab/address_issues\" (c3309d20f1) 20:24Z.",
+      "fetched_at": "2026-11-08T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "hed-standard/hed-python#1497",
+      "author_handle": "hed-standard",
+      "metrics": {
+        "play": null,
+        "like": 19,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "收紧标注字符集并固定校验基线，才能保证跨实验室校验结论可比。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 100,
+    "llm_rows": 18,
+    "kept": 7,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 2
+  }
+}
