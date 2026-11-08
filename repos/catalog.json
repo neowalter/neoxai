@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-05T22:55:07Z",
+  "generatedAt": "2026-11-08T22:58:45Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach — link + metadata for neox-ai.com",
-  "count": 389,
+  "count": 401,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 389
+      "count": 401
     }
   ],
   "items": [
@@ -13118,6 +13118,393 @@
         "contactedAt": "2026-11-06",
         "batch": "batch35",
         "contactedAuthor": "shepherd0106"
+      }
+    },
+    {
+      "id": "github:JOYJIT-06/LeakCheck",
+      "name": "LeakCheck",
+      "owner": "JOYJIT-06",
+      "author": "JOYJIT-06",
+      "url": "https://github.com/JOYJIT-06/LeakCheck",
+      "homepage": null,
+      "source": "github",
+      "description": "A leakage-aware benchmarking framework for evaluating validation strategies and data leakage in within-subject motor-imagery EEG decoding.",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "leakage",
+        "validation"
+      ],
+      "createdAt": "2026-11-06T14:31:03Z",
+      "updatedAt": "2026-11-08T22:55:53Z",
+      "pushedAt": "2026-11-08T21:19:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "JOYJIT-06"
+      }
+    },
+    {
+      "id": "github:AltayErkul/multimodal-bci-robot-control",
+      "name": "multimodal-bci-robot-control",
+      "owner": "AltayErkul",
+      "author": "AltayErkul",
+      "url": "https://github.com/AltayErkul/multimodal-bci-robot-control",
+      "homepage": null,
+      "source": "github",
+      "description": "Hybrid gaze and EEG motor-imagery shared control for robotic pick-and-place, with visual and vibrotactile feedback.",
+      "language": "C",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "gaze",
+        "robotics"
+      ],
+      "createdAt": "2026-11-07T12:44:54Z",
+      "updatedAt": "2026-11-08T22:55:58Z",
+      "pushedAt": "2026-11-07T12:45:02Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "AltayErkul"
+      }
+    },
+    {
+      "id": "github:zychpatryk/ssvep-based-bci-for-hospital-bed",
+      "name": "ssvep-based-bci-for-hospital-bed",
+      "owner": "zychpatryk",
+      "author": "zychpatryk",
+      "url": "https://github.com/zychpatryk/ssvep-based-bci-for-hospital-bed",
+      "homepage": null,
+      "source": "github",
+      "description": "Non-Invasive SSVEP-Based Brain-Computer Interface for Hospital Bed Control Using a Solenoid-Actuated Remote Attachment",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "unicorn",
+        "assistive"
+      ],
+      "createdAt": "2026-11-07T08:48:18Z",
+      "updatedAt": "2026-11-08T22:56:03Z",
+      "pushedAt": "2026-11-07T11:48:54Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "zychpatryk"
+      }
+    },
+    {
+      "id": "github:Mohith26/ecog-conformal",
+      "name": "ecog-conformal",
+      "owner": "Mohith26",
+      "author": "Mohith26",
+      "url": "https://github.com/Mohith26/ecog-conformal",
+      "homepage": null,
+      "source": "github",
+      "description": "Calibrated uncertainty for speech decoding from human high-density ECoG (DANDI:000019): conformal sets vs electrode count and layout",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "ecog",
+        "bci",
+        "speech",
+        "conformal",
+        "decoding"
+      ],
+      "createdAt": "2026-11-08T22:36:08Z",
+      "updatedAt": "2026-11-08T22:56:08Z",
+      "pushedAt": "2026-11-08T22:36:13Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "Mohith26"
+      }
+    },
+    {
+      "id": "github:tql-mee6/neuroassist-systema",
+      "name": "neuroassist-systema",
+      "owner": "tql-mee6",
+      "author": "tql-mee6",
+      "url": "https://github.com/tql-mee6/neuroassist-systema",
+      "homepage": null,
+      "source": "github",
+      "description": "Research prototype: Russian scanning keyboard, CSP + LDA, reproducible PhysioNet EEGMMIDB evaluation, model parameters and offline EEG replay.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "csp",
+        "speller"
+      ],
+      "createdAt": "2026-11-08T20:07:57Z",
+      "updatedAt": "2026-11-08T22:56:13Z",
+      "pushedAt": "2026-11-08T20:25:39Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "tql-mee6"
+      }
+    },
+    {
+      "id": "github:UnnatPar/do-eeg-models-fit-users-or-actions",
+      "name": "do-eeg-models-fit-users-or-actions",
+      "owner": "UnnatPar",
+      "author": "UnnatPar",
+      "url": "https://github.com/UnnatPar/do-eeg-models-fit-users-or-actions",
+      "homepage": null,
+      "source": "github",
+      "description": "Do EEG models fit users or actions? Zero-calibration BCI and limits of cross-user transfer (COSYNE 2027)",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "foundation-model",
+        "transfer"
+      ],
+      "createdAt": "2026-11-07T05:06:16Z",
+      "updatedAt": "2026-11-08T22:56:18Z",
+      "pushedAt": "2026-11-07T05:22:55Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "UnnatPar"
+      }
+    },
+    {
+      "id": "github:agteo/diy-eeg-mac",
+      "name": "diy-eeg-mac",
+      "owner": "agteo",
+      "author": "agteo",
+      "url": "https://github.com/agteo/diy-eeg-mac",
+      "homepage": "https://alexteo.com/things-im-building.html",
+      "source": "github",
+      "description": "Eight-channel ADS1299/ESP32-S3 EEG board, with macOS tools that stream it over Bluetooth into Lab Streaming Layer.",
+      "language": "Python",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "ads1299",
+        "bluetooth",
+        "eeg",
+        "esp32-s3",
+        "lab-streaming-layer",
+        "macos"
+      ],
+      "tags": [
+        "eeg",
+        "ads1299",
+        "esp32",
+        "lsl",
+        "macos"
+      ],
+      "createdAt": "2026-10-09T16:28:46Z",
+      "updatedAt": "2026-11-08T22:56:22Z",
+      "pushedAt": "2026-11-08T05:01:13Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "agteo"
+      }
+    },
+    {
+      "id": "github:Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
+      "name": "EARSENSE-Minor-and-Major-Project",
+      "owner": "Tanishkaaa016",
+      "author": "Tanishkaaa016",
+      "url": "https://github.com/Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
+      "homepage": null,
+      "source": "github",
+      "description": "Wearable ear-mounted EEG system for P300 detection and analysis.",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "p300",
+        "ear-eeg",
+        "wearable",
+        "bci"
+      ],
+      "createdAt": "2026-11-05T13:32:02Z",
+      "updatedAt": "2026-11-08T22:56:27Z",
+      "pushedAt": "2026-11-05T15:09:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "Tanishkaaa016"
+      }
+    },
+    {
+      "id": "github:Warit-Yuv/SIIT-bobo-goggles",
+      "name": "SIIT-bobo-goggles",
+      "owner": "Warit-Yuv",
+      "author": "Warit-Yuv",
+      "url": "https://github.com/Warit-Yuv/SIIT-bobo-goggles",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG and Gaze tracking ROSMASTER-M1 Robot Teleoperation.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "muse",
+        "gaze",
+        "robotics"
+      ],
+      "createdAt": "2026-11-07T14:01:54Z",
+      "updatedAt": "2026-11-08T22:56:32Z",
+      "pushedAt": "2026-11-08T20:00:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "Warit-Yuv"
+      }
+    },
+    {
+      "id": "github:samarthp11/eeg-motor-imagery-classification",
+      "name": "eeg-motor-imagery-classification",
+      "owner": "samarthp11",
+      "author": "samarthp11",
+      "url": "https://github.com/samarthp11/eeg-motor-imagery-classification",
+      "homepage": null,
+      "source": "github",
+      "description": "Machine learning classification of left and right motor imagery",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "eegnet",
+        "transfer"
+      ],
+      "createdAt": "2026-11-04T19:44:45Z",
+      "updatedAt": "2026-11-08T22:56:37Z",
+      "pushedAt": "2026-11-04T19:54:16Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "samarthp11"
+      }
+    },
+    {
+      "id": "github:oppo-poop/ssvep-bci-arm",
+      "name": "ssvep-bci-arm",
+      "owner": "oppo-poop",
+      "author": "oppo-poop",
+      "url": "https://github.com/oppo-poop/ssvep-bci-arm",
+      "homepage": null,
+      "source": "github",
+      "description": "ssvep-bci control Rbotic arm",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 1,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "robotics",
+        "ros2"
+      ],
+      "createdAt": "2026-10-18T10:06:02Z",
+      "updatedAt": "2026-11-08T22:56:42Z",
+      "pushedAt": "2026-11-07T05:53:27Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "oppo-poop"
+      }
+    },
+    {
+      "id": "github:antonio-pedro-ribeiro/muse",
+      "name": "muse",
+      "owner": "antonio-pedro-ribeiro",
+      "author": "antonio-pedro-ribeiro",
+      "url": "https://github.com/antonio-pedro-ribeiro/muse",
+      "homepage": "https://github.com/antonio-pedro-ribeiro/muse/releases/latest",
+      "source": "github",
+      "description": "Record, watch and analyze EEG from a Muse S Athena headband on your own computer: direct Bluetooth, live web/terminal views, lossless recording, plain-language reports.",
+      "language": "Python",
+      "license": null,
+      "stars": 3,
+      "forks": 1,
+      "topics": [
+        "biosignals",
+        "bluetooth-le",
+        "eeg",
+        "muse",
+        "muse-s-athena",
+        "neurofeedback",
+        "python"
+      ],
+      "tags": [
+        "eeg",
+        "muse",
+        "neurofeedback",
+        "bluetooth",
+        "recording"
+      ],
+      "createdAt": "2026-11-06T08:41:50Z",
+      "updatedAt": "2026-11-08T22:56:47Z",
+      "pushedAt": "2026-11-06T22:16:07Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "antonio-pedro-ribeiro"
       }
     }
   ]
