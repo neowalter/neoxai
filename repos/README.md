@@ -2,7 +2,7 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
-Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **401** entries after batch36.
+Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **413** entries after batch37.
 
 | Repo | Author | Description | Last push | Stars |
 | --- | --- | --- | --- | --- |
@@ -407,3 +407,15 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [eeg-motor-imagery-classification](https://github.com/samarthp11/eeg-motor-imagery-classification) | @samarthp11 | Machine learning classification of left and right motor i... | 2026-11-04 | 0 |
 | [neuroassist-systema](https://github.com/tql-mee6/neuroassist-systema) | @tql-mee6 | Research prototype: Russian scanning keyboard, CSP + LDA,... | 2026-11-08 | 0 |
 | [ssvep-based-bci-for-hospital-bed](https://github.com/zychpatryk/ssvep-based-bci-for-hospital-bed) | @zychpatryk | Non-Invasive SSVEP-Based Brain-Computer Interface for Hos... | 2026-11-07 | 0 |
+| [b2t-drift](https://github.com/duytanph/b2t-drift) | @duytanph | How much a speech brain-computer interface decoder degrades after bei... | 2026-11-09 | 0 |
+| [flow-state-uqam](https://github.com/luchocomputor/flow-state-uqam) | @luchocomputor | EEG decoding of in-game attentional engagement: multivariate EMD, Wig... | 2026-11-09 | 0 |
+| [pieeg-home-lab](https://github.com/jurecerkez-code/pieeg-home-lab) | @jurecerkez-code | An 8 channel EEG lab on a Raspberry Pi with the PiEEG-8: setup guide,... | 2026-11-09 | 2 |
+| [Brain-Computer-Interface---Thesis](https://github.com/DrGiovannaDalRi/Brain-Computer-Interface---Thesis) | @DrGiovannaDalRi | Brain Computer Interface I personally developed for my Thesis. The EE... | 2026-11-09 | 0 |
+| [ERP-XTTN](https://github.com/cgenevier/ERP-XTTN) | @cgenevier | Code repository for ERP-XTTN, an interpretable cross-attention archit... | 2026-11-09 | 2 |
+| [Asynchronous-SSVEP-BCI-SDK](https://github.com/layabubing/Asynchronous-SSVEP-BCI-SDK) | @layabubing | Training-free CCA/FBCCA SSVEP recognizer plus an asynchronous idle/ca... | 2026-11-08 | 0 |
+| [TADA](https://github.com/Myeongjuuu/TADA) | @Myeongjuuu | Multi-Scale Temporal Fusion Network with Encoding-Guided Reciprocal R... | 2026-10-19 | 0 |
+| [stroke_rehab_bci](https://github.com/MACVXACE/stroke_rehab_bci) | @MACVXACE | Matrix-inversion-free DCD-RLS adaptive filtering and CSP spatial proj... | 2026-10-06 | 1 |
+| [synthetic-eeg-benchmark](https://github.com/bettybrb/synthetic-eeg-benchmark) | @bettybrb | Benchmarking Gaussian and VAE-based synthetic EEG for motor imagery c... | 2026-09-28 | 0 |
+| [Mestrado-Kinect-EEG-Trajectory](https://github.com/educapeta/Mestrado-Kinect-EEG-Trajectory) | @educapeta | Ground truth 3D da mão (Kinect v2 + MediaPipe + IMU) acoplado a EEG g... | 2026-10-19 | 0 |
+| [ssvep-human-augmentation](https://github.com/Shaqvier/ssvep-human-augmentation) | @Shaqvier | Implementation of SSVEP BCI Paradigm as a Manipulator Control System... | 2026-10-14 | 0 |
+| [ci-gate](https://github.com/Yiming-S/ci-gate) | @Yiming-S | Confidence-calibrated source screening for cross-session motor-imager... | 2026-10-21 | 0 |
