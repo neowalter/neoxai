@@ -1,0 +1,299 @@
+{
+  "date": "2026-11-10",
+  "generated_at": "2026-11-09T21:31:47.082Z",
+  "item_count": 6,
+  "types": {
+    "Project": 5,
+    "Benchmark": 1
+  },
+  "highlights": [
+    {
+      "title_zh": "BrainFlow 一次修四个底层问题：ADC 符号转换、上采样、BLE 缓冲越界与内存泄漏",
+      "title_en": "BrainFlow Fixes ADC Sign Conversion, Upsampling, BLE Buffer Bounds and Memory Leaks in One Commit",
+      "url": "https://github.com/brainflow-dev/brainflow/commit/ec42722eeb",
+      "brief": "BrainFlow 在一个提交里修掉四个底层问题：**ADC 符号转换**（极性可能反，频域看不出来、只在波形/模板匹配时发现「全是镜像」）、**上采样**、**BLE 缓冲越界**、以及**内存泄漏**。这四条都在采集与传输的最底层，症状高度一致：「偶尔崩一下」「跑一两个小时开始卡」「结果和上次对不上」，而排查时几乎不会想到是驱动层。对做长时间采集（睡眠、连续 BCI）的团队，内存泄漏与缓冲越界尤其关键——它们决定设备能不能稳定跑过一整晚。建议升级后做一次长时压测，并核对原始波形极性与此前数据是否一致。"
+    },
+    {
+      "title_zh": "braindecode 新增 NICE（图像解码编码器）与 CORTEG（ECoG 版 ST-EEGFormer）",
+      "title_en": "braindecode Adds NICE (Image-Decoding Encoder) and CORTEG (ST-EEGFormer for ECoG)",
+      "url": "https://github.com/braindecode/braindecode/pull/1556",
+      "brief": "braindecode 在 11-09 加了两个模型：**NICE**（#1556，EEG/MEG 的**图像解码**编码器，Song et al., ICLR 2024）与 **CORTEG**（#1551，把 **ST-EEGFormer 改造用于颅内 ECoG**）。对做跨模态迁移的团队，这两个是「同一套解码框架、换一种输入」的现成对照：NICE 面向视觉解码，CORTEG 则演示了把 EEG 架构迁到另一类信号时要改哪些接口。值得肯定的还有一条小提交：**加载 checkpoint 时显示训练数据集与已加载参数**——这比静默加载有用得多，能直接看出「这个权重是在什么数据上训的、有没有部分参数没加载上」。提醒：CORTEG 属侵入式信号，仅作模型移植参考，不改变本 lane 的非侵入式定位。"
+    },
+    {
+      "title_zh": "MOABB 为 CompoundDataset 激活内层 NEMAR 存储，并写明 get_data 的单位",
+      "title_en": "MOABB Activates the Inner NEMAR Store in CompoundDataset and Documents get_data Units",
+      "url": "https://github.com/NeuroTechX/moabb/pull/1354",
+      "brief": "MOABB 在 11-09 推进 8 次提交，两条值得注意：一是 **CompoundDataset 现在会激活内层数据集的 NEMAR 存储并预取**（此前复合数据集可能只取到外壳，内部沉积走默认路径，结果「能跑但数据来路不明」）；二是 **文档明确写出 `paradigm.get_data` 返回的单位**（#1354）——这看似小事，实则是 EEG 分析里最常见也最致命的歧义：µV 与 V 差 **1e6**，而我们这两天刚收录过好几起单位/标度 bug。同批还清了 Sphinx 警告与 sklearn 弃用告警。对依赖 MOABB 取数的团队，建议升级后核对一次单位与数据来源，并把单位假设写进自己的分析脚本。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-10.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "BrainFlow 一次修四个底层问题：ADC 符号转换、上采样、BLE 缓冲越界与内存泄漏",
+      "title_en": "BrainFlow Fixes ADC Sign Conversion, Upsampling, BLE Buffer Bounds and Memory Leaks in One Commit",
+      "bullets_zh": [
+        "**ADC 符号转换**错误意味着数据**极性**可能反了（正负颠倒），而极性反转在频域上看不出来，只在波形与模板匹配时表现为「全是镜像」。",
+        "同批修 **上采样**、**BLE 缓冲越界**（缓冲区边界处理，避免越界读写）与**内存泄漏**——后两者直接影响长时间采集的稳定性与安全性。",
+        "四个问题都在采集/传输的底层路径上：不修则表现为「偶发崩溃」「跑久了变卡」「结果莫名对不上」，很难定位到具体原因。"
+      ],
+      "bullets_en": [
+        "A wrong ADC sign conversion can invert data polarity, which is invisible in the frequency domain and appears only as mirrored waveforms during template matching.",
+        "The same commit fixes upsampling, BLE buffer bounds (avoiding out-of-range reads and writes) and memory leaks — the latter two directly affect long-recording stability and safety.",
+        "All four sit on the acquisition and transport path, where they surface as occasional crashes, progressive slowdown or inexplicable mismatches that are hard to trace."
+      ],
+      "url": "https://github.com/brainflow-dev/brainflow/commit/ec42722eeb",
+      "published": "2026-11-09T21:20:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "BrainFlow 在一个提交里修掉四个底层问题：**ADC 符号转换**（极性可能反，频域看不出来、只在波形/模板匹配时发现「全是镜像」）、**上采样**、**BLE 缓冲越界**、以及**内存泄漏**。这四条都在采集与传输的最底层，症状高度一致：「偶尔崩一下」「跑一两个小时开始卡」「结果和上次对不上」，而排查时几乎不会想到是驱动层。对做长时间采集（睡眠、连续 BCI）的团队，内存泄漏与缓冲越界尤其关键——它们决定设备能不能稳定跑过一整晚。建议升级后做一次长时压测，并核对原始波形极性与此前数据是否一致。",
+      "brief_en": "BrainFlow fixed four low-level issues in one commit: ADC sign conversion (possible polarity inversion, invisible in the frequency domain and noticeable only as mirrored waveforms), upsampling, BLE buffer bounds and memory leaks. All sit on the acquisition path, surfacing as occasional crashes, progressive slowdown or results that no longer match — symptoms rarely traced to the driver layer.",
+      "tags": [
+        "brainflow",
+        "adc",
+        "ble",
+        "memory-leak",
+        "acquisition"
+      ],
+      "raw_excerpt": "Commit ec42722eeb, 2026-11-09T21:20Z: \"Fix ADC sign conversion, upsampling, BLE buffer bounds, and memory leaks\". Repo: brainflow-dev/brainflow.",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "brainflow-dev/brainflow@ec42722eeb",
+      "author_handle": "brainflow-dev",
+      "metrics": {
+        "play": null,
+        "like": 1787,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "ADC 符号错会让极性反且频域看不出来，泄漏与越界决定长时间采集能否稳定。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode 新增 NICE（图像解码编码器）与 CORTEG（ECoG 版 ST-EEGFormer）",
+      "title_en": "braindecode Adds NICE (Image-Decoding Encoder) and CORTEG (ST-EEGFormer for ECoG)",
+      "bullets_zh": [
+        "#1556 移植 **NICE**：EEG/MEG **图像解码**编码器（Song et al., ICLR 2024），把「看图像时的脑响应」当作可对齐的目标。",
+        "#1551 加入 **CORTEG**：把 ST-EEGFormer 改造用于**颅内 ECoG**（作为模型移植示例，不是把侵入式当应用主体）；另有一条提交在加载 checkpoint 时**显示训练数据集与已加载参数**。",
+        "对做跨模态/跨设备迁移的团队，这两个模型提供了「同一套解码框架换个输入」的对照基线。"
+      ],
+      "bullets_en": [
+        "#1556 ports NICE, an EEG/MEG encoder for image decoding (Song et al., ICLR 2024) that aligns brain responses to viewed images.",
+        "#1551 adds CORTEG, adapting ST-EEGFormer to intracranial ECoG as a portability example rather than an invasive application; a further commit shows which checkpoint, training datasets and parameters were loaded.",
+        "For cross-modal or cross-device transfer, these give two baselines that keep the decoding framework while changing the input."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1556",
+      "published": "2026-11-09T15:57:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 在 11-09 加了两个模型：**NICE**（#1556，EEG/MEG 的**图像解码**编码器，Song et al., ICLR 2024）与 **CORTEG**（#1551，把 **ST-EEGFormer 改造用于颅内 ECoG**）。对做跨模态迁移的团队，这两个是「同一套解码框架、换一种输入」的现成对照：NICE 面向视觉解码，CORTEG 则演示了把 EEG 架构迁到另一类信号时要改哪些接口。值得肯定的还有一条小提交：**加载 checkpoint 时显示训练数据集与已加载参数**——这比静默加载有用得多，能直接看出「这个权重是在什么数据上训的、有没有部分参数没加载上」。提醒：CORTEG 属侵入式信号，仅作模型移植参考，不改变本 lane 的非侵入式定位。",
+      "brief_en": "braindecode added two models on Nov 9: NICE (#1556, an EEG/MEG image-decoding encoder, Song et al. ICLR 2024) and CORTEG (#1551, ST-EEGFormer adapted to intracranial ECoG). They offer readymade cross-modal baselines sharing one framework. A further commit reports which checkpoint, training datasets and parameters were loaded, revealing silently missed weights.",
+      "tags": [
+        "braindecode",
+        "nice",
+        "corteg",
+        "cross-modal",
+        "checkpoint"
+      ],
+      "raw_excerpt": "Commits 2026-11-09: \"Add NICE (EEG/MEG image-decoding encoder, Song et al. ICLR 2024) (#1556)\" 15:57Z; \"Add CORTEG, an ST-EEGFormer adapted to intracranial ECoG (#1551)\" 12:57Z; \"ENH show the checkpoint, its training datasets and the loaded parameters\" 11:02Z.",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1556",
+      "author_handle": "braindecode",
+      "metrics": {
+        "play": null,
+        "like": 1341,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "两个跨模态对照基线＋加载时显示训练数据集与已载参数，避免静默漏权重。"
+    },
+    {
+      "type": "Benchmark",
+      "level": "Intermediate",
+      "title_zh": "MOABB 为 CompoundDataset 激活内层 NEMAR 存储，并写明 get_data 的单位",
+      "title_en": "MOABB Activates the Inner NEMAR Store in CompoundDataset and Documents get_data Units",
+      "bullets_zh": [
+        "#13xx：**CompoundDataset** 现在会**激活内层数据集的 NEMAR 存储**并预取数据——复合数据集此前可能只取到外壳、内部沉积走默认路径。",
+        "#1354：文档明确写出 **`paradigm.get_data` 返回的单位**——单位不清楚是 EEG 分析中最常见、也最致命的歧义（µV vs V 差 1e6）。",
+        "同批还修了 Sphinx 警告与 sklearn 惩罚项弃用告警，避免文档构建掩盖真实问题。"
+      ],
+      "bullets_en": [
+        "#13xx makes CompoundDataset activate and prefetch the inner datasets' NEMAR store; previously a compound dataset could fetch the shell while inner deposits fell back to defaults.",
+        "#1354 documents the units returned by paradigm.get_data — unclear units are the most common and most damaging ambiguity in EEG analysis (uV versus V is a factor of 1e6).",
+        "The batch also fixes Sphinx warnings and a sklearn penalty deprecation so documentation builds stop masking real issues."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/pull/1354",
+      "published": "2026-11-09T11:44:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 在 11-09 推进 8 次提交，两条值得注意：一是 **CompoundDataset 现在会激活内层数据集的 NEMAR 存储并预取**（此前复合数据集可能只取到外壳，内部沉积走默认路径，结果「能跑但数据来路不明」）；二是 **文档明确写出 `paradigm.get_data` 返回的单位**（#1354）——这看似小事，实则是 EEG 分析里最常见也最致命的歧义：µV 与 V 差 **1e6**，而我们这两天刚收录过好几起单位/标度 bug。同批还清了 Sphinx 警告与 sklearn 弃用告警。对依赖 MOABB 取数的团队，建议升级后核对一次单位与数据来源，并把单位假设写进自己的分析脚本。",
+      "brief_en": "MOABB made eight commits on Nov 9, two notable: CompoundDataset now activates and prefetches the inner datasets' NEMAR store (previously the shell was fetched while inner deposits fell back to defaults), and the docs state the units returned by paradigm.get_data — unclear units being EEG's most damaging ambiguity, since uV versus V is 1e6. Sphinx and sklearn deprecation warnings were also cleared.",
+      "tags": [
+        "moabb",
+        "compound-dataset",
+        "nemar",
+        "units",
+        "documentation"
+      ],
+      "raw_excerpt": "Commits 2026-11-09: \"activate inner dataset NEMAR store in CompoundDataset (#13…)\" 10:26Z; \"fix(docs,datasets): prefetch CompoundDataset NEMAR data and harden docs\" 11:29Z; \"docs: state the units returned by paradigm.get_data (#1354)\" 10:26Z; \"docs: fix all Sphinx warnings, tab-set errors, and sklearn penalty depre[cation]\" 11:29Z.",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb#1354",
+      "author_handle": "NeuroTechX",
+      "metrics": {
+        "play": null,
+        "like": 1085,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "复合数据集要真正激活内层存储；单位写明能避免 µV/V 这类 1e6 级歧义。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGMeanFlow：一步从噪声生成类条件脑电",
+      "title_en": "EEGMeanFlow: One Step From Noise to Class-Conditional EEG",
+      "bullets_zh": [
+        "把 **MeanFlow**（arXiv 2505.13447）适配到**类条件 EEG 生成**：训练后可**一步**从噪声生成指定类别的脑电，而非多步扩散采样。",
+        "仓库提供完整流程（数据准备→训练→生成），含框架图与依赖说明；对做数据增广、隐私替代数据或生成式建模的团队有直接用途。",
+        "需注意：生成数据的频谱/时域统计是否与真实数据一致，必须自行检验——否则增广会引入系统性偏差。"
+      ],
+      "bullets_en": [
+        "It adapts MeanFlow (arXiv 2505.13447) to class-conditional EEG generation: after training, a specified class is generated from noise in one step rather than multi-step diffusion sampling.",
+        "The repo covers the whole flow (prepare data, train, generate) with a framework diagram and dependencies, useful for augmentation, privacy-preserving surrogates or generative modelling.",
+        "Caveat: verify the spectral and temporal statistics of generated signals against real data, or augmentation introduces systematic bias."
+      ],
+      "url": "https://github.com/yunyunfanfan/EEGMeanFlow",
+      "published": "2026-11-09T03:52:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 EEGMeanFlow（2026-11-09）把 **MeanFlow**（arXiv 2505.13447）适配到**类条件 EEG 生成**，卖点很直接：**一步从噪声生成指定类别的脑电**，而不是扩散模型的多步采样。仓库给了完整流程（数据准备→训练→生成）与框架图，对三类用途最实际：**数据增广**（小样本类别的补充）、**隐私替代数据**（共享生成样本而非原始记录）、以及生成式建模本身。要提醒的是：这类方法的价值完全取决于**生成数据与真实数据的统计一致性**——如果频谱或时域结构有偏，增广就等于注入系统偏差，下游准确率反而「虚高」。建议先做频谱/时域/跨被试一致性检验，再考虑把它接进训练流程。",
+      "brief_en": "Created 2026-11-09, EEGMeanFlow adapts MeanFlow (arXiv 2505.13447) to class-conditional EEG generation, generating a specified class from noise in one step rather than multi-step diffusion sampling. The repo covers data prep, training and generation, suiting augmentation, privacy-preserving surrogates and generative modelling. Verify spectral and temporal agreement with real data first.",
+      "tags": [
+        "generative",
+        "meanflow",
+        "one-step",
+        "augmentation",
+        "eeg"
+      ],
+      "raw_excerpt": "README: \"**One step from noise to class-conditional EEG.** An implementation of EEGMeanFlow for class-conditional EEG generation: prepare the data, train the model, and generate signals in one step.\" \"EEGMeanFlow adapts MeanFlow (https://arxiv.org/abs/2505.13447) to class-[conditional EEG generation]\"",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "yunyunfanfan/EEGMeanFlow",
+      "author_handle": "yunyunfanfan",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "一步生成可用于增广/隐私替代，但必须检验生成数据与真实统计是否一致。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "autoreject 把共识损失改为每组试次只算一次，并加速 RANSAC",
+      "title_en": "autoreject Computes the Consensus Loss Once per Epoch Set and Speeds Up RANSAC",
+      "bullets_zh": [
+        "#370：**共识损失改为每组保留试次只计算一次**——此前在循环里重复计算，属于典型的「结果不变但白算」开销。",
+        "#371：**RANSAC 加速**；配合前几日的插值 API 与新/旧路径优化，autoreject 近期一直在压自动剔除的耗时。",
+        "对批量预处理（几十上百份记录）这类优化直接缩短整条流水线时间，且不改变剔除判定。"
+      ],
+      "bullets_en": [
+        "#370 computes the consensus loss once per set of kept epochs instead of recomputing it inside loops — a purely wasted-cost fix with unchanged results.",
+        "#371 speeds up RANSAC; together with recent interpolation API and legacy-path work, autoreject has been steadily cutting automatic rejection time.",
+        "For batch preprocessing across dozens or hundreds of recordings this shortens the whole pipeline without changing rejection decisions."
+      ],
+      "url": "https://github.com/autoreject/autoreject/pull/370",
+      "published": "2026-11-09T14:56:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "autoreject 合并 #370 与 #371：**共识损失改为每组保留试次只计算一次**（此前在循环里重复算，纯属白烧 CPU，结果完全不变），并**加速 RANSAC**。这两条单独看收益不大，但和上周的「改用新插值 API」「优化旧版 Bayesian 与老 MNE 路径」连起来看，autoreject 正在系统性地压缩**自动坏段剔除**的耗时——而这一步在批量预处理里往往占大头。对一天要跑几十上百份记录的团队，这类优化直接缩短整条流水线；建议升级后重跑一小批数据，确认剔除结果与旧版一致再全量切换。",
+      "brief_en": "autoreject merged #370 and #371: the consensus loss is computed once per set of kept epochs instead of inside loops (wasted CPU with identical results), and RANSAC is faster. Together with last week's interpolation-API and legacy-path work it has been cutting automatic rejection time, which dominates batch preprocessing. Re-run a small batch to confirm identical rejection first.",
+      "tags": [
+        "autoreject",
+        "consensus",
+        "ransac",
+        "performance",
+        "batch"
+      ],
+      "raw_excerpt": "Commits 2026-11-09: \"Compute the consensus loss once per set of kept epochs (#370)\" 14:56Z; \"Speed up RANSAC (#371)\" 15:45Z.",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "autoreject/autoreject#370",
+      "author_handle": "autoreject",
+      "metrics": {
+        "play": null,
+        "like": 163,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "循环内重复计算共识损失纯属浪费，批量预处理时间可明显缩短。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "awesome-bci 收录 VibeMyExpt：浏览器搭 jsPsych 实验，用 LSL/TTL 把标记送进 EEG",
+      "title_en": "awesome-bci Adds VibeMyExpt: Build jsPsych Experiments in the Browser and Send LSL/TTL Markers",
+      "bullets_zh": [
+        "VibeMyExpt 是**浏览器端**实验搭建平台，生成 **jsPsych** 实验，并通过 **Lab Streaming Layer**（`vibemyexpt-lsl` PyPI 桥）或 **USB TTL 触发盒**把事件标记送进 **EEG/fNIRS/眼动**记录。",
+        "它解决的是实验工程里最琐碎也最容易出错的一环：**刺激程序与记录设备的时间对齐**——手工打标记、时间戳漂移、丢事件都出在这里。",
+        "已进入 awesome-bci 的「实验设计与分析」小节；对做在线实验或课堂演示的团队，值得评估与既有 LSL 流程的兼容性。"
+      ],
+      "bullets_en": [
+        "VibeMyExpt is a browser-based builder that produces jsPsych experiments and sends event markers into EEG, fNIRS and eye-tracking recordings via Lab Streaming Layer (the vibemyexpt-lsl PyPI bridge) or USB TTL trigger boxes.",
+        "It addresses the fiddliest and most error-prone part of experiment engineering — aligning stimulus software with recording hardware, where manual markers, timestamp drift and dropped events originate.",
+        "It now sits in awesome-bci's experiment design and analysis section; teams running online experiments should assess compatibility with their existing LSL pipeline."
+      ],
+      "url": "https://github.com/NeuroTechX/awesome-bci/pull/104",
+      "published": "2026-11-09T16:17:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "awesome-bci 合并 #104，收录 **VibeMyExpt**：一个**浏览器端**实验搭建平台，产出 **jsPsych** 实验，并通过 **Lab Streaming Layer**（`vibemyexpt-lsl` PyPI 桥）或 **USB TTL 触发盒**把事件标记送进 **EEG、fNIRS、眼动**记录。它解决的是实验工程里最琐碎、也最容易毁数据的一环——**刺激程序与记录设备的时间对齐**：手工打标记、时间戳漂移、事件丢失，几乎都出在这里，而后果要到分析阶段才发现。对做在线实验、课堂演示或远程采集的团队，这类「浏览器实验 + 标准标记通道」的组合值得评估；接入前建议先做一次**用光敏电阻/示波器核验延迟**的测试。",
+      "brief_en": "awesome-bci merged #104 adding VibeMyExpt: a browser-based builder producing jsPsych experiments that sends event markers into EEG, fNIRS and eye-tracking via Lab Streaming Layer (the vibemyexpt-lsl PyPI bridge) or USB TTL trigger boxes. It tackles the fiddliest failure mode — aligning stimulus software with recording hardware — and deserves a latency check with a photodiode.",
+      "tags": [
+        "jspsych",
+        "lsl",
+        "ttl",
+        "markers",
+        "experiment-design"
+      ],
+      "raw_excerpt": "PR #104: \"Adds VibeMyExpt to the BCI Experiment Design and Analysis section, at the end after PsychToolBox. It's a browser-based platform for building jsPsych experiments that sends event markers to EEG, fNIRS and eye-tracking recordings through Lab Streaming Layer (via the `vibemyexpt-lsl` bridge on PyPI) or USB TTL trigger boxes.\"",
+      "fetched_at": "2026-11-09T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/awesome-bci#104",
+      "author_handle": "Aakashagr",
+      "metrics": {
+        "play": null,
+        "like": 1562,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "刺激程序与记录设备的对齐是最易毁数据的一环，浏览器+LSL/TTL 正好补这块。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 98,
+    "llm_rows": 18,
+    "kept": 6,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 3
+  }
+}
