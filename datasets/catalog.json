@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T11:30:18.558Z",
+  "generatedAt": "2026-11-09T13:21:00.155Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 19
+      "count": 16
     },
     {
       "id": "github",
       "ok": true,
-      "count": 3
+      "count": 2
     }
   ],
   "items": [
@@ -469,7 +469,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11704,
+      "downloads": 11754,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -494,8 +494,8 @@
         "biosignals"
       ],
       "license": "other",
-      "downloads": 7290,
-      "likes": 8,
+      "downloads": 8535,
+      "likes": 10,
       "updatedAt": "2026-11-03T16:29:43.000Z",
       "modality": [
         "EEG",
@@ -520,7 +520,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 5494,
+      "downloads": 6228,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -545,7 +545,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2005,
+      "downloads": 2021,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -563,7 +563,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1584,
+      "downloads": 1556,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -611,7 +611,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 606,
+      "downloads": 607,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -652,9 +652,34 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 271,
+      "downloads": 281,
       "likes": 5,
       "updatedAt": "2026-10-12T17:38:42.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:aspire-osu/maestro-eeg-dataset",
+      "name": "maestro-eeg-dataset",
+      "owner": "aspire-osu",
+      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
+      "source": "huggingface",
+      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
+      "tags": [
+        "audio-classification",
+        "time-series-forecasting",
+        "cc-by-nc-sa-4.0",
+        "audiofolder",
+        "audio",
+        "video",
+        "arxiv:2609.31898",
+        "eeg"
+      ],
+      "license": "cc-by-nc-sa-4.0",
+      "downloads": 185,
+      "likes": 2,
+      "updatedAt": "2026-11-08T16:42:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -673,9 +698,25 @@
         "zarr"
       ],
       "license": "other",
-      "downloads": 134,
+      "downloads": 153,
       "likes": 2,
       "updatedAt": "2026-11-05T20:00:15.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:samuki-hf/eeg-gaze-viewer-public",
+      "name": "eeg-gaze-viewer-public",
+      "owner": "samuki-hf",
+      "url": "https://huggingface.co/datasets/samuki-hf/eeg-gaze-viewer-public",
+      "source": "huggingface",
+      "description": "EEG and gaze recordings Lossless viewer exports of ZuCo and Frank EEG, gaze where available, and Michaelov's electrode-level N400 table. Original values and missing records are retained without new preprocessing. These exports cover selected source fields. ZuCo 1, Hollenstein et…",
+      "tags": [],
+      "license": null,
+      "downloads": 130,
+      "likes": 0,
+      "updatedAt": "2026-11-05T00:49:32.000Z",
       "modality": [
         "EEG"
       ]
@@ -695,25 +736,9 @@
         "neurobolt"
       ],
       "license": "cc0-1.0",
-      "downloads": 535,
+      "downloads": 524,
       "likes": 0,
       "updatedAt": "2026-08-22T20:32:43.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:samuki-hf/eeg-gaze-viewer-public",
-      "name": "eeg-gaze-viewer-public",
-      "owner": "samuki-hf",
-      "url": "https://huggingface.co/datasets/samuki-hf/eeg-gaze-viewer-public",
-      "source": "huggingface",
-      "description": "EEG and gaze recordings Lossless viewer exports of ZuCo and Frank EEG, gaze where available, and Michaelov's electrode-level N400 table. Original values and missing records are retained without new preprocessing. These exports cover selected source fields. ZuCo 1, Hollenstein et…",
-      "tags": [],
-      "license": null,
-      "downloads": 129,
-      "likes": 0,
-      "updatedAt": "2026-11-05T00:49:32.000Z",
       "modality": [
         "EEG"
       ]
@@ -733,9 +758,28 @@
         "archive"
       ],
       "license": "cc-by-sa-4.0",
-      "downloads": 161,
+      "downloads": 167,
       "likes": 0,
       "updatedAt": "2026-10-17T19:47:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:21982978",
+      "name": "A task EEG dataset with preprocessed signals and features for ADHD research in children and adolescents",
+      "owner": "Sanchis, Javier",
+      "url": "https://doi.org/10.5281/zenodo.21982978",
+      "source": "zenodo",
+      "description": "This dataset provides preprocessed electroencephalography (EEG) signals and extracted EEG features for research on attention-deficit/hyperactivity disorder (ADHD) in children and adolescents. Derived from version 2 of the BALLADEER dataset, it contains 669 eligible task recordin…",
+      "tags": [
+        "EEG",
+        "EEG features"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 623,
+      "likes": null,
+      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -761,50 +805,6 @@
       ]
     },
     {
-      "id": "zenodo:21982978",
-      "name": "A task EEG dataset with preprocessed signals and features for ADHD research in children and adolescents",
-      "owner": "Sanchis, Javier",
-      "url": "https://doi.org/10.5281/zenodo.21982978",
-      "source": "zenodo",
-      "description": "This dataset provides preprocessed electroencephalography (EEG) signals and extracted EEG features for research on attention-deficit/hyperactivity disorder (ADHD) in children and adolescents. Derived from version 2 of the BALLADEER dataset, it contains 669 eligible task recordin…",
-      "tags": [
-        "EEG",
-        "EEG features"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 398,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23764449",
-      "name": "EEG Brain Connectivity Knowledge Graphs (RDF/Turtle): CHB-MIT and EEGMMIDB",
-      "owner": "Nogales, Alberto",
-      "url": "https://doi.org/10.5281/zenodo.23764449",
-      "source": "zenodo",
-      "description": "RDF/TriG knowledge graphs of EEG functional connectivity produced by the EEGraphKGExporter pipeline. Includes four named-graph KGs: CHB-MIT subject chb01 non-seizure control (chb01_nonsz.trig, 9,590 triples) and seizure recording (chb01_seizure.trig, 11,570 triples) using weight…",
-      "tags": [
-        "EEG",
-        "Knowledge Graph",
-        "RDF",
-        "FAIR",
-        "Brain Connectivity",
-        "PROV-O",
-        "RDF-star",
-        "NIFSTD"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 96,
-      "likes": null,
-      "updatedAt": "2026-10-29T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "zenodo:23916911",
       "name": "Intra-session variability of EEG signal features in externally-guided and classical resting-state paradigms",
       "owner": "Gijón Ortego, Jorge",
@@ -813,7 +813,7 @@
       "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 61,
+      "downloads": 62,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
@@ -838,7 +838,7 @@
         "reproducibility"
       ],
       "license": "cc-by-4.0",
-      "downloads": 17,
+      "downloads": 21,
       "likes": null,
       "updatedAt": "2026-11-08T00:00:00.000Z",
       "modality": [
@@ -879,7 +879,7 @@
       "description": "This dataset contains preprocessed EEG data from 33 participants in a visual working-memory experiment examining attended and unattended representations under different memory loads. The data are provided in EEGLAB format. Each participant&rsquo;s dataset consists of a paired .s…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 60,
+      "downloads": 61,
       "likes": null,
       "updatedAt": "2026-10-29T00:00:00.000Z",
       "modality": [
@@ -901,6 +901,24 @@
       "modality": [
         "EEG",
         "fNIRS"
+      ]
+    },
+    {
+      "id": "zenodo:23858574",
+      "name": "Post-intervention high-beta synchronization tracks stable-manifold alignment  during stick-balancing learning",
+      "owner": "Nomura, Taishin",
+      "url": "https://doi.org/10.5281/zenodo.23858574",
+      "source": "zenodo",
+      "description": "================================================================================ DATASET README: Virtual Stick-Balancing Task and EEG Recordings ================================================================================ &nbsp; 1. OVERVIEW ----------------------------------…",
+      "tags": [
+        "stick balancing"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 31,
+      "likes": null,
+      "updatedAt": "2026-11-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -945,31 +963,6 @@
       ]
     },
     {
-      "id": "github:Baizhige/EEGUnity",
-      "name": "EEGUnity",
-      "owner": "Baizhige",
-      "url": "https://github.com/Baizhige/EEGUnity",
-      "source": "github",
-      "description": "An open source tool for large-scale EEG datasets processing",
-      "tags": [
-        "dataset-manager",
-        "eeg",
-        "eeg-dataset",
-        "eeg-signals-processing",
-        "large-dataset",
-        "large-language-model",
-        "large-multimodal-models",
-        "python-library"
-      ],
-      "license": "NOASSERTION",
-      "downloads": null,
-      "likes": 87,
-      "updatedAt": "2026-11-07T07:07:46.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:neowalter/neoxai",
       "name": "neoxai",
       "owner": "neowalter",
@@ -986,26 +979,32 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 19,
-      "updatedAt": "2026-11-07T21:33:09.000Z",
+      "updatedAt": "2026-11-09T06:24:13.000Z",
       "modality": [
         "EEG"
       ]
     },
     {
-      "id": "github:ErmannoF00/Embedded_SNN",
-      "name": "Embedded_SNN",
-      "owner": "ErmannoF00",
-      "url": "https://github.com/ErmannoF00/Embedded_SNN",
+      "id": "github:AminMiri2000/oddball-eeg-classifiability",
+      "name": "oddball-eeg-classifiability",
+      "owner": "AminMiri2000",
+      "url": "https://github.com/AminMiri2000/oddball-eeg-classifiability",
       "source": "github",
-      "description": "SNN pipeline for EEG-based data classification from OpenBCI dataset.",
+      "description": "Reproducibility code for cross-dataset analysis of subject classifiability in oddball EEG using LDA, Logistic Regression, and EEGNet.",
       "tags": [
+        "brain-computer-interface",
         "eeg",
-        "snn"
+        "eegnet",
+        "erp",
+        "event-related-potentials",
+        "machine-learning",
+        "neuroscience",
+        "oddball"
       ],
-      "license": null,
+      "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-11-06T18:14:35.000Z",
+      "updatedAt": "2026-11-09T03:46:41.000Z",
       "modality": [
         "EEG"
       ]
