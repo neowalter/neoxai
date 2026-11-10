@@ -1,109 +1,109 @@
 {
-  "date": "2026-11-10",
-  "generated_at": "2026-11-09T21:31:47.082Z",
-  "item_count": 6,
+  "date": "2026-11-11",
+  "generated_at": "2026-11-10T21:31:52.549Z",
+  "item_count": 7,
   "types": {
-    "Project": 5,
-    "Benchmark": 1
+    "Tutorial": 1,
+    "Project": 6
   },
   "highlights": [
     {
-      "title_zh": "BrainFlow 一次修四个底层问题：ADC 符号转换、上采样、BLE 缓冲越界与内存泄漏",
-      "title_en": "BrainFlow Fixes ADC Sign Conversion, Upsampling, BLE Buffer Bounds and Memory Leaks in One Commit",
-      "url": "https://github.com/brainflow-dev/brainflow/commit/ec42722eeb",
-      "brief": "BrainFlow 在一个提交里修掉四个底层问题：**ADC 符号转换**（极性可能反，频域看不出来、只在波形/模板匹配时发现「全是镜像」）、**上采样**、**BLE 缓冲越界**、以及**内存泄漏**。这四条都在采集与传输的最底层，症状高度一致：「偶尔崩一下」「跑一两个小时开始卡」「结果和上次对不上」，而排查时几乎不会想到是驱动层。对做长时间采集（睡眠、连续 BCI）的团队，内存泄漏与缓冲越界尤其关键——它们决定设备能不能稳定跑过一整晚。建议升级后做一次长时压测，并核对原始波形极性与此前数据是否一致。"
+      "title_zh": "滤波实操：50 还是 60 Hz、陷波够不够、为什么必须先滤波再切片",
+      "title_en": "Hands-On Filtering: 50 or 60 Hz, Is a Notch Enough, and Why Filter Before Epoching",
+      "url": "https://www.bilibili.com/video/BV1FoWT6DEzt/",
+      "brief": "B站「有Li」的滤波实操教程，用 **EEGMMIDB** 公开数据把三个常被含糊带过的问题讲清楚了：①**工频是 50 还是 60 Hz**——数据在美国采集、应为 60 Hz，但**文件里没记录**，而 AI 写脚本时习惯性填 50 Hz，这一步必须人工确认；②**陷波够不够**——把原始、只陷波、只带通、陷波+带通四条功率谱叠在一起，实测**只做 1–40 Hz 带通，60 Hz 尖峰就已消失**；③**为什么先滤波再切片**——滤波器是有长度的：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**，对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠，而基线区间正好落在里面。对刚上手的人，这三条比任何滤波参数表都实用。"
     },
     {
-      "title_zh": "braindecode 新增 NICE（图像解码编码器）与 CORTEG（ECoG 版 ST-EEGFormer）",
-      "title_en": "braindecode Adds NICE (Image-Decoding Encoder) and CORTEG (ST-EEGFormer for ECoG)",
-      "url": "https://github.com/braindecode/braindecode/pull/1556",
-      "brief": "braindecode 在 11-09 加了两个模型：**NICE**（#1556，EEG/MEG 的**图像解码**编码器，Song et al., ICLR 2024）与 **CORTEG**（#1551，把 **ST-EEGFormer 改造用于颅内 ECoG**）。对做跨模态迁移的团队，这两个是「同一套解码框架、换一种输入」的现成对照：NICE 面向视觉解码，CORTEG 则演示了把 EEG 架构迁到另一类信号时要改哪些接口。值得肯定的还有一条小提交：**加载 checkpoint 时显示训练数据集与已加载参数**——这比静默加载有用得多，能直接看出「这个权重是在什么数据上训的、有没有部分参数没加载上」。提醒：CORTEG 属侵入式信号，仅作模型移植参考，不改变本 lane 的非侵入式定位。"
+      "title_zh": "braindecode 一口气加三个 MEG 基础模型：MEG-GPT、MEG-XL 与 BBL",
+      "title_en": "braindecode Adds Three MEG Foundation Models: MEG-GPT, MEG-XL and BBL",
+      "url": "https://github.com/braindecode/braindecode/pull/1555",
+      "brief": "braindecode 在 11-10 一口气加了三个 MEG 基础模型：**MEG-GPT**（#1555，源空间 MEG 基础模型）、**MEG-XL**（#1554，**长上下文** MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器），并把三者的 **SEANet 块抽出来共享**。这三个名字其实代表三条不同的技术赌注：**源空间建模**、**长上下文文本解码**、以及「**Bitter Lesson**」式的极简＋规模优先。对做 MEG/EEG 基础模型的团队，这是一份现成的三路对照基线；尤其 BBL 的立场（少做手工归纳偏置、把算力堆上去）值得单独读一读，因为它和本 lane 近期收录的「小波多尺度」「token 高效」路线正好相对。"
     },
     {
-      "title_zh": "MOABB 为 CompoundDataset 激活内层 NEMAR 存储，并写明 get_data 的单位",
-      "title_en": "MOABB Activates the Inner NEMAR Store in CompoundDataset and Documents get_data Units",
-      "url": "https://github.com/NeuroTechX/moabb/pull/1354",
-      "brief": "MOABB 在 11-09 推进 8 次提交，两条值得注意：一是 **CompoundDataset 现在会激活内层数据集的 NEMAR 存储并预取**（此前复合数据集可能只取到外壳，内部沉积走默认路径，结果「能跑但数据来路不明」）；二是 **文档明确写出 `paradigm.get_data` 返回的单位**（#1354）——这看似小事，实则是 EEG 分析里最常见也最致命的歧义：µV 与 V 差 **1e6**，而我们这两天刚收录过好几起单位/标度 bug。同批还清了 Sphinx 警告与 sklearn 弃用告警。对依赖 MOABB 取数的团队，建议升级后核对一次单位与数据来源，并把单位假设写进自己的分析脚本。"
+      "title_zh": "SPDlearn 一批更新：高维小批量 Riemannian BatchNorm 保护与五度量统一回拉",
+      "title_en": "SPDlearn Update Batch: High-d/Small-Batch Riemannian BatchNorm Safeguard and a 5-Metric Pullback",
+      "url": "https://github.com/spdlearn/spd_learn/commit/652d961567",
+      "brief": "SPDlearn（SPD 几何深度学习库）在 11-10 推了 6 项改动，两条最实用：①**高维/小批量下的 Riemannian BatchNorm 保护**——SPD 流形上的批归一化在「通道多、试次少」时极易数值不稳定（与 EEG 场景高度重合），加 safeguard 后才敢用在真实数据上；②**五度量统一回拉（LEM/LCM/AIM/PEM/BW）**——把多种黎曼度量收敛到一套 pullback 接口，换度量不必重写代码。另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差。对做黎曼分类/回归的团队，这两条直接降低「换度量、换批量大小就要重调」的成本。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-10.md",
+  "github_path": "docs/bci-cn-daily/2026-11-11.md",
   "items": [
     {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "BrainFlow 一次修四个底层问题：ADC 符号转换、上采样、BLE 缓冲越界与内存泄漏",
-      "title_en": "BrainFlow Fixes ADC Sign Conversion, Upsampling, BLE Buffer Bounds and Memory Leaks in One Commit",
+      "type": "Tutorial",
+      "level": "Intermediate",
+      "title_zh": "滤波实操：50 还是 60 Hz、陷波够不够、为什么必须先滤波再切片",
+      "title_en": "Hands-On Filtering: 50 or 60 Hz, Is a Notch Enough, and Why Filter Before Epoching",
       "bullets_zh": [
-        "**ADC 符号转换**错误意味着数据**极性**可能反了（正负颠倒），而极性反转在频域上看不出来，只在波形与模板匹配时表现为「全是镜像」。",
-        "同批修 **上采样**、**BLE 缓冲越界**（缓冲区边界处理，避免越界读写）与**内存泄漏**——后两者直接影响长时间采集的稳定性与安全性。",
-        "四个问题都在采集/传输的底层路径上：不修则表现为「偶发崩溃」「跑久了变卡」「结果莫名对不上」，很难定位到具体原因。"
+        "用 **EEGMMIDB** 公开数据实测：**工频是 60 Hz**（美国采集）但**文件里没有记录**，AI 习惯性写 50 Hz——这一步必须人来把关。",
+        "四种组合叠功率谱：原始 / 只陷波 / 只带通 / 陷波+带通；**只做 1–40 Hz 带通，60 Hz 尖峰就已经消失**。",
+        "**滤波器有长度**：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**；对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠、基线整段落在里面 → **先滤波、后切片**。"
       ],
       "bullets_en": [
-        "A wrong ADC sign conversion can invert data polarity, which is invisible in the frequency domain and appears only as mirrored waveforms during template matching.",
-        "The same commit fixes upsampling, BLE buffer bounds (avoiding out-of-range reads and writes) and memory leaks — the latter two directly affect long-recording stability and safety.",
-        "All four sit on the acquisition and transport path, where they surface as occasional crashes, progressive slowdown or inexplicable mismatches that are hard to trace."
+        "Measured on public EEGMMIDB data: line frequency is 60 Hz (recorded in the US) yet not recorded in the files, while AI habitually writes 50 Hz — a human must catch this.",
+        "Four power spectra overlaid: raw, notch only, bandpass only, notch plus bandpass; a 1-40 Hz bandpass alone already removes the 60 Hz peak.",
+        "Filters have length: a 1-40 Hz bandpass is about 3.3 s and a 60 Hz notch about 6.6 s, so filtering a 5 s trial leaves 1.65 s unreliable at each end and swallows the baseline — filter first, then epoch."
       ],
-      "url": "https://github.com/brainflow-dev/brainflow/commit/ec42722eeb",
-      "published": "2026-11-09T21:20:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "BrainFlow 在一个提交里修掉四个底层问题：**ADC 符号转换**（极性可能反，频域看不出来、只在波形/模板匹配时发现「全是镜像」）、**上采样**、**BLE 缓冲越界**、以及**内存泄漏**。这四条都在采集与传输的最底层，症状高度一致：「偶尔崩一下」「跑一两个小时开始卡」「结果和上次对不上」，而排查时几乎不会想到是驱动层。对做长时间采集（睡眠、连续 BCI）的团队，内存泄漏与缓冲越界尤其关键——它们决定设备能不能稳定跑过一整晚。建议升级后做一次长时压测，并核对原始波形极性与此前数据是否一致。",
-      "brief_en": "BrainFlow fixed four low-level issues in one commit: ADC sign conversion (possible polarity inversion, invisible in the frequency domain and noticeable only as mirrored waveforms), upsampling, BLE buffer bounds and memory leaks. All sit on the acquisition path, surfacing as occasional crashes, progressive slowdown or results that no longer match — symptoms rarely traced to the driver layer.",
+      "url": "https://www.bilibili.com/video/BV1FoWT6DEzt/",
+      "published": "2026-11-10T10:30:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「有Li」的滤波实操教程，用 **EEGMMIDB** 公开数据把三个常被含糊带过的问题讲清楚了：①**工频是 50 还是 60 Hz**——数据在美国采集、应为 60 Hz，但**文件里没记录**，而 AI 写脚本时习惯性填 50 Hz，这一步必须人工确认；②**陷波够不够**——把原始、只陷波、只带通、陷波+带通四条功率谱叠在一起，实测**只做 1–40 Hz 带通，60 Hz 尖峰就已消失**；③**为什么先滤波再切片**——滤波器是有长度的：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**，对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠，而基线区间正好落在里面。对刚上手的人，这三条比任何滤波参数表都实用。",
+      "brief_en": "A Chinese hands-on filtering tutorial measured on EEGMMIDB: line frequency is 60 Hz (US recordings) but not recorded in the files while AI habitually writes 50 Hz — verify it; overlaying raw, notch-only, bandpass-only and combined spectra shows a 1-40 Hz bandpass already removes the 60 Hz peak; and filters running 3.3 s and 6.6 s long leave 1.65 s unreliable at each end of a 5 s trial.",
       "tags": [
-        "brainflow",
-        "adc",
-        "ble",
-        "memory-leak",
-        "acquisition"
+        "filtering",
+        "line-noise",
+        "epoching",
+        "eegmmidb",
+        "tutorial"
       ],
-      "raw_excerpt": "Commit ec42722eeb, 2026-11-09T21:20Z: \"Fix ADC sign conversion, upsampling, BLE buffer bounds, and memory leaks\". Repo: brainflow-dev/brainflow.",
-      "fetched_at": "2026-11-09T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "brainflow-dev/brainflow@ec42722eeb",
-      "author_handle": "brainflow-dev",
+      "raw_excerpt": "「工频是 50 还是 60 Hz？ EEGMMIDB 在美国采集，工频是 60 Hz，文件里却没有记录。AI 习惯写 50 Hz，这一步必须人来把关。」「实测只做 1–40 Hz 带通，60 Hz 尖峰就已经消失。」「滤波器有长度：1–40 Hz 带通滤波器长 3.3 秒，60 Hz 陷波长 6.6 秒。对 5 秒的试次单独滤波，两端各 1.65 秒都不可靠，基线区间整段落在里面。所以要先滤波、后切片。」",
+      "fetched_at": "2026-11-10T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1FoWT6DEzt",
+      "author_handle": "有Li",
       "metrics": {
         "play": null,
-        "like": 1787,
+        "like": 103,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "ADC 符号错会让极性反且频域看不出来，泄漏与越界决定长时间采集能否稳定。"
+      "why_valuable": "用实测数据讲清 50/60 Hz 判断、陷波必要性，以及滤波器长度导致的切片顺序问题。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 新增 NICE（图像解码编码器）与 CORTEG（ECoG 版 ST-EEGFormer）",
-      "title_en": "braindecode Adds NICE (Image-Decoding Encoder) and CORTEG (ST-EEGFormer for ECoG)",
+      "title_zh": "braindecode 一口气加三个 MEG 基础模型：MEG-GPT、MEG-XL 与 BBL",
+      "title_en": "braindecode Adds Three MEG Foundation Models: MEG-GPT, MEG-XL and BBL",
       "bullets_zh": [
-        "#1556 移植 **NICE**：EEG/MEG **图像解码**编码器（Song et al., ICLR 2024），把「看图像时的脑响应」当作可对齐的目标。",
-        "#1551 加入 **CORTEG**：把 ST-EEGFormer 改造用于**颅内 ECoG**（作为模型移植示例，不是把侵入式当应用主体）；另有一条提交在加载 checkpoint 时**显示训练数据集与已加载参数**。",
-        "对做跨模态/跨设备迁移的团队，这两个模型提供了「同一套解码框架换个输入」的对照基线。"
+        "#1555 **MEG-GPT**（源空间 MEG 基础模型）、#1554 **MEG-XL**（长上下文 MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器）并抽出共享的 **SEANet 块**。",
+        "三个模型覆盖三个方向：**源空间建模**、**长上下文文本解码**、**极简大规模预训练**；共享 SEANet 说明结构在向可复用组件收敛。",
+        "对做 MEG/EEG 基础模型的团队，这是一份现成的「三种路线」对照基线——尤其 BBL 的「Bitter Lesson」立场值得单独读。"
       ],
       "bullets_en": [
-        "#1556 ports NICE, an EEG/MEG encoder for image decoding (Song et al., ICLR 2024) that aligns brain responses to viewed images.",
-        "#1551 adds CORTEG, adapting ST-EEGFormer to intracranial ECoG as a portability example rather than an invasive application; a further commit shows which checkpoint, training datasets and parameters were loaded.",
-        "For cross-modal or cross-device transfer, these give two baselines that keep the decoding framework while changing the input."
+        "#1555 MEG-GPT (a source-space MEG foundation model), #1554 MEG-XL (long-context MEG brain-to-text) and BBL (The Brain's Bitter Lesson MEG encoder), with SEANet blocks shared across them.",
+        "The three cover different bets: source-space modelling, long-context text decoding and minimal large-scale pretraining; shared SEANet blocks show the architectures converging on reusable components.",
+        "For MEG/EEG foundation-model work this is a ready-made comparison of three routes — and BBL's bitter-lesson stance deserves a separate read."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1556",
-      "published": "2026-11-09T15:57:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1555",
+      "published": "2026-11-10T06:49:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 11-09 加了两个模型：**NICE**（#1556，EEG/MEG 的**图像解码**编码器，Song et al., ICLR 2024）与 **CORTEG**（#1551，把 **ST-EEGFormer 改造用于颅内 ECoG**）。对做跨模态迁移的团队，这两个是「同一套解码框架、换一种输入」的现成对照：NICE 面向视觉解码，CORTEG 则演示了把 EEG 架构迁到另一类信号时要改哪些接口。值得肯定的还有一条小提交：**加载 checkpoint 时显示训练数据集与已加载参数**——这比静默加载有用得多，能直接看出「这个权重是在什么数据上训的、有没有部分参数没加载上」。提醒：CORTEG 属侵入式信号，仅作模型移植参考，不改变本 lane 的非侵入式定位。",
-      "brief_en": "braindecode added two models on Nov 9: NICE (#1556, an EEG/MEG image-decoding encoder, Song et al. ICLR 2024) and CORTEG (#1551, ST-EEGFormer adapted to intracranial ECoG). They offer readymade cross-modal baselines sharing one framework. A further commit reports which checkpoint, training datasets and parameters were loaded, revealing silently missed weights.",
+      "brief": "braindecode 在 11-10 一口气加了三个 MEG 基础模型：**MEG-GPT**（#1555，源空间 MEG 基础模型）、**MEG-XL**（#1554，**长上下文** MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器），并把三者的 **SEANet 块抽出来共享**。这三个名字其实代表三条不同的技术赌注：**源空间建模**、**长上下文文本解码**、以及「**Bitter Lesson**」式的极简＋规模优先。对做 MEG/EEG 基础模型的团队，这是一份现成的三路对照基线；尤其 BBL 的立场（少做手工归纳偏置、把算力堆上去）值得单独读一读，因为它和本 lane 近期收录的「小波多尺度」「token 高效」路线正好相对。",
+      "brief_en": "braindecode added three MEG foundation models on Nov 10: MEG-GPT (#1555, source-space), MEG-XL (#1554, long-context brain-to-text) and BBL (The Brain's Bitter Lesson encoder), sharing SEANet blocks. They represent three bets — source-space modelling, long-context decoding and minimal-plus-scale, with BBL's stance contrasting recent wavelet and token-efficiency routes.",
       "tags": [
         "braindecode",
-        "nice",
-        "corteg",
-        "cross-modal",
-        "checkpoint"
+        "meg",
+        "foundation-model",
+        "long-context",
+        "seanet"
       ],
-      "raw_excerpt": "Commits 2026-11-09: \"Add NICE (EEG/MEG image-decoding encoder, Song et al. ICLR 2024) (#1556)\" 15:57Z; \"Add CORTEG, an ST-EEGFormer adapted to intracranial ECoG (#1551)\" 12:57Z; \"ENH show the checkpoint, its training datasets and the loaded parameters\" 11:02Z.",
-      "fetched_at": "2026-11-09T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-10: \"Add MEG-GPT (source-space MEG foundation model) (#1555)\" 06:49Z; \"Add MEG-XL (long-context MEG brain-to-text foundation model) (#1554)\" 06:43Z; \"Add BBL (The Brain's Bitter Lesson MEG encoder) and share SEANet blocks\" 06:13Z.",
+      "fetched_at": "2026-11-10T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1556",
+      "upstream_id": "braindecode/braindecode#1555",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
@@ -111,189 +111,232 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "两个跨模态对照基线＋加载时显示训练数据集与已载参数，避免静默漏权重。"
-    },
-    {
-      "type": "Benchmark",
-      "level": "Intermediate",
-      "title_zh": "MOABB 为 CompoundDataset 激活内层 NEMAR 存储，并写明 get_data 的单位",
-      "title_en": "MOABB Activates the Inner NEMAR Store in CompoundDataset and Documents get_data Units",
-      "bullets_zh": [
-        "#13xx：**CompoundDataset** 现在会**激活内层数据集的 NEMAR 存储**并预取数据——复合数据集此前可能只取到外壳、内部沉积走默认路径。",
-        "#1354：文档明确写出 **`paradigm.get_data` 返回的单位**——单位不清楚是 EEG 分析中最常见、也最致命的歧义（µV vs V 差 1e6）。",
-        "同批还修了 Sphinx 警告与 sklearn 惩罚项弃用告警，避免文档构建掩盖真实问题。"
-      ],
-      "bullets_en": [
-        "#13xx makes CompoundDataset activate and prefetch the inner datasets' NEMAR store; previously a compound dataset could fetch the shell while inner deposits fell back to defaults.",
-        "#1354 documents the units returned by paradigm.get_data — unclear units are the most common and most damaging ambiguity in EEG analysis (uV versus V is a factor of 1e6).",
-        "The batch also fixes Sphinx warnings and a sklearn penalty deprecation so documentation builds stop masking real issues."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1354",
-      "published": "2026-11-09T11:44:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MOABB 在 11-09 推进 8 次提交，两条值得注意：一是 **CompoundDataset 现在会激活内层数据集的 NEMAR 存储并预取**（此前复合数据集可能只取到外壳，内部沉积走默认路径，结果「能跑但数据来路不明」）；二是 **文档明确写出 `paradigm.get_data` 返回的单位**（#1354）——这看似小事，实则是 EEG 分析里最常见也最致命的歧义：µV 与 V 差 **1e6**，而我们这两天刚收录过好几起单位/标度 bug。同批还清了 Sphinx 警告与 sklearn 弃用告警。对依赖 MOABB 取数的团队，建议升级后核对一次单位与数据来源，并把单位假设写进自己的分析脚本。",
-      "brief_en": "MOABB made eight commits on Nov 9, two notable: CompoundDataset now activates and prefetches the inner datasets' NEMAR store (previously the shell was fetched while inner deposits fell back to defaults), and the docs state the units returned by paradigm.get_data — unclear units being EEG's most damaging ambiguity, since uV versus V is 1e6. Sphinx and sklearn deprecation warnings were also cleared.",
-      "tags": [
-        "moabb",
-        "compound-dataset",
-        "nemar",
-        "units",
-        "documentation"
-      ],
-      "raw_excerpt": "Commits 2026-11-09: \"activate inner dataset NEMAR store in CompoundDataset (#13…)\" 10:26Z; \"fix(docs,datasets): prefetch CompoundDataset NEMAR data and harden docs\" 11:29Z; \"docs: state the units returned by paradigm.get_data (#1354)\" 10:26Z; \"docs: fix all Sphinx warnings, tab-set errors, and sklearn penalty depre[cation]\" 11:29Z.",
-      "fetched_at": "2026-11-09T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1354",
-      "author_handle": "NeuroTechX",
-      "metrics": {
-        "play": null,
-        "like": 1085,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "复合数据集要真正激活内层存储；单位写明能避免 µV/V 这类 1e6 级歧义。"
+      "quality_score": 9,
+      "why_valuable": "三个模型代表源空间/长上下文/规模优先三条路线，可作现成对照基线。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "EEGMeanFlow：一步从噪声生成类条件脑电",
-      "title_en": "EEGMeanFlow: One Step From Noise to Class-Conditional EEG",
+      "title_zh": "SPDlearn 一批更新：高维小批量 Riemannian BatchNorm 保护与五度量统一回拉",
+      "title_en": "SPDlearn Update Batch: High-d/Small-Batch Riemannian BatchNorm Safeguard and a 5-Metric Pullback",
       "bullets_zh": [
-        "把 **MeanFlow**（arXiv 2505.13447）适配到**类条件 EEG 生成**：训练后可**一步**从噪声生成指定类别的脑电，而非多步扩散采样。",
-        "仓库提供完整流程（数据准备→训练→生成），含框架图与依赖说明；对做数据增广、隐私替代数据或生成式建模的团队有直接用途。",
-        "需注意：生成数据的频谱/时域统计是否与真实数据一致，必须自行检验——否则增广会引入系统性偏差。"
+        "**Riemannian BatchNorm 的保护机制**：针对**高维/小批量**场景加 safeguard——SPD 流形上的批归一化在样本少、维度高时极易数值不稳。",
+        "**五度量统一回拉（LEM / LCM / AIM / PEM / BW）**：把多种黎曼度量统一到一套 pullback 接口，换度量不必换代码结构。",
+        "另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差等六项改动。"
       ],
       "bullets_en": [
-        "It adapts MeanFlow (arXiv 2505.13447) to class-conditional EEG generation: after training, a specified class is generated from noise in one step rather than multi-step diffusion sampling.",
-        "The repo covers the whole flow (prepare data, train, generate) with a framework diagram and dependencies, useful for augmentation, privacy-preserving surrogates or generative modelling.",
-        "Caveat: verify the spectral and temporal statistics of generated signals against real data, or augmentation introduces systematic bias."
+        "A safeguard for Riemannian BatchNorm in high-dimensional, small-batch settings, where batch normalisation on the SPD manifold easily becomes numerically unstable.",
+        "A five-metric universal pullback (LEM, LCM, AIM, PEM, BW), unifying several Riemannian metrics behind one interface so switching metrics no longer means restructuring code.",
+        "Also SPD Replicability & Generation Initiative parametrisation, patch covariance trace-norm, and single-eigh shared-basis residuals for SPDResNet/GyroSPD/CorNet — six changes in all."
       ],
-      "url": "https://github.com/yunyunfanfan/EEGMeanFlow",
-      "published": "2026-11-09T03:52:00Z",
+      "url": "https://github.com/spdlearn/spd_learn/commit/652d961567",
+      "published": "2026-11-10T13:46:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 EEGMeanFlow（2026-11-09）把 **MeanFlow**（arXiv 2505.13447）适配到**类条件 EEG 生成**，卖点很直接：**一步从噪声生成指定类别的脑电**，而不是扩散模型的多步采样。仓库给了完整流程（数据准备→训练→生成）与框架图，对三类用途最实际：**数据增广**（小样本类别的补充）、**隐私替代数据**（共享生成样本而非原始记录）、以及生成式建模本身。要提醒的是：这类方法的价值完全取决于**生成数据与真实数据的统计一致性**——如果频谱或时域结构有偏，增广就等于注入系统偏差，下游准确率反而「虚高」。建议先做频谱/时域/跨被试一致性检验，再考虑把它接进训练流程。",
-      "brief_en": "Created 2026-11-09, EEGMeanFlow adapts MeanFlow (arXiv 2505.13447) to class-conditional EEG generation, generating a specified class from noise in one step rather than multi-step diffusion sampling. The repo covers data prep, training and generation, suiting augmentation, privacy-preserving surrogates and generative modelling. Verify spectral and temporal agreement with real data first.",
+      "brief": "SPDlearn（SPD 几何深度学习库）在 11-10 推了 6 项改动，两条最实用：①**高维/小批量下的 Riemannian BatchNorm 保护**——SPD 流形上的批归一化在「通道多、试次少」时极易数值不稳定（与 EEG 场景高度重合），加 safeguard 后才敢用在真实数据上；②**五度量统一回拉（LEM/LCM/AIM/PEM/BW）**——把多种黎曼度量收敛到一套 pullback 接口，换度量不必重写代码。另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差。对做黎曼分类/回归的团队，这两条直接降低「换度量、换批量大小就要重调」的成本。",
+      "brief_en": "SPDlearn shipped six changes on Nov 10, two practical: a safeguard for Riemannian BatchNorm in high-dimensional, small-batch settings where normalisation on the SPD manifold is numerically fragile (a common EEG regime), and a five-metric universal pullback (LEM, LCM, AIM, PEM, BW) unifying metrics behind one interface. Also shared-basis residuals across SPDResNet, GyroSPD and CorNet.",
       "tags": [
-        "generative",
-        "meanflow",
-        "one-step",
-        "augmentation",
-        "eeg"
+        "spdlearn",
+        "riemannian",
+        "batchnorm",
+        "metrics",
+        "geometry"
       ],
-      "raw_excerpt": "README: \"**One step from noise to class-conditional EEG.** An implementation of EEGMeanFlow for class-conditional EEG generation: prepare the data, train the model, and generate signals in one step.\" \"EEGMeanFlow adapts MeanFlow (https://arxiv.org/abs/2505.13447) to class-[conditional EEG generation]\"",
-      "fetched_at": "2026-11-09T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-10: \"feat(batchnorm,models): high-d/small-batch Riemannian BatchNorm safeguar[d]\" (652d961567) 13:46Z; \"feat(rietrans,spnn): add 5-metric universal pullback (LEM/LCM/AIM/PEM/BW)\" 13:44Z; \"feat(repro,models): SPD Replicability & Generation Initiative parametri[zation]\" 13:46Z; \"feat(graph,multiview,rhop): patch covariance trace-norm, degree-normaliz[ation]\" 13:45Z.",
+      "fetched_at": "2026-11-10T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "yunyunfanfan/EEGMeanFlow",
-      "author_handle": "yunyunfanfan",
+      "upstream_id": "spdlearn/spd_learn@652d961567",
+      "author_handle": "spdlearn",
+      "metrics": {
+        "play": null,
+        "like": 42,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "高维小批量下 SPD 批归一化本就脆弱，加保护与统一度量接口直接降低试错成本。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "Squid-16：单块 40mm 板上的 16 通道干电极 EEG（含 KiCad、固件与仿真器）",
+      "title_en": "Squid-16: A 16-Channel Dry-Electrode EEG Sensor on One 40 mm Board With KiCad, Firmware and a Simulator",
+      "bullets_zh": [
+        "**18 个弹簧针**做干电极接触、**两片 ADS131M08（24-bit）**、板载 **ESP32-C3** 与 **Bluetooth LE**；「无凝胶、无帽、无独立控制器」。",
+        "交付完整：**KiCad 硬件、固件、仿真器**，并有 3D 渲染图（正面元件/背面电极）——属可复现的开源硬件，而非概念图。",
+        "对做干电极或可穿戴 EEG 的团队，这是少见的「单板集成 + 双 ADC 高通道」设计参考；采用前需自行验证接触阻抗与运动伪迹。"
+      ],
+      "bullets_en": [
+        "Eighteen spring-loaded pins for dry contact, two ADS131M08 24-bit converters, an on-board ESP32-C3 and Bluetooth LE — no gel, no cap, no separate controller.",
+        "It ships KiCad hardware, firmware and a simulator, with 3D renders of the component and electrode sides, making it reproducible open hardware rather than a concept.",
+        "For dry-electrode or wearable EEG work this is a rare single-board, dual-ADC high-channel reference; verify contact impedance and motion artefacts yourself."
+      ],
+      "url": "https://github.com/inspizzz/squid-16",
+      "published": "2026-11-10T21:01:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 Squid-16（2026-11-10）：**单块 40 mm 板**上的 **16 通道干电极 EEG**——**18 个弹簧针**负责接触、**两片 ADS131M08（24-bit）**负责采集、板载 **ESP32-C3** 走 **Bluetooth LE**，主打「无凝胶、无帽、无独立控制器」。它的完成度值得一提：**KiCad 硬件、固件、仿真器**三样都给齐，还附了正面元件/背面电极的 3D 渲染图，属于可复现的开源硬件而不是概念草图。对做干电极、可穿戴或低成本多通道 EEG 的团队，这是少见的「单板集成 + 双 ADC」参考设计；不过干电极的**接触阻抗**与**运动伪迹**必须自行验证，别把「能出信号」当成「信号可用」。",
+      "brief_en": "Created 2026-11-10, Squid-16 packs a 16-channel dry-electrode EEG sensor onto a single 40 mm board: eighteen spring-loaded pins, two ADS131M08 24-bit converters, an ESP32-C3 and BLE, with no gel, cap or separate controller. It ships KiCad hardware, firmware and a simulator plus 3D renders. Dry-electrode impedance and motion artefacts still need your own validation.",
+      "tags": [
+        "open-hardware",
+        "dry-electrode",
+        "ads131m08",
+        "esp32",
+        "ble"
+      ],
+      "raw_excerpt": "Description: \"Squid-16: open-source 16-channel dry-electrode EEG sensor. 18 spring pins, 2x ADS131M08, ESP32-C3, Bluetooth LE. KiCad hardware, firmware, simulator.\" README: \"**An open-source, 16-channel dry-electrode EEG sensor on one 40 mm board.** Eighteen spring-loaded pins, two 24-bit converters, an on-board ESP32-C3 and Bluetooth LE. No gel, no cap, no separate controller.\"",
+      "fetched_at": "2026-11-10T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "inspizzz/squid-16",
+      "author_handle": "inspizzz",
       "metrics": {
         "play": null,
         "like": 0,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "一步生成可用于增广/隐私替代，但必须检验生成数据与真实统计是否一致。"
+      "quality_score": 9,
+      "why_valuable": "单板 16 通道干电极且硬件/固件/仿真器齐全，是可复现的开源硬件设计。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "autoreject 把共识损失改为每组试次只算一次，并加速 RANSAC",
-      "title_en": "autoreject Computes the Consensus Loss Once per Epoch Set and Speeds Up RANSAC",
+      "title_zh": "MNE-Python 修 BrainVision 通道表与 CSV 标注时间信息",
+      "title_en": "MNE-Python Fixes the BrainVision Channel Table and CSV Annotation Timing",
       "bullets_zh": [
-        "#370：**共识损失改为每组保留试次只计算一次**——此前在循环里重复计算，属于典型的「结果不变但白算」开销。",
-        "#371：**RANSAC 加速**；配合前几日的插值 API 与新/旧路径优化，autoreject 近期一直在压自动剔除的耗时。",
-        "对批量预处理（几十上百份记录）这类优化直接缩短整条流水线时间，且不改变剔除判定。"
+        "#14512：**不再假设 BrainVision `[Comment]` 通道表里有滤波列**——此前按固定列位置解析，遇到不同厂商导出就会错位到错误的通道属性。",
+        "#14503：加载带 `orig_time` 的 **CSV 标注**时**保留 `orig_time` 与 `onset`**——两者丢失会让事件时间整体平移，且通常到对齐分析时才暴露。",
+        "对混用多家设备导出的团队，这类「按列位置猜」的解析最容易静默出错。"
       ],
       "bullets_en": [
-        "#370 computes the consensus loss once per set of kept epochs instead of recomputing it inside loops — a purely wasted-cost fix with unchanged results.",
-        "#371 speeds up RANSAC; together with recent interpolation API and legacy-path work, autoreject has been steadily cutting automatic rejection time.",
-        "For batch preprocessing across dozens or hundreds of recordings this shortens the whole pipeline without changing rejection decisions."
+        "#14512 stops assuming the BrainVision [Comment] channel table contains filter columns; fixed column positions previously mis-assigned attributes for vendor exports with different layouts.",
+        "#14503 preserves orig_time and onset when loading CSV annotations with orig_time — losing them shifts every event in time, usually surfacing only at alignment or epoching.",
+        "For teams mixing vendor exports, positional parsing is exactly where silent errors hide."
       ],
-      "url": "https://github.com/autoreject/autoreject/pull/370",
-      "published": "2026-11-09T14:56:00Z",
+      "url": "https://github.com/mne-tools/mne-python/pull/14512",
+      "published": "2026-11-10T19:14:00Z",
       "source": "github",
       "language": "en",
-      "brief": "autoreject 合并 #370 与 #371：**共识损失改为每组保留试次只计算一次**（此前在循环里重复算，纯属白烧 CPU，结果完全不变），并**加速 RANSAC**。这两条单独看收益不大，但和上周的「改用新插值 API」「优化旧版 Bayesian 与老 MNE 路径」连起来看，autoreject 正在系统性地压缩**自动坏段剔除**的耗时——而这一步在批量预处理里往往占大头。对一天要跑几十上百份记录的团队，这类优化直接缩短整条流水线；建议升级后重跑一小批数据，确认剔除结果与旧版一致再全量切换。",
-      "brief_en": "autoreject merged #370 and #371: the consensus loss is computed once per set of kept epochs instead of inside loops (wasted CPU with identical results), and RANSAC is faster. Together with last week's interpolation-API and legacy-path work it has been cutting automatic rejection time, which dominates batch preprocessing. Re-run a small batch to confirm identical rejection first.",
+      "brief": "MNE-Python 合并两个输入解析修复：**#14512** 不再假设 **BrainVision `[Comment]` 通道表**里有滤波列——此前按固定列位解析，遇到不同厂商导出的布局就会把属性错配到别的通道上；**#14503** 加载带 `orig_time` 的 **CSV 标注**时**保留 `orig_time` 与 `onset`**，两者丢失会让所有事件时间整体平移，而这类偏差通常到对齐/分段分析时才暴露，届时很难判断是数据问题还是代码问题。对混用多家设备导出的团队，「按列位置猜」正是静默错误的高发区；建议升级后抽查一份非自家设备的 BrainVision 文件与一份 CSV 标注。",
+      "brief_en": "MNE-Python merged two parser fixes: #14512 stops assuming filter columns in the BrainVision [Comment] channel table, where fixed column positions mis-assigned attributes across vendor layouts; #14503 preserves orig_time and onset when loading CSV annotations, whose loss shifts every event in time and surfaces only at alignment. Check a third-party file after upgrading.",
       "tags": [
-        "autoreject",
-        "consensus",
-        "ransac",
-        "performance",
-        "batch"
+        "mne-python",
+        "brainvision",
+        "annotations",
+        "parsing",
+        "timing"
       ],
-      "raw_excerpt": "Commits 2026-11-09: \"Compute the consensus loss once per set of kept epochs (#370)\" 14:56Z; \"Speed up RANSAC (#371)\" 15:45Z.",
-      "fetched_at": "2026-11-09T23:55:00Z",
+      "raw_excerpt": "PRs merged 2026-11-10: \"Don't assume filter columns in BrainVision [Comment] channel table (#14512)\" 19:14Z; \"FIX: Preserve orig_time and onset when loading CSV annotations with orig_[time] (#14503)\" 18:49Z; \"Add mvpure-py to related software list (#14511)\".",
+      "fetched_at": "2026-11-10T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "autoreject/autoreject#370",
-      "author_handle": "autoreject",
+      "upstream_id": "mne-tools/mne-python#14512",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 163,
+        "like": 3588,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "按列位置解析与 orig_time 丢失都会静默改变通道属性或事件时间。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "FieldTrip 让谱估计支持「增量式算法灵活性」",
+      "title_en": "FieldTrip Adds Incremental Algorithmic Flexibility to Spectral Estimation",
+      "bullets_zh": [
+        "#2624：谱估计支持**增量式地组合算法选项**，而不是只能在预设方法间二选一——便于在同一框架里比较不同窗/平滑/分段策略。",
+        "对做时频分析的人，这意味着「换一个平滑方式」不再需要改流程结构，实验设计上的自由度更大。",
+        "采用前建议固定一组参数做基线，避免组合爆炸导致结果不可比。"
+      ],
+      "bullets_en": [
+        "#2624 lets spectral estimation compose algorithmic options incrementally instead of picking one preset method, making window, smoothing and segmentation strategies comparable in one framework.",
+        "For time-frequency work this means changing a smoothing choice no longer requires restructuring the pipeline.",
+        "Pin a baseline parameter set first, or the combinatorial space makes results incomparable."
+      ],
+      "url": "https://github.com/fieldtrip/fieldtrip/pull/2624",
+      "published": "2026-11-10T08:11:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "FieldTrip 合并 #2624：谱估计增加「**增量式算法灵活性**」——可以在同一框架里逐步组合窗函数、平滑与分段策略，而不是只在预设方法之间二选一。对做时频分析的人，好处是实验设计自由度更大：想比较「不同平滑方式对结果的影响」时，不必再各写一套流程。代价也很明确——选项组合会迅速膨胀，若无基线参数集，结果之间不可比。建议先固定一组默认参数（窗长、平滑、重叠）作为对照，再逐项改动，并把每次组合记录进分析日志。",
+      "brief_en": "FieldTrip merged #2624 adding incremental algorithmic flexibility to spectral estimation: window, smoothing and segmentation options can be composed rather than chosen from presets, giving more freedom when comparing strategies. The cost is combinatorial growth — without a pinned baseline parameter set, results stop being comparable, so fix defaults and log each combination.",
+      "tags": [
+        "fieldtrip",
+        "spectral",
+        "time-frequency",
+        "flexibility",
+        "methodology"
+      ],
+      "raw_excerpt": "Commit 4b9bbb5fa1, 2026-11-10T08:11Z: \"incremental algorithmic flexibility for spectral estimation (#2624)\". Repo: fieldtrip/fieldtrip.",
+      "fetched_at": "2026-11-10T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "fieldtrip/fieldtrip#2624",
+      "author_handle": "fieldtrip",
+      "metrics": {
+        "play": null,
+        "like": 993,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "循环内重复计算共识损失纯属浪费，批量预处理时间可明显缩短。"
+      "why_valuable": "可组合谱估计选项便于比较策略，但必须固定基线否则结果不可比。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "awesome-bci 收录 VibeMyExpt：浏览器搭 jsPsych 实验，用 LSL/TTL 把标记送进 EEG",
-      "title_en": "awesome-bci Adds VibeMyExpt: Build jsPsych Experiments in the Browser and Send LSL/TTL Markers",
+      "title_zh": "GEDAI（EEGLAB 去噪插件）修改低截止滤波默认值",
+      "title_en": "GEDAI, an EEGLAB Denoising Plugin, Revises Its Low-Cut Filtering Defaults",
       "bullets_zh": [
-        "VibeMyExpt 是**浏览器端**实验搭建平台，生成 **jsPsych** 实验，并通过 **Lab Streaming Layer**（`vibemyexpt-lsl` PyPI 桥）或 **USB TTL 触发盒**把事件标记送进 **EEG/fNIRS/眼动**记录。",
-        "它解决的是实验工程里最琐碎也最容易出错的一环：**刺激程序与记录设备的时间对齐**——手工打标记、时间戳漂移、丢事件都出在这里。",
-        "已进入 awesome-bci 的「实验设计与分析」小节；对做在线实验或课堂演示的团队，值得评估与既有 LSL 流程的兼容性。"
+        "GEDAI-master 提交「**Revise low-cut filtering defaults**」——调整了默认的高通截止设置；GEDAI 是基于 **GED**（广义特征分解）的 EEG 去噪插件，用于 EEGLAB/FieldTrip 流程。",
+        "默认值改变会**悄悄改变既有脚本的输出**：使用默认参数的分析在升级后结果可能与旧版不同。",
+        "对此类插件，建议显式写出截止频率等关键参数，而不是依赖默认值——否则升级即「换了一套预处理」，却没有任何提示。"
       ],
       "bullets_en": [
-        "VibeMyExpt is a browser-based builder that produces jsPsych experiments and sends event markers into EEG, fNIRS and eye-tracking recordings via Lab Streaming Layer (the vibemyexpt-lsl PyPI bridge) or USB TTL trigger boxes.",
-        "It addresses the fiddliest and most error-prone part of experiment engineering — aligning stimulus software with recording hardware, where manual markers, timestamp drift and dropped events originate.",
-        "It now sits in awesome-bci's experiment design and analysis section; teams running online experiments should assess compatibility with their existing LSL pipeline."
+        "GEDAI-master commits \"Revise low-cut filtering defaults\", adjusting the default high-pass cutoff; GEDAI is a GED-based denoising plugin for EEGLAB and FieldTrip pipelines.",
+        "Changing defaults silently alters existing scripts: analyses relying on defaults will differ after upgrading.",
+        "For such plugins, state key parameters such as the cutoff explicitly rather than trusting defaults, or an upgrade becomes a different preprocessing chain with no warning."
       ],
-      "url": "https://github.com/NeuroTechX/awesome-bci/pull/104",
-      "published": "2026-11-09T16:17:00Z",
+      "url": "https://github.com/neurotuning/GEDAI-master/commit/ebe71d6734",
+      "published": "2026-11-10T14:25:00Z",
       "source": "github",
       "language": "en",
-      "brief": "awesome-bci 合并 #104，收录 **VibeMyExpt**：一个**浏览器端**实验搭建平台，产出 **jsPsych** 实验，并通过 **Lab Streaming Layer**（`vibemyexpt-lsl` PyPI 桥）或 **USB TTL 触发盒**把事件标记送进 **EEG、fNIRS、眼动**记录。它解决的是实验工程里最琐碎、也最容易毁数据的一环——**刺激程序与记录设备的时间对齐**：手工打标记、时间戳漂移、事件丢失，几乎都出在这里，而后果要到分析阶段才发现。对做在线实验、课堂演示或远程采集的团队，这类「浏览器实验 + 标准标记通道」的组合值得评估；接入前建议先做一次**用光敏电阻/示波器核验延迟**的测试。",
-      "brief_en": "awesome-bci merged #104 adding VibeMyExpt: a browser-based builder producing jsPsych experiments that sends event markers into EEG, fNIRS and eye-tracking via Lab Streaming Layer (the vibemyexpt-lsl PyPI bridge) or USB TTL trigger boxes. It tackles the fiddliest failure mode — aligning stimulus software with recording hardware — and deserves a latency check with a photodiode.",
+      "brief": "GEDAI（基于**广义特征分解**的 EEG 去噪插件，用于 EEGLAB/FieldTrip 流程）提交 ebe71d6734：**修改低截止滤波的默认值**。这条本身很小，但影响值得说明——**默认值变更会让既有脚本的输出悄悄改变**：如果你的分析依赖默认高通截止，升级后得到的干净数据其实换了一套预处理，而代码里没有任何提示。对这类插件，建议把截止频率、参考方式等关键参数**显式写进脚本并记录在元数据里**，不要信任默认值；升级前也先用同一份数据跑一次新旧对比，确认去噪结果与后续指标差异在可接受范围内。",
+      "brief_en": "GEDAI, a GED-based EEG denoising plugin for EEGLAB and FieldTrip, committed ebe71d6734 revising its low-cut filtering defaults. The change is small but the effect is not: analyses relying on defaults silently get different cleaned data after upgrading. Write cutoffs and reference choices explicitly into scripts and metadata, and compare old against new on one dataset first.",
       "tags": [
-        "jspsych",
-        "lsl",
-        "ttl",
-        "markers",
-        "experiment-design"
+        "gedai",
+        "denoising",
+        "defaults",
+        "eeglab",
+        "filtering"
       ],
-      "raw_excerpt": "PR #104: \"Adds VibeMyExpt to the BCI Experiment Design and Analysis section, at the end after PsychToolBox. It's a browser-based platform for building jsPsych experiments that sends event markers to EEG, fNIRS and eye-tracking recordings through Lab Streaming Layer (via the `vibemyexpt-lsl` bridge on PyPI) or USB TTL trigger boxes.\"",
-      "fetched_at": "2026-11-09T23:55:00Z",
+      "raw_excerpt": "Commit ebe71d6734, 2026-11-10T14:25Z: \"Revise low-cut filtering defaults\". Repo: neurotuning/GEDAI-master (\"GEDAI denoising plugin for Matlab (EEGLAB, …)\").",
+      "fetched_at": "2026-11-10T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "NeuroTechX/awesome-bci#104",
-      "author_handle": "Aakashagr",
+      "upstream_id": "neurotuning/GEDAI-master@ebe71d6734",
+      "author_handle": "neurotuning",
       "metrics": {
         "play": null,
-        "like": 1562,
+        "like": 74,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "刺激程序与记录设备的对齐是最易毁数据的一环，浏览器+LSL/TTL 正好补这块。"
+      "quality_score": 7,
+      "why_valuable": "默认截止值变更会让依赖默认的脚本静默换掉预处理，却不给任何提示。"
     }
   ],
   "stats": {
     "fetched": 132,
     "prefiltered": 98,
     "llm_rows": 18,
-    "kept": 6,
+    "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 3
+    "conflicts_dropped": 2
   }
 }
