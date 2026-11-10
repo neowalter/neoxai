@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-09T22:52:59Z",
+  "generatedAt": "2026-11-10T22:51:31Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 413,
+  "count": 425,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 413
+      "count": 425
     }
   ],
   "items": [
@@ -12670,34 +12670,186 @@
       }
     },
     {
-      "id": "github:StefanoGaliano/eeg-erp-pipeline",
-      "name": "eeg-erp-pipeline",
-      "owner": "StefanoGaliano",
-      "author": "StefanoGaliano",
-      "url": "https://github.com/StefanoGaliano/eeg-erp-pipeline",
-      "homepage": null,
+      "id": "github:A01001000/ecog-decoder",
+      "name": "ecog-decoder",
+      "owner": "A01001000",
+      "author": "A01001000",
+      "url": "https://github.com/A01001000/ecog-decoder",
+      "homepage": "https://airtable.com/app1MtChyjyKEDzAt/shrR68OdIIny48Ynt/tblvFwAE4oqf3M10o/viw3Ma2non57ofw6z/recglye9UrEvHGkc4",
       "source": "github",
-      "description": "One pipeline from any raw EEG format to ERPs: eegunify converts vendor recordings into canonical BIDS-EEG (MNE/MNE-BIDS), visual-task focus. MATLAB parity planned.",
+      "description": "ECoG decoder project completed as part of Neuromatch's Computational Neuroscience program",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "computational-neuroscience",
+        "ddm",
+        "decoder",
+        "ecog"
+      ],
+      "tags": [
+        "ecog",
+        "bci",
+        "decoding",
+        "neuromatch",
+        "lda"
+      ],
+      "createdAt": "2026-08-18T04:16:53Z",
+      "updatedAt": "2026-08-18T04:43:36Z",
+      "pushedAt": "2026-08-18T04:40:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "A01001000"
+      }
+    },
+    {
+      "id": "github:Glacier137/Covert-reading",
+      "name": "Covert-reading",
+      "owner": "Glacier137",
+      "author": "Glacier137",
+      "url": "https://github.com/Glacier137/Covert-reading",
+      "homepage": "https://doi.org/10.1101/2025.05.27.656311",
+      "source": "github",
+      "description": "Executable figure-reproduction notebooks, Source Data, and neural decoding/synthesis code for the Covert Reading study on articulatory dynamics in speech imagery and production.",
+      "language": "Jupyter Notebook",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 1,
+      "topics": [
+        "ecog",
+        "jupyter-notebook",
+        "neural-decoding",
+        "neuroscience",
+        "reproducibility",
+        "speech-imagery"
+      ],
+      "tags": [
+        "ecog",
+        "bci",
+        "decoding",
+        "covert-reading",
+        "neuroscience"
+      ],
+      "createdAt": "2026-08-02T03:44:53Z",
+      "updatedAt": "2026-10-02T08:37:47Z",
+      "pushedAt": "2026-09-21T14:00:18Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "Glacier137"
+      }
+    },
+    {
+      "id": "github:Larryzpl123/mi-bci-failure-diagnosis",
+      "name": "mi-bci-failure-diagnosis",
+      "owner": "Larryzpl123",
+      "author": "Larryzpl123",
+      "url": "https://github.com/Larryzpl123/mi-bci-failure-diagnosis",
+      "homepage": "https://doi.org/10.5281/zenodo.21538627",
+      "source": "github",
+      "description": "Diagnosing Motor-Imagery BCI Failure: A Three-Step Diagnostic Framework (analysis code and derived results)",
       "language": "Python",
       "license": "MIT",
+      "stars": 5,
+      "forks": 1,
+      "topics": [
+        "brain-computer-interface",
+        "csp",
+        "eeg",
+        "motor-imagery",
+        "reproducible-research",
+        "riemannian-geometry"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "csp",
+        "riemannian"
+      ],
+      "createdAt": "2026-07-22T17:25:33Z",
+      "updatedAt": "2026-09-08T00:28:54Z",
+      "pushedAt": "2026-08-02T20:43:00Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "Larryzpl123"
+      }
+    },
+    {
+      "id": "github:NickSomitsch/neuroselect-bci",
+      "name": "neuroselect-bci",
+      "owner": "NickSomitsch",
+      "author": "NickSomitsch",
+      "url": "https://github.com/NickSomitsch/neuroselect-bci",
+      "homepage": null,
+      "source": "github",
+      "description": "Offline research software for safe, personalized language prediction in non-invasive P300 BCI communication, with reproducible analyses and manuscript sources.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "accessibility",
+        "augmentative-communication",
+        "brain-computer-interface",
+        "eeg",
+        "language-models",
+        "p300",
+        "python",
+        "reproducible-research"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "p300",
+        "language",
+        "eegnet"
+      ],
+      "createdAt": "2026-07-16T22:38:20Z",
+      "updatedAt": "2026-08-12T12:19:22Z",
+      "pushedAt": "2026-08-12T12:19:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "NickSomitsch"
+      }
+    },
+    {
+      "id": "github:Seraxel97/Tesi-2.0",
+      "name": "Tesi-2.0",
+      "owner": "Seraxel97",
+      "author": "Seraxel97",
+      "url": "https://github.com/Seraxel97/Tesi-2.0",
+      "homepage": null,
+      "source": "github",
+      "description": "Tesi magistrale: pipeline EEG resting-state EO/EC, source reconstruction \u2192 FC \u2192 ML classification (mne-bids-pipeline + mne-connectivity + mne-features + sklearn)",
+      "language": "Python",
+      "license": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "tags": [
         "eeg",
-        "erp",
         "bids",
         "mne",
-        "openbci"
+        "connectivity",
+        "source"
       ],
-      "createdAt": "2026-10-30T16:43:26Z",
-      "updatedAt": "2026-11-05T13:09:37Z",
-      "pushedAt": "2026-11-05T13:09:32Z",
+      "createdAt": "2026-05-05T18:38:43Z",
+      "updatedAt": "2026-10-12T14:59:30Z",
+      "pushedAt": "2026-10-10T15:21:53Z",
       "archived": false,
       "outreach": {
         "contactedAt": "2026-11-06",
         "batch": "batch35",
-        "contactedAuthor": "StefanoGaliano"
+        "contactedAuthor": "Seraxel97"
       }
     },
     {
@@ -12743,39 +12895,76 @@
       }
     },
     {
-      "id": "github:A01001000/ecog-decoder",
-      "name": "ecog-decoder",
-      "owner": "A01001000",
-      "author": "A01001000",
-      "url": "https://github.com/A01001000/ecog-decoder",
-      "homepage": "https://airtable.com/app1MtChyjyKEDzAt/shrR68OdIIny48Ynt/tblvFwAE4oqf3M10o/viw3Ma2non57ofw6z/recglye9UrEvHGkc4",
+      "id": "github:StefanoGaliano/eeg-erp-pipeline",
+      "name": "eeg-erp-pipeline",
+      "owner": "StefanoGaliano",
+      "author": "StefanoGaliano",
+      "url": "https://github.com/StefanoGaliano/eeg-erp-pipeline",
+      "homepage": null,
       "source": "github",
-      "description": "ECoG decoder project completed as part of Neuromatch's Computational Neuroscience program",
-      "language": "Jupyter Notebook",
-      "license": null,
+      "description": "One pipeline from any raw EEG format to ERPs: eegunify converts vendor recordings into canonical BIDS-EEG (MNE/MNE-BIDS), visual-task focus. MATLAB parity planned.",
+      "language": "Python",
+      "license": "MIT",
       "stars": 0,
       "forks": 0,
-      "topics": [
-        "computational-neuroscience",
-        "ddm",
-        "decoder",
-        "ecog"
-      ],
+      "topics": [],
       "tags": [
-        "ecog",
-        "bci",
-        "decoding",
-        "neuromatch",
-        "lda"
+        "eeg",
+        "erp",
+        "bids",
+        "mne",
+        "openbci"
       ],
-      "createdAt": "2026-08-18T04:16:53Z",
-      "updatedAt": "2026-08-18T04:43:36Z",
-      "pushedAt": "2026-08-18T04:40:28Z",
+      "createdAt": "2026-10-30T16:43:26Z",
+      "updatedAt": "2026-11-05T13:09:37Z",
+      "pushedAt": "2026-11-05T13:09:32Z",
       "archived": false,
       "outreach": {
         "contactedAt": "2026-11-06",
         "batch": "batch35",
-        "contactedAuthor": "A01001000"
+        "contactedAuthor": "StefanoGaliano"
+      }
+    },
+    {
+      "id": "github:SuzukaWu/SSVEP-MI-Rehabilitation-BCI",
+      "name": "SSVEP-MI-Rehabilitation-BCI",
+      "owner": "SuzukaWu",
+      "author": "SuzukaWu",
+      "url": "https://github.com/SuzukaWu/SSVEP-MI-Rehabilitation-BCI",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG-based BCI rehabilitation system integrating SSVEP, motor imagery, real-time feedback, and pneumatic rehabilitation glove control.",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "fbcca",
+        "lsl",
+        "motor-imagery",
+        "neurorehabilitation",
+        "psychopy",
+        "rehabilitation",
+        "ssvep"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "motor-imagery",
+        "rehab"
+      ],
+      "createdAt": "2026-08-14T12:50:20Z",
+      "updatedAt": "2026-08-17T14:24:31Z",
+      "pushedAt": "2026-08-17T14:17:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "SuzukaWu"
       }
     },
     {
@@ -12812,6 +13001,45 @@
         "contactedAt": "2026-11-06",
         "batch": "batch35",
         "contactedAuthor": "XavierAsghar"
+      }
+    },
+    {
+      "id": "github:gugu1031/eeg-fnirs-motor-imagery",
+      "name": "eeg-fnirs-motor-imagery",
+      "owner": "gugu1031",
+      "author": "gugu1031",
+      "url": "https://github.com/gugu1031/eeg-fnirs-motor-imagery",
+      "homepage": null,
+      "source": "github",
+      "description": "PyTorch EEG-fNIRS motor imagery decoding with subject-independent evaluation,Subject-Independent Deep Learning and Multimodal Fusion",
+      "language": "Python",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "deep-learning",
+        "eeg",
+        "fnirs",
+        "motor-imagery",
+        "neuroscience",
+        "pytorch"
+      ],
+      "tags": [
+        "eeg",
+        "fnirs",
+        "bci",
+        "motor-imagery",
+        "multimodal"
+      ],
+      "createdAt": "2026-08-28T06:22:34Z",
+      "updatedAt": "2026-08-28T07:16:15Z",
+      "pushedAt": "2026-08-28T07:13:30Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-06",
+        "batch": "batch35",
+        "contactedAuthor": "gugu1031"
       }
     },
     {
@@ -12862,234 +13090,6 @@
       }
     },
     {
-      "id": "github:gugu1031/eeg-fnirs-motor-imagery",
-      "name": "eeg-fnirs-motor-imagery",
-      "owner": "gugu1031",
-      "author": "gugu1031",
-      "url": "https://github.com/gugu1031/eeg-fnirs-motor-imagery",
-      "homepage": null,
-      "source": "github",
-      "description": "PyTorch EEG-fNIRS motor imagery decoding with subject-independent evaluation,Subject-Independent Deep Learning and Multimodal Fusion",
-      "language": "Python",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [
-        "bci",
-        "deep-learning",
-        "eeg",
-        "fnirs",
-        "motor-imagery",
-        "neuroscience",
-        "pytorch"
-      ],
-      "tags": [
-        "eeg",
-        "fnirs",
-        "bci",
-        "motor-imagery",
-        "multimodal"
-      ],
-      "createdAt": "2026-08-28T06:22:34Z",
-      "updatedAt": "2026-08-28T07:16:15Z",
-      "pushedAt": "2026-08-28T07:13:30Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "gugu1031"
-      }
-    },
-    {
-      "id": "github:NickSomitsch/neuroselect-bci",
-      "name": "neuroselect-bci",
-      "owner": "NickSomitsch",
-      "author": "NickSomitsch",
-      "url": "https://github.com/NickSomitsch/neuroselect-bci",
-      "homepage": null,
-      "source": "github",
-      "description": "Offline research software for safe, personalized language prediction in non-invasive P300 BCI communication, with reproducible analyses and manuscript sources.",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 0,
-      "forks": 0,
-      "topics": [
-        "accessibility",
-        "augmentative-communication",
-        "brain-computer-interface",
-        "eeg",
-        "language-models",
-        "p300",
-        "python",
-        "reproducible-research"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "p300",
-        "language",
-        "eegnet"
-      ],
-      "createdAt": "2026-07-16T22:38:20Z",
-      "updatedAt": "2026-08-12T12:19:22Z",
-      "pushedAt": "2026-08-12T12:19:17Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "NickSomitsch"
-      }
-    },
-    {
-      "id": "github:SuzukaWu/SSVEP-MI-Rehabilitation-BCI",
-      "name": "SSVEP-MI-Rehabilitation-BCI",
-      "owner": "SuzukaWu",
-      "author": "SuzukaWu",
-      "url": "https://github.com/SuzukaWu/SSVEP-MI-Rehabilitation-BCI",
-      "homepage": null,
-      "source": "github",
-      "description": "EEG-based BCI rehabilitation system integrating SSVEP, motor imagery, real-time feedback, and pneumatic rehabilitation glove control.",
-      "language": "Python",
-      "license": null,
-      "stars": 1,
-      "forks": 0,
-      "topics": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "fbcca",
-        "lsl",
-        "motor-imagery",
-        "neurorehabilitation",
-        "psychopy",
-        "rehabilitation",
-        "ssvep"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "ssvep",
-        "motor-imagery",
-        "rehab"
-      ],
-      "createdAt": "2026-08-14T12:50:20Z",
-      "updatedAt": "2026-08-17T14:24:31Z",
-      "pushedAt": "2026-08-17T14:17:11Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "SuzukaWu"
-      }
-    },
-    {
-      "id": "github:Larryzpl123/mi-bci-failure-diagnosis",
-      "name": "mi-bci-failure-diagnosis",
-      "owner": "Larryzpl123",
-      "author": "Larryzpl123",
-      "url": "https://github.com/Larryzpl123/mi-bci-failure-diagnosis",
-      "homepage": "https://doi.org/10.5281/zenodo.21538627",
-      "source": "github",
-      "description": "Diagnosing Motor-Imagery BCI Failure: A Three-Step Diagnostic Framework (analysis code and derived results)",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 5,
-      "forks": 1,
-      "topics": [
-        "brain-computer-interface",
-        "csp",
-        "eeg",
-        "motor-imagery",
-        "reproducible-research",
-        "riemannian-geometry"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "motor-imagery",
-        "csp",
-        "riemannian"
-      ],
-      "createdAt": "2026-07-22T17:25:33Z",
-      "updatedAt": "2026-09-08T00:28:54Z",
-      "pushedAt": "2026-08-02T20:43:00Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "Larryzpl123"
-      }
-    },
-    {
-      "id": "github:Seraxel97/Tesi-2.0",
-      "name": "Tesi-2.0",
-      "owner": "Seraxel97",
-      "author": "Seraxel97",
-      "url": "https://github.com/Seraxel97/Tesi-2.0",
-      "homepage": null,
-      "source": "github",
-      "description": "Tesi magistrale: pipeline EEG resting-state EO/EC, source reconstruction \u2192 FC \u2192 ML classification (mne-bids-pipeline + mne-connectivity + mne-features + sklearn)",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bids",
-        "mne",
-        "connectivity",
-        "source"
-      ],
-      "createdAt": "2026-05-05T18:38:43Z",
-      "updatedAt": "2026-10-12T14:59:30Z",
-      "pushedAt": "2026-10-10T15:21:53Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "Seraxel97"
-      }
-    },
-    {
-      "id": "github:Glacier137/Covert-reading",
-      "name": "Covert-reading",
-      "owner": "Glacier137",
-      "author": "Glacier137",
-      "url": "https://github.com/Glacier137/Covert-reading",
-      "homepage": "https://doi.org/10.1101/2025.05.27.656311",
-      "source": "github",
-      "description": "Executable figure-reproduction notebooks, Source Data, and neural decoding/synthesis code for the Covert Reading study on articulatory dynamics in speech imagery and production.",
-      "language": "Jupyter Notebook",
-      "license": "Apache-2.0",
-      "stars": 1,
-      "forks": 1,
-      "topics": [
-        "ecog",
-        "jupyter-notebook",
-        "neural-decoding",
-        "neuroscience",
-        "reproducibility",
-        "speech-imagery"
-      ],
-      "tags": [
-        "ecog",
-        "bci",
-        "decoding",
-        "covert-reading",
-        "neuroscience"
-      ],
-      "createdAt": "2026-08-02T03:44:53Z",
-      "updatedAt": "2026-10-02T08:37:47Z",
-      "pushedAt": "2026-09-21T14:00:18Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-06",
-        "batch": "batch35",
-        "contactedAuthor": "Glacier137"
-      }
-    },
-    {
       "id": "github:shepherd0106/Fatigue-check-Transformer-1.0",
       "name": "Fatigue-check-Transformer-1.0",
       "owner": "shepherd0106",
@@ -13118,37 +13118,6 @@
         "contactedAt": "2026-11-06",
         "batch": "batch35",
         "contactedAuthor": "shepherd0106"
-      }
-    },
-    {
-      "id": "github:JOYJIT-06/LeakCheck",
-      "name": "LeakCheck",
-      "owner": "JOYJIT-06",
-      "author": "JOYJIT-06",
-      "url": "https://github.com/JOYJIT-06/LeakCheck",
-      "homepage": null,
-      "source": "github",
-      "description": "A leakage-aware benchmarking framework for evaluating validation strategies and data leakage in within-subject motor-imagery EEG decoding.",
-      "language": "Python",
-      "license": "Apache-2.0",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bci",
-        "motor-imagery",
-        "leakage",
-        "validation"
-      ],
-      "createdAt": "2026-11-06T14:31:03Z",
-      "updatedAt": "2026-11-08T22:55:53Z",
-      "pushedAt": "2026-11-08T21:19:00Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-09",
-        "batch": "batch36",
-        "contactedAuthor": "JOYJIT-06"
       }
     },
     {
@@ -13183,34 +13152,34 @@
       }
     },
     {
-      "id": "github:zychpatryk/ssvep-based-bci-for-hospital-bed",
-      "name": "ssvep-based-bci-for-hospital-bed",
-      "owner": "zychpatryk",
-      "author": "zychpatryk",
-      "url": "https://github.com/zychpatryk/ssvep-based-bci-for-hospital-bed",
+      "id": "github:JOYJIT-06/LeakCheck",
+      "name": "LeakCheck",
+      "owner": "JOYJIT-06",
+      "author": "JOYJIT-06",
+      "url": "https://github.com/JOYJIT-06/LeakCheck",
       "homepage": null,
       "source": "github",
-      "description": "Non-Invasive SSVEP-Based Brain-Computer Interface for Hospital Bed Control Using a Solenoid-Actuated Remote Attachment",
+      "description": "A leakage-aware benchmarking framework for evaluating validation strategies and data leakage in within-subject motor-imagery EEG decoding.",
       "language": "Python",
-      "license": "MIT",
+      "license": "Apache-2.0",
       "stars": 0,
       "forks": 0,
       "topics": [],
       "tags": [
         "eeg",
         "bci",
-        "ssvep",
-        "unicorn",
-        "assistive"
+        "motor-imagery",
+        "leakage",
+        "validation"
       ],
-      "createdAt": "2026-11-07T08:48:18Z",
-      "updatedAt": "2026-11-08T22:56:03Z",
-      "pushedAt": "2026-11-07T11:48:54Z",
+      "createdAt": "2026-11-06T14:31:03Z",
+      "updatedAt": "2026-11-08T22:55:53Z",
+      "pushedAt": "2026-11-08T21:19:00Z",
       "archived": false,
       "outreach": {
         "contactedAt": "2026-11-09",
         "batch": "batch36",
-        "contactedAuthor": "zychpatryk"
+        "contactedAuthor": "JOYJIT-06"
       }
     },
     {
@@ -13245,34 +13214,34 @@
       }
     },
     {
-      "id": "github:tql-mee6/neuroassist-systema",
-      "name": "neuroassist-systema",
-      "owner": "tql-mee6",
-      "author": "tql-mee6",
-      "url": "https://github.com/tql-mee6/neuroassist-systema",
+      "id": "github:Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
+      "name": "EARSENSE-Minor-and-Major-Project",
+      "owner": "Tanishkaaa016",
+      "author": "Tanishkaaa016",
+      "url": "https://github.com/Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
       "homepage": null,
       "source": "github",
-      "description": "Research prototype: Russian scanning keyboard, CSP + LDA, reproducible PhysioNet EEGMMIDB evaluation, model parameters and offline EEG replay.",
-      "language": "Python",
+      "description": "Wearable ear-mounted EEG system for P300 detection and analysis.",
+      "language": "Jupyter Notebook",
       "license": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "tags": [
         "eeg",
-        "bci",
-        "motor-imagery",
-        "csp",
-        "speller"
+        "p300",
+        "ear-eeg",
+        "wearable",
+        "bci"
       ],
-      "createdAt": "2026-11-08T20:07:57Z",
-      "updatedAt": "2026-11-08T22:56:13Z",
-      "pushedAt": "2026-11-08T20:25:39Z",
+      "createdAt": "2026-11-05T13:32:02Z",
+      "updatedAt": "2026-11-08T22:56:27Z",
+      "pushedAt": "2026-11-05T15:09:11Z",
       "archived": false,
       "outreach": {
         "contactedAt": "2026-11-09",
         "batch": "batch36",
-        "contactedAuthor": "tql-mee6"
+        "contactedAuthor": "Tanishkaaa016"
       }
     },
     {
@@ -13304,6 +13273,37 @@
         "contactedAt": "2026-11-09",
         "batch": "batch36",
         "contactedAuthor": "UnnatPar"
+      }
+    },
+    {
+      "id": "github:Warit-Yuv/SIIT-bobo-goggles",
+      "name": "SIIT-bobo-goggles",
+      "owner": "Warit-Yuv",
+      "author": "Warit-Yuv",
+      "url": "https://github.com/Warit-Yuv/SIIT-bobo-goggles",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG and Gaze tracking ROSMASTER-M1 Robot Teleoperation.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "muse",
+        "gaze",
+        "robotics"
+      ],
+      "createdAt": "2026-11-07T14:01:54Z",
+      "updatedAt": "2026-11-08T22:56:32Z",
+      "pushedAt": "2026-11-08T20:00:09Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "Warit-Yuv"
       }
     },
     {
@@ -13342,130 +13342,6 @@
         "contactedAt": "2026-11-09",
         "batch": "batch36",
         "contactedAuthor": "agteo"
-      }
-    },
-    {
-      "id": "github:Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
-      "name": "EARSENSE-Minor-and-Major-Project",
-      "owner": "Tanishkaaa016",
-      "author": "Tanishkaaa016",
-      "url": "https://github.com/Tanishkaaa016/EARSENSE-Minor-and-Major-Project",
-      "homepage": null,
-      "source": "github",
-      "description": "Wearable ear-mounted EEG system for P300 detection and analysis.",
-      "language": "Jupyter Notebook",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "p300",
-        "ear-eeg",
-        "wearable",
-        "bci"
-      ],
-      "createdAt": "2026-11-05T13:32:02Z",
-      "updatedAt": "2026-11-08T22:56:27Z",
-      "pushedAt": "2026-11-05T15:09:11Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-09",
-        "batch": "batch36",
-        "contactedAuthor": "Tanishkaaa016"
-      }
-    },
-    {
-      "id": "github:Warit-Yuv/SIIT-bobo-goggles",
-      "name": "SIIT-bobo-goggles",
-      "owner": "Warit-Yuv",
-      "author": "Warit-Yuv",
-      "url": "https://github.com/Warit-Yuv/SIIT-bobo-goggles",
-      "homepage": null,
-      "source": "github",
-      "description": "EEG and Gaze tracking ROSMASTER-M1 Robot Teleoperation.",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bci",
-        "muse",
-        "gaze",
-        "robotics"
-      ],
-      "createdAt": "2026-11-07T14:01:54Z",
-      "updatedAt": "2026-11-08T22:56:32Z",
-      "pushedAt": "2026-11-08T20:00:09Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-09",
-        "batch": "batch36",
-        "contactedAuthor": "Warit-Yuv"
-      }
-    },
-    {
-      "id": "github:samarthp11/eeg-motor-imagery-classification",
-      "name": "eeg-motor-imagery-classification",
-      "owner": "samarthp11",
-      "author": "samarthp11",
-      "url": "https://github.com/samarthp11/eeg-motor-imagery-classification",
-      "homepage": null,
-      "source": "github",
-      "description": "Machine learning classification of left and right motor imagery",
-      "language": "Jupyter Notebook",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bci",
-        "motor-imagery",
-        "eegnet",
-        "transfer"
-      ],
-      "createdAt": "2026-11-04T19:44:45Z",
-      "updatedAt": "2026-11-08T22:56:37Z",
-      "pushedAt": "2026-11-04T19:54:16Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-09",
-        "batch": "batch36",
-        "contactedAuthor": "samarthp11"
-      }
-    },
-    {
-      "id": "github:oppo-poop/ssvep-bci-arm",
-      "name": "ssvep-bci-arm",
-      "owner": "oppo-poop",
-      "author": "oppo-poop",
-      "url": "https://github.com/oppo-poop/ssvep-bci-arm",
-      "homepage": null,
-      "source": "github",
-      "description": "ssvep-bci control Rbotic arm",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 0,
-      "forks": 1,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bci",
-        "ssvep",
-        "robotics",
-        "ros2"
-      ],
-      "createdAt": "2026-10-18T10:06:02Z",
-      "updatedAt": "2026-11-08T22:56:42Z",
-      "pushedAt": "2026-11-07T05:53:27Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-09",
-        "batch": "batch36",
-        "contactedAuthor": "oppo-poop"
       }
     },
     {
@@ -13508,123 +13384,127 @@
       }
     },
     {
-      "id": "github:duytanph/b2t-drift",
-      "name": "b2t-drift",
-      "owner": "duytanph",
-      "author": "duytanph",
-      "url": "https://github.com/duytanph/b2t-drift",
+      "id": "github:oppo-poop/ssvep-bci-arm",
+      "name": "ssvep-bci-arm",
+      "owner": "oppo-poop",
+      "author": "oppo-poop",
+      "url": "https://github.com/oppo-poop/ssvep-bci-arm",
       "homepage": null,
       "source": "github",
-      "description": "How much a speech brain-computer interface decoder degrades after being trained once on early sessions, what changes in the neural signal, and whether small labeled recalibration can restore it. 20 months, 45 sessions, T15 Brain-to-Text '25 dataset.",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [
-        "bci",
-        "brain-computer-interface",
-        "ctc",
-        "machine-learning",
-        "neural-decoding",
-        "neuroprosthetics",
-        "neuroscience",
-        "neurotechnology",
-        "pytorch",
-        "speech-decoding"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "speech",
-        "drift",
-        "neuroprosthetics"
-      ],
-      "createdAt": "2026-08-30T21:35:18Z",
-      "updatedAt": "2026-11-09T22:50:45Z",
-      "pushedAt": "2026-11-09T21:41:41Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "duytanph"
-      }
-    },
-    {
-      "id": "github:luchocomputor/flow-state-uqam",
-      "name": "flow-state-uqam",
-      "owner": "luchocomputor",
-      "author": "luchocomputor",
-      "url": "https://github.com/luchocomputor/flow-state-uqam",
-      "homepage": null,
-      "source": "github",
-      "description": "EEG decoding of in-game attentional engagement: multivariate EMD, Wigner-Ville and Riemannian features (ISCAS 2027 submission)",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [
-        "brain-computer-interface",
-        "eeg",
-        "empirical-mode-decomposition",
-        "python",
-        "riemannian-geometry",
-        "wigner-ville"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "attention",
-        "riemannian",
-        "emd"
-      ],
-      "createdAt": "2026-11-09T20:18:24Z",
-      "updatedAt": "2026-11-09T22:50:49Z",
-      "pushedAt": "2026-11-09T20:18:39Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "luchocomputor"
-      }
-    },
-    {
-      "id": "github:jurecerkez-code/pieeg-home-lab",
-      "name": "pieeg-home-lab",
-      "owner": "jurecerkez-code",
-      "author": "jurecerkez-code",
-      "url": "https://github.com/jurecerkez-code/pieeg-home-lab",
-      "homepage": null,
-      "source": "github",
-      "description": "An 8 channel EEG lab on a Raspberry Pi with the PiEEG-8: setup guide, true scale figures, live streaming, recording and NWB conversion.",
+      "description": "ssvep-bci control Rbotic arm",
       "language": "Python",
       "license": "MIT",
-      "stars": 2,
+      "stars": 0,
       "forks": 1,
-      "topics": [
-        "ads1299",
-        "bci",
-        "biosignals",
-        "eeg",
-        "neuroscience",
-        "nwb",
-        "pieeg",
-        "raspberry-pi"
-      ],
+      "topics": [],
       "tags": [
         "eeg",
-        "pieeg",
-        "ads1299",
-        "raspberry-pi",
-        "nwb"
+        "bci",
+        "ssvep",
+        "robotics",
+        "ros2"
       ],
-      "createdAt": "2026-10-31T11:37:03Z",
-      "updatedAt": "2026-11-09T22:50:54Z",
-      "pushedAt": "2026-11-09T19:05:59Z",
+      "createdAt": "2026-10-18T10:06:02Z",
+      "updatedAt": "2026-11-08T22:56:42Z",
+      "pushedAt": "2026-11-07T05:53:27Z",
       "archived": false,
       "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "jurecerkez-code"
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "oppo-poop"
+      }
+    },
+    {
+      "id": "github:samarthp11/eeg-motor-imagery-classification",
+      "name": "eeg-motor-imagery-classification",
+      "owner": "samarthp11",
+      "author": "samarthp11",
+      "url": "https://github.com/samarthp11/eeg-motor-imagery-classification",
+      "homepage": null,
+      "source": "github",
+      "description": "Machine learning classification of left and right motor imagery",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "eegnet",
+        "transfer"
+      ],
+      "createdAt": "2026-11-04T19:44:45Z",
+      "updatedAt": "2026-11-08T22:56:37Z",
+      "pushedAt": "2026-11-04T19:54:16Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "samarthp11"
+      }
+    },
+    {
+      "id": "github:tql-mee6/neuroassist-systema",
+      "name": "neuroassist-systema",
+      "owner": "tql-mee6",
+      "author": "tql-mee6",
+      "url": "https://github.com/tql-mee6/neuroassist-systema",
+      "homepage": null,
+      "source": "github",
+      "description": "Research prototype: Russian scanning keyboard, CSP + LDA, reproducible PhysioNet EEGMMIDB evaluation, model parameters and offline EEG replay.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "csp",
+        "speller"
+      ],
+      "createdAt": "2026-11-08T20:07:57Z",
+      "updatedAt": "2026-11-08T22:56:13Z",
+      "pushedAt": "2026-11-08T20:25:39Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "tql-mee6"
+      }
+    },
+    {
+      "id": "github:zychpatryk/ssvep-based-bci-for-hospital-bed",
+      "name": "ssvep-based-bci-for-hospital-bed",
+      "owner": "zychpatryk",
+      "author": "zychpatryk",
+      "url": "https://github.com/zychpatryk/ssvep-based-bci-for-hospital-bed",
+      "homepage": null,
+      "source": "github",
+      "description": "Non-Invasive SSVEP-Based Brain-Computer Interface for Hospital Bed Control Using a Solenoid-Actuated Remote Attachment",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "unicorn",
+        "assistive"
+      ],
+      "createdAt": "2026-11-07T08:48:18Z",
+      "updatedAt": "2026-11-08T22:56:03Z",
+      "pushedAt": "2026-11-07T11:48:54Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-09",
+        "batch": "batch36",
+        "contactedAuthor": "zychpatryk"
       }
     },
     {
@@ -13669,110 +13549,6 @@
       }
     },
     {
-      "id": "github:cgenevier/ERP-XTTN",
-      "name": "ERP-XTTN",
-      "owner": "cgenevier",
-      "author": "cgenevier",
-      "url": "https://github.com/cgenevier/ERP-XTTN",
-      "homepage": null,
-      "source": "github",
-      "description": "Code repository for ERP-XTTN, an interpretable cross-attention architecture for ERP classification from EEG signals.",
-      "language": "Python",
-      "license": "MIT",
-      "stars": 2,
-      "forks": 0,
-      "topics": [
-        "brain-computer-interface",
-        "eeg",
-        "erp",
-        "interpretability",
-        "neuroscience",
-        "pytorch"
-      ],
-      "tags": [
-        "eeg",
-        "erp",
-        "bci",
-        "interpretability",
-        "cross-attention"
-      ],
-      "createdAt": "2026-03-09T01:20:54Z",
-      "updatedAt": "2026-11-09T22:51:02Z",
-      "pushedAt": "2026-11-09T15:06:14Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "cgenevier"
-      }
-    },
-    {
-      "id": "github:layabubing/Asynchronous-SSVEP-BCI-SDK",
-      "name": "Asynchronous-SSVEP-BCI-SDK",
-      "owner": "layabubing",
-      "author": "layabubing",
-      "url": "https://github.com/layabubing/Asynchronous-SSVEP-BCI-SDK",
-      "homepage": null,
-      "source": "github",
-      "description": "Training-free CCA/FBCCA SSVEP recognizer plus an asynchronous idle/candidate/active/refractory state machine.",
-      "language": "Python",
-      "license": "Apache-2.0",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "tags": [
-        "eeg",
-        "bci",
-        "ssvep",
-        "cca",
-        "fbcca"
-      ],
-      "createdAt": "2026-07-30T06:02:09Z",
-      "updatedAt": "2026-11-09T22:51:06Z",
-      "pushedAt": "2026-11-08T08:38:59Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "layabubing"
-      }
-    },
-    {
-      "id": "github:Myeongjuuu/TADA",
-      "name": "TADA",
-      "owner": "Myeongjuuu",
-      "author": "Myeongjuuu",
-      "url": "https://github.com/Myeongjuuu/TADA",
-      "homepage": null,
-      "source": "github",
-      "description": "Multi-Scale Temporal Fusion Network with Encoding-Guided Reciprocal Re-ranking for ECoG-to-Text Semantic Decoding (To be submitted to IEEE International Winter Conference on BCI 2027)",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [
-        "ecog",
-        "ecog-to-text",
-        "retrieval"
-      ],
-      "tags": [
-        "ecog",
-        "bci",
-        "speech",
-        "retrieval",
-        "decoding"
-      ],
-      "createdAt": "2026-09-14T08:56:28Z",
-      "updatedAt": "2026-11-09T22:51:10Z",
-      "pushedAt": "2026-10-19T06:52:27Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "Myeongjuuu"
-      }
-    },
-    {
       "id": "github:MACVXACE/stroke_rehab_bci",
       "name": "stroke_rehab_bci",
       "owner": "MACVXACE",
@@ -13813,85 +13589,38 @@
       }
     },
     {
-      "id": "github:bettybrb/synthetic-eeg-benchmark",
-      "name": "synthetic-eeg-benchmark",
-      "owner": "bettybrb",
-      "author": "bettybrb",
-      "url": "https://github.com/bettybrb/synthetic-eeg-benchmark",
+      "id": "github:Myeongjuuu/TADA",
+      "name": "TADA",
+      "owner": "Myeongjuuu",
+      "author": "Myeongjuuu",
+      "url": "https://github.com/Myeongjuuu/TADA",
       "homepage": null,
       "source": "github",
-      "description": "Benchmarking Gaussian and VAE-based synthetic EEG for motor imagery classification with real held-out evaluation.",
+      "description": "Multi-Scale Temporal Fusion Network with Encoding-Guided Reciprocal Re-ranking for ECoG-to-Text Semantic Decoding (To be submitted to IEEE International Winter Conference on BCI 2027)",
       "language": "Python",
       "license": null,
       "stars": 0,
       "forks": 0,
       "topics": [
-        "brain-computer-interface",
-        "braindecode",
-        "eeg",
-        "generative-models",
-        "motor-imagery",
-        "pytorch",
-        "synthetic-data",
-        "variational-autoencoder"
+        "ecog",
+        "ecog-to-text",
+        "retrieval"
       ],
       "tags": [
-        "eeg",
+        "ecog",
         "bci",
-        "motor-imagery",
-        "synthetic-data",
-        "vae"
+        "speech",
+        "retrieval",
+        "decoding"
       ],
-      "createdAt": "2026-04-15T14:12:22Z",
-      "updatedAt": "2026-11-09T22:51:18Z",
-      "pushedAt": "2026-09-28T10:47:41Z",
+      "createdAt": "2026-09-14T08:56:28Z",
+      "updatedAt": "2026-11-09T22:51:10Z",
+      "pushedAt": "2026-10-19T06:52:27Z",
       "archived": false,
       "outreach": {
         "contactedAt": "2026-11-10",
         "batch": "batch37",
-        "contactedAuthor": "bettybrb"
-      }
-    },
-    {
-      "id": "github:educapeta/Mestrado-Kinect-EEG-Trajectory",
-      "name": "Mestrado-Kinect-EEG-Trajectory",
-      "owner": "educapeta",
-      "author": "educapeta",
-      "url": "https://github.com/educapeta/Mestrado-Kinect-EEG-Trajectory",
-      "homepage": null,
-      "source": "github",
-      "description": "Ground truth 3D da m\u00e3o (Kinect v2 + MediaPipe + IMU) acoplado a EEG g.Nautilus: aquisi\u00e7\u00e3o offline (ME/MI, 6 condi\u00e7\u00f5es) e sistema online com a rede SAND prevendo a trajet\u00f3ria da m\u00e3o.",
-      "language": "Python",
-      "license": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [
-        "bci",
-        "eeg",
-        "ground-truth",
-        "gtec",
-        "kinect",
-        "mediapipe",
-        "motor-imagery",
-        "neuroscience",
-        "python",
-        "pytorch"
-      ],
-      "tags": [
-        "eeg",
-        "bci",
-        "motor-imagery",
-        "kinect",
-        "trajectory"
-      ],
-      "createdAt": "2026-09-17T20:55:48Z",
-      "updatedAt": "2026-11-09T22:51:22Z",
-      "pushedAt": "2026-10-19T18:24:21Z",
-      "archived": false,
-      "outreach": {
-        "contactedAt": "2026-11-10",
-        "batch": "batch37",
-        "contactedAuthor": "educapeta"
+        "contactedAuthor": "Myeongjuuu"
       }
     },
     {
@@ -13954,6 +13683,754 @@
         "contactedAt": "2026-11-10",
         "batch": "batch37",
         "contactedAuthor": "Yiming-S"
+      }
+    },
+    {
+      "id": "github:bettybrb/synthetic-eeg-benchmark",
+      "name": "synthetic-eeg-benchmark",
+      "owner": "bettybrb",
+      "author": "bettybrb",
+      "url": "https://github.com/bettybrb/synthetic-eeg-benchmark",
+      "homepage": null,
+      "source": "github",
+      "description": "Benchmarking Gaussian and VAE-based synthetic EEG for motor imagery classification with real held-out evaluation.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "braindecode",
+        "eeg",
+        "generative-models",
+        "motor-imagery",
+        "pytorch",
+        "synthetic-data",
+        "variational-autoencoder"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "synthetic-data",
+        "vae"
+      ],
+      "createdAt": "2026-04-15T14:12:22Z",
+      "updatedAt": "2026-11-09T22:51:18Z",
+      "pushedAt": "2026-09-28T10:47:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "bettybrb"
+      }
+    },
+    {
+      "id": "github:cgenevier/ERP-XTTN",
+      "name": "ERP-XTTN",
+      "owner": "cgenevier",
+      "author": "cgenevier",
+      "url": "https://github.com/cgenevier/ERP-XTTN",
+      "homepage": null,
+      "source": "github",
+      "description": "Code repository for ERP-XTTN, an interpretable cross-attention architecture for ERP classification from EEG signals.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "erp",
+        "interpretability",
+        "neuroscience",
+        "pytorch"
+      ],
+      "tags": [
+        "eeg",
+        "erp",
+        "bci",
+        "interpretability",
+        "cross-attention"
+      ],
+      "createdAt": "2026-03-09T01:20:54Z",
+      "updatedAt": "2026-11-09T22:51:02Z",
+      "pushedAt": "2026-11-09T15:06:14Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "cgenevier"
+      }
+    },
+    {
+      "id": "github:duytanph/b2t-drift",
+      "name": "b2t-drift",
+      "owner": "duytanph",
+      "author": "duytanph",
+      "url": "https://github.com/duytanph/b2t-drift",
+      "homepage": null,
+      "source": "github",
+      "description": "How much a speech brain-computer interface decoder degrades after being trained once on early sessions, what changes in the neural signal, and whether small labeled recalibration can restore it. 20 months, 45 sessions, T15 Brain-to-Text '25 dataset.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "ctc",
+        "machine-learning",
+        "neural-decoding",
+        "neuroprosthetics",
+        "neuroscience",
+        "neurotechnology",
+        "pytorch",
+        "speech-decoding"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "speech",
+        "drift",
+        "neuroprosthetics"
+      ],
+      "createdAt": "2026-08-30T21:35:18Z",
+      "updatedAt": "2026-11-09T22:50:45Z",
+      "pushedAt": "2026-11-09T21:41:41Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "duytanph"
+      }
+    },
+    {
+      "id": "github:educapeta/Mestrado-Kinect-EEG-Trajectory",
+      "name": "Mestrado-Kinect-EEG-Trajectory",
+      "owner": "educapeta",
+      "author": "educapeta",
+      "url": "https://github.com/educapeta/Mestrado-Kinect-EEG-Trajectory",
+      "homepage": null,
+      "source": "github",
+      "description": "Ground truth 3D da m\u00e3o (Kinect v2 + MediaPipe + IMU) acoplado a EEG g.Nautilus: aquisi\u00e7\u00e3o offline (ME/MI, 6 condi\u00e7\u00f5es) e sistema online com a rede SAND prevendo a trajet\u00f3ria da m\u00e3o.",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "eeg",
+        "ground-truth",
+        "gtec",
+        "kinect",
+        "mediapipe",
+        "motor-imagery",
+        "neuroscience",
+        "python",
+        "pytorch"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "kinect",
+        "trajectory"
+      ],
+      "createdAt": "2026-09-17T20:55:48Z",
+      "updatedAt": "2026-11-09T22:51:22Z",
+      "pushedAt": "2026-10-19T18:24:21Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "educapeta"
+      }
+    },
+    {
+      "id": "github:jurecerkez-code/pieeg-home-lab",
+      "name": "pieeg-home-lab",
+      "owner": "jurecerkez-code",
+      "author": "jurecerkez-code",
+      "url": "https://github.com/jurecerkez-code/pieeg-home-lab",
+      "homepage": null,
+      "source": "github",
+      "description": "An 8 channel EEG lab on a Raspberry Pi with the PiEEG-8: setup guide, true scale figures, live streaming, recording and NWB conversion.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 1,
+      "topics": [
+        "ads1299",
+        "bci",
+        "biosignals",
+        "eeg",
+        "neuroscience",
+        "nwb",
+        "pieeg",
+        "raspberry-pi"
+      ],
+      "tags": [
+        "eeg",
+        "pieeg",
+        "ads1299",
+        "raspberry-pi",
+        "nwb"
+      ],
+      "createdAt": "2026-10-31T11:37:03Z",
+      "updatedAt": "2026-11-09T22:50:54Z",
+      "pushedAt": "2026-11-09T19:05:59Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "jurecerkez-code"
+      }
+    },
+    {
+      "id": "github:layabubing/Asynchronous-SSVEP-BCI-SDK",
+      "name": "Asynchronous-SSVEP-BCI-SDK",
+      "owner": "layabubing",
+      "author": "layabubing",
+      "url": "https://github.com/layabubing/Asynchronous-SSVEP-BCI-SDK",
+      "homepage": null,
+      "source": "github",
+      "description": "Training-free CCA/FBCCA SSVEP recognizer plus an asynchronous idle/candidate/active/refractory state machine.",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "cca",
+        "fbcca"
+      ],
+      "createdAt": "2026-07-30T06:02:09Z",
+      "updatedAt": "2026-11-09T22:51:06Z",
+      "pushedAt": "2026-11-08T08:38:59Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "layabubing"
+      }
+    },
+    {
+      "id": "github:luchocomputor/flow-state-uqam",
+      "name": "flow-state-uqam",
+      "owner": "luchocomputor",
+      "author": "luchocomputor",
+      "url": "https://github.com/luchocomputor/flow-state-uqam",
+      "homepage": null,
+      "source": "github",
+      "description": "EEG decoding of in-game attentional engagement: multivariate EMD, Wigner-Ville and Riemannian features (ISCAS 2027 submission)",
+      "language": "Python",
+      "license": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "empirical-mode-decomposition",
+        "python",
+        "riemannian-geometry",
+        "wigner-ville"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "attention",
+        "riemannian",
+        "emd"
+      ],
+      "createdAt": "2026-11-09T20:18:24Z",
+      "updatedAt": "2026-11-09T22:50:49Z",
+      "pushedAt": "2026-11-09T20:18:39Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-10",
+        "batch": "batch37",
+        "contactedAuthor": "luchocomputor"
+      }
+    },
+    {
+      "id": "github:DocSalamandyr/Hill_2026_ERSP-neurofeedback-analysis",
+      "name": "Hill_2026_ERSP-neurofeedback-analysis",
+      "owner": "DocSalamandyr",
+      "author": "DocSalamandyr",
+      "url": "https://github.com/DocSalamandyr/Hill_2026_ERSP-neurofeedback-analysis",
+      "homepage": null,
+      "source": "github",
+      "description": "Analysis code for:  Hill, A. (2026). Frequency-Specific Operant Learning in Neurofeedback Reveals Distinct Cortical Mechanisms: Evidence from Double-Blind ERSP and ERP Dissociations. [Preprint]",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "neurofeedback",
+        "neuroscience",
+        "event-related-spectral-perturbation"
+      ],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "ersp",
+        "erp",
+        "reproducibility"
+      ],
+      "createdAt": "2026-04-13T05:10:15Z",
+      "updatedAt": "2026-11-10T22:49:58Z",
+      "pushedAt": "2026-08-10T02:18:29Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "DocSalamandyr"
+      }
+    },
+    {
+      "id": "github:MuskanSiraj78/ecog-finger-decoding",
+      "name": "ecog-finger-decoding",
+      "owner": "MuskanSiraj78",
+      "author": "MuskanSiraj78",
+      "url": "https://github.com/MuskanSiraj78/ecog-finger-decoding",
+      "homepage": null,
+      "source": "github",
+      "description": "Decoding finger flexion vs. extension from human ECoG \u2014 full pipeline from preprocessing to validated classification (75.8% accuracy, AUC 0.78)",
+      "language": "Jupyter Notebook",
+      "license": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "classification",
+        "cross-validation",
+        "ecog",
+        "machine-learning",
+        "neuroscience",
+        "python",
+        "scikit-learn",
+        "signal",
+        "signal-processing"
+      ],
+      "tags": [
+        "ecog",
+        "bci",
+        "classification",
+        "motor",
+        "evaluation"
+      ],
+      "createdAt": "2026-07-23T14:05:28Z",
+      "updatedAt": "2026-11-10T22:49:53Z",
+      "pushedAt": "2026-07-23T14:18:01Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "MuskanSiraj78"
+      }
+    },
+    {
+      "id": "github:TheAxeC/behavior-aligned-ecog-transfer",
+      "name": "behavior-aligned-ecog-transfer",
+      "owner": "TheAxeC",
+      "author": "TheAxeC",
+      "url": "https://github.com/TheAxeC/behavior-aligned-ecog-transfer",
+      "homepage": "https://theaxec.github.io",
+      "source": "github",
+      "description": "Behavior-supervised alignment for cross-subject neural decoding across non-corresponding ECoG electrode grids: align each patient's grid onto shared finger-motor axes defined by the decode target, then decode with a shared seq2seq TCN, interpretably and without a foundation model.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 3,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "cross-subject",
+        "ecog",
+        "finger-movement",
+        "interpretable",
+        "neural-decoding",
+        "neuroscience",
+        "reproducible-research",
+        "tcn",
+        "transfer-learning"
+      ],
+      "tags": [
+        "ecog",
+        "bci",
+        "transfer",
+        "finger",
+        "tcn"
+      ],
+      "createdAt": "2026-07-04T21:40:51Z",
+      "updatedAt": "2026-11-10T22:49:48Z",
+      "pushedAt": "2026-07-06T13:12:25Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "TheAxeC"
+      }
+    },
+    {
+      "id": "github:YG-paaleee/eegauge",
+      "name": "eegauge",
+      "owner": "YG-paaleee",
+      "author": "YG-paaleee",
+      "url": "https://github.com/YG-paaleee/eegauge",
+      "homepage": null,
+      "source": "github",
+      "description": "Honest dataset cards for public EEG/BCI datasets: leakage-aware baselines, chance/significance, per-class metrics, and MOABB + EEGDash metadata. Not medical software.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 6,
+      "forks": 1,
+      "topics": [
+        "bci",
+        "benchmarking",
+        "brain-computer-interface",
+        "dataset-card",
+        "eeg",
+        "eeg-classification",
+        "machine-learning",
+        "mne-python",
+        "moabb",
+        "motor-imagery",
+        "neuroscience",
+        "neurotech",
+        "openneuro",
+        "python",
+        "reproducibility",
+        "eegdash"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "evaluation",
+        "dataset-card"
+      ],
+      "createdAt": "2026-06-20T03:25:10Z",
+      "updatedAt": "2026-11-10T22:49:38Z",
+      "pushedAt": "2026-06-23T17:01:18Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "YG-paaleee"
+      }
+    },
+    {
+      "id": "github:aaryavvatts-lab/neurolink",
+      "name": "neurolink",
+      "owner": "aaryavvatts-lab",
+      "author": "aaryavvatts-lab",
+      "url": "https://github.com/aaryavvatts-lab/neurolink",
+      "homepage": "https://neurolink-ecru.vercel.app",
+      "source": "github",
+      "description": "Decoding visual perception from human intracranial LFP (ECoG). Reconstructs what a person was looking at from raw brain signals, and tests whether off-the-shelf EEG foundation models can see what intracranial electrodes actually record.",
+      "language": "Python",
+      "license": null,
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "ecog",
+        "ieeg",
+        "neural-decoding",
+        "neuroscience",
+        "self-supervised-learning"
+      ],
+      "tags": [
+        "ecog",
+        "bci",
+        "visual",
+        "foundation-model",
+        "decoding"
+      ],
+      "createdAt": "2026-08-24T22:43:21Z",
+      "updatedAt": "2026-11-10T22:49:17Z",
+      "pushedAt": "2026-08-25T02:23:33Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "aaryavvatts-lab"
+      }
+    },
+    {
+      "id": "github:aftab802/eeg-mi-leakage-benchmark",
+      "name": "eeg-mi-leakage-benchmark",
+      "owner": "aftab802",
+      "author": "aftab802",
+      "url": "https://github.com/aftab802/eeg-mi-leakage-benchmark",
+      "homepage": null,
+      "source": "github",
+      "description": "Leakage-safe (L0) benchmark of CSP+CNN, EEGNet, 1D CNN and a four-class CNN on PhysioNet EEGMMIDB, with the L0-L3 leakage taxonomy and a matched-protocol ablation.",
+      "language": "Jupyter Notebook",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "leakage",
+        "evaluation"
+      ],
+      "createdAt": "2026-11-10T18:36:44Z",
+      "updatedAt": "2026-11-10T22:49:22Z",
+      "pushedAt": "2026-11-10T20:37:13Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "aftab802"
+      }
+    },
+    {
+      "id": "github:chengpengli239-glitch/ieeg-preprocess-toolkit",
+      "name": "ieeg-preprocess-toolkit",
+      "owner": "chengpengli239-glitch",
+      "author": "chengpengli239-glitch",
+      "url": "https://github.com/chengpengli239-glitch/ieeg-preprocess-toolkit",
+      "homepage": null,
+      "source": "github",
+      "description": "Reproducible iEEG/ECoG/sEEG preprocessing protocol - desktop UI, 8 re-referencing schemes, artifact masks, and a 9-panel QC dashboard",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "ecog",
+        "electrophysiology",
+        "ieeg",
+        "neuroscience",
+        "preprocessing",
+        "python",
+        "quality-control",
+        "seeg",
+        "signal-processing"
+      ],
+      "tags": [
+        "ieeg",
+        "ecog",
+        "seeg",
+        "preprocessing",
+        "qc"
+      ],
+      "createdAt": "2026-11-10T13:01:50Z",
+      "updatedAt": "2026-11-10T22:49:01Z",
+      "pushedAt": "2026-11-10T17:12:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "chengpengli239-glitch"
+      }
+    },
+    {
+      "id": "github:huqingyang186/trca-ssvep-reproduction",
+      "name": "trca-ssvep-reproduction",
+      "owner": "huqingyang186",
+      "author": "huqingyang186",
+      "url": "https://github.com/huqingyang186/trca-ssvep-reproduction",
+      "homepage": null,
+      "source": "github",
+      "description": "Transparent CPU reproduction of filter-bank TRCA and eTRCA for 40-class SSVEP recognition",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "eeg",
+        "filter-bank",
+        "python",
+        "ssvep",
+        "trca"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "trca",
+        "reproduction"
+      ],
+      "createdAt": "2026-07-30T06:57:57Z",
+      "updatedAt": "2026-11-10T22:49:32Z",
+      "pushedAt": "2026-07-30T07:09:35Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "huqingyang186"
+      }
+    },
+    {
+      "id": "github:levshaazz/waveform-or-rhythm",
+      "name": "waveform-or-rhythm",
+      "owner": "levshaazz",
+      "author": "levshaazz",
+      "url": "https://github.com/levshaazz/waveform-or-rhythm",
+      "homepage": null,
+      "source": "github",
+      "description": "Waveform or rhythm? A BPE tokenisation benchmark for EEG - code and reproducibility artefacts for Nasybullin and Kornaev 2026 (Izvestiya SWSU)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "benchmark",
+        "bpe",
+        "brain-computer-interface",
+        "eeg",
+        "machine-learning",
+        "mne",
+        "motor-imagery",
+        "p300",
+        "reproducibility",
+        "sleep-staging",
+        "ssvep",
+        "time-series",
+        "tokenization"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "tokenization",
+        "bpe",
+        "benchmark"
+      ],
+      "createdAt": "2026-03-17T10:41:45Z",
+      "updatedAt": "2026-11-10T22:49:27Z",
+      "pushedAt": "2026-09-08T12:24:17Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "levshaazz"
+      }
+    },
+    {
+      "id": "github:safii-74/SCDM-EEG-to-fNIRS",
+      "name": "SCDM-EEG-to-fNIRS",
+      "owner": "safii-74",
+      "author": "safii-74",
+      "url": "https://github.com/safii-74/SCDM-EEG-to-fNIRS",
+      "homepage": null,
+      "source": "github",
+      "description": "Spatial Cross-Modal Diffusion Model for synthesizing fNIRS hemodynamic signals from EEG \u2014 enabling hybrid Brain-Computer Interfaces without fNIRS hardware. HRF convolution preprocessing, gradient-stable SimpleDenoiser, and spatial correlation planes conditioning.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 4,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "cross-modal",
+        "deep-learning",
+        "diffusion-model",
+        "eeg",
+        "fnirs",
+        "motor-imagery",
+        "neuroscience",
+        "pytorch",
+        "signal-processing",
+        "hemodynamic-response",
+        "hybrid-bci"
+      ],
+      "tags": [
+        "eeg",
+        "fnirs",
+        "bci",
+        "diffusion",
+        "hybrid"
+      ],
+      "createdAt": "2026-06-28T18:03:51Z",
+      "updatedAt": "2026-11-10T22:49:43Z",
+      "pushedAt": "2026-06-28T19:03:16Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "safii-74"
+      }
+    },
+    {
+      "id": "github:stone-coding/eeg-toolkit",
+      "name": "eeg-toolkit",
+      "owner": "stone-coding",
+      "author": "stone-coding",
+      "url": "https://github.com/stone-coding/eeg-toolkit",
+      "homepage": null,
+      "source": "github",
+      "description": "Toolkit for managing, accessing and analyzing human EEG data: BIDS, batch pipeline, catalog + API, de-identification, real-time simulation, GUI (MNE EEGBCI demo)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 2,
+      "forks": 0,
+      "topics": [
+        "bids",
+        "eeg",
+        "mne-python",
+        "neuroscience",
+        "python",
+        "signal-processing"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "bids",
+        "tooling"
+      ],
+      "createdAt": "2026-10-31T01:39:57Z",
+      "updatedAt": "2026-11-10T22:49:12Z",
+      "pushedAt": "2026-10-31T01:57:08Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "stone-coding"
+      }
+    },
+    {
+      "id": "github:yazanjer/paper-georoute-eeg",
+      "name": "paper-georoute-eeg",
+      "owner": "yazanjer",
+      "author": "yazanjer",
+      "url": "https://github.com/yazanjer/paper-georoute-eeg",
+      "homepage": null,
+      "source": "github",
+      "description": "GeoRoute: label-free Riemannian routing of subject-specific LoRA adapters for calibration-free EEG foundation model decoding (experiments run on RunPod)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "paper",
+        "rachis-systems",
+        "rafeef"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "foundation-model",
+        "test-time-adaptation"
+      ],
+      "createdAt": "2026-09-23T11:31:32Z",
+      "updatedAt": "2026-11-10T22:49:06Z",
+      "pushedAt": "2026-11-05T09:53:44Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-11",
+        "batch": "batch38",
+        "contactedAuthor": "yazanjer"
       }
     }
   ]
