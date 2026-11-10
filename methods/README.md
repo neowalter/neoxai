@@ -16,6 +16,7 @@ Preprocessing, libraries, and **local-first** notes for EEG / BCI. Again: **link
 | PyPREP | PREP in Python | [sappelhoff/pyprep](https://github.com/sappelhoff/pyprep) |
 | braindecode | Deep learning on EEG | [braindecode.org](https://braindecode.org) |
 | MOABB | Cross-dataset benchmarks | [github.com/NeuroTechX/moabb](https://github.com/NeuroTechX/moabb) |
+| Clinical acquisition notes | Causal vs zero-phase filter views; EDF time axes and dropped samples (text note, offline; CC-BY-4.0) | [clinical-acquisition-notes.md](./clinical-acquisition-notes.md) · Widmann et al., *J Neurosci Methods*, 2015 · Kemp & Olivan, *Clin Neurophysiol*, 2003 |
 
 ## Practical order (typical offline study)
 
