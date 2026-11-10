@@ -2,7 +2,7 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
-Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **413** entries after batch37.
+Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **425** entries after batch38.
 
 | Repo | Author | Description | Last push | Stars |
 | --- | --- | --- | --- | --- |
@@ -419,3 +419,15 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [Mestrado-Kinect-EEG-Trajectory](https://github.com/educapeta/Mestrado-Kinect-EEG-Trajectory) | @educapeta | Ground truth 3D da mão (Kinect v2 + MediaPipe + IMU) acoplado a EEG g... | 2026-10-19 | 0 |
 | [ssvep-human-augmentation](https://github.com/Shaqvier/ssvep-human-augmentation) | @Shaqvier | Implementation of SSVEP BCI Paradigm as a Manipulator Control System... | 2026-10-14 | 0 |
 | [ci-gate](https://github.com/Yiming-S/ci-gate) | @Yiming-S | Confidence-calibrated source screening for cross-session motor-imager... | 2026-10-21 | 0 |
+| [ieeg-preprocess-toolkit](https://github.com/chengpengli239-glitch/ieeg-preprocess-toolkit) | @chengpengli239-glitch | Reproducible iEEG/ECoG/sEEG preprocessing protocol - desktop UI, 8 re-referencing schem... | 2026-11-10 | 2 |
+| [paper-georoute-eeg](https://github.com/yazanjer/paper-georoute-eeg) | @yazanjer | GeoRoute: label-free Riemannian routing of subject-specific LoRA adapters for calibrati... | 2026-11-05 | 1 |
+| [eeg-toolkit](https://github.com/stone-coding/eeg-toolkit) | @stone-coding | Toolkit for managing, accessing and analyzing human EEG data: BIDS, batch pipeline, cat... | 2026-10-31 | 2 |
+| [neurolink](https://github.com/aaryavvatts-lab/neurolink) | @aaryavvatts-lab | Decoding visual perception from human intracranial LFP (ECoG). Reconstructs what a pers... | 2026-08-25 | 2 |
+| [eeg-mi-leakage-benchmark](https://github.com/aftab802/eeg-mi-leakage-benchmark) | @aftab802 | Leakage-safe (L0) benchmark of CSP+CNN, EEGNet, 1D CNN and a four-class CNN on PhysioNe... | 2026-11-10 | 1 |
+| [waveform-or-rhythm](https://github.com/levshaazz/waveform-or-rhythm) | @levshaazz | Waveform or rhythm? A BPE tokenisation benchmark for EEG - code and reproducibility art... | 2026-09-08 | 2 |
+| [trca-ssvep-reproduction](https://github.com/huqingyang186/trca-ssvep-reproduction) | @huqingyang186 | Transparent CPU reproduction of filter-bank TRCA and eTRCA for 40-class SSVEP recognition | 2026-07-30 | 2 |
+| [eegauge](https://github.com/YG-paaleee/eegauge) | @YG-paaleee | Honest dataset cards for public EEG/BCI datasets: leakage-aware baselines, chance/signi... | 2026-06-23 | 6 |
+| [SCDM-EEG-to-fNIRS](https://github.com/safii-74/SCDM-EEG-to-fNIRS) | @safii-74 | Spatial Cross-Modal Diffusion Model for synthesizing fNIRS hemodynamic signals from EEG... | 2026-06-28 | 4 |
+| [behavior-aligned-ecog-transfer](https://github.com/TheAxeC/behavior-aligned-ecog-transfer) | @TheAxeC | Behavior-supervised alignment for cross-subject neural decoding across non-correspondin... | 2026-07-06 | 3 |
+| [ecog-finger-decoding](https://github.com/MuskanSiraj78/ecog-finger-decoding) | @MuskanSiraj78 | Decoding finger flexion vs. extension from human ECoG — full pipeline from preprocessin... | 2026-07-23 | 1 |
+| [Hill_2026_ERSP-neurofeedback-analysis](https://github.com/DocSalamandyr/Hill_2026_ERSP-neurofeedback-analysis) | @DocSalamandyr | Analysis code for:  Hill, A. (2026). Frequency-Specific Operant Learning in Neurofeedba... | 2026-08-10 | 2 |
