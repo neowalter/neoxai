@@ -1,281 +1,65 @@
 {
-  "date": "2026-11-11",
-  "generated_at": "2026-11-10T21:31:52.549Z",
+  "date": "2026-11-12",
+  "generated_at": "2026-11-11T21:32:09.194Z",
   "item_count": 7,
   "types": {
-    "Tutorial": 1,
-    "Project": 6
+    "Project": 7
   },
   "highlights": [
     {
-      "title_zh": "滤波实操：50 还是 60 Hz、陷波够不够、为什么必须先滤波再切片",
-      "title_en": "Hands-On Filtering: 50 or 60 Hz, Is a Notch Enough, and Why Filter Before Epoching",
-      "url": "https://www.bilibili.com/video/BV1FoWT6DEzt/",
-      "brief": "B站「有Li」的滤波实操教程，用 **EEGMMIDB** 公开数据把三个常被含糊带过的问题讲清楚了：①**工频是 50 还是 60 Hz**——数据在美国采集、应为 60 Hz，但**文件里没记录**，而 AI 写脚本时习惯性填 50 Hz，这一步必须人工确认；②**陷波够不够**——把原始、只陷波、只带通、陷波+带通四条功率谱叠在一起，实测**只做 1–40 Hz 带通，60 Hz 尖峰就已消失**；③**为什么先滤波再切片**——滤波器是有长度的：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**，对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠，而基线区间正好落在里面。对刚上手的人，这三条比任何滤波参数表都实用。"
+      "title_zh": "FieldTrip 置换检验改为把「并列」计入 p 值（>= 而非 >）",
+      "title_en": "FieldTrip Now Counts Ties in Monte Carlo p-Values (>= Instead of >)",
+      "url": "https://github.com/fieldtrip/fieldtrip/pull/2608",
+      "brief": "FieldTrip 合并 #2608（修 #2607）：`ft_statistics_montecarlo` 与 `clusterstat` 改用 **`>=`** 比较观测统计量与随机化分布。原因是此前用严格不等式，**与观测值恰好相等的随机化不被计数**；而当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**——漏掉它就等于少加一个 `+1`，p 值系统性地偏小（在边界显著性上尤其致命：0.049 与 0.051 的差别足以改变结论）。这是置换检验最经典的陷阱，MNE 上个月也刚修过同类问题。对做 cluster-based 置换统计的团队，建议升级后重跑关键对比；若你的结果恰好在 0.05 附近，务必重新核对。"
     },
     {
-      "title_zh": "braindecode 一口气加三个 MEG 基础模型：MEG-GPT、MEG-XL 与 BBL",
-      "title_en": "braindecode Adds Three MEG Foundation Models: MEG-GPT, MEG-XL and BBL",
-      "url": "https://github.com/braindecode/braindecode/pull/1555",
-      "brief": "braindecode 在 11-10 一口气加了三个 MEG 基础模型：**MEG-GPT**（#1555，源空间 MEG 基础模型）、**MEG-XL**（#1554，**长上下文** MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器），并把三者的 **SEANet 块抽出来共享**。这三个名字其实代表三条不同的技术赌注：**源空间建模**、**长上下文文本解码**、以及「**Bitter Lesson**」式的极简＋规模优先。对做 MEG/EEG 基础模型的团队，这是一份现成的三路对照基线；尤其 BBL 的立场（少做手工归纳偏置、把算力堆上去）值得单独读一读，因为它和本 lane 近期收录的「小波多尺度」「token 高效」路线正好相对。"
+      "title_zh": "EEGPrep 记录 pop_eegfiltnew 的 FIR 设计：参数、通道、相位与阶数全留痕",
+      "title_en": "EEGPrep Records Each pop_eegfiltnew FIR Design: Parameters, Channels, Phase and Order",
+      "url": "https://github.com/sccn/eegprep/pull/598",
+      "brief": "EEGPrep 合并 #598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**完整写进 `EEG[\"etc\"][\"eegfiltnew\"]`——包括**采样率、通道、相位类型、截止频率、阶数与过渡带宽**，并导出 `design_eegfiltnew` 供复算；**多次滤波各自留档、互不覆盖**。这条对可复现性的意义比看起来大：现实里「代码写着 1–40 Hz，但实际参数被谁改过没人记得」是常态，而滤波参数一旦与原分析不一致，后续所有频谱、连接、解码结论都不可比。让参数**随数据走**，等于把「私下口头约定」变成可审计记录。对用 EEGLAB/EEGPrep 的团队，建议检查既有数据是否有这份记录，没有的历史数据应视为「滤波口径未知」。"
     },
     {
-      "title_zh": "SPDlearn 一批更新：高维小批量 Riemannian BatchNorm 保护与五度量统一回拉",
-      "title_en": "SPDlearn Update Batch: High-d/Small-Batch Riemannian BatchNorm Safeguard and a 5-Metric Pullback",
-      "url": "https://github.com/spdlearn/spd_learn/commit/652d961567",
-      "brief": "SPDlearn（SPD 几何深度学习库）在 11-10 推了 6 项改动，两条最实用：①**高维/小批量下的 Riemannian BatchNorm 保护**——SPD 流形上的批归一化在「通道多、试次少」时极易数值不稳定（与 EEG 场景高度重合），加 safeguard 后才敢用在真实数据上；②**五度量统一回拉（LEM/LCM/AIM/PEM/BW）**——把多种黎曼度量收敛到一套 pullback 接口，换度量不必重写代码。另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差。对做黎曼分类/回归的团队，这两条直接降低「换度量、换批量大小就要重调」的成本。"
+      "title_zh": "eegkit：零依赖的 JavaScript 实时 EEG 处理栈（含 React hooks 与网页神经反馈）",
+      "title_en": "eegkit: A Zero-Dependency JavaScript Stack for Real-Time EEG, With React Hooks and Web Neurofeedback",
+      "url": "https://github.com/aliassar/eegkit",
+      "brief": "新建仓库 eegkit（2026-11-11）把 EEG 处理搬进 **JavaScript/TypeScript**：滤波器、频谱、带功率、神经反馈指标与信号质量评估，**零运行时依赖**，号称与 SciPy 做过对照，并带 CI。同一天还出现了 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器）——三个仓库合起来是一套**前端 EEG 栈**。对做 **WebBCI**、远程实验或课堂演示的团队，这是少见的工程化实现，省掉「自己用 JS 重写滤波与功率谱」的活。要提醒的是：浏览器算力与定时精度决定了它适合轻量实时应用，**严格的刺激时序研究仍应回到原生采集**。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-11.md",
+  "github_path": "docs/bci-cn-daily/2026-11-12.md",
   "items": [
     {
-      "type": "Tutorial",
-      "level": "Intermediate",
-      "title_zh": "滤波实操：50 还是 60 Hz、陷波够不够、为什么必须先滤波再切片",
-      "title_en": "Hands-On Filtering: 50 or 60 Hz, Is a Notch Enough, and Why Filter Before Epoching",
-      "bullets_zh": [
-        "用 **EEGMMIDB** 公开数据实测：**工频是 60 Hz**（美国采集）但**文件里没有记录**，AI 习惯性写 50 Hz——这一步必须人来把关。",
-        "四种组合叠功率谱：原始 / 只陷波 / 只带通 / 陷波+带通；**只做 1–40 Hz 带通，60 Hz 尖峰就已经消失**。",
-        "**滤波器有长度**：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**；对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠、基线整段落在里面 → **先滤波、后切片**。"
-      ],
-      "bullets_en": [
-        "Measured on public EEGMMIDB data: line frequency is 60 Hz (recorded in the US) yet not recorded in the files, while AI habitually writes 50 Hz — a human must catch this.",
-        "Four power spectra overlaid: raw, notch only, bandpass only, notch plus bandpass; a 1-40 Hz bandpass alone already removes the 60 Hz peak.",
-        "Filters have length: a 1-40 Hz bandpass is about 3.3 s and a 60 Hz notch about 6.6 s, so filtering a 5 s trial leaves 1.65 s unreliable at each end and swallows the baseline — filter first, then epoch."
-      ],
-      "url": "https://www.bilibili.com/video/BV1FoWT6DEzt/",
-      "published": "2026-11-10T10:30:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站「有Li」的滤波实操教程，用 **EEGMMIDB** 公开数据把三个常被含糊带过的问题讲清楚了：①**工频是 50 还是 60 Hz**——数据在美国采集、应为 60 Hz，但**文件里没记录**，而 AI 写脚本时习惯性填 50 Hz，这一步必须人工确认；②**陷波够不够**——把原始、只陷波、只带通、陷波+带通四条功率谱叠在一起，实测**只做 1–40 Hz 带通，60 Hz 尖峰就已消失**；③**为什么先滤波再切片**——滤波器是有长度的：1–40 Hz 带通约 **3.3 s**、60 Hz 陷波约 **6.6 s**，对 5 s 试次单独滤波，两端各 **1.65 s** 不可靠，而基线区间正好落在里面。对刚上手的人，这三条比任何滤波参数表都实用。",
-      "brief_en": "A Chinese hands-on filtering tutorial measured on EEGMMIDB: line frequency is 60 Hz (US recordings) but not recorded in the files while AI habitually writes 50 Hz — verify it; overlaying raw, notch-only, bandpass-only and combined spectra shows a 1-40 Hz bandpass already removes the 60 Hz peak; and filters running 3.3 s and 6.6 s long leave 1.65 s unreliable at each end of a 5 s trial.",
-      "tags": [
-        "filtering",
-        "line-noise",
-        "epoching",
-        "eegmmidb",
-        "tutorial"
-      ],
-      "raw_excerpt": "「工频是 50 还是 60 Hz？ EEGMMIDB 在美国采集，工频是 60 Hz，文件里却没有记录。AI 习惯写 50 Hz，这一步必须人来把关。」「实测只做 1–40 Hz 带通，60 Hz 尖峰就已经消失。」「滤波器有长度：1–40 Hz 带通滤波器长 3.3 秒，60 Hz 陷波长 6.6 秒。对 5 秒的试次单独滤波，两端各 1.65 秒都不可靠，基线区间整段落在里面。所以要先滤波、后切片。」",
-      "fetched_at": "2026-11-10T23:55:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV1FoWT6DEzt",
-      "author_handle": "有Li",
-      "metrics": {
-        "play": null,
-        "like": 103,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "用实测数据讲清 50/60 Hz 判断、陷波必要性，以及滤波器长度导致的切片顺序问题。"
-    },
-    {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 一口气加三个 MEG 基础模型：MEG-GPT、MEG-XL 与 BBL",
-      "title_en": "braindecode Adds Three MEG Foundation Models: MEG-GPT, MEG-XL and BBL",
+      "title_zh": "FieldTrip 置换检验改为把「并列」计入 p 值（>= 而非 >）",
+      "title_en": "FieldTrip Now Counts Ties in Monte Carlo p-Values (>= Instead of >)",
       "bullets_zh": [
-        "#1555 **MEG-GPT**（源空间 MEG 基础模型）、#1554 **MEG-XL**（长上下文 MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器）并抽出共享的 **SEANet 块**。",
-        "三个模型覆盖三个方向：**源空间建模**、**长上下文文本解码**、**极简大规模预训练**；共享 SEANet 说明结构在向可复用组件收敛。",
-        "对做 MEG/EEG 基础模型的团队，这是一份现成的「三种路线」对照基线——尤其 BBL 的「Bitter Lesson」立场值得单独读。"
+        "#2608：`ft_statistics_montecarlo` 与 `clusterstat` 此前用**严格不等式**比较观测统计量与随机化分布，于是**与观测值完全相等的随机化没有被计数**。",
+        "当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**，漏计它就等于少加了一个 `+1`——p 值系统性偏小。",
+        "这是置换检验的经典陷阱：正确的 p 值应包含「至少一样极端」的随机化（`>=`），而非只数「更极端」的（`>`）。"
       ],
       "bullets_en": [
-        "#1555 MEG-GPT (a source-space MEG foundation model), #1554 MEG-XL (long-context MEG brain-to-text) and BBL (The Brain's Bitter Lesson MEG encoder), with SEANet blocks shared across them.",
-        "The three cover different bets: source-space modelling, long-context text decoding and minimal large-scale pretraining; shared SEANet blocks show the architectures converging on reusable components.",
-        "For MEG/EEG foundation-model work this is a ready-made comparison of three routes — and BBL's bitter-lesson stance deserves a separate read."
+        "#2608 fixes ft_statistics_montecarlo and clusterstat comparing the observed statistic to the randomisation distribution with strict inequalities, so randomisations exactly equal to the observed value were not counted.",
+        "With cfg.numrandomization='all' the identity permutation is such a tie, and missing it is equivalent to omitting a +1 — the p-value is systematically too small.",
+        "This is the classic permutation-test trap: p should count randomisations at least as extreme (>=), not strictly more extreme (>)."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1555",
-      "published": "2026-11-10T06:49:00Z",
+      "url": "https://github.com/fieldtrip/fieldtrip/pull/2608",
+      "published": "2026-11-11T13:43:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 11-10 一口气加了三个 MEG 基础模型：**MEG-GPT**（#1555，源空间 MEG 基础模型）、**MEG-XL**（#1554，**长上下文** MEG brain-to-text）、以及 **BBL**（The Brain's Bitter Lesson MEG 编码器），并把三者的 **SEANet 块抽出来共享**。这三个名字其实代表三条不同的技术赌注：**源空间建模**、**长上下文文本解码**、以及「**Bitter Lesson**」式的极简＋规模优先。对做 MEG/EEG 基础模型的团队，这是一份现成的三路对照基线；尤其 BBL 的立场（少做手工归纳偏置、把算力堆上去）值得单独读一读，因为它和本 lane 近期收录的「小波多尺度」「token 高效」路线正好相对。",
-      "brief_en": "braindecode added three MEG foundation models on Nov 10: MEG-GPT (#1555, source-space), MEG-XL (#1554, long-context brain-to-text) and BBL (The Brain's Bitter Lesson encoder), sharing SEANet blocks. They represent three bets — source-space modelling, long-context decoding and minimal-plus-scale, with BBL's stance contrasting recent wavelet and token-efficiency routes.",
-      "tags": [
-        "braindecode",
-        "meg",
-        "foundation-model",
-        "long-context",
-        "seanet"
-      ],
-      "raw_excerpt": "Commits 2026-11-10: \"Add MEG-GPT (source-space MEG foundation model) (#1555)\" 06:49Z; \"Add MEG-XL (long-context MEG brain-to-text foundation model) (#1554)\" 06:43Z; \"Add BBL (The Brain's Bitter Lesson MEG encoder) and share SEANet blocks\" 06:13Z.",
-      "fetched_at": "2026-11-10T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1555",
-      "author_handle": "braindecode",
-      "metrics": {
-        "play": null,
-        "like": 1341,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "三个模型代表源空间/长上下文/规模优先三条路线，可作现成对照基线。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "SPDlearn 一批更新：高维小批量 Riemannian BatchNorm 保护与五度量统一回拉",
-      "title_en": "SPDlearn Update Batch: High-d/Small-Batch Riemannian BatchNorm Safeguard and a 5-Metric Pullback",
-      "bullets_zh": [
-        "**Riemannian BatchNorm 的保护机制**：针对**高维/小批量**场景加 safeguard——SPD 流形上的批归一化在样本少、维度高时极易数值不稳。",
-        "**五度量统一回拉（LEM / LCM / AIM / PEM / BW）**：把多种黎曼度量统一到一套 pullback 接口，换度量不必换代码结构。",
-        "另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差等六项改动。"
-      ],
-      "bullets_en": [
-        "A safeguard for Riemannian BatchNorm in high-dimensional, small-batch settings, where batch normalisation on the SPD manifold easily becomes numerically unstable.",
-        "A five-metric universal pullback (LEM, LCM, AIM, PEM, BW), unifying several Riemannian metrics behind one interface so switching metrics no longer means restructuring code.",
-        "Also SPD Replicability & Generation Initiative parametrisation, patch covariance trace-norm, and single-eigh shared-basis residuals for SPDResNet/GyroSPD/CorNet — six changes in all."
-      ],
-      "url": "https://github.com/spdlearn/spd_learn/commit/652d961567",
-      "published": "2026-11-10T13:46:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "SPDlearn（SPD 几何深度学习库）在 11-10 推了 6 项改动，两条最实用：①**高维/小批量下的 Riemannian BatchNorm 保护**——SPD 流形上的批归一化在「通道多、试次少」时极易数值不稳定（与 EEG 场景高度重合），加 safeguard 后才敢用在真实数据上；②**五度量统一回拉（LEM/LCM/AIM/PEM/BW）**——把多种黎曼度量收敛到一套 pullback 接口，换度量不必重写代码。另有 **SPD Replicability & Generation Initiative** 参数化、patch 协方差 trace-norm、SPDResNet/GyroSPD/CorNet 的单特征分解共享基残差。对做黎曼分类/回归的团队，这两条直接降低「换度量、换批量大小就要重调」的成本。",
-      "brief_en": "SPDlearn shipped six changes on Nov 10, two practical: a safeguard for Riemannian BatchNorm in high-dimensional, small-batch settings where normalisation on the SPD manifold is numerically fragile (a common EEG regime), and a five-metric universal pullback (LEM, LCM, AIM, PEM, BW) unifying metrics behind one interface. Also shared-basis residuals across SPDResNet, GyroSPD and CorNet.",
-      "tags": [
-        "spdlearn",
-        "riemannian",
-        "batchnorm",
-        "metrics",
-        "geometry"
-      ],
-      "raw_excerpt": "Commits 2026-11-10: \"feat(batchnorm,models): high-d/small-batch Riemannian BatchNorm safeguar[d]\" (652d961567) 13:46Z; \"feat(rietrans,spnn): add 5-metric universal pullback (LEM/LCM/AIM/PEM/BW)\" 13:44Z; \"feat(repro,models): SPD Replicability & Generation Initiative parametri[zation]\" 13:46Z; \"feat(graph,multiview,rhop): patch covariance trace-norm, degree-normaliz[ation]\" 13:45Z.",
-      "fetched_at": "2026-11-10T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "spdlearn/spd_learn@652d961567",
-      "author_handle": "spdlearn",
-      "metrics": {
-        "play": null,
-        "like": 42,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "高维小批量下 SPD 批归一化本就脆弱，加保护与统一度量接口直接降低试错成本。"
-    },
-    {
-      "type": "Project",
-      "level": "Advanced",
-      "title_zh": "Squid-16：单块 40mm 板上的 16 通道干电极 EEG（含 KiCad、固件与仿真器）",
-      "title_en": "Squid-16: A 16-Channel Dry-Electrode EEG Sensor on One 40 mm Board With KiCad, Firmware and a Simulator",
-      "bullets_zh": [
-        "**18 个弹簧针**做干电极接触、**两片 ADS131M08（24-bit）**、板载 **ESP32-C3** 与 **Bluetooth LE**；「无凝胶、无帽、无独立控制器」。",
-        "交付完整：**KiCad 硬件、固件、仿真器**，并有 3D 渲染图（正面元件/背面电极）——属可复现的开源硬件，而非概念图。",
-        "对做干电极或可穿戴 EEG 的团队，这是少见的「单板集成 + 双 ADC 高通道」设计参考；采用前需自行验证接触阻抗与运动伪迹。"
-      ],
-      "bullets_en": [
-        "Eighteen spring-loaded pins for dry contact, two ADS131M08 24-bit converters, an on-board ESP32-C3 and Bluetooth LE — no gel, no cap, no separate controller.",
-        "It ships KiCad hardware, firmware and a simulator, with 3D renders of the component and electrode sides, making it reproducible open hardware rather than a concept.",
-        "For dry-electrode or wearable EEG work this is a rare single-board, dual-ADC high-channel reference; verify contact impedance and motion artefacts yourself."
-      ],
-      "url": "https://github.com/inspizzz/squid-16",
-      "published": "2026-11-10T21:01:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 Squid-16（2026-11-10）：**单块 40 mm 板**上的 **16 通道干电极 EEG**——**18 个弹簧针**负责接触、**两片 ADS131M08（24-bit）**负责采集、板载 **ESP32-C3** 走 **Bluetooth LE**，主打「无凝胶、无帽、无独立控制器」。它的完成度值得一提：**KiCad 硬件、固件、仿真器**三样都给齐，还附了正面元件/背面电极的 3D 渲染图，属于可复现的开源硬件而不是概念草图。对做干电极、可穿戴或低成本多通道 EEG 的团队，这是少见的「单板集成 + 双 ADC」参考设计；不过干电极的**接触阻抗**与**运动伪迹**必须自行验证，别把「能出信号」当成「信号可用」。",
-      "brief_en": "Created 2026-11-10, Squid-16 packs a 16-channel dry-electrode EEG sensor onto a single 40 mm board: eighteen spring-loaded pins, two ADS131M08 24-bit converters, an ESP32-C3 and BLE, with no gel, cap or separate controller. It ships KiCad hardware, firmware and a simulator plus 3D renders. Dry-electrode impedance and motion artefacts still need your own validation.",
-      "tags": [
-        "open-hardware",
-        "dry-electrode",
-        "ads131m08",
-        "esp32",
-        "ble"
-      ],
-      "raw_excerpt": "Description: \"Squid-16: open-source 16-channel dry-electrode EEG sensor. 18 spring pins, 2x ADS131M08, ESP32-C3, Bluetooth LE. KiCad hardware, firmware, simulator.\" README: \"**An open-source, 16-channel dry-electrode EEG sensor on one 40 mm board.** Eighteen spring-loaded pins, two 24-bit converters, an on-board ESP32-C3 and Bluetooth LE. No gel, no cap, no separate controller.\"",
-      "fetched_at": "2026-11-10T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "inspizzz/squid-16",
-      "author_handle": "inspizzz",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "单板 16 通道干电极且硬件/固件/仿真器齐全，是可复现的开源硬件设计。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MNE-Python 修 BrainVision 通道表与 CSV 标注时间信息",
-      "title_en": "MNE-Python Fixes the BrainVision Channel Table and CSV Annotation Timing",
-      "bullets_zh": [
-        "#14512：**不再假设 BrainVision `[Comment]` 通道表里有滤波列**——此前按固定列位置解析，遇到不同厂商导出就会错位到错误的通道属性。",
-        "#14503：加载带 `orig_time` 的 **CSV 标注**时**保留 `orig_time` 与 `onset`**——两者丢失会让事件时间整体平移，且通常到对齐分析时才暴露。",
-        "对混用多家设备导出的团队，这类「按列位置猜」的解析最容易静默出错。"
-      ],
-      "bullets_en": [
-        "#14512 stops assuming the BrainVision [Comment] channel table contains filter columns; fixed column positions previously mis-assigned attributes for vendor exports with different layouts.",
-        "#14503 preserves orig_time and onset when loading CSV annotations with orig_time — losing them shifts every event in time, usually surfacing only at alignment or epoching.",
-        "For teams mixing vendor exports, positional parsing is exactly where silent errors hide."
-      ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14512",
-      "published": "2026-11-10T19:14:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNE-Python 合并两个输入解析修复：**#14512** 不再假设 **BrainVision `[Comment]` 通道表**里有滤波列——此前按固定列位解析，遇到不同厂商导出的布局就会把属性错配到别的通道上；**#14503** 加载带 `orig_time` 的 **CSV 标注**时**保留 `orig_time` 与 `onset`**，两者丢失会让所有事件时间整体平移，而这类偏差通常到对齐/分段分析时才暴露，届时很难判断是数据问题还是代码问题。对混用多家设备导出的团队，「按列位置猜」正是静默错误的高发区；建议升级后抽查一份非自家设备的 BrainVision 文件与一份 CSV 标注。",
-      "brief_en": "MNE-Python merged two parser fixes: #14512 stops assuming filter columns in the BrainVision [Comment] channel table, where fixed column positions mis-assigned attributes across vendor layouts; #14503 preserves orig_time and onset when loading CSV annotations, whose loss shifts every event in time and surfaces only at alignment. Check a third-party file after upgrading.",
-      "tags": [
-        "mne-python",
-        "brainvision",
-        "annotations",
-        "parsing",
-        "timing"
-      ],
-      "raw_excerpt": "PRs merged 2026-11-10: \"Don't assume filter columns in BrainVision [Comment] channel table (#14512)\" 19:14Z; \"FIX: Preserve orig_time and onset when loading CSV annotations with orig_[time] (#14503)\" 18:49Z; \"Add mvpure-py to related software list (#14511)\".",
-      "fetched_at": "2026-11-10T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14512",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 3588,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "按列位置解析与 orig_time 丢失都会静默改变通道属性或事件时间。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "FieldTrip 让谱估计支持「增量式算法灵活性」",
-      "title_en": "FieldTrip Adds Incremental Algorithmic Flexibility to Spectral Estimation",
-      "bullets_zh": [
-        "#2624：谱估计支持**增量式地组合算法选项**，而不是只能在预设方法间二选一——便于在同一框架里比较不同窗/平滑/分段策略。",
-        "对做时频分析的人，这意味着「换一个平滑方式」不再需要改流程结构，实验设计上的自由度更大。",
-        "采用前建议固定一组参数做基线，避免组合爆炸导致结果不可比。"
-      ],
-      "bullets_en": [
-        "#2624 lets spectral estimation compose algorithmic options incrementally instead of picking one preset method, making window, smoothing and segmentation strategies comparable in one framework.",
-        "For time-frequency work this means changing a smoothing choice no longer requires restructuring the pipeline.",
-        "Pin a baseline parameter set first, or the combinatorial space makes results incomparable."
-      ],
-      "url": "https://github.com/fieldtrip/fieldtrip/pull/2624",
-      "published": "2026-11-10T08:11:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "FieldTrip 合并 #2624：谱估计增加「**增量式算法灵活性**」——可以在同一框架里逐步组合窗函数、平滑与分段策略，而不是只在预设方法之间二选一。对做时频分析的人，好处是实验设计自由度更大：想比较「不同平滑方式对结果的影响」时，不必再各写一套流程。代价也很明确——选项组合会迅速膨胀，若无基线参数集，结果之间不可比。建议先固定一组默认参数（窗长、平滑、重叠）作为对照，再逐项改动，并把每次组合记录进分析日志。",
-      "brief_en": "FieldTrip merged #2624 adding incremental algorithmic flexibility to spectral estimation: window, smoothing and segmentation options can be composed rather than chosen from presets, giving more freedom when comparing strategies. The cost is combinatorial growth — without a pinned baseline parameter set, results stop being comparable, so fix defaults and log each combination.",
+      "brief": "FieldTrip 合并 #2608（修 #2607）：`ft_statistics_montecarlo` 与 `clusterstat` 改用 **`>=`** 比较观测统计量与随机化分布。原因是此前用严格不等式，**与观测值恰好相等的随机化不被计数**；而当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**——漏掉它就等于少加一个 `+1`，p 值系统性地偏小（在边界显著性上尤其致命：0.049 与 0.051 的差别足以改变结论）。这是置换检验最经典的陷阱，MNE 上个月也刚修过同类问题。对做 cluster-based 置换统计的团队，建议升级后重跑关键对比；若你的结果恰好在 0.05 附近，务必重新核对。",
+      "brief_en": "FieldTrip merged #2608 (fixing #2607) so ft_statistics_montecarlo and clusterstat compare with >= instead of strict inequalities. Randomisations exactly equal to the observed statistic were not counted, and with numrandomization='all' the identity permutation is such a tie — omitting it equals dropping a +1, making p systematically too small right at the 0.05 boundary.",
       "tags": [
         "fieldtrip",
-        "spectral",
-        "time-frequency",
-        "flexibility",
-        "methodology"
+        "permutation",
+        "p-value",
+        "ties",
+        "cluster-statistics"
       ],
-      "raw_excerpt": "Commit 4b9bbb5fa1, 2026-11-10T08:11Z: \"incremental algorithmic flexibility for spectral estimation (#2624)\". Repo: fieldtrip/fieldtrip.",
-      "fetched_at": "2026-11-10T23:55:00Z",
+      "raw_excerpt": "PR #2608: \"Fixes #2607. `ft_statistics_montecarlo` and `clusterstat` compared the observed statistic with the randomization distribution using strict inequalities, so randomizations that reproduce the observed value exactly were not counted. With `cfg.numrandomization='all'` the identity permutation is such a tie and no `+1` is added on that pat[h]…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "fieldtrip/fieldtrip#2624",
+      "upstream_id": "fieldtrip/fieldtrip#2608",
       "author_handle": "fieldtrip",
       "metrics": {
         "play": null,
@@ -283,60 +67,275 @@
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "可组合谱估计选项便于比较策略，但必须固定基线否则结果不可比。"
+      "quality_score": 9,
+      "why_valuable": "并列必须计入置换 p 值，否则 p 系统性偏小，0.05 边界上会改变结论。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 记录 pop_eegfiltnew 的 FIR 设计：参数、通道、相位与阶数全留痕",
+      "title_en": "EEGPrep Records Each pop_eegfiltnew FIR Design: Parameters, Channels, Phase and Order",
+      "bullets_zh": [
+        "#598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**写入 `EEG[\"etc\"][\"eegfiltnew\"]`——含**采样率、通道、相位、截止频率、阶数、过渡带宽**；并导出 `design_eegfiltnew` 以便复算。",
+        "**连续多次滤波各自留档**，不会互相覆盖——这正是「事后能否说清做过什么滤波」的关键。",
+        "对可复现性，这比「代码里写着 1–40 Hz」强得多：滤波参数随数据走，换人、换年也能复原。"
+      ],
+      "bullets_en": [
+        "#598 records each FIR design applied by pop_eegfiltnew in EEG[\"etc\"][\"eegfiltnew\"], including sampling rate, channels, phase, cutoffs, order and transition width, and exports design_eegfiltnew for recomputation.",
+        "Successive filters keep separate records instead of overwriting each other — the crux of being able to say afterwards what filtering was actually applied.",
+        "For reproducibility this beats a comment in code: the filtering parameters travel with the data and survive staff and year changes."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/598",
+      "published": "2026-11-11T19:03:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**完整写进 `EEG[\"etc\"][\"eegfiltnew\"]`——包括**采样率、通道、相位类型、截止频率、阶数与过渡带宽**，并导出 `design_eegfiltnew` 供复算；**多次滤波各自留档、互不覆盖**。这条对可复现性的意义比看起来大：现实里「代码写着 1–40 Hz，但实际参数被谁改过没人记得」是常态，而滤波参数一旦与原分析不一致，后续所有频谱、连接、解码结论都不可比。让参数**随数据走**，等于把「私下口头约定」变成可审计记录。对用 EEGLAB/EEGPrep 的团队，建议检查既有数据是否有这份记录，没有的历史数据应视为「滤波口径未知」。",
+      "brief_en": "EEGPrep merged #598 recording each pop_eegfiltnew FIR design in EEG[\"etc\"][\"eegfiltnew\"] with sampling rate, channels, phase, cutoffs, order and transition width, exporting design_eegfiltnew and keeping successive filters as separate records. Parameters travelling with the data turns informal conventions into auditable records; files without them have unknown filtering.",
+      "tags": [
+        "eegprep",
+        "fir",
+        "provenance",
+        "filtering",
+        "reproducibility"
+      ],
+      "raw_excerpt": "PR #598: \"Record the FIR design applied by pop_eegfiltnew — Record each FIR design applied by pop_eegfiltnew on EEG[\\\"etc\\\"][\\\"eegfiltnew\\\"] and export the existing design_eegfiltnew function. Successive filters keep separate records, including sampling rate, channels, phase, cutoffs, order, transition widt[h]…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#598",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "滤波参数随数据留痕且多次滤波不覆盖，才谈得上事后复现与审计。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "eegkit：零依赖的 JavaScript 实时 EEG 处理栈（含 React hooks 与网页神经反馈）",
+      "title_en": "eegkit: A Zero-Dependency JavaScript Stack for Real-Time EEG, With React Hooks and Web Neurofeedback",
+      "bullets_zh": [
+        "**eegkit**（363 KB，CI 覆盖）：滤波器、频谱、带功率、神经反馈指标与信号质量，**零运行时依赖**，面向浏览器与 JS/TS，并称与 SciPy 做过对照。",
+        "同日还有 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器），构成一套前端 EEG 生态。",
+        "对「浏览器里做 EEG」的团队（WebBCI、远程实验、教学演示），这是少见的工程化实现；但前端算力与浏览器定时精度仍限制其用于严格时序研究。"
+      ],
+      "bullets_en": [
+        "eegkit (363 KB, CI-covered) provides filters, spectra, band power, neurofeedback metrics and signal quality with zero runtime dependencies for browsers and JS/TS, reportedly checked against SciPy.",
+        "The same day brought eegkit-react (React and React Native hooks for live EEG) and eegkit-neurofeedback (an open-source web neurofeedback trainer), forming a front-end EEG stack.",
+        "For browser-based BCI, remote experiments or teaching demos this is rare engineering; browser compute and timer precision still limit strict timing work."
+      ],
+      "url": "https://github.com/aliassar/eegkit",
+      "published": "2026-11-11T19:46:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 eegkit（2026-11-11）把 EEG 处理搬进 **JavaScript/TypeScript**：滤波器、频谱、带功率、神经反馈指标与信号质量评估，**零运行时依赖**，号称与 SciPy 做过对照，并带 CI。同一天还出现了 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器）——三个仓库合起来是一套**前端 EEG 栈**。对做 **WebBCI**、远程实验或课堂演示的团队，这是少见的工程化实现，省掉「自己用 JS 重写滤波与功率谱」的活。要提醒的是：浏览器算力与定时精度决定了它适合轻量实时应用，**严格的刺激时序研究仍应回到原生采集**。",
+      "brief_en": "Created 2026-11-11, eegkit brings EEG processing to JavaScript/TypeScript: filters, spectra, band power, neurofeedback metrics and signal quality with zero runtime dependencies, checked against SciPy with CI. The same day added eegkit-react (hooks for live EEG) and eegkit-neurofeedback (a web trainer), useful for WebBCI and demos — though browser timing limits strict stimulus-timing research.",
+      "tags": [
+        "javascript",
+        "typescript",
+        "realtime",
+        "neurofeedback",
+        "web"
+      ],
+      "raw_excerpt": "Description: \"Real-time EEG signal processing for JavaScript: filters, band power, neurofeedback metrics and signal quality. Zero dependencies; browsers, …\". README: \"Real-time EEG signal processing for JavaScript and TypeScript. Filters, spectra, band power, neurofeedback metrics and signal quality, checked against S[ciPy]…\". Same day: aliassar/eegkit-react (\"React and React Native hooks for live EEG\"), aliassar/eegkit-neurofeedback (\"Open-source neurofeedback trainer for web…\").",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aliassar/eegkit",
+      "author_handle": "aliassar",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "零依赖 JS 处理栈＋React hooks＋网页神经反馈，省掉自己重写滤波与功率谱。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "GEDAI（EEGLAB 去噪插件）修改低截止滤波默认值",
-      "title_en": "GEDAI, an EEGLAB Denoising Plugin, Revises Its Low-Cut Filtering Defaults",
+      "title_zh": "g.Pype 4.2.0：通道按需选择、Unicorn 免授权、训练环节可跑在浏览器",
+      "title_en": "g.Pype 4.2.0: Pick Channels, License-Free Unicorn Hybrid Black, Browser Training Episodes",
       "bullets_zh": [
-        "GEDAI-master 提交「**Revise low-cut filtering defaults**」——调整了默认的高通截止设置；GEDAI 是基于 **GED**（广义特征分解）的 EEG 去噪插件，用于 EEGLAB/FieldTrip 流程。",
-        "默认值改变会**悄悄改变既有脚本的输出**：使用默认参数的分析在升级后结果可能与旧版不同。",
-        "对此类插件，建议显式写出截止频率等关键参数，而不是依赖默认值——否则升级即「换了一套预处理」，却没有任何提示。"
+        "放大器改为**按你选择的通道采集**——`channel_selection` 取代 `channel_count`，通道映射不再靠数量推断。",
+        "**Unicorn Hybrid Black 不再需要 licence**，降低了 g.tec 消费级设备的入门门槛。",
+        "**g.Pype Web** 让许多训练环节直接在浏览器里跑；另有 `TriggerScope(colors, labels)` 可为每个图指定曲线颜色与图例。"
       ],
       "bullets_en": [
-        "GEDAI-master commits \"Revise low-cut filtering defaults\", adjusting the default high-pass cutoff; GEDAI is a GED-based denoising plugin for EEGLAB and FieldTrip pipelines.",
-        "Changing defaults silently alters existing scripts: analyses relying on defaults will differ after upgrading.",
-        "For such plugins, state key parameters such as the cutoff explicitly rather than trusting defaults, or an upgrade becomes a different preprocessing chain with no warning."
+        "Amplifiers acquire the channels you select: channel_selection replaces channel_count, so channel mapping no longer comes from a count.",
+        "The Unicorn Hybrid Black no longer needs a licence, lowering the entry barrier for g.tec's consumer-grade device.",
+        "g.Pype Web runs many training episodes in the browser, and TriggerScope(colors, labels) assigns a curve colour and legend per plot."
       ],
-      "url": "https://github.com/neurotuning/GEDAI-master/commit/ebe71d6734",
-      "published": "2026-11-10T14:25:00Z",
+      "url": "https://github.com/gtec-neurotechnology/gpype/releases/tag/v4.2.0",
+      "published": "2026-11-11T12:53:00Z",
       "source": "github",
       "language": "en",
-      "brief": "GEDAI（基于**广义特征分解**的 EEG 去噪插件，用于 EEGLAB/FieldTrip 流程）提交 ebe71d6734：**修改低截止滤波的默认值**。这条本身很小，但影响值得说明——**默认值变更会让既有脚本的输出悄悄改变**：如果你的分析依赖默认高通截止，升级后得到的干净数据其实换了一套预处理，而代码里没有任何提示。对这类插件，建议把截止频率、参考方式等关键参数**显式写进脚本并记录在元数据里**，不要信任默认值；升级前也先用同一份数据跑一次新旧对比，确认去噪结果与后续指标差异在可接受范围内。",
-      "brief_en": "GEDAI, a GED-based EEG denoising plugin for EEGLAB and FieldTrip, committed ebe71d6734 revising its low-cut filtering defaults. The change is small but the effect is not: analyses relying on defaults silently get different cleaned data after upgrading. Write cutoffs and reference choices explicitly into scripts and metadata, and compare old against new on one dataset first.",
+      "brief": "g.tec 的实时 BCI 框架 **g.Pype 发布 4.2.0**，三条改动都很实际：①放大器**按你选择的通道采集**（`channel_selection` 取代 `channel_count`），通道映射不再依赖「数量」推断，多设备混用时更不易错位；②**Unicorn Hybrid Black 不再需要 licence**，直接降低消费级设备的入门门槛；③**g.Pype Web** 让许多训练环节直接在浏览器运行，配合 `TriggerScope(colors, labels)` 可为每个图指定曲线颜色与图例。对用 g.tec 硬件做实时 BCI 的团队，升级后建议先核对**通道选择与设备序列号的对应关系**——这类映射一旦错位，后续分类结果会「能跑但不对」。",
+      "brief_en": "g.tec released g.Pype 4.2.0 with three practical changes: amplifiers acquire the channels you select (channel_selection replaces channel_count, so mapping no longer derives from a count), the Unicorn Hybrid Black no longer needs a licence, and g.Pype Web runs many training episodes in the browser with per-plot TriggerScope colours and labels. Verify channel-to-device mapping after upgrading.",
       "tags": [
-        "gedai",
-        "denoising",
-        "defaults",
-        "eeglab",
-        "filtering"
+        "gpyer",
+        "gtec",
+        "unicorn",
+        "realtime",
+        "release"
       ],
-      "raw_excerpt": "Commit ebe71d6734, 2026-11-10T14:25Z: \"Revise low-cut filtering defaults\". Repo: neurotuning/GEDAI-master (\"GEDAI denoising plugin for Matlab (EEGLAB, …)\").",
-      "fetched_at": "2026-11-10T23:55:00Z",
+      "raw_excerpt": "Release v4.2.0 (2026-11-11T12:53:11Z): \"Amplifiers acquire the channels you select: `channel_selection` replaces `channel_count`.\" \"The Unicorn Hybrid Black no longer needs a licence.\" \"Many training episodes run in your browser, with g.Pype Web.\" \"`TriggerScope(colors=..., labels=...)` takes a curve colour and a legend text per plot…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "neurotuning/GEDAI-master@ebe71d6734",
-      "author_handle": "neurotuning",
+      "upstream_id": "gtec-neurotechnology/gpype@v4.2.0",
+      "author_handle": "gtec-neurotechnology",
       "metrics": {
         "play": null,
-        "like": 74,
+        "like": 45,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "默认截止值变更会让依赖默认的脚本静默换掉预处理，却不给任何提示。"
+      "quality_score": 8,
+      "why_valuable": "通道选择取代数量推断、Unicorn 免授权，两者都直接影响多设备混用正确性。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 多窗谱支持分段参数（n_per_seg / n_overlap / average）",
+      "title_en": "MNE-Python Multitaper Gains Segmentation Options (n_per_seg, n_overlap, average)",
+      "bullets_zh": [
+        "#14519：多窗（multitaper）谱估计新增 **`n_per_seg` / `n_overlap` / `average`** 参数，可按段计算再平均，而不必对整段做一次估计。",
+        "对非平稳信号（睡眠分期、任务切换）意义明确：分段后既能看时间演化，也能降低单段方差。",
+        "同批还有「GIftI 导出加入顶点编号」与文档/CI 清理；与上月的多窗缩放修正（sqrt(sfreq)）配合，谱估计路径正在补齐。"
+      ],
+      "bullets_en": [
+        "#14519 adds n_per_seg, n_overlap and average to multitaper spectral estimation, allowing per-segment estimates and averaging instead of one estimate over the whole recording.",
+        "For non-stationary signals such as sleep staging or task transitions this matters: segmentation shows temporal evolution and reduces variance per estimate.",
+        "The batch also adds vertex numbers to GIFTI export and cleans up docs and CI, completing the spectral path after last month's sqrt(sfreq) scaling fix."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14519",
+      "published": "2026-11-11T21:01:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14519：**多窗（multitaper）谱估计新增分段参数** `n_per_seg` / `n_overlap` / `average`，可以**按段估计再平均**，而不是对整段记录做一次估计。对非平稳信号（睡眠分期、任务切换）意义明确：分段既能看时间演化，也能降低单次估计的方差——而多窗方法本身就是为了低方差设计的，缺了分段反而受限于「整段必须平稳」的隐含假设。同批还有「GIftI 导出加入顶点编号」与文档/CI 清理，配合上个月的 `sqrt(sfreq)` 缩放修正，MNE 的谱估计路径正在补齐。建议升级后用一段已知信号对比分段与非分段的功率谱。",
+      "brief_en": "MNE-Python merged #14519 adding n_per_seg, n_overlap and average to multitaper estimation, so spectra can be estimated per segment and averaged rather than once over a whole recording. For non-stationary signals like sleep staging this matters: segmentation shows temporal evolution and cuts variance. Compare segmented and unsegmented spectra after upgrading.",
+      "tags": [
+        "mne-python",
+        "multitaper",
+        "segmentation",
+        "spectral",
+        "psd"
+      ],
+      "raw_excerpt": "PRs merged 2026-11-11: \"ENH: Add segmentation support (n_per_seg, n_overlap, average) to multi[taper] (#14519)\" 21:01Z; \"Add vertex number to GiFTI export in SourceEstimate.save_as_surface() (#14510)\" 21:02Z.",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14519",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3590,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "多窗缺分段就隐含「整段平稳」假设，分段后既看演化也降方差。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGDash 修 SNIRF 读取：单色团、缺波长与 fNIRS 通道类型保留",
+      "title_en": "EEGDash Fixes SNIRF Reading: Single Chromophore, Missing Wavelengths and fNIRS Channel Types",
+      "bullets_zh": [
+        "#：**支持单色团（single-chromophore）与缺波长信息**的 SNIRF 文件——此前这类文件直接读不了或被判无效。",
+        "#：**保留 fNIRS 通道类型**（`hbo`、`hbr`、`fnirs_od`）——通道类型一旦在入库时丢失，后续按类型筛选与组水平分析就会错。",
+        "SNIRF 是 fNIRS 的社区标准格式；现实数据常有厂商导出不规范，这类加固决定「能不能把数据纳进来」。"
+      ],
+      "bullets_en": [
+        "It supports SNIRF files with a single chromophore and missing wavelength information, which previously failed to read or were judged invalid.",
+        "It preserves fNIRS channel types (hbo, hbr, fnirs_od) — losing them at ingestion breaks type filtering and group-level analysis later.",
+        "SNIRF is the fNIRS community standard, and vendor exports are often irregular, so such hardening decides whether data can be ingested at all."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/commit/af80fbf603",
+      "published": "2026-11-11T18:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 在 11-11 修了两个 **SNIRF（fNIRS 标准格式）**读取问题：①**支持单色团与缺失波长**的文件——此前这类合规但少见的导出直接读不了或被判无效；②**保留 fNIRS 通道类型**（`hbo`、`hbr`、`fnirs_od`），因为通道类型一旦在入库时丢掉，后续按类型筛选、组水平统计都会出错，而错误不会在读取阶段暴露。现实中的 fNIRS 数据大量来自不同厂商、导出规范参差，这类加固决定「数据能不能被纳进来」。对用 EEGDash 或自建 fNIRS 管线的团队，建议升级后抽查单色团文件与通道类型字段。",
+      "brief_en": "EEGDash fixed two SNIRF (fNIRS standard) reading issues on Nov 11: support for single-chromophore files with missing wavelength information, which previously failed or were rejected, and preservation of fNIRS channel types (hbo, hbr, fnirs_od), whose loss at ingestion silently breaks type filtering and group statistics. Vendor exports are irregular, so such hardening decides ingestibility.",
+      "tags": [
+        "eeg-dash",
+        "snirf",
+        "fnirs",
+        "channel-types",
+        "ingest"
+      ],
+      "raw_excerpt": "Commits 2026-11-11: \"fix(io): support single-chromophore and missing-wavelength SNIRF files (…)\" (1cbd28d86a) 18:24Z; \"fix(io): keep fNIRS channel types (hbo, hbr, fnirs_od) and read the fnir[s]\" (af80fbf603) 18:24Z.",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash@af80fbf603",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 90,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "通道类型在入库时丢失会让后续按类型分析静默出错，且读取阶段看不出来。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "SynapseX：用 Blockly 图形化编程把脑电条件写进程序，驱动 3D 仿真（中文教育 BCI）",
+      "title_en": "SynapseX: Blockly Visual Programming Turns EEG Conditions Into Code Driving 3D Simulations",
+      "bullets_zh": [
+        "中文教育 BCI 平台：**Blockly 图形化编程生成 Python**，由**持续脑电条件**驱动 **3D 仿真**，并在支持的任务中按**运行证据**检查结果。",
+        "面向 **STEAM 课堂、BCI 入门与教育研究**，把「采集—编程—仿真—学习回顾」组织在同一平台，并含**个人基线观察**。",
+        "对做教育/科普落地的团队，这是少见的中文实现；但教学场景的脑电质量有限，结论应视为「体验与理解」而非解码性能。"
+      ],
+      "bullets_en": [
+        "A Chinese educational BCI platform where Blockly visual programming generates Python, continuous EEG conditions drive a 3D simulation, and supported tasks are checked against runtime evidence.",
+        "Targeting STEAM classrooms, BCI introductions and education research, it combines acquisition, programming, simulation and learning review with per-person baseline observation.",
+        "For education and outreach this is a rare Chinese implementation; classroom EEG quality limits conclusions to experience and understanding rather than decoding performance."
+      ],
+      "url": "https://github.com/throwOctober/synapsex-bci-showcase",
+      "published": "2026-11-11T07:01:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 SynapseX（2026-11-11，中文）：一个**教育向 BCI 平台**——用 **Blockly 图形化编程生成 Python**，让**持续脑电条件**驱动 **3D 仿真**，并在支持的任务里按**运行证据**检查结果；整体组织成「采集 → 编程 → 仿真 → 回顾」，还包含**个人基线观察**。它的定位很清楚：**STEAM 课堂、BCI 入门与教育研究**，而不是科研级采集——课堂环境下的电极质量与运动伪迹注定无法支撑严格解码结论。但对做**科普落地**的团队，这是少见的「把脑电变成可编程条件」的中文实现，思路值得借鉴：让学生写条件、看行为、再用运行证据解释结果，比看演示视频更能建立直觉。",
+      "brief_en": "Created 2026-11-11, SynapseX is a Chinese educational BCI platform: Blockly visual programming generates Python, EEG conditions drive a 3D simulation, and tasks are checked against runtime evidence. It targets STEAM classrooms rather than research-grade acquisition, so signal quality limits conclusions — but programmable EEG conditions are a useful outreach pattern.",
+      "tags": [
+        "education",
+        "blockly",
+        "3d-simulation",
+        "steam",
+        "chinese"
+      ],
+      "raw_excerpt": "Description:「SynapseX｜教育脑机接口与脑电编程（Educational BCI / EEG Programming）。通过 Blockly 图形化编程（visual programming）生成 Python，持续脑电条件驱动 3D 仿真，在支持的任务中按运行证据检查。涵盖 STEAM…」README:「把脑电条件写进程序，观察控制行为，用运行证据解释任务结果。」「面向 STEAM 课堂、脑机接口入门与教育研究…差异化能力是让脑电[条件可编程]」",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "throwOctober/synapsex-bci-showcase",
+      "author_handle": "throwOctober",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把脑电变成可编程条件并用运行证据解释结果，是少见的科普落地形态。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 98,
+    "prefiltered": 92,
     "llm_rows": 18,
     "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 2
+    "conflicts_dropped": 3
   }
 }
