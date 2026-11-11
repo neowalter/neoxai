@@ -1,0 +1,341 @@
+{
+  "date": "2026-11-12",
+  "generated_at": "2026-11-11T21:32:09.194Z",
+  "item_count": 7,
+  "types": {
+    "Project": 7
+  },
+  "highlights": [
+    {
+      "title_zh": "FieldTrip 置换检验改为把「并列」计入 p 值（>= 而非 >）",
+      "title_en": "FieldTrip Now Counts Ties in Monte Carlo p-Values (>= Instead of >)",
+      "url": "https://github.com/fieldtrip/fieldtrip/pull/2608",
+      "brief": "FieldTrip 合并 #2608（修 #2607）：`ft_statistics_montecarlo` 与 `clusterstat` 改用 **`>=`** 比较观测统计量与随机化分布。原因是此前用严格不等式，**与观测值恰好相等的随机化不被计数**；而当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**——漏掉它就等于少加一个 `+1`，p 值系统性地偏小（在边界显著性上尤其致命：0.049 与 0.051 的差别足以改变结论）。这是置换检验最经典的陷阱，MNE 上个月也刚修过同类问题。对做 cluster-based 置换统计的团队，建议升级后重跑关键对比；若你的结果恰好在 0.05 附近，务必重新核对。"
+    },
+    {
+      "title_zh": "EEGPrep 记录 pop_eegfiltnew 的 FIR 设计：参数、通道、相位与阶数全留痕",
+      "title_en": "EEGPrep Records Each pop_eegfiltnew FIR Design: Parameters, Channels, Phase and Order",
+      "url": "https://github.com/sccn/eegprep/pull/598",
+      "brief": "EEGPrep 合并 #598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**完整写进 `EEG[\"etc\"][\"eegfiltnew\"]`——包括**采样率、通道、相位类型、截止频率、阶数与过渡带宽**，并导出 `design_eegfiltnew` 供复算；**多次滤波各自留档、互不覆盖**。这条对可复现性的意义比看起来大：现实里「代码写着 1–40 Hz，但实际参数被谁改过没人记得」是常态，而滤波参数一旦与原分析不一致，后续所有频谱、连接、解码结论都不可比。让参数**随数据走**，等于把「私下口头约定」变成可审计记录。对用 EEGLAB/EEGPrep 的团队，建议检查既有数据是否有这份记录，没有的历史数据应视为「滤波口径未知」。"
+    },
+    {
+      "title_zh": "eegkit：零依赖的 JavaScript 实时 EEG 处理栈（含 React hooks 与网页神经反馈）",
+      "title_en": "eegkit: A Zero-Dependency JavaScript Stack for Real-Time EEG, With React Hooks and Web Neurofeedback",
+      "url": "https://github.com/aliassar/eegkit",
+      "brief": "新建仓库 eegkit（2026-11-11）把 EEG 处理搬进 **JavaScript/TypeScript**：滤波器、频谱、带功率、神经反馈指标与信号质量评估，**零运行时依赖**，号称与 SciPy 做过对照，并带 CI。同一天还出现了 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器）——三个仓库合起来是一套**前端 EEG 栈**。对做 **WebBCI**、远程实验或课堂演示的团队，这是少见的工程化实现，省掉「自己用 JS 重写滤波与功率谱」的活。要提醒的是：浏览器算力与定时精度决定了它适合轻量实时应用，**严格的刺激时序研究仍应回到原生采集**。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-12.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "FieldTrip 置换检验改为把「并列」计入 p 值（>= 而非 >）",
+      "title_en": "FieldTrip Now Counts Ties in Monte Carlo p-Values (>= Instead of >)",
+      "bullets_zh": [
+        "#2608：`ft_statistics_montecarlo` 与 `clusterstat` 此前用**严格不等式**比较观测统计量与随机化分布，于是**与观测值完全相等的随机化没有被计数**。",
+        "当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**，漏计它就等于少加了一个 `+1`——p 值系统性偏小。",
+        "这是置换检验的经典陷阱：正确的 p 值应包含「至少一样极端」的随机化（`>=`），而非只数「更极端」的（`>`）。"
+      ],
+      "bullets_en": [
+        "#2608 fixes ft_statistics_montecarlo and clusterstat comparing the observed statistic to the randomisation distribution with strict inequalities, so randomisations exactly equal to the observed value were not counted.",
+        "With cfg.numrandomization='all' the identity permutation is such a tie, and missing it is equivalent to omitting a +1 — the p-value is systematically too small.",
+        "This is the classic permutation-test trap: p should count randomisations at least as extreme (>=), not strictly more extreme (>)."
+      ],
+      "url": "https://github.com/fieldtrip/fieldtrip/pull/2608",
+      "published": "2026-11-11T13:43:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "FieldTrip 合并 #2608（修 #2607）：`ft_statistics_montecarlo` 与 `clusterstat` 改用 **`>=`** 比较观测统计量与随机化分布。原因是此前用严格不等式，**与观测值恰好相等的随机化不被计数**；而当 `cfg.numrandomization='all'` 时，**恒等置换本身就是一个并列**——漏掉它就等于少加一个 `+1`，p 值系统性地偏小（在边界显著性上尤其致命：0.049 与 0.051 的差别足以改变结论）。这是置换检验最经典的陷阱，MNE 上个月也刚修过同类问题。对做 cluster-based 置换统计的团队，建议升级后重跑关键对比；若你的结果恰好在 0.05 附近，务必重新核对。",
+      "brief_en": "FieldTrip merged #2608 (fixing #2607) so ft_statistics_montecarlo and clusterstat compare with >= instead of strict inequalities. Randomisations exactly equal to the observed statistic were not counted, and with numrandomization='all' the identity permutation is such a tie — omitting it equals dropping a +1, making p systematically too small right at the 0.05 boundary.",
+      "tags": [
+        "fieldtrip",
+        "permutation",
+        "p-value",
+        "ties",
+        "cluster-statistics"
+      ],
+      "raw_excerpt": "PR #2608: \"Fixes #2607. `ft_statistics_montecarlo` and `clusterstat` compared the observed statistic with the randomization distribution using strict inequalities, so randomizations that reproduce the observed value exactly were not counted. With `cfg.numrandomization='all'` the identity permutation is such a tie and no `+1` is added on that pat[h]…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "fieldtrip/fieldtrip#2608",
+      "author_handle": "fieldtrip",
+      "metrics": {
+        "play": null,
+        "like": 993,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "并列必须计入置换 p 值，否则 p 系统性偏小，0.05 边界上会改变结论。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "EEGPrep 记录 pop_eegfiltnew 的 FIR 设计：参数、通道、相位与阶数全留痕",
+      "title_en": "EEGPrep Records Each pop_eegfiltnew FIR Design: Parameters, Channels, Phase and Order",
+      "bullets_zh": [
+        "#598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**写入 `EEG[\"etc\"][\"eegfiltnew\"]`——含**采样率、通道、相位、截止频率、阶数、过渡带宽**；并导出 `design_eegfiltnew` 以便复算。",
+        "**连续多次滤波各自留档**，不会互相覆盖——这正是「事后能否说清做过什么滤波」的关键。",
+        "对可复现性，这比「代码里写着 1–40 Hz」强得多：滤波参数随数据走，换人、换年也能复原。"
+      ],
+      "bullets_en": [
+        "#598 records each FIR design applied by pop_eegfiltnew in EEG[\"etc\"][\"eegfiltnew\"], including sampling rate, channels, phase, cutoffs, order and transition width, and exports design_eegfiltnew for recomputation.",
+        "Successive filters keep separate records instead of overwriting each other — the crux of being able to say afterwards what filtering was actually applied.",
+        "For reproducibility this beats a comment in code: the filtering parameters travel with the data and survive staff and year changes."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/598",
+      "published": "2026-11-11T19:03:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #598：把 `pop_eegfiltnew` 每次应用的 **FIR 设计**完整写进 `EEG[\"etc\"][\"eegfiltnew\"]`——包括**采样率、通道、相位类型、截止频率、阶数与过渡带宽**，并导出 `design_eegfiltnew` 供复算；**多次滤波各自留档、互不覆盖**。这条对可复现性的意义比看起来大：现实里「代码写着 1–40 Hz，但实际参数被谁改过没人记得」是常态，而滤波参数一旦与原分析不一致，后续所有频谱、连接、解码结论都不可比。让参数**随数据走**，等于把「私下口头约定」变成可审计记录。对用 EEGLAB/EEGPrep 的团队，建议检查既有数据是否有这份记录，没有的历史数据应视为「滤波口径未知」。",
+      "brief_en": "EEGPrep merged #598 recording each pop_eegfiltnew FIR design in EEG[\"etc\"][\"eegfiltnew\"] with sampling rate, channels, phase, cutoffs, order and transition width, exporting design_eegfiltnew and keeping successive filters as separate records. Parameters travelling with the data turns informal conventions into auditable records; files without them have unknown filtering.",
+      "tags": [
+        "eegprep",
+        "fir",
+        "provenance",
+        "filtering",
+        "reproducibility"
+      ],
+      "raw_excerpt": "PR #598: \"Record the FIR design applied by pop_eegfiltnew — Record each FIR design applied by pop_eegfiltnew on EEG[\\\"etc\\\"][\\\"eegfiltnew\\\"] and export the existing design_eegfiltnew function. Successive filters keep separate records, including sampling rate, channels, phase, cutoffs, order, transition widt[h]…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#598",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "滤波参数随数据留痕且多次滤波不覆盖，才谈得上事后复现与审计。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "eegkit：零依赖的 JavaScript 实时 EEG 处理栈（含 React hooks 与网页神经反馈）",
+      "title_en": "eegkit: A Zero-Dependency JavaScript Stack for Real-Time EEG, With React Hooks and Web Neurofeedback",
+      "bullets_zh": [
+        "**eegkit**（363 KB，CI 覆盖）：滤波器、频谱、带功率、神经反馈指标与信号质量，**零运行时依赖**，面向浏览器与 JS/TS，并称与 SciPy 做过对照。",
+        "同日还有 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器），构成一套前端 EEG 生态。",
+        "对「浏览器里做 EEG」的团队（WebBCI、远程实验、教学演示），这是少见的工程化实现；但前端算力与浏览器定时精度仍限制其用于严格时序研究。"
+      ],
+      "bullets_en": [
+        "eegkit (363 KB, CI-covered) provides filters, spectra, band power, neurofeedback metrics and signal quality with zero runtime dependencies for browsers and JS/TS, reportedly checked against SciPy.",
+        "The same day brought eegkit-react (React and React Native hooks for live EEG) and eegkit-neurofeedback (an open-source web neurofeedback trainer), forming a front-end EEG stack.",
+        "For browser-based BCI, remote experiments or teaching demos this is rare engineering; browser compute and timer precision still limit strict timing work."
+      ],
+      "url": "https://github.com/aliassar/eegkit",
+      "published": "2026-11-11T19:46:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 eegkit（2026-11-11）把 EEG 处理搬进 **JavaScript/TypeScript**：滤波器、频谱、带功率、神经反馈指标与信号质量评估，**零运行时依赖**，号称与 SciPy 做过对照，并带 CI。同一天还出现了 **eegkit-react**（实时 EEG 的 React/React Native hooks）与 **eegkit-neurofeedback**（开源网页神经反馈训练器）——三个仓库合起来是一套**前端 EEG 栈**。对做 **WebBCI**、远程实验或课堂演示的团队，这是少见的工程化实现，省掉「自己用 JS 重写滤波与功率谱」的活。要提醒的是：浏览器算力与定时精度决定了它适合轻量实时应用，**严格的刺激时序研究仍应回到原生采集**。",
+      "brief_en": "Created 2026-11-11, eegkit brings EEG processing to JavaScript/TypeScript: filters, spectra, band power, neurofeedback metrics and signal quality with zero runtime dependencies, checked against SciPy with CI. The same day added eegkit-react (hooks for live EEG) and eegkit-neurofeedback (a web trainer), useful for WebBCI and demos — though browser timing limits strict stimulus-timing research.",
+      "tags": [
+        "javascript",
+        "typescript",
+        "realtime",
+        "neurofeedback",
+        "web"
+      ],
+      "raw_excerpt": "Description: \"Real-time EEG signal processing for JavaScript: filters, band power, neurofeedback metrics and signal quality. Zero dependencies; browsers, …\". README: \"Real-time EEG signal processing for JavaScript and TypeScript. Filters, spectra, band power, neurofeedback metrics and signal quality, checked against S[ciPy]…\". Same day: aliassar/eegkit-react (\"React and React Native hooks for live EEG\"), aliassar/eegkit-neurofeedback (\"Open-source neurofeedback trainer for web…\").",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aliassar/eegkit",
+      "author_handle": "aliassar",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "零依赖 JS 处理栈＋React hooks＋网页神经反馈，省掉自己重写滤波与功率谱。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "g.Pype 4.2.0：通道按需选择、Unicorn 免授权、训练环节可跑在浏览器",
+      "title_en": "g.Pype 4.2.0: Pick Channels, License-Free Unicorn Hybrid Black, Browser Training Episodes",
+      "bullets_zh": [
+        "放大器改为**按你选择的通道采集**——`channel_selection` 取代 `channel_count`，通道映射不再靠数量推断。",
+        "**Unicorn Hybrid Black 不再需要 licence**，降低了 g.tec 消费级设备的入门门槛。",
+        "**g.Pype Web** 让许多训练环节直接在浏览器里跑；另有 `TriggerScope(colors, labels)` 可为每个图指定曲线颜色与图例。"
+      ],
+      "bullets_en": [
+        "Amplifiers acquire the channels you select: channel_selection replaces channel_count, so channel mapping no longer comes from a count.",
+        "The Unicorn Hybrid Black no longer needs a licence, lowering the entry barrier for g.tec's consumer-grade device.",
+        "g.Pype Web runs many training episodes in the browser, and TriggerScope(colors, labels) assigns a curve colour and legend per plot."
+      ],
+      "url": "https://github.com/gtec-neurotechnology/gpype/releases/tag/v4.2.0",
+      "published": "2026-11-11T12:53:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "g.tec 的实时 BCI 框架 **g.Pype 发布 4.2.0**，三条改动都很实际：①放大器**按你选择的通道采集**（`channel_selection` 取代 `channel_count`），通道映射不再依赖「数量」推断，多设备混用时更不易错位；②**Unicorn Hybrid Black 不再需要 licence**，直接降低消费级设备的入门门槛；③**g.Pype Web** 让许多训练环节直接在浏览器运行，配合 `TriggerScope(colors, labels)` 可为每个图指定曲线颜色与图例。对用 g.tec 硬件做实时 BCI 的团队，升级后建议先核对**通道选择与设备序列号的对应关系**——这类映射一旦错位，后续分类结果会「能跑但不对」。",
+      "brief_en": "g.tec released g.Pype 4.2.0 with three practical changes: amplifiers acquire the channels you select (channel_selection replaces channel_count, so mapping no longer derives from a count), the Unicorn Hybrid Black no longer needs a licence, and g.Pype Web runs many training episodes in the browser with per-plot TriggerScope colours and labels. Verify channel-to-device mapping after upgrading.",
+      "tags": [
+        "gpyer",
+        "gtec",
+        "unicorn",
+        "realtime",
+        "release"
+      ],
+      "raw_excerpt": "Release v4.2.0 (2026-11-11T12:53:11Z): \"Amplifiers acquire the channels you select: `channel_selection` replaces `channel_count`.\" \"The Unicorn Hybrid Black no longer needs a licence.\" \"Many training episodes run in your browser, with g.Pype Web.\" \"`TriggerScope(colors=..., labels=...)` takes a curve colour and a legend text per plot…\"",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "gtec-neurotechnology/gpype@v4.2.0",
+      "author_handle": "gtec-neurotechnology",
+      "metrics": {
+        "play": null,
+        "like": 45,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "通道选择取代数量推断、Unicorn 免授权，两者都直接影响多设备混用正确性。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-Python 多窗谱支持分段参数（n_per_seg / n_overlap / average）",
+      "title_en": "MNE-Python Multitaper Gains Segmentation Options (n_per_seg, n_overlap, average)",
+      "bullets_zh": [
+        "#14519：多窗（multitaper）谱估计新增 **`n_per_seg` / `n_overlap` / `average`** 参数，可按段计算再平均，而不必对整段做一次估计。",
+        "对非平稳信号（睡眠分期、任务切换）意义明确：分段后既能看时间演化，也能降低单段方差。",
+        "同批还有「GIftI 导出加入顶点编号」与文档/CI 清理；与上月的多窗缩放修正（sqrt(sfreq)）配合，谱估计路径正在补齐。"
+      ],
+      "bullets_en": [
+        "#14519 adds n_per_seg, n_overlap and average to multitaper spectral estimation, allowing per-segment estimates and averaging instead of one estimate over the whole recording.",
+        "For non-stationary signals such as sleep staging or task transitions this matters: segmentation shows temporal evolution and reduces variance per estimate.",
+        "The batch also adds vertex numbers to GIFTI export and cleans up docs and CI, completing the spectral path after last month's sqrt(sfreq) scaling fix."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14519",
+      "published": "2026-11-11T21:01:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14519：**多窗（multitaper）谱估计新增分段参数** `n_per_seg` / `n_overlap` / `average`，可以**按段估计再平均**，而不是对整段记录做一次估计。对非平稳信号（睡眠分期、任务切换）意义明确：分段既能看时间演化，也能降低单次估计的方差——而多窗方法本身就是为了低方差设计的，缺了分段反而受限于「整段必须平稳」的隐含假设。同批还有「GIftI 导出加入顶点编号」与文档/CI 清理，配合上个月的 `sqrt(sfreq)` 缩放修正，MNE 的谱估计路径正在补齐。建议升级后用一段已知信号对比分段与非分段的功率谱。",
+      "brief_en": "MNE-Python merged #14519 adding n_per_seg, n_overlap and average to multitaper estimation, so spectra can be estimated per segment and averaged rather than once over a whole recording. For non-stationary signals like sleep staging this matters: segmentation shows temporal evolution and cuts variance. Compare segmented and unsegmented spectra after upgrading.",
+      "tags": [
+        "mne-python",
+        "multitaper",
+        "segmentation",
+        "spectral",
+        "psd"
+      ],
+      "raw_excerpt": "PRs merged 2026-11-11: \"ENH: Add segmentation support (n_per_seg, n_overlap, average) to multi[taper] (#14519)\" 21:01Z; \"Add vertex number to GiFTI export in SourceEstimate.save_as_surface() (#14510)\" 21:02Z.",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14519",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3590,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "多窗缺分段就隐含「整段平稳」假设，分段后既看演化也降方差。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGDash 修 SNIRF 读取：单色团、缺波长与 fNIRS 通道类型保留",
+      "title_en": "EEGDash Fixes SNIRF Reading: Single Chromophore, Missing Wavelengths and fNIRS Channel Types",
+      "bullets_zh": [
+        "#：**支持单色团（single-chromophore）与缺波长信息**的 SNIRF 文件——此前这类文件直接读不了或被判无效。",
+        "#：**保留 fNIRS 通道类型**（`hbo`、`hbr`、`fnirs_od`）——通道类型一旦在入库时丢失，后续按类型筛选与组水平分析就会错。",
+        "SNIRF 是 fNIRS 的社区标准格式；现实数据常有厂商导出不规范，这类加固决定「能不能把数据纳进来」。"
+      ],
+      "bullets_en": [
+        "It supports SNIRF files with a single chromophore and missing wavelength information, which previously failed to read or were judged invalid.",
+        "It preserves fNIRS channel types (hbo, hbr, fnirs_od) — losing them at ingestion breaks type filtering and group-level analysis later.",
+        "SNIRF is the fNIRS community standard, and vendor exports are often irregular, so such hardening decides whether data can be ingested at all."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/commit/af80fbf603",
+      "published": "2026-11-11T18:24:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 在 11-11 修了两个 **SNIRF（fNIRS 标准格式）**读取问题：①**支持单色团与缺失波长**的文件——此前这类合规但少见的导出直接读不了或被判无效；②**保留 fNIRS 通道类型**（`hbo`、`hbr`、`fnirs_od`），因为通道类型一旦在入库时丢掉，后续按类型筛选、组水平统计都会出错，而错误不会在读取阶段暴露。现实中的 fNIRS 数据大量来自不同厂商、导出规范参差，这类加固决定「数据能不能被纳进来」。对用 EEGDash 或自建 fNIRS 管线的团队，建议升级后抽查单色团文件与通道类型字段。",
+      "brief_en": "EEGDash fixed two SNIRF (fNIRS standard) reading issues on Nov 11: support for single-chromophore files with missing wavelength information, which previously failed or were rejected, and preservation of fNIRS channel types (hbo, hbr, fnirs_od), whose loss at ingestion silently breaks type filtering and group statistics. Vendor exports are irregular, so such hardening decides ingestibility.",
+      "tags": [
+        "eeg-dash",
+        "snirf",
+        "fnirs",
+        "channel-types",
+        "ingest"
+      ],
+      "raw_excerpt": "Commits 2026-11-11: \"fix(io): support single-chromophore and missing-wavelength SNIRF files (…)\" (1cbd28d86a) 18:24Z; \"fix(io): keep fNIRS channel types (hbo, hbr, fnirs_od) and read the fnir[s]\" (af80fbf603) 18:24Z.",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash@af80fbf603",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 90,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "通道类型在入库时丢失会让后续按类型分析静默出错，且读取阶段看不出来。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "SynapseX：用 Blockly 图形化编程把脑电条件写进程序，驱动 3D 仿真（中文教育 BCI）",
+      "title_en": "SynapseX: Blockly Visual Programming Turns EEG Conditions Into Code Driving 3D Simulations",
+      "bullets_zh": [
+        "中文教育 BCI 平台：**Blockly 图形化编程生成 Python**，由**持续脑电条件**驱动 **3D 仿真**，并在支持的任务中按**运行证据**检查结果。",
+        "面向 **STEAM 课堂、BCI 入门与教育研究**，把「采集—编程—仿真—学习回顾」组织在同一平台，并含**个人基线观察**。",
+        "对做教育/科普落地的团队，这是少见的中文实现；但教学场景的脑电质量有限，结论应视为「体验与理解」而非解码性能。"
+      ],
+      "bullets_en": [
+        "A Chinese educational BCI platform where Blockly visual programming generates Python, continuous EEG conditions drive a 3D simulation, and supported tasks are checked against runtime evidence.",
+        "Targeting STEAM classrooms, BCI introductions and education research, it combines acquisition, programming, simulation and learning review with per-person baseline observation.",
+        "For education and outreach this is a rare Chinese implementation; classroom EEG quality limits conclusions to experience and understanding rather than decoding performance."
+      ],
+      "url": "https://github.com/throwOctober/synapsex-bci-showcase",
+      "published": "2026-11-11T07:01:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库 SynapseX（2026-11-11，中文）：一个**教育向 BCI 平台**——用 **Blockly 图形化编程生成 Python**，让**持续脑电条件**驱动 **3D 仿真**，并在支持的任务里按**运行证据**检查结果；整体组织成「采集 → 编程 → 仿真 → 回顾」，还包含**个人基线观察**。它的定位很清楚：**STEAM 课堂、BCI 入门与教育研究**，而不是科研级采集——课堂环境下的电极质量与运动伪迹注定无法支撑严格解码结论。但对做**科普落地**的团队，这是少见的「把脑电变成可编程条件」的中文实现，思路值得借鉴：让学生写条件、看行为、再用运行证据解释结果，比看演示视频更能建立直觉。",
+      "brief_en": "Created 2026-11-11, SynapseX is a Chinese educational BCI platform: Blockly visual programming generates Python, EEG conditions drive a 3D simulation, and tasks are checked against runtime evidence. It targets STEAM classrooms rather than research-grade acquisition, so signal quality limits conclusions — but programmable EEG conditions are a useful outreach pattern.",
+      "tags": [
+        "education",
+        "blockly",
+        "3d-simulation",
+        "steam",
+        "chinese"
+      ],
+      "raw_excerpt": "Description:「SynapseX｜教育脑机接口与脑电编程（Educational BCI / EEG Programming）。通过 Blockly 图形化编程（visual programming）生成 Python，持续脑电条件驱动 3D 仿真，在支持的任务中按运行证据检查。涵盖 STEAM…」README:「把脑电条件写进程序，观察控制行为，用运行证据解释任务结果。」「面向 STEAM 课堂、脑机接口入门与教育研究…差异化能力是让脑电[条件可编程]」",
+      "fetched_at": "2026-11-11T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "throwOctober/synapsex-bci-showcase",
+      "author_handle": "throwOctober",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把脑电变成可编程条件并用运行证据解释结果，是少见的科普落地形态。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 92,
+    "llm_rows": 18,
+    "kept": 7,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 3
+  }
+}
