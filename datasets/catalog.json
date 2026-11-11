@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T12:58:17.649Z",
+  "generatedAt": "2026-11-11T12:09:17.631Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 18
+      "count": 19
     },
     {
       "id": "physionet",
@@ -19,7 +19,7 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 16
+      "count": 15
     },
     {
       "id": "github",
@@ -100,6 +100,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009090",
+      "name": "AL1 multimodal EEG-fMRI dataset (defaced)",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009090",
+      "source": "openneuro",
+      "description": "AL1 multimodal EEG-fMRI dataset (defaced)",
+      "tags": [
+        "BIDS",
+        "mri"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-10T17:21:49.573Z",
       "modality": [
         "EEG"
       ]
@@ -433,25 +452,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008834",
-      "name": "PKUEEG",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008834",
-      "source": "openneuro",
-      "description": "PKUEEG",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T08:20:25.932Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:EEGDash/eeg-mi-datasets",
       "name": "eeg-mi-datasets",
       "owner": "EEGDash",
@@ -469,7 +469,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11769,
+      "downloads": 11884,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -494,8 +494,8 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 9624,
-      "likes": 13,
+      "downloads": 10868,
+      "likes": 17,
       "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
         "EEG",
@@ -520,7 +520,7 @@
         "motor-imagery"
       ],
       "license": "odc-by",
-      "downloads": 6963,
+      "downloads": 7281,
       "likes": 0,
       "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
@@ -545,7 +545,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2018,
+      "downloads": 2002,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -563,7 +563,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1608,
+      "downloads": 1528,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -588,7 +588,7 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 1102,
+      "downloads": 850,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
       "modality": [
@@ -611,7 +611,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 630,
+      "downloads": 634,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -635,25 +635,9 @@
         "generative-latents"
       ],
       "license": "cc-by-4.0",
-      "downloads": 450,
+      "downloads": 467,
       "likes": 0,
       "updatedAt": "2026-11-10T07:39:36.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
-      "name": "tuh-eeg-cloud-transfer",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
-      "source": "huggingface",
-      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
-      "tags": [],
-      "license": "other",
-      "downloads": 444,
-      "likes": 0,
-      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -672,7 +656,7 @@
         "brain-computer-interface"
       ],
       "license": "cc0-1.0",
-      "downloads": 344,
+      "downloads": 414,
       "likes": 0,
       "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
@@ -680,26 +664,17 @@
       ]
     },
     {
-      "id": "hf:JayF14/chb-mit-preprocessed-eeg",
-      "name": "chb-mit-preprocessed-eeg",
-      "owner": "JayF14",
-      "url": "https://huggingface.co/datasets/JayF14/chb-mit-preprocessed-eeg",
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
       "source": "huggingface",
-      "description": "CHB-MIT Preprocessed EEG Dataset Feature-Engineered EEG Data for Seizure Forecasting (Pre-Ictal Detection) 347,075 labeled epochs | 24 cases / 22 subjects | 590 features per epoch | ~3.9 GB No raw signal processing needed. Download, load, and train. Research use only. Not for cl…",
-      "tags": [
-        "tabular-classification",
-        "odc-by",
-        "medical",
-        "eeg",
-        "seizure-prediction",
-        "epilepsy",
-        "chb-mit",
-        "neuroscience"
-      ],
-      "license": "odc-by",
-      "downloads": 289,
-      "likes": 5,
-      "updatedAt": "2026-10-12T17:38:42.000Z",
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 444,
+      "likes": 0,
+      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -722,9 +697,31 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 201,
+      "downloads": 211,
       "likes": 2,
       "updatedAt": "2026-11-08T16:42:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:EEGDash/eegdash-corpus-v0",
+      "name": "eegdash-corpus-v0",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "source": "huggingface",
+      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
+      "tags": [
+        "arxiv:2611.06356",
+        "eeg",
+        "neuroscience",
+        "foundation-model",
+        "zarr"
+      ],
+      "license": "other",
+      "downloads": 177,
+      "likes": 2,
+      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -749,30 +746,11 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 183,
-      "updatedAt": "2026-11-09T21:16:18.000Z",
+      "updatedAt": "2026-11-10T23:09:46.000Z",
       "modality": [
         "EEG",
         "MEG",
         "iEEG"
-      ]
-    },
-    {
-      "id": "zenodo:21982978",
-      "name": "A task EEG dataset with preprocessed signals and features for ADHD research in children and adolescents",
-      "owner": "Sanchis, Javier",
-      "url": "https://doi.org/10.5281/zenodo.21982978",
-      "source": "zenodo",
-      "description": "This dataset provides preprocessed electroencephalography (EEG) signals and extracted EEG features for research on attention-deficit/hyperactivity disorder (ADHD) in children and adolescents. Derived from version 2 of the BALLADEER dataset, it contains 669 eligible task recordin…",
-      "tags": [
-        "EEG",
-        "EEG features"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 671,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -784,7 +762,7 @@
       "description": "This archive contains synthetic EEG and EMG time-series data generated for the evaluation of graph- and hypergraph-based representations of multivariate neural activity. Dataset overview Each simulation contains: synthetic EEG data from 61 channels; synthetic EMG data from 10 ch…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 146,
+      "downloads": 148,
       "likes": null,
       "updatedAt": "2026-11-10T00:00:00.000Z",
       "modality": [
@@ -806,31 +784,6 @@
       "downloads": 154,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23855268",
-      "name": "Graded Minds:  ERP Evidence for Continuous, Multidimensional Conceptual Processing  in Picture–Word Stroop and Semantic Decision Tasks",
-      "owner": "Di Pietro, Irene",
-      "url": "https://doi.org/10.5281/zenodo.23855268",
-      "source": "zenodo",
-      "description": "This record contains the data, materials, and code accompanying the manuscript \"Graded Minds: ERP Evidence for Continuous, Multidimensional Conceptual Processing in Picture&ndash;Word Stroop and Semantic Decision Tasks\" (Di Pietro, Viviani, &Uuml;lk&uuml;, Vallesi, Montefinese,…",
-      "tags": [
-        "Picture-Word interference",
-        "semantic decision",
-        "semantic similarity",
-        "visual similarity",
-        "task demands",
-        "ERP",
-        "grounded cognition",
-        "word production"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 161,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -925,6 +878,22 @@
       ]
     },
     {
+      "id": "zenodo:24112768",
+      "name": "Automatic Imitation Task - Behavioural and EEG dataset",
+      "owner": "Anonymous, Authors",
+      "url": "https://doi.org/10.5281/zenodo.24112768",
+      "source": "zenodo",
+      "description": "The dataset comprises behavioural and electroencephalographic (EEG) data collected during an adapted Automatic Imitation Task (AIT). Behavioural data were obtained from 34 participants and include reaction times and accuracy across experimental conditions manipulating spatial co…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-11-10T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:23858574",
       "name": "Post-intervention high-beta synchronization tracks stable-manifold alignment  during stick-balancing learning",
       "owner": "Nomura, Taishin",
@@ -938,6 +907,31 @@
       "downloads": 46,
       "likes": null,
       "updatedAt": "2026-11-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23958219",
+      "name": "Participant-Level Results and Trial-Level Predictions for Cross-Dataset Motor Imagery EEG Decoding Using Euclidean Alignment",
+      "owner": "Katona, Jozsef",
+      "url": "https://doi.org/10.5281/zenodo.23958219",
+      "source": "zenodo",
+      "description": "This dataset accompanies the research manuscript entitled&nbsp; &ldquo;Unlabeled target EEG improves cross-dataset motor imagery decoding through Euclidean alignment&rdquo; , submitted to Scientific Reports. The study investigates the effects of Euclidean alignment (EA) on cross…",
+      "tags": [
+        "Motor imagery",
+        "Electroencephalography (EEG)",
+        "Euclidean alignment",
+        "Domain adaptation",
+        "Unlabeled calibration",
+        "EEG classification",
+        "EEGNet",
+        "Minimum distance to mean"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 10,
+      "likes": null,
+      "updatedAt": "2026-11-04T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -959,7 +953,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 19,
-      "updatedAt": "2026-11-10T12:24:14.000Z",
+      "updatedAt": "2026-11-11T06:24:16.000Z",
       "modality": [
         "EEG"
       ]
@@ -979,33 +973,31 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-10T08:45:37.000Z",
+      "updatedAt": "2026-11-11T09:42:44.000Z",
       "modality": [
         "EEG",
         "EMG"
       ]
     },
     {
-      "id": "github:AminMiri2000/oddball-eeg-classifiability",
-      "name": "oddball-eeg-classifiability",
-      "owner": "AminMiri2000",
-      "url": "https://github.com/AminMiri2000/oddball-eeg-classifiability",
+      "id": "github:eljandoubi/eeg_challenge_2025",
+      "name": "eeg_challenge_2025",
+      "owner": "eljandoubi",
+      "url": "https://github.com/eljandoubi/eeg_challenge_2025",
       "source": "github",
-      "description": "Reproducibility code for cross-dataset analysis of subject classifiability in oddball EEG using LDA, Logistic Regression, and EEGNet.",
+      "description": "A self-supervised VQ-VAE pretraining pipeline for EEG signals, built for the EEG Foundation Challenge on the HBN-EEG dataset.",
       "tags": [
-        "brain-computer-interface",
+        "braindecode",
         "eeg",
-        "eegnet",
-        "erp",
-        "event-related-potentials",
-        "machine-learning",
-        "neuroscience",
-        "oddball"
+        "hbn-eeg",
+        "python",
+        "self-supervised-learning",
+        "vq-vae"
       ],
-      "license": "BSD-3-Clause",
+      "license": "Apache-2.0",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-11-09T03:46:41.000Z",
+      "updatedAt": "2026-11-11T11:02:47.000Z",
       "modality": [
         "EEG"
       ]
