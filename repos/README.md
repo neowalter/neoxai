@@ -2,7 +2,7 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
-Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **425** entries after batch38.
+Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **437** entries after batch39.
 
 | Repo | Author | Description | Last push | Stars |
 | --- | --- | --- | --- | --- |
@@ -431,3 +431,15 @@ Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.co
 | [behavior-aligned-ecog-transfer](https://github.com/TheAxeC/behavior-aligned-ecog-transfer) | @TheAxeC | Behavior-supervised alignment for cross-subject neural decoding across non-correspondin... | 2026-07-06 | 3 |
 | [ecog-finger-decoding](https://github.com/MuskanSiraj78/ecog-finger-decoding) | @MuskanSiraj78 | Decoding finger flexion vs. extension from human ECoG — full pipeline from preprocessin... | 2026-07-23 | 1 |
 | [Hill_2026_ERSP-neurofeedback-analysis](https://github.com/DocSalamandyr/Hill_2026_ERSP-neurofeedback-analysis) | @DocSalamandyr | Analysis code for:  Hill, A. (2026). Frequency-Specific Operant Learning in Neurofeedba... | 2026-08-10 | 2 |
+| [squid-16](https://github.com/inspizzz/squid-16) | @inspizzz | Squid-16: open-source 16-channel dry-electrode EEG sensor. 18 spring pins, 2x ADS131M08... | 2026-11-10 | 1 |
+| [ubri](https://github.com/EnguerandVitro/ubri) | @EnguerandVitro | Open tools to use the brain's error signal as human feedback for robots | 2026-11-10 | 1 |
+| [eegkit](https://github.com/aliassar/eegkit) | @aliassar | Real-time EEG signal processing for JavaScript: filters, band power, neurofeedback metr... | 2026-11-11 | 1 |
+| [axiom-neuro](https://github.com/sumeetmusfirah/axiom-neuro) | @sumeetmusfirah | Do language models design and analyse experiments like scientists? A judge-free benchma... | 2026-11-11 | 1 |
+| [bci-projects](https://github.com/zzzhtetpai-neuroai/bci-projects) | @zzzhtetpai-neuroai | Hybrid SSVEP + P300 brain-computer interface for controlling a wheelchair and tablet wi... | 2026-11-06 | 2 |
+| [FocusGlass](https://github.com/Da4n1k/FocusGlass) | @Da4n1k | Учебный проект: БОС-оверлей для нейрообруча BrainBit — экран затемняется, когда падает ... | 2026-11-10 | 2 |
+| [BCI_imagery_and_classification](https://github.com/pranathi-ck/BCI_imagery_and_classification) | @pranathi-ck | Motor Imagery EEG Classification using Common Spatial Patterns (CSP), ANOVA-based featu... | 2026-11-10 | 1 |
+| [eeg-tta-pilot](https://github.com/mahsawye/eeg-tta-pilot) | @mahsawye | Pilot study: Euclidean Alignment + Tent test-time adaptation for cross-subject motor-im... | 2026-11-11 | 1 |
+| [motor-imagery-eeg-bci](https://github.com/AllamKeerthana/motor-imagery-eeg-bci) | @AllamKeerthana |  | 2026-11-11 | 1 |
+| [RVAD_decoding](https://github.com/WingLiberity/RVAD_decoding) | @WingLiberity | Per-participant single-trial decoding of target vs. non-target RSVP trials (RVAD dataset) | 2026-11-10 | 1 |
+| [Subject-independent-decoding-of-attended-spatial-location](https://github.com/AMKhaan/Subject-independent-decoding-of-attended-spatial-location) | @AMKhaan | Analysis code and results: subject-independent decoding of attended spatial location fr... | 2026-09-23 | 1 |
+| [cross-subject-eeg-image-reconstruction](https://github.com/lorenzosoannini/cross-subject-eeg-image-reconstruction) | @lorenzosoannini | Master's thesis: cross-subject EEG-to-image reconstruction with REVE, learned shared/pr... | 2026-11-05 | 1 |

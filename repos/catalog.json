@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-10T22:51:31Z",
+  "generatedAt": "2026-11-11T23:03:20Z",
   "sort": "contactedAt,id",
   "purpose": "GitHub repos of builders contacted via neoxai outreach \u2014 link + metadata for neox-ai.com",
-  "count": 425,
+  "count": 437,
   "sources": [
     {
       "id": "github",
       "ok": true,
-      "count": 425
+      "count": 437
     }
   ],
   "items": [
@@ -14431,6 +14431,445 @@
         "contactedAt": "2026-11-11",
         "batch": "batch38",
         "contactedAuthor": "yazanjer"
+      }
+    },
+    {
+      "id": "github:AMKhaan/Subject-independent-decoding-of-attended-spatial-location",
+      "name": "Subject-independent-decoding-of-attended-spatial-location",
+      "owner": "AMKhaan",
+      "author": "AMKhaan",
+      "url": "https://github.com/AMKhaan/Subject-independent-decoding-of-attended-spatial-location",
+      "homepage": null,
+      "source": "github",
+      "description": "Analysis code and results: subject-independent decoding of attended spatial location from fNIRS, with calibration curves and an eye-movement control (OpenNeuro ds004830 and ds007738)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "fnirs",
+        "machine-learning",
+        "neuroimaging",
+        "openneuro",
+        "reproducible-research",
+        "spatial-attention",
+        "transfer-learning"
+      ],
+      "tags": [
+        "fnirs",
+        "bci",
+        "spatial-attention",
+        "transfer",
+        "evaluation"
+      ],
+      "createdAt": "2026-09-23T05:49:53Z",
+      "updatedAt": "2026-11-11T22:58:06Z",
+      "pushedAt": "2026-09-23T06:36:44Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "AMKhaan"
+      }
+    },
+    {
+      "id": "github:AllamKeerthana/motor-imagery-eeg-bci",
+      "name": "motor-imagery-eeg-bci",
+      "owner": "AllamKeerthana",
+      "author": "AllamKeerthana",
+      "url": "https://github.com/AllamKeerthana/motor-imagery-eeg-bci",
+      "homepage": null,
+      "source": "github",
+      "description": null,
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "sparse-channel",
+        "riemannian"
+      ],
+      "createdAt": "2026-11-11T10:57:48Z",
+      "updatedAt": "2026-11-11T22:58:04Z",
+      "pushedAt": "2026-11-11T11:01:28Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "AllamKeerthana"
+      }
+    },
+    {
+      "id": "github:Da4n1k/FocusGlass",
+      "name": "FocusGlass",
+      "owner": "Da4n1k",
+      "author": "Da4n1k",
+      "url": "https://github.com/Da4n1k/FocusGlass",
+      "homepage": null,
+      "source": "github",
+      "description": "\u0423\u0447\u0435\u0431\u043d\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442: \u0411\u041e\u0421-\u043e\u0432\u0435\u0440\u043b\u0435\u0439 \u0434\u043b\u044f \u043d\u0435\u0439\u0440\u043e\u043e\u0431\u0440\u0443\u0447\u0430 BrainBit \u2014 \u044d\u043a\u0440\u0430\u043d \u0437\u0430\u0442\u0435\u043c\u043d\u044f\u0435\u0442\u0441\u044f, \u043a\u043e\u0433\u0434\u0430 \u043f\u0430\u0434\u0430\u0435\u0442 \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0430\u0446\u0438\u044f. Tauri + Rust, \u0434\u0438\u0437\u0430\u0439\u043d Liquid Glass.",
+      "language": "TypeScript",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 2,
+      "topics": [
+        "biofeedback",
+        "brainbit",
+        "eeg",
+        "rust",
+        "tauri"
+      ],
+      "tags": [
+        "eeg",
+        "neurofeedback",
+        "brainbit",
+        "tauri",
+        "biofeedback"
+      ],
+      "createdAt": "2026-10-29T14:35:38Z",
+      "updatedAt": "2026-11-11T22:58:01Z",
+      "pushedAt": "2026-11-10T17:07:39Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "Da4n1k"
+      }
+    },
+    {
+      "id": "github:EnguerandVitro/ubri",
+      "name": "ubri",
+      "owner": "EnguerandVitro",
+      "author": "EnguerandVitro",
+      "url": "https://github.com/EnguerandVitro/ubri",
+      "homepage": "https://getubri.com",
+      "source": "github",
+      "description": "Open tools to use the brain's error signal as human feedback for robots",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "ai-safety",
+        "bci",
+        "eeg",
+        "nrf52840",
+        "open-data",
+        "robotics"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "errp",
+        "robotics",
+        "firmware"
+      ],
+      "createdAt": "2026-11-09T23:45:40Z",
+      "updatedAt": "2026-11-11T22:57:58Z",
+      "pushedAt": "2026-11-10T00:10:11Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "EnguerandVitro"
+      }
+    },
+    {
+      "id": "github:WingLiberity/RVAD_decoding",
+      "name": "RVAD_decoding",
+      "owner": "WingLiberity",
+      "author": "WingLiberity",
+      "url": "https://github.com/WingLiberity/RVAD_decoding",
+      "homepage": null,
+      "source": "github",
+      "description": "Per-participant single-trial decoding of target vs. non-target RSVP trials (RVAD dataset)",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "bids",
+        "decoding",
+        "eeg",
+        "eegnet",
+        "rsvp"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "rsvp",
+        "eegnet",
+        "decoding"
+      ],
+      "createdAt": "2026-11-10T14:59:55Z",
+      "updatedAt": "2026-11-11T22:58:05Z",
+      "pushedAt": "2026-11-10T15:10:05Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "WingLiberity"
+      }
+    },
+    {
+      "id": "github:aliassar/eegkit",
+      "name": "eegkit",
+      "owner": "aliassar",
+      "author": "aliassar",
+      "url": "https://github.com/aliassar/eegkit",
+      "homepage": null,
+      "source": "github",
+      "description": "Real-time EEG signal processing for JavaScript: filters, band power, neurofeedback metrics and signal quality. Zero dependencies; browsers, Node, React Native.",
+      "language": "TypeScript",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "bci",
+        "brain-computer-interface",
+        "dsp",
+        "edf",
+        "eeg",
+        "neurofeedback",
+        "neuroscience",
+        "react-native",
+        "signal-processing",
+        "typescript"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "typescript",
+        "neurofeedback",
+        "dsp"
+      ],
+      "createdAt": "2026-11-11T15:14:49Z",
+      "updatedAt": "2026-11-11T22:57:59Z",
+      "pushedAt": "2026-11-11T19:46:49Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "aliassar"
+      }
+    },
+    {
+      "id": "github:inspizzz/squid-16",
+      "name": "squid-16",
+      "owner": "inspizzz",
+      "author": "inspizzz",
+      "url": "https://github.com/inspizzz/squid-16",
+      "homepage": null,
+      "source": "github",
+      "description": "Squid-16: open-source 16-channel dry-electrode EEG sensor. 18 spring pins, 2x ADS131M08, ESP32-C3, Bluetooth LE. KiCad hardware, firmware, simulator. Untested rev B.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "ads131m08",
+        "bci",
+        "brain-computer-interface",
+        "eeg",
+        "esp32-c3",
+        "kicad",
+        "neurotech",
+        "open-hardware"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "hardware",
+        "open-hardware",
+        "ads131m08"
+      ],
+      "createdAt": "2026-11-10T16:52:12Z",
+      "updatedAt": "2026-11-11T22:57:57Z",
+      "pushedAt": "2026-11-10T21:01:06Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "inspizzz"
+      }
+    },
+    {
+      "id": "github:lorenzosoannini/cross-subject-eeg-image-reconstruction",
+      "name": "cross-subject-eeg-image-reconstruction",
+      "owner": "lorenzosoannini",
+      "author": "lorenzosoannini",
+      "url": "https://github.com/lorenzosoannini/cross-subject-eeg-image-reconstruction",
+      "homepage": null,
+      "source": "github",
+      "description": "Master's thesis: cross-subject EEG-to-image reconstruction with REVE, learned shared/private representations and diffusion models.",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "brain-computer-interface",
+        "cross-subject",
+        "diffusion-models",
+        "eeg",
+        "image-reconstruction",
+        "master-thesis",
+        "pytorch"
+      ],
+      "tags": [
+        "eeg",
+        "bci",
+        "image-reconstruction",
+        "cross-subject",
+        "diffusion"
+      ],
+      "createdAt": "2026-11-05T18:28:38Z",
+      "updatedAt": "2026-11-11T22:58:06Z",
+      "pushedAt": "2026-11-05T18:36:53Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "lorenzosoannini"
+      }
+    },
+    {
+      "id": "github:mahsawye/eeg-tta-pilot",
+      "name": "eeg-tta-pilot",
+      "owner": "mahsawye",
+      "author": "mahsawye",
+      "url": "https://github.com/mahsawye/eeg-tta-pilot",
+      "homepage": null,
+      "source": "github",
+      "description": "Pilot study: Euclidean Alignment + Tent test-time adaptation for cross-subject motor-imagery EEG decoding (BCI Competition IV-2a, EEGNet-style CNN, PyTorch, MOABB).",
+      "language": "Jupyter Notebook",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "test-time-adaptation",
+        "euclidean-alignment"
+      ],
+      "createdAt": "2026-11-11T08:50:07Z",
+      "updatedAt": "2026-11-11T22:58:03Z",
+      "pushedAt": "2026-11-11T09:24:18Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "mahsawye"
+      }
+    },
+    {
+      "id": "github:pranathi-ck/BCI_imagery_and_classification",
+      "name": "BCI_imagery_and_classification",
+      "owner": "pranathi-ck",
+      "author": "pranathi-ck",
+      "url": "https://github.com/pranathi-ck/BCI_imagery_and_classification",
+      "homepage": null,
+      "source": "github",
+      "description": "Motor Imagery EEG Classification using Common Spatial Patterns (CSP), ANOVA-based feature selection, and RBF-kernel Support Vector Machine (SVM) to classify four brain activity states: Left Hand, Right Hand, Feet, and Idle.",
+      "language": "MATLAB",
+      "license": "unknown",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "motor-imagery",
+        "csp",
+        "svm"
+      ],
+      "createdAt": "2026-11-10T10:36:27Z",
+      "updatedAt": "2026-11-11T22:58:02Z",
+      "pushedAt": "2026-11-10T15:46:59Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "pranathi-ck"
+      }
+    },
+    {
+      "id": "github:sumeetmusfirah/axiom-neuro",
+      "name": "axiom-neuro",
+      "owner": "sumeetmusfirah",
+      "author": "sumeetmusfirah",
+      "url": "https://github.com/sumeetmusfirah/axiom-neuro",
+      "homepage": "https://sumeetmusfirah.github.io/axiom-neuro/",
+      "source": "github",
+      "description": "Do language models design and analyse experiments like scientists? A judge-free benchmark with known ground truth: a cognitive-control lab fitted to real EEG (ERP CORE) and a signalling lab on real single cells (Sachs 2005). Preregistered, self-running, $0.",
+      "language": "Python",
+      "license": "MIT",
+      "stars": 1,
+      "forks": 0,
+      "topics": [
+        "ai-scientist",
+        "benchmark",
+        "causal-inference",
+        "eeg",
+        "experimental-design",
+        "llm-evaluation",
+        "neuroscience",
+        "preregistration",
+        "systems-biology"
+      ],
+      "tags": [
+        "eeg",
+        "erp",
+        "benchmark",
+        "evaluation",
+        "preregistration"
+      ],
+      "createdAt": "2026-10-26T00:01:08Z",
+      "updatedAt": "2026-11-11T22:58:00Z",
+      "pushedAt": "2026-11-11T21:11:20Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "sumeetmusfirah"
+      }
+    },
+    {
+      "id": "github:zzzhtetpai-neuroai/bci-projects",
+      "name": "bci-projects",
+      "owner": "zzzhtetpai-neuroai",
+      "author": "zzzhtetpai-neuroai",
+      "url": "https://github.com/zzzhtetpai-neuroai/bci-projects",
+      "homepage": null,
+      "source": "github",
+      "description": "Hybrid SSVEP + P300 brain-computer interface for controlling a wheelchair and tablet with brain signals. Includes a Python reader that streams raw EEG over WiFi. Topics: bci eeg ssvep p300 neurotech python",
+      "language": "Python",
+      "license": "unknown",
+      "stars": 2,
+      "forks": 0,
+      "topics": [],
+      "tags": [
+        "eeg",
+        "bci",
+        "ssvep",
+        "p300",
+        "wheelchair"
+      ],
+      "createdAt": "2026-04-25T16:09:45Z",
+      "updatedAt": "2026-11-11T22:58:01Z",
+      "pushedAt": "2026-11-06T13:38:44Z",
+      "archived": false,
+      "outreach": {
+        "contactedAt": "2026-11-12",
+        "batch": "batch39",
+        "contactedAuthor": "zzzhtetpai-neuroai"
       }
     }
   ]
