@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-13",
+  "generated_at": "2026-11-12T21:31:46.542Z",
+  "item_count": 5,
+  "types": {
+    "Benchmark": 1,
+    "Project": 4
+  },
+  "highlights": [
+    {
+      "title_zh": "EEG-FM-Benchmark 修 CLI 布尔坑：70 条复现命令里每条都至少有一个 flag 被静默取反",
+      "title_en": "EEG-FM-Benchmark Fixes a Boolean CLI Trap: Every One of 70 Reproduce Commands Had a Flipped Flag",
+      "url": "https://github.com/Dingkun0817/EEG-FM-Benchmark/pull/5",
+      "brief": "EEG-FM-Benchmark 合并 #5，修一个非常典型的「能跑但结果不同」的坑：`run_finetuning.py` 的布尔开关用 **`type=bool`**，而 Python 把任何**非空字符串**都当 True，于是 **`--apply_EA False` 实际是开启 EA**。更严重的是影响面——`config/*.json` 里共 **70 条 `reproduce_command`**，走当前解析器时**每条都至少有一个 flag 与它写的值相反**。对基准仓库，这类 bug 直接动摇「别人能否复现我的数」：命令贴出去了、也能跑通，但实际配置不是你标称的那套。修复方式通常是改用 `store_true`/`store_false` 或显式解析字符串。建议所有提供 reproduce 命令的项目都自查一遍同类写法。"
+    },
+    {
+      "title_zh": "脑控六足机器人：从离线 CCA 到 250 Hz 实时流式闭环（中文，可复现记录）",
+      "title_en": "An SSVEP Brain-Controlled Hexapod: From Offline CCA to a 250 Hz Streaming Closed Loop",
+      "url": "https://github.com/qingwenye/bci-quadruped-bci-system",
+      "brief": "新建仓库（2026-11-12，中文）完整记录了一套**基于 SSVEP 的脑控六足机器人**系统的演进路线：从**离线 CCA 解码**起步，走到 **250 Hz 实时流式**，再到**闭环控制**。这类「从离线到实时」的完整记录很稀缺——多数 SSVEP 项目止步于离线准确率，而真正难的是**实时流式下的延迟、丢帧与刺激时序对齐**，以及把解码结果映射成机器人指令时的安全边界。技术栈写明 Python 3.10 + MNE + scikit-learn，强调可复现。对做 SSVEP 工程化或机器人控制的团队，这是一手参考；采用前建议先核对**刺激频率与 CCA 模板**的对应关系，以及实时环路的端到端延迟。"
+    },
+    {
+      "title_zh": "MNE-Python 深度源建模第二阶段：皮层下网格按表面绘制并随时间/色标联动",
+      "title_en": "MNE-Python Deep Source Modeling Phase 2: Subcortical Meshes Drawn as Surfaces With Time Coupling",
+      "url": "https://github.com/mne-tools/mne-python/pull/14450",
+      "brief": "MNE-Python 合并 #14450（**深度源建模第二阶段**）：**皮层下网格**现在与皮层一起按**表面**绘制，且颜色**跟随时间滑块与色标上下限**联动。这条解决的是一个很实际的可视化缺口——做深部源（丘脑、基底节、海马）时，过去只能看到皮层上的结果，皮下活动要么孤立显示、要么不随时间轴变化，导致「时间演化」这一关键维度在图上读不出来。PR 里也说明了实现方式（由模型辅助、作者复核并补了示例）。建议升级后跑一遍官方示例，确认配色映射与时间轴行为符合预期，再用于自己的结果图。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-13.md",
+  "items": [
+    {
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "EEG-FM-Benchmark 修 CLI 布尔坑：70 条复现命令里每条都至少有一个 flag 被静默取反",
+      "title_en": "EEG-FM-Benchmark Fixes a Boolean CLI Trap: Every One of 70 Reproduce Commands Had a Flipped Flag",
+      "bullets_zh": [
+        "`run_finetuning.py` 的布尔开关用 `type=bool`，Python 把任何**非空字符串**都当 True，于是 `--apply_EA False` 实际**打开了 EA**。",
+        "影响不止用户手输：`config/*.json` 里的 **`reproduce_command` 共 70 条**，走当前解析器时**每条都至少有一个 flag 与预期不符**。",
+        "这是「复现命令跑得通、结果却不同」的典型成因；对基准仓库，它直接动摇结论可比性。"
+      ],
+      "bullets_en": [
+        "Boolean switches in run_finetuning.py used type=bool, and Python treats any non-empty string as True, so --apply_EA False actually turned EA on.",
+        "The impact goes beyond manual runs: all 70 reproduce_command entries in config/*.json go through the same parser and every one has at least one flag that does not match its value.",
+        "This is a textbook cause of 'the reproduce command runs but results differ', and for a benchmark repo it undermines comparability outright."
+      ],
+      "url": "https://github.com/Dingkun0817/EEG-FM-Benchmark/pull/5",
+      "published": "2026-11-12T10:40:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEG-FM-Benchmark 合并 #5，修一个非常典型的「能跑但结果不同」的坑：`run_finetuning.py` 的布尔开关用 **`type=bool`**，而 Python 把任何**非空字符串**都当 True，于是 **`--apply_EA False` 实际是开启 EA**。更严重的是影响面——`config/*.json` 里共 **70 条 `reproduce_command`**，走当前解析器时**每条都至少有一个 flag 与它写的值相反**。对基准仓库，这类 bug 直接动摇「别人能否复现我的数」：命令贴出去了、也能跑通，但实际配置不是你标称的那套。修复方式通常是改用 `store_true`/`store_false` 或显式解析字符串。建议所有提供 reproduce 命令的项目都自查一遍同类写法。",
+      "brief_en": "EEG-FM-Benchmark merged #5 fixing a textbook 'runs but differs' bug: boolean switches used type=bool, and Python treats any non-empty string as True, so --apply_EA False turned EA on. Worse, all 70 reproduce_command entries in config/*.json pass through that parser, each with at least one flag opposite to its value. Other projects should audit the same pattern.",
+      "tags": [
+        "benchmark",
+        "cli",
+        "boolean",
+        "reproduction",
+        "bugfix"
+      ],
+      "raw_excerpt": "PR #5: \"Fix boolean CLI flags: 'False' was parsed as True — There's a small bug in `run_finetuning.py`: the boolean flags use `type=bool`, and Python treats any non-empty string as True. So `--apply_EA False` actually turns EA on. This also affects the `reproduce_command` lines in `config/*.json`. When those 70 commands go through the current parser, every one of them has at least one flag that doesn't match the val[ue]…\"",
+      "fetched_at": "2026-11-12T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Dingkun0817/EEG-FM-Benchmark#5",
+      "author_handle": "hacar864",
+      "metrics": {
+        "play": null,
+        "like": 161,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "70 条复现命令每条都有 flag 被取反，动摇基准结论的可比性与可复现性。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "脑控六足机器人：从离线 CCA 到 250 Hz 实时流式闭环（中文，可复现记录）",
+      "title_en": "An SSVEP Brain-Controlled Hexapod: From Offline CCA to a 250 Hz Streaming Closed Loop",
+      "bullets_zh": [
+        "完整记录一套 **SSVEP-BCI × 六足机器人** 系统的演进：**离线 CCA 解码 → 250 Hz 实时流式 → 闭环控制**。",
+        "技术栈明确（Python 3.10、MNE、scikit-learn），强调**可复现**；对做 SSVEP 工程化的团队，这是把「算法」和「机器人控制」真正接起来的一手参考。",
+        "自研项目（非论文配套），规模约 5.8 MB；采用前建议核对刺激频率与 CCA 模板的对应关系。"
+      ],
+      "bullets_en": [
+        "It documents the full evolution of an SSVEP-BCI hexapod system: offline CCA decoding, then 250 Hz real-time streaming, then closed-loop control.",
+        "The stack is explicit (Python 3.10, MNE, scikit-learn) and reproducibility is emphasised, making it a hands-on reference for connecting SSVEP decoding to robot control.",
+        "A self-built project (not paper code) at about 5.8 MB; verify the mapping between stimulus frequencies and CCA templates before reuse."
+      ],
+      "url": "https://github.com/qingwenye/bci-quadruped-bci-system",
+      "published": "2026-11-12T13:58:00Z",
+      "source": "github",
+      "language": "zh",
+      "brief": "新建仓库（2026-11-12，中文）完整记录了一套**基于 SSVEP 的脑控六足机器人**系统的演进路线：从**离线 CCA 解码**起步，走到 **250 Hz 实时流式**，再到**闭环控制**。这类「从离线到实时」的完整记录很稀缺——多数 SSVEP 项目止步于离线准确率，而真正难的是**实时流式下的延迟、丢帧与刺激时序对齐**，以及把解码结果映射成机器人指令时的安全边界。技术栈写明 Python 3.10 + MNE + scikit-learn，强调可复现。对做 SSVEP 工程化或机器人控制的团队，这是一手参考；采用前建议先核对**刺激频率与 CCA 模板**的对应关系，以及实时环路的端到端延迟。",
+      "brief_en": "Created 2026-11-12, this Chinese repo documents an SSVEP brain-controlled hexapod's evolution: offline CCA decoding, then 250 Hz real-time streaming, then closed-loop control. Full records from offline to real-time are rare — most SSVEP projects stop at offline accuracy, while the hard parts are latency, dropped frames and stimulus timing. Verify frequency-to-template mapping first.",
+      "tags": [
+        "ssvep",
+        "cca",
+        "hexapod",
+        "realtime",
+        "closed-loop"
+      ],
+      "raw_excerpt": "README:「从离线到实时：基于 SSVEP 的脑控六足机器人系统演进」「从离线 CCA 解码到 250 Hz 实时流式闭环，完整记录一个可复现的 SSVEP-BCI × 六足机器人系统。」Badges: Python 3.10、MNE、scikit-learn。",
+      "fetched_at": "2026-11-12T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "qingwenye/bci-quadruped-bci-system",
+      "author_handle": "qingwenye",
+      "metrics": {
+        "play": null,
+        "like": 3,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 9,
+      "why_valuable": "完整走通离线 CCA→250 Hz 实时→闭环，正好补上多数 SSVEP 项目止步的那一段。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python 深度源建模第二阶段：皮层下网格按表面绘制并随时间/色标联动",
+      "title_en": "MNE-Python Deep Source Modeling Phase 2: Subcortical Meshes Drawn as Surfaces With Time Coupling",
+      "bullets_zh": [
+        "#14450：**皮层下网格**现在与皮层一起按表面绘制，颜色**跟随时间滑块与色标上下限**——此前皮层下结构在可视化里是孤立的或不联动。",
+        "对深部源（丘脑、基底节、海马）结果的可视化，这解决了「能看到皮层却看不到皮下活动」的实际问题。",
+        "PR 说明由模型辅助实现、作者复核并补了示例——这类可视化改动最好自己跑一遍示例确认配色与时间轴。"
+      ],
+      "bullets_en": [
+        "#14450 draws subcortical meshes as surfaces alongside the cortex, with colours following the time slider and colormap limits; previously deep structures were isolated or unsynchronised.",
+        "For deep sources such as thalamus, basal ganglia or hippocampus this addresses the practical gap of seeing cortical but not subcortical activity.",
+        "The PR states the model helped implement while the author reviewed and added an example — run that example yourself to confirm colouring and the time axis."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14450",
+      "published": "2026-11-12T16:57:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14450（**深度源建模第二阶段**）：**皮层下网格**现在与皮层一起按**表面**绘制，且颜色**跟随时间滑块与色标上下限**联动。这条解决的是一个很实际的可视化缺口——做深部源（丘脑、基底节、海马）时，过去只能看到皮层上的结果，皮下活动要么孤立显示、要么不随时间轴变化，导致「时间演化」这一关键维度在图上读不出来。PR 里也说明了实现方式（由模型辅助、作者复核并补了示例）。建议升级后跑一遍官方示例，确认配色映射与时间轴行为符合预期，再用于自己的结果图。",
+      "brief_en": "MNE-Python merged #14450, deep source modeling phase 2: subcortical meshes now render as surfaces alongside the cortex with colours driven by the time slider and colormap limits. That closes a visualisation gap for thalamic, basal ganglia or hippocampal sources, where subcortical activity was isolated or static. Model-assisted implementation with author review and an example; run it first.",
+      "tags": [
+        "mne-python",
+        "source-modeling",
+        "subcortical",
+        "visualization",
+        "phase2"
+      ],
+      "raw_excerpt": "PR #14450: \"Deep source modeling (phase 2) — Following #14130. Now subcortical meshes are drawn as surfaces next to the cortex, and their colors follow the time slider and the colormap limits. … Opus 5.5 helped implementing, I reviewed, did some modification and added an example.\"",
+      "fetched_at": "2026-11-12T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14450",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3590,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "皮下源活动此前在图上不随时间变化，联动后才读得出时间演化。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Hillock：给 Claude 的神经工程技能包（30 skills＋6 agents，覆盖解码/EEG-MEG/实时/神经调控）",
+      "title_en": "Hillock: A Neurotech Skill Pack for Claude (30 Skills, 6 Agents) Covering Decoding, EEG/MEG and Rigs",
+      "bullets_zh": [
+        "定位是把**神经工程的既有工作流**（BCI 解码、EEG/MEG、spike 分析、实时设备、神经调控与器件）打包成 **30 个 skills ＋ 6 个 agents**，供 Claude 直接调用。",
+        "卖点是「少查资料、直接给出方法与检查项」，目标是**一致、符合领域惯例**的结果；对新人是上手加速，对熟手是流程标准化。",
+        "这类「把领域规范写成 agent 技能」的形态很新，也带来风险：默认值与检查项是否正确，只能靠实际使用验证。"
+      ],
+      "bullets_en": [
+        "It packages established neural-engineering workflows — BCI decoding, EEG/MEG, spike analysis, real-time rigs, neuromodulation and devices — into 30 skills and 6 agents for Claude.",
+        "The pitch is fewer research detours and field-standard methods and checks, speeding up newcomers and standardising practice for experts.",
+        "Writing domain practice as agent skills is new, and the risk is real: whether defaults and checks are correct can only be verified by use."
+      ],
+      "url": "https://github.com/Hillock-NeuroTech/neurotech-skills",
+      "published": "2026-11-12T16:43:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 Hillock（2026-11-12）把**神经工程的既有工作流**打包成 Claude 的 **30 个 skills ＋ 6 个 agents**：BCI 解码、EEG/MEG、spike 分析、实时设备、神经调控与神经器件。它的卖点不是「更强模型」，而是**让模型少查资料、直接给出领域惯例的方法与检查项**——对刚入行的人是加速器，对熟手是把流程标准化的手段。形态很新，但风险也明确：**默认值与检查项是否真的符合领域规范，只能靠实际使用来验证**；把它当作「提示出发点的检查清单」而不是「权威判断」，并保留人工复核环节，是更稳妥的用法。",
+      "brief_en": "Created 2026-11-12, Hillock packages established neural-engineering workflows into 30 skills and 6 agents for Claude, covering BCI decoding, EEG/MEG, spike analysis, real-time rigs and neuromodulation. The pitch is field-standard methods and checks. The form is new and the risk clear: whether defaults match practice can only be verified by use, so treat it as a checklist starter.",
+      "tags": [
+        "agents",
+        "skills",
+        "workflow",
+        "claude",
+        "neurotech"
+      ],
+      "raw_excerpt": "README: \"Hillock: the neurotech workflow suite for Claude. 30 skills and 6 agents that give Claude the established workflows of neural engineering: BCI decoding, EEG/MEG and spike analysis, real-time rigs, neuromodulation and neural devices. With Hillock loaded, Claude goes straight to the right method, defaults and checks for the task instead of researching what to do…\"",
+      "fetched_at": "2026-11-12T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "Hillock-NeuroTech/neurotech-skills",
+      "author_handle": "Hillock-NeuroTech",
+      "metrics": {
+        "play": null,
+        "like": 1,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把领域惯例写成 agent 技能是新形态，但默认值正确性只能靠使用验证。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGPrep 给远程数据读取加超时：卡住的读取按配置的截止时间中止",
+      "title_en": "EEGPrep Aborts Stalled Remote Reads at the Configured Deadline",
+      "bullets_zh": [
+        "#614：**PyfetchTransport 的读取**现在会在**配置的截止时间**中止，避免网络卡住时整个流水线无限等待。",
+        "同批修正「parity-matrix 测试说明」使其与测试一致（文档与实测对齐）。",
+        "对批量/远程数据场景，这类超时处理决定流水线是「失败可重试」还是「挂死到天亮」。"
+      ],
+      "bullets_en": [
+        "#614 makes PyfetchTransport reads abort at the configured deadline, so a stalled network call cannot hang the pipeline indefinitely.",
+        "The batch also corrects the parity-matrix test notes so documentation matches the tests.",
+        "For batch or remote-data pipelines, timeout handling decides whether a run fails retryably or hangs until morning."
+      ],
+      "url": "https://github.com/sccn/eegprep/pull/614",
+      "published": "2026-11-12T06:32:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGPrep 合并 #614：**PyfetchTransport 的远程读取现在会在配置的截止时间中止**，不再无限等待。这条对批量处理很实际——远程数据读取一旦卡住，整条流水线会挂到天荒地老，而日志里往往没有任何错误，只有「一直没进展」；有了截止时间，至少能以可重试的失败形式退出。同批还修正了 parity-matrix 测试说明，使其与实际测试一致（文档漂移同样会误导后来者）。对用 EEGPrep 处理远程或大批量数据的团队，建议把超时值显式写进配置并纳入监控。",
+      "brief_en": "EEGPrep merged #614 so PyfetchTransport reads abort at the configured deadline instead of waiting indefinitely. For batch processing this matters: a stalled remote read hangs the pipeline with no error in the logs, only no progress, while a deadline at least yields a retryable failure. The batch also aligned parity-matrix test notes with the tests. Set and monitor the timeout explicitly.",
+      "tags": [
+        "eegprep",
+        "transport",
+        "timeout",
+        "robustness",
+        "remote"
+      ],
+      "raw_excerpt": "Commits 2026-11-12: \"Abort stalled PyfetchTransport reads at the configured deadline (#614)\" (e8ac94ffb3) 06:32Z; \"[docs] Correct parity-matrix test notes to match the tests (#613)\" 06:11Z.",
+      "fetched_at": "2026-11-12T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "sccn/eegprep#614",
+      "author_handle": "sccn",
+      "metrics": {
+        "play": null,
+        "like": 38,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "远程读取无超时会挂死流水线且日志无错，截止时间让失败可重试。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 94,
+    "llm_rows": 14,
+    "kept": 5,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 2
+  }
+}
