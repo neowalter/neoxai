@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-11T12:09:17.631Z",
+  "generatedAt": "2026-11-12T13:14:26.342Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 66
+      "count": 65
     },
     {
       "id": "openneuro",
@@ -24,7 +24,7 @@
     {
       "id": "github",
       "ok": true,
-      "count": 4
+      "count": 8
     }
   ],
   "items": [
@@ -105,6 +105,25 @@
       ]
     },
     {
+      "id": "openneuro:ds009097",
+      "name": "Resting-state EEG of children with developmental dyslexia before and after 60 sessions of Auto Train Brain neurofeedback and multisensory learning",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009097",
+      "source": "openneuro",
+      "description": "Resting-state EEG of children with developmental dyslexia before and after 60 sessions of Auto Train Brain neurofeedback and multisensory learning",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-11T13:55:18.257Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "openneuro:ds009090",
       "name": "AL1 multimodal EEG-fMRI dataset (defaced)",
       "owner": "OpenNeuro",
@@ -119,6 +138,25 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2026-11-10T17:21:49.573Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009082",
+      "name": "EEG Lie Detection Dataset using Emotiv EPOC+: Instructed-Response and Free-Response Protocols",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009082",
+      "source": "openneuro",
+      "description": "EEG Lie Detection Dataset using Emotiv EPOC+: Instructed-Response and Free-Response Protocols",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-09T03:28:59.654Z",
       "modality": [
         "EEG"
       ]
@@ -336,119 +374,29 @@
       ]
     },
     {
-      "id": "openneuro:ds008861",
-      "name": "MEG and Structural MRI Dataset: Attended and Ignored Speech-Like Sounds",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008861",
-      "source": "openneuro",
-      "description": "MEG+EEG and Structural MRI Dataset: Attended and Ignored Speech-Like Sounds",
+      "id": "hf:HABSteam/multimodal-eeg-emotion",
+      "name": "multimodal-eeg-emotion",
+      "owner": "HABSteam",
+      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
+      "source": "huggingface",
+      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
       "tags": [
-        "BIDS",
-        "meg",
-        "mri"
+        "video",
+        "eeg",
+        "ecg",
+        "electrodermal-activity",
+        "respiration",
+        "eye-tracking",
+        "emotion",
+        "neuroscience"
       ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-23T17:31:54.489Z",
+      "license": "other",
+      "downloads": 11944,
+      "likes": 23,
+      "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
         "EEG",
-        "MEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008859",
-      "name": "EEG MI-BCI Multidirectional Mouse Cursor Dataset - OpenBCI recordings",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008859",
-      "source": "openneuro",
-      "description": "EEG MI-BCI Multidirectional Mouse Cursor Dataset - OpenBCI recordings",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-23T06:31:48.278Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008858",
-      "name": "EEG Based MI-BCI Mouse Cursor Control Dataset",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008858",
-      "source": "openneuro",
-      "description": "EEG Based MI-BCI Mouse Cursor Control Dataset",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-23T06:23:09.606Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008851",
-      "name": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008851",
-      "source": "openneuro",
-      "description": "EEG Data for Emotion Recognition: Alcohol Cue-Reactivity Dataset (Alcohol Dependence vs Healthy Controls)",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-21T08:31:11.516Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008837",
-      "name": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008837",
-      "source": "openneuro",
-      "description": "Neural and physiological dynamics before and after unpredictable collision events in virtual reality",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T18:57:09.583Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "openneuro:ds008836",
-      "name": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008836",
-      "source": "openneuro",
-      "description": "Heartbeat-evoked responses and self-reported meditative depth in Vipassana practitioners",
-      "tags": [
-        "BIDS",
-        "eeg"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-17T17:37:30.442Z",
-      "modality": [
-        "EEG"
+        "ECG"
       ]
     },
     {
@@ -469,60 +417,9 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11884,
+      "downloads": 11985,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:HABSteam/multimodal-eeg-emotion",
-      "name": "multimodal-eeg-emotion",
-      "owner": "HABSteam",
-      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
-      "source": "huggingface",
-      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
-      "tags": [
-        "video",
-        "eeg",
-        "ecg",
-        "electrodermal-activity",
-        "respiration",
-        "eye-tracking",
-        "emotion",
-        "neuroscience"
-      ],
-      "license": "other",
-      "downloads": 10868,
-      "likes": 17,
-      "updatedAt": "2026-11-10T10:02:54.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
-      ]
-    },
-    {
-      "id": "hf:raei/Schalk-2009-EEGMotorMovementImagery",
-      "name": "Schalk-2009-EEGMotorMovementImagery",
-      "owner": "raei",
-      "url": "https://huggingface.co/datasets/raei/Schalk-2009-EEGMotorMovementImagery",
-      "source": "huggingface",
-      "description": "EEG Motor Movement/Imagery Dataset This is an unofficial mirror of the PhysioNet EEG Motor Movement/Imagery Dataset, version 1.0.0. It is not affiliated with or endorsed by the dataset contributors, their institutions, or PhysioNet. Source and documentation Original dataset: Phy…",
-      "tags": [
-        "odc-by",
-        "imagefolder",
-        "document",
-        "image",
-        "neuroscience",
-        "electroencephalography",
-        "brain-computer-interface",
-        "motor-imagery"
-      ],
-      "license": "odc-by",
-      "downloads": 7281,
-      "likes": 0,
-      "updatedAt": "2026-09-03T12:21:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -545,7 +442,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2002,
+      "downloads": 2022,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -563,7 +460,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1528,
+      "downloads": 1468,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -588,7 +485,7 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 850,
+      "downloads": 707,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
       "modality": [
@@ -611,7 +508,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 634,
+      "downloads": 643,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -635,7 +532,7 @@
         "generative-latents"
       ],
       "license": "cc-by-4.0",
-      "downloads": 467,
+      "downloads": 447,
       "likes": 0,
       "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
@@ -656,7 +553,7 @@
         "brain-computer-interface"
       ],
       "license": "cc0-1.0",
-      "downloads": 414,
+      "downloads": 420,
       "likes": 0,
       "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
@@ -672,9 +569,31 @@
       "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
       "tags": [],
       "license": "other",
-      "downloads": 444,
+      "downloads": 445,
       "likes": 0,
       "updatedAt": "2026-10-16T15:07:25.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:EEGDash/eegdash-corpus-v0",
+      "name": "eegdash-corpus-v0",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "source": "huggingface",
+      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
+      "tags": [
+        "arxiv:2611.06356",
+        "eeg",
+        "neuroscience",
+        "foundation-model",
+        "zarr"
+      ],
+      "license": "other",
+      "downloads": 190,
+      "likes": 4,
+      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -697,7 +616,7 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 211,
+      "downloads": 223,
       "likes": 2,
       "updatedAt": "2026-11-08T16:42:18.000Z",
       "modality": [
@@ -705,23 +624,26 @@
       ]
     },
     {
-      "id": "hf:EEGDash/eegdash-corpus-v0",
-      "name": "eegdash-corpus-v0",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "id": "hf:JayF14/chb-mit-preprocessed-eeg",
+      "name": "chb-mit-preprocessed-eeg",
+      "owner": "JayF14",
+      "url": "https://huggingface.co/datasets/JayF14/chb-mit-preprocessed-eeg",
       "source": "huggingface",
-      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
+      "description": "CHB-MIT Preprocessed EEG Dataset Feature-Engineered EEG Data for Seizure Forecasting (Pre-Ictal Detection) 347,075 labeled epochs | 24 cases / 22 subjects | 590 features per epoch | ~3.9 GB No raw signal processing needed. Download, load, and train. Research use only. Not for cl…",
       "tags": [
-        "arxiv:2611.06356",
+        "tabular-classification",
+        "odc-by",
+        "medical",
         "eeg",
-        "neuroscience",
-        "foundation-model",
-        "zarr"
+        "seizure-prediction",
+        "epilepsy",
+        "chb-mit",
+        "neuroscience"
       ],
-      "license": "other",
-      "downloads": 177,
-      "likes": 2,
-      "updatedAt": "2026-11-09T18:07:03.000Z",
+      "license": "odc-by",
+      "downloads": 265,
+      "likes": 5,
+      "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
         "EEG"
       ]
@@ -746,7 +668,7 @@
       "license": "BSD-3-Clause",
       "downloads": null,
       "likes": 183,
-      "updatedAt": "2026-11-10T23:09:46.000Z",
+      "updatedAt": "2026-11-11T22:01:40.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -781,7 +703,23 @@
         "physical exhaustion"
       ],
       "license": "cc-by-4.0",
-      "downloads": 154,
+      "downloads": 155,
+      "likes": null,
+      "updatedAt": "2026-11-03T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23916911",
+      "name": "Intra-session variability of EEG signal features in externally-guided and classical resting-state paradigms",
+      "owner": "Gijón Ortego, Jorge",
+      "url": "https://doi.org/10.5281/zenodo.23916911",
+      "source": "zenodo",
+      "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 76,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
@@ -800,38 +738,6 @@
       "downloads": 76,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23916911",
-      "name": "Intra-session variability of EEG signal features in externally-guided and classical resting-state paradigms",
-      "owner": "Gijón Ortego, Jorge",
-      "url": "https://doi.org/10.5281/zenodo.23916911",
-      "source": "zenodo",
-      "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 73,
-      "likes": null,
-      "updatedAt": "2026-11-03T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23764504",
-      "name": "Load decoding across WM states",
-      "owner": "Fu, Yingtao",
-      "url": "https://doi.org/10.5281/zenodo.23764504",
-      "source": "zenodo",
-      "description": "This dataset contains preprocessed EEG data from 33 participants in a visual working-memory experiment examining attended and unattended representations under different memory loads. The data are provided in EEGLAB format. Each participant&rsquo;s dataset consists of a paired .s…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 96,
-      "likes": null,
-      "updatedAt": "2026-10-29T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -870,9 +776,59 @@
       "description": "This contains the data accompanying the manuscript \"Macroscale dynamics of EEG microstates constitute the periodic and aperiodic features of the neural power spectrum\".&nbsp;",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 16,
+      "downloads": 17,
       "likes": null,
       "updatedAt": "2026-11-09T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:24153867",
+      "name": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
+      "owner": "Cheng, Baoquan",
+      "url": "https://doi.org/10.5281/zenodo.24153867",
+      "source": "zenodo",
+      "description": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-11-12T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:24141044",
+      "name": "Trust modulates speech entrainment",
+      "owner": "Hannah, Jaimy Anne",
+      "url": "https://doi.org/10.5281/zenodo.24141044",
+      "source": "zenodo",
+      "description": "Data in continuous-event neural data (CND) format.&nbsp; Participants listened to stories during EEG recording after engaging in a trust-building game with different gnome characters. DataSub files contain EEG data split into trials. DataStim files contain stimulus features for…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 2,
+      "likes": null,
+      "updatedAt": "2026-11-11T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23858574",
+      "name": "Post-intervention high-beta synchronization tracks stable-manifold alignment  during stick-balancing learning",
+      "owner": "Nomura, Taishin",
+      "url": "https://doi.org/10.5281/zenodo.23858574",
+      "source": "zenodo",
+      "description": "================================================================================ DATASET README: Virtual Stick-Balancing Task and EEG Recordings ================================================================================ &nbsp; 1. OVERVIEW ----------------------------------…",
+      "tags": [
+        "stick balancing"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 54,
+      "likes": null,
+      "updatedAt": "2026-11-01T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -894,46 +850,32 @@
       ]
     },
     {
-      "id": "zenodo:23858574",
-      "name": "Post-intervention high-beta synchronization tracks stable-manifold alignment  during stick-balancing learning",
-      "owner": "Nomura, Taishin",
-      "url": "https://doi.org/10.5281/zenodo.23858574",
-      "source": "zenodo",
-      "description": "================================================================================ DATASET README: Virtual Stick-Balancing Task and EEG Recordings ================================================================================ &nbsp; 1. OVERVIEW ----------------------------------…",
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
       "tags": [
-        "stick balancing"
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
       ],
-      "license": "cc-by-4.0",
-      "downloads": 46,
-      "likes": null,
-      "updatedAt": "2026-11-01T00:00:00.000Z",
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 92,
+      "updatedAt": "2026-11-12T09:18:05.000Z",
       "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23958219",
-      "name": "Participant-Level Results and Trial-Level Predictions for Cross-Dataset Motor Imagery EEG Decoding Using Euclidean Alignment",
-      "owner": "Katona, Jozsef",
-      "url": "https://doi.org/10.5281/zenodo.23958219",
-      "source": "zenodo",
-      "description": "This dataset accompanies the research manuscript entitled&nbsp; &ldquo;Unlabeled target EEG improves cross-dataset motor imagery decoding through Euclidean alignment&rdquo; , submitted to Scientific Reports. The study investigates the effects of Euclidean alignment (EA) on cross…",
-      "tags": [
-        "Motor imagery",
-        "Electroencephalography (EEG)",
-        "Euclidean alignment",
-        "Domain adaptation",
-        "Unlabeled calibration",
-        "EEG classification",
-        "EEGNet",
-        "Minimum distance to mean"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 10,
-      "likes": null,
-      "updatedAt": "2026-11-04T00:00:00.000Z",
-      "modality": [
-        "EEG"
+        "EEG",
+        "MEG",
+        "iEEG",
+        "fNIRS",
+        "EMG"
       ]
     },
     {
@@ -952,8 +894,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 19,
-      "updatedAt": "2026-11-11T06:24:16.000Z",
+      "likes": 20,
+      "updatedAt": "2026-11-12T12:24:09.000Z",
       "modality": [
         "EEG"
       ]
@@ -973,7 +915,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-11T09:42:44.000Z",
+      "updatedAt": "2026-11-12T09:11:35.000Z",
       "modality": [
         "EEG",
         "EMG"
@@ -997,7 +939,77 @@
       "license": "Apache-2.0",
       "downloads": null,
       "likes": 0,
-      "updatedAt": "2026-11-11T11:02:47.000Z",
+      "updatedAt": "2026-11-12T09:15:11.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:rayglxy/adhd-eeg",
+      "name": "adhd-eeg",
+      "owner": "rayglxy",
+      "url": "https://github.com/rayglxy/adhd-eeg",
+      "source": "github",
+      "description": "Band-power analysis of a public children's ADHD EEG dataset",
+      "tags": [
+        "eeg",
+        "machine-learning",
+        "mne-python",
+        "neuroscience"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-11T22:47:24.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:gabfarmarcondes/cross-dataset-sleep-staging",
+      "name": "cross-dataset-sleep-staging",
+      "owner": "gabfarmarcondes",
+      "url": "https://github.com/gabfarmarcondes/cross-dataset-sleep-staging",
+      "source": "github",
+      "description": "Systematic benchmark of unsupervised domain adaptation (DANN, ADAST) for cross-dataset sleep stage classification from single-channel EEG. Undergraduate thesis, UTFPR.",
+      "tags": [
+        "biomedical-signal-processing",
+        "deep-learning",
+        "domain-adaptation",
+        "eeg-signals",
+        "machine-learning",
+        "pytorch",
+        "sleep-staging"
+      ],
+      "license": "MIT",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-11T22:01:30.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:piterkarpov-111/german-photovoltaics-dataset-2026",
+      "name": "german-photovoltaics-dataset-2026",
+      "owner": "piterkarpov-111",
+      "url": "https://github.com/piterkarpov-111/german-photovoltaics-dataset-2026",
+      "source": "github",
+      "description": "Offener Referenzdatensatz: Photovoltaik-Ertrag (DWD/PVGIS), Montagekosten (€/kWp), Solarpflicht & EEG 2026/2027 für alle 16 Bundesländer & 51 Großstädte in Deutschland — von https://solarmetrik.de",
+      "tags": [
+        "dataset",
+        "deutschland",
+        "dwd",
+        "eeg-2026",
+        "energiewende",
+        "open-data",
+        "photovoltaik",
+        "pvgis"
+      ],
+      "license": null,
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-11T17:36:44.000Z",
       "modality": [
         "EEG"
       ]
