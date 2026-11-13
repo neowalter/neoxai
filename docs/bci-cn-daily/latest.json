@@ -1,254 +1,297 @@
 {
-  "date": "2026-11-13",
-  "generated_at": "2026-11-12T21:31:46.542Z",
-  "item_count": 5,
+  "date": "2026-11-14",
+  "generated_at": "2026-11-13T21:31:41.728Z",
+  "item_count": 6,
   "types": {
-    "Benchmark": 1,
-    "Project": 4
+    "Project": 5,
+    "News": 1
   },
   "highlights": [
     {
-      "title_zh": "EEG-FM-Benchmark 修 CLI 布尔坑：70 条复现命令里每条都至少有一个 flag 被静默取反",
-      "title_en": "EEG-FM-Benchmark Fixes a Boolean CLI Trap: Every One of 70 Reproduce Commands Had a Flipped Flag",
-      "url": "https://github.com/Dingkun0817/EEG-FM-Benchmark/pull/5",
-      "brief": "EEG-FM-Benchmark 合并 #5，修一个非常典型的「能跑但结果不同」的坑：`run_finetuning.py` 的布尔开关用 **`type=bool`**，而 Python 把任何**非空字符串**都当 True，于是 **`--apply_EA False` 实际是开启 EA**。更严重的是影响面——`config/*.json` 里共 **70 条 `reproduce_command`**，走当前解析器时**每条都至少有一个 flag 与它写的值相反**。对基准仓库，这类 bug 直接动摇「别人能否复现我的数」：命令贴出去了、也能跑通，但实际配置不是你标称的那套。修复方式通常是改用 `store_true`/`store_false` 或显式解析字符串。建议所有提供 reproduce 命令的项目都自查一遍同类写法。"
+      "title_zh": "aeon-neuro 一天四个 ENH：SSVEP CCA 分类器、Nuttall-Strand PSD、NEMAR 接入与对齐信息核心",
+      "title_en": "aeon-neuro Lands Four Enhancements: SSVEP CCA Classifier, Nuttall-Strand PSD, NEMAR Intake",
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/274",
+      "brief": "aeon-neuro 在 11-13 一天合并 4 个 ENH：**#274 SSVEPCCAClassifier**（把 SSVEP 的经典 CCA 分类器做成组件）、**#304 Nuttall-Strand PSD transformer**（多变量 AR 谱估计，适合短数据/多通道）、**#318 NEMAR 数据接入**（对接 EEGDash 工作流）、**#308 对齐 EEG 信息核心**。这套组合的意义在于：把**经典方法**（CCA、Nuttall-Strand）与**现代数据源**（NEMAR）放进同一套接口，基准实验里就不必为每个方法各写一套「自己人」的实现，公平对比容易得多。对做 SSVEP 或谱估计基准的团队，建议直接用这些组件替换掉手写版本，并核对默认参数。"
     },
     {
-      "title_zh": "脑控六足机器人：从离线 CCA 到 250 Hz 实时流式闭环（中文，可复现记录）",
-      "title_en": "An SSVEP Brain-Controlled Hexapod: From Offline CCA to a 250 Hz Streaming Closed Loop",
-      "url": "https://github.com/qingwenye/bci-quadruped-bci-system",
-      "brief": "新建仓库（2026-11-12，中文）完整记录了一套**基于 SSVEP 的脑控六足机器人**系统的演进路线：从**离线 CCA 解码**起步，走到 **250 Hz 实时流式**，再到**闭环控制**。这类「从离线到实时」的完整记录很稀缺——多数 SSVEP 项目止步于离线准确率，而真正难的是**实时流式下的延迟、丢帧与刺激时序对齐**，以及把解码结果映射成机器人指令时的安全边界。技术栈写明 Python 3.10 + MNE + scikit-learn，强调可复现。对做 SSVEP 工程化或机器人控制的团队，这是一手参考；采用前建议先核对**刺激频率与 CCA 模板**的对应关系，以及实时环路的端到端延迟。"
+      "title_zh": "脑机接口数据中心将在浦江大会启动：临港实验室/清华/华山共建，发布数据底座「游刃 1.1」",
+      "title_en": "A BCI Data Centre to Launch at the Pujiang Conference, With a Data Foundation Named 'Youren 1.1'",
+      "url": "https://www.bilibili.com/video/BV1pKWq6TEbU/",
+      "brief": "B站「刀锋财评」转述的公告：**浦江创新论坛 2026 脑机接口大会**定于 **12 月 3–6 日在上海召开**，期间将由**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与**江西**等地方节点现场连线；会上发布数据底座「**游刃 1.1**」，演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益，同时亮相 **临畴、临析、临策**三个平台。这条的价值不在「又一个大会」，而在**数据基础设施的共建名单与地方节点连线**——说明国内 BCI 数据平台正在走「国家实验室＋高校＋医院＋地方」的联合路线。提醒：这是**发布会预告**，数据规模、开放方式与伦理框架要等会后材料。"
     },
     {
-      "title_zh": "MNE-Python 深度源建模第二阶段：皮层下网格按表面绘制并随时间/色标联动",
-      "title_en": "MNE-Python Deep Source Modeling Phase 2: Subcortical Meshes Drawn as Surfaces With Time Coupling",
-      "url": "https://github.com/mne-tools/mne-python/pull/14450",
-      "brief": "MNE-Python 合并 #14450（**深度源建模第二阶段**）：**皮层下网格**现在与皮层一起按**表面**绘制，且颜色**跟随时间滑块与色标上下限**联动。这条解决的是一个很实际的可视化缺口——做深部源（丘脑、基底节、海马）时，过去只能看到皮层上的结果，皮下活动要么孤立显示、要么不随时间轴变化，导致「时间演化」这一关键维度在图上读不出来。PR 里也说明了实现方式（由模型辅助、作者复核并补了示例）。建议升级后跑一遍官方示例，确认配色映射与时间轴行为符合预期，再用于自己的结果图。"
+      "title_zh": "Unfold.jl 增加稠密设计矩阵与按通道建模，并补非线性样条教程",
+      "title_en": "Unfold.jl Adds Dense Design Matrices, Per-Channel Modelling and a Spline HowTo",
+      "url": "https://github.com/unfoldtoolbox/Unfold.jl/pull/380",
+      "brief": "Unfold.jl（Julia 版 EEG 重叠回归/去卷积工具箱）在 11-13 推了三项：**#380 稠密设计矩阵**（复杂重叠设计不再依赖稀疏表示）、**#378 按通道建模**、**#381 非线性样条 HowTo 文档**。对做事件相关回归的团队，这三条合起来解决的是「设计复杂了建不出来、通道差异被平均掉、非线性响应只能照论文硬编码」三类问题。尤其样条文档：非线性响应（如早成分饱和、晚成分漂移）用线性项拟合往往掩盖真实形状，而有现成 HowTo 就降低了采用门槛。建议先用已知形状的模拟数据验证样条设置，再上真实数据。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-13.md",
+  "github_path": "docs/bci-cn-daily/2026-11-14.md",
   "items": [
     {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "EEG-FM-Benchmark 修 CLI 布尔坑：70 条复现命令里每条都至少有一个 flag 被静默取反",
-      "title_en": "EEG-FM-Benchmark Fixes a Boolean CLI Trap: Every One of 70 Reproduce Commands Had a Flipped Flag",
-      "bullets_zh": [
-        "`run_finetuning.py` 的布尔开关用 `type=bool`，Python 把任何**非空字符串**都当 True，于是 `--apply_EA False` 实际**打开了 EA**。",
-        "影响不止用户手输：`config/*.json` 里的 **`reproduce_command` 共 70 条**，走当前解析器时**每条都至少有一个 flag 与预期不符**。",
-        "这是「复现命令跑得通、结果却不同」的典型成因；对基准仓库，它直接动摇结论可比性。"
-      ],
-      "bullets_en": [
-        "Boolean switches in run_finetuning.py used type=bool, and Python treats any non-empty string as True, so --apply_EA False actually turned EA on.",
-        "The impact goes beyond manual runs: all 70 reproduce_command entries in config/*.json go through the same parser and every one has at least one flag that does not match its value.",
-        "This is a textbook cause of 'the reproduce command runs but results differ', and for a benchmark repo it undermines comparability outright."
-      ],
-      "url": "https://github.com/Dingkun0817/EEG-FM-Benchmark/pull/5",
-      "published": "2026-11-12T10:40:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEG-FM-Benchmark 合并 #5，修一个非常典型的「能跑但结果不同」的坑：`run_finetuning.py` 的布尔开关用 **`type=bool`**，而 Python 把任何**非空字符串**都当 True，于是 **`--apply_EA False` 实际是开启 EA**。更严重的是影响面——`config/*.json` 里共 **70 条 `reproduce_command`**，走当前解析器时**每条都至少有一个 flag 与它写的值相反**。对基准仓库，这类 bug 直接动摇「别人能否复现我的数」：命令贴出去了、也能跑通，但实际配置不是你标称的那套。修复方式通常是改用 `store_true`/`store_false` 或显式解析字符串。建议所有提供 reproduce 命令的项目都自查一遍同类写法。",
-      "brief_en": "EEG-FM-Benchmark merged #5 fixing a textbook 'runs but differs' bug: boolean switches used type=bool, and Python treats any non-empty string as True, so --apply_EA False turned EA on. Worse, all 70 reproduce_command entries in config/*.json pass through that parser, each with at least one flag opposite to its value. Other projects should audit the same pattern.",
-      "tags": [
-        "benchmark",
-        "cli",
-        "boolean",
-        "reproduction",
-        "bugfix"
-      ],
-      "raw_excerpt": "PR #5: \"Fix boolean CLI flags: 'False' was parsed as True — There's a small bug in `run_finetuning.py`: the boolean flags use `type=bool`, and Python treats any non-empty string as True. So `--apply_EA False` actually turns EA on. This also affects the `reproduce_command` lines in `config/*.json`. When those 70 commands go through the current parser, every one of them has at least one flag that doesn't match the val[ue]…\"",
-      "fetched_at": "2026-11-12T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "Dingkun0817/EEG-FM-Benchmark#5",
-      "author_handle": "hacar864",
-      "metrics": {
-        "play": null,
-        "like": 161,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 9,
-      "why_valuable": "70 条复现命令每条都有 flag 被取反，动摇基准结论的可比性与可复现性。"
-    },
-    {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "脑控六足机器人：从离线 CCA 到 250 Hz 实时流式闭环（中文，可复现记录）",
-      "title_en": "An SSVEP Brain-Controlled Hexapod: From Offline CCA to a 250 Hz Streaming Closed Loop",
+      "title_zh": "aeon-neuro 一天四个 ENH：SSVEP CCA 分类器、Nuttall-Strand PSD、NEMAR 接入与对齐信息核心",
+      "title_en": "aeon-neuro Lands Four Enhancements: SSVEP CCA Classifier, Nuttall-Strand PSD, NEMAR Intake",
       "bullets_zh": [
-        "完整记录一套 **SSVEP-BCI × 六足机器人** 系统的演进：**离线 CCA 解码 → 250 Hz 实时流式 → 闭环控制**。",
-        "技术栈明确（Python 3.10、MNE、scikit-learn），强调**可复现**；对做 SSVEP 工程化的团队，这是把「算法」和「机器人控制」真正接起来的一手参考。",
-        "自研项目（非论文配套），规模约 5.8 MB；采用前建议核对刺激频率与 CCA 模板的对应关系。"
+        "**#274 SSVEPCCAClassifier**：把 SSVEP 的经典 **CCA 分类器**做成包内组件；**#304 Nuttall-Strand PSD transformer**：多变量 AR 谱估计。",
+        "**#318 NEMAR 数据接入**（对接 EEGDash 工作流）与 **#308 对齐 EEG 信息核心**——数据面与信息结构同步扩充。",
+        "对做基准的团队，这四个组件把「经典方法」与「现代数据源」放进了同一套接口，便于公平对比而非各写一套。"
       ],
       "bullets_en": [
-        "It documents the full evolution of an SSVEP-BCI hexapod system: offline CCA decoding, then 250 Hz real-time streaming, then closed-loop control.",
-        "The stack is explicit (Python 3.10, MNE, scikit-learn) and reproducibility is emphasised, making it a hands-on reference for connecting SSVEP decoding to robot control.",
-        "A self-built project (not paper code) at about 5.8 MB; verify the mapping between stimulus frequencies and CCA templates before reuse."
+        "#274 adds an SSVEPCCAClassifier, packaging the classic CCA approach for SSVEP, and #304 adds a Nuttall-Strand PSD transformer for multivariate AR spectra.",
+        "#318 adds NEMAR dataset intake for EEGDash workflows and #308 adds an aligned EEG information core, extending both the data surface and structure.",
+        "For benchmarking, these place classic methods and modern data sources behind one interface, making fair comparison easier than bespoke scripts."
       ],
-      "url": "https://github.com/qingwenye/bci-quadruped-bci-system",
-      "published": "2026-11-12T13:58:00Z",
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/274",
+      "published": "2026-11-13T17:45:00Z",
       "source": "github",
-      "language": "zh",
-      "brief": "新建仓库（2026-11-12，中文）完整记录了一套**基于 SSVEP 的脑控六足机器人**系统的演进路线：从**离线 CCA 解码**起步，走到 **250 Hz 实时流式**，再到**闭环控制**。这类「从离线到实时」的完整记录很稀缺——多数 SSVEP 项目止步于离线准确率，而真正难的是**实时流式下的延迟、丢帧与刺激时序对齐**，以及把解码结果映射成机器人指令时的安全边界。技术栈写明 Python 3.10 + MNE + scikit-learn，强调可复现。对做 SSVEP 工程化或机器人控制的团队，这是一手参考；采用前建议先核对**刺激频率与 CCA 模板**的对应关系，以及实时环路的端到端延迟。",
-      "brief_en": "Created 2026-11-12, this Chinese repo documents an SSVEP brain-controlled hexapod's evolution: offline CCA decoding, then 250 Hz real-time streaming, then closed-loop control. Full records from offline to real-time are rare — most SSVEP projects stop at offline accuracy, while the hard parts are latency, dropped frames and stimulus timing. Verify frequency-to-template mapping first.",
+      "language": "en",
+      "brief": "aeon-neuro 在 11-13 一天合并 4 个 ENH：**#274 SSVEPCCAClassifier**（把 SSVEP 的经典 CCA 分类器做成组件）、**#304 Nuttall-Strand PSD transformer**（多变量 AR 谱估计，适合短数据/多通道）、**#318 NEMAR 数据接入**（对接 EEGDash 工作流）、**#308 对齐 EEG 信息核心**。这套组合的意义在于：把**经典方法**（CCA、Nuttall-Strand）与**现代数据源**（NEMAR）放进同一套接口，基准实验里就不必为每个方法各写一套「自己人」的实现，公平对比容易得多。对做 SSVEP 或谱估计基准的团队，建议直接用这些组件替换掉手写版本，并核对默认参数。",
+      "brief_en": "aeon-neuro merged four enhancements on Nov 13: #274 SSVEPCCAClassifier packaging the classic CCA approach, #304 a Nuttall-Strand PSD transformer for multivariate AR spectra, #318 NEMAR dataset intake for EEGDash workflows, and #308 an aligned EEG information core. Classic methods and modern data sources now share one interface, making fair benchmarking easier than bespoke implementations.",
       "tags": [
+        "aeon-neuro",
         "ssvep",
         "cca",
-        "hexapod",
-        "realtime",
-        "closed-loop"
+        "nuttall-strand",
+        "nemar"
       ],
-      "raw_excerpt": "README:「从离线到实时：基于 SSVEP 的脑控六足机器人系统演进」「从离线 CCA 解码到 250 Hz 实时流式闭环，完整记录一个可复现的 SSVEP-BCI × 六足机器人系统。」Badges: Python 3.10、MNE、scikit-learn。",
-      "fetched_at": "2026-11-12T23:55:00Z",
+      "raw_excerpt": "PRs merged 2026-11-13: \"[ENH] Add SSVEPCCAClassifier (#274)\" 17:45Z; \"[ENH] Add Nuttall-Strand PSD transformer (#304)\" 09:56Z; \"[ENH] Add NEMAR dataset intake for EEGDash workflows (#318)\" 18:23Z; \"[ENH] Add aligned EEG information core (#308)\" 11:07Z.",
+      "fetched_at": "2026-11-13T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "qingwenye/bci-quadruped-bci-system",
-      "author_handle": "qingwenye",
+      "upstream_id": "aeon-toolkit/aeon-neuro@f9b13cd9ee",
+      "author_handle": "aeon-toolkit",
       "metrics": {
         "play": null,
-        "like": 3,
+        "like": 35,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "完整走通离线 CCA→250 Hz 实时→闭环，正好补上多数 SSVEP 项目止步的那一段。"
+      "why_valuable": "经典方法与现代数据源进同一接口，基准对比不用再各写一套实现。"
+    },
+    {
+      "type": "News",
+      "level": "Intermediate",
+      "title_zh": "脑机接口数据中心将在浦江大会启动：临港实验室/清华/华山共建，发布数据底座「游刃 1.1」",
+      "title_en": "A BCI Data Centre to Launch at the Pujiang Conference, With a Data Foundation Named 'Youren 1.1'",
+      "bullets_zh": [
+        "浦江创新论坛 **2026 脑机接口大会**定于 **12 月 3–6 日**在上海召开；**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与江西等地方节点现场连线。",
+        "会上将发布数据底座「**游刃 1.1**」，并演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益；**临畴、临析、临策**三个平台同时亮相。",
+        "注意：这是**发布会预告**（事件在未来），本条记录的是公告本身；具体数据规模与开放方式需等会后材料。"
+      ],
+      "bullets_en": [
+        "The Pujiang Innovation Forum's 2026 BCI conference runs 3-6 December in Shanghai, where the Lingang Laboratory, Tsinghua University, Huashan Hospital and partners will start a 'data flywheel' and connect live with regional nodes such as Jiangxi.",
+        "The event will release a data foundation called Youren 1.1 and demonstrate how a BCI data platform improves brain-disease diagnosis at primary-care facilities, alongside three platforms: Linchou, Linxi and Lince.",
+        "This is a launch announcement for a future event; data scale and access terms await post-conference material."
+      ],
+      "url": "https://www.bilibili.com/video/BV1pKWq6TEbU/",
+      "published": "2026-11-13T03:30:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「刀锋财评」转述的公告：**浦江创新论坛 2026 脑机接口大会**定于 **12 月 3–6 日在上海召开**，期间将由**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与**江西**等地方节点现场连线；会上发布数据底座「**游刃 1.1**」，演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益，同时亮相 **临畴、临析、临策**三个平台。这条的价值不在「又一个大会」，而在**数据基础设施的共建名单与地方节点连线**——说明国内 BCI 数据平台正在走「国家实验室＋高校＋医院＋地方」的联合路线。提醒：这是**发布会预告**，数据规模、开放方式与伦理框架要等会后材料。",
+      "brief_en": "A Bilibili report on an announcement: the Pujiang Innovation Forum's 2026 BCI conference runs 3-6 December in Shanghai, where the Lingang Laboratory, Tsinghua University, Huashan Hospital and partners start a data flywheel and connect with regional nodes such as Jiangxi. It releases the Youren 1.1 data foundation with primary-care demonstrations; Linchou, Linxi and Lince platforms also appear.",
+      "tags": [
+        "data-infrastructure",
+        "conference",
+        "lingang",
+        "hospital",
+        "china"
+      ],
+      "raw_excerpt": "「浦江创新论坛2026脑机接口大会定于12月3日至6日在上海召开。临港实验室、清华大学、华山医院等共建单位及医院代表共同启动数据飞轮，与江西等地方节点现场连线，发布数据底座『游刃1.1』，并演示脑机接口数据平台如何提升基层医疗单位的脑疾病诊疗效益。临畴、临析、临策三个平台在此次会上同时亮相。」",
+      "fetched_at": "2026-11-13T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1pKWq6TEbU",
+      "author_handle": "刀锋财评",
+      "metrics": {
+        "play": null,
+        "like": 20,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "披露数据平台共建名单与地方节点连线，反映国内 BCI 数据的联合建设路线。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-Python 深度源建模第二阶段：皮层下网格按表面绘制并随时间/色标联动",
-      "title_en": "MNE-Python Deep Source Modeling Phase 2: Subcortical Meshes Drawn as Surfaces With Time Coupling",
+      "title_zh": "Unfold.jl 增加稠密设计矩阵与按通道建模，并补非线性样条教程",
+      "title_en": "Unfold.jl Adds Dense Design Matrices, Per-Channel Modelling and a Spline HowTo",
       "bullets_zh": [
-        "#14450：**皮层下网格**现在与皮层一起按表面绘制，颜色**跟随时间滑块与色标上下限**——此前皮层下结构在可视化里是孤立的或不联动。",
-        "对深部源（丘脑、基底节、海马）结果的可视化，这解决了「能看到皮层却看不到皮下活动」的实际问题。",
-        "PR 说明由模型辅助实现、作者复核并补了示例——这类可视化改动最好自己跑一遍示例确认配色与时间轴。"
+        "**#380 Feature dense design**：支持**稠密设计矩阵**（不必依赖稀疏表示），便于复杂重叠设计；**#378 Feature bychannel**：可按**通道**分别建模。",
+        "**#381** 补了**非线性样条**（spline）的 HowTo 文档——把「用样条刻画非线性响应」从论文技巧变成可用流程。",
+        "Unfold.jl 面向 EEG 的重叠回归/去卷积；设计矩阵与通道维度一旦灵活，事件重叠与通道特异效应就能同时建模。"
       ],
       "bullets_en": [
-        "#14450 draws subcortical meshes as surfaces alongside the cortex, with colours following the time slider and colormap limits; previously deep structures were isolated or unsynchronised.",
-        "For deep sources such as thalamus, basal ganglia or hippocampus this addresses the practical gap of seeing cortical but not subcortical activity.",
-        "The PR states the model helped implement while the author reviewed and added an example — run that example yourself to confirm colouring and the time axis."
+        "#380 adds dense design matrices, avoiding reliance on sparse representations for complex overlapping designs, and #378 adds per-channel modelling.",
+        "#381 documents non-linear splines as a HowTo, turning spline-based response modelling from a paper trick into a usable workflow.",
+        "Unfold.jl targets overlapping regression and deconvolution for EEG; flexible design and channel dimensions let overlap and channel-specific effects be modelled together."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14450",
-      "published": "2026-11-12T16:57:00Z",
+      "url": "https://github.com/unfoldtoolbox/Unfold.jl/pull/380",
+      "published": "2026-11-13T11:02:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14450（**深度源建模第二阶段**）：**皮层下网格**现在与皮层一起按**表面**绘制，且颜色**跟随时间滑块与色标上下限**联动。这条解决的是一个很实际的可视化缺口——做深部源（丘脑、基底节、海马）时，过去只能看到皮层上的结果，皮下活动要么孤立显示、要么不随时间轴变化，导致「时间演化」这一关键维度在图上读不出来。PR 里也说明了实现方式（由模型辅助、作者复核并补了示例）。建议升级后跑一遍官方示例，确认配色映射与时间轴行为符合预期，再用于自己的结果图。",
-      "brief_en": "MNE-Python merged #14450, deep source modeling phase 2: subcortical meshes now render as surfaces alongside the cortex with colours driven by the time slider and colormap limits. That closes a visualisation gap for thalamic, basal ganglia or hippocampal sources, where subcortical activity was isolated or static. Model-assisted implementation with author review and an example; run it first.",
+      "brief": "Unfold.jl（Julia 版 EEG 重叠回归/去卷积工具箱）在 11-13 推了三项：**#380 稠密设计矩阵**（复杂重叠设计不再依赖稀疏表示）、**#378 按通道建模**、**#381 非线性样条 HowTo 文档**。对做事件相关回归的团队，这三条合起来解决的是「设计复杂了建不出来、通道差异被平均掉、非线性响应只能照论文硬编码」三类问题。尤其样条文档：非线性响应（如早成分饱和、晚成分漂移）用线性项拟合往往掩盖真实形状，而有现成 HowTo 就降低了采用门槛。建议先用已知形状的模拟数据验证样条设置，再上真实数据。",
+      "brief_en": "Unfold.jl pushed three changes on Nov 13: #380 dense design matrices so complex overlapping designs need not rely on sparse representations, #378 per-channel modelling, and #381 a non-linear spline HowTo. Together they address designs too complex to build, channel differences averaged away, and non-linear responses hard-coded from papers.",
       "tags": [
-        "mne-python",
-        "source-modeling",
-        "subcortical",
-        "visualization",
-        "phase2"
+        "unfold",
+        "julia",
+        "design-matrix",
+        "spline",
+        "regression"
       ],
-      "raw_excerpt": "PR #14450: \"Deep source modeling (phase 2) — Following #14130. Now subcortical meshes are drawn as surfaces next to the cortex, and their colors follow the time slider and the colormap limits. … Opus 5.5 helped implementing, I reviewed, did some modification and added an example.\"",
-      "fetched_at": "2026-11-12T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-13: \"Feature dense design (#380)\" 11:02Z; \"Feature bychannel (#378)\" 10:10Z; \"docs: add non-linear spline HowTo page (#381)\" 10:13Z. Repo: unfoldtoolbox/Unfold.jl.",
+      "fetched_at": "2026-11-13T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14450",
-      "author_handle": "mne-tools",
+      "upstream_id": "unfoldtoolbox/Unfold.jl#380",
+      "author_handle": "unfoldtoolbox",
       "metrics": {
         "play": null,
-        "like": 3590,
+        "like": 73,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "皮下源活动此前在图上不随时间变化，联动后才读得出时间演化。"
+      "why_valuable": "设计矩阵与通道维度灵活后可同时建模重叠与通道特异效应，样条也有 HowTo。"
     },
     {
       "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Hillock：给 Claude 的神经工程技能包（30 skills＋6 agents，覆盖解码/EEG-MEG/实时/神经调控）",
-      "title_en": "Hillock: A Neurotech Skill Pack for Claude (30 Skills, 6 Agents) Covering Decoding, EEG/MEG and Rigs",
+      "level": "Beginner",
+      "title_zh": "NeuroGrid 3.0：浏览器里的 EEG/BCI 学习实验室（生成信号→滤波→频谱）",
+      "title_en": "NeuroGrid 3.0: A Browser EEG/BCI Learning Lab That Generates Signals, Filters and Plots",
       "bullets_zh": [
-        "定位是把**神经工程的既有工作流**（BCI 解码、EEG/MEG、spike 分析、实时设备、神经调控与器件）打包成 **30 个 skills ＋ 6 个 agents**，供 Claude 直接调用。",
-        "卖点是「少查资料、直接给出方法与检查项」，目标是**一致、符合领域惯例**的结果；对新人是上手加速，对熟手是流程标准化。",
-        "这类「把领域规范写成 agent 技能」的形态很新，也带来风险：默认值与检查项是否正确，只能靠实际使用验证。"
+        "「EEG & BCI **Learning Laboratory**」：在**浏览器里生成 EEG 信号**，走完**滤波 → 频谱/时频 → 可视化**的教学流程，无需硬件。",
+        "对课堂与自学很实用：合成信号意味着**已知答案**，可以直观看到滤波如何改变波形与频谱，而不必先解决采集问题。",
+        "规模约 6.8 MB 的交互式项目；用于教学很好，但**不能替代真实数据的练习**（伪迹、阻抗、个体差异都不在其中）。"
       ],
       "bullets_en": [
-        "It packages established neural-engineering workflows — BCI decoding, EEG/MEG, spike analysis, real-time rigs, neuromodulation and devices — into 30 skills and 6 agents for Claude.",
-        "The pitch is fewer research detours and field-standard methods and checks, speeding up newcomers and standardising practice for experts.",
-        "Writing domain practice as agent skills is new, and the risk is real: whether defaults and checks are correct can only be verified by use."
+        "An EEG and BCI learning laboratory that generates EEG signals in the browser and walks through filtering, spectra and visualisation without hardware.",
+        "For classrooms and self-study this is practical: synthetic signals have known ground truth, so filtering effects are visible before acquisition problems intrude.",
+        "An interactive project of about 6.8 MB; excellent for teaching, but no substitute for real data practice where artefacts, impedance and individual differences live."
       ],
-      "url": "https://github.com/Hillock-NeuroTech/neurotech-skills",
-      "published": "2026-11-12T16:43:00Z",
+      "url": "https://github.com/rheillunio2-byte/NeuroGrid",
+      "published": "2026-11-13T00:34:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 Hillock（2026-11-12）把**神经工程的既有工作流**打包成 Claude 的 **30 个 skills ＋ 6 个 agents**：BCI 解码、EEG/MEG、spike 分析、实时设备、神经调控与神经器件。它的卖点不是「更强模型」，而是**让模型少查资料、直接给出领域惯例的方法与检查项**——对刚入行的人是加速器，对熟手是把流程标准化的手段。形态很新，但风险也明确：**默认值与检查项是否真的符合领域规范，只能靠实际使用来验证**；把它当作「提示出发点的检查清单」而不是「权威判断」，并保留人工复核环节，是更稳妥的用法。",
-      "brief_en": "Created 2026-11-12, Hillock packages established neural-engineering workflows into 30 skills and 6 agents for Claude, covering BCI decoding, EEG/MEG, spike analysis, real-time rigs and neuromodulation. The pitch is field-standard methods and checks. The form is new and the risk clear: whether defaults match practice can only be verified by use, so treat it as a checklist starter.",
+      "brief": "新建仓库 NeuroGrid 3.0（2026-11-13）是一个**浏览器里的 EEG/BCI 学习实验室**：可以**生成 EEG 信号**，然后走「**滤波 → 频谱/时频 → 可视化**」的完整教学流程，不需要任何硬件。它对课堂与自学确实实用——**合成信号有已知答案**，学生能直观看到滤波如何改变波形与频谱，而不必先跨过采集、阻抗、伪迹这些门槛。规模约 6.8 MB，交互式。要提醒的是：它适合建立概念，但**不能替代真实数据练习**，真实记录里的电极脱落、工频干扰与个体差异恰恰是最难的部分；建议把 NeuroGrid 当第一周教材，第二周就换真实公开数据。",
+      "brief_en": "Created 2026-11-13, NeuroGrid 3.0 is a browser EEG/BCI learning laboratory: generate EEG signals, then walk through filtering, spectra and visualisation without hardware. Synthetic signals have known ground truth, so filtering effects are visible before acquisition and artefacts intrude. Good for concepts, but no substitute for real recordings.",
       "tags": [
-        "agents",
-        "skills",
-        "workflow",
-        "claude",
-        "neurotech"
+        "education",
+        "browser",
+        "simulation",
+        "filtering",
+        "teaching"
       ],
-      "raw_excerpt": "README: \"Hillock: the neurotech workflow suite for Claude. 30 skills and 6 agents that give Claude the established workflows of neural engineering: BCI decoding, EEG/MEG and spike analysis, real-time rigs, neuromodulation and neural devices. With Hillock loaded, Claude goes straight to the right method, defaults and checks for the task instead of researching what to do…\"",
-      "fetched_at": "2026-11-12T23:55:00Z",
+      "raw_excerpt": "Description: \"NeuroGrid is an interactive platform for exploring brain signals, EEG visualization, and Brain-Computer Interface (BCI) technology through simulations…\". README banner: \"NeuroGrid 3.0 — EEG & BCI Learning Laboratory … Generate EEG signals in your browser; Filter → Spectrogram…\"",
+      "fetched_at": "2026-11-13T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "Hillock-NeuroTech/neurotech-skills",
-      "author_handle": "Hillock-NeuroTech",
+      "upstream_id": "rheillunio2-byte/NeuroGrid",
+      "author_handle": "rheillunio2-byte",
       "metrics": {
         "play": null,
-        "like": 1,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "把领域惯例写成 agent 技能是新形态，但默认值正确性只能靠使用验证。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "EEGPrep 给远程数据读取加超时：卡住的读取按配置的截止时间中止",
-      "title_en": "EEGPrep Aborts Stalled Remote Reads at the Configured Deadline",
-      "bullets_zh": [
-        "#614：**PyfetchTransport 的读取**现在会在**配置的截止时间**中止，避免网络卡住时整个流水线无限等待。",
-        "同批修正「parity-matrix 测试说明」使其与测试一致（文档与实测对齐）。",
-        "对批量/远程数据场景，这类超时处理决定流水线是「失败可重试」还是「挂死到天亮」。"
-      ],
-      "bullets_en": [
-        "#614 makes PyfetchTransport reads abort at the configured deadline, so a stalled network call cannot hang the pipeline indefinitely.",
-        "The batch also corrects the parity-matrix test notes so documentation matches the tests.",
-        "For batch or remote-data pipelines, timeout handling decides whether a run fails retryably or hangs until morning."
-      ],
-      "url": "https://github.com/sccn/eegprep/pull/614",
-      "published": "2026-11-12T06:32:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGPrep 合并 #614：**PyfetchTransport 的远程读取现在会在配置的截止时间中止**，不再无限等待。这条对批量处理很实际——远程数据读取一旦卡住，整条流水线会挂到天荒地老，而日志里往往没有任何错误，只有「一直没进展」；有了截止时间，至少能以可重试的失败形式退出。同批还修正了 parity-matrix 测试说明，使其与实际测试一致（文档漂移同样会误导后来者）。对用 EEGPrep 处理远程或大批量数据的团队，建议把超时值显式写进配置并纳入监控。",
-      "brief_en": "EEGPrep merged #614 so PyfetchTransport reads abort at the configured deadline instead of waiting indefinitely. For batch processing this matters: a stalled remote read hangs the pipeline with no error in the logs, only no progress, while a deadline at least yields a retryable failure. The batch also aligned parity-matrix test notes with the tests. Set and monitor the timeout explicitly.",
-      "tags": [
-        "eegprep",
-        "transport",
-        "timeout",
-        "robustness",
-        "remote"
-      ],
-      "raw_excerpt": "Commits 2026-11-12: \"Abort stalled PyfetchTransport reads at the configured deadline (#614)\" (e8ac94ffb3) 06:32Z; \"[docs] Correct parity-matrix test notes to match the tests (#613)\" 06:11Z.",
-      "fetched_at": "2026-11-12T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "sccn/eegprep#614",
-      "author_handle": "sccn",
-      "metrics": {
-        "play": null,
-        "like": 38,
+        "like": 4,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "远程读取无超时会挂死流水线且日志无错，截止时间让失败可重试。"
+      "why_valuable": "合成信号有已知答案，滤波效果可直观看到，适合作为入门第一周教材。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "Neural Privacy Tools：本地化 EEG 处理，并生成「人话」审计日志",
+      "title_en": "Neural Privacy Tools: Local-Only EEG Processing With Plain-Language Audit Logs",
+      "bullets_zh": [
+        "原则是「**脑数据默认留在本机**，除非你显式选择外发」：加载、滤波、检查全部本地完成。",
+        "每次处理都生成**人类可读的审计日志**——把「这一步做了什么、动了哪些参数」写成非技术语言，便于受试者与伦理审查阅读。",
+        "规模很小（约 10 KB），更像**范式示范**而非完整工具；对做 BCI 伦理/合规的团队，这个「日志写给非工程师看」的思路值得借鉴。"
+      ],
+      "bullets_en": [
+        "The principle is that brain data stays on the machine unless you explicitly choose otherwise: loading, filtering and checks all run locally.",
+        "Every step produces a human-readable audit log describing what happened and which parameters changed, in language suitable for participants and ethics review.",
+        "It is small (about 10 KB), more a demonstration of a pattern than a full tool — but writing audit logs for non-engineers is worth borrowing in BCI ethics and compliance work."
+      ],
+      "url": "https://github.com/nuralcode123/neural-privacy-tools",
+      "published": "2026-11-13T01:33:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 Neural Privacy Tools（2026-11-13）提出一个在 BCI 领域被忽视的原则：**脑数据默认留在本机**，除非用户显式选择外发——加载、滤波、检查全部本地完成，并**为每一步生成人类可读的审计日志**：用非技术语言写清「做了什么、动了哪些参数」，让**受试者与伦理审查**也能读懂，而不是只有工程师看得懂的 log。规模很小（约 10 KB），更像**范式示范**而不是成品工具；但对做 BCI 伦理、合规或临床研究的团队，「把审计日志写给非工程师看」这个思路很有借鉴价值——它把数据治理从「内部约定」变成「外部可读」。",
+      "brief_en": "Created 2026-11-13, Neural Privacy Tools states a neglected BCI principle: brain data stays local unless the user opts out, with loading, filtering and checks on-device, plus human-readable audit logs describing each step for participants and ethics boards rather than engineers. At about 10 KB it demonstrates a pattern more than a tool, but audit logs for non-engineers are worth borrowing.",
+      "tags": [
+        "privacy",
+        "local-first",
+        "audit-log",
+        "ethics",
+        "bcidata"
+      ],
+      "raw_excerpt": "README: \"**Local-first tools for processing neural (EEG) data with privacy and transparency as the defaults.** Your brain data stays on your machine unless you explicitly choose otherwise. Every step is inspectable in plain language.\" \"This is a small, open-source pipeline that loads, filters, and checks EEG data entirely locally while generating human-readable audit logs.\"",
+      "fetched_at": "2026-11-13T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "nuralcode123/neural-privacy-tools",
+      "author_handle": "nuralcode123",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "把审计日志写给非工程师看，使数据治理从内部约定变成外部可读。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "hnn-core：neymotin 模型新增 add_erp_drives 参数，并修 GUI 曲线跟随问题",
+      "title_en": "hnn-core Adds add_erp_drives to the neymotin Model and Fixes a GUI Plot Bug",
+      "bullets_zh": [
+        "#1340：为 `neymotin_2020_model` 新增 **`add_erp_drives`** 参数，便于在模型里直接加入**ERP 驱动**（外部输入）做对照实验。",
+        "#：修 GUI 中「Add plot」不跟随模拟/实验数据下拉选择的问题——此前选中的数据与画出的图不一致。",
+        "对做神经回路建模与 EEG/MEG 正演对照的团队，前者便于参数化外部驱动，后者避免「看的图不是选的数据」。"
+      ],
+      "bullets_en": [
+        "#1340 adds an add_erp_drives argument to neymotin_2020_model, making it easy to inject ERP-like external drives for controlled comparisons.",
+        "It also fixes a GUI bug where 'Add plot' did not follow the simulation/experimental dropdown, so the plotted data disagreed with the selection.",
+        "For neural-circuit modelling with EEG/MEG forward comparisons, the former parameterises external drives and the latter prevents plotting the wrong data."
+      ],
+      "url": "https://github.com/jonescompneurolab/hnn-core/pull/1340",
+      "published": "2026-11-13T20:54:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "hnn-core 合并两条：#1340 为 `neymotin_2020_model` 新增 **`add_erp_drives`** 参数，方便在模型里直接加入 **ERP 驱动**做对照——这对「回路模型能否复现实验 ERP 波形」这类研究很实用，不必再改源码拼输入；另一条修 GUI 的 **「Add plot」不跟随数据下拉选择**的 bug，此前可能把 A 数据画成了 B 的图。对做神经回路建模与 EEG/MEG 正演对照的团队，前者降低实验成本，后者避免「图不是选的那份数据」。建议升级后先用一个小模型验证 add_erp_drives 的时序对齐是否符合预期。",
+      "brief_en": "hnn-core merged two changes: #1340 adds an add_erp_drives argument to neymotin_2020_model so ERP-like drives can be injected without patching source, and a GUI fix where Add plot did not follow the simulation/experimental dropdown, which could plot one dataset while another was selected. Validate drive timing on a small model after upgrading.",
+      "tags": [
+        "hnn-core",
+        "circuit-model",
+        "erp",
+        "gui",
+        "bugfix"
+      ],
+      "raw_excerpt": "Commits 2026-11-13: \"[MRG] ENH new argument add_erp_drives to neymotin_2020_model (#1340)\" 20:54Z; \"[MRG] FIX GUI: data figure Add plot follows simulation/experimental drop[down]\" 19:53Z.",
+      "fetched_at": "2026-11-13T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "jonescompneurolab/hnn-core#1340",
+      "author_handle": "jonescompneurolab",
+      "metrics": {
+        "play": null,
+        "like": 83,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "可参数化外部 ERP 驱动做对照，同时修 GUI「图的不是选的数据」。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 94,
-    "llm_rows": 14,
-    "kept": 5,
+    "prefiltered": 96,
+    "llm_rows": 16,
+    "kept": 6,
     "llm_failed": false,
     "llm_skipped_batches": 0,
     "conflicts_dropped": 2
