@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-12T13:14:26.342Z",
+  "generatedAt": "2026-11-13T12:36:45.565Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 65
+      "count": 66
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 19
+      "count": 18
     },
     {
       "id": "physionet",
@@ -391,7 +391,7 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 11944,
+      "downloads": 13227,
       "likes": 23,
       "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
@@ -417,7 +417,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11985,
+      "downloads": 11301,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -442,7 +442,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2022,
+      "downloads": 2032,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -460,7 +460,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1468,
+      "downloads": 1393,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -485,7 +485,7 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 707,
+      "downloads": 647,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
       "modality": [
@@ -508,7 +508,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 643,
+      "downloads": 667,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -532,7 +532,7 @@
         "generative-latents"
       ],
       "license": "cc-by-4.0",
-      "downloads": 447,
+      "downloads": 444,
       "likes": 0,
       "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
@@ -553,7 +553,7 @@
         "brain-computer-interface"
       ],
       "license": "cc0-1.0",
-      "downloads": 420,
+      "downloads": 424,
       "likes": 0,
       "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
@@ -577,28 +577,6 @@
       ]
     },
     {
-      "id": "hf:EEGDash/eegdash-corpus-v0",
-      "name": "eegdash-corpus-v0",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
-      "source": "huggingface",
-      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
-      "tags": [
-        "arxiv:2611.06356",
-        "eeg",
-        "neuroscience",
-        "foundation-model",
-        "zarr"
-      ],
-      "license": "other",
-      "downloads": 190,
-      "likes": 4,
-      "updatedAt": "2026-11-09T18:07:03.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:aspire-osu/maestro-eeg-dataset",
       "name": "maestro-eeg-dataset",
       "owner": "aspire-osu",
@@ -616,9 +594,31 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 223,
+      "downloads": 254,
       "likes": 2,
       "updatedAt": "2026-11-08T16:42:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:EEGDash/eegdash-corpus-v0",
+      "name": "eegdash-corpus-v0",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "source": "huggingface",
+      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
+      "tags": [
+        "arxiv:2611.06356",
+        "eeg",
+        "neuroscience",
+        "foundation-model",
+        "zarr"
+      ],
+      "license": "other",
+      "downloads": 196,
+      "likes": 4,
+      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -641,7 +641,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 265,
+      "downloads": 273,
       "likes": 5,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -684,7 +684,7 @@
       "description": "This archive contains synthetic EEG and EMG time-series data generated for the evaluation of graph- and hypergraph-based representations of multivariate neural activity. Dataset overview Each simulation contains: synthetic EEG data from 61 channels; synthetic EMG data from 10 ch…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 148,
+      "downloads": 310,
       "likes": null,
       "updatedAt": "2026-11-10T00:00:00.000Z",
       "modality": [
@@ -703,23 +703,7 @@
         "physical exhaustion"
       ],
       "license": "cc-by-4.0",
-      "downloads": 155,
-      "likes": null,
-      "updatedAt": "2026-11-03T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:23916911",
-      "name": "Intra-session variability of EEG signal features in externally-guided and classical resting-state paradigms",
-      "owner": "Gijón Ortego, Jorge",
-      "url": "https://doi.org/10.5281/zenodo.23916911",
-      "source": "zenodo",
-      "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 76,
+      "downloads": 157,
       "likes": null,
       "updatedAt": "2026-11-03T00:00:00.000Z",
       "modality": [
@@ -733,6 +717,22 @@
       "url": "https://doi.org/10.5281/zenodo.23901972",
       "source": "zenodo",
       "description": "This repository contains replication materials associated with the manuscript &ldquo;Relationships among L2 Proficiency, Receptive Metaphoric Competence, and Metaphor Production: Behavioral and ERP Evidence.&rdquo; Experiment 1 examined the relationships among second language (L…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 77,
+      "likes": null,
+      "updatedAt": "2026-11-03T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:23916911",
+      "name": "Intra-session variability of EEG signal features in externally-guided and classical resting-state paradigms",
+      "owner": "Gijón Ortego, Jorge",
+      "url": "https://doi.org/10.5281/zenodo.23916911",
+      "source": "zenodo",
+      "description": "This dataset contains the derived results of the study \"Intra-session variability of EEG signal features in externally-guided and classical resting state paradigms\". EEG was recorded with 32 channels under eyes-closed conditions in two paradigms: classical resting state (RS) and…",
       "tags": [],
       "license": "cc-by-4.0",
       "downloads": 76,
@@ -760,7 +760,7 @@
         "reproducibility"
       ],
       "license": "cc-by-4.0",
-      "downloads": 34,
+      "downloads": 35,
       "likes": null,
       "updatedAt": "2026-11-08T00:00:00.000Z",
       "modality": [
@@ -776,7 +776,7 @@
       "description": "This contains the data accompanying the manuscript \"Macroscale dynamics of EEG microstates constitute the periodic and aperiodic features of the neural power spectrum\".&nbsp;",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 17,
+      "downloads": 23,
       "likes": null,
       "updatedAt": "2026-11-09T00:00:00.000Z",
       "modality": [
@@ -792,7 +792,7 @@
       "description": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 1,
       "likes": null,
       "updatedAt": "2026-11-12T00:00:00.000Z",
       "modality": [
@@ -894,8 +894,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 20,
-      "updatedAt": "2026-11-12T12:24:09.000Z",
+      "likes": 21,
+      "updatedAt": "2026-11-12T20:40:19.000Z",
       "modality": [
         "EEG"
       ]
@@ -915,7 +915,7 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-12T09:11:35.000Z",
+      "updatedAt": "2026-11-12T14:14:32.000Z",
       "modality": [
         "EEG",
         "EMG"
@@ -945,27 +945,6 @@
       ]
     },
     {
-      "id": "github:rayglxy/adhd-eeg",
-      "name": "adhd-eeg",
-      "owner": "rayglxy",
-      "url": "https://github.com/rayglxy/adhd-eeg",
-      "source": "github",
-      "description": "Band-power analysis of a public children's ADHD EEG dataset",
-      "tags": [
-        "eeg",
-        "machine-learning",
-        "mne-python",
-        "neuroscience"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-11T22:47:24.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:gabfarmarcondes/cross-dataset-sleep-staging",
       "name": "cross-dataset-sleep-staging",
       "owner": "gabfarmarcondes",
@@ -990,26 +969,51 @@
       ]
     },
     {
-      "id": "github:piterkarpov-111/german-photovoltaics-dataset-2026",
-      "name": "german-photovoltaics-dataset-2026",
-      "owner": "piterkarpov-111",
-      "url": "https://github.com/piterkarpov-111/german-photovoltaics-dataset-2026",
+      "id": "github:Rishabh-bgp/beed-ml-study",
+      "name": "beed-ml-study",
+      "owner": "Rishabh-bgp",
+      "url": "https://github.com/Rishabh-bgp/beed-ml-study",
       "source": "github",
-      "description": "Offener Referenzdatensatz: Photovoltaik-Ertrag (DWD/PVGIS), Montagekosten (€/kWp), Solarpflicht & EEG 2026/2027 für alle 16 Bundesländer & 51 Großstädte in Deutschland — von https://solarmetrik.de",
+      "description": "Provenance audit and leakage-aware benchmark of seizure-type classifiers on the Bangalore EEG Epilepsy Dataset — IIT Ropar & NIELIT Ropar AI/ML training research",
       "tags": [
-        "dataset",
-        "deutschland",
-        "dwd",
-        "eeg-2026",
-        "energiewende",
-        "open-data",
-        "photovoltaik",
-        "pvgis"
+        "data-leakage",
+        "eeg",
+        "epilepsy",
+        "iit-ropar",
+        "lightgbm",
+        "machine-learning",
+        "nielit",
+        "python"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-10-30T21:37:55.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:caitlin-leonard/Seizure-analysis",
+      "name": "Seizure-analysis",
+      "owner": "caitlin-leonard",
+      "url": "https://github.com/caitlin-leonard/Seizure-analysis",
+      "source": "github",
+      "description": "Preictal seizure analysis on the Siena Scalp EEG dataset",
+      "tags": [
+        "bandpower",
+        "biomedical-engineering",
+        "eeg",
+        "entropy",
+        "epilepsy",
+        "neuroscience",
+        "pyhton",
+        "seizure-prediction"
       ],
       "license": null,
       "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-11T17:36:44.000Z",
+      "likes": 6,
+      "updatedAt": "2026-09-28T16:36:19.000Z",
       "modality": [
         "EEG"
       ]
