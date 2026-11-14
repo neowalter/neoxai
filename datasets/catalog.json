@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T12:36:45.565Z",
+  "generatedAt": "2026-11-14T11:44:51.579Z",
   "sources": [
     {
       "id": "huggingface",
@@ -391,8 +391,8 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 13227,
-      "likes": 23,
+      "downloads": 13735,
+      "likes": 24,
       "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
         "EEG",
@@ -417,7 +417,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 11301,
+      "downloads": 11152,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -442,7 +442,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 2032,
+      "downloads": 2049,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -460,7 +460,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1393,
+      "downloads": 1336,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -485,7 +485,7 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 647,
+      "downloads": 603,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
       "modality": [
@@ -508,7 +508,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 667,
+      "downloads": 590,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -532,46 +532,9 @@
         "generative-latents"
       ],
       "license": "cc-by-4.0",
-      "downloads": 444,
-      "likes": 0,
-      "updatedAt": "2026-11-10T07:39:36.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sunweiwei/ai4sci-brain-computer-interface-decoding-data",
-      "name": "ai4sci-brain-computer-interface-decoding-data",
-      "owner": "sunweiwei",
-      "url": "https://huggingface.co/datasets/sunweiwei/ai4sci-brain-computer-interface-decoding-data",
-      "source": "huggingface",
-      "description": "AI4Sci brain-computer-interface decoding: public tracks Prepared data for three of the five tracks of the brain-computer-interface-decoding task in T0-RSI/ai4sci-tasks and sunnweiwei/science-speedrun. Each was built by the task's environment/data/materialize.py from pinned publi…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "bci",
-        "brain-computer-interface"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 424,
-      "likes": 0,
-      "updatedAt": "2026-10-28T02:30:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
-      "name": "tuh-eeg-cloud-transfer",
-      "owner": "xw1216",
-      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
-      "source": "huggingface",
-      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
-      "tags": [],
-      "license": "other",
       "downloads": 445,
       "likes": 0,
-      "updatedAt": "2026-10-16T15:07:25.000Z",
+      "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
         "EEG"
       ]
@@ -594,9 +557,30 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 254,
+      "downloads": 343,
       "likes": 2,
       "updatedAt": "2026-11-08T16:42:18.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sunweiwei/ai4sci-brain-computer-interface-decoding-data",
+      "name": "ai4sci-brain-computer-interface-decoding-data",
+      "owner": "sunweiwei",
+      "url": "https://huggingface.co/datasets/sunweiwei/ai4sci-brain-computer-interface-decoding-data",
+      "source": "huggingface",
+      "description": "AI4Sci brain-computer-interface decoding: public tracks Prepared data for three of the five tracks of the brain-computer-interface-decoding task in T0-RSI/ai4sci-tasks and sunnweiwei/science-speedrun. Each was built by the task's environment/data/materialize.py from pinned publi…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "bci",
+        "brain-computer-interface"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 426,
+      "likes": 0,
+      "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -616,9 +600,25 @@
         "zarr"
       ],
       "license": "other",
-      "downloads": 196,
+      "downloads": 197,
       "likes": 4,
       "updatedAt": "2026-11-09T18:07:03.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:xw1216/tuh-eeg-cloud-transfer",
+      "name": "tuh-eeg-cloud-transfer",
+      "owner": "xw1216",
+      "url": "https://huggingface.co/datasets/xw1216/tuh-eeg-cloud-transfer",
+      "source": "huggingface",
+      "description": "TUEG v2.0.2 temporary cloud transfer Scope: TUEG v2.0.2 ONLY. Other TUH subcorpora are excluded. Status: transfer in progress; TRANSFER_COMPLETE.json is the completion marker. The small TUSZ pilot has been removed from the current branch to keep the scope TUEG-only. Format Origi…",
+      "tags": [],
+      "license": "other",
+      "downloads": 340,
+      "likes": 0,
+      "updatedAt": "2026-10-16T15:07:25.000Z",
       "modality": [
         "EEG"
       ]
@@ -641,7 +641,7 @@
         "neuroscience"
       ],
       "license": "odc-by",
-      "downloads": 273,
+      "downloads": 222,
       "likes": 5,
       "updatedAt": "2026-10-12T17:38:42.000Z",
       "modality": [
@@ -684,7 +684,7 @@
       "description": "This archive contains synthetic EEG and EMG time-series data generated for the evaluation of graph- and hypergraph-based representations of multivariate neural activity. Dataset overview Each simulation contains: synthetic EEG data from 61 channels; synthetic EMG data from 10 ch…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 310,
+      "downloads": 311,
       "likes": null,
       "updatedAt": "2026-11-10T00:00:00.000Z",
       "modality": [
@@ -792,7 +792,7 @@
       "description": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1,
+      "downloads": 2,
       "likes": null,
       "updatedAt": "2026-11-12T00:00:00.000Z",
       "modality": [
@@ -868,8 +868,8 @@
       ],
       "license": "BSD-3-Clause",
       "downloads": null,
-      "likes": 92,
-      "updatedAt": "2026-11-12T09:18:05.000Z",
+      "likes": 93,
+      "updatedAt": "2026-11-13T13:13:22.000Z",
       "modality": [
         "EEG",
         "MEG",
@@ -901,6 +901,26 @@
       ]
     },
     {
+      "id": "github:eegdash/eegdash-corpus",
+      "name": "eegdash-corpus",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/eegdash-corpus",
+      "source": "github",
+      "description": "Code and records for EEGDash Corpus v0: 77 public EEG datasets (14,000+ hours) converted into a training-ready Zarr store for EEG foundation models. MLESP 2026.",
+      "tags": [
+        "brain-decoding",
+        "corpus",
+        "eeg"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2026-11-14T09:06:46.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "github:supernaiter/silent-speech-review",
       "name": "silent-speech-review",
       "owner": "supernaiter",
@@ -915,57 +935,10 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-12T14:14:32.000Z",
+      "updatedAt": "2026-11-14T02:19:03.000Z",
       "modality": [
         "EEG",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:eljandoubi/eeg_challenge_2025",
-      "name": "eeg_challenge_2025",
-      "owner": "eljandoubi",
-      "url": "https://github.com/eljandoubi/eeg_challenge_2025",
-      "source": "github",
-      "description": "A self-supervised VQ-VAE pretraining pipeline for EEG signals, built for the EEG Foundation Challenge on the HBN-EEG dataset.",
-      "tags": [
-        "braindecode",
-        "eeg",
-        "hbn-eeg",
-        "python",
-        "self-supervised-learning",
-        "vq-vae"
-      ],
-      "license": "Apache-2.0",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-12T09:15:11.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:gabfarmarcondes/cross-dataset-sleep-staging",
-      "name": "cross-dataset-sleep-staging",
-      "owner": "gabfarmarcondes",
-      "url": "https://github.com/gabfarmarcondes/cross-dataset-sleep-staging",
-      "source": "github",
-      "description": "Systematic benchmark of unsupervised domain adaptation (DANN, ADAST) for cross-dataset sleep stage classification from single-channel EEG. Undergraduate thesis, UTFPR.",
-      "tags": [
-        "biomedical-signal-processing",
-        "deep-learning",
-        "domain-adaptation",
-        "eeg-signals",
-        "machine-learning",
-        "pytorch",
-        "sleep-staging"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-11T22:01:30.000Z",
-      "modality": [
-        "EEG"
       ]
     },
     {
@@ -1014,6 +987,31 @@
       "downloads": null,
       "likes": 6,
       "updatedAt": "2026-09-28T16:36:19.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:technoshaman001/EEG",
+      "name": "EEG",
+      "owner": "technoshaman001",
+      "url": "https://github.com/technoshaman001/EEG",
+      "source": "github",
+      "description": "Electroencephelography Data taken from my Muse Headband",
+      "tags": [
+        "bci",
+        "brainwaves",
+        "csv-files",
+        "cybernetics",
+        "dataset",
+        "eeg",
+        "electroencephalography",
+        "mri-brain"
+      ],
+      "license": null,
+      "downloads": null,
+      "likes": 1,
+      "updatedAt": "2023-01-22T17:01:57.000Z",
       "modality": [
         "EEG"
       ]
