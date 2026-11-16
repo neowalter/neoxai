@@ -1,299 +1,343 @@
 {
-  "date": "2026-11-14",
-  "generated_at": "2026-11-13T21:31:41.728Z",
-  "item_count": 6,
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16T00:06:32.176Z",
+  "item_count": 7,
   "types": {
     "Project": 5,
-    "News": 1
+    "Benchmark": 1,
+    "Tutorial": 1
   },
   "highlights": [
     {
-      "title_zh": "aeon-neuro 一天四个 ENH：SSVEP CCA 分类器、Nuttall-Strand PSD、NEMAR 接入与对齐信息核心",
-      "title_en": "aeon-neuro Lands Four Enhancements: SSVEP CCA Classifier, Nuttall-Strand PSD, NEMAR Intake",
-      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/274",
-      "brief": "aeon-neuro 在 11-13 一天合并 4 个 ENH：**#274 SSVEPCCAClassifier**（把 SSVEP 的经典 CCA 分类器做成组件）、**#304 Nuttall-Strand PSD transformer**（多变量 AR 谱估计，适合短数据/多通道）、**#318 NEMAR 数据接入**（对接 EEGDash 工作流）、**#308 对齐 EEG 信息核心**。这套组合的意义在于：把**经典方法**（CCA、Nuttall-Strand）与**现代数据源**（NEMAR）放进同一套接口，基准实验里就不必为每个方法各写一套「自己人」的实现，公平对比容易得多。对做 SSVEP 或谱估计基准的团队，建议直接用这些组件替换掉手写版本，并核对默认参数。"
+      "title_zh": "EEGPrep 接入 pAMICA：默认 float64＋单线程＋固定种子，同种子权重逐位一致",
+      "title_en": "EEGPrep Adds a pAMICA Backend: float64, One Thread and Seed 5489 Give Bit-Identical Weights",
+      "url": "https://github.com/sccn/eegprep/pull/617",
+      "brief": "EEGPrep 合并 #617：`pop_runica(EEG, icatype='pamica')` 经新的 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**做分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录到 `EEG['etc']['pamica']`。真正的价值在**确定性**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（作者用 `numpy.array_equal` 写了测试）；`icaweights @ icasphere` 即 pAMICA 实际施加的解混矩阵，语义也写清了。ICA 结果长期「可复现但难逐位复现」，而它又常是后续剔除与伪迹分类的前提——把随机性关进笼子、再列出未映射的参数而不是静默忽略，这两件事合起来才让 ICA 环节真正可审计。"
     },
     {
-      "title_zh": "脑机接口数据中心将在浦江大会启动：临港实验室/清华/华山共建，发布数据底座「游刃 1.1」",
-      "title_en": "A BCI Data Centre to Launch at the Pujiang Conference, With a Data Foundation Named 'Youren 1.1'",
-      "url": "https://www.bilibili.com/video/BV1pKWq6TEbU/",
-      "brief": "B站「刀锋财评」转述的公告：**浦江创新论坛 2026 脑机接口大会**定于 **12 月 3–6 日在上海召开**，期间将由**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与**江西**等地方节点现场连线；会上发布数据底座「**游刃 1.1**」，演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益，同时亮相 **临畴、临析、临策**三个平台。这条的价值不在「又一个大会」，而在**数据基础设施的共建名单与地方节点连线**——说明国内 BCI 数据平台正在走「国家实验室＋高校＋医院＋地方」的联合路线。提醒：这是**发布会预告**，数据规模、开放方式与伦理框架要等会后材料。"
+      "title_zh": "braindecode 修 LUNA 增广库：GPU 上 DC 与奈奎斯特频率的相位处理与 CPU 不一致",
+      "title_en": "braindecode Fixes LUNA Augmentation: GPU DC and Nyquist Phase Differed from CPU",
+      "url": "https://github.com/braindecode/braindecode/pull/1566",
+      "brief": "braindecode 在 11-15 连修 LUNA 增广库三个问题，最关键的是 **#1566「GPU 上的 DC 与奈奎斯特相位」**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不一致**——同一份数据、同一个种子，增广结果**因设备而异**，等于训练输入被静默改变。这类 bug 的恶劣之处在于症状是「换台机器复现不出来」，几乎没人会怀疑到增广层的频域实现。同批还有 **#1568 `reset_head`**（迁移学习时干净地重置分类头）与 **#1565 `return_features`**。对用 GPU 跑 EEG 深度学习的团队：升级后建议做一次 CPU/GPU 前向一致性抽查，尤其涉及卷积边界与频域操作时。"
     },
     {
-      "title_zh": "Unfold.jl 增加稠密设计矩阵与按通道建模，并补非线性样条教程",
-      "title_en": "Unfold.jl Adds Dense Design Matrices, Per-Channel Modelling and a Spline HowTo",
-      "url": "https://github.com/unfoldtoolbox/Unfold.jl/pull/380",
-      "brief": "Unfold.jl（Julia 版 EEG 重叠回归/去卷积工具箱）在 11-13 推了三项：**#380 稠密设计矩阵**（复杂重叠设计不再依赖稀疏表示）、**#378 按通道建模**、**#381 非线性样条 HowTo 文档**。对做事件相关回归的团队，这三条合起来解决的是「设计复杂了建不出来、通道差异被平均掉、非线性响应只能照论文硬编码」三类问题。尤其样条文档：非线性响应（如早成分饱和、晚成分漂移）用线性项拟合往往掩盖真实形状，而有现成 HowTo 就降低了采用门槛。建议先用已知形状的模拟数据验证样条设置，再上真实数据。"
+      "title_zh": "EEGSRBench：脑电空间超分辨率基准——七个数据集、冻结协议、可复现评测",
+      "title_en": "EEGSRBench: A Benchmark for EEG Spatial Super-Resolution With Frozen Protocols Over Seven Datasets",
+      "url": "https://github.com/DhrLhj/EEGSRBench",
+      "brief": "新建仓库 EEGSRBench v0.1.0（2026-11-14）：为 **EEG 空间超分辨率**建立基准——基于**七个既有数据集**构建**冻结协议**，提供固定样本分配、电极布局、参考方法与评估器；README 明确「原始录音归各提供方所有，本仓库只贡献数据集准备、固定分配与评测」。这个定位很清醒：空间超分辨率是干电极、低通道可穿戴设备的核心瓶颈，各家论文都在报「恢复了多少通道、提升了多少下游准确率」，但**样本划分与评估器不统一时这些数字互不可比**。冻结协议＋保留实验记录正是把该方向拉进可比较轨道的第一步；采用时注意其 v0.1 阶段方法覆盖仍有限。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-14.md",
+  "github_path": "docs/bci-cn-daily/2026-11-16.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "aeon-neuro 一天四个 ENH：SSVEP CCA 分类器、Nuttall-Strand PSD、NEMAR 接入与对齐信息核心",
-      "title_en": "aeon-neuro Lands Four Enhancements: SSVEP CCA Classifier, Nuttall-Strand PSD, NEMAR Intake",
+      "title_zh": "EEGPrep 接入 pAMICA：默认 float64＋单线程＋固定种子，同种子权重逐位一致",
+      "title_en": "EEGPrep Adds a pAMICA Backend: float64, One Thread and Seed 5489 Give Bit-Identical Weights",
       "bullets_zh": [
-        "**#274 SSVEPCCAClassifier**：把 SSVEP 的经典 **CCA 分类器**做成包内组件；**#304 Nuttall-Strand PSD transformer**：多变量 AR 谱估计。",
-        "**#318 NEMAR 数据接入**（对接 EEGDash 工作流）与 **#308 对齐 EEG 信息核心**——数据面与信息结构同步扩充。",
-        "对做基准的团队，这四个组件把「经典方法」与「现代数据源」放进了同一套接口，便于公平对比而非各写一套。"
+        "#617：`pop_runica(EEG, icatype='pamica')` 经新 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录进 `EEG['etc']['pamica']`。",
+        "**确定性是核心**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（用 `numpy.array_equal` 测试）。",
+        "另列出**未映射的 runamica15 参数**而非静默忽略——哪些设置没生效一目了然。"
       ],
       "bullets_en": [
-        "#274 adds an SSVEPCCAClassifier, packaging the classic CCA approach for SSVEP, and #304 adds a Nuttall-Strand PSD transformer for multivariate AR spectra.",
-        "#318 adds NEMAR dataset intake for EEGDash workflows and #308 adds an aligned EEG information core, extending both the data surface and structure.",
-        "For benchmarking, these place classic methods and modern data sources behind one interface, making fair comparison easier than bespoke scripts."
+        "#617 lets pop_runica(icatype='pamica') decompose with pAMICA's PyTorch engine through the new eeg_pamica, fills the EEGLAB ICA fields and records the run in EEG['etc']['pamica'].",
+        "Determinism is central: float64 on CPU, one thread and seed 5489 by default, so the same seed gives identical weights, tested with numpy.array_equal.",
+        "Unmapped runamica15 settings are listed rather than silently ignored."
       ],
-      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/274",
-      "published": "2026-11-13T17:45:00Z",
+      "url": "https://github.com/sccn/eegprep/pull/617",
+      "published": "2026-11-14T21:05:00Z",
       "source": "github",
       "language": "en",
-      "brief": "aeon-neuro 在 11-13 一天合并 4 个 ENH：**#274 SSVEPCCAClassifier**（把 SSVEP 的经典 CCA 分类器做成组件）、**#304 Nuttall-Strand PSD transformer**（多变量 AR 谱估计，适合短数据/多通道）、**#318 NEMAR 数据接入**（对接 EEGDash 工作流）、**#308 对齐 EEG 信息核心**。这套组合的意义在于：把**经典方法**（CCA、Nuttall-Strand）与**现代数据源**（NEMAR）放进同一套接口，基准实验里就不必为每个方法各写一套「自己人」的实现，公平对比容易得多。对做 SSVEP 或谱估计基准的团队，建议直接用这些组件替换掉手写版本，并核对默认参数。",
-      "brief_en": "aeon-neuro merged four enhancements on Nov 13: #274 SSVEPCCAClassifier packaging the classic CCA approach, #304 a Nuttall-Strand PSD transformer for multivariate AR spectra, #318 NEMAR dataset intake for EEGDash workflows, and #308 an aligned EEG information core. Classic methods and modern data sources now share one interface, making fair benchmarking easier than bespoke implementations.",
+      "brief": "EEGPrep 合并 #617：`pop_runica(EEG, icatype='pamica')` 经新的 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**做分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录到 `EEG['etc']['pamica']`。真正的价值在**确定性**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（作者用 `numpy.array_equal` 写了测试）；`icaweights @ icasphere` 即 pAMICA 实际施加的解混矩阵，语义也写清了。ICA 结果长期「可复现但难逐位复现」，而它又常是后续剔除与伪迹分类的前提——把随机性关进笼子、再列出未映射的参数而不是静默忽略，这两件事合起来才让 ICA 环节真正可审计。",
+      "brief_en": "EEGPrep merged #617: pop_runica(icatype='pamica') decomposes with pAMICA's PyTorch engine via the new eeg_pamica, fills EEGLAB ICA fields and records the run in EEG['etc']['pamica']. The core is determinism — float64 on CPU, one thread, seed 5489 by default, so the same seed gives bit-identical weights (tested with numpy.array_equal) — and unmapped runamica15 settings are listed, not ignored.",
       "tags": [
-        "aeon-neuro",
-        "ssvep",
-        "cca",
-        "nuttall-strand",
-        "nemar"
+        "eegprep",
+        "pamica",
+        "ica",
+        "determinism",
+        "seed"
       ],
-      "raw_excerpt": "PRs merged 2026-11-13: \"[ENH] Add SSVEPCCAClassifier (#274)\" 17:45Z; \"[ENH] Add Nuttall-Strand PSD transformer (#304)\" 09:56Z; \"[ENH] Add NEMAR dataset intake for EEGDash workflows (#318)\" 18:23Z; \"[ENH] Add aligned EEG information core (#308)\" 11:07Z.",
-      "fetched_at": "2026-11-13T23:55:00Z",
+      "raw_excerpt": "PR #617: \"Add pop_runica icatype pamica through eeg_pamica — `pop_runica(EEG, icatype='pamica')` decomposes with pAMICA's PyTorch engine through the new `eeg_pamica`, fills the EEGLAB ICA fields, and records the run in `EEG['etc']['pamica']`. The fit runs in float64 on the CPU with one thread and seed 5489 by default, so the same seed gives identical weights (tested with `numpy.array_equal`)…\"; commit \"List the unmapped runamica15 settings\".",
+      "fetched_at": "2026-11-15T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "aeon-toolkit/aeon-neuro@f9b13cd9ee",
-      "author_handle": "aeon-toolkit",
+      "upstream_id": "sccn/eegprep#617",
+      "author_handle": "sccn",
       "metrics": {
         "play": null,
-        "like": 35,
+        "like": 38,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "经典方法与现代数据源进同一接口，基准对比不用再各写一套实现。"
-    },
-    {
-      "type": "News",
-      "level": "Intermediate",
-      "title_zh": "脑机接口数据中心将在浦江大会启动：临港实验室/清华/华山共建，发布数据底座「游刃 1.1」",
-      "title_en": "A BCI Data Centre to Launch at the Pujiang Conference, With a Data Foundation Named 'Youren 1.1'",
-      "bullets_zh": [
-        "浦江创新论坛 **2026 脑机接口大会**定于 **12 月 3–6 日**在上海召开；**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与江西等地方节点现场连线。",
-        "会上将发布数据底座「**游刃 1.1**」，并演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益；**临畴、临析、临策**三个平台同时亮相。",
-        "注意：这是**发布会预告**（事件在未来），本条记录的是公告本身；具体数据规模与开放方式需等会后材料。"
-      ],
-      "bullets_en": [
-        "The Pujiang Innovation Forum's 2026 BCI conference runs 3-6 December in Shanghai, where the Lingang Laboratory, Tsinghua University, Huashan Hospital and partners will start a 'data flywheel' and connect live with regional nodes such as Jiangxi.",
-        "The event will release a data foundation called Youren 1.1 and demonstrate how a BCI data platform improves brain-disease diagnosis at primary-care facilities, alongside three platforms: Linchou, Linxi and Lince.",
-        "This is a launch announcement for a future event; data scale and access terms await post-conference material."
-      ],
-      "url": "https://www.bilibili.com/video/BV1pKWq6TEbU/",
-      "published": "2026-11-13T03:30:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站「刀锋财评」转述的公告：**浦江创新论坛 2026 脑机接口大会**定于 **12 月 3–6 日在上海召开**，期间将由**临港实验室、清华大学、华山医院**等共建单位与医院代表共同启动「**数据飞轮**」，并与**江西**等地方节点现场连线；会上发布数据底座「**游刃 1.1**」，演示脑机接口数据平台如何提升**基层医疗单位**的脑疾病诊疗效益，同时亮相 **临畴、临析、临策**三个平台。这条的价值不在「又一个大会」，而在**数据基础设施的共建名单与地方节点连线**——说明国内 BCI 数据平台正在走「国家实验室＋高校＋医院＋地方」的联合路线。提醒：这是**发布会预告**，数据规模、开放方式与伦理框架要等会后材料。",
-      "brief_en": "A Bilibili report on an announcement: the Pujiang Innovation Forum's 2026 BCI conference runs 3-6 December in Shanghai, where the Lingang Laboratory, Tsinghua University, Huashan Hospital and partners start a data flywheel and connect with regional nodes such as Jiangxi. It releases the Youren 1.1 data foundation with primary-care demonstrations; Linchou, Linxi and Lince platforms also appear.",
-      "tags": [
-        "data-infrastructure",
-        "conference",
-        "lingang",
-        "hospital",
-        "china"
-      ],
-      "raw_excerpt": "「浦江创新论坛2026脑机接口大会定于12月3日至6日在上海召开。临港实验室、清华大学、华山医院等共建单位及医院代表共同启动数据飞轮，与江西等地方节点现场连线，发布数据底座『游刃1.1』，并演示脑机接口数据平台如何提升基层医疗单位的脑疾病诊疗效益。临畴、临析、临策三个平台在此次会上同时亮相。」",
-      "fetched_at": "2026-11-13T23:55:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV1pKWq6TEbU",
-      "author_handle": "刀锋财评",
-      "metrics": {
-        "play": null,
-        "like": 20,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "披露数据平台共建名单与地方节点连线，反映国内 BCI 数据的联合建设路线。"
+      "why_valuable": "同种子逐位一致的 ICA＋列出未映射参数，让最易受随机性影响的环节可审计。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "Unfold.jl 增加稠密设计矩阵与按通道建模，并补非线性样条教程",
-      "title_en": "Unfold.jl Adds Dense Design Matrices, Per-Channel Modelling and a Spline HowTo",
+      "title_zh": "braindecode 修 LUNA 增广库：GPU 上 DC 与奈奎斯特频率的相位处理与 CPU 不一致",
+      "title_en": "braindecode Fixes LUNA Augmentation: GPU DC and Nyquist Phase Differed from CPU",
       "bullets_zh": [
-        "**#380 Feature dense design**：支持**稠密设计矩阵**（不必依赖稀疏表示），便于复杂重叠设计；**#378 Feature bychannel**：可按**通道**分别建模。",
-        "**#381** 补了**非线性样条**（spline）的 HowTo 文档——把「用样条刻画非线性响应」从论文技巧变成可用流程。",
-        "Unfold.jl 面向 EEG 的重叠回归/去卷积；设计矩阵与通道维度一旦灵活，事件重叠与通道特异效应就能同时建模。"
+        "**#1566**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不同**——同一份数据增广后**因设备而异**，训练输入被静默改变。",
+        "同批 **#1568 `reset_head`**（迁移学习时重置分类头）与 **#1565 `return_features`**（返回中间特征）。",
+        "增广库是「隐形的数据管线」：设备相关的数值差异等于「同种子不同数据」，排查成本极高。"
       ],
       "bullets_en": [
-        "#380 adds dense design matrices, avoiding reliance on sparse representations for complex overlapping designs, and #378 adds per-channel modelling.",
-        "#381 documents non-linear splines as a HowTo, turning spline-based response modelling from a paper trick into a usable workflow.",
-        "Unfold.jl targets overlapping regression and deconvolution for EEG; flexible design and channel dimensions let overlap and channel-specific effects be modelled together."
+        "#1566 fixes LUNA handling DC offset and Nyquist-frequency phase differently on GPU than CPU, so augmented inputs silently depended on the device — same seed, different data.",
+        "The batch also adds #1568 reset_head for transfer learning and #1565 return_features to expose intermediate features.",
+        "Augmentation libraries are invisible data pipelines: device-dependent numerics mean identical seeds yield different training data."
       ],
-      "url": "https://github.com/unfoldtoolbox/Unfold.jl/pull/380",
-      "published": "2026-11-13T11:02:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1566",
+      "published": "2026-11-15T19:54:00Z",
       "source": "github",
       "language": "en",
-      "brief": "Unfold.jl（Julia 版 EEG 重叠回归/去卷积工具箱）在 11-13 推了三项：**#380 稠密设计矩阵**（复杂重叠设计不再依赖稀疏表示）、**#378 按通道建模**、**#381 非线性样条 HowTo 文档**。对做事件相关回归的团队，这三条合起来解决的是「设计复杂了建不出来、通道差异被平均掉、非线性响应只能照论文硬编码」三类问题。尤其样条文档：非线性响应（如早成分饱和、晚成分漂移）用线性项拟合往往掩盖真实形状，而有现成 HowTo 就降低了采用门槛。建议先用已知形状的模拟数据验证样条设置，再上真实数据。",
-      "brief_en": "Unfold.jl pushed three changes on Nov 13: #380 dense design matrices so complex overlapping designs need not rely on sparse representations, #378 per-channel modelling, and #381 a non-linear spline HowTo. Together they address designs too complex to build, channel differences averaged away, and non-linear responses hard-coded from papers.",
+      "brief": "braindecode 在 11-15 连修 LUNA 增广库三个问题，最关键的是 **#1566「GPU 上的 DC 与奈奎斯特相位」**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不一致**——同一份数据、同一个种子，增广结果**因设备而异**，等于训练输入被静默改变。这类 bug 的恶劣之处在于症状是「换台机器复现不出来」，几乎没人会怀疑到增广层的频域实现。同批还有 **#1568 `reset_head`**（迁移学习时干净地重置分类头）与 **#1565 `return_features`**。对用 GPU 跑 EEG 深度学习的团队：升级后建议做一次 CPU/GPU 前向一致性抽查，尤其涉及卷积边界与频域操作时。",
+      "brief_en": "braindecode landed three LUNA fixes on Nov 15. The key one is #1566: DC offset and Nyquist-frequency phase were handled differently on GPU than CPU, so augmented inputs silently depended on the device — same seed, different training data. Also #1568 reset_head for transfer learning and #1565 return_features. Spot-check CPU/GPU forward consistency after upgrading.",
       "tags": [
-        "unfold",
-        "julia",
-        "design-matrix",
-        "spline",
-        "regression"
+        "braindecode",
+        "luna",
+        "augmentation",
+        "gpu",
+        "numerics"
       ],
-      "raw_excerpt": "Commits 2026-11-13: \"Feature dense design (#380)\" 11:02Z; \"Feature bychannel (#378)\" 10:10Z; \"docs: add non-linear spline HowTo page (#381)\" 10:13Z. Repo: unfoldtoolbox/Unfold.jl.",
-      "fetched_at": "2026-11-13T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-15: \"FIX LUNA: DC and Nyquist phase on GPU (#1566)\" (1e3f42589c) 19:54Z; \"LUNA: reset_head (#1568)\" 17:50Z; \"LUNA: return_features (#1565)\" 17:29Z.",
+      "fetched_at": "2026-11-15T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "unfoldtoolbox/Unfold.jl#380",
-      "author_handle": "unfoldtoolbox",
+      "upstream_id": "braindecode/braindecode#1566",
+      "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 73,
+        "like": 1342,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "设计矩阵与通道维度灵活后可同时建模重叠与通道特异效应，样条也有 HowTo。"
+      "quality_score": 9,
+      "why_valuable": "增广层设备相关的数值差异＝同种子不同数据，症状极难归因。"
     },
     {
-      "type": "Project",
-      "level": "Beginner",
-      "title_zh": "NeuroGrid 3.0：浏览器里的 EEG/BCI 学习实验室（生成信号→滤波→频谱）",
-      "title_en": "NeuroGrid 3.0: A Browser EEG/BCI Learning Lab That Generates Signals, Filters and Plots",
+      "type": "Benchmark",
+      "level": "Advanced",
+      "title_zh": "EEGSRBench：脑电空间超分辨率基准——七个数据集、冻结协议、可复现评测",
+      "title_en": "EEGSRBench: A Benchmark for EEG Spatial Super-Resolution With Frozen Protocols Over Seven Datasets",
       "bullets_zh": [
-        "「EEG & BCI **Learning Laboratory**」：在**浏览器里生成 EEG 信号**，走完**滤波 → 频谱/时频 → 可视化**的教学流程，无需硬件。",
-        "对课堂与自学很实用：合成信号意味着**已知答案**，可以直观看到滤波如何改变波形与频谱，而不必先解决采集问题。",
-        "规模约 6.8 MB 的交互式项目；用于教学很好，但**不能替代真实数据的练习**（伪迹、阻抗、个体差异都不在其中）。"
+        "新建仓库（2026-11-14）：为 **EEG 空间超分辨率**提供基准，基于**七个既有数据集**构建**冻结的评测协议**。",
+        "交付固定样本分配、电极布局、参考方法与评估器；明确声明**不拥有数据版权**，只贡献可复现的评测流程。",
+        "空间分辨率是干电极与低通道设备的核心瓶颈；没有统一基准，超分辨率的「提升」极易沦为自说自话。"
       ],
       "bullets_en": [
-        "An EEG and BCI learning laboratory that generates EEG signals in the browser and walks through filtering, spectra and visualisation without hardware.",
-        "For classrooms and self-study this is practical: synthetic signals have known ground truth, so filtering effects are visible before acquisition problems intrude.",
-        "An interactive project of about 6.8 MB; excellent for teaching, but no substitute for real data practice where artefacts, impedance and individual differences live."
+        "Created 2026-11-14, EEGSRBench v0.1.0 benchmarks EEG spatial super-resolution with reproducible protocols built from seven existing datasets.",
+        "It contributes fixed sample assignments, electrode layouts, reference methods and evaluators, explicitly claiming no data ownership — only the evaluation pipeline.",
+        "Spatial resolution is the core bottleneck for dry-electrode and low-channel devices; without a shared benchmark, claimed gains are hard to compare."
       ],
-      "url": "https://github.com/rheillunio2-byte/NeuroGrid",
-      "published": "2026-11-13T00:34:00Z",
+      "url": "https://github.com/DhrLhj/EEGSRBench",
+      "published": "2026-11-14T09:49:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 NeuroGrid 3.0（2026-11-13）是一个**浏览器里的 EEG/BCI 学习实验室**：可以**生成 EEG 信号**，然后走「**滤波 → 频谱/时频 → 可视化**」的完整教学流程，不需要任何硬件。它对课堂与自学确实实用——**合成信号有已知答案**，学生能直观看到滤波如何改变波形与频谱，而不必先跨过采集、阻抗、伪迹这些门槛。规模约 6.8 MB，交互式。要提醒的是：它适合建立概念，但**不能替代真实数据练习**，真实记录里的电极脱落、工频干扰与个体差异恰恰是最难的部分；建议把 NeuroGrid 当第一周教材，第二周就换真实公开数据。",
-      "brief_en": "Created 2026-11-13, NeuroGrid 3.0 is a browser EEG/BCI learning laboratory: generate EEG signals, then walk through filtering, spectra and visualisation without hardware. Synthetic signals have known ground truth, so filtering effects are visible before acquisition and artefacts intrude. Good for concepts, but no substitute for real recordings.",
+      "brief": "新建仓库 EEGSRBench v0.1.0（2026-11-14）：为 **EEG 空间超分辨率**建立基准——基于**七个既有数据集**构建**冻结协议**，提供固定样本分配、电极布局、参考方法与评估器；README 明确「原始录音归各提供方所有，本仓库只贡献数据集准备、固定分配与评测」。这个定位很清醒：空间超分辨率是干电极、低通道可穿戴设备的核心瓶颈，各家论文都在报「恢复了多少通道、提升了多少下游准确率」，但**样本划分与评估器不统一时这些数字互不可比**。冻结协议＋保留实验记录正是把该方向拉进可比较轨道的第一步；采用时注意其 v0.1 阶段方法覆盖仍有限。",
+      "brief_en": "Created 2026-11-14, EEGSRBench v0.1.0 benchmarks EEG spatial super-resolution with frozen protocols over seven existing datasets: fixed sample assignments, electrode layouts, reference methods and evaluators, explicitly claiming no data ownership. Spatial resolution is the bottleneck for dry-electrode and low-channel devices; without shared splits and evaluators, claimed gains are incomparable.",
       "tags": [
-        "education",
-        "browser",
-        "simulation",
-        "filtering",
-        "teaching"
+        "benchmark",
+        "super-resolution",
+        "spatial",
+        "frozen-protocol",
+        "datasets"
       ],
-      "raw_excerpt": "Description: \"NeuroGrid is an interactive platform for exploring brain signals, EEG visualization, and Brain-Computer Interface (BCI) technology through simulations…\". README banner: \"NeuroGrid 3.0 — EEG & BCI Learning Laboratory … Generate EEG signals in your browser; Filter → Spectrogram…\"",
-      "fetched_at": "2026-11-13T23:55:00Z",
+      "raw_excerpt": "README: \"**A Benchmark for EEG Spatial Super-Resolution and Downstream Utility** — EEGSRBench v0.1.0 provides reproducible evaluation protocols built from **seven existing EEG datasets**. Original recordings belong to their providers. This repository contributes dataset-specific preparation, fixed sample assignments, electrode layouts, reference methods, evaluators and preserved experimental r[ecords]…\"",
+      "fetched_at": "2026-11-15T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "rheillunio2-byte/NeuroGrid",
-      "author_handle": "rheillunio2-byte",
-      "metrics": {
-        "play": null,
-        "like": 4,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "合成信号有已知答案，滤波效果可直观看到，适合作为入门第一周教材。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Neural Privacy Tools：本地化 EEG 处理，并生成「人话」审计日志",
-      "title_en": "Neural Privacy Tools: Local-Only EEG Processing With Plain-Language Audit Logs",
-      "bullets_zh": [
-        "原则是「**脑数据默认留在本机**，除非你显式选择外发」：加载、滤波、检查全部本地完成。",
-        "每次处理都生成**人类可读的审计日志**——把「这一步做了什么、动了哪些参数」写成非技术语言，便于受试者与伦理审查阅读。",
-        "规模很小（约 10 KB），更像**范式示范**而非完整工具；对做 BCI 伦理/合规的团队，这个「日志写给非工程师看」的思路值得借鉴。"
-      ],
-      "bullets_en": [
-        "The principle is that brain data stays on the machine unless you explicitly choose otherwise: loading, filtering and checks all run locally.",
-        "Every step produces a human-readable audit log describing what happened and which parameters changed, in language suitable for participants and ethics review.",
-        "It is small (about 10 KB), more a demonstration of a pattern than a full tool — but writing audit logs for non-engineers is worth borrowing in BCI ethics and compliance work."
-      ],
-      "url": "https://github.com/nuralcode123/neural-privacy-tools",
-      "published": "2026-11-13T01:33:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 Neural Privacy Tools（2026-11-13）提出一个在 BCI 领域被忽视的原则：**脑数据默认留在本机**，除非用户显式选择外发——加载、滤波、检查全部本地完成，并**为每一步生成人类可读的审计日志**：用非技术语言写清「做了什么、动了哪些参数」，让**受试者与伦理审查**也能读懂，而不是只有工程师看得懂的 log。规模很小（约 10 KB），更像**范式示范**而不是成品工具；但对做 BCI 伦理、合规或临床研究的团队，「把审计日志写给非工程师看」这个思路很有借鉴价值——它把数据治理从「内部约定」变成「外部可读」。",
-      "brief_en": "Created 2026-11-13, Neural Privacy Tools states a neglected BCI principle: brain data stays local unless the user opts out, with loading, filtering and checks on-device, plus human-readable audit logs describing each step for participants and ethics boards rather than engineers. At about 10 KB it demonstrates a pattern more than a tool, but audit logs for non-engineers are worth borrowing.",
-      "tags": [
-        "privacy",
-        "local-first",
-        "audit-log",
-        "ethics",
-        "bcidata"
-      ],
-      "raw_excerpt": "README: \"**Local-first tools for processing neural (EEG) data with privacy and transparency as the defaults.** Your brain data stays on your machine unless you explicitly choose otherwise. Every step is inspectable in plain language.\" \"This is a small, open-source pipeline that loads, filters, and checks EEG data entirely locally while generating human-readable audit logs.\"",
-      "fetched_at": "2026-11-13T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "nuralcode123/neural-privacy-tools",
-      "author_handle": "nuralcode123",
+      "upstream_id": "DhrLhj/EEGSRBench",
+      "author_handle": "DhrLhj",
       "metrics": {
         "play": null,
         "like": 0,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "把审计日志写给非工程师看，使数据治理从内部约定变成外部可读。"
+      "quality_score": 8,
+      "why_valuable": "冻结协议让超分辨率的『提升』第一次可跨论文比较，且明确不碰数据版权。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "hnn-core：neymotin 模型新增 add_erp_drives 参数，并修 GUI 曲线跟随问题",
-      "title_en": "hnn-core Adds add_erp_drives to the neymotin Model and Fixes a GUI Plot Bug",
+      "title_zh": "Squiggly 检测文件里记录的参考电极并让用户选择分析参考",
+      "title_en": "Squiggly Detects the Recorded EEG Reference and Lets Users Choose the Analysis Reference",
       "bullets_zh": [
-        "#1340：为 `neymotin_2020_model` 新增 **`add_erp_drives`** 参数，便于在模型里直接加入**ERP 驱动**（外部输入）做对照实验。",
-        "#：修 GUI 中「Add plot」不跟随模拟/实验数据下拉选择的问题——此前选中的数据与画出的图不一致。",
-        "对做神经回路建模与 EEG/MEG 正演对照的团队，前者便于参数化外部驱动，后者避免「看的图不是选的数据」。"
+        "网页版 EEG 评估平台（19 通道、睁眼/闭眼）新增：**从文件中检测记录时使用的参考**，再由用户选择分析用参考。",
+        "**参考错配是经典静默错误源**：把单极/相连耳参考当作平均参考读，α 功率与地形图都会系统性偏移且无报错。",
+        "另一提交在文件带时间信息时显示「记录于何时」——临床复核时「什么时候采的」和「怎么参考的」同样关键。"
       ],
       "bullets_en": [
-        "#1340 adds an add_erp_drives argument to neymotin_2020_model, making it easy to inject ERP-like external drives for controlled comparisons.",
-        "It also fixes a GUI bug where 'Add plot' did not follow the simulation/experimental dropdown, so the plotted data disagreed with the selection.",
-        "For neural-circuit modelling with EEG/MEG forward comparisons, the former parameterises external drives and the latter prevents plotting the wrong data."
+        "The web EEG assessment platform (19 channels, eyes-open/closed) now detects the reference used at recording from the file and lets users choose the analysis reference.",
+        "A mismatched reference is a classic silent error: reading linked-ear data as average-referenced shifts alpha power and topography with no warning.",
+        "Another commit surfaces when a recording was made when the file says so — timing matters for clinical review as much as referencing."
       ],
-      "url": "https://github.com/jonescompneurolab/hnn-core/pull/1340",
-      "published": "2026-11-13T20:54:00Z",
+      "url": "https://github.com/alexdni/squiggly/commit/925bf3f697",
+      "published": "2026-11-15T02:39:00Z",
       "source": "github",
       "language": "en",
-      "brief": "hnn-core 合并两条：#1340 为 `neymotin_2020_model` 新增 **`add_erp_drives`** 参数，方便在模型里直接加入 **ERP 驱动**做对照——这对「回路模型能否复现实验 ERP 波形」这类研究很实用，不必再改源码拼输入；另一条修 GUI 的 **「Add plot」不跟随数据下拉选择**的 bug，此前可能把 A 数据画成了 B 的图。对做神经回路建模与 EEG/MEG 正演对照的团队，前者降低实验成本，后者避免「图不是选的那份数据」。建议升级后先用一个小模型验证 add_erp_drives 的时序对齐是否符合预期。",
-      "brief_en": "hnn-core merged two changes: #1340 adds an add_erp_drives argument to neymotin_2020_model so ERP-like drives can be injected without patching source, and a GUI fix where Add plot did not follow the simulation/experimental dropdown, which could plot one dataset while another was selected. Validate drive timing on a small model after upgrading.",
+      "brief": "Squiggly（开源网页 EEG 评估平台，19 通道、支持睁眼/闭眼对比）在 11-15 加了两个很「临床」的功能：**从文件里检测记录时使用的参考电极**，再由用户选择分析用参考；以及当文件带时间信息时显示「这次记录发生于何时」。第一条尤其重要——**参考错配是 EEG 最经典的静默错误**：把相连耳/单极参考的数据按平均参考去解读，α 功率、地形图与后续统计都会系统性偏移，而软件不会报错。此前本 lane 已收录 MOABB 的参考元数据修正，两条合起来说明「参考电极」这个老问题正在被工具链正面处理：宁可多问一句，也不要猜错。",
+      "brief_en": "Squiggly, the open web EEG assessment platform (19 channels, eyes-open/closed), added two clinically-minded features on Nov 15: detect the reference used at recording from the file and let users choose the analysis reference, plus show when a recording was made. A mismatched reference silently shifts alpha power and topography — same theme as MOABB's metadata fix.",
       "tags": [
-        "hnn-core",
-        "circuit-model",
-        "erp",
-        "gui",
-        "bugfix"
+        "squiggly",
+        "reference",
+        "eeg",
+        "clinical",
+        "metadata"
       ],
-      "raw_excerpt": "Commits 2026-11-13: \"[MRG] ENH new argument add_erp_drives to neymotin_2020_model (#1340)\" 20:54Z; \"[MRG] FIX GUI: data figure Add plot follows simulation/experimental drop[down]\" 19:53Z.",
-      "fetched_at": "2026-11-13T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-15: \"feat(reference): detect the recorded reference, choose the analysis refe[rence]\" (925bf3f697) 02:39Z; \"feat(recordings): show when a recording was made, when the file says\" (af02fac029) 03:36Z.",
+      "fetched_at": "2026-11-15T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "jonescompneurolab/hnn-core#1340",
-      "author_handle": "jonescompneurolab",
+      "upstream_id": "alexdni/squiggly@925bf3f697",
+      "author_handle": "alexdni",
       "metrics": {
         "play": null,
-        "like": 83,
+        "like": 204,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "参考错配会静默改变功率与地形图；从文件检测参考比让用户猜可靠。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MOABB 从数据集源头填充并修正 EEG 参考与真值元数据",
+      "title_en": "MOABB Fills and Corrects EEG Reference and Ground Metadata from Dataset Sources",
+      "bullets_zh": [
+        "提交 `1e23b5f60e`：**从数据集来源填充并修正 EEG 参考（reference）与 ground 元数据**——基准平台的元数据错了，所有下游比较都继承错误。",
+        "与前一条 Squiggly 同一天出现：「参考电极」这个老问题正被工具链正面处理——在加载器层面修一次，胜过每篇论文各自打补丁。",
+        "对用 MOABB 跑基准的团队：升级后重跑关键对比，此前依赖默认参考假设的结果可能需要重新核对。"
+      ],
+      "bullets_en": [
+        "Commit 1e23b5f60e fills and corrects EEG reference and ground metadata from dataset sources — wrong metadata in a benchmark platform propagates into every downstream comparison.",
+        "Appearing the same day as Squiggly's reference detection, it shows tooling finally addressing referencing head-on: one fix at the loader beats per-paper patches.",
+        "Rerun key comparisons after upgrading; results that assumed default referencing may need rechecking."
+      ],
+      "url": "https://github.com/NeuroTechX/moabb/commit/1e23b5f60e",
+      "published": "2026-11-14T22:08:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MOABB 合并提交 `1e23b5f60e`：**从数据集来源填充并修正 EEG 的参考（reference）与 ground 元数据**。基准平台的元数据错误会传染给所有用它的人——每个下游研究都继承同一个错，而且没人报错。它与同一天 Squiggly 的「检测记录参考」形成呼应：本 lane 近两周已收录多起「静默改变结果」的修复（单位、标度、滤波参数、并列计数），现在轮到**参考电极**。对用 MOABB 跑基准的团队，升级后应重跑关键对比；此前默认「数据自带正确参考」的结果值得抽查。",
+      "brief_en": "MOABB merged commit 1e23b5f60e filling and correcting EEG reference and ground metadata from dataset sources. Wrong metadata in a benchmark platform propagates into every downstream comparison with no error raised — echoing Squiggly's reference detection the same day. Rerun key comparisons after upgrading.",
+      "tags": [
+        "moabb",
+        "reference",
+        "metadata",
+        "benchmark",
+        "loader"
+      ],
+      "raw_excerpt": "Commit 1e23b5f60e, 2026-11-14T22:08Z: \"Fill and correct EEG reference and ground metadata from dataset sources\". Repo: NeuroTechX/moabb.",
+      "fetched_at": "2026-11-15T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "NeuroTechX/moabb@1e23b5f60e",
+      "author_handle": "neurotechx",
+      "metrics": {
+        "play": null,
+        "like": 1085,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "可参数化外部 ERP 驱动做对照，同时修 GUI「图的不是选的数据」。"
+      "why_valuable": "基准平台的参考元数据错误会传染所有下游比较，在加载器修一次最划算。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "mne-denoise 给 ZapLine 加 line_bandwidth：只削工频那条带",
+      "title_en": "mne-denoise Adds line_bandwidth to ZapLine, Subtracting Only the Line Band",
+      "bullets_zh": [
+        "#148：ZapLine（工频干扰去除）新增 **`line_bandwidth`** 参数，可**只减去工频所在的那条窄带**，而不是固定宽度的陷波。",
+        "与本周滤波教程互补：数据实际 60 Hz 而脚本默认 50、或只想削基波不动邻近频段时，**可控带宽＝该删的删、该留的留**。",
+        "对谐波密集的高导联场景，窄带处理能显著减少对 δ/θ 功率的连带损伤。"
+      ],
+      "bullets_en": [
+        "#148 adds line_bandwidth to ZapLine so only the narrow band containing the line frequency is subtracted, instead of a fixed-width notch.",
+        "Complementary to this week's filtering tutorial: when data was recorded at 60 Hz but scripts default to 50, or you want the fundamental without neighbours, controllable bandwidth removes what should go and keeps what should stay.",
+        "For harmonic-heavy high-density recordings, narrow-band handling reduces collateral damage to delta/theta power."
+      ],
+      "url": "https://github.com/mne-tools/mne-denoise/pull/148",
+      "published": "2026-11-15T02:29:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "mne-denoise 合并 #148：**ZapLine 新增 `line_bandwidth` 参数**，可以**只减去工频所在的那条窄带**，而不是按固定宽度陷波。这与本周中文滤波教程（60 Hz vs 50 Hz、滤波器长度）正好互补：现实里「数据是 60 Hz 采集的但脚本写了 50」与「想削基波但不碰邻近的 α 频段」都要求**带宽可控**——固定宽陷波会连带吃掉有用的低频功率，窄带处理则把损伤压到最小。对高密度、谐波丰富的记录（含肌电污染者），建议对比新旧两种设置的功率谱后再定带宽；参数化本身就是把「凭感觉选陷波宽度」变成可声明、可复现的配置。",
+      "brief_en": "mne-denoise merged #148 adding line_bandwidth to ZapLine, subtracting only the narrow band containing the line frequency instead of a fixed-width notch. Complementary to this week's filtering tutorial: when data was recorded at 60 Hz but scripts default to 50, or you want the fundamental without neighbouring bands, controllable bandwidth minimises collateral damage to delta/theta power.",
+      "tags": [
+        "mne-denoise",
+        "zapline",
+        "notch",
+        "line-noise",
+        "bandwidth"
+      ],
+      "raw_excerpt": "Commit 2330a019ec, 2026-11-15T02:29Z: \"ENH: add line_bandwidth to ZapLine to subtract only the line band (#148)\". Repo: mne-tools/mne-denoise.",
+      "fetched_at": "2026-11-15T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-denoise#148",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 31,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "可控带宽避免固定陷波连带削掉有用功率，把凭感觉选宽度变成可复现配置。"
+    },
+    {
+      "type": "Tutorial",
+      "level": "Beginner",
+      "title_zh": "中文科普的克制样本：从 Berger 1929 到脑—脊髓接口，每个历史节点附 DOI",
+      "title_en": "A Restrained Chinese Explainer: From Berger 1929 to Brain-Spine Interfaces, Every Node Cited by DOI",
+      "bullets_zh": [
+        "B站「言禾99」科普系列第 01 期（8 分 25 秒）：沿 **Berger 1929 → Vidal 1973 → Farwell 1988** 等精选历史节点，讲字符选择、光标、机械臂、触觉反馈、书写与言语解码，再到脑—脊髓接口与居家使用。",
+        "简介为每个节点附 **DOI**（如 doi.org/10.1007/BF01797193），并声明「动画为原理示意」「具体研究多为单名或少数参与者的人体研究」「不构成医疗建议」。",
+        "在中文 BCI 内容里，这种「引用＋局限性声明」的克制写法罕见，适合作入门第一课。"
+      ],
+      "bullets_en": [
+        "Episode 01 of a Chinese explainer series (8.5 min) walks curated nodes from Berger 1929 through Vidal 1973 and Farwell 1988 to spelling, cursors, arms, tactile feedback, handwriting and speech decoding, brain-spine interfaces and home use.",
+        "The description cites each node by DOI (e.g. doi.org/10.1007/BF01797193) and states animations are schematic, studies often involve one or few participants, and it is not medical advice.",
+        "Such citation-plus-caveats restraint is rare in Chinese BCI content — suitable as a first lesson."
+      ],
+      "url": "https://www.bilibili.com/video/BV1BL456kEr9/",
+      "published": "2026-11-15T06:52:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「言禾99」的科普系列第 01 期（8 分 25 秒）：从 **1929 年 Berger 的人脑电研究**讲起，经选字符、移动光标、操控机械臂、触觉反馈、书写与言语解码，到**脑—脊髓接口和居家使用**，最后把不同接口放进同一张地图比较记录位置与作用。它最值得收录的不是内容本身，而是**写法**：简介为每个历史节点附 **DOI**（Berger 1929、Vidal 1973、Farwell 1988…），并主动声明「动画为原理示意」「具体研究多为单名或少数参与者的人体研究，不代表所有使用者都能获得相同效果」「不构成医疗建议」。在中文 BCI 内容普遍夸大「读心」的当下，这种带引用与局限性声明的克制科普是稀缺样本。",
+      "brief_en": "Episode 01 of a Chinese explainer (8.5 min): from Berger's 1929 human EEG through spelling, cursors, arms, tactile feedback and speech decoding to brain-spine interfaces and home use — with DOIs for each historical node and explicit caveats that animations are schematic, studies often involve one or few participants, and it is not medical advice.",
+      "tags": [
+        "science-communication",
+        "history",
+        "doi",
+        "caveats",
+        "chinese"
+      ],
+      "raw_excerpt": "「脑机接口能直接读出全部思想吗？从 1929 年人的脑电研究，到选字符、移动光标、操控机械臂、触觉反馈、书写与言语解码，再到脑—脊髓接口和居家使用…动画为原理示意，历史节点为精选。具体研究多为单名或少数参与者的人体研究，不代表所有使用者都能获得相同效果。本视频为科普，不构成医疗建议。」参考文献：1. Berger 1929: doi.org/10.1007/BF01797193；2. Vidal 1973: doi.org/10.1146/annurev.bb.02.060173.001105；3. Farwell 1988…",
+      "fetched_at": "2026-11-15T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1BL456kEr9",
+      "author_handle": "言禾99",
+      "metrics": {
+        "play": null,
+        "like": 118,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "逐节点附 DOI 并主动声明局限，是中文 BCI 科普里罕见的克制写法。"
     }
   ],
   "stats": {
-    "fetched": 132,
-    "prefiltered": 96,
-    "llm_rows": 16,
-    "kept": 6,
+    "fetched": 136,
+    "prefiltered": 97,
+    "llm_rows": 18,
+    "kept": 7,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 2
+    "conflicts_dropped": 3
   }
 }
