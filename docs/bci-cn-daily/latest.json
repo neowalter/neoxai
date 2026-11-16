@@ -1,154 +1,152 @@
 {
-  "date": "2026-11-16",
-  "generated_at": "2026-11-16T00:06:32.176Z",
-  "item_count": 7,
+  "date": "2026-11-17",
+  "generated_at": "2026-11-16T23:00:48.621Z",
+  "item_count": 4,
   "types": {
-    "Project": 5,
-    "Benchmark": 1,
-    "Tutorial": 1
+    "Project": 4
   },
   "highlights": [
     {
-      "title_zh": "EEGPrep 接入 pAMICA：默认 float64＋单线程＋固定种子，同种子权重逐位一致",
-      "title_en": "EEGPrep Adds a pAMICA Backend: float64, One Thread and Seed 5489 Give Bit-Identical Weights",
-      "url": "https://github.com/sccn/eegprep/pull/617",
-      "brief": "EEGPrep 合并 #617：`pop_runica(EEG, icatype='pamica')` 经新的 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**做分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录到 `EEG['etc']['pamica']`。真正的价值在**确定性**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（作者用 `numpy.array_equal` 写了测试）；`icaweights @ icasphere` 即 pAMICA 实际施加的解混矩阵，语义也写清了。ICA 结果长期「可复现但难逐位复现」，而它又常是后续剔除与伪迹分类的前提——把随机性关进笼子、再列出未映射的参数而不是静默忽略，这两件事合起来才让 ICA 环节真正可审计。"
+      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
+      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
+      "url": "https://github.com/GWeindel/hmp/pull/338",
+      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。"
     },
     {
-      "title_zh": "braindecode 修 LUNA 增广库：GPU 上 DC 与奈奎斯特频率的相位处理与 CPU 不一致",
-      "title_en": "braindecode Fixes LUNA Augmentation: GPU DC and Nyquist Phase Differed from CPU",
-      "url": "https://github.com/braindecode/braindecode/pull/1566",
-      "brief": "braindecode 在 11-15 连修 LUNA 增广库三个问题，最关键的是 **#1566「GPU 上的 DC 与奈奎斯特相位」**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不一致**——同一份数据、同一个种子，增广结果**因设备而异**，等于训练输入被静默改变。这类 bug 的恶劣之处在于症状是「换台机器复现不出来」，几乎没人会怀疑到增广层的频域实现。同批还有 **#1568 `reset_head`**（迁移学习时干净地重置分类头）与 **#1565 `return_features`**。对用 GPU 跑 EEG 深度学习的团队：升级后建议做一次 CPU/GPU 前向一致性抽查，尤其涉及卷积边界与频域操作时。"
+      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
+      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
+      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
+      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。"
     },
     {
-      "title_zh": "EEGSRBench：脑电空间超分辨率基准——七个数据集、冻结协议、可复现评测",
-      "title_en": "EEGSRBench: A Benchmark for EEG Spatial Super-Resolution With Frozen Protocols Over Seven Datasets",
-      "url": "https://github.com/DhrLhj/EEGSRBench",
-      "brief": "新建仓库 EEGSRBench v0.1.0（2026-11-14）：为 **EEG 空间超分辨率**建立基准——基于**七个既有数据集**构建**冻结协议**，提供固定样本分配、电极布局、参考方法与评估器；README 明确「原始录音归各提供方所有，本仓库只贡献数据集准备、固定分配与评测」。这个定位很清醒：空间超分辨率是干电极、低通道可穿戴设备的核心瓶颈，各家论文都在报「恢复了多少通道、提升了多少下游准确率」，但**样本划分与评估器不统一时这些数字互不可比**。冻结协议＋保留实验记录正是把该方向拉进可比较轨道的第一步；采用时注意其 v0.1 阶段方法覆盖仍有限。"
+      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
+      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
+      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
+      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-16.md",
+  "github_path": "docs/bci-cn-daily/2026-11-17.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "EEGPrep 接入 pAMICA：默认 float64＋单线程＋固定种子，同种子权重逐位一致",
-      "title_en": "EEGPrep Adds a pAMICA Backend: float64, One Thread and Seed 5489 Give Bit-Identical Weights",
+      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
+      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
       "bullets_zh": [
-        "#617：`pop_runica(EEG, icatype='pamica')` 经新 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录进 `EEG['etc']['pamica']`。",
-        "**确定性是核心**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（用 `numpy.array_equal` 测试）。",
-        "另列出**未映射的 runamica15 参数**而非静默忽略——哪些设置没生效一目了然。"
+        "#338：**`np.linalg.svd` 返回的已是特征值**（此场景奇异值＝特征值），代码却又做了一次特征值计算——**对已平方过的值再平方**。",
+        "后果具体：**`n_comp=0.95` 这类按方差选成分的模式下，大成分的贡献被系统性高估**，等于少选了本应保留的成分。",
+        "hmp 是 EEG/MEG 解码里常用的层次多模式回归包；「解释方差」直接决定降维结果，属于会传染下游的数值错误。"
       ],
       "bullets_en": [
-        "#617 lets pop_runica(icatype='pamica') decompose with pAMICA's PyTorch engine through the new eeg_pamica, fills the EEGLAB ICA fields and records the run in EEG['etc']['pamica'].",
-        "Determinism is central: float64 on CPU, one thread and seed 5489 by default, so the same seed gives identical weights, tested with numpy.array_equal.",
-        "Unmapped runamica15 settings are listed rather than silently ignored."
+        "#338 notes np.linalg.svd already returns eigenvalues (singular equal eigenvalue here), yet the code computed them again — squaring values that were already squared.",
+        "The concrete effect: with n_comp=0.95, explained variance of big components was overestimated, so dimension reduction kept fewer components than intended.",
+        "hmp is a standard hierarchical multi-pattern regression toolbox in EEG/MEG decoding; explained variance drives component selection, so the error propagated downstream."
       ],
-      "url": "https://github.com/sccn/eegprep/pull/617",
-      "published": "2026-11-14T21:05:00Z",
+      "url": "https://github.com/GWeindel/hmp/pull/338",
+      "published": "2026-11-16T08:40:00Z",
       "source": "github",
       "language": "en",
-      "brief": "EEGPrep 合并 #617：`pop_runica(EEG, icatype='pamica')` 经新的 `eeg_pamica` 用 **pAMICA 的 PyTorch 引擎**做分解，回填 EEGLAB 的 ICA 字段，并把本次运行记录到 `EEG['etc']['pamica']`。真正的价值在**确定性**：默认在 CPU 上以 **float64、单线程、种子 5489** 拟合，同种子给出**逐位一致**的权重（作者用 `numpy.array_equal` 写了测试）；`icaweights @ icasphere` 即 pAMICA 实际施加的解混矩阵，语义也写清了。ICA 结果长期「可复现但难逐位复现」，而它又常是后续剔除与伪迹分类的前提——把随机性关进笼子、再列出未映射的参数而不是静默忽略，这两件事合起来才让 ICA 环节真正可审计。",
-      "brief_en": "EEGPrep merged #617: pop_runica(icatype='pamica') decomposes with pAMICA's PyTorch engine via the new eeg_pamica, fills EEGLAB ICA fields and records the run in EEG['etc']['pamica']. The core is determinism — float64 on CPU, one thread, seed 5489 by default, so the same seed gives bit-identical weights (tested with numpy.array_equal) — and unmapped runamica15 settings are listed, not ignored.",
+      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。",
+      "brief_en": "hmp merged #338: np.linalg.svd already returns eigenvalues here, but the code recomputed them — squaring values that were already squared. The PR states explained variance of big components was overestimated when n_comp=0.95, so dimension reduction silently kept fewer components. Published hmp results with n_comp<1 deserve a rerun.",
       "tags": [
-        "eegprep",
-        "pamica",
-        "ica",
-        "determinism",
-        "seed"
+        "hmp",
+        "explained-variance",
+        "numerical-bug",
+        "eeg-meg",
+        "dimension-reduction"
       ],
-      "raw_excerpt": "PR #617: \"Add pop_runica icatype pamica through eeg_pamica — `pop_runica(EEG, icatype='pamica')` decomposes with pAMICA's PyTorch engine through the new `eeg_pamica`, fills the EEGLAB ICA fields, and records the run in `EEG['etc']['pamica']`. The fit runs in float64 on the CPU with one thread and seed 5489 by default, so the same seed gives identical weights (tested with `numpy.array_equal`)…\"; commit \"List the unmapped runamica15 settings\".",
-      "fetched_at": "2026-11-15T23:55:00Z",
+      "raw_excerpt": "PR #338: \"`np.linalg.svd` already returns eigenvalues (singular/eigenvalue are equal in this case) so removed additional eigenvalue calculation… Affected cases where `n_comp=0.95`, where due to squaring the values the explained variance of big components was overestimated.\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "sccn/eegprep#617",
-      "author_handle": "sccn",
+      "upstream_id": "GWeindel/hmp#338",
+      "author_handle": "GWeindel",
       "metrics": {
         "play": null,
-        "like": 38,
+        "like": 60,
         "collect": null,
         "comment": null
       },
-      "quality_score": 9,
-      "why_valuable": "同种子逐位一致的 ICA＋列出未映射参数，让最易受随机性影响的环节可审计。"
+      "quality_score": 8,
+      "why_valuable": "解释方差决定成分选择，高估即静默降维不足；已发表结果需重跑 n_comp<1。"
     },
     {
       "type": "Project",
-      "level": "Advanced",
-      "title_zh": "braindecode 修 LUNA 增广库：GPU 上 DC 与奈奎斯特频率的相位处理与 CPU 不一致",
-      "title_en": "braindecode Fixes LUNA Augmentation: GPU DC and Nyquist Phase Differed from CPU",
+      "level": "Intermediate",
+      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
+      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
       "bullets_zh": [
-        "**#1566**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不同**——同一份数据增广后**因设备而异**，训练输入被静默改变。",
-        "同批 **#1568 `reset_head`**（迁移学习时重置分类头）与 **#1565 `return_features`**（返回中间特征）。",
-        "增广库是「隐形的数据管线」：设备相关的数值差异等于「同种子不同数据」，排查成本极高。"
+        "#1709：受试者只给 `participant_age` 而换算出的**生日超出支持范围（或 n/a、nan、inf）时，此前整个读取会失败**。",
+        "修复策略克制：**生日留空、其余字段原样保留**；回归测试覆盖有效年龄、`n/a`、`nan`、`inf` 与越界年龄五种输入。",
+        "老年神经科学数据集常含超高龄受试者——一个边界换算错误会挡住整批数据的读取。"
       ],
       "bullets_en": [
-        "#1566 fixes LUNA handling DC offset and Nyquist-frequency phase differently on GPU than CPU, so augmented inputs silently depended on the device — same seed, different data.",
-        "The batch also adds #1568 reset_head for transfer learning and #1565 return_features to expose intermediate features.",
-        "Augmentation libraries are invisible data pipelines: device-dependent numerics mean identical seeds yield different training data."
+        "#1709 fixes reads failing outright when participant_age yields a birthday outside the supported range, or is n/a, nan or inf.",
+        "The fix leaves birthday unset and preserves all other participant fields; regression tests cover valid ages, n/a, nan, inf and out-of-range values.",
+        "Gerontology datasets routinely include very old participants, so one boundary conversion error blocked whole cohorts."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1566",
-      "published": "2026-11-15T19:54:00Z",
+      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
+      "published": "2026-11-16T20:05:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 11-15 连修 LUNA 增广库三个问题，最关键的是 **#1566「GPU 上的 DC 与奈奎斯特相位」**：LUNA 在 **GPU 上对直流分量与奈奎斯特频率的相位处理与 CPU 不一致**——同一份数据、同一个种子，增广结果**因设备而异**，等于训练输入被静默改变。这类 bug 的恶劣之处在于症状是「换台机器复现不出来」，几乎没人会怀疑到增广层的频域实现。同批还有 **#1568 `reset_head`**（迁移学习时干净地重置分类头）与 **#1565 `return_features`**。对用 GPU 跑 EEG 深度学习的团队：升级后建议做一次 CPU/GPU 前向一致性抽查，尤其涉及卷积边界与频域操作时。",
-      "brief_en": "braindecode landed three LUNA fixes on Nov 15. The key one is #1566: DC offset and Nyquist-frequency phase were handled differently on GPU than CPU, so augmented inputs silently depended on the device — same seed, different training data. Also #1568 reset_head for transfer learning and #1565 return_features. Spot-check CPU/GPU forward consistency after upgrading.",
+      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。",
+      "brief_en": "MNE-BIDS merged #1709: participant ages that cannot produce a valid birthday (out of range, n/a, nan, inf) previously broke reads outright; now the birthday is left unset and other fields preserved. Regression tests pin all five input kinds. Gerontology cohorts hit this boundary most often.",
       "tags": [
-        "braindecode",
-        "luna",
-        "augmentation",
-        "gpu",
-        "numerics"
+        "mne-bids",
+        "metadata",
+        "age",
+        "robustness",
+        "regression-tests"
       ],
-      "raw_excerpt": "Commits 2026-11-15: \"FIX LUNA: DC and Nyquist phase on GPU (#1566)\" (1e3f42589c) 19:54Z; \"LUNA: reset_head (#1568)\" 17:50Z; \"LUNA: return_features (#1565)\" 17:29Z.",
-      "fetched_at": "2026-11-15T23:55:00Z",
+      "raw_excerpt": "PR #1709: \"Keep BIDS reads working when participant ages cannot produce a valid birthday. The age fallback leaves birthday unset and preserves other participant fields… Validation: 98 read tests passed… The new regression covers valid ages, `n/a`, `nan`, `inf`, and an age that would put the birthday outside the supported da[te range]…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1566",
-      "author_handle": "braindecode",
+      "upstream_id": "mne-tools/mne-bids#1709",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 1342,
+        "like": 183,
         "collect": null,
         "comment": null
       },
-      "quality_score": 9,
-      "why_valuable": "增广层设备相关的数值差异＝同种子不同数据，症状极难归因。"
+      "quality_score": 8,
+      "why_valuable": "一个边界换算错误会挡住整批数据；给脏输入建回归集优于手改元数据。"
     },
     {
-      "type": "Benchmark",
-      "level": "Advanced",
-      "title_zh": "EEGSRBench：脑电空间超分辨率基准——七个数据集、冻结协议、可复现评测",
-      "title_en": "EEGSRBench: A Benchmark for EEG Spatial Super-Resolution With Frozen Protocols Over Seven Datasets",
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
+      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
       "bullets_zh": [
-        "新建仓库（2026-11-14）：为 **EEG 空间超分辨率**提供基准，基于**七个既有数据集**构建**冻结的评测协议**。",
-        "交付固定样本分配、电极布局、参考方法与评估器；明确声明**不拥有数据版权**，只贡献可复现的评测流程。",
-        "空间分辨率是干电极与低通道设备的核心瓶颈；没有统一基准，超分辨率的「提升」极易沦为自说自话。"
+        "新建仓库对（2026-11-16）：**干电极 8 通道头环硬件**＋ **Python SDK**：BrainFlow 传输、**OpenBCI 兼容**、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。",
+        "**诚实度罕见**：README 明写「**仓库内没有任何真实采集样本**，所有自动化测试仍跑在 `SYNTHETIC_BOARD` 上」，并附 PROVENANCE.md；明确非医疗器械、无任何诊断声明。",
+        "注意：硬件带 Kickstarter 众筹背景（演示视频在活动页），v0.1.0 实验阶段——关注但先别采购。"
       ],
       "bullets_en": [
-        "Created 2026-11-14, EEGSRBench v0.1.0 benchmarks EEG spatial super-resolution with reproducible protocols built from seven existing datasets.",
-        "It contributes fixed sample assignments, electrode layouts, reference methods and evaluators, explicitly claiming no data ownership — only the evaluation pipeline.",
-        "Spatial resolution is the core bottleneck for dry-electrode and low-channel devices; without a shared benchmark, claimed gains are hard to compare."
+        "Created 2026-11-16: dry-electrode 8-channel headset hardware plus a Python SDK with BrainFlow transport, OpenBCI compatibility, ring-buffered streaming, band power, artefact labelling and CSV/EDF/JSON export.",
+        "Rarely honest: the README states no raw capture is committed and every automated test runs on SYNTHETIC_BOARD, links PROVENANCE.md, and claims no medical use.",
+        "Caveat: Kickstarter-backed hardware with footage only on campaign pages; v0.1.0 experimental — watch, don't buy yet."
       ],
-      "url": "https://github.com/DhrLhj/EEGSRBench",
-      "published": "2026-11-14T09:49:00Z",
+      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
+      "published": "2026-11-16T16:41:00Z",
       "source": "github",
       "language": "en",
-      "brief": "新建仓库 EEGSRBench v0.1.0（2026-11-14）：为 **EEG 空间超分辨率**建立基准——基于**七个既有数据集**构建**冻结协议**，提供固定样本分配、电极布局、参考方法与评估器；README 明确「原始录音归各提供方所有，本仓库只贡献数据集准备、固定分配与评测」。这个定位很清醒：空间超分辨率是干电极、低通道可穿戴设备的核心瓶颈，各家论文都在报「恢复了多少通道、提升了多少下游准确率」，但**样本划分与评估器不统一时这些数字互不可比**。冻结协议＋保留实验记录正是把该方向拉进可比较轨道的第一步；采用时注意其 v0.1 阶段方法覆盖仍有限。",
-      "brief_en": "Created 2026-11-14, EEGSRBench v0.1.0 benchmarks EEG spatial super-resolution with frozen protocols over seven existing datasets: fixed sample assignments, electrode layouts, reference methods and evaluators, explicitly claiming no data ownership. Spatial resolution is the bottleneck for dry-electrode and low-channel devices; without shared splits and evaluators, claimed gains are incomparable.",
+      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。",
+      "brief_en": "Created 2026-11-16, BROADMIND pairs a dry-electrode 8-channel EEG headset with a Python SDK: BrainFlow transport, OpenBCI compatibility, streaming, band power, artefact labelling and CSV/EDF/JSON export. Its README states no raw capture is committed and all tests run on SYNTHETIC_BOARD, links PROVENANCE.md, claims no medical use — discipline consumer-EEG startups should copy.",
       "tags": [
-        "benchmark",
-        "super-resolution",
-        "spatial",
-        "frozen-protocol",
-        "datasets"
+        "dry-electrode",
+        "hardware",
+        "sdk",
+        "brainflow",
+        "openbci-compatible"
       ],
-      "raw_excerpt": "README: \"**A Benchmark for EEG Spatial Super-Resolution and Downstream Utility** — EEGSRBench v0.1.0 provides reproducible evaluation protocols built from **seven existing EEG datasets**. Original recordings belong to their providers. This repository contributes dataset-specific preparation, fixed sample assignments, electrode layouts, reference methods, evaluators and preserved experimental r[ecords]…\"",
-      "fetched_at": "2026-11-15T23:55:00Z",
+      "raw_excerpt": "README table: \"Transport | BrainFlow (OpenBCI-compatible open-source core)\"; \"Hardware tested | **No capture committed.** A real unit has recorded — footage is on the Kickstarter campaign page… but no raw capture is in this repository, so every automated test still runs on `SYNTHETIC_BOARD`\"; \"Clinical use | No. Not a medical device…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "DhrLhj/EEGSRBench",
-      "author_handle": "DhrLhj",
+      "upstream_id": "BROADMIND-BCI/broadmind-eeg",
+      "author_handle": "BROADMIND-BCI",
       "metrics": {
         "play": null,
         "like": 0,
@@ -156,188 +154,59 @@
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "冻结协议让超分辨率的『提升』第一次可跨论文比较，且明确不碰数据版权。"
+      "why_valuable": "把「哪些路径经真机验证」写进 README 表格，是消费级 EEG 硬件稀缺的诚实。"
     },
     {
       "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "Squiggly 检测文件里记录的参考电极并让用户选择分析参考",
-      "title_en": "Squiggly Detects the Recorded EEG Reference and Lets Users Choose the Analysis Reference",
+      "level": "Advanced",
+      "title_zh": "hnn-core：spike_train 驱动不再因未排序脉冲崩溃（补上与其余驱动一致的排序）",
+      "title_en": "hnn-core Stops spike_train Drives Crashing on Unsorted Spikes (Sorts Like Every Other Drive)",
       "bullets_zh": [
-        "网页版 EEG 评估平台（19 通道、睁眼/闭眼）新增：**从文件中检测记录时使用的参考**，再由用户选择分析用参考。",
-        "**参考错配是经典静默错误源**：把单极/相连耳参考当作平均参考读，α 功率与地形图都会系统性偏移且无报错。",
-        "另一提交在文件带时间信息时显示「记录于何时」——临床复核时「什么时候采的」和「怎么参考的」同样关键。"
+        "#1400：较新的 `spike_train` 驱动类型**创建时没有预排序脉冲**，喂入未排序数据时模拟直接崩溃（pytest 实测触发）。",
+        "修复让该驱动的脉冲**与所有其他驱动类型一样排序**，并补回归测试。",
+        "典型「新功能引入的不一致」：同一概念在旧路径有约定、新路径漏了——外部脉冲数据一进来就炸。"
       ],
       "bullets_en": [
-        "The web EEG assessment platform (19 channels, eyes-open/closed) now detects the reference used at recording from the file and lets users choose the analysis reference.",
-        "A mismatched reference is a classic silent error: reading linked-ear data as average-referenced shifts alpha power and topography with no warning.",
-        "Another commit surfaces when a recording was made when the file says so — timing matters for clinical review as much as referencing."
+        "#1400 fixes the relatively new spike_train drive type, which never pre-sorted spikes at creation; unsorted data crashed simulations outright, as pytest runs showed.",
+        "The fix sorts this drive's spikes exactly like all other drive types and adds regression tests.",
+        "A classic inconsistency introduced by a new feature: an old-path convention silently missing from the new one, exploding on external spike data."
       ],
-      "url": "https://github.com/alexdni/squiggly/commit/925bf3f697",
-      "published": "2026-11-15T02:39:00Z",
+      "url": "https://github.com/jonescompneurolab/hnn-core/pull/1400",
+      "published": "2026-11-16T18:48:00Z",
       "source": "github",
       "language": "en",
-      "brief": "Squiggly（开源网页 EEG 评估平台，19 通道、支持睁眼/闭眼对比）在 11-15 加了两个很「临床」的功能：**从文件里检测记录时使用的参考电极**，再由用户选择分析用参考；以及当文件带时间信息时显示「这次记录发生于何时」。第一条尤其重要——**参考错配是 EEG 最经典的静默错误**：把相连耳/单极参考的数据按平均参考去解读，α 功率、地形图与后续统计都会系统性偏移，而软件不会报错。此前本 lane 已收录 MOABB 的参考元数据修正，两条合起来说明「参考电极」这个老问题正在被工具链正面处理：宁可多问一句，也不要猜错。",
-      "brief_en": "Squiggly, the open web EEG assessment platform (19 channels, eyes-open/closed), added two clinically-minded features on Nov 15: detect the reference used at recording from the file and let users choose the analysis reference, plus show when a recording was made. A mismatched reference silently shifts alpha power and topography — same theme as MOABB's metadata fix.",
+      "brief": "hnn-core 合并 #1400：较新加入的 `spike_train` 驱动类型**在创建时没有对脉冲预排序**，而其余所有驱动都会排序——喂入未排序的外部脉冲序列时模拟直接崩溃（贡献者用 pytest 复现）。修复即「补上与其他驱动一致的排序」＋回归测试。这条是教科书级的**新功能引入不一致**：约定只存在于旧代码路径里，新类型漏实现，症状却是离用户很远的深处崩溃。对做神经回路仿真、往 HNN 喂自己 spike 数据的团队：升级前把脉冲数组先 `np.sort` 一遍即可绕过；升级后值得抽查一次排序前后结果是否一致——「隐式约定」类 bug 常不止一处。",
+      "brief_en": "hnn-core merged #1400: the newer spike_train drive never pre-sorted spikes at creation, unlike every other drive type, so unsorted external spike data crashed simulations (reproduced via pytest). The fix sorts consistently and adds regression tests — a textbook new-feature inconsistency where conventions live only in old code paths.",
       "tags": [
-        "squiggly",
-        "reference",
-        "eeg",
-        "clinical",
-        "metadata"
+        "hnn-core",
+        "spike-train",
+        "sorting",
+        "crash-fix",
+        "regression"
       ],
-      "raw_excerpt": "Commits 2026-11-15: \"feat(reference): detect the recorded reference, choose the analysis refe[rence]\" (925bf3f697) 02:39Z; \"feat(recordings): show when a recording was made, when the file says\" (af02fac029) 03:36Z.",
-      "fetched_at": "2026-11-15T23:55:00Z",
+      "raw_excerpt": "PR #1400: \"for our relatively new `spike_train` drive type, there was no pre-sorting of the spikes at drive-creation-time. This is a bug, and when pytest/etc. would try to run a simulation with spike train data that is unsorted, pytest would actually crash. This fixes `_drive_cell_event_times` so that the spikes from this drive type are sorted just like those from all other drive types…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "alexdni/squiggly@925bf3f697",
-      "author_handle": "alexdni",
+      "upstream_id": "jonescompneurolab/hnn-core#1400",
+      "author_handle": "jonescompneurolab",
       "metrics": {
         "play": null,
-        "like": 204,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "参考错配会静默改变功率与地形图；从文件检测参考比让用户猜可靠。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "MOABB 从数据集源头填充并修正 EEG 参考与真值元数据",
-      "title_en": "MOABB Fills and Corrects EEG Reference and Ground Metadata from Dataset Sources",
-      "bullets_zh": [
-        "提交 `1e23b5f60e`：**从数据集来源填充并修正 EEG 参考（reference）与 ground 元数据**——基准平台的元数据错了，所有下游比较都继承错误。",
-        "与前一条 Squiggly 同一天出现：「参考电极」这个老问题正被工具链正面处理——在加载器层面修一次，胜过每篇论文各自打补丁。",
-        "对用 MOABB 跑基准的团队：升级后重跑关键对比，此前依赖默认参考假设的结果可能需要重新核对。"
-      ],
-      "bullets_en": [
-        "Commit 1e23b5f60e fills and corrects EEG reference and ground metadata from dataset sources — wrong metadata in a benchmark platform propagates into every downstream comparison.",
-        "Appearing the same day as Squiggly's reference detection, it shows tooling finally addressing referencing head-on: one fix at the loader beats per-paper patches.",
-        "Rerun key comparisons after upgrading; results that assumed default referencing may need rechecking."
-      ],
-      "url": "https://github.com/NeuroTechX/moabb/commit/1e23b5f60e",
-      "published": "2026-11-14T22:08:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MOABB 合并提交 `1e23b5f60e`：**从数据集来源填充并修正 EEG 的参考（reference）与 ground 元数据**。基准平台的元数据错误会传染给所有用它的人——每个下游研究都继承同一个错，而且没人报错。它与同一天 Squiggly 的「检测记录参考」形成呼应：本 lane 近两周已收录多起「静默改变结果」的修复（单位、标度、滤波参数、并列计数），现在轮到**参考电极**。对用 MOABB 跑基准的团队，升级后应重跑关键对比；此前默认「数据自带正确参考」的结果值得抽查。",
-      "brief_en": "MOABB merged commit 1e23b5f60e filling and correcting EEG reference and ground metadata from dataset sources. Wrong metadata in a benchmark platform propagates into every downstream comparison with no error raised — echoing Squiggly's reference detection the same day. Rerun key comparisons after upgrading.",
-      "tags": [
-        "moabb",
-        "reference",
-        "metadata",
-        "benchmark",
-        "loader"
-      ],
-      "raw_excerpt": "Commit 1e23b5f60e, 2026-11-14T22:08Z: \"Fill and correct EEG reference and ground metadata from dataset sources\". Repo: NeuroTechX/moabb.",
-      "fetched_at": "2026-11-15T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb@1e23b5f60e",
-      "author_handle": "neurotechx",
-      "metrics": {
-        "play": null,
-        "like": 1085,
+        "like": 83,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "基准平台的参考元数据错误会传染所有下游比较，在加载器修一次最划算。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "mne-denoise 给 ZapLine 加 line_bandwidth：只削工频那条带",
-      "title_en": "mne-denoise Adds line_bandwidth to ZapLine, Subtracting Only the Line Band",
-      "bullets_zh": [
-        "#148：ZapLine（工频干扰去除）新增 **`line_bandwidth`** 参数，可**只减去工频所在的那条窄带**，而不是固定宽度的陷波。",
-        "与本周滤波教程互补：数据实际 60 Hz 而脚本默认 50、或只想削基波不动邻近频段时，**可控带宽＝该删的删、该留的留**。",
-        "对谐波密集的高导联场景，窄带处理能显著减少对 δ/θ 功率的连带损伤。"
-      ],
-      "bullets_en": [
-        "#148 adds line_bandwidth to ZapLine so only the narrow band containing the line frequency is subtracted, instead of a fixed-width notch.",
-        "Complementary to this week's filtering tutorial: when data was recorded at 60 Hz but scripts default to 50, or you want the fundamental without neighbours, controllable bandwidth removes what should go and keeps what should stay.",
-        "For harmonic-heavy high-density recordings, narrow-band handling reduces collateral damage to delta/theta power."
-      ],
-      "url": "https://github.com/mne-tools/mne-denoise/pull/148",
-      "published": "2026-11-15T02:29:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "mne-denoise 合并 #148：**ZapLine 新增 `line_bandwidth` 参数**，可以**只减去工频所在的那条窄带**，而不是按固定宽度陷波。这与本周中文滤波教程（60 Hz vs 50 Hz、滤波器长度）正好互补：现实里「数据是 60 Hz 采集的但脚本写了 50」与「想削基波但不碰邻近的 α 频段」都要求**带宽可控**——固定宽陷波会连带吃掉有用的低频功率，窄带处理则把损伤压到最小。对高密度、谐波丰富的记录（含肌电污染者），建议对比新旧两种设置的功率谱后再定带宽；参数化本身就是把「凭感觉选陷波宽度」变成可声明、可复现的配置。",
-      "brief_en": "mne-denoise merged #148 adding line_bandwidth to ZapLine, subtracting only the narrow band containing the line frequency instead of a fixed-width notch. Complementary to this week's filtering tutorial: when data was recorded at 60 Hz but scripts default to 50, or you want the fundamental without neighbouring bands, controllable bandwidth minimises collateral damage to delta/theta power.",
-      "tags": [
-        "mne-denoise",
-        "zapline",
-        "notch",
-        "line-noise",
-        "bandwidth"
-      ],
-      "raw_excerpt": "Commit 2330a019ec, 2026-11-15T02:29Z: \"ENH: add line_bandwidth to ZapLine to subtract only the line band (#148)\". Repo: mne-tools/mne-denoise.",
-      "fetched_at": "2026-11-15T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-denoise#148",
-      "author_handle": "mne-tools",
-      "metrics": {
-        "play": null,
-        "like": 31,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "可控带宽避免固定陷波连带削掉有用功率，把凭感觉选宽度变成可复现配置。"
-    },
-    {
-      "type": "Tutorial",
-      "level": "Beginner",
-      "title_zh": "中文科普的克制样本：从 Berger 1929 到脑—脊髓接口，每个历史节点附 DOI",
-      "title_en": "A Restrained Chinese Explainer: From Berger 1929 to Brain-Spine Interfaces, Every Node Cited by DOI",
-      "bullets_zh": [
-        "B站「言禾99」科普系列第 01 期（8 分 25 秒）：沿 **Berger 1929 → Vidal 1973 → Farwell 1988** 等精选历史节点，讲字符选择、光标、机械臂、触觉反馈、书写与言语解码，再到脑—脊髓接口与居家使用。",
-        "简介为每个节点附 **DOI**（如 doi.org/10.1007/BF01797193），并声明「动画为原理示意」「具体研究多为单名或少数参与者的人体研究」「不构成医疗建议」。",
-        "在中文 BCI 内容里，这种「引用＋局限性声明」的克制写法罕见，适合作入门第一课。"
-      ],
-      "bullets_en": [
-        "Episode 01 of a Chinese explainer series (8.5 min) walks curated nodes from Berger 1929 through Vidal 1973 and Farwell 1988 to spelling, cursors, arms, tactile feedback, handwriting and speech decoding, brain-spine interfaces and home use.",
-        "The description cites each node by DOI (e.g. doi.org/10.1007/BF01797193) and states animations are schematic, studies often involve one or few participants, and it is not medical advice.",
-        "Such citation-plus-caveats restraint is rare in Chinese BCI content — suitable as a first lesson."
-      ],
-      "url": "https://www.bilibili.com/video/BV1BL456kEr9/",
-      "published": "2026-11-15T06:52:00Z",
-      "source": "bilibili",
-      "language": "zh",
-      "brief": "B站「言禾99」的科普系列第 01 期（8 分 25 秒）：从 **1929 年 Berger 的人脑电研究**讲起，经选字符、移动光标、操控机械臂、触觉反馈、书写与言语解码，到**脑—脊髓接口和居家使用**，最后把不同接口放进同一张地图比较记录位置与作用。它最值得收录的不是内容本身，而是**写法**：简介为每个历史节点附 **DOI**（Berger 1929、Vidal 1973、Farwell 1988…），并主动声明「动画为原理示意」「具体研究多为单名或少数参与者的人体研究，不代表所有使用者都能获得相同效果」「不构成医疗建议」。在中文 BCI 内容普遍夸大「读心」的当下，这种带引用与局限性声明的克制科普是稀缺样本。",
-      "brief_en": "Episode 01 of a Chinese explainer (8.5 min): from Berger's 1929 human EEG through spelling, cursors, arms, tactile feedback and speech decoding to brain-spine interfaces and home use — with DOIs for each historical node and explicit caveats that animations are schematic, studies often involve one or few participants, and it is not medical advice.",
-      "tags": [
-        "science-communication",
-        "history",
-        "doi",
-        "caveats",
-        "chinese"
-      ],
-      "raw_excerpt": "「脑机接口能直接读出全部思想吗？从 1929 年人的脑电研究，到选字符、移动光标、操控机械臂、触觉反馈、书写与言语解码，再到脑—脊髓接口和居家使用…动画为原理示意，历史节点为精选。具体研究多为单名或少数参与者的人体研究，不代表所有使用者都能获得相同效果。本视频为科普，不构成医疗建议。」参考文献：1. Berger 1929: doi.org/10.1007/BF01797193；2. Vidal 1973: doi.org/10.1146/annurev.bb.02.060173.001105；3. Farwell 1988…",
-      "fetched_at": "2026-11-15T23:55:00Z",
-      "platform": "bilibili",
-      "content_type": "video",
-      "upstream_id": "BV1BL456kEr9",
-      "author_handle": "言禾99",
-      "metrics": {
-        "play": null,
-        "like": 118,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 7,
-      "why_valuable": "逐节点附 DOI 并主动声明局限，是中文 BCI 科普里罕见的克制写法。"
+      "why_valuable": "隐式约定只存在于旧路径，新驱动漏排序致深处崩溃；同类不一致常不止一处。"
     }
   ],
   "stats": {
-    "fetched": 136,
-    "prefiltered": 97,
-    "llm_rows": 18,
-    "kept": 7,
+    "fetched": 132,
+    "prefiltered": 98,
+    "llm_rows": 14,
+    "kept": 4,
     "llm_failed": false,
     "llm_skipped_batches": 0,
-    "conflicts_dropped": 3
+    "conflicts_dropped": 0
   }
 }

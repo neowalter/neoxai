@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-16T23:00:48.621Z",
+  "item_count": 4,
+  "types": {
+    "Project": 4
+  },
+  "highlights": [
+    {
+      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
+      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
+      "url": "https://github.com/GWeindel/hmp/pull/338",
+      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。"
+    },
+    {
+      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
+      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
+      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
+      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。"
+    },
+    {
+      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
+      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
+      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
+      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-17.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
+      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
+      "bullets_zh": [
+        "#338：**`np.linalg.svd` 返回的已是特征值**（此场景奇异值＝特征值），代码却又做了一次特征值计算——**对已平方过的值再平方**。",
+        "后果具体：**`n_comp=0.95` 这类按方差选成分的模式下，大成分的贡献被系统性高估**，等于少选了本应保留的成分。",
+        "hmp 是 EEG/MEG 解码里常用的层次多模式回归包；「解释方差」直接决定降维结果，属于会传染下游的数值错误。"
+      ],
+      "bullets_en": [
+        "#338 notes np.linalg.svd already returns eigenvalues (singular equal eigenvalue here), yet the code computed them again — squaring values that were already squared.",
+        "The concrete effect: with n_comp=0.95, explained variance of big components was overestimated, so dimension reduction kept fewer components than intended.",
+        "hmp is a standard hierarchical multi-pattern regression toolbox in EEG/MEG decoding; explained variance drives component selection, so the error propagated downstream."
+      ],
+      "url": "https://github.com/GWeindel/hmp/pull/338",
+      "published": "2026-11-16T08:40:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。",
+      "brief_en": "hmp merged #338: np.linalg.svd already returns eigenvalues here, but the code recomputed them — squaring values that were already squared. The PR states explained variance of big components was overestimated when n_comp=0.95, so dimension reduction silently kept fewer components. Published hmp results with n_comp<1 deserve a rerun.",
+      "tags": [
+        "hmp",
+        "explained-variance",
+        "numerical-bug",
+        "eeg-meg",
+        "dimension-reduction"
+      ],
+      "raw_excerpt": "PR #338: \"`np.linalg.svd` already returns eigenvalues (singular/eigenvalue are equal in this case) so removed additional eigenvalue calculation… Affected cases where `n_comp=0.95`, where due to squaring the values the explained variance of big components was overestimated.\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "GWeindel/hmp#338",
+      "author_handle": "GWeindel",
+      "metrics": {
+        "play": null,
+        "like": 60,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "解释方差决定成分选择，高估即静默降维不足；已发表结果需重跑 n_comp<1。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
+      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
+      "bullets_zh": [
+        "#1709：受试者只给 `participant_age` 而换算出的**生日超出支持范围（或 n/a、nan、inf）时，此前整个读取会失败**。",
+        "修复策略克制：**生日留空、其余字段原样保留**；回归测试覆盖有效年龄、`n/a`、`nan`、`inf` 与越界年龄五种输入。",
+        "老年神经科学数据集常含超高龄受试者——一个边界换算错误会挡住整批数据的读取。"
+      ],
+      "bullets_en": [
+        "#1709 fixes reads failing outright when participant_age yields a birthday outside the supported range, or is n/a, nan or inf.",
+        "The fix leaves birthday unset and preserves all other participant fields; regression tests cover valid ages, n/a, nan, inf and out-of-range values.",
+        "Gerontology datasets routinely include very old participants, so one boundary conversion error blocked whole cohorts."
+      ],
+      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
+      "published": "2026-11-16T20:05:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。",
+      "brief_en": "MNE-BIDS merged #1709: participant ages that cannot produce a valid birthday (out of range, n/a, nan, inf) previously broke reads outright; now the birthday is left unset and other fields preserved. Regression tests pin all five input kinds. Gerontology cohorts hit this boundary most often.",
+      "tags": [
+        "mne-bids",
+        "metadata",
+        "age",
+        "robustness",
+        "regression-tests"
+      ],
+      "raw_excerpt": "PR #1709: \"Keep BIDS reads working when participant ages cannot produce a valid birthday. The age fallback leaves birthday unset and preserves other participant fields… Validation: 98 read tests passed… The new regression covers valid ages, `n/a`, `nan`, `inf`, and an age that would put the birthday outside the supported da[te range]…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-bids#1709",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 183,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "一个边界换算错误会挡住整批数据；给脏输入建回归集优于手改元数据。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
+      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
+      "bullets_zh": [
+        "新建仓库对（2026-11-16）：**干电极 8 通道头环硬件**＋ **Python SDK**：BrainFlow 传输、**OpenBCI 兼容**、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。",
+        "**诚实度罕见**：README 明写「**仓库内没有任何真实采集样本**，所有自动化测试仍跑在 `SYNTHETIC_BOARD` 上」，并附 PROVENANCE.md；明确非医疗器械、无任何诊断声明。",
+        "注意：硬件带 Kickstarter 众筹背景（演示视频在活动页），v0.1.0 实验阶段——关注但先别采购。"
+      ],
+      "bullets_en": [
+        "Created 2026-11-16: dry-electrode 8-channel headset hardware plus a Python SDK with BrainFlow transport, OpenBCI compatibility, ring-buffered streaming, band power, artefact labelling and CSV/EDF/JSON export.",
+        "Rarely honest: the README states no raw capture is committed and every automated test runs on SYNTHETIC_BOARD, links PROVENANCE.md, and claims no medical use.",
+        "Caveat: Kickstarter-backed hardware with footage only on campaign pages; v0.1.0 experimental — watch, don't buy yet."
+      ],
+      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
+      "published": "2026-11-16T16:41:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。",
+      "brief_en": "Created 2026-11-16, BROADMIND pairs a dry-electrode 8-channel EEG headset with a Python SDK: BrainFlow transport, OpenBCI compatibility, streaming, band power, artefact labelling and CSV/EDF/JSON export. Its README states no raw capture is committed and all tests run on SYNTHETIC_BOARD, links PROVENANCE.md, claims no medical use — discipline consumer-EEG startups should copy.",
+      "tags": [
+        "dry-electrode",
+        "hardware",
+        "sdk",
+        "brainflow",
+        "openbci-compatible"
+      ],
+      "raw_excerpt": "README table: \"Transport | BrainFlow (OpenBCI-compatible open-source core)\"; \"Hardware tested | **No capture committed.** A real unit has recorded — footage is on the Kickstarter campaign page… but no raw capture is in this repository, so every automated test still runs on `SYNTHETIC_BOARD`\"; \"Clinical use | No. Not a medical device…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "BROADMIND-BCI/broadmind-eeg",
+      "author_handle": "BROADMIND-BCI",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把「哪些路径经真机验证」写进 README 表格，是消费级 EEG 硬件稀缺的诚实。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "hnn-core：spike_train 驱动不再因未排序脉冲崩溃（补上与其余驱动一致的排序）",
+      "title_en": "hnn-core Stops spike_train Drives Crashing on Unsorted Spikes (Sorts Like Every Other Drive)",
+      "bullets_zh": [
+        "#1400：较新的 `spike_train` 驱动类型**创建时没有预排序脉冲**，喂入未排序数据时模拟直接崩溃（pytest 实测触发）。",
+        "修复让该驱动的脉冲**与所有其他驱动类型一样排序**，并补回归测试。",
+        "典型「新功能引入的不一致」：同一概念在旧路径有约定、新路径漏了——外部脉冲数据一进来就炸。"
+      ],
+      "bullets_en": [
+        "#1400 fixes the relatively new spike_train drive type, which never pre-sorted spikes at creation; unsorted data crashed simulations outright, as pytest runs showed.",
+        "The fix sorts this drive's spikes exactly like all other drive types and adds regression tests.",
+        "A classic inconsistency introduced by a new feature: an old-path convention silently missing from the new one, exploding on external spike data."
+      ],
+      "url": "https://github.com/jonescompneurolab/hnn-core/pull/1400",
+      "published": "2026-11-16T18:48:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "hnn-core 合并 #1400：较新加入的 `spike_train` 驱动类型**在创建时没有对脉冲预排序**，而其余所有驱动都会排序——喂入未排序的外部脉冲序列时模拟直接崩溃（贡献者用 pytest 复现）。修复即「补上与其他驱动一致的排序」＋回归测试。这条是教科书级的**新功能引入不一致**：约定只存在于旧代码路径里，新类型漏实现，症状却是离用户很远的深处崩溃。对做神经回路仿真、往 HNN 喂自己 spike 数据的团队：升级前把脉冲数组先 `np.sort` 一遍即可绕过；升级后值得抽查一次排序前后结果是否一致——「隐式约定」类 bug 常不止一处。",
+      "brief_en": "hnn-core merged #1400: the newer spike_train drive never pre-sorted spikes at creation, unlike every other drive type, so unsorted external spike data crashed simulations (reproduced via pytest). The fix sorts consistently and adds regression tests — a textbook new-feature inconsistency where conventions live only in old code paths.",
+      "tags": [
+        "hnn-core",
+        "spike-train",
+        "sorting",
+        "crash-fix",
+        "regression"
+      ],
+      "raw_excerpt": "PR #1400: \"for our relatively new `spike_train` drive type, there was no pre-sorting of the spikes at drive-creation-time. This is a bug, and when pytest/etc. would try to run a simulation with spike train data that is unsorted, pytest would actually crash. This fixes `_drive_cell_event_times` so that the spikes from this drive type are sorted just like those from all other drive types…\"",
+      "fetched_at": "2026-11-16T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "jonescompneurolab/hnn-core#1400",
+      "author_handle": "jonescompneurolab",
+      "metrics": {
+        "play": null,
+        "like": 83,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "隐式约定只存在于旧路径，新驱动漏排序致深处崩溃；同类不一致常不止一处。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 98,
+    "llm_rows": 14,
+    "kept": 4,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
