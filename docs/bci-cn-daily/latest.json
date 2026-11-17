@@ -1,210 +1,255 @@
 {
-  "date": "2026-11-17",
-  "generated_at": "2026-11-16T23:00:48.621Z",
-  "item_count": 4,
+  "date": "2026-11-18",
+  "generated_at": "2026-11-17T23:12:39.355Z",
+  "item_count": 5,
   "types": {
-    "Project": 4
+    "Project": 3,
+    "Tutorial": 1,
+    "News": 1
   },
   "highlights": [
     {
-      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
-      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
-      "url": "https://github.com/GWeindel/hmp/pull/338",
-      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。"
+      "title_zh": "braindecode 连修三个脑电基础模型：特征与分类头读错了张量（proj_out≠编码器输出）",
+      "title_en": "braindecode Fixes Three EEG Foundation Models: Features and Head Read proj_out, Not Encoder Output",
+      "url": "https://github.com/braindecode/braindecode/pull/1576",
+      "brief": "braindecode 在 11-17 连修三个脑电基础模型：**#1576 CSBrain、#1572 CBraMod 的 `features` 与分类头此前读的是 `proj_out` 投影输出而非编码器原始输出**——凡用这两个预训练模型提特征跑下游分类（正是基础模型论文的标准评估协议！），评的可能不是标称表征；**#1573 MEGGPT 的特征均值把 padding 步也平均进去**，变长输入下被稀释。同日 RFC #1574 提议对「预训练特征张量来源」做只读审计，点破要害：**checkpoint 能加载、形状对得上，不代表特征路径正确**。用 braindecode 预训练模型发表过结果的团队应立刻核对版本与所用张量；这也是给整个 EEG-FM 评估生态的提醒：特征提取接口需要「来源证明」类测试。"
     },
     {
-      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
-      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
-      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
-      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。"
+      "title_zh": "「AI帮你给脑电重参考」：用实测数据量化参考方式如何改变结果（−1.7 dB vs −3.5 dB）",
+      "title_en": "An AI-Guided Tutorial Quantifying How Referencing Changes EEG Results (−1.7 dB vs −3.5 dB)",
+      "url": "https://www.bilibili.com/video/BV1Rcsg6UEGn/",
+      "brief": "B站「有Li」的 13 分钟实操课，正中本 lane 连日收录的「参考电极静默错误」主题：脑电记录的是与参考电极之差，**换参考即换零点**。它在滤波后的 EEGMMIDB 数据上实测：64 导共享一个 **σ=38 µV 的共模成分（来自原参考电极）**，平均参考后 C3 标准差 **43→17 µV**；同一握拳任务 C3 μ 节律功率下降**原参考 −1.7 dB、平均参考 −3.5 dB——同一份数据、同一个任务，效应量差一倍多**。还点出常被忽略的代价：平均参考后各导之和恒为 0，**秩从 64 降到 63**（后续 ICA 必须考虑）。脚本由提示词指挥 AI 生成但结论全部实测。中文 EEG 教学里少见的「给数字不给口号」，方法学章节可直接引用其结论：参考方式必须写进论文。"
     },
     {
-      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
-      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
-      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
-      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。"
+      "title_zh": "MNE-Python 修 f_oneway 整数溢出：小整型 dtype 下 F 统计量算错",
+      "title_en": "MNE-Python Fixes Integer Overflow in f_oneway: Wrong F-Statistics on Small Int Dtypes",
+      "url": "https://github.com/mne-tools/mne-python/pull/14530",
+      "brief": "MNE-Python 合并 #14530：**`f_oneway`（方差分析）在 int8/int16 等小整型输入下整数溢出**，F 统计量与 p 值静默算错——而 MNE 的统计函数被大量 ERP/时频组分析直接调用，小整型又常见于未转换的原始导出格式。同日还合并 **#14532（SNIRF 接受 fNIRS 常见的「A.U.」单位写法）**与 **#14527（CTF 头文件 dd-mm-YYYY 日期解析）**：一天三条全是「数据解释类」修复，与本 lane 连日主题完全一致。用 MNE 跑过组统计的团队：核对输入 dtype（`raw.get_data().dtype`），必要时先 `astype(np.float64)`；已发表分析若用了未转换的小整型数据，值得重跑确认 F/p 未变。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-17.md",
+  "github_path": "docs/bci-cn-daily/2026-11-18.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "hmp 修解释方差计算：n_comp=0.95 时大成分的方差被平方运算高估",
-      "title_en": "hmp Fixes Explained Variance: Squaring Overestimated Big Components at n_comp=0.95",
+      "title_zh": "braindecode 连修三个脑电基础模型：特征与分类头读错了张量（proj_out≠编码器输出）",
+      "title_en": "braindecode Fixes Three EEG Foundation Models: Features and Head Read proj_out, Not Encoder Output",
       "bullets_zh": [
-        "#338：**`np.linalg.svd` 返回的已是特征值**（此场景奇异值＝特征值），代码却又做了一次特征值计算——**对已平方过的值再平方**。",
-        "后果具体：**`n_comp=0.95` 这类按方差选成分的模式下，大成分的贡献被系统性高估**，等于少选了本应保留的成分。",
-        "hmp 是 EEG/MEG 解码里常用的层次多模式回归包；「解释方差」直接决定降维结果，属于会传染下游的数值错误。"
+        "**#1576 CSBrain、#1572 CBraMod**：`features` 与分类头此前读的是 **`proj_out` 投影后的输出而非编码器原始输出**——用这两个预训练模型提特征做下游分类的人，评估的可能是「错的表征」。",
+        "**#1573 MEGGPT**：特征均值把 **padding 步也平均了进去**，变长输入下特征被稀释。",
+        "另有同日 RFC #1574（预训练特征张量来源只读审计）——社区已意识到「checkpoint 能加载≠特征路径正确」。"
       ],
       "bullets_en": [
-        "#338 notes np.linalg.svd already returns eigenvalues (singular equal eigenvalue here), yet the code computed them again — squaring values that were already squared.",
-        "The concrete effect: with n_comp=0.95, explained variance of big components was overestimated, so dimension reduction kept fewer components than intended.",
-        "hmp is a standard hierarchical multi-pattern regression toolbox in EEG/MEG decoding; explained variance drives component selection, so the error propagated downstream."
+        "#1576 CSBrain and #1572 CBraMod: features and the head read proj_out-projected output instead of raw encoder output — downstream users extracting features from these pretrained models may have evaluated the wrong representation.",
+        "#1573 MEGGPT averaged over padded steps in the feature mean, diluting features for variable-length inputs.",
+        "Same-day RFC #1574 proposes a read-only audit of pretrained feature tensor origins — checkpoint loading working does not mean the feature path is correct."
       ],
-      "url": "https://github.com/GWeindel/hmp/pull/338",
-      "published": "2026-11-16T08:40:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1576",
+      "published": "2026-11-17T13:31:00Z",
       "source": "github",
       "language": "en",
-      "brief": "hmp（EEG/MEG 解码常用的层次多模式回归包）合并 #338，修一个会传染下游的数值错误：**`np.linalg.svd` 在此场景返回的本就是特征值**（奇异值＝特征值），旧代码却又算了一次特征值——相当于**把已平方的值再平方**。PR 明确写出受影响情形：**用 `n_comp=0.95` 按解释方差选成分时，大成分的方差被高估**，于是更少的位置/通道被保留进模型，且没有任何报错。对用过 hmp 做空间-时间降维的已发表结果，这意味着其成分数选择可能偏保守；升级后重跑 `n_comp<1` 的分析值得列入复现清单。「重复平方」这类错误与本周 GPU/CPU 相位、参考错配同属「能跑、不报错、结论变」。",
-      "brief_en": "hmp merged #338: np.linalg.svd already returns eigenvalues here, but the code recomputed them — squaring values that were already squared. The PR states explained variance of big components was overestimated when n_comp=0.95, so dimension reduction silently kept fewer components. Published hmp results with n_comp<1 deserve a rerun.",
+      "brief": "braindecode 在 11-17 连修三个脑电基础模型：**#1576 CSBrain、#1572 CBraMod 的 `features` 与分类头此前读的是 `proj_out` 投影输出而非编码器原始输出**——凡用这两个预训练模型提特征跑下游分类（正是基础模型论文的标准评估协议！），评的可能不是标称表征；**#1573 MEGGPT 的特征均值把 padding 步也平均进去**，变长输入下被稀释。同日 RFC #1574 提议对「预训练特征张量来源」做只读审计，点破要害：**checkpoint 能加载、形状对得上，不代表特征路径正确**。用 braindecode 预训练模型发表过结果的团队应立刻核对版本与所用张量；这也是给整个 EEG-FM 评估生态的提醒：特征提取接口需要「来源证明」类测试。",
+      "brief_en": "braindecode fixed three EEG foundation models on Nov 17: CSBrain (#1576) and CBraMod (#1572) read proj_out-projected output instead of raw encoder output for features and head — standard downstream probes may have evaluated the wrong representation; MEGGPT (#1573) averaged padded steps. RFC #1574 proposes auditing feature tensor origins: loading a checkpoint doesn't prove the feature path.",
       "tags": [
-        "hmp",
-        "explained-variance",
-        "numerical-bug",
-        "eeg-meg",
-        "dimension-reduction"
+        "braindecode",
+        "foundation-models",
+        "csbrain",
+        "cbramod",
+        "meg-gpt"
       ],
-      "raw_excerpt": "PR #338: \"`np.linalg.svd` already returns eigenvalues (singular/eigenvalue are equal in this case) so removed additional eigenvalue calculation… Affected cases where `n_comp=0.95`, where due to squaring the values the explained variance of big components was overestimated.\"",
-      "fetched_at": "2026-11-16T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-17: \"FIX CSBrain: features and head read the encoder output, not proj_out (#1541, #1572) (#1576)\"; \"FIX CBraMod: features and head read the encoder output, not proj_out (#1541) (#1572)\"; \"FIX MEGGPT: skip padded steps in the feature mean (#1573)\"; RFC #1574: \"A released checkpoint may load most parameters but leave a feature-path pro[blem]…\"",
+      "fetched_at": "2026-11-17T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "GWeindel/hmp#338",
-      "author_handle": "GWeindel",
+      "upstream_id": "braindecode/braindecode#1576",
+      "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 60,
+        "like": 1342,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "解释方差决定成分选择，高估即静默降维不足；已发表结果需重跑 n_comp<1。"
+      "quality_score": 9,
+      "why_valuable": "基础模型标准评估协议读错张量，相关已发表结果需核对版本与来源证明。"
     },
     {
-      "type": "Project",
+      "type": "Tutorial",
       "level": "Intermediate",
-      "title_zh": "MNE-BIDS：年龄换算不出有效生日时不再报错，保留其余受试者字段",
-      "title_en": "MNE-BIDS Keeps Reading When Participant Ages Cannot Produce a Valid Birthday",
+      "title_zh": "「AI帮你给脑电重参考」：用实测数据量化参考方式如何改变结果（−1.7 dB vs −3.5 dB）",
+      "title_en": "An AI-Guided Tutorial Quantifying How Referencing Changes EEG Results (−1.7 dB vs −3.5 dB)",
       "bullets_zh": [
-        "#1709：受试者只给 `participant_age` 而换算出的**生日超出支持范围（或 n/a、nan、inf）时，此前整个读取会失败**。",
-        "修复策略克制：**生日留空、其余字段原样保留**；回归测试覆盖有效年龄、`n/a`、`nan`、`inf` 与越界年龄五种输入。",
-        "老年神经科学数据集常含超高龄受试者——一个边界换算错误会挡住整批数据的读取。"
+        "B站「有Li」13 分 15 秒实操课：在第 6 节滤波后的 **EEGMMIDB** 数据上做平均参考并重切片，用提示词指挥 AI 写脚本。",
+        "**量化到数字**：64 导共有 σ=38 µV 的共模成分（来自原参考电极），平均参考后 C3 由 43→17 µV；同一握拳任务 C3 μ 节律下降**原参考 −1.7 dB、平均参考 −3.5 dB**。",
+        "还讲了易被忽略的代价：**平均参考后 64 导之和恒为 0，秩从 64 变 63**——第 8 节 ICA 要用到。结论：参考方式必须写进方法学。"
       ],
       "bullets_en": [
-        "#1709 fixes reads failing outright when participant_age yields a birthday outside the supported range, or is n/a, nan or inf.",
-        "The fix leaves birthday unset and preserves all other participant fields; regression tests cover valid ages, n/a, nan, inf and out-of-range values.",
-        "Gerontology datasets routinely include very old participants, so one boundary conversion error blocked whole cohorts."
+        "A 13-minute hands-on lesson on filtered EEGMMIDB data from section 6, scripting via prompts with AI.",
+        "Quantified: a shared 38 µV-SD common-mode component comes from the original reference; average referencing drops C3 from 43 to 17 µV, and the same motor task yields −1.7 dB (original) vs −3.5 dB (average) mu suppression at C3.",
+        "Also the overlooked cost: after average referencing the 64 channels sum to zero, rank falls 64→63 — needed for ICA in section 8. Referencing must be stated in methods."
       ],
-      "url": "https://github.com/mne-tools/mne-bids/pull/1709",
-      "published": "2026-11-16T20:05:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "MNE-BIDS 合并 #1709：当 `participant_age` **换算不出有效生日**（超出支持日期范围，或值为 `n/a`/`nan`/`inf`）时，此前**整个 BIDS 读取直接失败**；修复后**生日留空、其余受试者字段原样保留**。回归测试把五种输入（有效年龄、n/a、nan、inf、越界年龄）全部钉住。这条对老年与临床队列尤其实际：超高龄受试者的年龄换算最容易踩边界，而「一个字段坏、整批读不了」会逼研究者手改元数据——那才是更大错误的来源。测试覆盖方式（从 bruAristimunha 的分支提取、98 个读取测试全过）也值得抄：给脏输入建回归集，比加防御性 try/except 体面得多。",
-      "brief_en": "MNE-BIDS merged #1709: participant ages that cannot produce a valid birthday (out of range, n/a, nan, inf) previously broke reads outright; now the birthday is left unset and other fields preserved. Regression tests pin all five input kinds. Gerontology cohorts hit this boundary most often.",
+      "url": "https://www.bilibili.com/video/BV1Rcsg6UEGn/",
+      "published": "2026-11-17T10:52:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「有Li」的 13 分钟实操课，正中本 lane 连日收录的「参考电极静默错误」主题：脑电记录的是与参考电极之差，**换参考即换零点**。它在滤波后的 EEGMMIDB 数据上实测：64 导共享一个 **σ=38 µV 的共模成分（来自原参考电极）**，平均参考后 C3 标准差 **43→17 µV**；同一握拳任务 C3 μ 节律功率下降**原参考 −1.7 dB、平均参考 −3.5 dB——同一份数据、同一个任务，效应量差一倍多**。还点出常被忽略的代价：平均参考后各导之和恒为 0，**秩从 64 降到 63**（后续 ICA 必须考虑）。脚本由提示词指挥 AI 生成但结论全部实测。中文 EEG 教学里少见的「给数字不给口号」，方法学章节可直接引用其结论：参考方式必须写进论文。",
+      "brief_en": "A 13-minute Chinese hands-on lesson squarely on this lane's recurring referencing theme: on filtered EEGMMIDB data, a shared 38 µV-SD common-mode component comes from the original reference; average referencing drops C3 SD 43→17 µV and mu suppression for the same task goes −1.7 dB vs −3.5 dB — effect size more than doubles by choice of reference. Also: rank falls 64→63, which ICA needs.",
       "tags": [
-        "mne-bids",
-        "metadata",
-        "age",
-        "robustness",
-        "regression-tests"
+        "referencing",
+        "eegmmidb",
+        "tutorial",
+        "ica",
+        "quantitative"
       ],
-      "raw_excerpt": "PR #1709: \"Keep BIDS reads working when participant ages cannot produce a valid birthday. The age fallback leaves birthday unset and preserves other participant fields… Validation: 98 read tests passed… The new regression covers valid ages, `n/a`, `nan`, `inf`, and an age that would put the birthday outside the supported da[te range]…\"",
-      "fetched_at": "2026-11-16T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "mne-tools/mne-bids#1709",
-      "author_handle": "mne-tools",
+      "raw_excerpt": "「共模成分：这份数据 64 个导联共有一个标准差 38 µV 的成分，来自原参考电极。做完平均参考，C3 的标准差从 43 µV 降到 17 µV。…一个容易忽略的代价：平均参考后 64 导之和恒为 0，数据的秩从 64 变成 63，第 8 节做 ICA 时要用到。参考方式会改变结果：同样的握拳任务，C3 的 μ 节律功率下降，原参考 −1.7 dB，平均参考 −3.5 dB。」",
+      "fetched_at": "2026-11-17T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1Rcsg6UEGn",
+      "author_handle": "有Li",
       "metrics": {
         "play": null,
-        "like": 183,
+        "like": 124,
         "collect": null,
         "comment": null
       },
-      "quality_score": 8,
-      "why_valuable": "一个边界换算错误会挡住整批数据；给脏输入建回归集优于手改元数据。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "BROADMIND：干电极 8 通道 EEG 新硬件栈，SDK 诚实声明「测试全跑 SYNTHETIC_BOARD」",
-      "title_en": "BROADMIND: A New Dry-Electrode 8-Channel EEG Stack Whose SDK Admits Tests Run on SYNTHETIC_BOARD",
-      "bullets_zh": [
-        "新建仓库对（2026-11-16）：**干电极 8 通道头环硬件**＋ **Python SDK**：BrainFlow 传输、**OpenBCI 兼容**、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。",
-        "**诚实度罕见**：README 明写「**仓库内没有任何真实采集样本**，所有自动化测试仍跑在 `SYNTHETIC_BOARD` 上」，并附 PROVENANCE.md；明确非医疗器械、无任何诊断声明。",
-        "注意：硬件带 Kickstarter 众筹背景（演示视频在活动页），v0.1.0 实验阶段——关注但先别采购。"
-      ],
-      "bullets_en": [
-        "Created 2026-11-16: dry-electrode 8-channel headset hardware plus a Python SDK with BrainFlow transport, OpenBCI compatibility, ring-buffered streaming, band power, artefact labelling and CSV/EDF/JSON export.",
-        "Rarely honest: the README states no raw capture is committed and every automated test runs on SYNTHETIC_BOARD, links PROVENANCE.md, and claims no medical use.",
-        "Caveat: Kickstarter-backed hardware with footage only on campaign pages; v0.1.0 experimental — watch, don't buy yet."
-      ],
-      "url": "https://github.com/BROADMIND-BCI/broadmind-eeg",
-      "published": "2026-11-16T16:41:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "新建仓库 BROADMIND（2026-11-16）：干电极 8 通道 EEG 头环的硬件＋软件栈，SDK 走 **BrainFlow 传输、OpenBCI 兼容**，支持实时采集、环形缓冲流式、带功率、伪迹标注与 CSV/EDF/JSON 导出。最值得收录的是它的**自我声明纪律**：README 直接写「**Hardware tested: No capture committed**——真机录过像但都在众筹活动页，仓库里没有任何原始数据，因此所有自动化测试仍跑在 `SYNTHETIC_BOARD`」，附 PROVENANCE.md，并声明非医疗器械、无诊断用途。对比大量「演示即产品」的硬件营销号，这种把「哪些路径经真机验证、哪些没有」写进表格的做法应成为干电极创业项目的标配。注意 v0.1.0 实验阶段＋众筹背景：先观察真实用户数据再评估采购。",
-      "brief_en": "Created 2026-11-16, BROADMIND pairs a dry-electrode 8-channel EEG headset with a Python SDK: BrainFlow transport, OpenBCI compatibility, streaming, band power, artefact labelling and CSV/EDF/JSON export. Its README states no raw capture is committed and all tests run on SYNTHETIC_BOARD, links PROVENANCE.md, claims no medical use — discipline consumer-EEG startups should copy.",
-      "tags": [
-        "dry-electrode",
-        "hardware",
-        "sdk",
-        "brainflow",
-        "openbci-compatible"
-      ],
-      "raw_excerpt": "README table: \"Transport | BrainFlow (OpenBCI-compatible open-source core)\"; \"Hardware tested | **No capture committed.** A real unit has recorded — footage is on the Kickstarter campaign page… but no raw capture is in this repository, so every automated test still runs on `SYNTHETIC_BOARD`\"; \"Clinical use | No. Not a medical device…\"",
-      "fetched_at": "2026-11-16T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "BROADMIND-BCI/broadmind-eeg",
-      "author_handle": "BROADMIND-BCI",
-      "metrics": {
-        "play": null,
-        "like": 0,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "把「哪些路径经真机验证」写进 README 表格，是消费级 EEG 硬件稀缺的诚实。"
+      "quality_score": 9,
+      "why_valuable": "把「参考改变结果」量化成可引用数字（效应量差一倍、秩 64→63），罕见克制。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "hnn-core：spike_train 驱动不再因未排序脉冲崩溃（补上与其余驱动一致的排序）",
-      "title_en": "hnn-core Stops spike_train Drives Crashing on Unsorted Spikes (Sorts Like Every Other Drive)",
+      "title_zh": "MNE-Python 修 f_oneway 整数溢出：小整型 dtype 下 F 统计量算错",
+      "title_en": "MNE-Python Fixes Integer Overflow in f_oneway: Wrong F-Statistics on Small Int Dtypes",
       "bullets_zh": [
-        "#1400：较新的 `spike_train` 驱动类型**创建时没有预排序脉冲**，喂入未排序数据时模拟直接崩溃（pytest 实测触发）。",
-        "修复让该驱动的脉冲**与所有其他驱动类型一样排序**，并补回归测试。",
-        "典型「新功能引入的不一致」：同一概念在旧路径有约定、新路径漏了——外部脉冲数据一进来就炸。"
+        "#14530：`f_oneway`（方差分析）在 **int8/int16 等小整型输入**下发生**整数溢出**，F 值与 p 值静默算错。",
+        "同日还有 **#14532 SNIRF 接受「A.U.」单位写法**、**#14527 CTF 头文件 dd-mm-YYYY 日期解析**——一天三条都属「数据解释类」修复。",
+        "MNE 的统计函数被大量 ERP 组分析直接调用；小整型常见于未转换的原始导出格式，症状是「结果不对但无报错」。"
       ],
       "bullets_en": [
-        "#1400 fixes the relatively new spike_train drive type, which never pre-sorted spikes at creation; unsorted data crashed simulations outright, as pytest runs showed.",
-        "The fix sorts this drive's spikes exactly like all other drive types and adds regression tests.",
-        "A classic inconsistency introduced by a new feature: an old-path convention silently missing from the new one, exploding on external spike data."
+        "#14530 fixes integer overflow in f_oneway (ANOVA) with small int dtypes like int8/int16, silently corrupting F and p values.",
+        "Same day: #14532 accepts the 'A.U.' unit spelling in SNIRF files and #14527 parses dd-mm-YYYY dates in CTF headers — three data-interpretation fixes in one day.",
+        "MNE's stats are called directly by many ERP group analyses; small int dtypes are common in raw exports, so the symptom is wrong results without errors."
       ],
-      "url": "https://github.com/jonescompneurolab/hnn-core/pull/1400",
-      "published": "2026-11-16T18:48:00Z",
+      "url": "https://github.com/mne-tools/mne-python/pull/14530",
+      "published": "2026-11-17T20:52:00Z",
       "source": "github",
       "language": "en",
-      "brief": "hnn-core 合并 #1400：较新加入的 `spike_train` 驱动类型**在创建时没有对脉冲预排序**，而其余所有驱动都会排序——喂入未排序的外部脉冲序列时模拟直接崩溃（贡献者用 pytest 复现）。修复即「补上与其他驱动一致的排序」＋回归测试。这条是教科书级的**新功能引入不一致**：约定只存在于旧代码路径里，新类型漏实现，症状却是离用户很远的深处崩溃。对做神经回路仿真、往 HNN 喂自己 spike 数据的团队：升级前把脉冲数组先 `np.sort` 一遍即可绕过；升级后值得抽查一次排序前后结果是否一致——「隐式约定」类 bug 常不止一处。",
-      "brief_en": "hnn-core merged #1400: the newer spike_train drive never pre-sorted spikes at creation, unlike every other drive type, so unsorted external spike data crashed simulations (reproduced via pytest). The fix sorts consistently and adds regression tests — a textbook new-feature inconsistency where conventions live only in old code paths.",
+      "brief": "MNE-Python 合并 #14530：**`f_oneway`（方差分析）在 int8/int16 等小整型输入下整数溢出**，F 统计量与 p 值静默算错——而 MNE 的统计函数被大量 ERP/时频组分析直接调用，小整型又常见于未转换的原始导出格式。同日还合并 **#14532（SNIRF 接受 fNIRS 常见的「A.U.」单位写法）**与 **#14527（CTF 头文件 dd-mm-YYYY 日期解析）**：一天三条全是「数据解释类」修复，与本 lane 连日主题完全一致。用 MNE 跑过组统计的团队：核对输入 dtype（`raw.get_data().dtype`），必要时先 `astype(np.float64)`；已发表分析若用了未转换的小整型数据，值得重跑确认 F/p 未变。",
+      "brief_en": "MNE-Python merged #14530: f_oneway overflowed integer arithmetic on int8/int16 inputs, silently corrupting F and p values in group analyses that call MNE stats directly. Same day: #14532 accepts 'A.U.' units in SNIRF and #14527 parses dd-mm-YYYY CTF dates — three data-interpretation fixes at once. Check input dtypes before rerunning published stats.",
       "tags": [
-        "hnn-core",
-        "spike-train",
-        "sorting",
-        "crash-fix",
-        "regression"
+        "mne",
+        "anova",
+        "integer-overflow",
+        "snirf",
+        "ctf"
       ],
-      "raw_excerpt": "PR #1400: \"for our relatively new `spike_train` drive type, there was no pre-sorting of the spikes at drive-creation-time. This is a bug, and when pytest/etc. would try to run a simulation with spike train data that is unsorted, pytest would actually crash. This fixes `_drive_cell_event_times` so that the spikes from this drive type are sorted just like those from all other drive types…\"",
-      "fetched_at": "2026-11-16T23:55:00Z",
+      "raw_excerpt": "Commit 24a4aab285, 2026-11-17T20:52Z: \"Fix integer overflow with small integer dtypes in f_oneway (#14477) (#14530)\"; also \"FIX: Accept A.U. in SNIRF files. (#14532)\" 20:18Z; \"FIX: Read CTF headers with dd-mm-YYYY dates (#14527)\" 20:05Z.",
+      "fetched_at": "2026-11-17T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "jonescompneurolab/hnn-core#1400",
-      "author_handle": "jonescompneurolab",
+      "upstream_id": "mne-tools/mne-python#14530",
+      "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 83,
+        "like": 3596,
         "collect": null,
         "comment": null
       },
-      "quality_score": 7,
-      "why_valuable": "隐式约定只存在于旧路径，新驱动漏排序致深处崩溃；同类不一致常不止一处。"
+      "quality_score": 8,
+      "why_valuable": "组统计直接受溢出影响且无报错；同日三条同属「数据解释」类修复。"
+    },
+    {
+      "type": "News",
+      "level": "Intermediate",
+      "title_zh": "袁岚峰对谈郑海荣院士：声镊与超声脑机接口——「读写大脑，声波做的」",
+      "title_en": "Yuan Lanfeng Interviews Academician Zheng Hairong: Acoustic Tweezers and Ultrasound BCIs",
+      "bullets_zh": [
+        "中国科学院院士、南京大学副校长**郑海荣**（国家高性能医疗器械创新中心主任）在袁岚峰节目中阐述**声镊与超声神经调控**：「声辐射力调控神经放电，我们是世界上第一次搞清楚」（**受访者断言，已按此归因**）。",
+        "定位关键：超声路线试图**超脱「信号质量 vs 有创」的二选一**——非侵入地读写大脑，是光/电之外的第三条路。",
+        "科学网 2022 年报道（国家重大科研仪器项目）佐证该方向长期积累；本条为访谈锚点视频（30 秒预告＋完整对谈）。"
+      ],
+      "bullets_en": [
+        "CAS Academician Zheng Hairong (VP of Nanjing University; director of the National Innovation Center for High-Performance Medical Devices) tells Yuan Lanfeng that acoustic radiation-force modulation of neural firing was 'clarified for the first time in the world' — attributed as his claim.",
+        "The positioning matters: ultrasound tries to escape the signal-quality-versus-invasive trade-off, reading and writing brains non-invasively as a third path besides optics and electricity.",
+        "A 2022 ScienceNet report on his national instrument project corroborates long-standing work; this item is the interview's anchor video."
+      ],
+      "url": "https://www.bilibili.com/video/BV1Y6s66eEz2/",
+      "published": "2026-11-17T14:52:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "袁岚峰（中国科学技术大学）发布对**郑海荣院士**的对谈锚点视频：郑现任南京大学副校长、国家高性能医疗器械创新中心主任，长期主导**超声神经调控与声镊**方向——简介引述其说法「我们是世界上第一次把声辐射力调控神经放电搞清楚了」「通过超声波能够解读人的思维…希望未来人人都有脑机接口」（**均为受访者断言，本条按此归因**；科学网 2022 年关于其国家重大科研仪器项目的报道佐证方向属实）。对非侵入式赛道的意义：超声试图绕开「要信号就得开颅」的二选一，是光、电之外的第三条读写路径。袁岚峰的科普可信度在中文平台属第一梯队，值得追完整对谈。",
+      "brief_en": "Yuan Lanfeng releases an interview anchor with CAS Academician Zheng Hairong (VP of Nanjing University) on ultrasound neuromodulation and acoustic tweezers — claiming the world's first clarification of radiation-force control of neural firing (attributed as his claim; a 2022 ScienceNet report corroborates the program). Ultrasound tries to escape the invasive-versus-signal trade-off.",
+      "tags": [
+        "ultrasound",
+        "focused-ultrasound",
+        "neuromodulation",
+        "academician",
+        "non-invasive"
+      ],
+      "raw_excerpt": "「郑海荣：声镊可以在人体里面操控细胞、操控药物、操控粒子。…我们是世界上第一次把声辐射力调控神经放电搞清楚了，通过超声波能够解读人的思维、思考、意识。…在脑机接口的侵入与非侵入之争中，有人独辟蹊径提出用声波就可以读出甚至写入大脑的状态」；核实：科学网 2022-03「当超声『碰到』神经元，脑科学有了新工具——记国家重大科研[仪器项目]」。",
+      "fetched_at": "2026-11-17T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "video",
+      "upstream_id": "BV1Y6s66eEz2",
+      "author_handle": "袁岚峰",
+      "metrics": {
+        "play": null,
+        "like": 463,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "院士级团队＋第一梯队科普人，超声是侵入/非侵入之争的第三条路径。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "EEGDash 新增数据集级校验：跨文件检查 EDF/BDF 通道单位与量程",
+      "title_en": "EEGDash Adds Dataset-Level Validation: EDF/BDF Channel Units and Ranges Checked Across Files",
+      "bullets_zh": [
+        "新特性（`feat(validate)`）：**对整个数据集**的 EDF/BDF 逐通道检查**单位标注与数值范围**是否一致——不再只信单文件头部。",
+        "单位错标（µV 当 mV、无量纲混写）是公开语料库最常见也最静默的错误，直接污染幅值类研究结论。",
+        "把「入库前校验」做进数据平台，比每个使用者各自发现要经济得多——与本 lane 连日的单位/量纲主题同源。"
+      ],
+      "bullets_en": [
+        "New feat(validate) checks EDF/BDF channel units and numeric ranges across an entire dataset, no longer trusting single-file headers.",
+        "Mislabelled units (µV read as mV, dimensionless mixes) are the most common silent error in open corpora, directly contaminating amplitude-level conclusions.",
+        "Building pre-ingest validation into the data platform beats every user rediscovering it — same theme as this lane's recent unit/scale fixes."
+      ],
+      "url": "https://github.com/eegdash/EEGDash/commit/76a70127b0",
+      "published": "2026-11-17T13:34:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "EEGDash 合并 `feat(validate)`：**对整个数据集的 EDF/BDF 逐通道检查单位标注与数值范围**是否一致。这是把本 lane 连日收录的「单位/量纲静默错误」从被动发现变成主动拦截：公开语料库里 µV 被当 mV、通道单位混写是最常见也最难归因的错误——幅值类结论（ERD 幅度、绝对功率）首当其冲，而单文件头部自检永远查不出「跨文件不一致」。数据平台在入库侧做一次校验，成本远低于每个使用者各自踩坑。配套还有 docs 页 Pretraining REVE 教程（#529）。对自建 EEG 语料库的团队：这个检查维度值得抄进自己的 CI——单位与量程一致性应当是数据集的准入门槛而非事后补丁。",
+      "brief_en": "EEGDash merged feat(validate): checks EDF/BDF channel units and numeric ranges across an entire dataset, turning this lane's recurring silent unit errors from passively discovered to actively blocked. Mislabelled µV/mV contaminates amplitude-level conclusions; validation at ingest beats per-user rediscovery — worth copying into any EEG corpus CI.",
+      "tags": [
+        "eegdash",
+        "validation",
+        "edf",
+        "units",
+        "corpus"
+      ],
+      "raw_excerpt": "Commit 76a70127b0, 2026-11-17T13:34Z: \"feat(validate): check EDF/BDF channel units and ranges across a dataset\"; also docs(corpus) Pretraining REVE tutorial page (#529).",
+      "fetched_at": "2026-11-17T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "eegdash/EEGDash@76a70127b0",
+      "author_handle": "eegdash",
+      "metrics": {
+        "play": null,
+        "like": 93,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "把单位/量程一致性做成入库门槛，静默错误从被动发现变主动拦截。"
     }
   ],
   "stats": {
     "fetched": 132,
-    "prefiltered": 98,
-    "llm_rows": 14,
-    "kept": 4,
+    "prefiltered": 97,
+    "llm_rows": 15,
+    "kept": 5,
     "llm_failed": false,
     "llm_skipped_batches": 0,
     "conflicts_dropped": 0
