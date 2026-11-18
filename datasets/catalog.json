@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T13:50:46.594Z",
+  "generatedAt": "2026-11-18T13:26:10.372Z",
   "sources": [
     {
       "id": "huggingface",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 15
+      "count": 14
     },
     {
       "id": "github",
       "ok": true,
-      "count": 7
+      "count": 6
     }
   ],
   "items": [
@@ -394,6 +394,25 @@
       ]
     },
     {
+      "id": "openneuro:ds008867",
+      "name": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008867",
+      "source": "openneuro",
+      "description": "EEG and hedonic responses to sonic-seasoning soundscapes",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-24T01:57:53.284Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "hf:HABSteam/multimodal-eeg-emotion",
       "name": "multimodal-eeg-emotion",
       "owner": "HABSteam",
@@ -411,7 +430,7 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 14082,
+      "downloads": 14137,
       "likes": 28,
       "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
@@ -437,7 +456,7 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 9143,
+      "downloads": 8622,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
       "modality": [
@@ -455,7 +474,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1126,
+      "downloads": 1022,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -480,9 +499,33 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 647,
+      "downloads": 637,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:yefllower/EEGFaceSem",
+      "name": "EEGFaceSem",
+      "owner": "yefllower",
+      "url": "https://huggingface.co/datasets/yefllower/EEGFaceSem",
+      "source": "huggingface",
+      "description": "EEGFaceSem EEG Dataset for Semantic Visual Response Paper · Project page Accepted at NeurIPS 2026, Evaluations and Datasets Track. Installation git clone https://huggingface.co/datasets/yefllower/EEGFaceSem cd EEGFaceSem pip install -e . Quick Start import EEGFaceSem # Auto-down…",
+      "tags": [
+        "cc-by-4.0",
+        "arxiv:2611.10781",
+        "eeg",
+        "bci",
+        "rsvp",
+        "face-stimuli",
+        "generative-latents"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 491,
+      "likes": 0,
+      "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
         "EEG"
       ]
@@ -505,33 +548,9 @@
         "eeg"
       ],
       "license": "cc-by-nc-sa-4.0",
-      "downloads": 429,
+      "downloads": 453,
       "likes": 2,
       "updatedAt": "2026-11-08T16:42:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:yefllower/EEGFaceSem",
-      "name": "EEGFaceSem",
-      "owner": "yefllower",
-      "url": "https://huggingface.co/datasets/yefllower/EEGFaceSem",
-      "source": "huggingface",
-      "description": "EEGFaceSem EEG Dataset for Semantic Visual Response Paper · Project page Accepted at NeurIPS 2026, Evaluations and Datasets Track. Installation git clone https://huggingface.co/datasets/yefllower/EEGFaceSem cd EEGFaceSem pip install -e . Quick Start import EEGFaceSem # Auto-down…",
-      "tags": [
-        "cc-by-4.0",
-        "arxiv:2611.10781",
-        "eeg",
-        "bci",
-        "rsvp",
-        "face-stimuli",
-        "generative-latents"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 459,
-      "likes": 0,
-      "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
         "EEG"
       ]
@@ -551,7 +570,7 @@
         "zarr"
       ],
       "license": "other",
-      "downloads": 347,
+      "downloads": 364,
       "likes": 4,
       "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
@@ -574,9 +593,30 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 558,
+      "downloads": 563,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sunweiwei/ai4sci-brain-computer-interface-decoding-data",
+      "name": "ai4sci-brain-computer-interface-decoding-data",
+      "owner": "sunweiwei",
+      "url": "https://huggingface.co/datasets/sunweiwei/ai4sci-brain-computer-interface-decoding-data",
+      "source": "huggingface",
+      "description": "AI4Sci brain-computer-interface decoding: public tracks Prepared data for three of the five tracks of the brain-computer-interface-decoding task in T0-RSI/ai4sci-tasks and sunnweiwei/science-speedrun. Each was built by the task's environment/data/materialize.py from pinned publi…",
+      "tags": [
+        "cc0-1.0",
+        "eeg",
+        "bci",
+        "brain-computer-interface"
+      ],
+      "license": "cc0-1.0",
+      "downloads": 450,
+      "likes": 0,
+      "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -599,30 +639,9 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 648,
+      "downloads": 544,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:sunweiwei/ai4sci-brain-computer-interface-decoding-data",
-      "name": "ai4sci-brain-computer-interface-decoding-data",
-      "owner": "sunweiwei",
-      "url": "https://huggingface.co/datasets/sunweiwei/ai4sci-brain-computer-interface-decoding-data",
-      "source": "huggingface",
-      "description": "AI4Sci brain-computer-interface decoding: public tracks Prepared data for three of the five tracks of the brain-computer-interface-decoding task in T0-RSI/ai4sci-tasks and sunnweiwei/science-speedrun. Each was built by the task's environment/data/materialize.py from pinned publi…",
-      "tags": [
-        "cc0-1.0",
-        "eeg",
-        "bci",
-        "brain-computer-interface"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 447,
-      "likes": 0,
-      "updatedAt": "2026-10-28T02:30:49.000Z",
       "modality": [
         "EEG"
       ]
@@ -645,7 +664,7 @@
         "vigilance"
       ],
       "license": "other",
-      "downloads": 454,
+      "downloads": 455,
       "likes": 0,
       "updatedAt": "2026-10-06T13:21:45.000Z",
       "modality": [
@@ -653,26 +672,22 @@
       ]
     },
     {
-      "id": "hf:JayF14/chb-mit-preprocessed-eeg",
-      "name": "chb-mit-preprocessed-eeg",
-      "owner": "JayF14",
-      "url": "https://huggingface.co/datasets/JayF14/chb-mit-preprocessed-eeg",
+      "id": "hf:itsalissonsilva/openneuro-eeg-spectral-bench",
+      "name": "openneuro-eeg-spectral-bench",
+      "owner": "itsalissonsilva",
+      "url": "https://huggingface.co/datasets/itsalissonsilva/openneuro-eeg-spectral-bench",
       "source": "huggingface",
-      "description": "CHB-MIT Preprocessed EEG Dataset Feature-Engineered EEG Data for Seizure Forecasting (Pre-Ictal Detection) 347,075 labeled epochs | 24 cases / 22 subjects | 590 features per epoch | ~3.9 GB No raw signal processing needed. Download, load, and train. Research use only. Not for cl…",
+      "description": "openneuro-eeg-spectral-bench Derived from UC San Diego Resting State EEG Data from Patients with Parkinson's Disease, OpenNeuro ds002778 snapshot 1.0.5, DOI 10.18112/openneuro.ds002778.v1.0.5, authors Alexander P. Rockhill, Nicko Jackson, Jobi George, Adam Aron, Nicole C. Swann.…",
       "tags": [
-        "tabular-classification",
-        "odc-by",
-        "medical",
-        "eeg",
-        "seizure-prediction",
-        "epilepsy",
-        "chb-mit",
+        "cc0-1.0",
+        "tabular",
+        "pandas",
         "neuroscience"
       ],
-      "license": "odc-by",
-      "downloads": 219,
-      "likes": 5,
-      "updatedAt": "2026-10-12T17:38:42.000Z",
+      "license": "cc0-1.0",
+      "downloads": 303,
+      "likes": 0,
+      "updatedAt": "2026-10-31T04:32:51.000Z",
       "modality": [
         "EEG"
       ]
@@ -705,6 +720,22 @@
       ]
     },
     {
+      "id": "zenodo:24279297",
+      "name": "ASEEG: Atieh Schizophrenia EEG, a novel high-quality dataset designed to advance biomarker research",
+      "owner": "Bagherzadeh, Sara",
+      "url": "https://doi.org/10.5281/zenodo.24279297",
+      "source": "zenodo",
+      "description": "Dataset Overview Objective, quantifiable EEG biomarkers for schizophrenia (SZ) research are limited by the scarcity of large, diverse, and high-quality public datasets. To address this gap, we present ASEEG (Atieh Schizophrenia EEG), a resting-state EEG dataset designed to suppo…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 1190,
+      "likes": null,
+      "updatedAt": "2026-11-16T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:24102567",
       "name": "EEG–EMG simulation data for caCOH-based hypergraphs",
       "owner": "Vlasenko, Daniil",
@@ -713,7 +744,7 @@
       "description": "This archive contains synthetic EEG and EMG time-series data generated for the evaluation of graph- and hypergraph-based representations of multivariate neural activity. Dataset overview Each simulation contains: synthetic EEG data from 61 channels; synthetic EMG data from 10 ch…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 321,
+      "downloads": 323,
       "likes": null,
       "updatedAt": "2026-11-10T00:00:00.000Z",
       "modality": [
@@ -730,7 +761,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 89,
+      "downloads": 93,
       "likes": null,
       "updatedAt": "2026-11-17T00:00:00.000Z",
       "modality": [
@@ -739,19 +770,17 @@
       ]
     },
     {
-      "id": "zenodo:23919810",
-      "name": "Neural Early Warning of Physical Task Failure",
-      "owner": "Avancini, Chiara",
-      "url": "https://doi.org/10.5281/zenodo.23919810",
+      "id": "zenodo:24338232",
+      "name": "Three-channel EEG recordings during cued relaxation and right-hand motor imagery with analysis code",
+      "owner": "Butsii, Roman",
+      "url": "https://doi.org/10.5281/zenodo.24338232",
       "source": "zenodo",
-      "description": "Dataset overview This dataset contains the raw data acquired for the study&nbsp; Neural Early Warning of Physical Task Failure . The study investigated how cortical activity changes from rest to maximal physical exertion and subsequent recovery, and whether EEG-derived measures…",
-      "tags": [
-        "physical exhaustion"
-      ],
+      "description": "This dataset contains one three-channel EEG recording from each of 11 adult volunteers aged 25&ndash;50 years, together with synchronized command annotations and Python analysis code. Participants alternated relaxation with imagined flexion and extension of the fingers of the ri…",
+      "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 157,
+      "downloads": 0,
       "likes": null,
-      "updatedAt": "2026-11-03T00:00:00.000Z",
+      "updatedAt": "2026-11-18T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -765,7 +794,7 @@
       "description": "Extended data for the article \"Neurithm: a BCI-based Deep Learning Algorithm that Generates Speech from EEG Signals\". It contains the study materials statement, the preprocessing and model configuration, and the full results tables. The raw EEG is not included; it is available f…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 15,
+      "downloads": 16,
       "likes": null,
       "updatedAt": "2026-11-15T00:00:00.000Z",
       "modality": [
@@ -862,19 +891,32 @@
       ]
     },
     {
-      "id": "zenodo:24153867",
-      "name": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
-      "owner": "Cheng, Baoquan",
-      "url": "https://doi.org/10.5281/zenodo.24153867",
-      "source": "zenodo",
-      "description": "Supplemental Table for EEG-Based Assessment of Train Drivers' Cognitive States: A Review of Advances, Challenges and Future Directions",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 4,
-      "likes": null,
-      "updatedAt": "2026-11-12T00:00:00.000Z",
+      "id": "github:eegdash/EEGDash",
+      "name": "EEGDash",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/EEGDash",
+      "source": "github",
+      "description": "EEG-DaSh: an open data, tool, and compute resource. a Python library and catalog for 700+ BIDS-first EEG, MEG, fNIRS, EMG, and iEEG datasets, ML-ready via PyTorch",
+      "tags": [
+        "aws",
+        "aws-s3",
+        "data-sharing",
+        "deep-learning",
+        "eeg",
+        "eeg-signals",
+        "electroencephalography",
+        "fair-principles"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 93,
+      "updatedAt": "2026-11-13T13:13:22.000Z",
       "modality": [
-        "EEG"
+        "EEG",
+        "MEG",
+        "iEEG",
+        "fNIRS",
+        "EMG"
       ]
     },
     {
@@ -895,6 +937,26 @@
       "downloads": null,
       "likes": 21,
       "updatedAt": "2026-11-12T20:40:19.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "github:eegdash/eegdash-corpus",
+      "name": "eegdash-corpus",
+      "owner": "eegdash",
+      "url": "https://github.com/eegdash/eegdash-corpus",
+      "source": "github",
+      "description": "Code and records for EEGDash Corpus v0: 77 public EEG datasets (14,000+ hours) converted into a training-ready Zarr store for EEG foundation models. MLESP 2026.",
+      "tags": [
+        "brain-decoding",
+        "corpus",
+        "eeg"
+      ],
+      "license": "BSD-3-Clause",
+      "downloads": null,
+      "likes": 2,
+      "updatedAt": "2026-11-17T08:09:56.000Z",
       "modality": [
         "EEG"
       ]
@@ -941,78 +1003,6 @@
       "downloads": null,
       "likes": 0,
       "updatedAt": "2026-11-16T16:17:12.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:drkarlareyes/Forecasting_PinchOnset",
-      "name": "Forecasting_PinchOnset",
-      "owner": "drkarlareyes",
-      "url": "https://github.com/drkarlareyes/Forecasting_PinchOnset",
-      "source": "github",
-      "description": "Forecasting finger force and pinch onsets from forearm sEMG: an eight-test evaluation framework applied to four public datasets (Hyser, CEMHSEY, putEMG-Force, WAY-EEG-GAL)",
-      "tags": [
-        "biomedical-signal-processing",
-        "electromyography",
-        "emg",
-        "force-estimation",
-        "hd-semg",
-        "human-machine-interface",
-        "myoelectric-control",
-        "python"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-16T14:47:34.000Z",
-      "modality": [
-        "EEG",
-        "EMG"
-      ]
-    },
-    {
-      "id": "github:drkarlareyes/Hormones-Brain-Motion",
-      "name": "Hormones-Brain-Motion",
-      "owner": "drkarlareyes",
-      "url": "https://github.com/drkarlareyes/Hormones-Brain-Motion",
-      "source": "github",
-      "description": "Sex hormones, the menstrual cycle, resting EEG and wrist activity: four analyses of public datasets (Marquette cycle data, OpenNeuro ds007615, CAPTURE-24, NHANES)",
-      "tags": [
-        "accelerometry",
-        "biomedical-signal-processing",
-        "eeg",
-        "hormones",
-        "human-activity-recognition",
-        "menstrual-cycle",
-        "nhanes",
-        "python"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-16T14:47:04.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:gifale95/EMD",
-      "name": "EMD",
-      "owner": "gifale95",
-      "url": "https://github.com/gifale95/EMD",
-      "source": "github",
-      "description": "Code used to collect and preprocess the EEG Moments Dataset (EMD), as well as to replicate all results from the dataset paper.",
-      "tags": [
-        "eeg",
-        "human-vision",
-        "open-dataset",
-        "videos"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 1,
-      "updatedAt": "2026-10-28T17:22:47.000Z",
       "modality": [
         "EEG"
       ]
