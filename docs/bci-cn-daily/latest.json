@@ -1,203 +1,204 @@
 {
-  "date": "2026-11-19",
-  "generated_at": "2026-11-18T23:01:22.008Z",
+  "date": "2026-11-20",
+  "generated_at": "2026-11-19T22:38:50.000Z",
   "item_count": 4,
   "types": {
-    "Project": 4
+    "Project": 3,
+    "Course": 1
   },
   "highlights": [
     {
-      "title_zh": "braindecode 单日落地整个 fNIRS 模型家族：从「只解 EEG」到七个血氧模型",
-      "title_en": "braindecode Lands a Whole fNIRS Model Family in One Day: Seven HbO/HbR Models from Dawn to Dusk",
-      "url": "https://github.com/braindecode/braindecode/pull/1579",
-      "brief": "braindecode 在 11-18 单日合入 **22 个提交**，把整个 fNIRS（功能性近红外，血氧信号）模型家族搬进库：**FNIRSNet #1579**（PR 明写「the first fNIRS model of braindecode」）、**FNIRS4D #1582**、**FNIRST/FNIRSPreT #1584**、**JungMAE #1589**、**GeoNIRS #1591**（几何感知基础模型）、**MtReNIRS #1590**、**FNIRSCNN1D #1592**。此前 EEG 基础模型的「事实标准库」只解 EEG，现在血氧信号进入**同一套数据约定与评估协议**——跨模态基准第一次有共同地基。同日还修了反向双极导联符号映射（#1577）等四个 bug。「一模型一 PR＋论文出处」的移植纪律同样值得抄。"
+      "title_zh": "braindecode 静默错误清扫日：通道映射「要么映射、要么带理由拒绝」＋TUH 把日期文件当医生报告",
+      "title_en": "braindecode Silent-Error Sweep Day: Channel Mapping Maps or Refuses with a Reason; TUH Read Date Files as Physician Reports",
+      "url": "https://github.com/braindecode/braindecode/pull/1608",
+      "brief": "braindecode 延续昨日的爆发：单日 **30 提交**，主题从「加模型」转向**清扫静默错误**。旗舰是 **#1608：所有基础模型接受 `channel_strategy`——通道对不上就映射，或带明确理由拒绝**（本 lane 连日呼吁的方向），配套 #1605 给 **23 个基础模型**补上通道数不匹配的清晰 ValueError。最触目的是 **#1655：TUH 的 `add_physician_reports` 此前把 `_date.txt` 当医生报告读入**——凡基于该管线做临床报告 NLP，特征字段实为日期串。**#1686 FilterBankLayer 以因果方式应用最小相位 FIR**（模型内非因果滤波=向预测泄漏未来）、#1657/#1679 保 IIR 精度与 LUNA 谱相位。「拒绝也要给理由」值得所有 EEG 工具链抄。"
     },
     {
-      "title_zh": "MNE-Python：fNIRS 光源/探测器位置查找按子串匹配，D1 拿到 D13 的坐标",
-      "title_en": "MNE-Python: fNIRS Optode Lookup Matched Substrings, So D1 Got D13's Coordinates",
-      "url": "https://github.com/mne-tools/mne-python/pull/14560",
-      "brief": "MNE-Python 合并 #14560，修一个教科书级**子串匹配陷阱**：fNIRS 的 `_optode_position` 用子串查找光极名，于是 **`D1` 命中 `S5_D13 760`**——若这种通道排在前面，`raw.get_montage()` 会把 **D13 的坐标返回给 D1**。修复为精确比较解析出的源/探测器编号；同日 **#14561 统一 fNIRS 通道名解析**（此前多处各自解析）。这与本 lane 昨日收录的「读错张量」「参考错配」同属**静默空间/表征错标**：形状对、不报错，但光源-探测器配对错了意味着整个拓扑与源定位被污染。用 MNE 跑 fNIRS 的团队应核对所用版本是否含此修复；已发表的空间结果若涉及 D1/D13 这类前缀歧义命名（`S1_D1` vs `S1_D10+`），值得抽查通道坐标表。"
+      "title_zh": "MNE-Python：eLORETA 松散方向先验多年用错公式（sqrt(prior) 应为 prior），维护者公开致谢 Claude 定位根因",
+      "title_en": "MNE-Python: eLORETA's Loose Prior Used sqrt(prior) Instead of prior for Years; Maintainer Credits Claude for Root-Cause Hunt",
+      "url": "https://github.com/mne-tools/mne-python/pull/14568",
+      "brief": "MNE-Python 合并 #14568，修掉一个**多年沿用的源定位公式错误**：eLORETA 的 `loose` 方向先验此前对增益矩阵施加 **`sqrt(prior)` 而正确做法是 `prior`**，且在不同代码路径施加不一致。修复统一为一致地施加一次并弃用 `force_equal`。两点值得注意：①eLORETA 是 EEG/MEG 源成像的默认方法之一，先验公式错会系统性改变深度偏置与伪解分布——不报错、不可见；用 MNE 做过 loose eLORETA 的已发表定位结果值得标注版本边界。②PR 正文**公开写明「我让 Claude Opus 5.5 对照原始论文调查根因并起草了修复」**——核心数值算法的 AI 辅助调试＋人类核实＋公开署名，这个流程样本比修复本身更值得行业抄。"
     },
     {
-      "title_zh": "MOABB：Brandl2020 的柏林命名通道补全位置——此前一半缺位、六个偏了约 2 厘米",
-      "title_en": "MOABB: Brandl2020's Berlin-labelled Channels Get Real Positions — Half Had None, Six Were ~2 cm Off",
-      "url": "https://github.com/NeuroTechX/moabb/pull/1364",
-      "brief": "MOABB 合并 #1364，暴露**电极位置元数据**的三层问题：Brandl2020（柏林实验室 16 通道运动想象数据集）用非常规命名 CFC1-CFC8/CCP1-CCP8——①MNE 官方布局缺这些名字，一半通道**根本没有坐标**；②看似有的 CCP1-CCP6 **实际偏了约 2 cm**（布局里对应的是带 h 的位点）；③元数据也跟着错。修复按数据集自带 `mnt.mat` 把 16 通道全放对并保留原名。这是本 lane 连续第七天收录「静默改变结果」类修复，也是第一次证明**连官方模板布局都会给出错误坐标**。用非常规电极命名的数据集（尤其临床/老实验室）跑空间分析前，应把通道坐标表打印出来对照原始 montage——「有名字≠有位置，有位置≠对的位置」。"
+      "title_zh": "EEG-ExPy 加入 Muse S Athena 采集与对齐传感器流：消费级头环进实验框架",
+      "title_en": "EEG-ExPy Adds Muse S Athena Acquisition with Aligned Sensor Streams: Consumer Headbands Join the Experiment Framework",
+      "url": "https://github.com/NeuroTechX/EEG-ExPy/pull/349",
+      "brief": "EEG-ExPy 合并 #349：**新增 Muse S Athena 采集后端，并输出与 EEG 时间对齐的传感器流**。EEG-ExPy 是近十年心理与应用电生理领域最常用的 Python 实验框架之一（呈现＋打点＋同步一体化），此前官方支持的设备以 Lab Streaming Layer/BrainFlow 通用路径为主——**为具体消费级头环做专用后端并保证传感器流对齐**，意味着用 Muse S Athena 就能搭「刺激呈现-采集-行为标注」闭环而无需自写蓝牙桥接与手工对齐。对教学实验室与预实验尤其实际：Muse 系价格带＋官方框架支持＝可复现的最小配置。注意消费级头环的电极噪声与参考限制仍在（本 lane 连日的参考主题同样适用），但工程门槛确实又降一档。"
     }
   ],
-  "github_path": "docs/bci-cn-daily/2026-11-19.md",
+  "github_path": "docs/bci-cn-daily/2026-11-20.md",
   "items": [
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "braindecode 单日落地整个 fNIRS 模型家族：从「只解 EEG」到七个血氧模型",
-      "title_en": "braindecode Lands a Whole fNIRS Model Family in One Day: Seven HbO/HbR Models from Dawn to Dusk",
+      "title_zh": "braindecode 静默错误清扫日：通道映射「要么映射、要么带理由拒绝」＋TUH 把日期文件当医生报告",
+      "title_en": "braindecode Silent-Error Sweep Day: Channel Mapping Maps or Refuses with a Reason; TUH Read Date Files as Physician Reports",
       "bullets_zh": [
-        "**#1579 FNIRSNet**（Wang et al., TNSRE 2023，含延迟血流响应卷积 DHRConv）是「braindecode 首个 fNIRS 模型」，PR 预告了后续——**一天内全部兑现**：FNIRS4D #1582、FNIRST/FNIRSPreT #1584、JungMAE #1589、GeoNIRS #1591、MtReNIRS #1590、FNIRSCNN1D #1592。",
-        "同日还修了 **#1577 反向双极导联的精确符号映射**、#1585 BIOT 通道 token 查找、#1600 SignalJEPA 位置编码、#1604 MSVTNet 分支拼接——**22 个提交**。",
-        "EEG 基础模型事实标准库正式把 fNIRS（血氧信号）纳入同一评估框架，跨模态比较有了共同地基。"
+        "**#1608：所有基础模型接受 `channel_strategy`——通道对不上时「映射，或带明确理由拒绝」**；**#1605 给 23 个基础模型加了通道数不匹配的清晰 ValueError**。昨日「读错张量」的教训直接变成平台侧防线。",
+        "**#1655：TUH 数据集 `add_physician_reports` 此前把 `_date.txt` 侧车文件当医生报告读入**——临床 NLP 的特征字段实为日期字符串。",
+        "同日 **#1686 FilterBankLayer 改为因果最小相位 FIR**、#1657 IIR 系数跨 dtype 保精度、#1679 LUNA 在 MPS 上的谱相位（上周 GPU 相位修复续篇）——单日 **30 提交**，大半是静默错误类。"
       ],
       "bullets_en": [
-        "#1579 FNIRSNet (Wang et al., TNSRE 2023, with delayed-hemodynamic-response conv) is 'the first fNIRS model of braindecode'; its PR previewed the rest and all landed within a day: FNIRS4D #1582, FNIRST/FNIRSPreT #1584, JungMAE #1589, GeoNIRS #1591, MtReNIRS #1590, FNIRSCNN1D #1592.",
-        "Same day also fixed #1577 exact sign mapping for reverse bipolar channels, #1585 BIOT token lookup, #1600 SignalJEPA positional encoding and #1604 MSVTNet branch concat — 22 commits total.",
-        "The de facto EEG foundation-model library now hosts fNIRS under the same framework: cross-modal comparison finally has common ground."
+        "#1608: every foundation model now accepts channel_strategy — mismatched channels get mapped or refused with an explicit reason; #1605 adds clear ValueErrors for channel-count mismatches across 23 models. Yesterday's wrong-tensor lesson became a platform-side guard.",
+        "#1655: TUH add_physician_reports previously read the _date.txt side file as the physician report — clinical NLP features were date strings.",
+        "Same day #1686 made FilterBankLayer minimum-phase FIR causal, #1657 kept IIR design precision across dtype conversions, #1679 fixed LUNA spectral phase on MPS — ~30 commits, mostly silent-error fixes."
       ],
-      "url": "https://github.com/braindecode/braindecode/pull/1579",
-      "published": "2026-11-18T03:00:00Z",
+      "url": "https://github.com/braindecode/braindecode/pull/1608",
+      "published": "2026-11-19T17:39:00Z",
       "source": "github",
       "language": "en",
-      "brief": "braindecode 在 11-18 单日合入 **22 个提交**，把整个 fNIRS（功能性近红外，血氧信号）模型家族搬进库：**FNIRSNet #1579**（PR 明写「the first fNIRS model of braindecode」）、**FNIRS4D #1582**、**FNIRST/FNIRSPreT #1584**、**JungMAE #1589**、**GeoNIRS #1591**（几何感知基础模型）、**MtReNIRS #1590**、**FNIRSCNN1D #1592**。此前 EEG 基础模型的「事实标准库」只解 EEG，现在血氧信号进入**同一套数据约定与评估协议**——跨模态基准第一次有共同地基。同日还修了反向双极导联符号映射（#1577）等四个 bug。「一模型一 PR＋论文出处」的移植纪律同样值得抄。",
-      "brief_en": "braindecode merged 22 commits in one day, porting a whole fNIRS family: FNIRSNet #1579 ('the first fNIRS model of braindecode'), FNIRS4D #1582, FNIRST/FNIRSPreT #1584, JungMAE #1589, GeoNIRS #1591, MtReNIRS #1590 and FNIRSCNN1D #1592 — plus four bug fixes incl. reverse-bipolar sign mapping (#1577). The EEG foundation-model standard now spans blood-oxygen signals under one protocol.",
+      "brief": "braindecode 延续昨日的爆发：单日 **30 提交**，主题从「加模型」转向**清扫静默错误**。旗舰是 **#1608：所有基础模型接受 `channel_strategy`——通道对不上就映射，或带明确理由拒绝**（本 lane 连日呼吁的方向），配套 #1605 给 **23 个基础模型**补上通道数不匹配的清晰 ValueError。最触目的是 **#1655：TUH 的 `add_physician_reports` 此前把 `_date.txt` 当医生报告读入**——凡基于该管线做临床报告 NLP，特征字段实为日期串。**#1686 FilterBankLayer 以因果方式应用最小相位 FIR**（模型内非因果滤波=向预测泄漏未来）、#1657/#1679 保 IIR 精度与 LUNA 谱相位。「拒绝也要给理由」值得所有 EEG 工具链抄。",
+      "brief_en": "braindecode's 30-commit day swept silent errors: #1608 makes every foundation model accept channel_strategy — map or refuse with a reason; #1605 adds clear ValueErrors across 23 models. #1655 caught TUH reading _date.txt as the physician report. #1686 made FilterBankLayer FIR causal; #1657/#1679 kept filter precision and LUNA MPS phase correct.",
       "tags": [
         "braindecode",
-        "fnirs",
-        "foundation-models",
-        "geonirs",
-        "cross-modal"
+        "channel-strategy",
+        "silent-errors",
+        "tuh",
+        "causal-filter"
       ],
-      "raw_excerpt": "PR #1579: \"Adds `FNIRSNet` (Wang, Fang & Zhang, IEEE TNSRE 2023, doi:10.1109/TNSRE.2023.3330911), the first fNIRS model of braindecode. This is the first of a series of one-PR-per-model fNIRS ports… Next: FNIRS4D (with the shared HbO/HbR `chs_info` helpers), FNIRST/FNIRSPreT, JungMAE, GeoNIRS, MtReNIRS.\" — all landed 2026-11-18 (commits #1579–#1604).",
-      "fetched_at": "2026-11-18T23:55:00Z",
+      "raw_excerpt": "Commits 2026-11-19: \"ENH models: every foundation model accepts channel_strategy (maps or refuses with a reason) (#1608)\"; \"FIX models: clear ValueError when the input's channel count does not match (23 foundation models) (#1605)\"; \"FIX TUH: add_physician_reports no longer reads the _date.txt side file as the report (#1655)\"; \"FIX FilterBankLayer: apply minimum-phase FIR filters causally (#1686)\".",
+      "fetched_at": "2026-11-19T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "braindecode/braindecode#1579",
+      "upstream_id": "braindecode/braindecode#1608",
       "author_handle": "braindecode",
       "metrics": {
         "play": null,
-        "like": 1343,
+        "like": 1342,
         "collect": null,
         "comment": null
       },
       "quality_score": 9,
-      "why_valuable": "EEG 基础模型标准库单日纳入七个血氧模型，跨模态评估首有共同地基。"
+      "why_valuable": "「拒绝也要给理由」成平台防线；TUH 日期当报告直接污染临床 NLP。"
     },
     {
       "type": "Project",
       "level": "Advanced",
-      "title_zh": "MNE-Python：fNIRS 光源/探测器位置查找按子串匹配，D1 拿到 D13 的坐标",
-      "title_en": "MNE-Python: fNIRS Optode Lookup Matched Substrings, So D1 Got D13's Coordinates",
+      "title_zh": "MNE-Python：eLORETA 松散方向先验多年用错公式（sqrt(prior) 应为 prior），维护者公开致谢 Claude 定位根因",
+      "title_en": "MNE-Python: eLORETA's Loose Prior Used sqrt(prior) Instead of prior for Years; Maintainer Credits Claude for Root-Cause Hunt",
       "bullets_zh": [
-        "#14560：`_optode_position` **按子串匹配光极名**——`D1` 会命中 `S5_D13 760`；若这类通道排在前面，**`raw.get_montage()` 把 D13 的坐标当成 D1 返回**。",
-        "修复改为**精确比较解析出的源/探测器编号**；同日 **#14561 统一 fNIRS 通道名解析**，从根上收口命名歧义。",
-        "子串匹配是「静默空间错标」的经典成因：坐标错了、形状对了、不报错——空间分析全部被污染。"
+        "#14568：eLORETA 的 `loose` 实现**对增益矩阵施加了 `sqrt(prior)` 而应为 `prior`**，且施加方式前后不一致——多年沿用的源定位数值错误。",
+        "修复统一为「一致地施加一次 prior」并弃用 `force_equal`；PR 正文**明确披露由 Claude Opus 5.5 通过原始论文调查根因并起草修复**——AI 辅助调试核心算法的公开署名样本。",
+        "eLORETA 是 EEG/MEG 源成像默认方法之一：先验错公式会系统性改变定位深度偏置，且不会报错。"
       ],
       "bullets_en": [
-        "#14560: _optode_position matched optode names as substrings, so D1 hit 'S5_D13 760'; when such a channel came first, raw.get_montage() returned D13's position for D1.",
-        "The fix compares parsed source/detector numbers exactly; same-day #14561 unifies fNIRS channel-name parsing to close the ambiguity at its root.",
-        "Substring matching is a textbook silent spatial mislabel: wrong coordinates, right shapes, no error — every downstream spatial analysis is contaminated."
+        "#14568: the loose implementation applied sqrt(prior) to the gain matrix where prior was correct, and applied it inconsistently — a long-standing numerical error in source localization.",
+        "The fix applies prior once consistently and deprecates force_equal; the PR openly discloses that Claude Opus 5.5 investigated the root cause against original papers and drafted fixes — a public attribution sample for AI-assisted core-algorithm debugging.",
+        "eLORETA is a default EEG/MEG source-imaging method: a wrong prior formula shifts depth bias systematically without ever erroring."
       ],
-      "url": "https://github.com/mne-tools/mne-python/pull/14560",
-      "published": "2026-11-18T14:53:00Z",
+      "url": "https://github.com/mne-tools/mne-python/pull/14568",
+      "published": "2026-11-19T16:56:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MNE-Python 合并 #14560，修一个教科书级**子串匹配陷阱**：fNIRS 的 `_optode_position` 用子串查找光极名，于是 **`D1` 命中 `S5_D13 760`**——若这种通道排在前面，`raw.get_montage()` 会把 **D13 的坐标返回给 D1**。修复为精确比较解析出的源/探测器编号；同日 **#14561 统一 fNIRS 通道名解析**（此前多处各自解析）。这与本 lane 昨日收录的「读错张量」「参考错配」同属**静默空间/表征错标**：形状对、不报错，但光源-探测器配对错了意味着整个拓扑与源定位被污染。用 MNE 跑 fNIRS 的团队应核对所用版本是否含此修复；已发表的空间结果若涉及 D1/D13 这类前缀歧义命名（`S1_D1` vs `S1_D10+`），值得抽查通道坐标表。",
-      "brief_en": "MNE-Python #14560 fixes a textbook substring-matching trap: _optode_position let 'D1' match 'S5_D13 760', so raw.get_montage() could hand D1 the coordinates of D13. The fix compares parsed source/detector numbers exactly; same-day #14561 unifies fNIRS channel-name parsing. Same silent-mislabel family as yesterday's wrong-tensor and reference fixes — check your version.",
+      "brief": "MNE-Python 合并 #14568，修掉一个**多年沿用的源定位公式错误**：eLORETA 的 `loose` 方向先验此前对增益矩阵施加 **`sqrt(prior)` 而正确做法是 `prior`**，且在不同代码路径施加不一致。修复统一为一致地施加一次并弃用 `force_equal`。两点值得注意：①eLORETA 是 EEG/MEG 源成像的默认方法之一，先验公式错会系统性改变深度偏置与伪解分布——不报错、不可见；用 MNE 做过 loose eLORETA 的已发表定位结果值得标注版本边界。②PR 正文**公开写明「我让 Claude Opus 5.5 对照原始论文调查根因并起草了修复」**——核心数值算法的 AI 辅助调试＋人类核实＋公开署名，这个流程样本比修复本身更值得行业抄。",
+      "brief_en": "MNE-Python #14568 fixes a long-standing eLORETA error: the loose prior applied sqrt(prior) to the gain matrix instead of prior, inconsistently across paths. Fixed by applying prior once consistently; force_equal deprecated. The PR openly credits Claude Opus 5.5 for root-cause investigation against original papers — a model AI-assisted debugging workflow.",
       "tags": [
         "mne",
-        "fnirs",
-        "optode",
-        "substring-match",
-        "montage"
+        "eloreta",
+        "source-imaging",
+        "numerical-bug",
+        "ai-assisted"
       ],
-      "raw_excerpt": "PR #14560: \"`_optode_position` matched optode names as substrings, so `D1` matched `S5_D13 760`. When such a channel came first, `raw.get_montage()` returned the D13 position for D1. Now the parsed source/detector numbers are compared exactly.\"; also \"MAINT: Unify fNIRS channel name parsing (#14561)\".",
-      "fetched_at": "2026-11-18T23:55:00Z",
+      "raw_excerpt": "PR #14568: \"I had Claude Opus 5.5 help me (by investigating the root cause via original papers and drafting fixes to) solve a long-standing problem with the `loose` implementation I put in place for eLORETA. It turns out we were applying `sqrt(prior)` when we should have been applying `prior` to the gain matrix. We also had a bug with applying it inconsistently…\"",
+      "fetched_at": "2026-11-19T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "mne-tools/mne-python#14560",
+      "upstream_id": "mne-tools/mne-python#14568",
       "author_handle": "mne-tools",
       "metrics": {
         "play": null,
-        "like": 3600,
+        "like": 3613,
         "collect": null,
         "comment": null
       },
       "quality_score": 8,
-      "why_valuable": "子串匹配致光极坐标静默错配，污染全部空间分析；已发表结果需抽查。"
+      "why_valuable": "默认源定位方法多年用错先验公式；AI 查根因＋公开署名的流程样本更稀缺。"
     },
     {
       "type": "Project",
       "level": "Intermediate",
-      "title_zh": "MOABB：Brandl2020 的柏林命名通道补全位置——此前一半缺位、六个偏了约 2 厘米",
-      "title_en": "MOABB: Brandl2020's Berlin-labelled Channels Get Real Positions — Half Had None, Six Were ~2 cm Off",
+      "title_zh": "EEG-ExPy 加入 Muse S Athena 采集与对齐传感器流：消费级头环进实验框架",
+      "title_en": "EEG-ExPy Adds Muse S Athena Acquisition with Aligned Sensor Streams: Consumer Headbands Join the Experiment Framework",
       "bullets_zh": [
-        "#1364：Brandl2020 数据集用柏林实验室命名（CFC1-CFC8、CCP1-CCP8）——**MNE 布局里根本没有 CFC1-CFC8/CCP7/CCP8，这些通道此前没有坐标**。",
-        "更隐蔽：**CCP1-CCP6 在 MNE 布局里有，但位置偏了约 2 cm**（对应 CCP1h-CCP6h 位点）——有坐标、是错的。",
-        "修复按数据集自带 `mnt.mat` 把 16 通道全部放到正确的 10-5 位点并保留原名，同时修正元数据。**空间错标连「官方布局」也会中招**。"
+        "#349（11-19 合并）：**EEG-ExPy 实验框架新增 Muse S Athena 采集后端**，并提供**与 EEG 时间对齐的传感器流**（加速度计/陀螺仪等）。",
+        "EEG-ExPy 是心理/应用电生理最常用的 Python 实验呈现＋同步框架之一；官方后端意味着**无需自写蓝牙桥接**即可做「刺激呈现-采集」闭环。",
+        "对预算敏感实验室：Muse 系头环＋开源实验框架的组合门槛进一步降低；对齐传感器流也让伪迹回归更规范。"
       ],
       "bullets_en": [
-        "#1364: Brandl2020 uses Berlin lab names (CFC1-CFC8, CCP1-CCP8); MNE layouts lack CFC1-CFC8/CCP7-CCP8 entirely, so those channels had no positions at all.",
-        "More subtle: CCP1-CCP6 exist in MNE layouts but sit ~2 cm away (the CCP1h-CCP6h sites) — present coordinates that were wrong.",
-        "The fix places all 16 channels at the dataset's own mnt.mat positions, keeps the names and corrects metadata. Even 'official' layouts silently mislabel space."
+        "#349 (merged Nov 19): the EEG-ExPy framework gains a Muse S Athena acquisition backend plus sensor streams time-aligned with EEG.",
+        "EEG-ExPy is among the most-used Python stimulus-presentation and sync frameworks; an official backend means closed-loop presentation-acquisition without hand-rolled Bluetooth bridges.",
+        "For budget-constrained labs: Muse headbands plus an open experiment framework lower the barrier further, and aligned sensor streams make artefact regression principled."
       ],
-      "url": "https://github.com/NeuroTechX/moabb/pull/1364",
-      "published": "2026-11-18T11:19:00Z",
+      "url": "https://github.com/NeuroTechX/EEG-ExPy/pull/349",
+      "published": "2026-11-19T17:39:00Z",
       "source": "github",
       "language": "en",
-      "brief": "MOABB 合并 #1364，暴露**电极位置元数据**的三层问题：Brandl2020（柏林实验室 16 通道运动想象数据集）用非常规命名 CFC1-CFC8/CCP1-CCP8——①MNE 官方布局缺这些名字，一半通道**根本没有坐标**；②看似有的 CCP1-CCP6 **实际偏了约 2 cm**（布局里对应的是带 h 的位点）；③元数据也跟着错。修复按数据集自带 `mnt.mat` 把 16 通道全放对并保留原名。这是本 lane 连续第七天收录「静默改变结果」类修复，也是第一次证明**连官方模板布局都会给出错误坐标**。用非常规电极命名的数据集（尤其临床/老实验室）跑空间分析前，应把通道坐标表打印出来对照原始 montage——「有名字≠有位置，有位置≠对的位置」。",
-      "brief_en": "MOABB #1364 exposes three layers of silent electrode-metadata error in Brandl2020: Berlin names CFC1-CFC8/CCP7-CCP8 are absent from MNE layouts (no positions at all), CCP1-CCP6 exist but sit ~2 cm off, and metadata was wrong too. Fixed against the dataset's own mnt.mat — proof that even official template layouts mislabel space silently.",
+      "brief": "EEG-ExPy 合并 #349：**新增 Muse S Athena 采集后端，并输出与 EEG 时间对齐的传感器流**。EEG-ExPy 是近十年心理与应用电生理领域最常用的 Python 实验框架之一（呈现＋打点＋同步一体化），此前官方支持的设备以 Lab Streaming Layer/BrainFlow 通用路径为主——**为具体消费级头环做专用后端并保证传感器流对齐**，意味着用 Muse S Athena 就能搭「刺激呈现-采集-行为标注」闭环而无需自写蓝牙桥接与手工对齐。对教学实验室与预实验尤其实际：Muse 系价格带＋官方框架支持＝可复现的最小配置。注意消费级头环的电极噪声与参考限制仍在（本 lane 连日的参考主题同样适用），但工程门槛确实又降一档。",
+      "brief_en": "EEG-ExPy merged #349: a Muse S Athena acquisition backend with sensor streams time-aligned to EEG. An official dedicated backend for a consumer headband means closed-loop presentation-acquisition-labelling without hand-rolled Bluetooth bridges — a reproducible minimal rig for teaching labs, artefact caveats notwithstanding.",
       "tags": [
-        "moabb",
-        "electrode-positions",
-        "montage",
-        "metadata",
-        "brandl2020"
+        "eeg-expy",
+        "muse",
+        "consumer-eeg",
+        "experiment-framework",
+        "sensor-streams"
       ],
-      "raw_excerpt": "PR #1364: \"Brandl2020 has 16 channels with the Berlin lab's names for in-between sites (CFC1-CFC8, CCP1-CCP8). CFC1-CFC8, CCP7 and CCP8 are missing from MNE's layouts, so they got no position. CCP1-CCP6 are in MNE's layouts, but at a site about 2 cm away from where this cap has them (CCP1h-CCP6h)…\"",
-      "fetched_at": "2026-11-18T23:55:00Z",
+      "raw_excerpt": "Commit 51c47f4f13, 2026-11-19T17:05Z: \"Add Muse S Athena acquisition and aligned sensor streams\"; merged as PR #349 (JohnGriffiths/add-muse-s-athena).",
+      "fetched_at": "2026-11-19T23:55:00Z",
       "platform": "github",
       "content_type": "repo",
-      "upstream_id": "NeuroTechX/moabb#1364",
+      "upstream_id": "NeuroTechX/EEG-ExPy#349",
       "author_handle": "neurotechx",
       "metrics": {
         "play": null,
-        "like": 1088,
-        "collect": null,
-        "comment": null
-      },
-      "quality_score": 8,
-      "why_valuable": "官方布局也会给出缺失/偏 2cm 的坐标；空间分析前必须核对通道坐标表。"
-    },
-    {
-      "type": "Project",
-      "level": "Intermediate",
-      "title_zh": "EEGDash：fNIRS 数据集页补全受试者、婴儿月龄、年份与论文 DOI，默认存储不再写当前目录",
-      "title_en": "EEGDash: fNIRS Dataset Pages Get Participants, Infant Ages, Years and Paper DOIs; Default Storage Stops Writing to cwd",
-      "bullets_zh": [
-        "#528：fNIRS 数据集页修复**受试者信息、婴儿月龄、年份、论文 DOI 与 sidecar**——血氧语料的元数据此前大面积缺失。",
-        "另一提交把默认下载/缓存路径改为优先 **SCRATCH/TMPDIR/MNE_DATA 与平台缓存目录，不再写当前工作目录**（容器与共享集群里的经典事故源）。",
-        "延续昨日「入库校验」思路：数据平台侧把元数据完整度做齐，下游才不必各自猜。"
-      ],
-      "bullets_en": [
-        "#528 fixes fNIRS dataset pages: participants, infant ages, year, paper DOI and sidecars — metadata that was largely missing for blood-oxygen corpora.",
-        "A companion commit prefers SCRATCH/TMPDIR/MNE_DATA and platform caches over the current working directory for default storage — a classic container/shared-cluster hazard.",
-        "Continues yesterday's ingest-validation move: the platform fills in metadata completeness so downstream users stop guessing."
-      ],
-      "url": "https://github.com/eegdash/EEGDash/pull/528",
-      "published": "2026-11-18T15:20:00Z",
-      "source": "github",
-      "language": "en",
-      "brief": "EEGDash 合并 #528：fNIRS 数据集页面补全**受试者信息、婴儿月龄（发育研究的关键变量）、年份、论文 DOI 与 sidecar 文件**——此前血氧语料的这些元数据大面积缺失，做发展性研究或按文献溯源时只能人肉翻原文。同日另一提交把默认存储路径改为优先 `SCRATCH`/`TMPDIR`/`MNE_DATA` 与平台缓存目录、**不再写当前工作目录**——在共享集群和容器里「库往 cwd 拉数据」是磁盘配额与镜像膨胀的经典事故源。两条合起来仍是本 lane 的主题：**把正确性做进入库侧**。对用 fNIRS 公开语料的团队，EEGDash 的 sidecar 约定（受试者表＋DOI）值得作为自建数据集的最小元标准。",
-      "brief_en": "EEGDash #528 completes fNIRS dataset pages — participants, infant ages, year, paper DOIs and sidecars that were largely missing for blood-oxygen corpora. A companion commit prefers SCRATCH/TMPDIR/MNE_DATA over cwd for default storage, fixing a classic container/shared-cluster hazard. Correctness keeps moving to the ingest side.",
-      "tags": [
-        "eegdash",
-        "fnirs",
-        "metadata",
-        "sidecar",
-        "storage-paths"
-      ],
-      "raw_excerpt": "Commits 2026-11-18T15:20Z: \"fix(paths): prefer SCRATCH, TMPDIR, MNE_DATA and platform cache over cwd for the default…\"; \"fix: fNIRS dataset pages (participants, infant ages, year, paper DOI, sidecars) (#528)\".",
-      "fetched_at": "2026-11-18T23:55:00Z",
-      "platform": "github",
-      "content_type": "repo",
-      "upstream_id": "eegdash/EEGDash#528",
-      "author_handle": "eegdash",
-      "metrics": {
-        "play": null,
-        "like": 93,
+        "like": 582,
         "collect": null,
         "comment": null
       },
       "quality_score": 7,
-      "why_valuable": "血氧语料元数据补齐＋不再写 cwd；sidecar 约定可作自建数据集最小元标准。"
+      "why_valuable": "消费级头环获官方实验框架后端，教学实验室最小可复现配置再降门槛。"
+    },
+    {
+      "type": "Course",
+      "level": "Intermediate",
+      "title_zh": "馒头 BCI 工程课·课5：在线模型加载、推理线程隔离与分类器集成实战（11.23 开课）",
+      "title_en": "ManTou BCI Engineering Course 5: Online Model Loading, Inference-Thread Isolation and Classifier Integration (Starts Nov 23)",
+      "bullets_zh": [
+        "B站专栏课5《在线模型加载推理部署集成接口设计》，**2026.11.23–11.29 周期授课**：在线模型加载、**推理线程与数据隔离设计**、部署流程、输出后处理与指令映射、实战集成分类器＋作业。",
+        "中文免费 BCI 课程里少见的**工程部署主题**——多数课停在离线分类，本课直接进「在线系统」环节。",
+        "作者长期放免费资料（B站＋CSDN 博客）；账号有营销软文史，取其技术内容、留个心眼。"
+      ],
+      "bullets_en": [
+        "Column 'Course 5: online model loading, inference deployment and integration interface design', taught 2026.11.23–11.29: online loading, inference-thread and data isolation, deployment flow, post-processing to command mapping, hands-on classifier integration plus homework.",
+        "A rare engineering-deployment topic in free Chinese BCI courses — most stop at offline classification; this one goes straight to online systems.",
+        "The author keeps releasing free materials (Bilibili + CSDN); the account has a marketing-post history, so take the technical content with a grain of salt."
+      ],
+      "url": "https://www.bilibili.com/read/cv53992940",
+      "published": "2026-11-19T14:04:00Z",
+      "source": "bilibili",
+      "language": "zh",
+      "brief": "B站「馒头哦耶」发布工程课第 5 讲预告：《在线模型加载推理部署集成接口设计》，**2026.11.23–11.29 周期授课**，大纲六项——脑机接口在线模型加载方法、**在线 BCI 推理线程与数据隔离设计**、部署流程设计、模型输出后处理与指令映射、实战：BCI 流水线中集成分类器、作业。中文免费 BCI 课程绝大多数停在「离线跑个分类器出准确率」，本课直接进**在线系统的工程核心**（线程隔离、指令映射、热加载），这正是做反馈类/控制类应用时最缺的know-how。作者持续公开免费资料（B站＋CSDN 博客可查历史）。提示：该账号此前发过营销软文，本条只取其**可核实的课程大纲与排期**；建议旁听验证质量后再决定是否跟进作业环节。",
+      "brief_en": "Bilibili column announces Engineering Course 5 (online model loading, inference deployment and integration), taught Nov 23–29: online loading, inference-thread/data isolation, deployment flow, post-processing to command mapping, hands-on classifier integration plus homework. A rare engineering-deployment syllabus in free Chinese BCI courses; the account has a marketing history — audit first.",
+      "tags": [
+        "course",
+        "online-bci",
+        "deployment",
+        "inference-thread",
+        "chinese"
+      ],
+      "raw_excerpt": "「馒头脑机接口第一季工程课·课5《在线模型加载推理部署集成接口设计》，2026.11.23-11.29 周期课程授课，授课内容：1、脑机接口在线模型加载方法 2、在线BCI推理线程与数据隔离设计 3、BCI在线模型部署流程设计 4、模型输出后处理与指令映射 5、实战：BCI流水线中集成分类器 6、作业…老师免费的BCI课程资料请关注…」",
+      "fetched_at": "2026-11-19T23:55:00Z",
+      "platform": "bilibili",
+      "content_type": "column",
+      "upstream_id": "cv53992940",
+      "author_handle": "馒头哦耶",
+      "metrics": {
+        "play": null,
+        "like": 2,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "中文免费课罕见的在线部署大纲（线程隔离/指令映射），排期明确可旁听验证。"
     }
   ],
   "stats": {
