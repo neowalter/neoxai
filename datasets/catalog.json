@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T13:26:10.372Z",
+  "generatedAt": "2026-11-19T13:53:03.654Z",
   "sources": [
     {
       "id": "huggingface",
@@ -9,7 +9,7 @@
     {
       "id": "openneuro",
       "ok": true,
-      "count": 19
+      "count": 18
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 14
+      "count": 17
     },
     {
       "id": "github",
       "ok": true,
-      "count": 6
+      "count": 5
     }
   ],
   "items": [
@@ -102,6 +102,26 @@
       "updatedAt": "2021-01-01T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009126",
+      "name": "LittlePrince_MEG_French_Distraction_2026",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009126",
+      "source": "openneuro",
+      "description": "LittlePrince_MEG_French_Distraction_2026",
+      "tags": [
+        "BIDS",
+        "meg",
+        "mri"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-18T09:42:32.490Z",
+      "modality": [
+        "MEG"
       ]
     },
     {
@@ -430,12 +450,37 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 14137,
-      "likes": 28,
+      "downloads": 14209,
+      "likes": 29,
       "updatedAt": "2026-11-10T10:02:54.000Z",
       "modality": [
         "EEG",
         "ECG"
+      ]
+    },
+    {
+      "id": "hf:aspire-osu/maestro-eeg-dataset",
+      "name": "maestro-eeg-dataset",
+      "owner": "aspire-osu",
+      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
+      "source": "huggingface",
+      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
+      "tags": [
+        "audio-classification",
+        "time-series-forecasting",
+        "cc-by-nc-sa-4.0",
+        "audiofolder",
+        "audio",
+        "video",
+        "arxiv:2609.31898",
+        "eeg"
+      ],
+      "license": "cc-by-nc-sa-4.0",
+      "downloads": 11759,
+      "likes": 2,
+      "updatedAt": "2026-11-08T16:42:18.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -456,9 +501,34 @@
         "brain-computer-interface"
       ],
       "license": "cc-by-4.0",
-      "downloads": 8622,
+      "downloads": 8550,
       "likes": 1,
       "updatedAt": "2026-10-15T11:26:21.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:raei/Brunner-2008-BCICompetition2008GrazDataSetA",
+      "name": "Brunner-2008-BCICompetition2008GrazDataSetA",
+      "owner": "raei",
+      "url": "https://huggingface.co/datasets/raei/Brunner-2008-BCICompetition2008GrazDataSetA",
+      "source": "huggingface",
+      "description": "BCI Competition IV Dataset 2a — Graz data set A This is an unofficial mirror of the dataset described by C. Brunner, R. Leeb, G. R. Müller-Putz, A. Schlögl, and G. Pfurtscheller (2008) at Graz University of Technology. Originally released as BCI Competition IV Dataset 2a (BCICIV…",
+      "tags": [
+        "cc-by-nd-4.0",
+        "document",
+        "neuroscience",
+        "electroencephalography",
+        "brain-computer-interface",
+        "motor-imagery",
+        "matlab",
+        "bci-competition"
+      ],
+      "license": "cc-by-nd-4.0",
+      "downloads": 1180,
+      "likes": 0,
+      "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -474,7 +544,7 @@
         "afl-3.0"
       ],
       "license": "afl-3.0",
-      "downloads": 1022,
+      "downloads": 975,
       "likes": 1,
       "updatedAt": "2026-10-08T07:54:26.000Z",
       "modality": [
@@ -499,9 +569,31 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 637,
+      "downloads": 607,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:EEGDash/eegdash-corpus-v0",
+      "name": "eegdash-corpus-v0",
+      "owner": "EEGDash",
+      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
+      "source": "huggingface",
+      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
+      "tags": [
+        "arxiv:2611.06356",
+        "eeg",
+        "neuroscience",
+        "foundation-model",
+        "zarr"
+      ],
+      "license": "other",
+      "downloads": 444,
+      "likes": 4,
+      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -523,56 +615,9 @@
         "generative-latents"
       ],
       "license": "cc-by-4.0",
-      "downloads": 491,
+      "downloads": 510,
       "likes": 0,
       "updatedAt": "2026-11-10T07:39:36.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:aspire-osu/maestro-eeg-dataset",
-      "name": "maestro-eeg-dataset",
-      "owner": "aspire-osu",
-      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
-      "source": "huggingface",
-      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
-      "tags": [
-        "audio-classification",
-        "time-series-forecasting",
-        "cc-by-nc-sa-4.0",
-        "audiofolder",
-        "audio",
-        "video",
-        "arxiv:2609.31898",
-        "eeg"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 453,
-      "likes": 2,
-      "updatedAt": "2026-11-08T16:42:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:EEGDash/eegdash-corpus-v0",
-      "name": "eegdash-corpus-v0",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
-      "source": "huggingface",
-      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
-      "tags": [
-        "arxiv:2611.06356",
-        "eeg",
-        "neuroscience",
-        "foundation-model",
-        "zarr"
-      ],
-      "license": "other",
-      "downloads": 364,
-      "likes": 4,
-      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -593,7 +638,7 @@
         "driving"
       ],
       "license": "cc-by-4.0",
-      "downloads": 563,
+      "downloads": 594,
       "likes": 0,
       "updatedAt": "2026-10-15T03:39:35.000Z",
       "modality": [
@@ -614,34 +659,9 @@
         "brain-computer-interface"
       ],
       "license": "cc0-1.0",
-      "downloads": 450,
+      "downloads": 453,
       "likes": 0,
       "updatedAt": "2026-10-28T02:30:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:raei/Brunner-2008-BCICompetition2008GrazDataSetA",
-      "name": "Brunner-2008-BCICompetition2008GrazDataSetA",
-      "owner": "raei",
-      "url": "https://huggingface.co/datasets/raei/Brunner-2008-BCICompetition2008GrazDataSetA",
-      "source": "huggingface",
-      "description": "BCI Competition IV Dataset 2a — Graz data set A This is an unofficial mirror of the dataset described by C. Brunner, R. Leeb, G. R. Müller-Putz, A. Schlögl, and G. Pfurtscheller (2008) at Graz University of Technology. Originally released as BCI Competition IV Dataset 2a (BCICIV…",
-      "tags": [
-        "cc-by-nd-4.0",
-        "document",
-        "neuroscience",
-        "electroencephalography",
-        "brain-computer-interface",
-        "motor-imagery",
-        "matlab",
-        "bci-competition"
-      ],
-      "license": "cc-by-nd-4.0",
-      "downloads": 544,
-      "likes": 0,
-      "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
         "EEG"
       ]
@@ -685,7 +705,7 @@
         "neuroscience"
       ],
       "license": "cc0-1.0",
-      "downloads": 303,
+      "downloads": 304,
       "likes": 0,
       "updatedAt": "2026-10-31T04:32:51.000Z",
       "modality": [
@@ -728,9 +748,25 @@
       "description": "Dataset Overview Objective, quantifiable EEG biomarkers for schizophrenia (SZ) research are limited by the scarcity of large, diverse, and high-quality public datasets. To address this gap, we present ASEEG (Atieh Schizophrenia EEG), a resting-state EEG dataset designed to suppo…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1190,
+      "downloads": 1197,
       "likes": null,
       "updatedAt": "2026-11-16T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:24353000",
+      "name": "EEG Biofeedback and Multimodal Neuro-Physiological Monitoring in Elite Male Judokas: Neural Efficiency, Peak Power Preservation, and Strength Recovery under Hypoxia and Normoxia",
+      "owner": "Maszczyk, Adam",
+      "url": "https://doi.org/10.5281/zenodo.24353000",
+      "source": "zenodo",
+      "description": "This record documents a pilot randomized controlled trial investigating whether combining real-time EEG neurofeedback with normobaric hypoxia can improve post-exercise neuromuscular recovery in elite male judokas from the Polish National Judo Senior Team. &nbsp; Eight internatio…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 375,
+      "likes": null,
+      "updatedAt": "2026-11-18T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -761,12 +797,28 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 93,
+      "downloads": 94,
       "likes": null,
       "updatedAt": "2026-11-17T00:00:00.000Z",
       "modality": [
         "EEG",
         "fNIRS"
+      ]
+    },
+    {
+      "id": "zenodo:24367896",
+      "name": "NED-Net: an annotation–training loop for rodent EEG event detection",
+      "owner": "Ledri, Marco",
+      "url": "https://doi.org/10.5281/zenodo.24367896",
+      "source": "zenodo",
+      "description": "This dataset holds what is needed to check and reproduce the results of the original paper without the full recordings: - the reference annotations; - every detection the models produced; - the reviewed precision census; - the trained models; - the EEG of the recordings held out…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 8,
+      "likes": null,
+      "updatedAt": "2026-11-19T00:00:00.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -778,9 +830,25 @@
       "description": "This dataset contains one three-channel EEG recording from each of 11 adult volunteers aged 25&ndash;50 years, together with synchronized command annotations and Python analysis code. Participants alternated relaxation with imagined flexion and extension of the fingers of the ri…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 0,
+      "downloads": 6,
       "likes": null,
       "updatedAt": "2026-11-18T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:24367083",
+      "name": "Data extraction and quality appraisal (QATQS/NAMA) matrices for Facial Actions and EEG During Aerobic and Resistance Exercise: Interpreting Affective Responses",
+      "owner": "Ker, Tony",
+      "url": "https://doi.org/10.5281/zenodo.24367083",
+      "source": "zenodo",
+      "description": "Supplementary data for the systematic review reported in the PhD thesis &ldquo;Facial Actions and EEG During Aerobic and Resistance Exercise: Interpreting Affective Responses&rdquo; (Tony Ker, Sheffield Hallam University, 2026). This record contains the full data extraction and…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-11-19T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -829,63 +897,6 @@
       "downloads": 2,
       "likes": null,
       "updatedAt": "2026-11-15T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24104007",
-      "name": "Residual visual responsivity and network reactivity in Retinitis Pigmentosa - SSVEP",
-      "owner": "Siviero, Ilaria",
-      "url": "https://doi.org/10.5281/zenodo.24104007",
-      "source": "zenodo",
-      "description": "Description This dataset contains steady-state visual evoked potential (SSVEP) EEG recordings collected from patients with Retinitis Pigmentosa (RP) and from healthy control participants.&nbsp; Participants Healthy controls: 19 participants&nbsp; Patients with Retinitis Pigmento…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 27,
-      "likes": null,
-      "updatedAt": "2026-11-10T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24048111",
-      "name": "Reproducibility package for \"Paired-trial grouping and validation sensitivity in cued and uncued music imagery decoding in OpenMIIR\"",
-      "owner": "Wang, Yutian",
-      "url": "https://doi.org/10.5281/zenodo.24048111",
-      "source": "zenodo",
-      "description": "Code, analysis protocols, derived inputs and saved results for a secondary analysis of the public OpenMIIR EEG corpus (Stober et al.). The analysis examines how validation grouping and training-set membership change cued-versus-uncued music imagery classification scores. It comp…",
-      "tags": [
-        "EEG decoding",
-        "grouped cross-validation",
-        "paired trials",
-        "temporal dependence",
-        "music imagery",
-        "OpenMIIR",
-        "data leakage",
-        "reproducibility"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 36,
-      "likes": null,
-      "updatedAt": "2026-11-08T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24089944",
-      "name": "Macroscale dynamics of EEG microstates constitute the periodic and aperiodic features of the neural power spectrum",
-      "owner": "Zanesco, Anthony",
-      "url": "https://doi.org/10.5281/zenodo.24089944",
-      "source": "zenodo",
-      "description": "This contains the data accompanying the manuscript \"Macroscale dynamics of EEG microstates constitute the periodic and aperiodic features of the neural power spectrum\".&nbsp;",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 23,
-      "likes": null,
-      "updatedAt": "2026-11-09T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -942,21 +953,24 @@
       ]
     },
     {
-      "id": "github:eegdash/eegdash-corpus",
-      "name": "eegdash-corpus",
-      "owner": "eegdash",
-      "url": "https://github.com/eegdash/eegdash-corpus",
+      "id": "github:abinaya-g/ACXNet-PlusPlus",
+      "name": "ACXNet-PlusPlus",
+      "owner": "abinaya-g",
+      "url": "https://github.com/abinaya-g/ACXNet-PlusPlus",
       "source": "github",
-      "description": "Code and records for EEGDash Corpus v0: 77 public EEG datasets (14,000+ hours) converted into a training-ready Zarr store for EEG foundation models. MLESP 2026.",
+      "description": "Attention-augmented hybrid DL for cross-subject EEG mental workload estimation (STEW dataset)",
       "tags": [
-        "brain-decoding",
-        "corpus",
-        "eeg"
+        "deep-learning",
+        "eeg",
+        "mental-workload",
+        "self-attention",
+        "stew-dataset",
+        "xgboost"
       ],
-      "license": "BSD-3-Clause",
+      "license": "MIT",
       "downloads": null,
-      "likes": 2,
-      "updatedAt": "2026-11-17T08:09:56.000Z",
+      "likes": 1,
+      "updatedAt": "2026-11-19T09:21:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -976,35 +990,10 @@
       "license": "NOASSERTION",
       "downloads": null,
       "likes": 1,
-      "updatedAt": "2026-11-16T01:54:20.000Z",
+      "updatedAt": "2026-11-18T18:56:52.000Z",
       "modality": [
         "EEG",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:DrGiovannaDalRi/Signal-Processing-for-Stroke-EEG",
-      "name": "Signal-Processing-for-Stroke-EEG",
-      "owner": "DrGiovannaDalRi",
-      "url": "https://github.com/DrGiovannaDalRi/Signal-Processing-for-Stroke-EEG",
-      "source": "github",
-      "description": "Signal processing of EEG data of stroke patients, present in the dataset from Liu et al. (2024).",
-      "tags": [
-        "bci",
-        "bci-systems",
-        "data-analysis",
-        "eeg",
-        "eeg-analysis",
-        "eeg-signals",
-        "eeg-signals-processing",
-        "signal-processing"
-      ],
-      "license": "Apache-2.0",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-16T16:17:12.000Z",
-      "modality": [
-        "EEG"
       ]
     }
   ]
