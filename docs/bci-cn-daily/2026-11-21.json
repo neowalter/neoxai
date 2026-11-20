@@ -1,0 +1,212 @@
+{
+  "date": "2026-11-21",
+  "generated_at": "2026-11-20T23:02:09.502Z",
+  "item_count": 4,
+  "types": {
+    "Project": 4
+  },
+  "highlights": [
+    {
+      "title_zh": "braindecode v2.0.0 审计续集：CSBrain 不再「fork RNG 重画」patch embedding，模型配置保住 coord_frame",
+      "title_en": "braindecode v2.0.0 Audit Sequel: CSBrain Stops Forking the RNG to Redraw Patch Embedding; Configs Keep coord_frame",
+      "url": "https://github.com/braindecode/braindecode/pull/1645",
+      "brief": "braindecode 的 v2.0.0 审计进入第二天（**两天约 58 提交**）。最扎眼的是 **#1645：CSBrain 构建 CBraMod `_PatchEmbedding` 时套着 `torch.random.fork_rng` 和「stem-first redraw」循环——实例化即重掷随机数**，即预训练模型输入级模块在不同运行/设备下拿到不同初始权重；修复为只建一次。**#1631/#1632 让模型配置保存/加载时保留通道坐标的 `coord_frame` 并完整往返 MNE 元数据**——此前存盘读回坐标系即丢失。**#1625 CORTEG 高 gamma 头改从已加载 backbone 热启动**（此前静默接随机 backbone）、#1708 misc 通道被删时显式 raise。审计自述「v2.0.0 audit」并逐条挂 PR，公开列清单式清扫值得抄。"
+    },
+    {
+      "title_zh": "MNE-Python：皮层下源空间法线方向朝内多年——深部定位的符号错误修复",
+      "title_en": "MNE-Python: Subcortical Source-Space Normals Pointed Inward for Years — Deep Localization Sign Error Fixed",
+      "url": "https://github.com/mne-tools/mne-python/pull/14572",
+      "brief": "MNE-Python 合并 #14572：**皮层下源空间的法线此前朝内（inward normals）**，且缺 label 时直接崩溃——法线就是偶极子朝向，**方向反了意味着深部源的正向解符号翻转**：用默认 `make_volume_source_space`/subcortical 流程做过定位或跨频率统计的人，深部结果可能系统性反向而全程无报错（本 lane 第九天主题「能跑、不报错、结论变」）。修复同时处理缺 label 崩溃。同日 **#14569**：auto scalings 在 `remove_dc` 时改为逐段减均值，幅值缩放不再被直流残留污染；#14570 新增 `DigMontage.project_to_scalp`（头皮投影坐标）。用 MNE 做皮层下定位的团队：核对版本边界，深部显著性结果值得抽查符号。"
+    },
+    {
+      "title_zh": "新开源 bci-bench：「一份数据契约、一套划分协议、一个指标定义」＋5M 参数以下 EEG 编码器底座",
+      "title_en": "New Open-Source bci-bench: One Data Contract, One Split Protocol, One Metric Definition — Plus a Sub-5M-Parameter EEG Encoder Base",
+      "url": "https://github.com/periodgod/bci-bench",
+      "brief": "独立研究者 11-20 单日发布成套 BCI 开源仓库，旗舰 **bci-bench** 的口号正中本 lane 连日主题：**「一份数据契约、一套划分协议、一个指标定义——用于我们跑的每个 EEG 实验」**，把散落脚本/notebook 里的接入、预处理、评测、诊断收敛成 v0.2.0 的可复用包（中英双语 README、真实代码体量）。姊妹仓 **bci-foundation-model** 更旗帜鲜明：**主候选约 4.91M 参数**，在同一契约下横比六种编码器×四种预训练目标×三种调优——对着 EEG 基础模型军备竞赛给出「小而可比」的替代路线。另有 MER-PS 2026 连续效价唤醒、32 通道机械臂、SSVEP 多范式等任务仓。**警示**：零星标、结果未经社区复核，本条收录的是方法论立场与轻量可复现路线；采用前务必自跑其基准验证数字。"
+    }
+  ],
+  "github_path": "docs/bci-cn-daily/2026-11-21.md",
+  "items": [
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "braindecode v2.0.0 审计续集：CSBrain 不再「fork RNG 重画」patch embedding，模型配置保住 coord_frame",
+      "title_en": "braindecode v2.0.0 Audit Sequel: CSBrain Stops Forking the RNG to Redraw Patch Embedding; Configs Keep coord_frame",
+      "bullets_zh": [
+        "**#1645：CSBrain 此前构建 CBraMod `_PatchEmbedding` 时套着 `torch.random.fork_rng` ＋「stem-first redraw」循环**——每次实例化都重掷随机数；修复为只建一次、删掉 fork 与重画。",
+        "**#1631/#1632：模型配置（save/load）现在保留通道坐标的 `coord_frame` 并完整往返 MNE 元数据**——此前存盘再读回，坐标系信息丢失/错配。",
+        "同日 **#1625 CORTEG 高 gamma 头改为从已加载 backbone 热启动**（此前静默用随机 backbone）、#1708 misc 通道被预处理删掉时显式 raise——审计提交自述「v2.0.0 audit」，**两天 58 提交**的运动式清扫。"
+      ],
+      "bullets_en": [
+        "#1645: CSBrain wrapped CBraMod's _PatchEmbedding in torch.random.fork_rng plus a stem-first redraw loop — re-rolling weights on every instantiation; now built once with the fork and redraw deleted.",
+        "#1631/#1632: model save/load now preserves channel coord_frame and round-trips MNE metadata, which was previously lost or mismatched across disk.",
+        "Same day #1625 warm-starts CORTEG's high-gamma head from the loaded backbone (previously a silent random backbone) and #1708 raises explicitly when preprocessing removed the misc channel — self-described 'v2.0.0 audit', ~58 commits over two days."
+      ],
+      "url": "https://github.com/braindecode/braindecode/pull/1645",
+      "published": "2026-11-20T19:56:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "braindecode 的 v2.0.0 审计进入第二天（**两天约 58 提交**）。最扎眼的是 **#1645：CSBrain 构建 CBraMod `_PatchEmbedding` 时套着 `torch.random.fork_rng` 和「stem-first redraw」循环——实例化即重掷随机数**，即预训练模型输入级模块在不同运行/设备下拿到不同初始权重；修复为只建一次。**#1631/#1632 让模型配置保存/加载时保留通道坐标的 `coord_frame` 并完整往返 MNE 元数据**——此前存盘读回坐标系即丢失。**#1625 CORTEG 高 gamma 头改从已加载 backbone 热启动**（此前静默接随机 backbone）、#1708 misc 通道被删时显式 raise。审计自述「v2.0.0 audit」并逐条挂 PR，公开列清单式清扫值得抄。",
+      "brief_en": "braindecode's self-described v2.0.0 audit continues (~58 commits in two days): #1645 deletes CSBrain's torch.random.fork_rng plus stem-redraw loop that re-rolled patch-embedding weights per instantiation; #1631/#1632 make model configs preserve channel coord_frame and round-trip MNE metadata; #1625 warm-starts CORTEG from the loaded backbone instead of a silent random one.",
+      "tags": [
+        "braindecode",
+        "v2.0.0-audit",
+        "rng-fork",
+        "coord-frame",
+        "reproducibility"
+      ],
+      "raw_excerpt": "PR #1645: \"`braindecode/models/csbrain.py:346-356`: CSBrain builds CBraMod's `_PatchEmbedding` once. The `torch.random.fork_rng` block, the `torch.get_default_device()` lookup and the stem-first redraw loop are deleted.\"; commits 2026-11-20: \"FIX Model configs keep the channel coord_frame (#1631)\"; \"FIX Round-trip MNE channel metadata through model configs (#1632)\"; \"FIX CORTEG: warm-start high gamma from the loaded backbone (#1625)\".",
+      "fetched_at": "2026-11-20T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "braindecode/braindecode#1645",
+      "author_handle": "braindecode",
+      "metrics": {
+        "play": null,
+        "like": 1342,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "实例化即重掷随机数毁掉可复现性；公开列清单的审计运动本身是可抄样本。"
+    },
+    {
+      "type": "Project",
+      "level": "Advanced",
+      "title_zh": "MNE-Python：皮层下源空间法线方向朝内多年——深部定位的符号错误修复",
+      "title_en": "MNE-Python: Subcortical Source-Space Normals Pointed Inward for Years — Deep Localization Sign Error Fixed",
+      "bullets_zh": [
+        "#14572：修复皮层下（subcortical）源空间**法线方向朝内（inward normals）**的问题＋缺 label 时直接崩溃——两个问题由用户 @ttaiv 在 #14450 报告。",
+        "法线即偶极子朝向：**方向反了，深部源的正向解符号翻转**，逆推定位与统计图会系统性偏移且全程无报错。",
+        "同日 **#14569 auto scalings 在 `remove_dc` 下改为逐段减均值**——幅值缩放不再被段间直流残留污染。"
+      ],
+      "bullets_en": [
+        "#14572 fixes inward normals in subcortical source spaces plus a crash on missing labels — both reported by @ttaiv in issue #14450.",
+        "Normals are dipole orientations: reversed, the forward model's sign flips for deep sources and inverse localization shifts systematically with no error raised.",
+        "Same day #14569 subtracts per-segment means in auto scalings under remove_dc so amplitude scaling is no longer polluted by DC residue."
+      ],
+      "url": "https://github.com/mne-tools/mne-python/pull/14572",
+      "published": "2026-11-20T18:10:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "MNE-Python 合并 #14572：**皮层下源空间的法线此前朝内（inward normals）**，且缺 label 时直接崩溃——法线就是偶极子朝向，**方向反了意味着深部源的正向解符号翻转**：用默认 `make_volume_source_space`/subcortical 流程做过定位或跨频率统计的人，深部结果可能系统性反向而全程无报错（本 lane 第九天主题「能跑、不报错、结论变」）。修复同时处理缺 label 崩溃。同日 **#14569**：auto scalings 在 `remove_dc` 时改为逐段减均值，幅值缩放不再被直流残留污染；#14570 新增 `DigMontage.project_to_scalp`（头皮投影坐标）。用 MNE 做皮层下定位的团队：核对版本边界，深部显著性结果值得抽查符号。",
+      "brief_en": "MNE-Python #14572 fixes inward-pointing normals in subcortical source spaces (plus a missing-label crash, both from issue #14450). Normals are dipole orientations: reversed signs flip deep-source forward solutions and shift inverse results silently. Same day #14569 subtracts per-segment means in auto scalings under remove_dc; #14570 adds DigMontage.project_to_scalp.",
+      "tags": [
+        "mne",
+        "source-space",
+        "normals",
+        "sign-error",
+        "subcortical"
+      ],
+      "raw_excerpt": "Commit 3d46981d48, 2026-11-20T18:10Z: \"fix inward normals and missing-label crash in subcortical source spaces (#14572)\"; PR body: \"fixing 2 issues reported by @ttaiv in #14450.\"; also \"FIX: Subtract per-segment means in auto scalings with remove_dc (#14569)\".",
+      "fetched_at": "2026-11-20T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "mne-tools/mne-python#14572",
+      "author_handle": "mne-tools",
+      "metrics": {
+        "play": null,
+        "like": 3613,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 8,
+      "why_valuable": "深部源法线朝内即符号翻转，定位静默反向；皮层下结果需按版本抽查。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "新开源 bci-bench：「一份数据契约、一套划分协议、一个指标定义」＋5M 参数以下 EEG 编码器底座",
+      "title_en": "New Open-Source bci-bench: One Data Contract, One Split Protocol, One Metric Definition — Plus a Sub-5M-Parameter EEG Encoder Base",
+      "bullets_zh": [
+        "个人研究者（Yizhong Zhang）11-20 连发成套仓库：**bci-bench**（评测内核：数据接入/预处理/评测/诊断收敛为单一 Python 包，v0.2.0，中英双语 README）＋ bci-foundation-model、bci-mer、bci-arm-robot、bci-visual-app。",
+        "**bci-foundation-model：主候选约 4.91M 参数**——六种编码器结构×四种预训练目标×三种调优策略在同一数据契约下横评，直接对着「大模型军备竞赛」唱反调。",
+        "注意：**新仓库零星标、结果未经社区复核**；收录的是其方法论立场（统一契约/划分/指标）与可复现的轻量路线，采用前先自己跑通基准。"
+      ],
+      "bullets_en": [
+        "Solo researcher Yizhong Zhang published a suite on Nov 20: bci-bench (data ingest, preprocessing, evaluation and diagnostics converged into one Python package, v0.2.0, bilingual README) plus bci-foundation-model, bci-mer, bci-arm-robot and bci-visual-app.",
+        "bci-foundation-model keeps the main candidate at ~4.91M parameters — six encoder architectures x four pretraining objectives x three tuning strategies compared under one data contract, a deliberate counter to the scale race.",
+        "Caveat: brand-new repos with zero stars and no community verification; what we endorse is the methodological stance (one contract/split/metric) and the reproducible lightweight route — run their benchmark yourself before adopting."
+      ],
+      "url": "https://github.com/periodgod/bci-bench",
+      "published": "2026-11-20T07:14:32Z",
+      "source": "github",
+      "language": "en",
+      "brief": "独立研究者 11-20 单日发布成套 BCI 开源仓库，旗舰 **bci-bench** 的口号正中本 lane 连日主题：**「一份数据契约、一套划分协议、一个指标定义——用于我们跑的每个 EEG 实验」**，把散落脚本/notebook 里的接入、预处理、评测、诊断收敛成 v0.2.0 的可复用包（中英双语 README、真实代码体量）。姊妹仓 **bci-foundation-model** 更旗帜鲜明：**主候选约 4.91M 参数**，在同一契约下横比六种编码器×四种预训练目标×三种调优——对着 EEG 基础模型军备竞赛给出「小而可比」的替代路线。另有 MER-PS 2026 连续效价唤醒、32 通道机械臂、SSVEP 多范式等任务仓。**警示**：零星标、结果未经社区复核，本条收录的是方法论立场与轻量可复现路线；采用前务必自跑其基准验证数字。",
+      "brief_en": "Solo researcher Yizhong Zhang shipped a BCI suite on Nov 20: bci-bench — 'one data contract, one split protocol, one metric definition' converging ingest/preprocessing/evaluation into one v0.2.0 package — plus bci-foundation-model keeping the main candidate at ~4.91M parameters across six encoders x four objectives x three tunings. Zero stars yet; verify before adopting.",
+      "tags": [
+        "benchmark",
+        "data-contract",
+        "small-models",
+        "reproducibility",
+        "new-project"
+      ],
+      "raw_excerpt": "bci-bench README: \"**One data contract, one split protocol, one metric definition — for every EEG experiment we run.** 共享评测内核：把散落在项目脚本与 notebook 里的数据接入、预处理、模型评测和诊断，收敛到一个可复用的 Python 包。\"; bci-foundation-model README: \"six encoder structures, four training objectives, three tuning strategies — all under a 5M parameter budget…主候选约 **4.91M 参数**\".",
+      "fetched_at": "2026-11-20T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "periodgod/bci-bench",
+      "author_handle": "periodgod",
+      "metrics": {
+        "play": null,
+        "like": 0,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "「统一契约/划分/指标」立场正中主题；<5M 参数是军备竞赛的稀缺反调。"
+    },
+    {
+      "type": "Project",
+      "level": "Intermediate",
+      "title_zh": "aeon-neuro 补齐经典 MI 武器：Tikhonov 正则 CSP（TRCSP）与 Xdawn 协方差进 Riemannann 管线",
+      "title_en": "aeon-neuro Adds Classic MI Arsenal: Tikhonov-Regularised CSP and Xdawn Covariances in the Riemannian Pipeline",
+      "bullets_zh": [
+        "**#319 TRCSP**：Tikhonov 正则化共空间模式作为官方 transformer 进管线——小样本运动想象里最稳的 CSP 变体之一终于有了维护中的实现。",
+        "**#322 XdawnCovariances（`covariance_type=\"xdawn\"`）**：事件相关电位增强后的协方差直接喂 Riemanann 分类器；**#309** 支持把 EEG 元信息接入分类器。",
+        "aeon-neuro 是 aeon 工具箱的 EEG 分支——经典方法获得「有人维护＋进 CI」的地位，比再一个 notebook 示例耐用得多。"
+      ],
+      "bullets_en": [
+        "#319 TRCSP: Tikhonov-regularised CSP lands as an official transformer — one of the most robust CSP variants for small-sample motor imagery finally has a maintained implementation.",
+        "#322 XdawnCovariances (covariance_type='xdawn') feeds ERP-enhanced covariances straight into Riemannian classifiers; #309 wires EEG metadata into classifiers.",
+        "aeon-neuro is the EEG branch of the aeon toolkit — classic methods gaining 'maintained plus in CI' status beats yet another notebook example."
+      ],
+      "url": "https://github.com/aeon-toolkit/aeon-neuro/pull/319",
+      "published": "2026-11-20T11:26:00Z",
+      "source": "github",
+      "language": "en",
+      "brief": "aeon-neuro（aeon 工具箱 EEG 分支）单日合并四个特性：**#319 Tikhonov 正则化 CSP（TRCSP）**——小样本运动想象里最抗过拟合的 CSP 变体之一，此前散落各人脚本，如今是有测试、进 CI 的官方 transformer；**#322 `XdawnCovariances`/`covariance_type=\"xdawn\"`** 把 Xdawn 事件相关增强后的协方差直接接入 Riemanann 几何分类器（P300/ERP 场景的标准前处理）；**#309** 允许把 EEG 元信息带入分类器；**#280** 给深度学习分类器补显式序列长度检查。对 MI/P300 实战者：这意味着「CSP+Xdawn+Riemanann」这条经典强基线在维护型框架里开箱即用，做方法比较时不再需要自带一堆未版本化的参考实现——「可复现基线」又近一步。",
+      "brief_en": "aeon-neuro merged four features in a day: #319 Tikhonov-regularised CSP (TRCSP) as an official transformer, #322 XdawnCovariances feeding ERP-enhanced covariances into Riemannian classifiers, #309 EEG metadata in classifiers and #280 explicit length checks — the classic MI/P300 baseline stack becomes maintained, tested and CI-covered.",
+      "tags": [
+        "aeon-neuro",
+        "csp",
+        "trcsp",
+        "xdawn",
+        "riemannian"
+      ],
+      "raw_excerpt": "Commits 2026-11-20: \"[ENH] Add Tikhonov-Regularised Common Spatial Patterns (TRCSP) transf… (#319)\"; \"[ENH] Add XdawnCovariances and covariance_type=\\\"xdawn\\\" for the Rieman… (#322)\"; \"[ENH] Integrate optional EEG information with classifiers (#309)\".",
+      "fetched_at": "2026-11-20T23:55:00Z",
+      "platform": "github",
+      "content_type": "repo",
+      "upstream_id": "aeon-toolkit/aeon-neuro#319",
+      "author_handle": "aeon-toolkit",
+      "metrics": {
+        "play": null,
+        "like": 35,
+        "collect": null,
+        "comment": null
+      },
+      "quality_score": 7,
+      "why_valuable": "MI/P300 经典强基线（TRCSP+Xdawn+Riemanann）首次整体进维护型框架。"
+    }
+  ],
+  "stats": {
+    "fetched": 132,
+    "prefiltered": 97,
+    "llm_rows": 14,
+    "kept": 4,
+    "llm_failed": false,
+    "llm_skipped_batches": 0,
+    "conflicts_dropped": 0
+  }
+}
