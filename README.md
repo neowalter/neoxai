@@ -189,6 +189,7 @@ Weights stay upstream. Full tables: [`models/README.md`](./models/README.md), [`
 | BENDR | Transformer + contrastive EEG | [SPOClab-ca/BENDR](https://github.com/SPOClab-ca/BENDR) |
 | MOABB | Benchmark harness | [NeuroTechX/moabb](https://github.com/NeuroTechX/moabb) |
 | MNE-Python | Load, filter, ICA, viz | [mne.tools](https://mne.tools) |
+| IntentLab reliability audit | Offline participant coverage and uncertainty audit (MIT; bundled data derivatives ODC-BY) | [Reuse guide](https://github.com/shrut10/intentlab-bci/blob/main/docs/RELIABILITY.md) · [Software citation](https://github.com/shrut10/intentlab-bci/blob/main/CITATION.cff) |
 
 Confirm **training-data license** before you ship a fine-tune (TUH is not “download and redistribute”). Prefer official model cards over anonymous mirrors.
 
