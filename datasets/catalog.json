@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-21T12:59:57.302Z",
+  "generatedAt": "2026-11-22T12:51:31.745Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 54
+      "count": 35
     },
     {
       "id": "openneuro",
@@ -100,6 +100,26 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2021-01-01T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009136",
+      "name": "Real-World Multiactivity EEG-IMU Dataset for Motion Artifact Removal and Classification Research",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009136",
+      "source": "openneuro",
+      "description": "Real-World Multiactivity EEG-IMU Dataset for Motion Artifact Removal and Classification Research",
+      "tags": [
+        "BIDS",
+        "eeg",
+        "motion"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-21T06:02:54.524Z",
       "modality": [
         "EEG"
       ]
@@ -335,77 +355,6 @@
       ]
     },
     {
-      "id": "openneuro:ds008894",
-      "name": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
-      "owner": "OpenNeuro",
-      "url": "https://openneuro.org/datasets/ds008894",
-      "source": "openneuro",
-      "description": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
-      "tags": [
-        "BIDS",
-        "meg",
-        "mri"
-      ],
-      "license": "CC0",
-      "downloads": null,
-      "likes": null,
-      "updatedAt": "2026-09-30T21:04:15.293Z",
-      "modality": [
-        "MEG"
-      ]
-    },
-    {
-      "id": "hf:HABSteam/multimodal-eeg-emotion",
-      "name": "multimodal-eeg-emotion",
-      "owner": "HABSteam",
-      "url": "https://huggingface.co/datasets/HABSteam/multimodal-eeg-emotion",
-      "source": "huggingface",
-      "description": "Multimodal EEG, physiology and eye-tracking during emotional video viewing Synchronised brain and physiological recordings from 355 participants, collected while they watched videos chosen to elicit emotion, rested, and performed an artefact calibration task. Collected and relea…",
-      "tags": [
-        "video",
-        "eeg",
-        "ecg",
-        "electrodermal-activity",
-        "respiration",
-        "eye-tracking",
-        "emotion",
-        "neuroscience"
-      ],
-      "license": "other",
-      "downloads": 15108,
-      "likes": 31,
-      "updatedAt": "2026-11-10T10:02:54.000Z",
-      "modality": [
-        "EEG",
-        "ECG"
-      ]
-    },
-    {
-      "id": "hf:aspire-osu/maestro-eeg-dataset",
-      "name": "maestro-eeg-dataset",
-      "owner": "aspire-osu",
-      "url": "https://huggingface.co/datasets/aspire-osu/maestro-eeg-dataset",
-      "source": "huggingface",
-      "description": "MAESTRO — a Multimodal EEG Auditory-Attention-Decoding Dataset MAESTRO recording setup. MAESTRO is a multimodal auditory-attention-decoding (AAD) dataset collected at The Ohio State University (OSU). In each trial a listener hears several talkers speaking at once from fixed loca…",
-      "tags": [
-        "audio-classification",
-        "time-series-forecasting",
-        "cc-by-nc-sa-4.0",
-        "audiofolder",
-        "audio",
-        "video",
-        "arxiv:2609.31898",
-        "eeg"
-      ],
-      "license": "cc-by-nc-sa-4.0",
-      "downloads": 12734,
-      "likes": 2,
-      "updatedAt": "2026-11-08T16:42:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "hf:raei/Brunner-2008-BCICompetition2008GrazDataSetA",
       "name": "Brunner-2008-BCICompetition2008GrazDataSetA",
       "owner": "raei",
@@ -423,33 +372,9 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 4271,
+      "downloads": 4456,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:yefllower/EEGFaceSem",
-      "name": "EEGFaceSem",
-      "owner": "yefllower",
-      "url": "https://huggingface.co/datasets/yefllower/EEGFaceSem",
-      "source": "huggingface",
-      "description": "EEGFaceSem EEG Dataset for Semantic Visual Response Paper · Project page Accepted at NeurIPS 2026, Evaluations and Datasets Track. Installation git clone https://huggingface.co/datasets/yefllower/EEGFaceSem cd EEGFaceSem pip install -e . Quick Start import EEGFaceSem # Auto-down…",
-      "tags": [
-        "cc-by-4.0",
-        "arxiv:2611.10781",
-        "eeg",
-        "bci",
-        "rsvp",
-        "face-stimuli",
-        "generative-latents"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 646,
-      "likes": 0,
-      "updatedAt": "2026-11-10T07:39:36.000Z",
       "modality": [
         "EEG"
       ]
@@ -472,31 +397,9 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 614,
+      "downloads": 545,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:EEGDash/eegdash-corpus-v0",
-      "name": "eegdash-corpus-v0",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/eegdash-corpus-v0",
-      "source": "huggingface",
-      "description": "EEGDash Corpus v0 77 public electroencephalography (EEG) datasets, served through EEGDash from OpenNeuro and NEMAR, converted once with the preprocessing recipe of the REVE EEG foundation model into training-ready 10-second samples, in one Zarr store. Every dataset keeps its own…",
-      "tags": [
-        "arxiv:2611.06356",
-        "eeg",
-        "neuroscience",
-        "foundation-model",
-        "zarr"
-      ],
-      "license": "other",
-      "downloads": 463,
-      "likes": 4,
-      "updatedAt": "2026-11-09T18:07:03.000Z",
       "modality": [
         "EEG"
       ]
@@ -515,30 +418,9 @@
         "brain-computer-interface"
       ],
       "license": "cc0-1.0",
-      "downloads": 552,
+      "downloads": 571,
       "likes": 0,
       "updatedAt": "2026-10-28T02:30:49.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "hf:itsalissonsilva/openneuro-eeg-spectral-bench",
-      "name": "openneuro-eeg-spectral-bench",
-      "owner": "itsalissonsilva",
-      "url": "https://huggingface.co/datasets/itsalissonsilva/openneuro-eeg-spectral-bench",
-      "source": "huggingface",
-      "description": "openneuro-eeg-spectral-bench Derived from UC San Diego Resting State EEG Data from Patients with Parkinson's Disease, OpenNeuro ds002778 snapshot 1.0.5, DOI 10.18112/openneuro.ds002778.v1.0.5, authors Alexander P. Rockhill, Nicko Jackson, Jobi George, Adam Aron, Nicole C. Swann.…",
-      "tags": [
-        "cc0-1.0",
-        "tabular",
-        "pandas",
-        "neuroscience"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 308,
-      "likes": 0,
-      "updatedAt": "2026-10-31T04:32:51.000Z",
       "modality": [
         "EEG"
       ]
@@ -561,7 +443,7 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 161,
+      "downloads": 163,
       "likes": 0,
       "updatedAt": "2026-11-09T14:31:28.000Z",
       "modality": [
@@ -570,62 +452,187 @@
       ]
     },
     {
-      "id": "hf:EEGDash/nm000290",
-      "name": "nm000290",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/nm000290",
+      "id": "hf:Anticloud/anticloud-deep-learning-for-bci",
+      "name": "anticloud-deep-learning-for-bci",
+      "owner": "Anticloud",
+      "url": "https://huggingface.co/datasets/Anticloud/anticloud-deep-learning-for-bci",
       "source": "huggingface",
-      "description": "PROTEUS BCI Bordeaux — EEG/EMG Foundation Challenge 2026, Track 02 This repository hosts the complete scientific files of NEMAR nm000290, snapshot v1.0.0. It includes every subject and recording, the BIDS sidecars, and the source's sourcedata/ and code/ files where present. All…",
-      "tags": [
-        "cc-by-4.0",
-        "bids",
-        "neuroscience",
-        "eegdash",
-        "electrophysiology"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 123,
-      "likes": 0,
-      "updatedAt": "2026-11-13T08:50:37.000Z",
-      "modality": [
-        "EEG",
-        "EMG"
-      ]
-    },
-    {
-      "id": "hf:EEGDash/ds003029",
-      "name": "ds003029",
-      "owner": "EEGDash",
-      "url": "https://huggingface.co/datasets/EEGDash/ds003029",
-      "source": "huggingface",
-      "description": "Epilepsy-iEEG-Multicenter-Dataset This repository hosts the complete scientific files of NEMAR on003029, snapshot v1.0.0. It includes every subject and recording, the BIDS sidecars, and the source's sourcedata/ and code/ files where present. All source files were verified agains…",
-      "tags": [
-        "cc0-1.0",
-        "bids",
-        "neuroscience",
-        "eegdash",
-        "electrophysiology"
-      ],
-      "license": "cc0-1.0",
-      "downloads": 104,
-      "likes": 0,
-      "updatedAt": "2026-11-13T08:50:35.000Z",
-      "modality": [
-        "iEEG"
-      ]
-    },
-    {
-      "id": "hf:samuki-hf/eeg-gaze-viewer-public",
-      "name": "eeg-gaze-viewer-public",
-      "owner": "samuki-hf",
-      "url": "https://huggingface.co/datasets/samuki-hf/eeg-gaze-viewer-public",
-      "source": "huggingface",
-      "description": "EEG and gaze recordings Lossless viewer exports of ZuCo and Frank EEG, gaze where available, and Michaelov's electrode-level N400 table. Original values and missing records are retained without new preprocessing. These exports cover selected source fields. ZuCo 1, Hollenstein et…",
+      "description": "DEEP_LEARNING_FOR_BCI BCI-ToolBox is deep learning pipeline for motor-imagery classification. This repo contains five models: ShallowConvNet, DeepConvNet, EEGNet, FBCNet, BCI2021. (BCI2021 is not an official name.) Category: BRAIN_COMPUTER_INTERFACE · Ecosystem: unknown · Vendor…",
       "tags": [],
       "license": null,
-      "downloads": 149,
+      "downloads": 58,
       "likes": 0,
-      "updatedAt": "2026-11-05T00:49:32.000Z",
+      "updatedAt": "2026-11-17T11:46:12.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:DKU-STATS201-Autumn2026/siyi-eeg-motor-imagery-pilot",
+      "name": "siyi-eeg-motor-imagery-pilot",
+      "owner": "DKU-STATS201-Autumn2026",
+      "url": "https://huggingface.co/datasets/DKU-STATS201-Autumn2026/siyi-eeg-motor-imagery-pilot",
+      "source": "huggingface",
+      "description": "EEG Motor Imagery Pilot: Left vs. Right Hand Classification Dataset Summary This dataset is a small, trial-level feature table derived from the PhysioNet EEG Motor Movement/Imagery Database (EEGMMIDB), version 1.0.0. It was prepared for a STATS201 (Autumn 2026) pilot study askin…",
+      "tags": [
+        "tabular-classification",
+        "odc-by",
+        "csv",
+        "tabular",
+        "pandas",
+        "eeg",
+        "motor-imagery",
+        "brain-computer-interface"
+      ],
+      "license": "odc-by",
+      "downloads": 54,
+      "likes": 0,
+      "updatedAt": "2026-11-15T08:12:29.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:madteam/thinking-bciciv2a",
+      "name": "thinking-bciciv2a",
+      "owner": "madteam",
+      "url": "https://huggingface.co/datasets/madteam/thinking-bciciv2a",
+      "source": "huggingface",
+      "description": "BCICIV-2a EEG Motor Imagery Provenance This repository contains one consolidated CSV shard derived from the local research copy identified as the Kaggle dataset aymanmostafa11/eeg-motor-imagery-bciciv-2a, which describes the BCI Competition IV 2a motor-imagery recordings associa…",
+      "tags": [
+        "csv",
+        "tabular",
+        "pandas",
+        "eeg",
+        "motor-imagery",
+        "bci",
+        "bciciv-2a"
+      ],
+      "license": "other",
+      "downloads": 71,
+      "likes": 0,
+      "updatedAt": "2026-09-24T06:21:41.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:Tree-AI-lab/fr_bci_4d_instruct",
+      "name": "fr_bci_4d_instruct",
+      "owner": "Tree-AI-lab",
+      "url": "https://huggingface.co/datasets/Tree-AI-lab/fr_bci_4d_instruct",
+      "source": "huggingface",
+      "description": "🇨🇮 fr_bci_4d_instruct fr_bci_4d_instruct est le jeu de données d'entraînement par instructions (Instruction Tuning / SFT) bilingue Français–Baoulé (bci) du laboratoire Tree-AI-lab, conçu spécifiquement pour l'entraînement du modèle souverain BABA. Ce dataset est une évolution…",
+      "tags": [
+        "text-generation",
+        "bci",
+        "apache-2.0",
+        "json",
+        "pandas",
+        "instruction-tuning",
+        "baoule",
+        "french"
+      ],
+      "license": "apache-2.0",
+      "downloads": 33,
+      "likes": 0,
+      "updatedAt": "2026-09-27T13:07:27.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:shahpalash10/BCI-Neurofeedback-Desktop",
+      "name": "BCI-Neurofeedback-Desktop",
+      "owner": "shahpalash10",
+      "url": "https://huggingface.co/datasets/shahpalash10/BCI-Neurofeedback-Desktop",
+      "source": "huggingface",
+      "description": "🧠 BCI Neurofeedback Desktop Application Suite Standalone, zero-dependency desktop application suite for real-time EEG neurofeedback training, cognitive psychometrics, and BCI-driven gaming. 📥 Direct Public Downloads (Latest Release v1.1.2) Platform Architecture Installer Direc…",
+      "tags": [
+        "robotics",
+        "mit",
+        "bci",
+        "eeg",
+        "neurofeedback",
+        "neuroscience",
+        "brain-computer-interface",
+        "desktop-application"
+      ],
+      "license": "mit",
+      "downloads": 82,
+      "likes": 0,
+      "updatedAt": "2026-09-09T17:57:01.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:THULab/bci_grid_movement_v1",
+      "name": "bci_grid_movement_v1",
+      "owner": "THULab",
+      "url": "https://huggingface.co/datasets/THULab/bci_grid_movement_v1",
+      "source": "huggingface",
+      "description": "bci_grid_movement_v1 (TsFile) Apache TsFile version of webxos/BCI-grid-movement-v1. Records: 5,000 Schema (TsFile structure) split (TAG) — device dimension(s). split (FIELD). session_time (FIELD). fire_intent (FIELD). enemy_active (FIELD). current_streak (FIELD). level (FIELD).…",
+      "tags": [
+        "time-series-forecasting",
+        "timeseries",
+        "tsfile",
+        "time-series"
+      ],
+      "license": null,
+      "downloads": 21,
+      "likes": 0,
+      "updatedAt": "2026-09-04T06:07:40.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:braindecode/bcic2a",
+      "name": "bcic2a",
+      "owner": "braindecode",
+      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
+      "source": "huggingface",
+      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
+      "tags": [
+        "unknown",
+        "braindecode",
+        "eeg",
+        "neuroscience",
+        "brain-computer-interface",
+        "deep-learning"
+      ],
+      "license": "unknown",
+      "downloads": 909,
+      "likes": 0,
+      "updatedAt": "2026-03-14T20:20:10.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
+      ]
+    },
+    {
+      "id": "hf:antitashi/bci-temporal",
+      "name": "bci-temporal",
+      "owner": "antitashi",
+      "url": "https://huggingface.co/datasets/antitashi/bci-temporal",
+      "source": "huggingface",
+      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
+      "tags": [
+        "image-classification",
+        "image-to-image",
+        "cc-by-4.0",
+        "optimized-parquet",
+        "image",
+        "geospatial",
+        "arxiv:2604.23019",
+        "biodiversity"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 253,
+      "likes": 0,
+      "updatedAt": "2026-06-03T22:15:54.000Z",
       "modality": [
         "EEG"
       ]
@@ -666,7 +673,7 @@
       "description": "Dataset Overview Objective, quantifiable EEG biomarkers for schizophrenia (SZ) research are limited by the scarcity of large, diverse, and high-quality public datasets. To address this gap, we present ASEEG (Atieh Schizophrenia EEG), a resting-state EEG dataset designed to suppo…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1236,
+      "downloads": 1259,
       "likes": null,
       "updatedAt": "2026-11-16T00:00:00.000Z",
       "modality": [
@@ -735,7 +742,7 @@
         "Meditation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 30,
+      "downloads": 56,
       "likes": null,
       "updatedAt": "2026-11-20T00:00:00.000Z",
       "modality": [
@@ -894,8 +901,8 @@
       ],
       "license": "NOASSERTION",
       "downloads": null,
-      "likes": 23,
-      "updatedAt": "2026-11-21T06:50:24.000Z",
+      "likes": 24,
+      "updatedAt": "2026-11-22T05:59:44.000Z",
       "modality": [
         "EEG"
       ]
