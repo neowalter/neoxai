@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-22T12:51:31.745Z",
+  "generatedAt": "2026-11-23T15:21:31.263Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 35
+      "count": 37
     },
     {
       "id": "openneuro",
       "ok": true,
-      "count": 18
+      "count": 19
     },
     {
       "id": "physionet",
@@ -19,12 +19,12 @@
     {
       "id": "zenodo",
       "ok": true,
-      "count": 18
+      "count": 20
     },
     {
       "id": "github",
       "ok": true,
-      "count": 9
+      "count": 5
     }
   ],
   "items": [
@@ -105,6 +105,26 @@
       ]
     },
     {
+      "id": "zenodo:24460140",
+      "name": "AASD: An Open Non-Invasive EEG Dataset for Spontaneous Auditory Attention Switch Decoding",
+      "owner": "Wang, Xuefei",
+      "url": "https://doi.org/10.5281/zenodo.24460140",
+      "source": "zenodo",
+      "description": "The Auditory Attention Switching Dataset (AASD) provides a large-scale, open-access collection of electroencephalography (EEG) recordings designed to investigate spontaneous auditory attention switching in natural listening environments. This dataset fills a critical gap in audi…",
+      "tags": [
+        "auditory attention decoding",
+        "spatialized speech",
+        "electroencephalography (EEG)"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 22059,
+      "likes": null,
+      "updatedAt": "2026-11-23T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "openneuro:ds009136",
       "name": "Real-World Multiactivity EEG-IMU Dataset for Motion Artifact Removal and Classification Research",
       "owner": "OpenNeuro",
@@ -120,6 +140,44 @@
       "downloads": null,
       "likes": null,
       "updatedAt": "2026-11-21T06:02:54.524Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009134",
+      "name": "The neural processes of illusory occlusion in object recognition",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009134",
+      "source": "openneuro",
+      "description": "The neural processes of illusory occlusion in object recognition",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-20T18:01:31.721Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds009133",
+      "name": "ZAP repeated-session resting EEG and TMS-evoked EEG",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds009133",
+      "source": "openneuro",
+      "description": "Effects of Active and Sham tDCS on Pain Perception and Brain Activity",
+      "tags": [
+        "BIDS",
+        "eeg"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-11-20T05:19:56.101Z",
       "modality": [
         "EEG"
       ]
@@ -355,6 +413,47 @@
       ]
     },
     {
+      "id": "openneuro:ds008894",
+      "name": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008894",
+      "source": "openneuro",
+      "description": "Attentional bias to death-related stimuli: Modeling cortical dynamics underlying suicide risk",
+      "tags": [
+        "BIDS",
+        "meg",
+        "mri"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-30T21:04:15.293Z",
+      "modality": [
+        "MEG"
+      ]
+    },
+    {
+      "id": "openneuro:ds008892",
+      "name": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+      "owner": "OpenNeuro",
+      "url": "https://openneuro.org/datasets/ds008892",
+      "source": "openneuro",
+      "description": "CuBiAAD: A cue-masked bimodal auditory attention dataset based on EEG and fNIRS",
+      "tags": [
+        "BIDS",
+        "eeg",
+        "nirs"
+      ],
+      "license": "CC0",
+      "downloads": null,
+      "likes": null,
+      "updatedAt": "2026-09-30T09:09:51.942Z",
+      "modality": [
+        "EEG",
+        "fNIRS"
+      ]
+    },
+    {
       "id": "hf:raei/Brunner-2008-BCICompetition2008GrazDataSetA",
       "name": "Brunner-2008-BCICompetition2008GrazDataSetA",
       "owner": "raei",
@@ -372,7 +471,7 @@
         "bci-competition"
       ],
       "license": "cc-by-nd-4.0",
-      "downloads": 4456,
+      "downloads": 4809,
       "likes": 0,
       "updatedAt": "2026-09-24T11:39:18.000Z",
       "modality": [
@@ -397,7 +496,7 @@
         "arxiv:2609.31167"
       ],
       "license": "cc-by-4.0",
-      "downloads": 545,
+      "downloads": 495,
       "likes": 2,
       "updatedAt": "2026-11-06T08:56:21.000Z",
       "modality": [
@@ -443,7 +542,7 @@
         "neuroscience"
       ],
       "license": "other",
-      "downloads": 163,
+      "downloads": 174,
       "likes": 0,
       "updatedAt": "2026-11-09T14:31:28.000Z",
       "modality": [
@@ -509,7 +608,7 @@
         "bciciv-2a"
       ],
       "license": "other",
-      "downloads": 71,
+      "downloads": 69,
       "likes": 0,
       "updatedAt": "2026-09-24T06:21:41.000Z",
       "modality": [
@@ -534,7 +633,7 @@
         "french"
       ],
       "license": "apache-2.0",
-      "downloads": 33,
+      "downloads": 36,
       "likes": 0,
       "updatedAt": "2026-09-27T13:07:27.000Z",
       "modality": [
@@ -559,7 +658,7 @@
         "desktop-application"
       ],
       "license": "mit",
-      "downloads": 82,
+      "downloads": 87,
       "likes": 0,
       "updatedAt": "2026-09-09T17:57:01.000Z",
       "modality": [
@@ -588,31 +687,6 @@
       ]
     },
     {
-      "id": "hf:braindecode/bcic2a",
-      "name": "bcic2a",
-      "owner": "braindecode",
-      "url": "https://huggingface.co/datasets/braindecode/bcic2a",
-      "source": "huggingface",
-      "description": "EEG Dataset This dataset was created using braindecode, a deep learning library for EEG/MEG/ECoG signals. Dataset Information Property Value Recordings 108 Type Windowed (from Epochs object) Channels 22 Sampling frequency 200 Hz Total duration 5:45:10 Windows/samples 5,184 Size…",
-      "tags": [
-        "unknown",
-        "braindecode",
-        "eeg",
-        "neuroscience",
-        "brain-computer-interface",
-        "deep-learning"
-      ],
-      "license": "unknown",
-      "downloads": 909,
-      "likes": 0,
-      "updatedAt": "2026-03-14T20:20:10.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "ECoG"
-      ]
-    },
-    {
       "id": "hf:antitashi/bci-temporal",
       "name": "bci-temporal",
       "owner": "antitashi",
@@ -630,9 +704,34 @@
         "biodiversity"
       ],
       "license": "cc-by-4.0",
-      "downloads": 253,
+      "downloads": 262,
       "likes": 0,
       "updatedAt": "2026-06-03T22:15:54.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
+      "id": "hf:sulagnasaharasha/bci-temporal",
+      "name": "bci-temporal",
+      "owner": "sulagnasaharasha",
+      "url": "https://huggingface.co/datasets/sulagnasaharasha/bci-temporal",
+      "source": "huggingface",
+      "description": "BCI Temporal Crown Dataset A multi-temporal, multi-modal dataset of tropical tree crowns from Barro Colorado Island (BCI), Panama. Each tree is observed across 16 acquisition dates spanning June 2024 – September 2025, paired with a ground-level close-up photograph. Dataset Summa…",
+      "tags": [
+        "image-classification",
+        "image-to-image",
+        "cc-by-4.0",
+        "optimized-parquet",
+        "image",
+        "geospatial",
+        "arxiv:2604.23019",
+        "doi:10.57967/hf/8132"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 399,
+      "likes": 0,
+      "updatedAt": "2026-04-28T14:57:22.000Z",
       "modality": [
         "EEG"
       ]
@@ -673,7 +772,7 @@
       "description": "Dataset Overview Objective, quantifiable EEG biomarkers for schizophrenia (SZ) research are limited by the scarcity of large, diverse, and high-quality public datasets. To address this gap, we present ASEEG (Atieh Schizophrenia EEG), a resting-state EEG dataset designed to suppo…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1259,
+      "downloads": 1273,
       "likes": null,
       "updatedAt": "2026-11-16T00:00:00.000Z",
       "modality": [
@@ -689,7 +788,7 @@
       "description": "This record documents a pilot randomized controlled trial investigating whether combining real-time EEG neurofeedback with normobaric hypoxia can improve post-exercise neuromuscular recovery in elite male judokas from the Polish National Judo Senior Team. &nbsp; Eight internatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 410,
+      "downloads": 414,
       "likes": null,
       "updatedAt": "2026-11-18T00:00:00.000Z",
       "modality": [
@@ -731,6 +830,26 @@
       ]
     },
     {
+      "id": "zenodo:24465751",
+      "name": "SSPython Demonstration Dataset",
+      "owner": "Couto, Bruno Andry",
+      "url": "https://doi.org/10.5281/zenodo.24465751",
+      "source": "zenodo",
+      "description": "SSPython Demonstration Dataset: TMS-EEG and Resting-State This dataset contains sample electroencephalography (EEG) data structured specifically to demonstrate the capabilities and workflow of SSPython. It serves as a standardized testbed for users to explore the software's feat…",
+      "tags": [
+        "TMS-EEG",
+        "EEG",
+        "Electroencephalography"
+      ],
+      "license": "cc-by-4.0",
+      "downloads": 48,
+      "likes": null,
+      "updatedAt": "2026-11-23T00:00:00.000Z",
+      "modality": [
+        "EEG"
+      ]
+    },
+    {
       "id": "zenodo:24400646",
       "name": "Machine Learning based Framework for Characterizing Neural and Affective Dynamics in Real and Immersive Kirtan Meditation Using Multichannel EEG",
       "owner": "Singh, Swati",
@@ -742,11 +861,28 @@
         "Meditation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 56,
+      "downloads": 57,
       "likes": null,
       "updatedAt": "2026-11-20T00:00:00.000Z",
       "modality": [
         "EEG"
+      ]
+    },
+    {
+      "id": "zenodo:24452217",
+      "name": "Few-qubit quantum encoding of voice, ECG, PPG and EEG: supporting synthetic datasets and analysis results",
+      "owner": "Bolleddu, Deepak",
+      "url": "https://doi.org/10.5281/zenodo.24452217",
+      "source": "zenodo",
+      "description": "This dataset supports the manuscript &ldquo;Which physiological parameters remain recoverable after quantum encoding? A few-qubit study of voice, ECG, PPG and EEG.&rdquo; The study evaluates recovery of 33 known physiological parameters from simulated biosignals after five quant…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 0,
+      "likes": null,
+      "updatedAt": "2026-11-23T00:00:00.000Z",
+      "modality": [
+        "EEG",
+        "ECG"
       ]
     },
     {
@@ -774,57 +910,9 @@
       "description": "This dataset contains one three-channel EEG recording from each of 11 adult volunteers aged 25&ndash;50 years, together with synchronized command annotations and Python analysis code. Participants alternated relaxation with imagined flexion and extension of the fingers of the ri…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 7,
+      "downloads": 9,
       "likes": null,
       "updatedAt": "2026-11-18T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24367083",
-      "name": "Data extraction and quality appraisal (QATQS/NAMA) matrices for Facial Actions and EEG During Aerobic and Resistance Exercise: Interpreting Affective Responses",
-      "owner": "Ker, Tony",
-      "url": "https://doi.org/10.5281/zenodo.24367083",
-      "source": "zenodo",
-      "description": "Supplementary data for the systematic review reported in the PhD thesis &ldquo;Facial Actions and EEG During Aerobic and Resistance Exercise: Interpreting Affective Responses&rdquo; (Tony Ker, Sheffield Hallam University, 2026). This record contains the full data extraction and…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 1,
-      "likes": null,
-      "updatedAt": "2026-11-19T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24247974",
-      "name": "Neurithm – Extended data for \"Neurithm: a BCI-based deep learning algorithm that generates speech from EEG signals\"",
-      "owner": "AbdelRahman, Hossam",
-      "url": "https://doi.org/10.5281/zenodo.24247974",
-      "source": "zenodo",
-      "description": "Extended data for the article \"Neurithm: a BCI-based Deep Learning Algorithm that Generates Speech from EEG Signals\". It contains the study materials statement, the preprocessing and model configuration, and the full results tables. The raw EEG is not included; it is available f…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 20,
-      "likes": null,
-      "updatedAt": "2026-11-15T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24242204",
-      "name": "Semantic EEG evidence map: supplementary data and reproducible analysis",
-      "owner": "Ahmadi, Hossein",
-      "url": "https://doi.org/10.5281/zenodo.24242204",
-      "source": "zenodo",
-      "description": "Supplementary data and reproducible analysis code for a systematic evidence map of semantic information in EEG and its implications for brain&ndash;computer interfaces. The dataset contains 1,333 report-level records, 4,616 linked findings, the complete bibliography, a field cod…",
-      "tags": [],
-      "license": "cc-by-4.0",
-      "downloads": 4,
-      "likes": null,
-      "updatedAt": "2026-11-15T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -856,33 +944,6 @@
         "iEEG",
         "fNIRS",
         "EMG"
-      ]
-    },
-    {
-      "id": "github:bids-standard/bids-matlab",
-      "name": "bids-matlab",
-      "owner": "bids-standard",
-      "url": "https://github.com/bids-standard/bids-matlab",
-      "source": "github",
-      "description": "MATLAB / Octave tools for BIDS datasets",
-      "tags": [
-        "bids",
-        "eeg",
-        "ieeg",
-        "matlab",
-        "meg",
-        "mri",
-        "neuroimaging",
-        "octave"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 58,
-      "updatedAt": "2026-11-20T13:27:34.000Z",
-      "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
       ]
     },
     {
@@ -929,101 +990,26 @@
       ]
     },
     {
-      "id": "github:Elnazkarami/latent-decision-models",
-      "name": "latent-decision-models",
-      "owner": "Elnazkarami",
-      "url": "https://github.com/Elnazkarami/latent-decision-models",
+      "id": "github:dll-ncai/NMT-4k-EEG-Dataset",
+      "name": "NMT-4k-EEG-Dataset",
+      "owner": "dll-ncai",
+      "url": "https://github.com/dll-ncai/NMT-4k-EEG-Dataset",
       "source": "github",
-      "description": "Reproducible Python tools for trial-level modeling of decision confidence and belief updating from behavior, EEG and fMRI, with audited OpenNeuro datasets and subject-disjoint evaluation",
+      "description": "Code, notebooks, validation scripts, and analysis outputs for NMT-4K-EEG, a clinical EEG dataset with 4,500 recordings, event-level annotations, anonymized clinical reports, and predefined training and evaluation partitions.",
       "tags": [
-        "bids",
-        "computational-neuroscience",
-        "confidence",
-        "decision-making",
+        "abnormality-detection",
+        "biomedical-signals",
+        "clinical-eeg",
+        "clinical-reports",
         "eeg",
-        "eeg-fmri",
-        "fmri",
-        "metacognition"
+        "eeg-dataset",
+        "electroencephalography",
+        "event-annotations"
       ],
       "license": "MIT",
       "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-20T17:03:35.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:DrGiovannaDalRi/Signal-Processing-for-Stroke-EEG",
-      "name": "Signal-Processing-for-Stroke-EEG",
-      "owner": "DrGiovannaDalRi",
-      "url": "https://github.com/DrGiovannaDalRi/Signal-Processing-for-Stroke-EEG",
-      "source": "github",
-      "description": "Signal processing of EEG data of stroke patients, present in the dataset from Liu et al. (2024).",
-      "tags": [
-        "bci",
-        "bci-systems",
-        "data-analysis",
-        "eeg",
-        "eeg-analysis",
-        "eeg-signals",
-        "eeg-signals-processing",
-        "signal-processing"
-      ],
-      "license": "Apache-2.0",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-11-16T16:17:12.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Meysam-Kharghani/cross-participant-eeg-geometry",
-      "name": "cross-participant-eeg-geometry",
-      "owner": "Meysam-Kharghani",
-      "url": "https://github.com/Meysam-Kharghani/cross-participant-eeg-geometry",
-      "source": "github",
-      "description": "Reproducible analysis of cross-participant EEG geometry in the EmoEEG-MC dataset, including held-out validation, trajectory stability, semantic mapping, and null-model sensitivity analyses.",
-      "tags": [
-        "affective-neuroscience",
-        "brain-signals",
-        "cross-participant",
-        "eeg",
-        "emoeeg-mc",
-        "emotion",
-        "neuroscience",
-        "representational-geometry"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-30T11:29:14.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "github:Avin-Amiri/eeg-lstm-gcn-emotion",
-      "name": "eeg-lstm-gcn-emotion",
-      "owner": "Avin-Amiri",
-      "url": "https://github.com/Avin-Amiri/eeg-lstm-gcn-emotion",
-      "source": "github",
-      "description": "PyTorch implementation of Temporal-Spatial Graph-Integrated Framework for EEG-Based Emotion Recognition (SEED Dataset)",
-      "tags": [
-        "affective-computing",
-        "brain-computer-interface",
-        "deep-learning",
-        "eeg",
-        "emotion-recognition",
-        "gcn",
-        "graph-neural-networks",
-        "lstm"
-      ],
-      "license": "MIT",
-      "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-07T12:20:12.000Z",
+      "likes": 3,
+      "updatedAt": "2026-10-28T08:20:42.000Z",
       "modality": [
         "EEG"
       ]
