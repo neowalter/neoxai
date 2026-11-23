@@ -16,6 +16,7 @@ Preprocessing, libraries, and **local-first** notes for EEG / BCI. Again: **link
 | PyPREP | PREP in Python | [sappelhoff/pyprep](https://github.com/sappelhoff/pyprep) |
 | braindecode | Deep learning on EEG | [braindecode.org](https://braindecode.org) |
 | MOABB | Cross-dataset benchmarks | [github.com/NeuroTechX/moabb](https://github.com/NeuroTechX/moabb) |
+| IntentLab reliability audit | Participant coverage, accepted errors and participant-bootstrap uncertainty from matched binary predictions; Python CLI runs fully offline | [Method and reuse guide](https://github.com/shrut10/intentlab-bci/blob/main/docs/RELIABILITY.md) · [MIT code](https://github.com/shrut10/intentlab-bci/blob/main/LICENSE); bundled PhysioNet derivatives: [ODC-BY attribution](https://github.com/shrut10/intentlab-bci/blob/main/NOTICE.md) · [Software citation](https://github.com/shrut10/intentlab-bci/blob/main/CITATION.cff) |
 
 ## Practical order (typical offline study)
 
