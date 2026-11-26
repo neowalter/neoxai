@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-25T14:56:28.394Z",
+  "generatedAt": "2026-11-26T14:26:42.349Z",
   "sources": [
     {
       "id": "huggingface",
       "ok": true,
-      "count": 42
+      "count": 43
     },
     {
       "id": "openneuro",
@@ -117,7 +117,7 @@
         "electroencephalography (EEG)"
       ],
       "license": "cc-by-4.0",
-      "downloads": 22075,
+      "downloads": 22123,
       "likes": null,
       "updatedAt": "2026-11-23T00:00:00.000Z",
       "modality": [
@@ -436,7 +436,7 @@
         "clinical reports"
       ],
       "license": null,
-      "downloads": 6376,
+      "downloads": 6476,
       "likes": null,
       "updatedAt": "2026-11-24T00:00:00.000Z",
       "modality": [
@@ -698,30 +698,19 @@
       ]
     },
     {
-      "id": "github:mne-tools/mne-bids",
-      "name": "mne-bids",
-      "owner": "mne-tools",
-      "url": "https://github.com/mne-tools/mne-bids",
-      "source": "github",
-      "description": "MNE-BIDS is a Python package that allows you to read and write BIDS-compatible datasets with the help of MNE-Python.",
-      "tags": [
-        "bids",
-        "eeg",
-        "electroencephalography",
-        "ieeg",
-        "magnetoencephalography",
-        "meg",
-        "mne",
-        "neuroimaging"
-      ],
-      "license": "BSD-3-Clause",
-      "downloads": null,
-      "likes": 183,
-      "updatedAt": "2026-11-19T14:10:57.000Z",
+      "id": "zenodo:24536472",
+      "name": "EEG dataset_Bonfanti et al 2026_Neuroscience of Consciousness",
+      "owner": "Bonfanti, Davide",
+      "url": "https://doi.org/10.5281/zenodo.24536472",
+      "source": "zenodo",
+      "description": "This dataset is from the article \"From encoding to conscious report: Electrophysiological signatures of iconic memory revealed by a partial report task\" by Bonfanti et al., 2026, Neuroscience of Consciousness. &nbsp; It is composed by 23 .set files (raw EEG datasets imported in…",
+      "tags": [],
+      "license": "cc-by-4.0",
+      "downloads": 1398,
+      "likes": null,
+      "updatedAt": "2026-11-25T00:00:00.000Z",
       "modality": [
-        "EEG",
-        "MEG",
-        "iEEG"
+        "EEG"
       ]
     },
     {
@@ -733,7 +722,7 @@
       "description": "Dataset Overview Objective, quantifiable EEG biomarkers for schizophrenia (SZ) research are limited by the scarcity of large, diverse, and high-quality public datasets. To address this gap, we present ASEEG (Atieh Schizophrenia EEG), a resting-state EEG dataset designed to suppo…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 1372,
+      "downloads": 1376,
       "likes": null,
       "updatedAt": "2026-11-16T00:00:00.000Z",
       "modality": [
@@ -749,7 +738,7 @@
       "description": "This record documents a pilot randomized controlled trial investigating whether combining real-time EEG neurofeedback with normobaric hypoxia can improve post-exercise neuromuscular recovery in elite male judokas from the Polish National Judo Senior Team. &nbsp; Eight internatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 417,
+      "downloads": 464,
       "likes": null,
       "updatedAt": "2026-11-18T00:00:00.000Z",
       "modality": [
@@ -781,7 +770,7 @@
       "description": "Description This dataset contains TMS-EEG recordings collected from patients with Retinitis Pigmentosa (RP) and from healthy control participants.&nbsp; Participants Healthy controls: 19 participants&nbsp; Patients with Retinitis Pigmentosa: 9 participants&nbsp; Data organizatio…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 201,
+      "downloads": 202,
       "likes": null,
       "updatedAt": "2026-11-10T00:00:00.000Z",
       "modality": [
@@ -797,7 +786,7 @@
       "description": "This repository contains the anonymized data and analysis code associated with the study &ldquo;Prefrontal Cortex Lateralization Preceding Performance Failure under Psychological Pressure: A Simultaneous fNIRS&ndash;EEG Study.&rdquo; The dataset includes data derived from functi…",
       "tags": [],
       "license": "cc-by-4.0",
-      "downloads": 101,
+      "downloads": 106,
       "likes": null,
       "updatedAt": "2026-11-17T00:00:00.000Z",
       "modality": [
@@ -837,32 +826,9 @@
         "Meditation"
       ],
       "license": "cc-by-4.0",
-      "downloads": 57,
+      "downloads": 63,
       "likes": null,
       "updatedAt": "2026-11-20T00:00:00.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
-      "id": "zenodo:24521066",
-      "name": "Derived dataset and specialist evaluation tables for: Wearable low-channel EEG and edge AI for home monitoring in Parkinson's disease",
-      "owner": "Li, Shiting",
-      "url": "https://doi.org/10.5281/zenodo.24521066",
-      "source": "zenodo",
-      "description": "Derived benchmark summary tables, figure-underlying statistical CSVs, and anonymized specialist clinician evaluation ratings accompanying the manuscript Wearable low-channel EEG and edge AI for home monitoring in Parkinson's disease . Contents: tables/ : 17 aggregate benchmark,…",
-      "tags": [
-        "Parkinson's disease",
-        "wearable EEG",
-        "edge AI",
-        "aperiodic bursts",
-        "Bayesian power prior",
-        "clinical safety agent"
-      ],
-      "license": "cc-by-4.0",
-      "downloads": 0,
-      "likes": null,
-      "updatedAt": "2026-11-25T00:00:00.000Z",
       "modality": [
         "EEG"
       ]
@@ -918,30 +884,6 @@
       ]
     },
     {
-      "id": "github:nimbusbci/nimbus-mcp",
-      "name": "nimbus-mcp",
-      "owner": "nimbusbci",
-      "url": "https://github.com/nimbusbci/nimbus-mcp",
-      "source": "github",
-      "description": "MCP server for Nimbus BCI — AI agents build, train, and analyze EEG/BCI pipelines (datasets, models, experiment campaigns, live sessions)",
-      "tags": [
-        "bci",
-        "brain-computer-interface",
-        "eeg",
-        "fastmcp",
-        "mcp",
-        "mcp-server",
-        "model-context-protocol"
-      ],
-      "license": "Apache-2.0",
-      "downloads": null,
-      "likes": 4,
-      "updatedAt": "2026-11-24T16:21:34.000Z",
-      "modality": [
-        "EEG"
-      ]
-    },
-    {
       "id": "github:supernaiter/silent-speech-review",
       "name": "silent-speech-review",
       "owner": "supernaiter",
@@ -960,6 +902,58 @@
       "modality": [
         "EEG",
         "EMG"
+      ]
+    },
+    {
+      "id": "github:lrgthu/neuroscience-datasets",
+      "name": "neuroscience-datasets",
+      "owner": "lrgthu",
+      "url": "https://github.com/lrgthu/neuroscience-datasets",
+      "source": "github",
+      "description": "Citation-verified, machine-readable knowledge base of neuroscience datasets for neural encoding, decoding, alignment, and population dynamics.",
+      "tags": [
+        "ecog",
+        "eeg",
+        "fmri",
+        "knowledge-base",
+        "meg",
+        "neural-encoding",
+        "neuropixels",
+        "neuroscience"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-25T21:27:15.000Z",
+      "modality": [
+        "EEG",
+        "MEG",
+        "ECoG"
+      ]
+    },
+    {
+      "id": "github:Zapparelo/post-eeg-solar-germany",
+      "name": "post-eeg-solar-germany",
+      "owner": "Zapparelo",
+      "url": "https://github.com/Zapparelo/post-eeg-solar-germany",
+      "source": "github",
+      "description": "Open data: 417,003 German PV systems losing EEG feed-in tariff 2020–2028, by district (Kreis), state & size. CSV, CC BY 4.0, from Marktstammdatenregister.",
+      "tags": [
+        "csv",
+        "dataset",
+        "deutschland",
+        "eeg",
+        "energy-data",
+        "germany",
+        "marktstammdatenregister",
+        "mastr"
+      ],
+      "license": "NOASSERTION",
+      "downloads": null,
+      "likes": 0,
+      "updatedAt": "2026-11-25T17:46:18.000Z",
+      "modality": [
+        "EEG"
       ]
     },
     {
@@ -1014,26 +1008,26 @@
       ]
     },
     {
-      "id": "github:Avin-Amiri/eeg-emotion-recognition-cnn-lstm",
-      "name": "eeg-emotion-recognition-cnn-lstm",
-      "owner": "Avin-Amiri",
-      "url": "https://github.com/Avin-Amiri/eeg-emotion-recognition-cnn-lstm",
+      "id": "github:JDAppleseed/Individual-Finger-Movement-Identification-From-Muse-2-EEG",
+      "name": "Individual-Finger-Movement-Identification-From-Muse-2-EEG",
+      "owner": "JDAppleseed",
+      "url": "https://github.com/JDAppleseed/Individual-Finger-Movement-Identification-From-Muse-2-EEG",
       "source": "github",
-      "description": "Official implementation of a hybrid CNN-LSTM framework for EEG-based emotion recognition on the DEAP dataset.",
+      "description": "Open-Source EEG signal decoding for real time control of a 5 finger robot hand using a highly modular and reproducible ui-based pipeline on CNN/LSTM model architecture with applications in prosthetics and general BCI research and advancement, bringing a python-based research lab…",
       "tags": [
+        "bci",
         "cnn",
-        "cnn-lstm",
-        "cnn-lstm-models",
-        "deap",
-        "deap-dataset",
         "eeg",
-        "emotion-recognition",
-        "lstm"
+        "eeg-analysis",
+        "isef",
+        "lstm",
+        "lstm-neural-networks",
+        "muse2"
       ],
-      "license": "MIT",
+      "license": "NOASSERTION",
       "downloads": null,
-      "likes": 0,
-      "updatedAt": "2026-10-01T08:44:32.000Z",
+      "likes": 2,
+      "updatedAt": "2026-09-21T10:59:59.000Z",
       "modality": [
         "EEG"
       ]
