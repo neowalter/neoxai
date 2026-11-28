@@ -75,7 +75,7 @@ Required front matter, checked against [`card.schema.json`](./card.schema.json):
 
 Required headings in the body: `## Overview` and `## Quick start`.
 
-Optional front matter: `summary.zh-Hans`, `tasks` (at most 4), `modalities`, `tags` (at most 12), `version`, `logo`, `stack` (`frameworks`, `models`, `datasets`, `hardware`), `install` (at most 6 commands, each command at most 300 characters), `run` (`colab`, `docker`, `demo`), `limitations` and `blockers` (at most 10 items, 200 characters each), `roadmap` (at most 12 items, 160 characters each; state `planned`, `in-progress`, or `done`), `citation`, `contributing`, `changelog` (at most 20 entries), and `seo` (title at most 60 characters, description at most 160).
+Optional front matter: `summary.zh-Hans`, `tasks` (at most 4), `modalities`, `tags` (at most 12), `version`, `logo`, `stack` (`frameworks`, `models`, `datasets`, `hardware`), `install` (at most 6 commands, each command at most 300 characters), `run` (`colab`, `docker`, `demo`), `limitations` and `blockers` (at most 10 items, 200 characters each), `roadmap` (at most 12 items, 160 characters each; state `planned`, `in-progress`, or `done`), `citation`, `contributing`, `changelog` (at most 20 entries), and `seo` (title at most 60 characters, description at most 160 characters).
 
 Optional headings, after the required ones: `## Technical approach`, `## Usage and API`, `## Examples`, and `## Contributing`.
 
