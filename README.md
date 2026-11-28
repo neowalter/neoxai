@@ -267,6 +267,12 @@ flowchart LR
 
 ---
 
+## Project cards
+
+Maintainer-owned project cards live in [`repos/cards/`](./repos/cards/README.md). One file per catalog repository. Card text submitted there is CC-BY-4.0. English card pages are `https://neox-ai.com/repos/<owner>/<repo>/`. Chinese pages are `https://neox-ai.com/cn/repos/<owner>/<repo>/`.
+
+Catalog producer (outside this repository): stop publishing `outreach` on the public [`repos/catalog.json`](./repos/catalog.json), and add `firstIndexedAt` to each item. Do not rewrite `repos/catalog.json` in a pull request to strip those fields by hand.
+
 ## Contributing
 
 1. **Datasets / models / methods** — open a PR that adds a row to the folder README (`datasets/`, `models/`, or `methods/` — source of truth) and the matching table in this file if it is mirrored: name, official URL, license (or “application required”), and a citation (DOI or paper). Prefer sources that are actually obtainable (PhysioNet, OpenNeuro, MOABB, Hugging Face, GitHub).
@@ -295,6 +301,7 @@ See [`CITATION.cff`](./CITATION.cff).
 | Material | License |
 | --- | --- |
 | README files, curated tables, cron archive metadata in `news/` and `papers/` | [CC-BY-4.0](./LICENSE) |
+| Project card text in `repos/cards/` | [CC-BY-4.0](./LICENSE) |
 | Linked datasets, weights, code, PDFs | **Original licenses only** — we do not relicense them |
 
 There is no medical-device warranty. Nothing here is clinical advice.

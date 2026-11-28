@@ -1,0 +1,36 @@
+name: Request repository removal
+description: Ask neoxai to delist a repository from the public index.
+title: "Remove repository: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to ask for a repository to be removed from the neoxai catalog and from project cards.
+
+        The published default response window is 7 days.
+
+        Do not include an email address or a phone number. This form has no contact fields.
+  - type: input
+    id: repository-url
+    attributes:
+      label: Repository URL
+      description: HTTPS URL of the GitHub repository to remove.
+      placeholder: https://github.com/example-org/eeg-toolkit
+    validations:
+      required: true
+  - type: input
+    id: github-login
+    attributes:
+      label: GitHub login
+      description: GitHub login of the person making this request.
+      placeholder: example-org
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: Why this repository should leave the index.
+      placeholder: The maintainer asked for the listing to be removed.
+    validations:
+      required: true

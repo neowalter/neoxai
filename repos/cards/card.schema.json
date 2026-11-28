@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neox-ai.com/api/repos/card.schema.json",
+  "title": "AuthorCardV1",
+  "description": "YAML front matter for a maintainer-owned project card in repos/cards/<owner>/<repo>.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "repo", "summary", "status", "maintainers"],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 140,
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}/[A-Za-z0-9][A-Za-z0-9._-]{0,99}$",
+      "description": "GitHub owner/name. Must match the card path, case-insensitive."
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en"],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        },
+        "zh-Hans": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "motor-imagery",
+          "ssvep",
+          "p300-erp",
+          "sleep",
+          "emotion",
+          "seizure",
+          "neurofeedback",
+          "artifact-removal",
+          "signal-processing",
+          "decoding",
+          "acquisition-streaming",
+          "visualization",
+          "dataset-tooling",
+          "foundation-model",
+          "agent-mcp",
+          "closed-loop",
+          "other"
+        ]
+      }
+    },
+    "modalities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "eeg",
+          "emg",
+          "ecg",
+          "eog",
+          "ppg",
+          "imu",
+          "meg",
+          "ecog",
+          "seeg",
+          "fnirs",
+          "mixed"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "experimental",
+        "alpha",
+        "beta",
+        "stable",
+        "maintenance",
+        "deprecated"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri",
+      "description": "HTTPS image on an allowlisted GitHub host."
+    },
+    "stack": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "frameworks": {
+          "$ref": "#/$defs/refArray"
+        },
+        "models": {
+          "$ref": "#/$defs/refArray"
+        },
+        "datasets": {
+          "$ref": "#/$defs/refArray"
+        },
+        "hardware": {
+          "$ref": "#/$defs/refArray"
+        }
+      }
+    },
+    "install": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "command"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "colab": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docker": {
+          "type": "string",
+          "minLength": 1
+        },
+        "demo": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      }
+    },
+    "roadmap": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["item", "state"],
+        "properties": {
+          "item": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "state": {
+            "type": "string",
+            "enum": ["planned", "in-progress", "done"]
+          }
+        }
+      }
+    },
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cff": {
+          "type": "boolean"
+        },
+        "bibtex": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "doi": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "contributing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "guide": {
+          "type": "string",
+          "format": "uri"
+        },
+        "codeOfConduct": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "maintainers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["github"],
+        "properties": {
+          "github": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 39,
+            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "changelog": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["version", "date", "summary"],
+        "properties": {
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "refArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ref"
+      }
+    }
+  }
+}

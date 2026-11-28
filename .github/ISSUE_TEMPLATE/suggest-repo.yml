@@ -1,0 +1,26 @@
+name: Suggest a repository
+description: Suggest a public GitHub repository for the BCI and EEG index.
+title: "Suggest repository: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest one public GitHub repository for the BCI and EEG index.
+
+        Do not include an email address or a phone number. This form has no contact fields.
+  - type: input
+    id: github-url
+    attributes:
+      label: GitHub URL
+      description: HTTPS URL of the repository you are suggesting.
+      placeholder: https://github.com/example-org/eeg-toolkit
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs in a BCI/EEG index
+      description: What the repository does, and why it belongs in this index.
+      placeholder: It streams EEG from a research headset and documents the file format.
+    validations:
+      required: true

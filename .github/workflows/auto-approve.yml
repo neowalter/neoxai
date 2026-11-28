@@ -11,6 +11,8 @@ permissions:
 jobs:
   approve-and-merge:
     # Same-repo only; trusted authors only. Never auto-merge forks or unknown actors.
+    # Pull requests that touch repos/cards/ are approved only when the author is
+    # the catalog owner. That approval never replaces the cards-check status check.
     if: >
       github.event.pull_request.draft == false &&
       github.event.pull_request.head.repo.full_name == github.repository &&
@@ -21,7 +23,30 @@ jobs:
       )
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout base ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Install gate dependencies
+        run: python3 -m pip install --disable-pip-version-check 'pyyaml==6.0.2' 'jsonschema==4.23.0'
+
+      - name: Decide whether this pull request may be auto-approved
+        id: gate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: python3 .github/scripts/cards_approve_gate.py
+
       - name: Approve pull request
+        if: steps.gate.outputs.approve == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -29,6 +54,7 @@ jobs:
           gh pr review --approve "${{ github.event.pull_request.number }}" || true
 
       - name: Enable auto-merge (squash)
+        if: steps.gate.outputs.approve == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}

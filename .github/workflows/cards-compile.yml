@@ -1,0 +1,45 @@
+# Trusted post-merge compile. Runs on main after card files change.
+# Uses the Actions GITHUB_TOKEN only. Does not read a pull-request head.
+name: cards-compile
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "repos/cards/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    name: cards-compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the pushed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ github.token }}
+
+      - name: Install validator dependencies
+        run: python3 -m pip install --disable-pip-version-check 'pyyaml==6.0.2' 'jsonschema==4.23.0'
+
+      - name: Compile repos/cards.json
+        run: python3 .github/scripts/cards_compile.py
+
+      - name: Commit repos/cards.json when the card set changed
+        run: |
+          set -euo pipefail
+          git add -- repos/cards.json
+          if git diff --cached --quiet -- repos/cards.json; then
+            echo "repos/cards.json is unchanged. Not committing."
+            exit 0
+          fi
+          git -c user.name="neoxai-bot" -c user.email="neoxai-bot@users.noreply.github.com" \
+            commit -m "Compile project cards into repos/cards.json."
+          git push origin "HEAD:${GITHUB_REF_NAME}"
