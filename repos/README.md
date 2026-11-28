@@ -2,6 +2,8 @@
 
 Open-source **BCI / EEG / agent** GitHub projects whose authors were contacted through neoxai outreach. This folder is a **link + metadata** catalog for [neox-ai.com](https://neox-ai.com). We do **not** vendor their source trees.
 
+Author-completed project cards live in [`cards/`](./cards/). Only the GitHub user who owns a repository, or a login listed in that repository’s [`.neox-ai.yml`](./cards/README.md), can add or change its card. See the [maintainer guide](https://neox-ai.com/repos/maintainers/).
+
 Machine-readable index: [`catalog.json`](./catalog.json) (sorted by `outreach.contactedAt`, then `id`) — **437** entries after batch39.
 
 | Repo | Author | Description | Last push | Stars |
