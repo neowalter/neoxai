@@ -1,26 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://neox-ai.com/api/repos/card.schema.json",
-  "title": "AuthorCardV1",
-  "description": "YAML front matter for a maintainer-owned project card in repos/cards/<owner>/<repo>.md.",
+  "title": "neox-ai author card v1",
+  "description": "YAML front matter for repos/cards/<owner>/<repo>.md. Generated from AuthorCardV1 in neoxlink packages/contracts, with additionalProperties set to false on every object.",
   "type": "object",
-  "additionalProperties": false,
-  "required": ["schema", "repo", "summary", "status", "maintainers"],
   "properties": {
     "schema": {
+      "type": "number",
       "const": 1
     },
     "repo": {
       "type": "string",
-      "minLength": 3,
-      "maxLength": 140,
-      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}/[A-Za-z0-9][A-Za-z0-9._-]{0,99}$",
-      "description": "GitHub owner/name. Must match the card path, case-insensitive."
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}\\/(?!\\.\\.?$)[A-Za-z0-9._-]{1,100}$"
     },
     "summary": {
       "type": "object",
-      "additionalProperties": false,
-      "required": ["en"],
       "properties": {
         "en": {
           "type": "string",
@@ -29,14 +23,19 @@
         },
         "zh-Hans": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 140
         }
-      }
+      },
+      "required": [
+        "en"
+      ],
+      "additionalProperties": false
     },
     "tasks": {
-      "type": "array",
+      "default": [],
       "maxItems": 4,
-      "uniqueItems": true,
+      "type": "array",
       "items": {
         "type": "string",
         "enum": [
@@ -61,8 +60,8 @@
       }
     },
     "modalities": {
+      "default": [],
       "type": "array",
-      "uniqueItems": true,
       "items": {
         "type": "string",
         "enum": [
@@ -81,12 +80,11 @@
       }
     },
     "tags": {
-      "type": "array",
+      "default": [],
       "maxItems": 12,
-      "uniqueItems": true,
+      "type": "array",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "type": "string"
       }
     },
     "status": {
@@ -101,111 +99,193 @@
       ]
     },
     "version": {
-      "type": "string",
-      "minLength": 1
+      "type": "string"
     },
     "logo": {
       "type": "string",
-      "format": "uri",
-      "description": "HTTPS image on an allowlisted GitHub host."
+      "pattern": "^https:\\/\\/(?:raw\\.githubusercontent\\.com|user-images\\.githubusercontent\\.com|avatars\\.githubusercontent\\.com|github\\.com)\\/\\S+$"
     },
     "stack": {
+      "default": {},
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "frameworks": {
-          "$ref": "#/$defs/refArray"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
         },
         "models": {
-          "$ref": "#/$defs/refArray"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
         },
         "datasets": {
-          "$ref": "#/$defs/refArray"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
         },
         "hardware": {
-          "$ref": "#/$defs/refArray"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "install": {
-      "type": "array",
+      "default": [],
       "maxItems": 6,
+      "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["label", "command"],
         "properties": {
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "command": {
             "type": "string",
-            "minLength": 1,
             "maxLength": 300
           }
-        }
+        },
+        "required": [
+          "label",
+          "command"
+        ],
+        "additionalProperties": false
       }
     },
     "run": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "colab": {
           "type": "string",
           "format": "uri"
         },
         "docker": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "demo": {
           "type": "string",
           "format": "uri"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "limitations": {
-      "type": "array",
+      "default": [],
       "maxItems": 10,
+      "type": "array",
       "items": {
         "type": "string",
-        "minLength": 1,
         "maxLength": 200
       }
     },
     "blockers": {
-      "type": "array",
+      "default": [],
       "maxItems": 10,
+      "type": "array",
       "items": {
         "type": "string",
-        "minLength": 1,
         "maxLength": 200
       }
     },
     "roadmap": {
-      "type": "array",
+      "default": [],
       "maxItems": 12,
+      "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["item", "state"],
         "properties": {
           "item": {
             "type": "string",
-            "minLength": 1,
             "maxLength": 160
           },
           "state": {
             "type": "string",
-            "enum": ["planned", "in-progress", "done"]
+            "enum": [
+              "planned",
+              "in-progress",
+              "done"
+            ]
           }
-        }
+        },
+        "required": [
+          "item",
+          "state"
+        ],
+        "additionalProperties": false
       }
     },
     "citation": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "cff": {
           "type": "boolean"
@@ -216,13 +296,13 @@
         },
         "doi": {
           "type": "string",
-          "minLength": 1
+          "pattern": "^10\\.\\d{4,9}\\/\\S+$"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "contributing": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "guide": {
           "type": "string",
@@ -232,99 +312,81 @@
           "type": "string",
           "format": "uri"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "maintainers": {
-      "type": "array",
       "minItems": 1,
+      "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["github"],
         "properties": {
           "github": {
             "type": "string",
-            "minLength": 1,
-            "maxLength": 39,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$"
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
           },
           "name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "role": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "github"
+        ],
+        "additionalProperties": false
       }
     },
     "changelog": {
-      "type": "array",
+      "default": [],
       "maxItems": 20,
+      "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["version", "date", "summary"],
         "properties": {
           "version": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "date": {
             "type": "string",
-            "minLength": 1
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
           },
           "summary": {
             "type": "string",
-            "minLength": 1,
             "maxLength": 200
           }
-        }
+        },
+        "required": [
+          "version",
+          "date",
+          "summary"
+        ],
+        "additionalProperties": false
       }
     },
     "seo": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "title": {
           "type": "string",
-          "minLength": 1,
           "maxLength": 60
         },
         "description": {
           "type": "string",
-          "minLength": 1,
           "maxLength": 160
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
-  "$defs": {
-    "ref": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "version": {
-          "type": "string",
-          "minLength": 1
-        }
-      }
-    },
-    "refArray": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/ref"
-      }
-    }
-  }
+  "required": [
+    "schema",
+    "repo",
+    "summary",
+    "status",
+    "maintainers"
+  ],
+  "additionalProperties": false
 }

@@ -81,11 +81,10 @@ Optional headings, after the required ones: `## Technical approach`, `## Usage a
 
 Quote versions and dates. YAML otherwise turns `1.0` into a number and `2026-11-28` into a date, and the schema then rejects them. Task and modality values must be the enums in the schema. Unknown keys are rejected.
 
-`logo`, when you set it, must be an `http` or `https` URL whose host is one of:
+`logo`, when you set it, must be an `https` URL whose host is one of:
 
 - `github.com`
 - `raw.githubusercontent.com`
-- `camo.githubusercontent.com`
 - `avatars.githubusercontent.com`
 - `user-images.githubusercontent.com`
 

@@ -15,9 +15,8 @@ tags:
   - features
 status: experimental
 version: "0.1.0"
-# logo must be an image on github.com, raw.githubusercontent.com,
-# camo.githubusercontent.com, avatars.githubusercontent.com, or
-# user-images.githubusercontent.com. Example:
+# logo must be an https image on github.com, raw.githubusercontent.com,
+# avatars.githubusercontent.com, or user-images.githubusercontent.com. Example:
 # logo: https://raw.githubusercontent.com/example-org/eeg-toolkit/main/logo.png
 stack:
   frameworks:

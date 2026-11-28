@@ -36,7 +36,6 @@ LOGO_HOSTS = frozenset(
     {
         "github.com",
         "raw.githubusercontent.com",
-        "camo.githubusercontent.com",
         "avatars.githubusercontent.com",
         "user-images.githubusercontent.com",
     }
@@ -358,8 +357,8 @@ def logo_errors(front: dict) -> list:
     if parsed.scheme in {"http", "https"} and host and host not in LOGO_HOSTS:
         return [
             "logo host "
-            f"{host} is not allowlisted. Use github.com, raw.githubusercontent.com, "
-            "camo.githubusercontent.com, avatars.githubusercontent.com, or "
+            f"{host} is not allowlisted. Use https on github.com, "
+            "raw.githubusercontent.com, avatars.githubusercontent.com, or "
             "user-images.githubusercontent.com."
         ]
     return []
